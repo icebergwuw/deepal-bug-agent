@@ -12,9 +12,9 @@
 ## 默认意图
 
 - 用户单独发送 Jira bug 链接，默认执行完整 Bug 流程：查重、完整读取、补充资料、产品判断、更新对应负责人线上清单、本地索引和日志。
-- 用户再次发送同一 Jira、要求“再看 / 重新确认 / 二次处理”且没有提供会议纪要、leader/客户复盘材料时，仍走普通 Bug 流程；重新核验后可更新原行 C、D、G、I、J，不因已有历史判断而只写 H。
+- 用户再次发送同一 Jira、要求“再看 / 重新确认 / 二次处理”且没有提供会议纪要、leader/客户复盘材料时，仍走普通 Bug 流程；按 `agent/config/sheet-update-modes.json` 的 `recheck` 模式更新原行，不因已有历史判断而只写 H。
 - 用户明确说“只看 / 不更新 / 我来评价 / 只整理事实”时，只读证据，不更新表、不评论或流转 Jira。
-- 用户提供会议纪要、可姐/leader 教学、客户复盘或明确的复盘材料时，按复盘流程处理；可更新原行 G、H、I、J，D/F 保留初次判断和人工判断。
+- 用户提供会议纪要、可姐/leader 教学、客户复盘或明确的复盘材料时，按复盘流程和 `review` 模式更新原行；H 保存最终判断，D/F 保留初次判断和人工判断。
 
 ## 负责人路由
 
@@ -28,11 +28,13 @@
 - Bug 完整流程：`agent/workflows/bug.md`
 - 复盘与会议反馈流程：`agent/workflows/review.md`
 - A:J 列职责、内容写法和样式：`agent/sheet-contract.md`
+- 已有行更新模式允许列/保护列：`agent/config/sheet-update-modes.json`
 - 固定身份、链接和资料入口：`agent/context.md`
 - 产品知识库：`agent/product-kb/`
 - 会议纪要与待办：`agent/meetings/`
 - 操作日志：`agent/logs/bug-actions/`
 - 规则版本与变更记录：`agent/rules-version.md`
+- Skill 安装模板：`agent/skills/deepal-product-bug-handler/SKILL.md`
 - 历史资料：`agent/archive/`，仅作证据，不覆盖现行规则。
 
 旧入口 `agent/workflow.md`、`agent/meeting-feedback-workflow.md`、`agent/sheet-template.md`、`agent/sheet-style.md` 只用于兼容跳转，不定义独立规则。若文件冲突，按上述权威文件的职责边界执行。

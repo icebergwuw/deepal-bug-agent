@@ -20,7 +20,10 @@ REQUIRED_FILES = (
     "agent/sheet-contract.md",
     "agent/context.md",
     "agent/bug-owners/registry.yaml",
+    "agent/config/sheet-update-modes.json",
+    "agent/skills/deepal-product-bug-handler/SKILL.md",
     "agent/scripts/bug_sheet_contract.py",
+    "agent/scripts/sync_bug_skill.py",
     "agent/scripts/test_bug_sheet_contract.py",
 )
 
@@ -30,6 +33,8 @@ AUTHORITY_REFERENCES = (
     "agent/workflows/bug.md",
     "agent/workflows/review.md",
     "agent/sheet-contract.md",
+    "agent/config/sheet-update-modes.json",
+    "agent/skills/deepal-product-bug-handler/SKILL.md",
     "agent/bug-owners/registry.yaml",
     "agent/rules-version.md",
 )
@@ -98,7 +103,19 @@ def validate(root: Path, skill: Path) -> list[str]:
         if "只保留旧路径兼容" not in text:
             errors.append(f"兼容入口含义不明确：{relative}")
 
-    skill_text = read(skill)
+    canonical_skill_path = (
+        root / "agent/skills/deepal-product-bug-handler/SKILL.md"
+    )
+    canonical_skill_text = (
+        read(canonical_skill_path) if canonical_skill_path.is_file() else ""
+    )
+    if not skill.is_file():
+        errors.append(f"缺少已安装 Skill：{skill}")
+        skill_text = ""
+    else:
+        skill_text = read(skill)
+    if skill_text != canonical_skill_text:
+        errors.append("已安装 Skill 与 Git 内唯一模板不一致")
     for reference in (
         "agent/evidence-contract.md",
         "agent/output-contract.md",
@@ -123,23 +140,50 @@ def validate(root: Path, skill: Path) -> list[str]:
     for token in (
         "def build_patch_requests",
         "def validate_patch_readback",
-        '"recheck": frozenset(("C", "D", "G", "I", "J"))',
-        '"review": frozenset(("G", "H", "I", "J"))',
+        "def validate_append_readback",
+        "UPDATE_MODES_PATH",
+        "--row-number",
+        "--preview-fingerprint",
         '"fields": "userEnteredValue,textFormatRuns"',
     ):
         if token not in sheet_script:
             errors.append(f"写表脚本缺少已有行安全更新能力：{token}")
 
+    modes_path = root / "agent/config/sheet-update-modes.json"
+    if modes_path.is_file():
+        try:
+            modes_payload = json.loads(read(modes_path))
+            modes = modes_payload["modes"]
+            expected_modes = {
+                "recheck": {
+                    "allowed_columns": ["C", "D", "G", "I", "J"],
+                    "protected_columns": ["A", "B", "E", "F", "H"],
+                },
+                "review": {
+                    "allowed_columns": ["G", "H", "I", "J"],
+                    "protected_columns": ["A", "B", "C", "D", "E", "F"],
+                },
+            }
+            for mode, expected in expected_modes.items():
+                if mode not in modes:
+                    errors.append(f"更新模式配置缺少：{mode}")
+                    continue
+                for field, value in expected.items():
+                    if modes[mode].get(field) != value:
+                        errors.append(f"更新模式配置错误：{mode}.{field}")
+        except (KeyError, TypeError, json.JSONDecodeError):
+            errors.append("sheet-update-modes.json 无法解析")
+
     bug_workflow = read(root / "agent/workflows/bug.md")
     review_workflow = read(root / "agent/workflows/review.md")
     sheet_contract = read(root / "agent/sheet-contract.md")
-    if "普通二次复查更新 C、D、G、I、J" not in bug_workflow:
-        errors.append("Bug 流程未定义普通二次复查更新列")
-    if "原行 G、H、I、J" not in review_workflow:
-        errors.append("复盘流程未定义会议/复盘更新列")
-    for heading in ("`普通二次复查`", "`会议/复盘`"):
-        if heading not in sheet_contract:
-            errors.append(f"表格契约缺少已有行模式：{heading}")
+    if "sheet-update-modes.json` 的 `recheck`" not in bug_workflow:
+        errors.append("Bug 流程未消费 recheck 更新模式")
+    if "sheet-update-modes.json` 的 `review`" not in review_workflow:
+        errors.append("复盘流程未消费 review 更新模式")
+    for token in ("`普通二次复查 / recheck`", "`会议/复盘 / review`"):
+        if token not in sheet_contract:
+            errors.append(f"表格契约缺少已有行模式：{token}")
 
     dashboard_token = "Dashboard.jspa?selectPageId=17302"
     if dashboard_token not in read(root / "agent/context.md"):

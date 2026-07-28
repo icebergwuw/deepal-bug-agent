@@ -8,7 +8,7 @@
 
 1. 用户说“看 Bug 列表 / Bug 清单 / 待处理 Bug”且没有提供具体 Jira Key 时，先打开 `agent/context.md` 登记的 Jira Dashboard 17302；只读取用户指定范围，不因打开列表自动处理全部条目。
 2. 用户只发具体 Jira Bug 链接时，默认执行完整流程并更新对应负责人清单。
-3. 用户再次发送同一 Jira 或要求“再看 / 重新确认 / 二次处理”，只要输入不是会议纪要、leader/客户复盘材料，就继续走本流程；重新读取全部当前证据后可改原行 C、D、G、I、J。
+3. 用户再次发送同一 Jira 或要求“再看 / 重新确认 / 二次处理”，只要输入不是会议纪要、leader/客户复盘材料，就继续走本流程；重新读取全部当前证据后按 `agent/config/sheet-update-modes.json` 的 `recheck` 模式更新原行。
 4. 用户明确要求只读时，停在证据整理，不写表、不评论或流转 Jira。
 5. 当前负责人优先按用户指定；未指定时读取 Jira 当前经办人的显示姓名，用 `agent/bug-owners/registry.yaml` 的 `jira_display_names` 匹配；账号只作可选兜底。只有 `active + read_write` 可进入默认写表流程。
 6. 未匹配到人员时新增 `pending` 配置并停止写表，不得临时写入其他负责人页；`reference` 人员只参与资料检索。
@@ -43,7 +43,7 @@
 
 - 严格按 `agent/sheet-contract.md` 写当前负责人页。
 - 已有 Jira 更新原行；新 Jira 追加一行。写后回读 A:J，核对 B 公式、E 复选框、列位、行高和筛选边界。
-- 普通二次复查更新 C、D、G、I、J；保留 A、B、E、F、H。D 写本次重新核验后的当前 `decision_text`，不是把新结论绕写到 H。
+- 普通二次复查使用 `recheck` 模式；D 写本次重新核验后的当前 `decision_text`，不是把新结论绕写到 H。
 - 同步对应 `agent/bug-owners/<owner>/index.md`。索引以线上页为准，不凭历史静态清单追加。
 - 只改当前流程允许且本 Bug 必需的列，不覆盖 E/F；H 只由会议/复盘流程更新。
 

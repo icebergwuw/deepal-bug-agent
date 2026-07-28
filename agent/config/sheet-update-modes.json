@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "modes": {
+    "recheck": {
+      "label": "普通二次复查",
+      "allowed_columns": ["C", "D", "G", "I", "J"],
+      "protected_columns": ["A", "B", "E", "F", "H"]
+    },
+    "review": {
+      "label": "会议/复盘",
+      "allowed_columns": ["G", "H", "I", "J"],
+      "protected_columns": ["A", "B", "C", "D", "E", "F"]
+    }
+  }
+}

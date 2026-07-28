@@ -1,10 +1,10 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.2.0-trial.1`
+- 当前版本：`v1.2.0-trial.2`
 - 状态：`trial`
 - 生效日期：`2026-07-28`
-- 适用范围：`.gitignore`、`AGENTS.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`
-- Skill 消费端：`/Users/you.wu/.codex/skills/deepal-product-bug-handler/SKILL.md`，只加载本项目规则，不定义独立业务口径。
+- 适用范围：`.gitignore`、`AGENTS.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/sheet-update-modes.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`
+- Skill 唯一模板：`agent/skills/deepal-product-bug-handler/SKILL.md`；安装位置为 `/Users/you.wu/.codex/skills/deepal-product-bug-handler/SKILL.md`，安装副本不定义独立业务口径且必须与模板一致。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
 ## 版本规则
@@ -14,6 +14,54 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.2.0-trial.2 — 2026-07-28
+
+### 试行内容
+
+- 新增 `agent/config/sheet-update-modes.json`，作为 `recheck` 与 `review` 允许列/保护列的唯一机器可读来源；活动规则与脚本改为消费模式名。
+- 新增 Git 内 Skill 唯一模板和安装副本同步校验，修复 Skill 位于仓库外、无法随规则提交回滚的问题。
+- 新增行先复制格式、再设置 E 列校验、最后写入值与 `textFormatRuns`，避免后续格式复制影响富文本链接。
+- C、D、H、J 可见文本在生成请求前禁止显示长 URL；链接目标只接受完整 `http(s)` 原始入口。
+- 新增 `validate-append`，按输入逐格核对新增 A:J，并逐项比较 C、D、H、J 的可见文本和全部链接目标。
+- 已有行 `patch` 对外只接受表格可见的 1-based `row-number`，内部转换为 API `rowIndex`；manifest 同时记录两者。
+- 明确预览后、batchUpdate 前必须新鲜回读完整 A:J 并与预览 fingerprint 比较；不一致即停止，写后继续回读。
+
+### 修改原因
+
+- 原校验只要求 J 至少存在一个链接，多来源单元格缺少部分链接仍可能通过。
+- 原生成阶段允许长 URL，只有写后才能发现，可能先把错误内容写入线上表。
+- 原新增顺序为“写链接后复制格式”，与稳定的原生行写入顺序相反。
+- 零基行号容易与用户看到的表格行号混淆；外置 Skill 和多处列白名单也存在回滚、漂移风险。
+
+### 影响文件
+
+- `README.md`
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/config/sheet-update-modes.json`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/sync_bug_skill.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+
+### 验证案例
+
+- J 显示两个来源但只保留一个链接时，`validate-append` 必须失败。
+- C、D、H 或 J 可见文本含 `http://` / `https://` 时，生成请求前必须失败。
+- 新增请求前三步固定为 `copyPaste`、`setDataValidation`、`updateCells`。
+- 表格第 145 行输出 `sheetRow=145` 和 `rowIndex=144`。
+- Git 内 Skill 模板与安装副本逐字一致；任一副本漂移时架构校验失败。
+- 单元测试、架构校验、Skill 同步校验和 `git diff --check` 均通过。
+
+### 回滚口径
+
+- 通过 Git 新提交恢复 `v1.2.0-trial.1`，再执行 `python3 agent/scripts/sync_bug_skill.py --install` 同步对应 Skill；不执行 `git reset --hard`。
+- 回滚不得移除逐链接回读、写前长 URL 拦截或 1-based 行号保护。
 
 ## v1.2.0-trial.1 — 2026-07-28
 

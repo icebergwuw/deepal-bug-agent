@@ -10,12 +10,14 @@
 - Bug 调查和更新流程：`agent/workflows/bug.md`
 - 复盘、会议反馈和待办流程：`agent/workflows/review.md`
 - 线上 Bug 表 A:J 契约：`agent/sheet-contract.md`
+- 已有行更新模式白名单：`agent/config/sheet-update-modes.json`
 - 固定链接和背景资料：`agent/context.md`
 - 负责人注册表、状态和索引：`agent/bug-owners/registry.yaml`、`agent/bug-owners/`
 - 产品知识库：`agent/product-kb/`
 - 会议纪要和待办：`agent/meetings/`
 - 操作日志：`agent/logs/bug-actions/`
 - 机械写表与校验脚本：`agent/scripts/`
+- Git 内 Skill 唯一模板：`agent/skills/deepal-product-bug-handler/SKILL.md`
 - 历史快照和培训材料：`agent/archive/`
 
 ## 数据边界
@@ -32,5 +34,7 @@
 - 结论和各渠道输出规则只在 `agent/output-contract.md` 维护。
 - 执行顺序只在 `agent/workflows/` 维护。
 - 列职责和写表校验只在 `agent/sheet-contract.md` 维护。
+- 更新模式的允许列和保护列只在 `agent/config/sheet-update-modes.json` 维护。
+- 已安装 Skill 必须与 `agent/skills/deepal-product-bug-handler/SKILL.md` 完全一致。
 - 人员和线上数据源只在 `agent/bug-owners/registry.yaml` 维护。
 - 其他文件只能引用这些权威入口，不复制一套规则。

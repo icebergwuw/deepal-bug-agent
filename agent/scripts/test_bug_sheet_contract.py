@@ -3,10 +3,13 @@
 import unittest
 
 from bug_sheet_contract import (
+    PATCH_ALLOWED_COLUMNS,
+    PATCH_PROTECTED_COLUMNS,
     build_batch_requests,
     build_patch_requests,
     build_row,
     row_fingerprint,
+    validate_append_readback,
     validate_patch_readback,
     validate_readback,
 )
@@ -126,9 +129,58 @@ class BugSheetContractTest(unittest.TestCase):
     def test_append_request_submits_rich_text_runs(self) -> None:
         requests = build_batch_requests(123, 5, [self.item])
         self.assertEqual(
-            requests[0]["updateCells"]["fields"],
+            [next(iter(request)) for request in requests[:3]],
+            ["copyPaste", "setDataValidation", "updateCells"],
+        )
+        self.assertEqual(
+            requests[2]["updateCells"]["fields"],
             "userEnteredValue,textFormatRuns",
         )
+
+    def test_build_rejects_visible_url_before_write(self) -> None:
+        self.item["judgment"] = (
+            "结论：需要修复。\n"
+            "依据：https://drive.google.com/file/d/test\n"
+            "处理：研发处理。"
+        )
+        with self.assertRaisesRegex(ValueError, "不得显示原始长 URL"):
+            build_row(self.item)
+
+    def test_append_validation_requires_every_expected_link(self) -> None:
+        readback = self._readback_row()
+        readback["values"][9]["textFormatRuns"] = [
+            run
+            for run in readback["values"][9]["textFormatRuns"]
+            if run.get("format", {}).get("link", {}).get("uri")
+            != "https://drive.google.com/file/d/test"
+        ]
+        errors = validate_append_readback(
+            {"rowData": [readback]},
+            [self.item],
+        )
+        self.assertTrue(
+            any("J列链接目标不符" in error for error in errors),
+            errors,
+        )
+
+    def test_update_modes_come_from_complete_partition_config(self) -> None:
+        self.assertEqual(
+            PATCH_ALLOWED_COLUMNS["recheck"],
+            frozenset(("C", "D", "G", "I", "J")),
+        )
+        self.assertEqual(
+            PATCH_ALLOWED_COLUMNS["review"],
+            frozenset(("G", "H", "I", "J")),
+        )
+        all_columns = frozenset("ABCDEFGHIJ")
+        for mode in PATCH_ALLOWED_COLUMNS:
+            self.assertFalse(
+                PATCH_ALLOWED_COLUMNS[mode] & PATCH_PROTECTED_COLUMNS[mode]
+            )
+            self.assertEqual(
+                PATCH_ALLOWED_COLUMNS[mode] | PATCH_PROTECTED_COLUMNS[mode],
+                all_columns,
+            )
 
     def test_recheck_patch_is_column_scoped(self) -> None:
         before = self._readback_row()
@@ -168,7 +220,7 @@ class BugSheetContractTest(unittest.TestCase):
         }
         result = build_patch_requests(
             123,
-            5,
+            145,
             "ADS-TEST",
             "recheck",
             before,
@@ -176,6 +228,9 @@ class BugSheetContractTest(unittest.TestCase):
             changes,
         )
         self.assertEqual(result["changedColumns"], ["C", "D", "G", "I", "J"])
+        self.assertEqual(result["sheetRow"], 145)
+        self.assertEqual(result["rowIndex"], 144)
+        self.assertTrue(result["freshReadRequiredImmediatelyBeforeBatchUpdate"])
         self.assertEqual(len(result["requests"]), 5)
         self.assertEqual(
             result["requests"][0]["updateCells"]["fields"],
@@ -191,7 +246,7 @@ class BugSheetContractTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "fingerprint"):
             build_patch_requests(
                 123,
-                5,
+                6,
                 "ADS-TEST",
                 "recheck",
                 before,
@@ -201,7 +256,7 @@ class BugSheetContractTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "review 模式禁止修改列：D"):
             build_patch_requests(
                 123,
-                5,
+                6,
                 "ADS-TEST",
                 "review",
                 before,
@@ -234,7 +289,7 @@ class BugSheetContractTest(unittest.TestCase):
         }
         result = build_patch_requests(
             123,
-            5,
+            6,
             "ADS-TEST",
             "review",
             before,
