@@ -1,0 +1,77 @@
+schema_version: 1
+last_updated: "2026-07-22"
+
+routing:
+  explicit_user_owner_first: true
+  fallback_to_current_jira_assignee_display_name: true
+  account_match_is_optional: true
+  within_owner_duplicate: forbidden
+  cross_owner_duplicate: allowed_as_transfer_history
+
+statuses:
+  active: "参与当前 Jira 路由，可按默认 Bug 流程更新其线上页和本地索引"
+  reference: "只用于案例、方法和资料检索，不自动写回或接收 Jira 路由"
+  pending: "已知人员但账号、当前清单或写回边界未确认"
+  inactive: "停止接收新 Bug，仅保留历史资料"
+
+owners:
+  - id: "wu-you"
+    name: "吴优"
+    status: "active"
+    jira_display_names:
+      - "吴优"
+      - "You Wu"
+    jira_account: "you.wu"
+    write_mode: "read_write"
+    source_type: "google_sheet"
+    spreadsheet_id: "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs"
+    sheet_name: "bug"
+    sheet_gid: "2135747181"
+    local_index: "agent/bug-owners/wu-you/index.md"
+    profile: "agent/bug-owners/wu-you/README.md"
+
+  - id: "li-xin"
+    name: "李欣"
+    status: "active"
+    jira_display_names:
+      - "李欣"
+    jira_account: "xin.li03"
+    write_mode: "read_write"
+    source_type: "google_sheet"
+    spreadsheet_id: "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs"
+    sheet_name: "李欣bug"
+    sheet_gid: "149420397"
+    local_index: "agent/bug-owners/li-xin/index.md"
+    profile: "agent/bug-owners/li-xin/README.md"
+
+  - id: "feng-zhi-xiu"
+    name: "冯智秀"
+    status: "active"
+    jira_display_names:
+      - "冯智秀"
+    jira_account: "zhixiu.feng"
+    write_mode: "read_write"
+    source_type: "google_sheet"
+    spreadsheet_id: "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs"
+    sheet_name: "冯智秀bug"
+    sheet_gid: "1069511239"
+    local_index: "agent/bug-owners/feng-zhi-xiu/index.md"
+    profile: "agent/bug-owners/feng-zhi-xiu/README.md"
+
+  - id: "luo-zhiqin"
+    name: "罗稚钦"
+    status: "active"
+    jira_display_names:
+      - "罗稚钦"
+    jira_account: null
+    routing_aliases:
+      - "罗稚钦"
+    write_mode: "read_write"
+    source_type: "google_sheet"
+    spreadsheet_id: "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs"
+    sheet_name: "罗稚钦bug"
+    sheet_gid: "99343087"
+    local_index: "agent/bug-owners/luo-zhiqin/index.md"
+    profile: "agent/bug-owners/luo-zhiqin/README.md"
+    last_source_read: "2026-07-16"
+    note: "按 Jira 经办人显示名罗稚钦自动路由；账号不是必填项"
