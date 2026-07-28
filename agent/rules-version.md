@@ -1,9 +1,9 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.1.0-trial.3`
+- 当前版本：`v1.2.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-07-28`
-- 适用范围：`.gitignore`、`AGENTS.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`
+- 适用范围：`.gitignore`、`AGENTS.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`
 - Skill 消费端：`/Users/you.wu/.codex/skills/deepal-product-bug-handler/SKILL.md`，只加载本项目规则，不定义独立业务口径。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
@@ -14,6 +14,47 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.2.0-trial.1 — 2026-07-28
+
+### 试行内容
+
+- 将普通二次复查与会议/复盘拆成两种已有行更新模式。
+- 用户再次发送同一 Jira 或要求重新查看时，仍走普通 Bug 流程；重新核验后可按需更新原行 C、D、G、I、J，保留 A、B、E、F、H。
+- 用户提供会议纪要、可姐/leader 教学、客户复盘或明确复盘材料时，按复盘流程更新 G、H、I、J，保留 A、B、C、D、E、F。
+- 写表脚本新增已有行列级 `patch`、写前 A:J fingerprint、目标列白名单、变更 manifest 和写后保护列校验。
+- 新增和已有行写入均明确提交 `textFormatRuns`，避免只写入短标签文字而丢失富文本链接。
+
+### 修改原因
+
+- 普通二次查看仍应修正初次处理阶段的原列，不能因为是第二次处理就把结论绕写到 H。
+- 只有会议纪要、leader/客户复盘等复盘材料才形成 H 的最终判断。
+- 原追加请求只声明 `userEnteredValue`，未明确提交已生成的 `textFormatRuns`，存在短标签不可点击风险。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `/Users/you.wu/.codex/skills/deepal-product-bug-handler/SKILL.md`
+
+### 验证案例
+
+- 普通二次复查允许 C、D、G、I、J，拒绝 H、E、F。
+- 会议/复盘允许 G、H、I、J，拒绝 C、D、E、F。
+- fingerprint 不一致时停止生成请求；写后未声明列发生变化时校验失败。
+- C、D、H、J 更新请求字段包含 `userEnteredValue,textFormatRuns`。
+- `python3 agent/scripts/test_bug_sheet_contract.py` 与 `python3 agent/scripts/validate_rule_architecture.py` 均通过。
+
+### 回滚口径
+
+- 通过 Git 新提交恢复 `v1.1.0-trial.3` 的规则和脚本，不执行 `git reset --hard`。
+- 回滚不得恢复整行覆盖已有 Bug，也不得移除 C/D/H/J 可点击短标签的回读要求。
 
 ## v1.1.0-trial.3 — 2026-07-28
 

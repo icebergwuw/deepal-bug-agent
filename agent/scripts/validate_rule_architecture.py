@@ -20,6 +20,8 @@ REQUIRED_FILES = (
     "agent/sheet-contract.md",
     "agent/context.md",
     "agent/bug-owners/registry.yaml",
+    "agent/scripts/bug_sheet_contract.py",
+    "agent/scripts/test_bug_sheet_contract.py",
 )
 
 AUTHORITY_REFERENCES = (
@@ -118,6 +120,26 @@ def validate(root: Path, skill: Path) -> list[str]:
         errors.append("写表脚本仍包含旧多 HYPERLINK 生成器")
     if "link_list_cell(links)" not in sheet_script:
         errors.append("写表脚本未使用富文本链接列表")
+    for token in (
+        "def build_patch_requests",
+        "def validate_patch_readback",
+        '"recheck": frozenset(("C", "D", "G", "I", "J"))',
+        '"review": frozenset(("G", "H", "I", "J"))',
+        '"fields": "userEnteredValue,textFormatRuns"',
+    ):
+        if token not in sheet_script:
+            errors.append(f"写表脚本缺少已有行安全更新能力：{token}")
+
+    bug_workflow = read(root / "agent/workflows/bug.md")
+    review_workflow = read(root / "agent/workflows/review.md")
+    sheet_contract = read(root / "agent/sheet-contract.md")
+    if "普通二次复查更新 C、D、G、I、J" not in bug_workflow:
+        errors.append("Bug 流程未定义普通二次复查更新列")
+    if "原行 G、H、I、J" not in review_workflow:
+        errors.append("复盘流程未定义会议/复盘更新列")
+    for heading in ("`普通二次复查`", "`会议/复盘`"):
+        if heading not in sheet_contract:
+            errors.append(f"表格契约缺少已有行模式：{heading}")
 
     dashboard_token = "Dashboard.jspa?selectPageId=17302"
     if dashboard_token not in read(root / "agent/context.md"):

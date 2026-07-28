@@ -2,7 +2,14 @@
 
 import unittest
 
-from bug_sheet_contract import build_row, validate_readback
+from bug_sheet_contract import (
+    build_batch_requests,
+    build_patch_requests,
+    build_row,
+    row_fingerprint,
+    validate_patch_readback,
+    validate_readback,
+)
 
 
 class BugSheetContractTest(unittest.TestCase):
@@ -27,6 +34,23 @@ class BugSheetContractTest(unittest.TestCase):
                 {"label": "天气PRD", "url": "https://drive.google.com/file/d/test"},
             ],
         }
+
+    def _readback_row(self) -> dict:
+        cells = build_row(self.item)
+        for cell in cells:
+            entered = cell.get("userEnteredValue", {})
+            if "stringValue" in entered:
+                cell["formattedValue"] = entered["stringValue"]
+                cell["effectiveValue"] = {"stringValue": entered["stringValue"]}
+            elif "boolValue" in entered:
+                cell["formattedValue"] = str(entered["boolValue"]).upper()
+                cell["effectiveValue"] = {"boolValue": entered["boolValue"]}
+        cells[1]["formattedValue"] = "ADS-TEST｜富文本链接回归"
+        cells[1]["effectiveValue"] = {
+            "stringValue": "ADS-TEST｜富文本链接回归"
+        }
+        cells[4]["dataValidation"] = {"condition": {"type": "BOOLEAN"}}
+        return {"values": cells}
 
     def test_build_uses_independent_rich_text_links(self) -> None:
         row = build_row(self.item)
@@ -98,6 +122,164 @@ class BugSheetContractTest(unittest.TestCase):
             expected_keys=["ADS-TEST"],
         )
         self.assertIn("第1行 J列使用了禁止的多 HYPERLINK 拼接", errors)
+
+    def test_append_request_submits_rich_text_runs(self) -> None:
+        requests = build_batch_requests(123, 5, [self.item])
+        self.assertEqual(
+            requests[0]["updateCells"]["fields"],
+            "userEnteredValue,textFormatRuns",
+        )
+
+    def test_recheck_patch_is_column_scoped(self) -> None:
+        before = self._readback_row()
+        changes = {
+            "C": {
+                "text": "重新核验：天气PRD定义目标行为。",
+                "links": [
+                    {
+                        "label": "天气PRD",
+                        "url": "https://drive.google.com/file/d/test",
+                    }
+                ],
+            },
+            "D": {
+                "text": "结论：需要修复。\n依据：天气PRD。\n处理：语音研发处理。",
+                "links": [
+                    {
+                        "label": "天气PRD",
+                        "url": "https://drive.google.com/file/d/test",
+                    }
+                ],
+            },
+            "G": "可转语音",
+            "I": "待车端回归。",
+            "J": {
+                "links": [
+                    {
+                        "label": "Jira原票",
+                        "url": "http://jira.i-tetris.com/browse/ADS-TEST",
+                    },
+                    {
+                        "label": "天气PRD",
+                        "url": "https://drive.google.com/file/d/test",
+                    },
+                ]
+            },
+        }
+        result = build_patch_requests(
+            123,
+            5,
+            "ADS-TEST",
+            "recheck",
+            before,
+            row_fingerprint(before),
+            changes,
+        )
+        self.assertEqual(result["changedColumns"], ["C", "D", "G", "I", "J"])
+        self.assertEqual(len(result["requests"]), 5)
+        self.assertEqual(
+            result["requests"][0]["updateCells"]["fields"],
+            "userEnteredValue,textFormatRuns",
+        )
+        self.assertEqual(
+            result["requests"][2]["updateCells"]["fields"],
+            "userEnteredValue",
+        )
+
+    def test_patch_rejects_stale_fingerprint_and_forbidden_columns(self) -> None:
+        before = self._readback_row()
+        with self.assertRaisesRegex(ValueError, "fingerprint"):
+            build_patch_requests(
+                123,
+                5,
+                "ADS-TEST",
+                "recheck",
+                before,
+                "stale",
+                {"G": "待复核"},
+            )
+        with self.assertRaisesRegex(ValueError, "review 模式禁止修改列：D"):
+            build_patch_requests(
+                123,
+                5,
+                "ADS-TEST",
+                "review",
+                before,
+                row_fingerprint(before),
+                {"D": {"text": "不能覆盖初次判断", "links": []}},
+            )
+
+    def test_review_patch_allows_g_h_i_j_and_preserves_other_columns(self) -> None:
+        before = self._readback_row()
+        changes = {
+            "G": "可关闭",
+            "H": {
+                "text": "结论：客户接受现状。\n依据：客户复盘。\n处理：结束跟进；吴优处理。",
+                "links": [
+                    {
+                        "label": "客户复盘",
+                        "url": "https://drive.google.com/file/d/review",
+                    }
+                ],
+            },
+            "I": "无。",
+            "J": {
+                "links": [
+                    {
+                        "label": "客户复盘",
+                        "url": "https://drive.google.com/file/d/review",
+                    }
+                ]
+            },
+        }
+        result = build_patch_requests(
+            123,
+            5,
+            "ADS-TEST",
+            "review",
+            before,
+            row_fingerprint(before),
+            changes,
+        )
+        self.assertEqual(result["changedColumns"], ["G", "H", "I", "J"])
+
+        after = self._readback_row()
+        for column, spec in changes.items():
+            index = ord(column) - ord("A")
+            patch_cell = result["requests"][
+                result["changedColumns"].index(column)
+            ]["updateCells"]["rows"][0]["values"][0]
+            after["values"][index] = patch_cell
+            if column in ("G", "I"):
+                after["values"][index]["formattedValue"] = spec
+                after["values"][index]["effectiveValue"] = {"stringValue": spec}
+            elif column == "J":
+                visible = "\n".join(link["label"] for link in spec["links"])
+                after["values"][index]["formattedValue"] = visible
+                after["values"][index]["effectiveValue"] = {
+                    "stringValue": visible
+                }
+            else:
+                after["values"][index]["formattedValue"] = spec["text"]
+                after["values"][index]["effectiveValue"] = {
+                    "stringValue": spec["text"]
+                }
+
+        self.assertEqual(
+            validate_patch_readback(before, after, "ADS-TEST", "review", changes),
+            [],
+        )
+        after["values"][5]["userEnteredValue"] = {"stringValue": "被误覆盖"}
+        self.assertIn(
+            "F 列未声明修改但写后发生变化",
+            validate_patch_readback(
+                before,
+                after,
+                "ADS-TEST",
+                "review",
+                changes,
+            ),
+        )
 
 
 if __name__ == "__main__":

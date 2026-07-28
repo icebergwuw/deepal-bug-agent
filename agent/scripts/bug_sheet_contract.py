@@ -2,11 +2,12 @@
 """机械化生成和校验 bug 表写入契约。
 
 这个脚本只处理稳定、重复的表格层动作：B 列 HYPERLINK 公式、十列行结构、
-C/D/H/J 富文本链接、BOOLEAN 复选框、格式复制、自动行高、筛选边界和回读校验。
+C/D/H/J 富文本链接、BOOLEAN 复选框、已有行列级更新、格式复制、自动行高、
+筛选边界和回读校验。
 
 它不读取 Jira，不判断产品口径，不解释评论，不调用 Google API，也不替代
-Alchemy/Drive 证据判断。输入应先由人工或上层流程整理成 JSON。本脚本的 build
-只用于追加新行；更新已有 Bug 必须做列级定向写入，不能用整行 payload 覆盖 F/H。
+Alchemy/Drive 证据判断。输入应先由人工或上层流程整理成 JSON。`build` 只用于
+追加新行；`patch` 用于更新已有 Bug，并按普通二次复查或会议复盘模式限制列范围。
 
 build 示例：
     python3 agent/scripts/bug_sheet_contract.py build \
@@ -15,15 +16,26 @@ build 示例：
 validate 示例：
     python3 agent/scripts/bug_sheet_contract.py validate < readback.json
 
+snapshot / patch 示例：
+    python3 agent/scripts/bug_sheet_contract.py snapshot < current-row.json
+    python3 agent/scripts/bug_sheet_contract.py patch \
+      --sheet-id 2135747181 --row-index 144 --key ADS-47039 \
+      --mode recheck --expected-fingerprint <fingerprint> < patch.json
+
 rows.json 是一个对象数组，每项至少包含 key、summary、info、judgment、status、
 note；可选 date、owner_judgment、review_judgment、links、info_links、
 judgment_links、review_links。链接数组元素统一为 {"label": "...", "url": "..."}。
 旧字段 wu_you 继续兼容。
+
+patch.json 包含 `current_row` 和 `changes`。`changes` 使用列字母作为 key：
+C/D/H 为 `{"text": "...", "links": [...]}`，G/I 为字符串，J 为
+`{"links": [...]}`。`recheck` 只允许 C/D/G/I/J；`review` 只允许 G/H/I/J。
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from typing import Any
@@ -41,6 +53,13 @@ COLUMNS = (
     "备注",
     "相关文档",
 )
+
+COLUMN_INDEX = {chr(ord("A") + index): index for index in range(len(COLUMNS))}
+PATCH_ALLOWED_COLUMNS = {
+    "recheck": frozenset(("C", "D", "G", "I", "J")),
+    "review": frozenset(("G", "H", "I", "J")),
+}
+RICH_TEXT_COLUMNS = frozenset(("C", "D", "H", "J"))
 
 
 def _formula_text(value: str) -> str:
@@ -124,6 +143,229 @@ def link_list_cell(links: Any) -> dict[str, Any]:
     return rich_text_cell(text, normalized)
 
 
+def _one_row(payload: Any) -> dict[str, Any]:
+    """Return exactly one A:J row from a row object or readback payload."""
+
+    if isinstance(payload, dict) and isinstance(payload.get("values"), list):
+        row = payload
+    else:
+        rows = _readback_rows(payload)
+        if len(rows) != 1:
+            raise ValueError(f"已有行操作必须精确回读 1 行，实际 {len(rows)} 行")
+        row = rows[0]
+    if len(row.get("values", [])) != len(COLUMNS):
+        raise ValueError(
+            f"已有行必须包含完整 A:J，实际 {len(row.get('values', []))} 列"
+        )
+    return row
+
+
+def _cell_write_state(cell: dict[str, Any]) -> dict[str, Any]:
+    """Return fields that must not change when a column is protected."""
+
+    return {
+        key: cell[key]
+        for key in ("userEnteredValue", "textFormatRuns", "dataValidation")
+        if key in cell
+    }
+
+
+def row_fingerprint(payload: Any) -> str:
+    """Fingerprint writable A:J state for a fresh-read precondition."""
+
+    row = _one_row(payload)
+    state = [_cell_write_state(cell) for cell in row["values"]]
+    encoded = json.dumps(
+        state,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _visible_text(cell: dict[str, Any]) -> str:
+    if "formattedValue" in cell:
+        return str(cell["formattedValue"])
+    effective = cell.get("effectiveValue", {})
+    for key in ("stringValue", "numberValue", "boolValue"):
+        if key in effective:
+            return str(effective[key])
+    entered = cell.get("userEnteredValue", {})
+    for key in ("stringValue", "formulaValue", "numberValue", "boolValue"):
+        if key in entered:
+            return str(entered[key])
+    return ""
+
+
+def _link_uris(cell: dict[str, Any]) -> list[str]:
+    return [
+        str(uri)
+        for run in cell.get("textFormatRuns", [])
+        if (uri := run.get("format", {}).get("link", {}).get("uri"))
+    ]
+
+
+def _patch_cell(column: str, spec: Any) -> tuple[dict[str, Any], str, list[str]]:
+    """Build one target cell plus its expected visible text and link targets."""
+
+    if column in ("G", "I"):
+        if not isinstance(spec, str):
+            raise ValueError(f"{column} 列变更必须是字符串")
+        return _cell(spec), spec, []
+
+    if not isinstance(spec, dict):
+        raise ValueError(f"{column} 列变更必须是对象")
+    if column == "J":
+        links = _normalize_links(spec.get("links"))
+        cell = link_list_cell(links)
+        return cell, "\n".join(link["label"] for link in links), [
+            link["url"] for link in links
+        ]
+
+    if "text" not in spec:
+        raise ValueError(f"{column} 列变更缺少 text")
+    text = str(spec["text"])
+    links = _normalize_links(spec.get("links"))
+    return rich_text_cell(text, links), text, [link["url"] for link in links]
+
+
+def build_patch_requests(
+    sheet_id: int,
+    row_index: int,
+    key: str,
+    mode: str,
+    current_row: Any,
+    expected_fingerprint: str,
+    changes: dict[str, Any],
+) -> dict[str, Any]:
+    """Build column-scoped requests for one existing Bug row."""
+
+    if mode not in PATCH_ALLOWED_COLUMNS:
+        raise ValueError(f"未知更新模式：{mode}")
+    if row_index < 1:
+        raise ValueError("row_index 必须指向数据行，不能是表头")
+    row = _one_row(current_row)
+    actual_fingerprint = row_fingerprint(row)
+    if not expected_fingerprint or actual_fingerprint != expected_fingerprint:
+        raise ValueError(
+            "写前 A:J 已变化或缺少有效 fingerprint；停止生成更新请求并重新回读"
+        )
+
+    b_text = _visible_text(row["values"][COLUMN_INDEX["B"]])
+    if not (b_text.startswith(f"{key}｜") or b_text.startswith(f"{key}|")):
+        raise ValueError(f"B 列 Jira Key 不匹配：实际 {b_text!r}，预期 {key}")
+    if not isinstance(changes, dict) or not changes:
+        raise ValueError("changes 必须包含至少一个目标列")
+
+    columns = set(changes)
+    unknown = columns - set(COLUMN_INDEX)
+    if unknown:
+        raise ValueError(f"存在未知列：{','.join(sorted(unknown))}")
+    forbidden = columns - PATCH_ALLOWED_COLUMNS[mode]
+    if forbidden:
+        raise ValueError(
+            f"{mode} 模式禁止修改列：{','.join(sorted(forbidden))}"
+        )
+
+    requests: list[dict[str, Any]] = []
+    manifest: list[dict[str, Any]] = []
+    expected_after: dict[str, dict[str, Any]] = {}
+    for column in sorted(columns, key=COLUMN_INDEX.__getitem__):
+        column_index = COLUMN_INDEX[column]
+        cell, visible, uris = _patch_cell(column, changes[column])
+        fields = "userEnteredValue,textFormatRuns" if column in RICH_TEXT_COLUMNS else "userEnteredValue"
+        requests.append(
+            {
+                "updateCells": {
+                    "start": {
+                        "sheetId": sheet_id,
+                        "rowIndex": row_index,
+                        "columnIndex": column_index,
+                    },
+                    "rows": [{"values": [cell]}],
+                    "fields": fields,
+                }
+            }
+        )
+        manifest.append(
+            {
+                "column": column,
+                "before": _visible_text(row["values"][column_index]),
+                "after": visible,
+                "links": uris,
+            }
+        )
+        expected_after[column] = {"visible": visible, "links": uris}
+
+    return {
+        "key": key,
+        "mode": mode,
+        "sheetId": sheet_id,
+        "rowIndex": row_index,
+        "beforeFingerprint": actual_fingerprint,
+        "changedColumns": [
+            item["column"] for item in manifest
+        ],
+        "manifest": manifest,
+        "expectedAfter": expected_after,
+        "requests": requests,
+    }
+
+
+def validate_patch_readback(
+    before_row: Any,
+    after_row: Any,
+    key: str,
+    mode: str,
+    changes: dict[str, Any],
+) -> list[str]:
+    """Validate target cells and prove every unsubmitted column stayed unchanged."""
+
+    errors: list[str] = []
+    if mode not in PATCH_ALLOWED_COLUMNS:
+        return [f"未知更新模式：{mode}"]
+    before = _one_row(before_row)
+    after = _one_row(after_row)
+    changed_columns = set(changes)
+
+    b_text = _visible_text(after["values"][COLUMN_INDEX["B"]])
+    if not (b_text.startswith(f"{key}｜") or b_text.startswith(f"{key}|")):
+        errors.append(f"B 列 Jira Key 不匹配：{b_text!r}")
+
+    forbidden = changed_columns - PATCH_ALLOWED_COLUMNS[mode]
+    if forbidden:
+        errors.append(f"{mode} 模式出现禁止列：{','.join(sorted(forbidden))}")
+
+    for column, column_index in COLUMN_INDEX.items():
+        before_cell = before["values"][column_index]
+        after_cell = after["values"][column_index]
+        if column not in changed_columns:
+            if _cell_write_state(before_cell) != _cell_write_state(after_cell):
+                errors.append(f"{column} 列未声明修改但写后发生变化")
+            continue
+
+        try:
+            _cell_data, expected_visible, expected_links = _patch_cell(
+                column, changes[column]
+            )
+        except ValueError as exc:
+            errors.append(str(exc))
+            continue
+        actual_visible = _visible_text(after_cell)
+        if actual_visible != expected_visible:
+            errors.append(
+                f"{column} 列可见文本不符：实际 {actual_visible!r}，预期 {expected_visible!r}"
+            )
+        if column in RICH_TEXT_COLUMNS and _link_uris(after_cell) != expected_links:
+            errors.append(
+                f"{column} 列链接目标不符：实际 {_link_uris(after_cell)!r}，"
+                f"预期 {expected_links!r}"
+            )
+
+    return errors
+
+
 def build_row(item: dict[str, Any], date: str = "") -> list[dict[str, Any]]:
     """Convert one human-reviewed bug object into the fixed A:J cell payload."""
 
@@ -168,7 +410,7 @@ def build_batch_requests(
             "updateCells": {
                 "start": {"sheetId": sheet_id, "rowIndex": start_row_index, "columnIndex": 0},
                 "rows": [{"values": row} for row in rows],
-                "fields": "userEnteredValue",
+                "fields": "userEnteredValue,textFormatRuns",
             }
         },
         {
@@ -320,6 +562,21 @@ def main(argv: list[str] | None = None) -> int:
     validate = sub.add_parser("validate", help="校验 get_spreadsheet_cells 回读 JSON")
     validate.add_argument("--expected-keys", nargs="*")
 
+    sub.add_parser("snapshot", help="读取完整 A:J 后生成写前 fingerprint")
+
+    patch = sub.add_parser("patch", help="为已有 Bug 生成列级定向更新请求")
+    patch.add_argument("--sheet-id", type=int, required=True)
+    patch.add_argument("--row-index", type=int, required=True)
+    patch.add_argument("--key", required=True)
+    patch.add_argument("--mode", choices=sorted(PATCH_ALLOWED_COLUMNS), required=True)
+    patch.add_argument("--expected-fingerprint", required=True)
+
+    validate_patch = sub.add_parser("validate-patch", help="校验已有 Bug 列级更新回读")
+    validate_patch.add_argument("--key", required=True)
+    validate_patch.add_argument(
+        "--mode", choices=sorted(PATCH_ALLOWED_COLUMNS), required=True
+    )
+
     args = parser.parse_args(argv)
     payload = _load_json(sys.stdin)
 
@@ -337,6 +594,46 @@ def main(argv: list[str] | None = None) -> int:
         json.dump({"requests": requests}, sys.stdout, ensure_ascii=False, indent=2)
         sys.stdout.write("\n")
         return 0
+
+    if args.command == "snapshot":
+        json.dump(
+            {"fingerprint": row_fingerprint(payload)},
+            sys.stdout,
+            ensure_ascii=False,
+            indent=2,
+        )
+        sys.stdout.write("\n")
+        return 0
+
+    if args.command == "patch":
+        if not isinstance(payload, dict):
+            parser.error("patch 输入必须是 JSON 对象")
+        result = build_patch_requests(
+            args.sheet_id,
+            args.row_index,
+            args.key,
+            args.mode,
+            payload.get("current_row"),
+            args.expected_fingerprint,
+            payload.get("changes"),
+        )
+        json.dump(result, sys.stdout, ensure_ascii=False, indent=2)
+        sys.stdout.write("\n")
+        return 0
+
+    if args.command == "validate-patch":
+        if not isinstance(payload, dict):
+            parser.error("validate-patch 输入必须是 JSON 对象")
+        errors = validate_patch_readback(
+            payload.get("before_row"),
+            payload.get("after_row"),
+            args.key,
+            args.mode,
+            payload.get("changes"),
+        )
+        json.dump({"ok": not errors, "errors": errors}, sys.stdout, ensure_ascii=False, indent=2)
+        sys.stdout.write("\n")
+        return 0 if not errors else 1
 
     errors = validate_readback(payload, expected_keys=args.expected_keys or None)
     json.dump({"ok": not errors, "errors": errors}, sys.stdout, ensure_ascii=False, indent=2)
