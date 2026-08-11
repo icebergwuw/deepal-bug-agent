@@ -1,0 +1,155 @@
+[
+  {
+    "row": 131,
+    "key": "PC-38056",
+    "changes": {
+      "C": {
+        "text": "现象：C673-ICA高德个人中心已登录，query‘登出’不执行。[Jira原票·描述/2026-07-16评论]\n正式边界：现行可见配置第527行只定义已登录页navigation_account_unbind的‘解绑/解绑账号/账号解绑’，未定义‘登出=解绑’。[深蓝可见配置·地图-高德第527行]\n当前语音：Alchemy BIGSUR把‘登出’下发为meta_id=1864‘登录个人中心账号’，深蓝项目未检索到对应继承功能点。[Alchemy在线对话·BIGSUR·登出][Alchemy标准功能1670·meta_id 1864]",
+        "links": [
+          {"label": "Jira原票·描述/2026-07-16评论", "url": "http://jira.i-tetris.com/browse/PC-38056"},
+          {"label": "深蓝可见配置·地图-高德第527行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy在线对话·BIGSUR·登出", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Alchemy标准功能1670·meta_id 1864", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1670"}
+        ]
+      },
+      "D": {
+        "text": "结论：当前不能定义‘登出’应直接执行账号解绑；高德已登录页正式配置仅覆盖‘解绑’，而Alchemy当前把‘登出’错误映射为登录功能。\n依据：深蓝可见配置Sheet‘地图-高德’第527行仅定义navigation_account_unbind的‘解绑’词；Alchemy BIGSUR‘登出’当前落meta_id=1864‘登录个人中心账号’；Jira 2026-07-16 14:03/14:10评论记录旧路由被拒绝且未进入可见交互。\n处理：先确认并补齐‘登出’与‘解绑’的正式等价词配置，再按新配置复测语音路由；地图可见配置负责人处理。",
+        "links": [
+          {"label": "深蓝可见配置Sheet‘地图-高德’第527行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy BIGSUR‘登出’当前落meta_id=1864‘登录个人中心账号’", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Jira 2026-07-16 14:03/14:10评论", "url": "http://jira.i-tetris.com/browse/PC-38056"}
+        ]
+      },
+      "G": "待复核",
+      "I": "缺‘登出=解绑’正式定义；确认词义并补配置后复测",
+      "J": {"links": [
+        {"label": "Jira原票·描述/2026-07-16评论", "url": "http://jira.i-tetris.com/browse/PC-38056"},
+        {"label": "可见配置·地图-高德第527行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+        {"label": "Alchemy在线对话·BIGSUR·登出", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+        {"label": "Alchemy标准功能1670·meta_id 1864", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1670"}
+      ]}
+    }
+  },
+  {
+    "row": 132,
+    "key": "PC-38036",
+    "changes": {
+      "C": {
+        "text": "场景：C673-ICA高德设置中‘避开限行’已开启，query‘选择避开限行’，测试期望关闭。[Jira原票·描述/2026-07-16 11:54评论]\n正式边界：已开启态第537行navigation_avoid_restriction_off只支持点击/关闭/退出，不支持‘选择’；第536行的选择/开启只属于未开启态。[深蓝可见配置·地图-高德第536/537行]\n当前语音：Alchemy BIGSUR落meta_id=1919不支持兜底，标准功能1442与深蓝项目24561已核验。[Alchemy在线对话·BIGSUR·选择避开限行][Alchemy标准1442/项目24561·meta_id 1919]",
+        "links": [
+          {"label": "Jira原票·描述/2026-07-16 11:54评论", "url": "http://jira.i-tetris.com/browse/PC-38036"},
+          {"label": "深蓝可见配置·地图-高德第536/537行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy在线对话·BIGSUR·选择避开限行", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Alchemy标准1442/项目24561·meta_id 1919", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1442"}
+        ]
+      },
+      "D": {
+        "text": "结论：测试预期不成立；避开限行已开启时，‘选择避开限行’不等于关闭，当前按不支持处理符合状态化配置。\n依据：深蓝可见配置Sheet‘地图-高德’第537行的navigation_avoid_restriction_off仅支持点击/关闭/退出；Alchemy BIGSUR‘选择避开限行’当前落meta_id=1919不支持兜底；Jira 2026-07-16 11:54评论确认已开启态未配置‘选择’。\n处理：关闭本Bug，测试改用‘关闭/退出避开限行’验证关闭能力，并分别覆盖未开启态的开启词；测试负责人处理。",
+        "links": [
+          {"label": "深蓝可见配置Sheet‘地图-高德’第537行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy BIGSUR‘选择避开限行’当前落meta_id=1919不支持兜底", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Jira 2026-07-16 11:54评论", "url": "http://jira.i-tetris.com/browse/PC-38036"}
+        ]
+      },
+      "G": "可关闭",
+      "I": "已开启态关闭只支持点击/关闭/退出；测试按状态词回归",
+      "J": {"links": [
+        {"label": "Jira原票·描述/2026-07-16 11:54评论", "url": "http://jira.i-tetris.com/browse/PC-38036"},
+        {"label": "可见配置·地图-高德第536/537行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+        {"label": "Alchemy在线对话·BIGSUR·选择避开限行", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+        {"label": "Alchemy标准1442/项目24561·meta_id 1919", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1442"}
+      ]}
+    }
+  },
+  {
+    "row": 133,
+    "key": "PC-38029",
+    "changes": {
+      "C": {
+        "text": "现象：C673-ICA高德登录页说‘同意协议/勾选’未勾选协议。[Jira原票·描述/2026-07-16 11:36评论]\n正式边界：第521行navigation_account_select_license只配置完整短语‘勾选协议/勾选账号协议/勾选绑定协议’及点击/选择，未定义‘同意协议’或孤立‘勾选’的泛化。[深蓝可见配置·地图-高德第521行]\n当前语音：‘同意协议’仅回复已同意但无meta_id/operation；‘勾选’落meta_id=2820并拒绝，执行链不完整。[Alchemy在线对话·BIGSUR·同意协议/勾选]",
+        "links": [
+          {"label": "Jira原票·描述/2026-07-16 11:36评论", "url": "http://jira.i-tetris.com/browse/PC-38029"},
+          {"label": "深蓝可见配置·地图-高德第521行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy在线对话·BIGSUR·同意协议/勾选", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="}
+        ]
+      },
+      "D": {
+        "text": "结论：协议勾选节点存在，但‘同意协议/勾选’是否应命中尚不能定责；当前Alchemy未返回完整meta_id与operation链路。\n依据：深蓝可见配置Sheet‘地图-高德’第521行仅配置‘勾选协议/勾选账号协议/勾选绑定协议’及点击/选择；Alchemy BIGSUR‘同意协议’无meta_id/operation，‘勾选’落meta_id=2820并拒绝；Jira 2026-07-16 11:36评论给出的节点配置与现行表一致。\n处理：核对分类、operation及项目功能点，并确认‘同意协议/勾选’的正式泛化边界后再定转语音或需求；语音可见路由负责人处理。",
+        "links": [
+          {"label": "深蓝可见配置Sheet‘地图-高德’第521行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy BIGSUR‘同意协议’无meta_id/operation，‘勾选’落meta_id=2820并拒绝", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Jira 2026-07-16 11:36评论", "url": "http://jira.i-tetris.com/browse/PC-38029"}
+        ]
+      },
+      "G": "待复核",
+      "I": "缺原话meta_id/operation及正式泛化边界；补齐后再定责",
+      "J": {"links": [
+        {"label": "Jira原票·描述/2026-07-16 11:36评论", "url": "http://jira.i-tetris.com/browse/PC-38029"},
+        {"label": "可见配置·地图-高德第521行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+        {"label": "Alchemy在线对话·BIGSUR·同意协议/勾选", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="}
+      ]}
+    }
+  },
+  {
+    "row": 134,
+    "key": "PC-38026",
+    "changes": {
+      "C": {
+        "text": "场景：C673-ICA高德首页充电站已选中，再说‘选择充电站/点击充电站’不执行。[Jira原票·描述/2026-07-16 10:08评论]\n正式缺口：第7行只定义未选中态navigation_shortcut_bar_charging_station；全表未找到评论所述navigation_shortcut_bar_hide_charging_station或取消/隐藏充电站节点。[深蓝可见配置·地图-高德第7行/已选中态检索]\n当前语音：‘选择充电站’落meta_id=1919不支持，‘点击充电站’落meta_id=1208搜索充电站，两个结果不一致。[Alchemy在线对话·BIGSUR·选择/点击充电站][Alchemy标准1429/项目24548·meta_id 1208]",
+        "links": [
+          {"label": "Jira原票·描述/2026-07-16 10:08评论", "url": "http://jira.i-tetris.com/browse/PC-38026"},
+          {"label": "深蓝可见配置·地图-高德第7行/已选中态检索", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy在线对话·BIGSUR·选择/点击充电站", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Alchemy标准1429/项目24548·meta_id 1208", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1429"}
+        ]
+      },
+      "D": {
+        "text": "结论：不能按‘已选中态仅支持隐藏/取消’直接关闭；现行正式表缺少研发评论所述的已选中态节点，且两句原话当前路由不一致。\n依据：深蓝可见配置Sheet‘地图-高德’第7行只定义未选中态navigation_shortcut_bar_charging_station；全表未找到navigation_shortcut_bar_hide_charging_station；Alchemy BIGSUR‘选择充电站’落meta_id=1919，而‘点击充电站’落meta_id=1208；Jira 2026-07-16 10:08评论仅说明当前节点切换实现。\n处理：确认已选中态正式节点、目标操作和词表，补齐配置后统一复测‘选择/点击充电站’；地图可见配置负责人处理。",
+        "links": [
+          {"label": "深蓝可见配置Sheet‘地图-高德’第7行", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "全表未找到navigation_shortcut_bar_hide_charging_station", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+          {"label": "Alchemy BIGSUR‘选择充电站’落meta_id=1919，而‘点击充电站’落meta_id=1208", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Jira 2026-07-16 10:08评论", "url": "http://jira.i-tetris.com/browse/PC-38026"}
+        ]
+      },
+      "G": "待会诊",
+      "I": "已选中态正式节点缺失；先补目标配置再统一复测两句",
+      "J": {"links": [
+        {"label": "Jira原票·描述/2026-07-16 10:08评论", "url": "http://jira.i-tetris.com/browse/PC-38026"},
+        {"label": "可见配置·地图-高德第7行/已选中态检索", "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"},
+        {"label": "Alchemy在线对话·BIGSUR·选择/点击充电站", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+        {"label": "Alchemy标准1429/项目24548·meta_id 1208", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1429"}
+      ]}
+    }
+  },
+  {
+    "row": 135,
+    "key": "PC-37808",
+    "changes": {
+      "C": {
+        "text": "现象：‘导航到天安门走最快的路’后选择第一个POI，实际启动的不是最快路线。[Jira原票·描述/2026-07-17 16:15评论]\n正式目标：Alchemy标准功能1433/深蓝项目24552的meta_id=1209定义preference及POI列表二次交互；当前原话正确下发route_preference=shortest_time。[Alchemy标准1433/项目24552·meta_id 1209][Alchemy在线对话·BIGSUR·最快路线]\n实现定位：Jira日志显示POI确认后strategy=null，route0/1/2耗时151980/149160/150720，却选择route0而非最快route1。[Jira评论·2026-07-17 16:15执行链]",
+        "links": [
+          {"label": "Jira原票·描述/2026-07-17 16:15评论", "url": "http://jira.i-tetris.com/browse/PC-37808"},
+          {"label": "Alchemy标准1433/项目24552·meta_id 1209", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+          {"label": "Alchemy在线对话·BIGSUR·最快路线", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Jira评论·2026-07-17 16:15执行链", "url": "http://jira.i-tetris.com/browse/PC-37808"}
+        ]
+      },
+      "D": {
+        "text": "结论：定义为地图导航执行缺陷；语音已正确识别shortest_time，但POI确认后丢失路线偏好并启动了非最快路线。\n依据：Alchemy标准功能1433/深蓝项目功能24552的meta_id=1209定义preference及POI二次交互；Alchemy BIGSUR原话当前下发route_preference=shortest_time；Jira 2026-07-17 16:15评论记录strategy=null，route0/1/2耗时151980/149160/150720却选择route0。\n处理：在POI确认链路保留并传递route_preference，按实际耗时选择最快路线后启动导航，并回归其他既有路线偏好；地图导航研发负责人处理。",
+        "links": [
+          {"label": "Alchemy标准功能1433/深蓝项目功能24552的meta_id=1209", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+          {"label": "Alchemy BIGSUR原话当前下发route_preference=shortest_time", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="},
+          {"label": "Jira 2026-07-17 16:15评论", "url": "http://jira.i-tetris.com/browse/PC-37808"}
+        ]
+      },
+      "G": "可转研发",
+      "I": "POI确认后须保留路线偏好；按实际耗时选最快路线",
+      "J": {"links": [
+        {"label": "Jira原票·描述/2026-07-17 16:15执行链", "url": "http://jira.i-tetris.com/browse/PC-37808"},
+        {"label": "Alchemy标准1433/项目24552·meta_id 1209", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+        {"label": "Alchemy在线对话·BIGSUR·最快路线", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=934af43a-b919-4fd4-92f5-46d88ec8df6c&env="}
+      ]}
+    }
+  }
+]

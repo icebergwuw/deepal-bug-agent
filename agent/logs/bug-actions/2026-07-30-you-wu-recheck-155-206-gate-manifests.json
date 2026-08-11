@@ -1,0 +1,2594 @@
+{
+  "scope": "bug!155:206",
+  "manifests": [
+    {
+      "jira_key": "SLV-44272",
+      "comment_causality": "Jira原票：DA问“打开导航历史记录”返回“没有找到”；7月30日评论说明DA地图库已切高德、该语音未承接。C673清单仅列GUI“导航历史列表”，未定义DA语音入口或配置词 资料：Jira原票、C673全功能清单V1.3。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673全功能清单V1.3",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺DA语音入口、配置词及版本映射，补齐前不转研发或需求",
+          "next_action": "补齐C673 DA语音功能清单、配置词和当前版本映射；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：导航历史GUI能力不能推出DA语音入口，当前不能按软件缺陷或需求定责\n依据：Jira原票、C673全功能清单V1.3\n处理：补齐C673 DA语音功能清单、配置词和当前版本映射；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44265",
+      "comment_causality": "Jira原票：DA说“关闭自动进入巡航”提示不支持；评论称平台有新定义、需确认。C673语音和车辆设置清单均未检索到该功能 资料：Jira原票、C673全功能清单V1.3。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673全功能清单V1.3",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺功能定义、配置词和项目版本映射",
+          "next_action": "补齐自动进入巡航的功能定义、配置词和项目版本适用性；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：无同范围正式定义，不能将“提示不支持”直接定为缺陷\n依据：Jira原票、C673全功能清单V1.3\n处理：补齐自动进入巡航的功能定义、配置词和项目版本适用性；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44264",
+      "comment_causality": "Jira原票：DA说“打开巡航”实际命中安全提醒；评论称平台有新定义。C673语音和车辆设置清单未检索到自动进入巡航 资料：Jira原票、C673全功能清单V1.3。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673全功能清单V1.3",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺功能定义、配置词和项目版本映射",
+          "next_action": "补齐自动进入巡航的功能定义、配置词和项目版本适用性；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：无同范围正式定义，当前无法判定语义路由与目标功能的差异\n依据：Jira原票、C673全功能清单V1.3\n处理：补齐自动进入巡航的功能定义、配置词和项目版本适用性；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44263",
+      "comment_causality": "Jira原票：DA说“打开自动进入巡航”提示不支持；评论称平台定义待确认。C673语音和车辆设置清单未检索到该项 资料：Jira原票、C673全功能清单V1.3。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673全功能清单V1.3",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺功能定义、配置词和项目版本映射",
+          "next_action": "补齐自动进入巡航的功能定义、配置词和项目版本适用性；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：无同范围正式定义，当前不能按缺陷或新增需求流转\n依据：Jira原票、C673全功能清单V1.3\n处理：补齐自动进入巡航的功能定义、配置词和项目版本适用性；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44216",
+      "comment_causality": "Jira原票：客户提出缺少停车场推荐、步行接续设置；C673地图清单将停车场推荐标为“同意迭代/PRD已补充”，高德850交互稿含相关开关，但未证实其适用于本车型/版本 资料：Jira原票、C673地图功能清单、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673地图功能清单、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺本票车型/版本与正式资料的继承映射",
+          "next_action": "核实高德850交互稿、停车场推荐PRD与本票车型版本的适用关系；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "地图产品负责人",
+        "text": "结论：正式资料存在功能线索，但资料与本票车型、版本的继承关系未核实\n依据：Jira原票、C673地图功能清单、高德地图交互V0.6\n处理：核实高德850交互稿、停车场推荐PRD与本票车型版本的适用关系；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44215",
+      "comment_causality": "Jira原票：停车场推荐点击后进入路线推荐页，Jira期望直接续航；高德850交互稿未定义该点击后的直达/中转路径 资料：Jira原票、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺点击链路UE和适用版本",
+          "next_action": "补齐停车场推荐点击后的页面流转UE及版本映射；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "地图产品负责人",
+        "text": "结论：未找到同范围点击链路定义，不能据Jira预期直接改功能\n依据：Jira原票、高德地图交互V0.6\n处理：补齐停车场推荐点击后的页面流转UE及版本映射；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44214",
+      "comment_causality": "Jira原票：充电站搜索涉及当前视野、品牌图标和气泡卡；高德850交互稿有当前视野优先、2/5/10km扩展和品牌/气泡要素，但未确认与本票版本一致 资料：Jira原票、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺本票版本继承映射",
+          "next_action": "核实高德850交互稿与本票车型版本映射，并按对应UE复测；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "地图产品负责人",
+        "text": "结论：资料覆盖部分规则但缺本票版本继承关系，暂不定实现责任\n依据：Jira原票、高德地图交互V0.6\n处理：核实高德850交互稿与本票车型版本映射，并按对应UE复测；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44213",
+      "comment_causality": "Jira原票：停车场搜索气泡涉及色值、尺寸、点击热区和重叠；高德850交互稿未给出本票所需的精确视觉/热区参数 资料：Jira原票、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺精确视觉和热区UE",
+          "next_action": "补齐气泡色值、尺寸、热区及层级UE；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "地图产品负责人",
+        "text": "结论：没有可执行的同范围视觉UE，不能按主观UI差异定责\n依据：Jira原票、高德地图交互V0.6\n处理：补齐气泡色值、尺寸、热区及层级UE；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44212",
+      "comment_causality": "Jira原票：停车场周边搜索与关键词搜索的结果样式差异，现有高德850交互稿未定义两类入口是否应同构呈现 资料：Jira原票、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺两类入口的结果页UE",
+          "next_action": "补齐周边搜与关键词搜的结果页UE及差异规则；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "地图产品负责人",
+        "text": "结论：未找到两类搜索结果的同范围呈现定义\n依据：Jira原票、高德地图交互V0.6\n处理：补齐周边搜与关键词搜的结果页UE及差异规则；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44210",
+      "comment_causality": "Jira原票：景区深度信息涉及评论、评分、零分隐藏和超长营业时间；C673清单列出景区字段，高德850交互稿未定义零分/排序/超长文案处理 资料：Jira原票、C673全功能清单V1.3、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673全功能清单V1.3、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺字段显示条件和排序规则",
+          "next_action": "补齐景区评分、评论排序和营业时间截断规则UE；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "地图产品负责人",
+        "text": "结论：字段清单不能替代显示条件，当前不能判定实现缺陷\n依据：Jira原票、C673全功能清单V1.3、高德地图交互V0.6\n处理：补齐景区评分、评论排序和营业时间截断规则UE；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44209",
+      "comment_causality": "Jira原票：景区评论未按时间倒序；现有地图清单/交互稿均未给出评论排序规则 资料：Jira原票、C673全功能清单V1.3、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673全功能清单V1.3、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺评论排序正式规则",
+          "next_action": "补齐景区评论排序规则及版本适用性；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "地图产品负责人",
+        "text": "结论：未找到“最新优先”的正式目标，不能直接转研发\n依据：Jira原票、C673全功能清单V1.3、高德地图交互V0.6\n处理：补齐景区评论排序规则及版本适用性；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SD-6421",
+      "comment_causality": "Jira原票：VR Search 语句未生效；评论日志显示classification=chat、meta_id=2820 dialogue:method:reject，未调用导航VR SDK。现有资料未给出本项目该英语语句的VR词表和函数映射 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺项目语料、标准函数和项目函数映射",
+          "next_action": "补齐VR Search语料、标准函数和项目函数映射后复测；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：实现侧有未进入导航链路的事实，但缺同范围语料/函数定义\n依据：Jira原票\n处理：补齐VR Search语料、标准函数和项目函数映射后复测；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SD-6404",
+      "comment_causality": "Jira原票：导航卡片发生重叠；评论明确需UI/产品确定显示边界，高德850交互稿未定义该卡片的优先级和避让规则 资料：Jira原票、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺卡片层级和避让UE",
+          "next_action": "补齐导航卡片层级、避让和收起规则UE；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "地图产品负责人",
+        "text": "结论：无可执行的布局边界定义，不能按实现缺陷定责\n依据：Jira原票、高德地图交互V0.6\n处理：补齐导航卡片层级、避让和收起规则UE；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SD-6012",
+      "comment_causality": "Jira原票：ParkcityAmap文本校核中，评论确认search_keyword_no_result与search_result_null存在重复Key翻译冲突；未给出当前包内资源映射和最终源表取值 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺车端资源Key与最终源表映射",
+          "next_action": "提供资源Key—包内—源表映射和最终文言后再定责；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：重复Key事实已确认，但未证实车端绑定Key及最终输入\n依据：Jira原票\n处理：提供资源Key—包内—源表映射和最终文言后再定责；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SD-5786",
+      "comment_causality": "Jira原票：右舵副驾说关闭开门预警已执行；Jira日志给出meta_id=1563 vehicle:ctrl:open_warning，评论称平台仅有限制打开、关闭未限制。C673语音清单为Office文件，本轮未能读取到驾驶位限制定义 资料：Jira原票、C673语音清单（未读）。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、C673语音清单（未读）",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺驾驶位权限正式定义和项目函数映射",
+          "next_action": "补齐右舵驾驶位限制策略及该函数项目映射后定责；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：实现行为与限制缺口明确，但缺本项目驾驶位权限正式定义\n依据：Jira原票、C673语音清单（未读）\n处理：补齐右舵驾驶位限制策略及该函数项目映射后定责；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SD-5517",
+      "comment_causality": "Jira原票：马来语查询公司位置命中meta_id=1007 navi:query:locate，车端回复“页面已打开”；评论称地图仅支持中英文，未提供本项目马来语位置播报目标 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺马来语功能与TTS正式目标",
+          "next_action": "补齐马来语公司位置查询的语料、TTS目标和项目版本映射；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：识别与执行链路有记录，但缺多语言导航播报正式定义\n依据：Jira原票\n处理：补齐马来语公司位置查询的语料、TTS目标和项目版本映射；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SD-5515",
+      "comment_causality": "Jira原票：马来语查询当前位置命中定位功能，车端出现中文位置及无法继续马来语交互；未提供项目马来语定位TTS的正式目标 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺马来语功能与TTS正式目标",
+          "next_action": "补齐马来语当前位置查询的语料、TTS目标和项目版本映射；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：有实现侧现象，但缺同范围多语言功能定义\n依据：Jira原票\n处理：补齐马来语当前位置查询的语料、TTS目标和项目版本映射；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-38626",
+      "comment_causality": "Jira原票：Jira仅有“我要操作比例尺”标题，缺版本、原始音频、预期/实际和评论；本轮Alchemy仅见相近语句“我要设置比例尺”，不能替代本票原句 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺完整测试用例及本票原句Alchemy证据",
+          "next_action": "补齐原始音频、版本、预期/实际和完整Alchemy结果；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：测试要素不完整，不能用相近Alchemy结果作本票结论\n依据：Jira原票\n处理：补齐原始音频、版本、预期/实际和完整Alchemy结果；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-38410",
+      "comment_causality": "Jira原票：“有流感吗”进入大模型，Jira与评论均要求确认应落入何种本地功能；未找到流感指数/健康信息的项目功能定义 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺目标功能、数据范围和兜底定义",
+          "next_action": "明确该语句的目标能力、数据范围和兜底话术；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：没有正式目标功能，不能判定大模型路由为缺陷\n依据：Jira原票\n处理：明确该语句的目标能力、数据范围和兜底话术；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-38360",
+      "comment_causality": "Jira原票：导航智能播报样式走查；评论称为DP4.0新需求且设计未更新。高德850交互稿仅有智能播报变更记录，未给出本票UI目标 资料：Jira原票、高德地图交互V0.6。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、高德地图交互V0.6",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺本票UI目标和版本继承映射",
+          "next_action": "补齐智能播报页面UE并确认本票版本继承关系；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "地图产品负责人",
+        "text": "结论：有需求变更线索但无可执行样式UE\n依据：Jira原票、高德地图交互V0.6\n处理：补齐智能播报页面UE并确认本票版本继承关系；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-38201",
+      "comment_causality": "Jira原票：微信互联弹窗上下滑未执行；评论说明当前ViewPager2不支持，未提供该交互必须语音执行的正式定义 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺语音操作范围正式定义",
+          "next_action": "补齐微信互联弹窗语音操作范围及交互定义；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：平台能力限制不是功能目标，当前不能按缺陷或需求定责\n依据：Jira原票\n处理：补齐微信互联弹窗语音操作范围及交互定义；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-38199",
+      "comment_causality": "Jira原票：模拟导航已暂停时再说“暂停模拟导航”，Jira评论记录meta_id=1017 navi:map:journey:stop后停止导航；预期为提示已暂停，未找到模拟导航状态机和幂等话术定义 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺状态机及幂等话术正式定义",
+          "next_action": "补齐模拟导航状态机和暂停态重复指令话术规则；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：实现行为已定位，但缺暂停态重复指令的正式目标\n依据：Jira原票\n处理：补齐模拟导航状态机和暂停态重复指令话术规则；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-38093",
+      "comment_causality": "Jira原票：场景卡片“试用中”详情页无退出入口；评论确认现状，但未给出场景卡片试用页交互UE 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺试用页交互UE",
+          "next_action": "补齐场景卡片试用页退出/返回交互UE；场景产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "场景产品负责人",
+        "text": "结论：现状说明不能代替交互定义，不能直接定缺陷\n依据：Jira原票\n处理：补齐场景卡片试用页退出/返回交互UE；场景产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-37473",
+      "comment_causality": "Jira原票：打开行车记录仪后POI弹窗未关闭；评论称图层优先级需设计确认，未提供POI与行车记录仪的层级规则 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺图层优先级UE",
+          "next_action": "补齐POI弹窗与行车记录仪的图层优先级UE；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "地图产品负责人",
+        "text": "结论：缺图层优先级正式定义，当前不能定责\n依据：Jira原票\n处理：补齐POI弹窗与行车记录仪的图层优先级UE；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-37241",
+      "comment_causality": "Jira原票：“打开地图”被可见即说配置映射到地图桌面设置项，车端打开地图桌面；Jira期望打开地图应用，但未找到“地图”与“地图桌面”的语义优先级定义 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺目标意图边界和优先级定义",
+          "next_action": "补齐“打开地图”与“打开地图桌面”的意图边界和优先级；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：实现映射事实明确，但缺目标意图的正式语义定义\n依据：Jira原票\n处理：补齐“打开地图”与“打开地图桌面”的意图边界和优先级；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-37228",
+      "comment_causality": "Jira原票：电话中说“不需要不需要”命中common_cancel并停止导航；Jira预期电话场景不应取消导航，现有证据存在通用取消与电话语境优先级冲突 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "通用取消与电话语境目标冲突",
+          "next_action": "确定电话通话场景下common_cancel的拦截与优先级规则；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待会诊",
+        "owner": "语音产品负责人",
+        "text": "结论：同一语句的通用取消与电话语境目标冲突，需会诊后定口径\n依据：Jira原票\n处理：确定电话通话场景下common_cancel的拦截与优先级规则；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "PC-37161",
+      "comment_causality": "Jira原票：规划路线后内部道路未划线；评论同时出现SDK“非问题/设计预期”和等待需求确认，未提供路线绘制正式定义 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "评论结论冲突且缺路线绘制定义",
+          "next_action": "确认内部道路绘制规则、数据能力和本项目需求口径；地图产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待会诊",
+        "owner": "地图产品负责人",
+        "text": "结论：评论结论互相冲突且无正式路线绘制定义，不能定责\n依据：Jira原票\n处理：确认内部道路绘制规则、数据能力和本项目需求口径；地图产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-82494",
+      "comment_causality": "Jira原票：观影模式氛围灯颜色条与BlueLake不一致且有重复色；J90A情景模式文档仅定义可调颜色/亮度，未给出本车型颜色条、色值和对标基线 资料：Jira原票、J90A情景模式V1.8。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A情景模式V1.8",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺颜色条视觉UE和对标基线",
+          "next_action": "补齐观影模式颜色条、色值和重复色规则UE；场景产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "场景产品负责人",
+        "text": "结论：功能定义不等于视觉目标，不能以跨车型对标直接定责\n依据：Jira原票、J90A情景模式V1.8\n处理：补齐观影模式颜色条、色值和重复色规则UE；场景产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-82485",
+      "comment_causality": "Jira原票：多个视频App时观影模式默认进入Bilibili；J90A情景模式文档定义多App应出现选择页，评论称当前仅注册Bilibili，未核实本票版本的App注册清单 资料：Jira原票、J90A情景模式V1.8。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A情景模式V1.8",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺视频App注册清单和版本映射",
+          "next_action": "核实本票版本的可用视频App注册清单及文档适用性；场景产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "场景产品负责人",
+        "text": "结论：文档与当前注册状态存在差异，但缺本票版本映射\n依据：Jira原票、J90A情景模式V1.8\n处理：核实本票版本的可用视频App注册清单及文档适用性；场景产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-82401",
+      "comment_causality": "Jira原票：阿语退出小憩弹窗混入“Relax Time”；J90A文言表中confirm_exit_nap的基准文言为End Relax Time，阿语列未给出可用目标译文，Jira仅有车端现象 资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺阿语目标译文和包版本映射",
+          "next_action": "补齐confirm_exit_nap阿语目标译文和包版本映射；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：已确认基准词存在，但没有同范围阿语目标译文，不能直接下发修改\n依据：Jira原票、J90A文言表\n处理：补齐confirm_exit_nap阿语目标译文和包版本映射；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-82166",
+      "comment_causality": "Jira原票：恒温座舱低功耗页阿语翻译被报错；J90A情景模式文档定义正常/低功耗子模式，但没有阿语字面目标 资料：Jira原票、J90A情景模式V1.8。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A情景模式V1.8",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺阿语目标文言和资源Key",
+          "next_action": "补齐低功耗子模式阿语目标文言及资源Key；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：模式功能定义不能替代阿语译文定义\n依据：Jira原票、J90A情景模式V1.8\n处理：补齐低功耗子模式阿语目标文言及资源Key；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81975",
+      "comment_causality": "Jira原票：车外扬声器开关导致FM播放/暂停；Jira评论称“需求如此”，但未提供车外扬声器与FM状态联动的正式定义 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺状态联动正式定义",
+          "next_action": "补齐车外扬声器与FM状态联动规则及版本适用性；音频产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "音频产品负责人",
+        "text": "结论：“需求如此”不是可验证的正式目标，当前不按设计如此关闭\n依据：Jira原票\n处理：补齐车外扬声器与FM状态联动规则及版本适用性；音频产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81676",
+      "comment_causality": "Jira原票：蓝牙电话拨打/挂断有延迟；评论仅提出沟通，未给出呼叫、挂断的响应时限和测试环境 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺性能阈值、环境和复现证据",
+          "next_action": "补齐蓝牙电话响应SLA、测试环境和复现证据；蓝牙产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "蓝牙产品负责人",
+        "text": "结论：没有性能阈值，不能判定延迟是否越界\n依据：Jira原票\n处理：补齐蓝牙电话响应SLA、测试环境和复现证据；蓝牙产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81598",
+      "comment_causality": "Jira原票：俄语忘记CarPlay弹窗换行错误，Jira未给出资源Key、源文言或对应页面UE 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺资源Key、源文言和页面UE",
+          "next_action": "补齐CarPlay弹窗资源Key、俄语源文言和页面UE；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：缺资源定位与目标文言，不能判定输入或布局责任\n依据：Jira原票\n处理：补齐CarPlay弹窗资源Key、俄语源文言和页面UE；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81597",
+      "comment_causality": "Jira原票：匈牙利语忘记CarPlay弹窗换行错误，Jira未给出资源Key、源文言或对应页面UE 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺资源Key、源文言和页面UE",
+          "next_action": "补齐CarPlay弹窗资源Key、匈牙利语源文言和页面UE；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：缺资源定位与目标文言，不能判定输入或布局责任\n依据：Jira原票\n处理：补齐CarPlay弹窗资源Key、匈牙利语源文言和页面UE；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81596",
+      "comment_causality": "Jira原票：印尼语settings_disconnect_link_msg在J90A文言表中含“\\n ”，车端换行后空格与现行输入一致；“删除空格”仅来自Jira/评论，未见已生效的目标文言。资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺已确认的目标文言/需求与目标包版本，确认前不转需求。",
+          "next_action": "确认该Key印尼语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "缺少有效formal_target时只能保持待确认；目标纳入生效需求后才可转需求。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：已定位现行输入，但目标改文言未由同范围正式资料确认；本票保持待确认，不能先转需求。\n依据：Jira原票、J90A文言表\n处理：确认该Key印尼语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81537",
+      "comment_causality": "Jira原票：西语settings_disconnect_link_pos当前为“Apagar Punto de Acceso”；Jira/评论提出短文言以规避按钮视觉风险，但未见已生效的目标短文言或布局规则。资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺已确认的目标文言/需求与目标包版本，确认前不转需求。",
+          "next_action": "确认目标西语短文言及对应页面约束，并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "缺少有效formal_target时只能保持待确认；目标纳入生效需求后才可转需求。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：已定位现行输入，但目标改文言未由同范围正式资料确认；本票保持待确认，不能先转需求。\n依据：Jira原票、J90A文言表\n处理：确认目标西语短文言及对应页面约束，并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81536",
+      "comment_causality": "Jira原票：罗马尼亚语settings_disconnect_link_msg在J90A文言表中含“\\n ”，车端换行后空格与现行输入一致；“删除空格”仅来自Jira/评论，未见已生效的目标文言。资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺已确认的目标文言/需求与目标包版本，确认前不转需求。",
+          "next_action": "确认该Key罗马尼亚语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "缺少有效formal_target时只能保持待确认；目标纳入生效需求后才可转需求。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：已定位现行输入，但目标改文言未由同范围正式资料确认；本票保持待确认，不能先转需求。\n依据：Jira原票、J90A文言表\n处理：确认该Key罗马尼亚语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81535",
+      "comment_causality": "Jira原票：德语settings_disconnect_link_msg在J90A文言表中含“\\n ”，车端换行后空格与现行输入一致；“删除空格”仅来自Jira/评论，未见已生效的目标文言。资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺已确认的目标文言/需求与目标包版本，确认前不转需求。",
+          "next_action": "确认该Key德语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "缺少有效formal_target时只能保持待确认；目标纳入生效需求后才可转需求。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：已定位现行输入，但目标改文言未由同范围正式资料确认；本票保持待确认，不能先转需求。\n依据：Jira原票、J90A文言表\n处理：确认该Key德语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81534",
+      "comment_causality": "Jira原票：挪威语settings_disconnect_link_msg在J90A文言表中含“\\n ”，车端换行后空格与现行输入一致；“删除空格”仅来自Jira/评论，未见已生效的目标文言。资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺已确认的目标文言/需求与目标包版本，确认前不转需求。",
+          "next_action": "确认该Key挪威语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "缺少有效formal_target时只能保持待确认；目标纳入生效需求后才可转需求。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：已定位现行输入，但目标改文言未由同范围正式资料确认；本票保持待确认，不能先转需求。\n依据：Jira原票、J90A文言表\n处理：确认该Key挪威语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-81441",
+      "comment_causality": "Jira原票：英语msg_change_link_inner在J90A文言表中含换行符，车端换行与现行输入一致；“删除换行”仅来自Jira/评论，未见已生效的目标文言。资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺已确认的目标文言/需求与目标包版本，确认前不转需求。",
+          "next_action": "确认该Key英语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "缺少有效formal_target时只能保持待确认；目标纳入生效需求后才可转需求。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：已定位现行输入，但目标改文言未由同范围正式资料确认；本票保持待确认，不能先转需求。\n依据：Jira原票、J90A文言表\n处理：确认该Key英语目标文言并纳入生效文言/需求后再转需求；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-80995",
+      "comment_causality": "Jira原票：Jira主张settings_check_tab_msg仍有换行，但J90A文言表该Key无换行；评论确认车端实际关联msg_change_link_inner，后者仍有换行 资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "断言Key与实际绑定Key不一致",
+          "next_action": "确认弹窗实际资源Key、包内输入版本和构建映射后再定责；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待会诊",
+        "owner": "多语言翻译负责人",
+        "text": "结论：Jira断言Key与实际绑定Key不一致，当前不能认定输入未生效\n依据：Jira原票、J90A文言表\n处理：确认弹窗实际资源Key、包内输入版本和构建映射后再定责；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-80881",
+      "comment_causality": "Jira原票：控制中心与AppList的氛围灯阿语不一致；J90A文言表中ambient_light_title与qs_ambient_light是不同页面资源，未定义是否必须统一 资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺跨页面统一目标文言",
+          "next_action": "确定两页面阿语是否统一及目标文言后更新输入；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：不同资源并不自动等于翻译错误，需先确定统一目标\n依据：Jira原票、J90A文言表\n处理：确定两页面阿语是否统一及目标文言后更新输入；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-80876",
+      "comment_causality": "Jira原票：控制中心与AppList的遮阳帘阿语不一致；J90A文言表中sun_shade_title与qs_sun_shade是不同页面资源，未定义是否必须统一 资料：Jira原票、J90A文言表。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺跨页面统一目标文言",
+          "next_action": "确定两页面阿语是否统一及目标文言后更新输入；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：不同资源并不自动等于翻译错误，需先确定统一目标\n依据：Jira原票、J90A文言表\n处理：确定两页面阿语是否统一及目标文言后更新输入；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-80734",
+      "comment_causality": "Jira原票：阿语退出露营模式提示含Rest Mode；Jira评论指向关联翻译需求HUR-82103，但J90A文言表未提供可验证的阿语目标译文 资料：Jira原票、J90A文言表、关联票HUR-82103。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": [
+          {
+            "key": "HUR-82103",
+            "relationship": "Jira关联/链接",
+            "outcome": "已完整读取，仅作关联事实，不替代本票正式目标",
+            "read": true
+          }
+        ]
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、J90A文言表、关联票HUR-82103",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺阿语目标译文、资源Key和关联需求版本映射",
+          "next_action": "补齐露营退出相关Key的阿语目标译文、资源Key和HUR-82103版本映射；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：关联需求线索不能替代阿语目标输入，当前不直接认定已具备变更条件\n依据：Jira原票、J90A文言表、关联票HUR-82103\n处理：补齐露营退出相关Key的阿语目标译文、资源Key和HUR-82103版本映射；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-80117",
+      "comment_causality": "Jira原票：荷兰语设置公司地址未执行；Jira评论称现有句式模板不覆盖该表达，未提供项目荷兰语语料及目标函数定义 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺项目语料、目标函数和映射",
+          "next_action": "补齐荷兰语设置公司地址的语料、目标函数和项目映射；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：无项目语料和函数目标，不能直接定语音缺陷\n依据：Jira原票\n处理：补齐荷兰语设置公司地址的语料、目标函数和项目映射；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-80107",
+      "comment_causality": "Jira原票：挪威语查询家地址命中定位能力但未播具体位置；关联票HUR-79577呈现同类现象，未找到挪威语TTS内容目标 资料：Jira原票、关联票HUR-79577。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": [
+          {
+            "key": "HUR-79577",
+            "relationship": "Jira关联/链接",
+            "outcome": "已完整读取，仅作关联事实，不替代本票正式目标",
+            "read": true
+          }
+        ]
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、关联票HUR-79577",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺挪威语TTS正式目标和项目映射",
+          "next_action": "补齐挪威语家地址查询的语料、TTS目标和项目版本映射；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：同类现象可复核，但缺同范围播报内容正式定义\n依据：Jira原票、关联票HUR-79577\n处理：补齐挪威语家地址查询的语料、TTS目标和项目版本映射；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-80100",
+      "comment_causality": "Jira原票：法语移除途经点命中meta_id=1205 navi:dest:via:remove，Jira显示执行后的TTS与多途经点预期不符；未找到该场景TTS目标 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺多途经点执行结果和TTS正式定义",
+          "next_action": "补齐法语移除途经点的执行结果和TTS目标；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待复核",
+        "owner": "语音产品负责人",
+        "text": "结论：函数命中事实明确，但缺多途经点移除后的TTS正式定义\n依据：Jira原票\n处理：补齐法语移除途经点的执行结果和TTS目标；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-79196",
+      "comment_causality": "Jira原票：阿语查询剩余续航命中energy:charging:query，TTS混入非阿语单位；Jira评论指向mars_soc_state，未在当前J90A文言表定位到可验证的阿语目标 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺阿语目标、资源来源和包版本映射",
+          "next_action": "补齐mars_soc_state阿语目标、资源来源和包版本映射；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：缺目标资源输入与包映射，不能区分翻译输入或播报链路责任\n依据：Jira原票\n处理：补齐mars_soc_state阿语目标、资源来源和包版本映射；多语言翻译负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-78542",
+      "comment_causality": "Jira原票：西语打开HUD偶发首词截断；Jira同时记录完整清晰音频可正常通过，缺同条件复测和音频原件 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺原始音频、环境和稳定复现证据",
+          "next_action": "按同版本、同麦克风条件补充原始音频和复现次数后复测；语音测试负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音测试负责人",
+        "text": "结论：现有证据不能稳定复现，不能按功能缺陷定责\n依据：Jira原票\n处理：按同版本、同麦克风条件补充原始音频和复现次数后复测；语音测试负责人处理。"
+      }
+    },
+    {
+      "jira_key": "HUR-72810",
+      "comment_causality": "Jira原票：荷兰语“Sluit energiebeheer”语义指能量管理，而Jira预期关闭能量流App；未定义两者是否互为同义入口 资料：Jira原票。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "缺同义映射和目标动作定义",
+          "next_action": "确定荷兰语能量管理与能量流App的语义映射及目标动作；语音产品负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": false,
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得本票标准功能点完整读取证据"
+        },
+        "project_function": {
+          "status": "unavailable",
+          "reason": "未取得项目功能点与本票原话的完整映射"
+        },
+        "unavailable_reason": "缺本票原话/当前Alchemy结果/标准功能/项目功能的完整同链证据",
+        "next_action": "补齐语音链路证据后重评"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "语音产品负责人",
+        "text": "结论：目标意图存在语义歧义，不能按未执行直接定责\n依据：Jira原票\n处理：确定荷兰语能量管理与能量流App的语义映射及目标动作；语音产品负责人处理。"
+      }
+    },
+    {
+      "jira_key": "BEO-8444",
+      "comment_causality": "Jira原票：法语新来电等待文言省略号已在评论中指向关联需求HUR-82127；最新评论仍待客户确认输入与目标版本回归 资料：Jira原票、关联票HUR-82127。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": [
+          {
+            "key": "HUR-82127",
+            "relationship": "Jira关联/链接",
+            "outcome": "已完整读取，仅作关联事实，不替代本票正式目标",
+            "read": true
+          }
+        ]
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "本票车型/版本以Jira记录为准",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期及记录的当前实际",
+          "reason": "只用于证明现象、日志和评论中的实现事实"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "Jira原票、关联票HUR-82127",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "本票车型/版本",
+          "trigger": "Jira所述操作/语句",
+          "target_behavior": "Jira提出的待核对预期",
+          "reason": "客户确认、输入版本和回归证据未齐备",
+          "next_action": "完成客户确认、文言输入和实车回归后再流转关闭；多语言翻译负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "仅在同范围正式功能/UE/文言来源、适用版本和实现事实齐备时转确定状态；否则保持待确认/待复核/待会诊。",
+      "voice_evidence": {
+        "applicable": false
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "多语言翻译负责人",
+        "text": "结论：关联需求已建立但未完成客户确认和回归，当前不能按已修复关闭\n依据：Jira原票、关联票HUR-82127\n处理：完成客户确认、文言输入和实车回归后再流转关闭；多语言翻译负责人处理。"
+      }
+    }
+  ]
+}

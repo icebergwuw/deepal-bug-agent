@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "BGS-83308",
+  "sheet": "吴优工作说明 / bug",
+  "row": 275,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象与实现：已完整读取BGS-83308描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/BGS-83308"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：“取消头枕音箱导航”应关闭导航头枕播报，当前误命中结束导航meta_id=1017/其他音箱功能，属于NLU意图冲突。\n依据：Jira原票·完整测试用例/2026-07-14、Alchemy当前结果·meta_id=1017、Jira评论·目标功能点1659。\n处理：补充导航头枕播报关闭泛化并加结束导航反例后回归；深蓝语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/BGS-83308"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "可转语音",
+    "I": "回归需确认只关闭导航头枕播报，不结束导航或修改其他音箱通道",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/BGS-83308"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  "validated": true,
+  "submitted_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ]
+}

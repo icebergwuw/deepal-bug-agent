@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82799",
+  "sheet": "吴优工作说明 / bug",
+  "row": 230,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：C385/IACCText__27实际映射QML source“车道巡航临时退出\\n请注意控制方向”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第120行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82799"
+        },
+        {
+          "label": "LanguageList精确source·第120行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A120:AQ120"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/IACCText__27不对应；实际QML source“车道巡航临时退出\\n请注意控制方向”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第120行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82799"
+        },
+        {
+          "label": "LanguageList精确source·第120行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A120:AQ120"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82799"
+        },
+        {
+          "label": "LanguageList精确source·第120行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A120:AQ120"
+        }
+      ]
+    }
+  },
+  "validated": true,
+  "submitted_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ]
+}

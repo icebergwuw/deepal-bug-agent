@@ -1,0 +1,88 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "HUR-82857｜【J90A】【0526】【音乐】14:34 冬季模式开启中，音乐app中点击氛围灯按键，无弹窗提示，且能开启氛围灯音乐律动模式",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82857\",\"HUR-82857｜【J90A】【0526】【音乐】14:34 冬季模式开启中，音乐app中点击氛围灯按键，无弹窗提示，且能开启氛围灯音乐律动模式\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：J90A冬季模式已开启时，音乐App点击氛围灯仍可开启音乐律动且无拦截提示。[Jira原票·描述/完整评论]\n证据：已完成需求HUR-24753明确冬季模式期间禁止开启音乐氛围灯，点击时提示“当前为冬季模式，无法打开音乐氛围灯，请先关闭冬季模式再操作”；当前音乐端代码额外要求winter_light开启才拦截。[HUR-24753·需求定义/PRD入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82857"
+        },
+        {
+          "label": "HUR-24753·需求定义/PRD入口",
+          "url": "http://jira.i-tetris.com/browse/HUR-24753"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为音乐端实现缺陷。冬季模式开启即应禁止音乐氛围灯，不应再以winter_light联动开关作为第二个必要条件。\n依据：HUR-24753已完成需求及其PRD入口明确“冬季模式期间禁止开启”；HUR-82857评论记录音乐端现状为两个条件同时满足才拦截。\n处理：删除音乐端对winter_light的额外前置依赖，冬季模式开启时统一拦截并展示既定提示；Android-Music研发负责人（张齐财）处理。",
+      "links": []
+    },
+    "G": "可转研发",
+    "I": "测试用例完整，无需补测试用例；未执行Jira评论、转派或状态变更。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82857"
+        },
+        {
+          "label": "HUR-24753·需求定义/PRD入口",
+          "url": "http://jira.i-tetris.com/browse/HUR-24753"
+        },
+        {
+          "label": "PRD·冬季模式音乐氛围灯",
+          "url": "https://docs.google.com/document/d/1LpVkJsQLb1_9e_x3c3n9dK5Kc_tn7AqRKiEspioc1O0/edit#heading=h.emfxkqkec3qq"
+        }
+      ]
+    }
+  }
+}

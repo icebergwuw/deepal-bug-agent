@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2026-08-06",
+    "key": "PC-39051",
+    "summary": "语音将高架路线误执行为高速优先",
+    "info": "现象：VOS日志56995在18:02:36-18:02:55记录‘我要走高架路线’先回复已切换高速优先，随后‘切换到高架路线’又回复路线偏好不支持高架路线；Jira无评论、无附件、无直接关联票。[Jira原票][VOS日志56995·18:02:36-18:02:55]\n当前语音：Alchemy在线对话BIGSUR对原话‘我要走高架路线’下发meta_id 1023，route_preference的literal=走高架、canonical=expressway_first。[Alchemy在线对话·BIGSUR·‘我要走高架路线’]\n正式定义：C385&673导航UE V0.6的‘地图设置→01 设置→路线设置’仅列躲避拥堵、避免收费、不走高速、高速优先；Alchemy标准功能1450和深蓝项目功能24569确认meta_id 1023为设置地图偏好项，项目继承未修改。[C385&673导航UE V0.6·地图设置→01 设置→路线设置][Alchemy标准功能1450/深蓝项目功能24569]",
+    "judgment": "结论：定义为语音NLU映射缺陷；‘高架路线’不属于C385/C673路线偏好，不能映射为‘高速优先’。\n依据：C385&673导航UE V0.6‘地图设置→01 设置→路线设置’仅列躲避拥堵、避免收费、不走高速、高速优先；Alchemy标准功能1450/深蓝项目功能24569为meta_id 1023设置地图偏好项且项目继承未修改；Alchemy在线对话BIGSUR对‘我要走高架路线’却下发expressway_first，VOS日志56995在18:02:36-18:02:55先播‘已切换高速优先’，后对‘切换到高架路线’回复不支持。\n处理：语音NLU/泛化配置负责人删除‘高架/走高架’到expressway_first的错误映射，使‘我要走高架路线’‘切换到高架路线’均按不支持路线偏好处理；不改地图路线偏好定义。",
+    "status": "可转语音",
+    "note": "正式目标与实现已闭环：同车型UE无‘高架路线’偏好；缺陷是高架被泛化为expressway_first。修复范围只删错误映射，回归两句原话均不得改变路线偏好。",
+    "links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/PC-39051"},
+      {"label": "VOS日志56995·18:02:36-18:02:55", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/56995"},
+      {"label": "Alchemy在线对话·BIGSUR·‘我要走高架路线’", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "C385&673导航UE V0.6·地图设置→01 设置→路线设置", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"},
+      {"label": "Alchemy标准功能1450/深蓝项目功能24569", "url": "https://alchemy.i-tetris.com/"}
+    ],
+    "info_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/PC-39051"},
+      {"label": "VOS日志56995·18:02:36-18:02:55", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/56995"},
+      {"label": "Alchemy在线对话·BIGSUR·‘我要走高架路线’", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "C385&673导航UE V0.6·地图设置→01 设置→路线设置", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"},
+      {"label": "Alchemy标准功能1450/深蓝项目功能24569", "url": "https://alchemy.i-tetris.com/"}
+    ],
+    "judgment_links": [
+      {"label": "C385&673导航UE V0.6‘地图设置→01 设置→路线设置’", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"},
+      {"label": "Alchemy标准功能1450/深蓝项目功能24569", "url": "https://alchemy.i-tetris.com/"},
+      {"label": "Alchemy在线对话BIGSUR", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "VOS日志56995", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/56995"}
+    ]
+  }
+]

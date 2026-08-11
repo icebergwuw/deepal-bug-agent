@@ -1,0 +1,35 @@
+[
+  {
+    "key": "ADS-47871",
+    "summary": "沿途服务区指令被Claw拦截后超时关闭",
+    "date": "2026-08-04",
+    "info": "现象：Jira原票记录“重庆主城到四面山的沿途服务区”超时关闭对话；等待时长由10秒改为60秒后内部实车20次通过，但客户回归附件仍失败。最新评论确认Claw POI Agent当前不支持沿途搜索。\n正式定义：沿途搜索标准功能1005明确在导航状态下搜索路线沿途地址；深蓝项目功能24549已继承且未修改。Alchemy当前核验对原话下发1209生成重庆主城到四面山路线，再下发1005沿途搜索“服务区”。\n范围：POI推荐PRD V0.8定义推荐类模糊意图，未定义本票沿途搜索，不能据此改走Claw自由推荐；关联票ST-65870为通用归集票。",
+    "info_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-47871"},
+      {"label": "客户回归附件", "url": "http://jira.i-tetris.com/secure/attachment/4191226/14.35.mp4"},
+      {"label": "沿途搜索标准功能1005", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1430"},
+      {"label": "深蓝项目功能24549", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24549"},
+      {"label": "Alchemy当前核验", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "POI推荐PRD V0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc"},
+      {"label": "关联票ST-65870", "url": "http://jira.i-tetris.com/browse/ST-65870"}
+    ],
+    "judgment": "结论：产品预期确认：“重庆主城到四面山的沿途服务区”应先生成路线，再按meta_id=1005搜索并展示路线沿途服务区列表；不得因Claw暂不支持沿途搜索而超时关闭对话。\n依据：Jira原票、客户回归附件、沿途搜索标准/深蓝项目功能点、Alchemy当前核验\n处理：移除该指令的Claw抢占并按现有1209+1005功能链执行；语音在线仲裁/DS研发处理。",
+    "judgment_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-47871"},
+      {"label": "客户回归附件", "url": "http://jira.i-tetris.com/secure/attachment/4191226/14.35.mp4"},
+      {"label": "沿途搜索标准/深蓝项目功能点", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24549"},
+      {"label": "Alchemy当前核验", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ],
+    "status": "可转语音",
+    "note": "现有深蓝项目功能24549已继承meta_id=1005且未修改；客户回归失败属于执行路由缺陷，不是新增能力。",
+    "links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-47871"},
+      {"label": "客户回归视频", "url": "http://jira.i-tetris.com/secure/attachment/4191226/14.35.mp4"},
+      {"label": "沿途搜索标准功能1005", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1430"},
+      {"label": "深蓝项目功能24549", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24549"},
+      {"label": "Alchemy当前核验", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "POI推荐PRD V0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc"},
+      {"label": "关联票ST-65870", "url": "http://jira.i-tetris.com/browse/ST-65870"}
+    ]
+  }
+]

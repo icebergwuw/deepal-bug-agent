@@ -1,0 +1,97 @@
+{
+  "jira_key": "HUR-80864",
+  "row": 263,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：快捷设置后视镜折叠德语文言与正式翻译不一致。[Jira原票·描述/评论]\n证据：正式LanguageList在03_Vehicle Settings第522行定义rear_mirror_fold，Jira评论确认应按表中无多余符号的译文显示。[LanguageList精确source·第522行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：快捷设置rear_mirror_fold应严格显示正式LanguageList德语文言，当前多余符号/错误资源属于实现缺陷。\n依据：Jira原票·描述/评论、LanguageList精确source·第522行。\n处理：按第522行目标译文修正快捷设置资源并回归；J90A多语言资源研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "修正资源后需在EU-PI德语环境核对标点、换行和完整显示",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": {
+      "text": "现象：快捷设置后视镜折叠德语文言与正式翻译不一致。[Jira原票·描述/评论]\n证据：正式LanguageList在03_Vehicle Settings第522行定义rear_mirror_fold，Jira评论确认应按表中无多余符号的译文显示。[LanguageList精确source·第522行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：快捷设置rear_mirror_fold应严格显示正式LanguageList德语文言，当前多余符号/错误资源属于实现缺陷。\n依据：Jira原票·描述/评论、LanguageList精确source·第522行。\n处理：按第522行目标译文修正快捷设置资源并回归；J90A多语言资源研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "修正资源后需在EU-PI德语环境核对标点、换行和完整显示",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "spreadsheet": "吴优工作说明",
+  "sheet": "bug",
+  "range": "A131:J135",
+  "mode": "recheck",
+  "changed_columns": ["C", "D", "G", "I", "J"],
+  "protected_columns": ["A", "B", "E", "F", "H"],
+  "prewrite_fresh_read_matched": true,
+  "protected_values_matched": true,
+  "b_formulas_preserved": true,
+  "e_boolean_validation_preserved": true,
+  "rich_text_links_matched": true,
+  "document_saved": true,
+  "rows": [
+    {"row": 131, "key": "PC-38056", "status": "待复核"},
+    {"row": 132, "key": "PC-38036", "status": "可关闭"},
+    {"row": 133, "key": "PC-38029", "status": "待复核"},
+    {"row": 134, "key": "PC-38026", "status": "待会诊"},
+    {"row": 135, "key": "PC-37808", "status": "可转研发"}
+  ],
+  "jira_actions": "未评论、未转派、未关闭、未变更Jira状态"
+}

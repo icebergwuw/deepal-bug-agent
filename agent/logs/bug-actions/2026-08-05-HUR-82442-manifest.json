@@ -1,0 +1,121 @@
+{
+  "jira_key": "HUR-82442",
+  "comment_causality": "李翔的研发评论把日志中的两次OverSpeed120请求定位在13:51:23和13:54:15，间隔约3分钟，因此推翻了仅凭标题就认定‘持续播报’的初步理解；但该评论只说明日志未出现连续请求，不能代替正式产品目标。进一步核对J90A-EL功能清单、I102文字报警定义和报警提示音信号表后确认：UAE所在GCC范围搭载固定120km/h报警，道路限速140不影响触发；单次声音目标为10声，信号持续超过10秒应在第10秒停止。现有截图只能证明文字提示，日志没有覆盖两次之间是否降至118km/h以下，外部关联HUR-49712又因登录限制无法读取，故无法确定第二次为正常解除后再触发还是异常重复，结论降为待复核。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-49712",
+        "relationship": "Jira描述中的外部关联票，可能包含连续播报的原始音视频或评论",
+        "outcome": "已打开关联入口，但页面明确提示必须登录后才能访问，无法读取其描述、评论和附件；该限制作为关键证据缺口保留。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "el_function_list_v1_6",
+      "source": "J90A-G -EL座舱功能清单V1.6 20260528",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "J90A-EL，GCC/UAE配置列",
+      "trigger": "GCC/UAE车型的120km/h超速报警配置",
+      "target_behavior": "I1-F01-SF40-00指示灯、I1-F02-SF48-00文字报警和I1-F03-SF23-00声音报警在GCC配置列均为搭载，备注为GCC新增。",
+      "reason": "同车型最新功能清单直接证明J90A-EL对UAE搭载固定120km/h报警，并给出被继承的平台定义编号。"
+    },
+    {
+      "source_id": "text_alarm_v1_5",
+      "source": "[J90A-EU]I102_文字报警_IP_V1.5_20250110",
+      "role": "formal_target",
+      "match": "partial",
+      "inheritance_chain_id": "el_120_text_alarm",
+      "project_model": "长安乘用车平台定义；由J90A-EL V1.6功能清单明确继承并在GCC配置搭载",
+      "trigger": "IGN ON且指示车速大于120km/h",
+      "target_behavior": "显示‘120km/h超速’图片和文字，图片不能被切换；车速降到118km/h以下或电源OFF时立即取消。道路道路限速值不参与触发判断。",
+      "reason": "平台正式文字报警定义提供精确阈值、显示内容、取消条件和Gulf配置要求。"
+    },
+    {
+      "source_id": "sound_alarm_v3_4",
+      "source": "报警提示音信号表（新）-V3.4-20240701",
+      "role": "formal_target",
+      "match": "partial",
+      "inheritance_chain_id": "el_120_sound_alarm",
+      "project_model": "平台报警声音定义；由J90A-EL V1.6功能清单明确搭载I1-F03-SF23-00",
+      "trigger": "120km/h超速报警声音请求由OFF变ON",
+      "target_behavior": "警示类音频16单次响10声；仪表判断信号存在时长，若超过10秒，在第10秒结束时停止声音请求。",
+      "reason": "正式声音信号表直接定义本票争议的声音次数和最大持续时长。"
+    },
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82442原票、三条评论、截图及日志分析",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "J90A-EL阿联酋预生产车，SWC.00.0测试版本，VIN LVRHDAEK8VN001600",
+      "trigger": "道路限速140km/h、车速约124km/h时触发120km/h超速报警",
+      "target_behavior": "截图证明仪表显示‘120km/h超速’；日志评论定位13:51:23和13:54:15两次独立OverSpeed120请求，间隔约3分钟，但没有提供连续声音时长和中间车速阈值轨迹。",
+      "reason": "原票和附件完整证明车型、版本、触发环境、文字显示及两次请求时间，但不足以证明‘持续播报’。"
+    },
+    {
+      "source_id": "release_plan_v1_3",
+      "source": "J90A-EL项目软件发布说明书SWC.00.0_V1.3",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "J90A-EL SWC.00.0/SWC.00.1发布范围",
+      "trigger": "HUR-82442版本处理计划",
+      "target_behavior": "已修复问题清单把HUR-82442列为计划后续SWC.00.1修复，但未给出修改目标、声音时长或再触发条件。",
+      "reason": "这是版本计划证据，只能说明团队已有修复计划，不能替代产品正式目标。"
+    },
+    {
+      "source_id": "continuous_audio_gap",
+      "source": "外部HUR-49712及13:51-13:55连续音视频/车速轨迹",
+      "role": "implementation_actual",
+      "match": "gap",
+      "material": true,
+      "project_model": "J90A-EL阿联酋本次实车复现",
+      "trigger": "第一次120km/h报警后至第二次请求之间",
+      "target_behavior": "需要证明每次声音是否在10声/10秒内停止，以及第二次请求前指示车速是否曾降到118km/h以下或报警信号是否解除后重新置位。",
+      "reason": "若未解除仍超过10秒连续播报或再次请求，则是实现缺陷；若单次10声且经过解除后再触发，则符合正式规则，两种结果会改变最终结论。",
+      "next_action": "测试负责人朱翔宇补充13:51-13:55连续音视频和同步车速轨迹，或开放外部HUR-49712内容；QNX-IC Apps研发导出两次请求间的车速与报警信号翻转。"
+    }
+  ],
+  "inheritance_chains": [
+    {
+      "id": "el_120_text_alarm",
+      "project_model": "J90A-EL GCC/UAE",
+      "function": "120km/h超速指示灯和文字报警",
+      "project_source_id": "el_function_list_v1_6",
+      "definition_source_id": "text_alarm_v1_5",
+      "reason": "J90A-EL V1.6功能清单在GCC各配置列明确勾选I1-F01-SF40-00和I1-F02-SF48-00，并引用J90A-EU平台报警定义；UAE是该清单列出的GCC国家之一。",
+      "verified": true
+    },
+    {
+      "id": "el_120_sound_alarm",
+      "project_model": "J90A-EL GCC/UAE",
+      "function": "120km/h超速声音报警",
+      "project_source_id": "el_function_list_v1_6",
+      "definition_source_id": "sound_alarm_v3_4",
+      "reason": "J90A-EL V1.6功能清单在GCC配置列明确勾选I1-F03-SF23-00；功能清单备注指向报警提示音信号表，V3.4给出10声和10秒停止策略。",
+      "verified": true
+    }
+  ],
+  "conflict_resolution": "测试预期以道路限速140为由认为不应持续播报；正式J90A-EL/GCC资料则定义固定120km/h报警，触发只看指示车速，不看道路限速。研发评论据日志认为两次请求相隔3分钟、没有连续播报，但评论不能证明每次声音实际时长，也缺两次之间是否降至118km/h以下的轨迹。发布说明虽把本票列入SWC.00.1修复计划，却没有定义要修改什么，不能作为产品目标。故产品预期先明确为‘超过120单次10声、10秒停止；降到118以下解除后可再次触发’，对本次实现是否符合保留待复核。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "J90A-EL UAE/GCC配置，IGN ON，指示车速大于120km/h",
+    "target_state": "120km/h超速报警激活；指示车速降到118km/h以下或电源OFF时解除",
+    "intent_function_signal": "仪表120km/h超速报警I1-F01-SF40-00/I1-F02-SF48-00/I1-F03-SF23-00，不依赖导航道路限速",
+    "ui_tts_vehicle_behavior": "仪表显示不可切换的120km/h超速图片和文字；声音单次响10声，信号持续超过10秒时在第10秒结束停止声音请求",
+    "boundary": "道路限速140不取消固定120报警；只有报警条件解除后再次满足或规定状态变化时才允许重新触发，未解除时不得无限连续或重复请求",
+    "source_ids": ["text_alarm_v1_5", "sound_alarm_v3_4"]
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "测试负责人朱翔宇",
+    "text": "结论：待复核；道路限速140不影响J90A-EL UAE/GCC固定120km/h报警，超过120触发文字、图标和单次10声属于产品预期；但若同一次超速条件未解除仍超过10秒连续播报，或未降到118km/h以下即再次触发，则属于报警重复缺陷。\n依据：HUR-82442原票、三条评论、截图和日志分析，J90A-EL功能清单V1.6、I102文字报警V1.5、报警提示音信号表V3.4；外部HUR-49712因登录限制未能读取。\n处理：测试负责人朱翔宇补充13:51-13:55连续音视频和同步车速轨迹，或开放外部HUR-49712内容，并标出每次声音起止；QNX-IC Apps研发同时提供两次OverSpeed120之间的车速/信号翻转。确认单次不超过10声且第二次经过解除再触发后关闭，否则转QNX-IC Apps修复。"
+  }
+}

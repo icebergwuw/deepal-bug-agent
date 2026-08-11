@@ -1,0 +1,33 @@
+{
+  "spreadsheet": "吴优工作说明",
+  "sheet": "bug",
+  "range": "A135:J135",
+  "mode": "recheck",
+  "key": "PC-37808",
+  "status": "待复核",
+  "prewrite": {
+    "status": "可转研发",
+    "protected": {
+      "A": "2026-07-21",
+      "B": "PC-37808｜最快路线偏好未传入选路执行",
+      "E": false,
+      "F": "",
+      "H": ""
+    }
+  },
+  "postwrite": {
+    "changed_columns": ["C", "D", "G", "I", "J"],
+    "protected_columns_unchanged": true,
+    "b_jira_link_preserved": true,
+    "e_boolean_checkbox_preserved": true,
+    "rich_text_links": {
+      "C": ["Jira", "Alchemy", "PRD V6.1", "UE V0.6"],
+      "D": ["PRD V6.1", "UE V0.6", "Alchemy", "Jira"],
+      "J": ["Jira", "PRD V6.1", "UE V0.6", "Alchemy"]
+    },
+    "font": "Arial 10",
+    "document_status": "已保存到云端硬盘"
+  },
+  "final_decision": "结论：语音已正确识别shortest_time，POI确认后strategy确实丢失，但现行产品正式资料未明确二次确认后的路线偏好透传与最快路线选择规则，暂不能直接定为研发缺陷。\n依据：主PRD V6.1第33页仅定义三路线展示及默认第一条，第104页未包含最快路线偏好；当前UE V0.6第3页也未定义shortest_time处理；Alchemy标准1433/项目24552只证明语义字段与POI二次交互，Jira 2026-07-17 16:15日志证明当前strategy=null。\n处理：补齐POI二次确认后route_preference的保留、选路和启动规则，再依据正式定义定责并复测；地图产品/交互负责人处理。",
+  "jira_actions": "未评论、未转派、未关闭、未变更Jira状态"
+}

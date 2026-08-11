@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-08-07",
+    "key": "SD-5364",
+    "summary": "场景重构卡片展开时短按切换不收起",
+    "info": "现象：场景重构卡片展开时短按切换不收起。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "judgment": "结论：场景重构卡片展开时短按切换不收起的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 Launcher产品负责人处理。",
+    "status": "待复核",
+    "note": "下一步：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现",
+    "links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/SD-5364"
+      },
+      {
+        "label": "Drive检索·待定位正式定义/UE",
+        "url": "https://drive.google.com/drive/u/0/search?q=%E5%9C%BA%E6%99%AF%E9%87%8D%E6%9E%84%E5%8D%A1%E7%89%87%E5%B1%95%E5%BC%80%E6%97%B6%E7%9F%AD%E6%8C%89%E5%88%87%E6%8D%A2%E4%B8%8D%E6%94%B6%E8%B5%B7"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/SD-5364"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Drive检索·待定位正式定义/UE",
+        "url": "https://drive.google.com/drive/u/0/search?q=%E5%9C%BA%E6%99%AF%E9%87%8D%E6%9E%84%E5%8D%A1%E7%89%87%E5%B1%95%E5%BC%80%E6%97%B6%E7%9F%AD%E6%8C%89%E5%88%87%E6%8D%A2%E4%B8%8D%E6%94%B6%E8%B5%B7"
+      }
+    ]
+  }
+]

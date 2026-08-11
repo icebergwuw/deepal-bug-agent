@@ -1,0 +1,176 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-79831",
+  "comment_causality": "已完整读取HUR-79831当前字段、描述、附件、关联问题与评论时间线；当前现象为：意大利语询问公司地址落入闲聊。Jira中的测试预期和研发/测试评论仅作为实现与调查事实，未替代生效正式定义。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-79572",
+        "relationship": "Jira当前页面登记的直接关联/同场景参考票",
+        "outcome": "已完整读取；仅用于核对同功能或同文言冲突，不替代本票目标定义。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-79831 Jira描述、附件与完整评论时间线",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题与活动日志（按时间升序完整读取）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和模块",
+      "trigger": "意大利语询问公司地址落入闲聊",
+      "target_behavior": "证明本票当前现象、测试主张和评论诊断；不单独定义产品目标。",
+      "reason": "Jira当前页面直接证明实现事实和调查因果链。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy在线对话当前结果",
+      "source_type": "alchemy_current",
+      "source_location": "HUR/SLV/BIGSUR在线对话；原话=Dov'e la mia azienda；结果=classification=chat；无operations与meta_id",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Alchemy当前可选项目环境，按Jira项目选择HUR/SLV/BIGSUR",
+      "trigger": "Dov'e la mia azienda",
+      "target_behavior": "classification=chat；无operations与meta_id",
+      "reason": "实时平台结果证明当前分类、operations和meta_id状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体的专项画像，不重复使用通用画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "问题涉及语音原话、NLU、VUI、TTS或语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "问题涉及地图搜索、POI、路线选择、导航或途经点状态。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及页面、卡片、文本、弹窗或可见控件状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy在线对话测试（HUR/SLV/BIGSUR）",
+      "queries": [
+        "Dov'e la mia azienda"
+      ],
+      "source_ids": [
+        "alchemy_current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy标准功能列表",
+      "queries": [
+        "Dov'e la mia azienda",
+        "meta_id"
+      ],
+      "source_ids": [],
+      "reason": "当前在线结果没有可追溯meta_id，无法进入对应功能点详情。",
+      "material": true,
+      "next_action": "补齐J90A意大利语公司地址正式语料与项目功能点后复测"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy深蓝项目功能列表",
+      "queries": [
+        "Dov'e la mia azienda",
+        "meta_id"
+      ],
+      "source_ids": [],
+      "reason": "当前在线结果没有可追溯meta_id，无法进入对应功能点详情。",
+      "material": true,
+      "next_action": "补齐J90A意大利语公司地址正式语料与项目功能点后复测"
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：按Jira项目、原话、功能名检索主PRD/专项需求",
+      "queries": [
+        "Dov'e la mia azienda",
+        "意大利语询问公司地址落入闲聊",
+        "语音 功能定义"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补齐J90A意大利语公司地址正式语料与项目功能点后复测"
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：地图导航主PRD与J90A导航功能清单",
+      "queries": [
+        "Dov'e la mia azienda",
+        "导航 路线选择 途经点 家 公司"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补齐J90A意大利语公司地址正式语料与项目功能点后复测"
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：地图专项定义/语音地图需求",
+      "queries": [
+        "Dov'e la mia azienda",
+        "意大利语询问公司地址落入闲聊"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补齐J90A意大利语公司地址正式语料与项目功能点后复测"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、当前实现、Alchemy/配置结果与Drive正式资料分开记录；缺少同范围正式目标或存在分支/source冲突时不硬判，统一降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "alchemy_tested": true,
+    "original_utterance": "Dov'e la mia azienda",
+    "alchemy_result": "classification=chat；无operations与meta_id",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "当前结果无meta_id。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "当前结果无meta_id。"
+    },
+    "unavailable_reason": "原话落入闲聊且没有operations/meta_id，无法读取对应功能详情。",
+    "next_action": "补齐J90A意大利语公司地址正式语料与项目功能点后复测"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A语音产品配置负责人",
+    "text": "结论：意大利语询问公司地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A意大利语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "jira_key": "SD-5364",
+  "row": 281,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象与实现：已完整读取SD-5364描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：客户方案已下发，但当前0426海外分支已封版且正式资料未证明短按卡片切换必须收起场景重构卡片，不能直接关票或要求旧分支合入。\n依据：Jira原票·ID20260618182942474/完整用例、关联SM-17699、客户评论/2026-07-10。\n处理：确认客户方案适用版本及是否仍要求0426分支变更，再决定关闭旧票或转新版本需求；C673-G项目负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "客户方案内容和适用版本未回读前保持待确认",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": {
+      "text": "现象与实现：已完整读取SD-5364描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：客户方案已下发，但当前0426海外分支已封版且正式资料未证明短按卡片切换必须收起场景重构卡片，不能直接关票或要求旧分支合入。\n依据：Jira原票·ID20260618182942474/完整用例、关联SM-17699、客户评论/2026-07-10。\n处理：确认客户方案适用版本及是否仍要求0426分支变更，再决定关闭旧票或转新版本需求；C673-G项目负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "客户方案内容和适用版本未回读前保持待确认",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

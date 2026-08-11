@@ -1,5 +1,5 @@
 schema_version: 1
-last_updated: "2026-07-22"
+last_updated: "2026-07-29"
 
 routing:
   explicit_user_owner_first: true
@@ -75,3 +75,14 @@ owners:
     profile: "agent/bug-owners/luo-zhiqin/README.md"
     last_source_read: "2026-07-16"
     note: "按 Jira 经办人显示名罗稚钦自动路由；账号不是必填项"
+
+  - id: "tao-yongjiang"
+    name: "陶泳江"
+    status: "pending"
+    jira_display_names:
+      - "陶泳江"
+    jira_account: "yongjiang.tao"
+    write_mode: "read_only"
+    source_type: "unconfirmed"
+    profile: "agent/bug-owners/tao-yongjiang/README.md"
+    note: "2026-07-29 由 HUR-82492 当前 Jira 经办人发现；其线上 Bug 清单、页签和默认写回边界尚未确认，禁止写入其他负责人清单。"

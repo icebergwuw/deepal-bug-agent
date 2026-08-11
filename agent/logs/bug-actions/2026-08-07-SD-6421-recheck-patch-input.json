@@ -1,0 +1,75 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SD-6421",
+  "sheet": "吴优工作说明 / bug",
+  "row": 166,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：D587-G现测“SEARCH PARKING”误命中meta_id=1026音乐播放，未进入停车场搜索。[Jira最新评论·需新增需求][Alchemy当前结果/标准及项目功能点]\n证据：主清单第78-93行有关键字/周边停车场搜索，但现有语音定义未覆盖Search+POI类别句式；最新评论明确需产品需求补充新表达。[C673功能清单·16_地图第45/85-93/298行]",
+      "links": [
+        {
+          "label": "Jira最新评论·需新增需求",
+          "url": "http://jira.i-tetris.com/browse/SD-6421"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：现有语音范围未覆盖“Search + POI类别”英文句式，按新增语料/句式需求处理。\n依据：Jira最新评论·需新增需求、Alchemy当前结果/标准及项目功能点、C673功能清单·16_地图第78-93行。\n处理：定义Search parking/coffee等POI类别句式、槽位和反例并下发；C673海外语音产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira最新评论·需新增需求",
+          "url": "http://jira.i-tetris.com/browse/SD-6421"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第78-93行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "需求至少覆盖parking/coffee并约束Search与媒体播放冲突",
+    "J": {
+      "links": [
+        {
+          "label": "Jira最新评论·需新增需求",
+          "url": "http://jira.i-tetris.com/browse/SD-6421"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    }
+  }
+}

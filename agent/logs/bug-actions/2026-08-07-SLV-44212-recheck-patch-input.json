@@ -1,0 +1,75 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44212",
+  "sheet": "吴优工作说明 / bug",
+  "row": 163,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：周边搜和关键词搜结果未按客户UI展示停车场气泡。[Jira最新评论·0729客户会结论]\n证据：0729客户会纠正了旧理解并明确补UI气泡；主清单第85-93行定义周边搜、结果同框和停车场深度信息，MasterGo含停车场气泡/详情图层。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44212"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：停车场周边搜和关键词搜均应补齐客户确认的UI气泡呈现，属于实现缺失。\n依据：Jira最新评论·0729客户会结论、C673功能清单·16_地图第85-93行、C673地图UE V0.6·850页面。\n处理：按两类入口补齐气泡、详情联动并分别回归；C673地图UI研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44212"
+        },
+        {
+          "label": "C673功能清单·16_地图第85-93行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "两类入口分别回归，避免只修周边搜遗漏关键词搜",
+    "J": {
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44212"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    }
+  }
+}

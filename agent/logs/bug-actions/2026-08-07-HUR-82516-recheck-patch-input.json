@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82516",
+  "sheet": "吴优工作说明 / bug",
+  "row": 276,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82516描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82516"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：BCall闭锁后播报错误并自动挂断的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为非用户NLU原话，Alchemy在线对话不适用；Jira记录错误TTS和自动挂断；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82516"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  }
+}

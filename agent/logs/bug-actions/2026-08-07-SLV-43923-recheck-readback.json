@@ -1,0 +1,68 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-43923",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 278,
+  "range": "A278:J278",
+  "values": {
+    "A": "2026-08-07",
+    "B": "SLV-43923｜分屏时再次点击媒体dock未全屏的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。",
+    "C": "现象与实现：已完整读取SLV-43923描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+    "D": "结论：分屏时再次点击媒体dock未全屏的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。",
+    "E": false,
+    "F": null,
+    "G": "待复核",
+    "H": null,
+    "I": "补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。",
+    "J": "Jira原票·描述/完整评论\n工作说明·正式资料入口"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-43923\",\"SLV-43923｜分屏时再次点击媒体dock未全屏的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SLV-43923"
+      },
+      {
+        "label": "工作说明·正式资料入口",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ],
+    "D": [
+      {
+        "label": "Drive",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SLV-43923"
+      },
+      {
+        "label": "工作说明·正式资料入口",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-08-07",
+    "B": "SLV-43923｜分屏时再次点击媒体dock未全屏的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。",
+    "E": false,
+    "F": null,
+    "H": null
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

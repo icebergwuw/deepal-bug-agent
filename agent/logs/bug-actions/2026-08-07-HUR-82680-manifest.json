@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82680",
+  "comment_causality": "已完整读取HUR-82680当前字段、描述、附件、关联问题与评论时间线；当前现象为：C385/ACCTextTakeOver__71文言与当前清单/车机显示不一致。Jira中的测试预期和研发/测试评论仅作为实现与调查事实，未替代生效正式定义。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-82661",
+        "relationship": "Jira当前页面登记的直接关联/同场景参考票",
+        "outcome": "已完整读取；仅用于核对同功能或同文言冲突，不替代本票目标定义。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82680 Jira描述、附件与完整评论时间线",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题与活动日志（按时间升序完整读取）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和模块",
+      "trigger": "C385/ACCTextTakeOver__71文言与当前清单/车机显示不一致",
+      "target_behavior": "证明本票当前现象、测试主张和评论诊断；不单独定义产品目标。",
+      "reason": "Jira当前页面直接证明实现事实和调查因果链。"
+    },
+    {
+      "source_id": "translation_config",
+      "source": "J90A车机文言V0.5.8 B0904正式翻译清单",
+      "source_type": "formal_config",
+      "source_location": "Drive路径V0.5.8/B0904；Sheet‘仪表’，Key=C385/ACCTextTakeOver__71",
+      "role": "context_only",
+      "match": "partial",
+      "project_model": "J90A EL，B0904正式清单；部分Jira为B0609或实际QML source不同",
+      "trigger": "查询C385/ACCTextTakeOver__71目标语种文言",
+      "target_behavior": "清单可证明已登记Key/相同中文source的译文现状，但分支或source冲突尚未消除。",
+      "reason": "已读到正式配置入口，但不能跨分支或跨source直接定义本票唯一目标值。"
+    }
+  ],
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体的专项画像，不重复使用通用画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及语音原话、NLU、VUI、TTS或语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图搜索、POI、路线选择、导航或途经点状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题涉及页面、卡片、文本、弹窗或可见控件状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：J90A车机文言V0.5.8，B0609/B0904正式翻译清单",
+      "queries": [
+        "C385/ACCTextTakeOver__71",
+        "J90A 车机文言 V0.5.8",
+        "B0609 B0904"
+      ],
+      "source_ids": [
+        "translation_config"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：J90A AllKey、多语言、仪表UE/交互资料",
+      "queries": [
+        "C385/ACCTextTakeOver__71",
+        "J90A AllKey 多语言 仪表",
+        "J90A 0904 文言"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "由J90A多语言配置负责人给出该Key对应页面/图层或确认本票仅受正式翻译清单约束。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、当前实现、Alchemy/配置结果与Drive正式资料分开记录；缺少同范围正式目标或存在分支/source冲突时不硬判，统一降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "J90A多语言配置负责人",
+    "text": "结论：C385/ACCTextTakeOver__71当前存在测试分支、Key行和相同中文source译文冲突，不能按‘文言表为空’直接判定车机显示错误。\n依据：Jira描述/评论记录当前显示，Drive中B0609/B0904 V0.5.8正式翻译清单的Key覆盖与本票QML source未形成唯一对应。\n处理：统一HUR-82680对应的生效分支、QML source及目标语种值后再判定是否修复；J90A多语言配置负责人处理。"
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "date": "2026-08-10",
+  "owner": "吴优",
+  "sheet": "bug",
+  "start_row": 283,
+  "end_row": 319,
+  "count": 37,
+  "ab_write": {
+    "status": "verified",
+    "range": "bug!A283:B319",
+    "readback": "37个日期与Jira HYPERLINK均已回读；E列按模板保留BOOLEAN复选框，C/D/F/G/H/I/J初始为空。"
+  },
+  "first_three_processing": {
+    "status": "verified",
+    "range": "bug!C283:J285",
+    "items": [
+      {"key": "SM-17714", "row": 283, "status": "可转研发", "owner": "Android CarSettings研发负责人"},
+      {"key": "SLV-44342", "row": 284, "status": "待确认", "owner": "吴优"},
+      {"key": "SLV-44272", "row": 285, "status": "可转研发", "owner": "Android-VUI研发（甘杰）"}
+    ],
+    "validation": "3份schema_version=2证据门禁与3份sheet patch回读校验均通过。",
+    "jira_external_actions": "none"
+  },
+  "items": [
+    {
+      "key": "SM-17714",
+      "summary": "[内测问题][镁佳][C673][0126无网][声音][sm] 俄语头枕扬声器关闭项显示Выкл缺少句号",
+      "jira_url": "http://jira.i-tetris.com/browse/SM-17714"
+    },
+    {
+      "key": "SLV-44342",
+      "summary": "【客户问题】【UI走查】【C673ica】分屏-非华为导航-分屏区域样式不对，应该有圆角",
+      "jira_url": "http://jira.i-tetris.com/browse/SLV-44342"
+    },
+    {
+      "key": "SLV-44272",
+      "summary": "[User][C673基础款  DA车型][0130]16：47 已有导航历史，query\"打开导航历史记录\"，TTS\"没有找到导航历史记录\"，期望显示导航GUI卡片，tts回复找到多个结果，要选择第几个呢",
+      "jira_url": "http://jira.i-tetris.com/browse/SLV-44272"
+    },
+    {
+      "key": "SLV-44256",
+      "summary": "12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了导航",
+      "jira_url": "http://jira.i-tetris.com/browse/SLV-44256"
+    },
+    {
+      "key": "HUR-82954",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notice_8提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82954"
+    },
+    {
+      "key": "HUR-82953",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notice_7提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82953"
+    },
+    {
+      "key": "HUR-82952",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notice_6提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82952"
+    },
+    {
+      "key": "HUR-82950",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notice_5提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82950"
+    },
+    {
+      "key": "HUR-82949",
+      "summary": "【J90A】【0526】【仪表】英语，仪表驾驶模式字体太小",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82949"
+    },
+    {
+      "key": "HUR-82937",
+      "summary": "【PI】【0109】【语音】【新需求测试】【波兰语】展车模式开启，提示无法使用拖车模式的tts回复不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82937"
+    },
+    {
+      "key": "HUR-82934",
+      "summary": "【PI】【语音】【新需求测试】【瑞典语】露营模式时长减少15分钟(24h>x>1分钟)/露营模式时长减少15分钟(24h>x>1分钟) 露营模式减少一点时长(模糊步长 10min),与对应音频不一致",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82934"
+    },
+    {
+      "key": "HUR-82931",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notice_4提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82931"
+    },
+    {
+      "key": "HUR-82930",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notice_2提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82930"
+    },
+    {
+      "key": "HUR-82929",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/UDLCText_17提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82929"
+    },
+    {
+      "key": "HUR-82928",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/NDAText_12提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82928"
+    },
+    {
+      "key": "HUR-82927",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/NDAText_11提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82927"
+    },
+    {
+      "key": "HUR-82915",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notice_4提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82915"
+    },
+    {
+      "key": "HUR-82914",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/NDAText_12提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82914"
+    },
+    {
+      "key": "HUR-82912",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/NDAText_11提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82912"
+    },
+    {
+      "key": "HUR-82911",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/NDAText_10 提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82911"
+    },
+    {
+      "key": "HUR-82909",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/IACCText_59提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82909"
+    },
+    {
+      "key": "HUR-82908",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/IACCText_4提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82908"
+    },
+    {
+      "key": "HUR-82907",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/IACCText_38提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82907"
+    },
+    {
+      "key": "HUR-82906",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/IACCText_3提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82906"
+    },
+    {
+      "key": "HUR-82905",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/IACCText_27提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82905"
+    },
+    {
+      "key": "HUR-82903",
+      "summary": "【EL】【0609】【debug】 【英语】【文言走查】仪表topic_value：C385/IACCText_1提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82903"
+    },
+    {
+      "key": "HUR-82872",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/NDAText_10提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82872"
+    },
+    {
+      "key": "HUR-82870",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/IACCText_59提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82870"
+    },
+    {
+      "key": "HUR-82867",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/IACCText_50提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82867"
+    },
+    {
+      "key": "HUR-82865",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/IACCText_4提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82865"
+    },
+    {
+      "key": "HUR-82864",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/IACCText_38提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82864"
+    },
+    {
+      "key": "HUR-82862",
+      "summary": "【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：C385/IACCText_3提示文言不对",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82862"
+    },
+    {
+      "key": "HUR-82857",
+      "summary": "【J90A】【0526】【音乐】14:34 冬季模式开启中，音乐app中点击氛围灯按键，无弹窗提示，且能开启氛围灯音乐律动模式",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82857"
+    },
+    {
+      "key": "HUR-82811",
+      "summary": "【J90A】【0526】【user-debug】 15：43   多个电话联系人选择拨打页面-qurey：今天天气怎么样 TTS回复错误",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82811"
+    },
+    {
+      "key": "HUR-82655",
+      "summary": "BG20260803001140 【WT】【J90A-EL】【车辆设置】【实车】【静态】【必现】【SWC.00.0】拨打蓝牙电话中，再方控调节音量，音量值被蓝牙电话窗口遮挡",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82655"
+    },
+    {
+      "key": "HUR-82496",
+      "summary": "【J90A】【0526】【情景模式-儿童模式】【语音】开启儿童模式后，语音“放大实时画面”，执行为放大地图",
+      "jira_url": "http://jira.i-tetris.com/browse/HUR-82496"
+    },
+    {
+      "key": "ADS-48288",
+      "summary": "【C673-7】【大激光】【镁佳】【hqx.4.5.5_20250902】【user】【SWB.3.65】query：以后叫我宝宝，不能设置成功。TTS回复：自定义应答语设置要求为4-6字，且文明健康",
+      "jira_url": "http://jira.i-tetris.com/browse/ADS-48288"
+    }
+  ]
+}

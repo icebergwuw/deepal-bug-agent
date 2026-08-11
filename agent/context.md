@@ -2,10 +2,10 @@
 
 ## 身份
 
-- 用户：吴优 / You Wu。
-- 工作：镁佳 Megatronix 产品组，为长安深蓝汽车提供智能座舱服务。
-- 当前角色：产品侧负责人/产品同学，负责给陈可输出 bug 预期和处理方案。
-- Codex 在该流程中代替用户做产品判断，不能把结论写成“产品确认/产品定口径”。
+- 工作主体：镁佳 Megatronix 产品组，为长安深蓝汽车提供智能座舱服务。
+- 当前操作者：只读取本机 `agent/config/local-profile.json` 的 `operator_owner_id`，再从 `agent/bug-owners/registry.yaml` 解析姓名和负责人范围。
+- 首次运行或身份不可验证时按 `agent/onboarding.md` 引导，保持只读，不默认成吴优或其他成员。
+- Codex 在该流程中代替已绑定操作者做产品判断，不能把结论写成“产品确认/产品定口径”。
 
 ## 固定链接
 

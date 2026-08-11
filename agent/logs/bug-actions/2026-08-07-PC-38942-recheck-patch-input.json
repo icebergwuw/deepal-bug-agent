@@ -1,0 +1,75 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "PC-38942",
+  "sheet": "吴优工作说明 / bug",
+  "row": 265,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象与实现：已完整读取PC-38942描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38942"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：meta_id=1455仅定义POI列表二次交互，现行资料未定义“第一个/选择第一个”后哪些动作关闭列表，当前差异属于交互规则空白。\n依据：Jira原票·评论/2026-08-04、POI推荐PRD V0.8·2.5.3、Alchemy当前结果·meta_id=1021/1455。\n处理：统一序号选择、收藏、导航和添加途经点后的列表关闭规则并下发需求；POI/VUI产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/PC-38942"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "POI推荐PRD V0.8",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "需求需逐项列出二次交互动作及列表保持/关闭规则",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38942"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  }
+}

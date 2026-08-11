@@ -1,0 +1,70 @@
+{
+  "jira_key": "SD-5517",
+  "row": 170,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：历史车端命中meta_id=1007后回复错误手册话术；D587-G现测原话进入meta_id=2820拒识。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：已查地图清单定位能力，但缺C673马来语公司位置的正式语料、目标TTS和版本映射。[C673功能清单·16_地图第45/85-93/298行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5517"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：历史与当前平台结果均异常，但缺同版本马来语公司位置目标，不能直接关闭或单点转配置。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点。\n处理：补齐项目版本、马来语语料和目标TTS后复核识别及播报链；C673海外语音产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5517"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "缺同版本语料、meta_id=1007项目映射和目标TTS",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5517"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": "现象：历史车端命中meta_id=1007后回复错误手册话术；D587-G现测原话进入meta_id=2820拒识。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：已查地图清单定位能力，但缺C673马来语公司位置的正式语料、目标TTS和版本映射。[C673功能清单·16_地图第45/85-93/298行]",
+    "D": "结论：历史与当前平台结果均异常，但缺同版本马来语公司位置目标，不能直接关闭或单点转配置。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点。\n处理：补齐项目版本、马来语语料和目标TTS后复核识别及播报链；C673海外语音产品负责人处理。",
+    "G": "待复核",
+    "I": "缺同版本语料、meta_id=1007项目映射和目标TTS",
+    "J": "Jira原票·描述/完整评论\nAlchemy当前结果/标准及项目功能点\nC673功能清单·16_地图第45/85-93/298行"
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

@@ -1,0 +1,1175 @@
+{
+  "before_row": {
+    "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?ouid=109136590267032001782",
+    "properties": {
+      "title": "吴优工作说明",
+      "locale": "en_US",
+      "timeZone": "Asia/Shanghai"
+    },
+    "sheets": [
+      {
+        "properties": {
+          "sheetId": 2135747181,
+          "title": "bug",
+          "index": 3,
+          "sheetType": "GRID",
+          "gridProperties": {
+            "rowCount": 1014,
+            "columnCount": 10,
+            "frozenRowCount": 1,
+            "hideGridlines": true
+          }
+        },
+        "data": [
+          {
+            "startRow": 137,
+            "rowData": [
+              {
+                "values": [
+                  {
+                    "formattedValue": "2026-07-28",
+                    "userEnteredValue": {
+                      "stringValue": "2026-07-28"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "2026-07-28"
+                    }
+                  },
+                  {
+                    "formattedValue": "ADS-47367｜天气查询范围回复不一致",
+                    "userEnteredValue": {
+                      "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47367\",\"ADS-47367｜天气查询范围回复不一致\")"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "ADS-47367｜天气查询范围回复不一致"
+                    }
+                  },
+                  {
+                    "formattedValue": "Jira实车记录：今天北京全天的天气命中落域天气1249，越界回复“7天内天气”；明天适合穿什么衣服命中落域天气指数1251，越界回复“1天内天气”。正式定义：落域天气1249为已锁定、继承未修改，逐日预报范围T~T+7；落域天气指数1251同样已锁定、继承未修改，仅支持当天，越界模板为“1天内的天气指数”。天气PRD8155&8295与上述边界一致。当前缺陷：1251实际遗漏“指数”，不能按旧结论关闭。",
+                    "userEnteredValue": {
+                      "stringValue": "Jira实车记录：今天北京全天的天气命中落域天气1249，越界回复“7天内天气”；明天适合穿什么衣服命中落域天气指数1251，越界回复“1天内天气”。正式定义：落域天气1249为已锁定、继承未修改，逐日预报范围T~T+7；落域天气指数1251同样已锁定、继承未修改，仅支持当天，越界模板为“1天内的天气指数”。天气PRD8155&8295与上述边界一致。当前缺陷：1251实际遗漏“指数”，不能按旧结论关闭。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "Jira实车记录：今天北京全天的天气命中落域天气1249，越界回复“7天内天气”；明天适合穿什么衣服命中落域天气指数1251，越界回复“1天内天气”。正式定义：落域天气1249为已锁定、继承未修改，逐日预报范围T~T+7；落域天气指数1251同样已锁定、继承未修改，仅支持当天，越界模板为“1天内的天气指数”。天气PRD8155&8295与上述边界一致。当前缺陷：1251实际遗漏“指数”，不能按旧结论关闭。"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "format": {
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 8
+                      },
+                      {
+                        "startIndex": 20,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 28
+                      },
+                      {
+                        "startIndex": 52,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 62
+                      },
+                      {
+                        "startIndex": 155,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 169
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "结论：两个问法落到不同功能点，7天/1天边界符合定义；但1251越界TTS把“天气指数”播成“天气”，属于功能点文案缺陷，不维持关闭。\n依据：落域天气1249、落域天气指数1251、天气PRD8155&8295。\n处理：语音运营/天气功能点配置将1251越界TTS改为“抱歉，我只能查询1天内的天气指数哦”，C673-7实车回归后再关闭。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：两个问法落到不同功能点，7天/1天边界符合定义；但1251越界TTS把“天气指数”播成“天气”，属于功能点文案缺陷，不维持关闭。\n依据：落域天气1249、落域天气指数1251、天气PRD8155&8295。\n处理：语音运营/天气功能点配置将1251越界TTS改为“抱歉，我只能查询1天内的天气指数哦”，C673-7实车回归后再关闭。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：两个问法落到不同功能点，7天/1天边界符合定义；但1251越界TTS把“天气指数”播成“天气”，属于功能点文案缺陷，不维持关闭。\n依据：落域天气1249、落域天气指数1251、天气PRD8155&8295。\n处理：语音运营/天气功能点配置将1251越界TTS改为“抱歉，我只能查询1天内的天气指数哦”，C673-7实车回归后再关闭。"
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 71,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 79
+                      },
+                      {
+                        "startIndex": 80,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 90
+                      },
+                      {
+                        "startIndex": 91,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 105
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "FALSE",
+                    "userEnteredValue": {
+                      "boolValue": false
+                    },
+                    "effectiveValue": {
+                      "boolValue": false
+                    },
+                    "dataValidation": {
+                      "condition": {
+                        "type": "BOOLEAN"
+                      },
+                      "strict": true
+                    }
+                  },
+                  {
+                    "formattedValue": "关闭",
+                    "userEnteredValue": {
+                      "stringValue": "关闭"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "关闭"
+                    }
+                  },
+                  {
+                    "formattedValue": "可转研发",
+                    "userEnteredValue": {
+                      "stringValue": "可转研发"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "可转研发"
+                    }
+                  },
+                  {
+                    "formattedValue": "结论：ADS-47367 包含两项独立问题：今天本地全天天气应回复今天的天气，当前提示“仅支持七天内天气”属于执行错误；天气与天气指数分别为7天/1天的边界符合现行定义，不在本票修改。\n依据：客户复盘（本轮口述，暂无外部入口）、[Jira实车记录]、[天气1249]、[天气指数1251]、[天气PRD8155&8295]。\n处理：将问题1转语音天气功能点研发，修正“全天”问法为返回当天天气。语音天气功能点研发处理。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：ADS-47367 包含两项独立问题：今天本地全天天气应回复今天的天气，当前提示“仅支持七天内天气”属于执行错误；天气与天气指数分别为7天/1天的边界符合现行定义，不在本票修改。\n依据：客户复盘（本轮口述，暂无外部入口）、[Jira实车记录]、[天气1249]、[天气指数1251]、[天气PRD8155&8295]。\n处理：将问题1转语音天气功能点研发，修正“全天”问法为返回当天天气。语音天气功能点研发处理。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：ADS-47367 包含两项独立问题：今天本地全天天气应回复今天的天气，当前提示“仅支持七天内天气”属于执行错误；天气与天气指数分别为7天/1天的边界符合现行定义，不在本票修改。\n依据：客户复盘（本轮口述，暂无外部入口）、[Jira实车记录]、[天气1249]、[天气指数1251]、[天气PRD8155&8295]。\n处理：将问题1转语音天气功能点研发，修正“全天”问法为返回当天天气。语音天气功能点研发处理。"
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 115,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 123
+                      },
+                      {
+                        "startIndex": 126,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 132
+                      },
+                      {
+                        "startIndex": 135,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 143
+                      },
+                      {
+                        "startIndex": 146,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 160
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "问题2仅在客户决定改需求文档后另建需求；吴优负责发起客户确认。",
+                    "userEnteredValue": {
+                      "stringValue": "问题2仅在客户决定改需求文档后另建需求；吴优负责发起客户确认。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "问题2仅在客户决定改需求文档后另建需求；吴优负责发起客户确认。"
+                    }
+                  },
+                  {
+                    "formattedValue": "Jira原票\nJira实车记录\n天气1249功能点\n天气指数1251功能点\n天气PRD8155&8295",
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票\nJira实车记录\n天气1249功能点\n天气指数1251功能点\n天气PRD8155&8295"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "Jira原票\nJira实车记录\n天气1249功能点\n天气指数1251功能点\n天气PRD8155&8295"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 6
+                      },
+                      {
+                        "startIndex": 7,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 15
+                      },
+                      {
+                        "startIndex": 16,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 25
+                      },
+                      {
+                        "startIndex": 26,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 37
+                      },
+                      {
+                        "startIndex": 38,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_row": {
+    "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?ouid=109136590267032001782",
+    "properties": {
+      "title": "吴优工作说明",
+      "locale": "en_US",
+      "timeZone": "Asia/Shanghai"
+    },
+    "sheets": [
+      {
+        "properties": {
+          "sheetId": 2135747181,
+          "title": "bug",
+          "index": 3,
+          "sheetType": "GRID",
+          "gridProperties": {
+            "rowCount": 1014,
+            "columnCount": 10,
+            "frozenRowCount": 1,
+            "hideGridlines": true
+          }
+        },
+        "data": [
+          {
+            "startRow": 137,
+            "rowData": [
+              {
+                "values": [
+                  {
+                    "formattedValue": "2026-07-28",
+                    "userEnteredValue": {
+                      "stringValue": "2026-07-28"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "2026-07-28"
+                    }
+                  },
+                  {
+                    "formattedValue": "ADS-47367｜天气查询范围回复不一致",
+                    "userEnteredValue": {
+                      "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47367\",\"ADS-47367｜天气查询范围回复不一致\")"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "ADS-47367｜天气查询范围回复不一致"
+                    }
+                  },
+                  {
+                    "formattedValue": "复开争议：研发以天气/天气指数属于不同功能点、范围不同为由要求统一口径。[Jira当前评论]\n实车记录：今天本地全天天气误报“仅支持7天内”；天气指数的1天边界仍按定义执行。[Jira实车记录]\n正式定义：天气1249支持T~T+7；天气指数1251仅当天；天气PRD8155&8295与上述边界一致。[天气1249][天气指数1251][天气PRD8155&8295]",
+                    "userEnteredValue": {
+                      "stringValue": "复开争议：研发以天气/天气指数属于不同功能点、范围不同为由要求统一口径。[Jira当前评论]\n实车记录：今天本地全天天气误报“仅支持7天内”；天气指数的1天边界仍按定义执行。[Jira实车记录]\n正式定义：天气1249支持T~T+7；天气指数1251仅当天；天气PRD8155&8295与上述边界一致。[天气1249][天气指数1251][天气PRD8155&8295]"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "复开争议：研发以天气/天气指数属于不同功能点、范围不同为由要求统一口径。[Jira当前评论]\n实车记录：今天本地全天天气误报“仅支持7天内”；天气指数的1天边界仍按定义执行。[Jira实车记录]\n正式定义：天气1249支持T~T+7；天气指数1251仅当天；天气PRD8155&8295与上述边界一致。[天气1249][天气指数1251][天气PRD8155&8295]"
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 37,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 45
+                      },
+                      {
+                        "startIndex": 88,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 96
+                      },
+                      {
+                        "startIndex": 103,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 109
+                      },
+                      {
+                        "startIndex": 117,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 125
+                      },
+                      {
+                        "startIndex": 129,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 143
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "结论：今天本地全天天气误报“仅支持7天内”属于执行缺陷；天气与天气指数分别为7天/1天的边界符合现行定义。\n依据：Jira实车记录、天气1249、天气指数1251、天气PRD8155&8295。\n处理：修正“全天”问法为返回当天天气；语音天气功能点研发处理。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：今天本地全天天气误报“仅支持7天内”属于执行缺陷；天气与天气指数分别为7天/1天的边界符合现行定义。\n依据：Jira实车记录、天气1249、天气指数1251、天气PRD8155&8295。\n处理：修正“全天”问法为返回当天天气；语音天气功能点研发处理。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：今天本地全天天气误报“仅支持7天内”属于执行缺陷；天气与天气指数分别为7天/1天的边界符合现行定义。\n依据：Jira实车记录、天气1249、天气指数1251、天气PRD8155&8295。\n处理：修正“全天”问法为返回当天天气；语音天气功能点研发处理。"
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 57,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 65
+                      },
+                      {
+                        "startIndex": 66,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 72
+                      },
+                      {
+                        "startIndex": 73,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 81
+                      },
+                      {
+                        "startIndex": 82,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 96
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "FALSE",
+                    "userEnteredValue": {
+                      "boolValue": false
+                    },
+                    "effectiveValue": {
+                      "boolValue": false
+                    },
+                    "dataValidation": {
+                      "condition": {
+                        "type": "BOOLEAN"
+                      },
+                      "strict": true
+                    }
+                  },
+                  {
+                    "formattedValue": "关闭",
+                    "userEnteredValue": {
+                      "stringValue": "关闭"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "关闭"
+                    }
+                  },
+                  {
+                    "formattedValue": "可转研发",
+                    "userEnteredValue": {
+                      "stringValue": "可转研发"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "可转研发"
+                    }
+                  },
+                  {
+                    "formattedValue": "结论：ADS-47367 包含两项独立问题：今天本地全天天气应回复今天的天气，当前提示“仅支持七天内天气”属于执行错误；天气与天气指数分别为7天/1天的边界符合现行定义，不在本票修改。\n依据：客户复盘（本轮口述，暂无外部入口）、[Jira实车记录]、[天气1249]、[天气指数1251]、[天气PRD8155&8295]。\n处理：将问题1转语音天气功能点研发，修正“全天”问法为返回当天天气。语音天气功能点研发处理。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：ADS-47367 包含两项独立问题：今天本地全天天气应回复今天的天气，当前提示“仅支持七天内天气”属于执行错误；天气与天气指数分别为7天/1天的边界符合现行定义，不在本票修改。\n依据：客户复盘（本轮口述，暂无外部入口）、[Jira实车记录]、[天气1249]、[天气指数1251]、[天气PRD8155&8295]。\n处理：将问题1转语音天气功能点研发，修正“全天”问法为返回当天天气。语音天气功能点研发处理。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：ADS-47367 包含两项独立问题：今天本地全天天气应回复今天的天气，当前提示“仅支持七天内天气”属于执行错误；天气与天气指数分别为7天/1天的边界符合现行定义，不在本票修改。\n依据：客户复盘（本轮口述，暂无外部入口）、[Jira实车记录]、[天气1249]、[天气指数1251]、[天气PRD8155&8295]。\n处理：将问题1转语音天气功能点研发，修正“全天”问法为返回当天天气。语音天气功能点研发处理。"
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 115,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 123
+                      },
+                      {
+                        "startIndex": 126,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 132
+                      },
+                      {
+                        "startIndex": 135,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 143
+                      },
+                      {
+                        "startIndex": 146,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 160
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "天气/天气指数边界仅在客户确认调整现行定义后另立需求。",
+                    "userEnteredValue": {
+                      "stringValue": "天气/天气指数边界仅在客户确认调整现行定义后另立需求。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "天气/天气指数边界仅在客户确认调整现行定义后另立需求。"
+                    }
+                  },
+                  {
+                    "formattedValue": "Jira原票\nJira实车记录\n天气1249功能点\n天气指数1251功能点\n天气PRD8155&8295",
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票\nJira实车记录\n天气1249功能点\n天气指数1251功能点\n天气PRD8155&8295"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "Jira原票\nJira实车记录\n天气1249功能点\n天气指数1251功能点\n天气PRD8155&8295"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 6
+                      },
+                      {
+                        "startIndex": 7,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 15
+                      },
+                      {
+                        "startIndex": 16,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 25
+                      },
+                      {
+                        "startIndex": 26,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 37
+                      },
+                      {
+                        "startIndex": 38,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "复开争议：研发以天气/天气指数属于不同功能点、范围不同为由要求统一口径。[Jira当前评论]\n实车记录：今天本地全天天气误报“仅支持7天内”；天气指数的1天边界仍按定义执行。[Jira实车记录]\n正式定义：天气1249支持T~T+7；天气指数1251仅当天；天气PRD8155&8295与上述边界一致。[天气1249][天气指数1251][天气PRD8155&8295]",
+      "links": [
+        {
+          "label": "Jira当前评论",
+          "url": "http://jira.i-tetris.com/browse/ADS-47367"
+        },
+        {
+          "label": "Jira实车记录",
+          "url": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+        },
+        {
+          "label": "天气1249",
+          "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+        },
+        {
+          "label": "天气指数1251",
+          "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+        },
+        {
+          "label": "天气PRD8155&8295",
+          "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：今天本地全天天气误报“仅支持7天内”属于执行缺陷；天气与天气指数分别为7天/1天的边界符合现行定义。\n依据：Jira实车记录、天气1249、天气指数1251、天气PRD8155&8295。\n处理：修正“全天”问法为返回当天天气；语音天气功能点研发处理。",
+      "links": [
+        {
+          "label": "Jira实车记录",
+          "url": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+        },
+        {
+          "label": "天气1249",
+          "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+        },
+        {
+          "label": "天气指数1251",
+          "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+        },
+        {
+          "label": "天气PRD8155&8295",
+          "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "天气/天气指数边界仅在客户确认调整现行定义后另立需求。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/ADS-47367"
+        },
+        {
+          "label": "Jira实车记录",
+          "url": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"
+        },
+        {
+          "label": "天气1249功能点",
+          "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"
+        },
+        {
+          "label": "天气指数1251功能点",
+          "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+        },
+        {
+          "label": "天气PRD8155&8295",
+          "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"
+        }
+      ]
+    }
+  }
+}

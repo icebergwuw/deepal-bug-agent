@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82552",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 268,
+  "range": "A268:J268",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82552｜路线选择阶段退出导航未关闭路线卡片",
+    "C": "现象：路线选择阶段退出导航未关闭路线卡片。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "D": "结论：路线选择阶段退出导航未关闭路线卡片的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=task；meta_id=1017；结束导航；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A路线选择阶段的退出交互定义，明确关闭卡片与结束导航的状态机边界；J90A地图产品负责人处理。",
+    "E": false,
+    "F": null,
+    "G": "待复核",
+    "H": null,
+    "I": "下一步：补齐J90A路线选择阶段的退出交互定义，明确关闭卡片与结束导航的状态机边界",
+    "J": "Alchemy当前结果·原话/MetaId"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82552\",\"HUR-82552｜路线选择阶段退出导航未关闭路线卡片\")",
+    "C": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82552\",\"现象：路线选择阶段退出导航未关闭路线卡片。Jira字段、描述、附件、关联票和完整评论已读。\"&CHAR(10)&\"证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。\")",
+    "D": "=HYPERLINK(\"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=\",\"结论：路线选择阶段退出导航未关闭路线卡片的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\"&CHAR(10)&\"依据：Jira当前描述/评论；Alchemy实测为classification=task；meta_id=1017；结束导航；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\"&CHAR(10)&\"处理：补齐J90A路线选择阶段的退出交互定义，明确关闭卡片与结束导航的状态机边界；J90A地图产品负责人处理。\")",
+    "J": "=HYPERLINK(\"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=\",\"Alchemy当前结果·原话/MetaId\")"
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "style_id": 58,
+    "source_style_matches_E215": true
+  },
+  "styles": {
+    "style_ids": [
+      17,
+      11,
+      46,
+      46,
+      58,
+      35,
+      14,
+      35,
+      35,
+      47
+    ],
+    "visual_style_matches_standard_row_215": false,
+    "row_height": "automatic",
+    "conditional_formatting": "none"
+  },
+  "filter": "$A$1:$J$283",
+  "protected_columns": {
+    "F": null,
+    "H": null
+  },
+  "manifest_validated": true,
+  "log_validated": true,
+  "jira_external_actions": []
+}

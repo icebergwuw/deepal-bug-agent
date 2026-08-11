@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SD-5786",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 169,
+  "range": "A169:J169",
+  "values": {
+    "A": "2026-07-30",
+    "B": "SD-5786｜[内测问题][镁佳]【SWA.3.01】[C673-G3/G5][0309][C673-G3 东南亚-右 500km Ultra 港澳][1",
+    "C": "现象：历史车端命中meta_id=1563且未限制副驾；D587-G现测原话又误命中meta_id=1026音乐，当前结果与历史版本不一致。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：未取得同版本项目功能继承、驾驶位限制和正式车控目标的完整同链资料。",
+    "D": "结论：该票同时存在项目版本漂移和主副驾限制缺口，现阶段不能只按语料或车控单方定责。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点。\n处理：锁定目标版本，核对meta_id=1563项目继承及关闭动作主驾限制后再定责；C673语音配置负责人处理。",
+    "E": "FALSE",
+    "F": "",
+    "G": "待复核",
+    "H": "",
+    "I": "先统一车型/版本，再核驾驶位限制与项目功能继承",
+    "J": "Jira原票·描述/完整评论\nAlchemy当前结果/标准及项目功能点"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-5786\",\"SD-5786｜[内测问题][镁佳]【SWA.3.01】[C673-G3/G5][0309][C673-G3 东南亚-右 500km Ultra 港澳][1\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SD-5786"
+      },
+      {
+        "label": "Alchemy当前结果/标准及项目功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SD-5786"
+      },
+      {
+        "label": "Alchemy当前结果/标准及项目功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SD-5786"
+      },
+      {
+        "label": "Alchemy当前结果/标准及项目功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "SD-5786｜[内测问题][镁佳]【SWA.3.01】[C673-G3/G5][0309][C673-G3 东南亚-右 500km Ultra 港澳][1",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SD-6579",
+  "sheet": "吴优工作说明 / bug",
+  "row": 280,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象与实现：已完整读取SD-6579描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6579"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：mic_is_off芬兰语显示不全已定位资源Key，但缺少实际截图/视频和可容纳字符边界，当前无法确定缩短幅度。\n依据：Jira原票·评论/2026-07-31与2026-08-07；Drive未读到该通话页精确UE图层。\n处理：补充实车截图/视频和UE文本框边界后确定芬兰语短译；C673多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-6579"
+        },
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "先补截图和UE边界，不能只凭“显示不全”任意缩短译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6579"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  "validated": true,
+  "submitted_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ]
+}

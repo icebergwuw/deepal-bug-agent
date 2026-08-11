@@ -1,0 +1,85 @@
+[
+  {
+    "date": "2026-08-06",
+    "key": "SLV-44408",
+    "summary": "导航搜索结果卡片缺少返回控件",
+    "info": "现象：C673 SWD.7.06中进入‘导航到观音桥’搜索结果列表，标题区无返回键和关闭键，3/3必现；评论以相似卡片的关闭按钮为参考。[Jira原票·描述/评论][Jira视频·00:00-00:07]\n正式定义：现行可见配置和同项目导航UE均明确搜索结果页标题显示返回键，点击返回上一级；没有要求该页显示X关闭按钮。[深蓝可见配置·地图-高德第330行][导航UE V0.3·搜索结果1.1]\n范围核验：主PRD第23页的搜索结果列表与第29页地图选点详情属于不同阶段，后者的关闭面板规则不适用；当前V0.6仅更新地图设置，未改写搜索结果交互。[地图导航PRD V6.1·第23/29页][当前导航UE V0.6·第1页修改记录]",
+    "judgment": "结论：定义为导航搜索结果卡片返回控件缺失；本场景不要求新增关闭按钮，但页面标题应显示返回键，当前实现未显示。\n依据：深蓝可见配置‘地图-高德’第330行及C385&673导航UE V0.3‘选取目的地→03搜索结果→1.1结果列表和地图显示’均明确页面标题显示返回键并返回上一级；当前V0.6修改记录仅更新地图设置，未改写搜索结果交互；Jira视频video(3).mp4 00:00-00:07显示‘导航到观音桥’结果卡片无返回控件。\n处理：补齐搜索结果卡片标题栏返回键，点击后返回上一级页面；不新增地图选点详情页的关闭按钮；Android地图研发负责人处理。",
+    "status": "可转研发",
+    "note": "回归需核对搜索结果标题栏返回键及返回上一级动作；不新增X关闭按钮，不套用地图选点详情规则。",
+    "links": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44408"
+      },
+      {
+        "label": "Jira视频·00:00-00:07",
+        "url": "http://jira.i-tetris.com/secure/attachment/4194288/video%283%29.mp4"
+      },
+      {
+        "label": "Jira相似页面截图·地图选点",
+        "url": "http://jira.i-tetris.com/secure/attachment/4218230/image-2026-08-06-18-28-46-356.png"
+      },
+      {
+        "label": "深蓝可见配置·地图-高德第330行",
+        "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"
+      },
+      {
+        "label": "地图导航PRD V6.1·第23/29页",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?tab=t.0"
+      },
+      {
+        "label": "导航UE V0.3·搜索结果1.1",
+        "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit?tab=t.0"
+      },
+      {
+        "label": "当前导航UE V0.6·第1页修改记录",
+        "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44408"
+      },
+      {
+        "label": "Jira视频·00:00-00:07",
+        "url": "http://jira.i-tetris.com/secure/attachment/4194288/video%283%29.mp4"
+      },
+      {
+        "label": "深蓝可见配置·地图-高德第330行",
+        "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"
+      },
+      {
+        "label": "导航UE V0.3·搜索结果1.1",
+        "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit?tab=t.0"
+      },
+      {
+        "label": "地图导航PRD V6.1·第23/29页",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?tab=t.0"
+      },
+      {
+        "label": "当前导航UE V0.6·第1页修改记录",
+        "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "深蓝可见配置‘地图-高德’第330行",
+        "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?gid=2091551655"
+      },
+      {
+        "label": "C385&673导航UE V0.3‘选取目的地→03搜索结果→1.1结果列表和地图显示’",
+        "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit?tab=t.0"
+      },
+      {
+        "label": "当前V0.6修改记录",
+        "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"
+      },
+      {
+        "label": "Jira视频video(3).mp4 00:00-00:07",
+        "url": "http://jira.i-tetris.com/secure/attachment/4194288/video%283%29.mp4"
+      }
+    ]
+  }
+]

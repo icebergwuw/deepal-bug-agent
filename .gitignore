@@ -2,6 +2,9 @@
 .env.*
 !.env.example
 .DS_Store
+outputs/
 .mastergo/
+agent/config/local-profile.json
+agent/config/local-profile.json.tmp
 __pycache__/
 *.pyc

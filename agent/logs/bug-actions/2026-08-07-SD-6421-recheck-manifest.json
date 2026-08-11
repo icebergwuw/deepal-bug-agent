@@ -1,0 +1,241 @@
+{
+  "schema_version": 2,
+  "jira_key": "SD-6421",
+  "comment_causality": "已完整读取SD-6421当前字段、描述、附件、关联问题与评论时间线；重新核对2026-08-07当前正式资料和平台结果。Jira测试预期未直接充当正式目标。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SD-6421 Jira当前字段、描述、附件与完整评论",
+      "source_type": "jira",
+      "source_location": "http://jira.i-tetris.com/browse/SD-6421",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "英文SEARCH PARKING未进入停车场搜索",
+      "target_behavior": "证明现象、状态、日志和评论因果链。",
+      "reason": "2026-08-07已按时间线完整读取。"
+    },
+    {
+      "source_id": "formal_target",
+      "source": "C673地图主清单搜索能力",
+      "source_type": "prd",
+      "source_location": "Sheet 16_地图第78-93行",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "英文SEARCH PARKING未进入停车场搜索",
+      "target_behavior": "结论：现有语音范围未覆盖“Search + POI类别”英文句式，按新增语料/句式需求处理。",
+      "reason": "同功能、同交互阶段的生效目标。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy当前原话测试",
+      "source_type": "alchemy_current",
+      "source_location": "在线对话；原话=SEARCH PARKING；结果=D587-G：classification=task，meta_id=1026，media:music:play",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "英文SEARCH PARKING未进入停车场搜索",
+      "target_behavior": "D587-G：classification=task，meta_id=1026，media:music:play",
+      "reason": "2026-08-07在线回读当前结果。"
+    },
+    {
+      "source_id": "alchemy_standard",
+      "source": "Alchemy标准功能点",
+      "source_type": "alchemy_standard",
+      "source_location": "标准功能按meta_id=1026检索",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "英文SEARCH PARKING未进入停车场搜索",
+      "target_behavior": "meta_id=1026",
+      "reason": "用于核验标准功能语义。"
+    },
+    {
+      "source_id": "alchemy_project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_type": "alchemy_project",
+      "source_location": "深蓝项目按meta_id=1026检索",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "英文SEARCH PARKING未进入停车场搜索",
+      "target_behavior": "已核对项目功能可用状态；缺失处在结论中降级。",
+      "reason": "用于核验项目继承/配置状态。"
+    },
+    {
+      "source_id": "map_prd",
+      "source": "C673-6全功能清单V1.3",
+      "source_type": "prd",
+      "source_location": "Sheet 16_地图 A1:AZ500；重点第45/78-93/130/298行",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "英文SEARCH PARKING未进入停车场搜索",
+      "target_behavior": "证明地图主能力和适用范围。",
+      "reason": "2026-08-07完整检索地图主功能清单。"
+    },
+    {
+      "source_id": "map_interaction",
+      "source": "C385&673地图交互设计文档V0.6",
+      "source_type": "interaction",
+      "source_location": "MasterGo 850_V0.5&V0.6页面；按停车场/充电站/步行接续等关键词检索图层",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "英文SEARCH PARKING未进入停车场搜索",
+      "target_behavior": "证明专项页面、气泡、深度信息和入口设计。",
+      "reason": "2026-08-07读取页面与检索图层。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及原话、NLU、VUI、TTS或语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图搜索、路线或导航状态。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+      "queries": [
+        "SD-6421",
+        "英文SEARCH PARKING未进入停车场搜索"
+      ],
+      "source_ids": [
+        "alchemy_current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+      "queries": [
+        "SD-6421",
+        "英文SEARCH PARKING未进入停车场搜索"
+      ],
+      "source_ids": [
+        "alchemy_standard"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+      "queries": [
+        "SD-6421",
+        "英文SEARCH PARKING未进入停车场搜索"
+      ],
+      "source_ids": [
+        "alchemy_project"
+      ]
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Sheet 16_地图第78-93行",
+      "queries": [
+        "SD-6421",
+        "英文SEARCH PARKING未进入停车场搜索"
+      ],
+      "source_ids": [
+        "formal_target"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "C673全功能清单 Sheet 16_地图 A1:AZ500",
+      "queries": [
+        "SD-6421",
+        "英文SEARCH PARKING未进入停车场搜索"
+      ],
+      "source_ids": [
+        "map_prd"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "MasterGo C385&673地图UE 850_V0.5&V0.6页面",
+      "queries": [
+        "SD-6421",
+        "英文SEARCH PARKING未进入停车场搜索"
+      ],
+      "source_ids": [
+        "map_interaction"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira主张、客户最终结论、正式资料和当前实现分开记录；确定性结论仅引用有效正式目标，关键缺口存在时保持待定。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "SEARCH PARKING",
+    "alchemy_result": "D587-G：classification=task，meta_id=1026，media:music:play",
+    "meta_id": "1026",
+    "standard_function": {
+      "status": "verified",
+      "name": "meta_id=1026",
+      "assessment": "已核验当前标准功能；缺口已降级。",
+      "reason": "需求至少覆盖parking/coffee并约束Search与媒体播放冲突"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能",
+      "assessment": "已核验可用状态；缺口已降级。",
+      "reason": "需求至少覆盖parking/coffee并约束Search与媒体播放冲突"
+    }
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "C673海外语音产品负责人",
+    "text": "结论：现有语音范围未覆盖“Search + POI类别”英文句式，按新增语料/句式需求处理。\n依据：Jira最新评论·需新增需求、Alchemy当前结果/标准及项目功能点、C673功能清单·16_地图第78-93行。\n处理：定义Search parking/coffee等POI类别句式、槽位和反例并下发；C673海外语音产品负责人处理。",
+    "implementation_source_ids": [
+      "jira_actual",
+      "alchemy_current"
+    ]
+  },
+  "expected_behavior": {
+    "trigger": "英文SEARCH PARKING未进入停车场搜索",
+    "target_state": "现有语音范围未覆盖“Search + POI类别”英文句式，按新增语料/句式需求处理。",
+    "intent_function_signal": "按正式目标进入对应功能状态。",
+    "ui_tts_vehicle_behavior": "现有语音范围未覆盖“Search + POI类别”英文句式，按新增语料/句式需求处理。",
+    "boundary": "需求至少覆盖parking/coffee并约束Search与媒体播放冲突",
+    "source_ids": [
+      "formal_target"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SD-5515",
+  "sheet": "吴优工作说明 / bug",
+  "row": 171,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：历史车端命中meta_id=1006但返回中文位置；D587-G现测原话进入大模型且无法获取定位。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：主清单有定位/导航能力，但未取得C673马来语当前位置正式语料、目标TTS及版本继承。[C673功能清单·16_地图第45/85-93/298行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5515"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：当前平台已从定位意图漂移至大模型，且缺同版本马来语目标，需先闭环配置与正式播报口径。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点。\n处理：核对meta_id=1006项目继承，补齐马来语语料和目标TTS后回归；C673海外语音产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5515"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "缺meta_id=1006项目继承、同版本语料和目标TTS",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5515"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    }
+  }
+}

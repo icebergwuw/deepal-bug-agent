@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-08-07",
+    "key": "PC-38942",
+    "summary": "收藏POI后选择第一个时列表偶发收起",
+    "info": "现象：收藏POI后选择第一个时列表偶发收起。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "judgment": "结论：收藏POI后选择第一个时列表偶发收起的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为首轮meta_id=1021收藏POI；次轮meta_id=1455通用列表选择第一个；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发；Android VUI负责人处理。",
+    "status": "待复核",
+    "note": "下一步：补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发",
+    "links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38942"
+      },
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38942"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  }
+]

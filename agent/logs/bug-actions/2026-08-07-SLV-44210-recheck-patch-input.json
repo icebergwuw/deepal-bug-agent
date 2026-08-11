@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44210",
+  "sheet": "吴优工作说明 / bug",
+  "row": 164,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：原票聚合评论入口、0评分和长营业时间三项显示差异。[Jira最新评论·0729客户会范围]\n证据：0729客户会最终只确认长营业时间改为滚动显示；主清单第298行仅定义景区深度信息字段，未支撑旧表三项同时修改。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会范围",
+          "url": "http://jira.i-tetris.com/browse/SLV-44210"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：本票仅按客户会结论将超长营业时间改为滚动显示；评论数和0评分规则不纳入本次修改。\n依据：Jira最新评论·0729客户会范围、C673功能清单·16_地图第298行。\n处理：实现营业时间滚动并回归长文本边界；C673地图UI研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会范围",
+          "url": "http://jira.i-tetris.com/browse/SLV-44210"
+        },
+        {
+          "label": "C673功能清单·16_地图第298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "验收只覆盖长营业时间滚动，其他两项需另有最终输入",
+    "J": {
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会范围",
+          "url": "http://jira.i-tetris.com/browse/SLV-44210"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    }
+  }
+}

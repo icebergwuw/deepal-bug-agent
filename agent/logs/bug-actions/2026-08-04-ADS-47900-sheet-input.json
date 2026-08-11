@@ -1,0 +1,36 @@
+[
+  {
+    "key": "ADS-47900",
+    "summary": "蓝牙电话静音误落通用音量通道",
+    "date": "2026-08-04",
+    "info": "现象：Jira原票的Alchemy截图显示query‘蓝牙电话静音’被识别为meta_id=1188、vehicle:audio:volume:mute；channel仅有literal=蓝牙电话，canonical为空。功能点评论指出1188不是蓝牙电话功能点，通道确认评论明确现有枚举没有蓝牙电话通道。\n正式定义：C673蓝牙电话功能定义V0.8中的静音是通话界面麦克风静音开关；AIS语音蓝牙电话PRD v2.7未定义该语音说法。\n平台现状或规则空白：VOS标记与Alchemy当前均跳转SSO，未完成1188标准功能、深蓝项目功能及继承链核验。",
+    "info_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-47900"},
+      {"label": "Alchemy截图", "url": "http://jira.i-tetris.com/secure/attachment/4196992/screenshot-1.png"},
+      {"label": "功能点评论", "url": "http://jira.i-tetris.com/browse/ADS-47900?focusedCommentId=8106235&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8106235"},
+      {"label": "通道确认评论", "url": "http://jira.i-tetris.com/browse/ADS-47900?focusedCommentId=8132996&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8132996"},
+      {"label": "C673蓝牙电话功能定义V0.8", "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH"},
+      {"label": "AIS语音蓝牙电话PRD v2.7", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc"},
+      {"label": "VOS标记", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/44755"}
+    ],
+    "judgment": "结论：待复核；现行语音蓝牙电话PRD未定义‘蓝牙电话静音’，C673蓝牙电话定义中的静音仅指通话界面的麦克风静音，不是音源通道；当前下发meta_id=1188且channel规范值为空，不能按‘蓝牙电话音源静音’交付。\n依据：Jira原票、功能点评论、通道确认评论及截图；C673蓝牙电话定义与AIS语音蓝牙电话PRD；当前Alchemy登录失效，1188标准/深蓝项目功能点未完成核验。\n处理：语音产品/Alchemy配置负责人恢复平台后核验1188继承链，并先将该话术从通用音量通道匹配中隔离；如要支持，另立需求定义仅通话中映射麦克风静音/取消静音的独立功能点、状态、TTS与异常兜底。",
+    "judgment_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-47900"},
+      {"label": "功能点评论", "url": "http://jira.i-tetris.com/browse/ADS-47900?focusedCommentId=8106235&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8106235"},
+      {"label": "通道确认评论", "url": "http://jira.i-tetris.com/browse/ADS-47900?focusedCommentId=8132996&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8132996"},
+      {"label": "C673蓝牙电话定义", "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH"},
+      {"label": "AIS语音蓝牙电话PRD", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc"}
+    ],
+    "status": "待复核",
+    "note": "不是补‘蓝牙电话音源通道’：正式定义中的静音对象是通话麦克风。Alchemy恢复后先核验1188标准/深蓝项目功能点；现有需求未覆盖该语音控制，若新增支持需另立需求并限定通话中场景。",
+    "links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-47900"},
+      {"label": "Jira功能点评论", "url": "http://jira.i-tetris.com/browse/ADS-47900?focusedCommentId=8106235&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8106235"},
+      {"label": "Jira通道确认评论", "url": "http://jira.i-tetris.com/browse/ADS-47900?focusedCommentId=8132996&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8132996"},
+      {"label": "Alchemy截图附件", "url": "http://jira.i-tetris.com/secure/attachment/4196992/screenshot-1.png"},
+      {"label": "VOS标记链接", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/44755"},
+      {"label": "C673蓝牙电话功能定义V0.8", "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH"},
+      {"label": "AIS语音蓝牙电话产品需求文档v2.7", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc"}
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "key": "ADS-48158",
+    "summary": "退出洗车后视镜未固定展开",
+    "date": "2026-08-04",
+    "info": "现象：Jira原票记录C673-7后视镜预先折叠，开启并退出洗车模式后仍保持折叠；客户期望退出后固定展开。唯一评论追溯历史实现；复现视频、ASC日志可复核现象。\n正式定义缺口：当前智能情景模式V4.9只定义进入自动折叠、模式内可再展开/折叠及退出条件；C673车辆设置V6.1也未定义洗车退出后视镜状态。\n评论与历史实现：历史票SLV-7292、移植Story ADS-1464、移植任务ADS-1469、接口封装ADS-1493的最终验收和8295移植均按‘进入保存、退出恢复进入前状态’。未检索到C673-7生效UE/独立子PRD补充退出条款。",
+    "info_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-48158"},
+      {"label": "唯一评论", "url": "http://jira.i-tetris.com/browse/ADS-48158?focusedCommentId=8141917&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8141917"},
+      {"label": "复现视频", "url": "http://jira.i-tetris.com/secure/attachment/4195007/video%2812%29.mp4"},
+      {"label": "ASC日志", "url": "http://jira.i-tetris.com/secure/attachment/4195005/%E6%8A%98%E5%8F%A0%E5%90%8E%E8%A7%86%E9%95%9C%E5%90%8E%E6%89%93%E5%BC%80%E6%B4%97%E8%BD%A6%C2%B7%C2%B7%C2%B7%C2%B7.asc"},
+      {"label": "智能情景模式V4.9", "url": "https://drive.google.com/file/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk"},
+      {"label": "C673车辆设置V6.1", "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM"},
+      {"label": "历史票SLV-7292", "url": "http://jira.i-tetris.com/browse/SLV-7292"},
+      {"label": "移植Story ADS-1464", "url": "http://jira.i-tetris.com/browse/ADS-1464"},
+      {"label": "移植任务ADS-1469", "url": "http://jira.i-tetris.com/browse/ADS-1469"},
+      {"label": "接口封装ADS-1493", "url": "http://jira.i-tetris.com/browse/ADS-1493"}
+    ],
+    "judgment": "结论：待复核；C673/C673-7现行智能情景模式V4.9只定义进入洗车模式自动折叠、模式内允许再次展开/折叠，未定义退出后视镜必须固定展开；历史SLV-7292及8295移植验收均按‘恢复进入前状态’，因此本票当前表现不能直接判为实现缺陷。\n依据：Jira原票、唯一评论、智能情景模式V4.9、C673车辆设置V6.1、SLV-7292、ADS-1464、ADS-1469、ADS-1493；未检索到C673-7生效UE或独立子PRD的退出后视镜条款。\n处理：确认前维持‘退出恢复进入前状态’，不转研发修改；智能情景模式产品负责人补齐退出条款。若C673-7要求退出固定展开，则另立需求，明确车型/版本、模式内用户改动后的退出策略及回归用例。",
+    "judgment_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-48158"},
+      {"label": "唯一评论", "url": "http://jira.i-tetris.com/browse/ADS-48158?focusedCommentId=8141917&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8141917"},
+      {"label": "智能情景模式V4.9", "url": "https://drive.google.com/file/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk"},
+      {"label": "C673车辆设置V6.1", "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM"},
+      {"label": "SLV-7292", "url": "http://jira.i-tetris.com/browse/SLV-7292"},
+      {"label": "ADS-1464", "url": "http://jira.i-tetris.com/browse/ADS-1464"},
+      {"label": "ADS-1469", "url": "http://jira.i-tetris.com/browse/ADS-1469"},
+      {"label": "ADS-1493", "url": "http://jira.i-tetris.com/browse/ADS-1493"}
+    ],
+    "status": "待复核",
+    "note": "客户用例完整，无需补基础复现资料。阻塞点是正式目标缺失：需补齐退出时固定展开/恢复进入前状态/保持模式内最后状态三选一；确认前不改现有恢复原状态逻辑。另：Jira Fix Version写C385-5，与标题/VIN C673-7不一致。",
+    "links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-48158"},
+      {"label": "Jira唯一评论", "url": "http://jira.i-tetris.com/browse/ADS-48158?focusedCommentId=8141917&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8141917"},
+      {"label": "复现视频", "url": "http://jira.i-tetris.com/secure/attachment/4195007/video%2812%29.mp4"},
+      {"label": "ASC日志", "url": "http://jira.i-tetris.com/secure/attachment/4195005/%E6%8A%98%E5%8F%A0%E5%90%8E%E8%A7%86%E9%95%9C%E5%90%8E%E6%89%93%E5%BC%80%E6%B4%97%E8%BD%A6%C2%B7%C2%B7%C2%B7%C2%B7.asc"},
+      {"label": "压缩日志", "url": "http://jira.i-tetris.com/secure/attachment/4195023/LS6C3E2S9T%C2%B7%C2%B7%C2%B7%C2%B7.7z"},
+      {"label": "智能情景模式功能定义V4.9", "url": "https://drive.google.com/file/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk"},
+      {"label": "C673车辆设置功能定义V6.1", "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM"},
+      {"label": "历史原始票SLV-7292", "url": "http://jira.i-tetris.com/browse/SLV-7292"},
+      {"label": "8295移植Story ADS-1464", "url": "http://jira.i-tetris.com/browse/ADS-1464"},
+      {"label": "8295移植任务ADS-1469", "url": "http://jira.i-tetris.com/browse/ADS-1469"},
+      {"label": "接口封装任务ADS-1493", "url": "http://jira.i-tetris.com/browse/ADS-1493"}
+    ]
+  }
+]

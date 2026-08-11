@@ -1,0 +1,88 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82725",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 245,
+  "range": "A245:J245",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82725｜C385/ELKTwoText__1文言与当前清单/车机显示不一致",
+    "C": "现象：C385/ELKTwoText__1文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“车道偏离预警暂停”的目标语译文与实车一致；Key行第502行目标语为空；Jira评论确认阿语从右向左且换行为正常展示。[LanguageList源文·第106行][LanguageList重复Key·第502行][重复Key记录·第3939行]",
+    "D": "结论：定义为非问题。C385/ELKTwoText__1触发时应按正式source“车道偏离预警暂停”显示“Lane Departure Warning System (LDWS) معلق”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第106行。\n处理：按非问题关闭本Bug；吴优处理。",
+    "E": false,
+    "F": null,
+    "G": "可关闭",
+    "H": null,
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": "Jira原票·描述/评论\nLanguageList源文·第106行\nLanguageList重复Key·第502行\n重复Key记录·第3939行"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82725\",\"HUR-82725｜C385/ELKTwoText__1文言与当前清单/车机显示不一致\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82725"
+      },
+      {
+        "label": "LanguageList源文·第106行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A106:AQ106"
+      },
+      {
+        "label": "LanguageList重复Key·第502行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A502:AQ502"
+      },
+      {
+        "label": "重复Key记录·第3939行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3939:Z3939"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82725"
+      },
+      {
+        "label": "LanguageList源文·第106行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A106:AQ106"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82725"
+      },
+      {
+        "label": "LanguageList源文·第106行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A106:AQ106"
+      },
+      {
+        "label": "LanguageList重复Key·第502行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A502:AQ502"
+      },
+      {
+        "label": "重复Key记录·第3939行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3939:Z3939"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-08-07",
+    "B": "HUR-82725｜C385/ELKTwoText__1文言与当前清单/车机显示不一致",
+    "E": false,
+    "F": null,
+    "H": null
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

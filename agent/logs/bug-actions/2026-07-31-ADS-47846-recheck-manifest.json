@@ -1,0 +1,131 @@
+{
+  "jira_key": "ADS-47846",
+  "comment_causality": "Jira评论只要求产品确认“申请记忆账号/开一个记忆账号”的目标预期。记忆空间PRD V0.6已逐字覆盖这两类表达，并分别定义无记忆ID进入创建页、有记忆ID进入账号信息页；Jira日志和Alchemy当前结果证明现实现未按该定义落域，因此本次复查直接确认产品预期并转语音研发修正，不再把P挡或记忆ID有无作为产品预期确认的阻断项。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260725182521798",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述、评论、VIN、软件版本、两句原话、期望、实际、日志和两段视频已足以核对本次产品预期；PRD同时定义有无记忆ID两条分支，P挡和当前ID状态不改变本次预期确认。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ST-65879",
+        "relationship": "Jira历史关联的MegaClaw落域归集票",
+        "read": true,
+        "outcome": "已读全票；为通用归集票，不覆盖本票的正式目标定义。"
+      },
+      {
+        "key": "ST-65870",
+        "relationship": "Jira历史关联后移除的MegaClaw落域归集票",
+        "read": true,
+        "outcome": "已读全票；为通用归集票，不覆盖本票的正式目标定义。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "memory_prd_v06",
+      "source": "记忆空间-需求文档-v0.6.pdf 2.2.1.1",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "8295平台，适用C673-7、C385-5",
+      "trigger": "申请/开通/新建+记忆ID或记忆账号；开一个记忆账号",
+      "target_behavior": "进入Deepal AI APP记忆空间；无记忆ID进入创建页，有记忆ID进入账号信息页",
+      "reason": "生效正式资料逐字覆盖本票两句原话及两种ID状态。"
+    },
+    {
+      "source_id": "jira_actual",
+      "source": "ADS-47846原票、评论、附件信息与语音日志",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "客户C673-7问题",
+      "trigger": "申请记忆账号；开一个记忆账号",
+      "target_behavior": "当前未按记忆空间创建入口执行，后一句日志命中1305和1876并进入DEEPAL AI",
+      "reason": "证明客户原话、实现结果以及评论要求产品确认预期。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy BIGSUR在线对话当前结果",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "深蓝BIGSUR",
+      "trigger": "申请记忆账号；开一个记忆账号",
+      "target_behavior": "前者命中1919不支持，后者命中1305和1876",
+      "reason": "复现当前语义路由并证明与正式目标不一致。"
+    },
+    {
+      "source_id": "alchemy_1305",
+      "source": "Alchemy标准功能1305 打开特定页面/APP",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "标准功能；深蓝继承未修改",
+      "trigger": "打开某页面或APP",
+      "target_behavior": "打开特定页面或APP",
+      "reason": "说明当前第一路功能语义。"
+    },
+    {
+      "source_id": "alchemy_1876",
+      "source": "Alchemy标准功能1876 打开账号自动记忆",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "标准功能；深蓝未继承",
+      "trigger": "打开账号自动记忆",
+      "target_behavior": "打开当前账号的自动记忆开关",
+      "reason": "证明1876并非创建记忆ID。"
+    },
+    {
+      "source_id": "alchemy_3205",
+      "source": "Alchemy深蓝项目功能3205 记忆空间身份",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目新增",
+      "trigger": "记忆空间身份",
+      "target_behavior": "当前为草稿，说明和执行策略为空",
+      "reason": "说明深蓝已有项目功能占位但尚未形成可执行配置。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "以记忆空间PRD V0.6作为目标定义，以Jira日志和Alchemy当前结果说明实现。车型字段差异和P挡不改变两句原话的产品目标；记忆ID有无已由同一正式条款完整覆盖，因此不再降级为待确认。",
+  "expected_behavior": {
+    "trigger": "用户说“申请记忆账号”或“开一个记忆账号”。",
+    "target_state": "进入Deepal AI APP的记忆空间；无记忆ID进入创建页，有记忆ID进入账号信息页。",
+    "intent_function_signal": "语义应落到记忆空间/记忆ID创建入口，不应落到不支持、通用DEEPAL AI或账号自动记忆开关。",
+    "ui_tts_vehicle_behavior": "UI展示对应的记忆ID创建页或账号信息页；本票不新增专用TTS要求。",
+    "boundary": "适用8295平台C673-7/C385-5；目标页面由当前账号是否已有记忆ID决定。",
+    "source_ids": [
+      "memory_prd_v06"
+    ]
+  },
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "申请记忆账号；开一个记忆账号",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR：申请记忆账号 -> 1919 common:func:not:supported；开一个记忆账号 -> 1305 app:ctrl + 1876 system:account:account_auto_memory:ctrl",
+    "meta_id": "1919；1305；1876",
+    "standard_function": {
+      "status": "verified",
+      "name": "1919 车型无此功能兜底；1305 打开特定页面/APP；1876 打开账号自动记忆",
+      "assessment": "三条当前功能均不能完整表达PRD定义的记忆ID创建/账号信息入口。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝继承1305；深蓝项目功能3205 记忆空间身份",
+      "assessment": "1305继承未修改；3205仍为草稿且说明、泛化和执行策略为空；深蓝未继承1876。"
+    }
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "MegaClaw语音研发",
+    "implementation_source_ids": [
+      "jira_actual",
+      "alchemy_current"
+    ],
+    "text": "结论：产品预期确认：“申请记忆账号”或“开一个记忆账号”应进入Deepal AI APP的记忆空间；无记忆ID进入创建页，有记忆ID进入账号信息页，不应落入DEEPAL AI闲聊或“账号自动记忆”。\n依据：Jira原票、记忆空间PRD V0.6、Alchemy当前核验\n处理：按上述预期修正两句语料的落域和功能点映射；MegaClaw语音研发处理。"
+  }
+}

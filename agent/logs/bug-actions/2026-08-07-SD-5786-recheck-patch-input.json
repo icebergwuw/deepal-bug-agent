@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SD-5786",
+  "sheet": "吴优工作说明 / bug",
+  "row": 169,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：历史车端命中meta_id=1563且未限制副驾；D587-G现测原话又误命中meta_id=1026音乐，当前结果与历史版本不一致。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：未取得同版本项目功能继承、驾驶位限制和正式车控目标的完整同链资料。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5786"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：该票同时存在项目版本漂移和主副驾限制缺口，现阶段不能只按语料或车控单方定责。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点。\n处理：锁定目标版本，核对meta_id=1563项目继承及关闭动作主驾限制后再定责；C673语音配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5786"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "先统一车型/版本，再核驾驶位限制与项目功能继承",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5786"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

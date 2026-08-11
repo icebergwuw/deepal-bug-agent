@@ -1,0 +1,259 @@
+{
+  "key": "SLV-44256",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 286,
+  "rowIndex": 285,
+  "previewFingerprint": "6114aca483c3d125abfedc7c3f238ec7865af94b9af34cde40f6b94e5d122abf",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "现象：用户在上一轮询问位置后说“目前的海拔高度”，rewrite_model把上一轮地址错误拼入本轮，随后触发天气和导航卡片刷新。[Jira原票·描述/完整评论][VOS请求链·reqId]\n证据：评论给出reqId=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404及origin_query/pre_query/rewrite_query，能证明当前多轮继承链；未检索到同车型生效PRD对该问法及上下文继承边界的明确条款。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44256",
+        "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：定义为待复核。当前日志能定位到无关上一轮地址被继承，但缺同范围语音正式定义及完整Alchemy标准/项目功能点，不能仅凭研发诊断直接定责。\n依据：Jira描述/完整评论中的reqId与rewrite链；Drive正式定义检索未命中同车型、同问法条款。\n处理：补齐“海拔高度”能力边界和无关多轮上下文不得继承的生效语音定义，并完成Alchemy当前/标准/项目核验后定责；C673语音云端对话管理负责人处理。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "待复核",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "测试用例已含版本、VIN、步骤、预期、实际、日志与reqId，无需补测试用例；缺的是正式语音定义和Alchemy证据链。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "",
+      "after": "Jira原票·描述/完整评论\nVOS请求链·reqId",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44256",
+        "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：用户在上一轮询问位置后说“目前的海拔高度”，rewrite_model把上一轮地址错误拼入本轮，随后触发天气和导航卡片刷新。[Jira原票·描述/完整评论][VOS请求链·reqId]\n证据：评论给出reqId=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404及origin_query/pre_query/rewrite_query，能证明当前多轮继承链；未检索到同车型生效PRD对该问法及上下文继承边界的明确条款。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44256",
+        "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为待复核。当前日志能定位到无关上一轮地址被继承，但缺同范围语音正式定义及完整Alchemy标准/项目功能点，不能仅凭研发诊断直接定责。\n依据：Jira描述/完整评论中的reqId与rewrite链；Drive正式定义检索未命中同车型、同问法条款。\n处理：补齐“海拔高度”能力边界和无关多轮上下文不得继承的生效语音定义，并完成Alchemy当前/标准/项目核验后定责；C673语音云端对话管理负责人处理。",
+      "links": []
+    },
+    "G": {
+      "visible": "待复核",
+      "links": []
+    },
+    "I": {
+      "visible": "测试用例已含版本、VIN、步骤、预期、实际、日志与reqId，无需补测试用例；缺的是正式语音定义和Alchemy证据链。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·描述/完整评论\nVOS请求链·reqId",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44256",
+        "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 285,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：用户在上一轮询问位置后说“目前的海拔高度”，rewrite_model把上一轮地址错误拼入本轮，随后触发天气和导航卡片刷新。[Jira原票·描述/完整评论][VOS请求链·reqId]\n证据：评论给出reqId=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404及origin_query/pre_query/rewrite_query，能证明当前多轮继承链；未检索到同车型生效PRD对该问法及上下文继承边界的明确条款。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44256"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  },
+                  {
+                    "startIndex": 82,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 94
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 285,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为待复核。当前日志能定位到无关上一轮地址被继承，但缺同范围语音正式定义及完整Alchemy标准/项目功能点，不能仅凭研发诊断直接定责。\n依据：Jira描述/完整评论中的reqId与rewrite链；Drive正式定义检索未命中同车型、同问法条款。\n处理：补齐“海拔高度”能力边界和无关多轮上下文不得继承的生效语音定义，并完成Alchemy当前/标准/项目核验后定责；C673语音云端对话管理负责人处理。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 285,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 285,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "测试用例已含版本、VIN、步骤、预期、实际、日志与reqId，无需补测试用例；缺的是正式语音定义和Alchemy证据链。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 285,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/完整评论\nVOS请求链·reqId"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44256"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

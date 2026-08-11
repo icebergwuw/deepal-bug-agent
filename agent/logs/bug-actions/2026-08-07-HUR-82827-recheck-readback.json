@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82827",
+  "sheet": "吴优工作说明 / bug",
+  "range": "A218:J218",
+  "mode": "recheck",
+  "changed_columns": ["C", "D", "G", "I", "J"],
+  "protected_columns_unchanged": ["A", "B", "E", "F", "H"],
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82827｜C385/LCDAText__5文言与当前清单/车机显示不一致",
+    "C": "现象：J90A EL阿拉伯语环境下触发后向辅助雷达遮挡警告，实车显示“تعطل حساسات رادار جانبية خلفية محجوبة”，测试以C385/LCDAText__5重复Key行阿语列为空作为预期。[Jira原票·描述/2026-08-06]\n证据：当前正式LanguageList源文行的阿语与实车完全一致；对应重复Key迁移行阿语为空。[LanguageList源文·第75行][LanguageList重复Key·第551行][重复Key执行记录·第3988行]",
+    "D": "结论：定义为非问题。J90A EL阿拉伯语环境下，后向辅助雷达遮挡应显示为“تعطل حساسات رادار جانبية خلفية محجوبة”；当前实车显示与生效LanguageList一致，不能以重复Key行阿语列为空作为“应显示空白”的产品预期。\n依据：Jira原票·描述/2026-08-06、LanguageList源文·第75行、LanguageList重复Key·第551行。\n处理：按非问题关闭本Bug；吴优处理。",
+    "E": false, "F": null, "G": "可关闭", "H": null,
+    "I": "Key行阿语空值另按LanguageList重复Key数据治理处理，不作为车机缺陷",
+    "J": "Jira原票·描述/2026-08-06\nLanguageList源文·第75行\nLanguageList重复Key·第551行\n重复Key执行记录·第3988行"
+  },
+  "link_counts": {"B": 1, "C": 4, "D": 3, "J": 4},
+  "b_formula_preserved": true,
+  "e_boolean_checkbox_preserved": true,
+  "all_link_targets_matched": true,
+  "sheet_contract_validated": true,
+  "jira_external_actions": []
+}

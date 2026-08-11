@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "PC-38195",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 266,
+  "range": "A266:J266",
+  "values": {
+    "A": "2026-08-07",
+    "B": "PC-38195｜可见即可说关闭微信互联未执行",
+    "C": "现象与实现：已完整读取PC-38195描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+    "D": "结论：当前页面未显示“关闭微信互联”按钮，语义虽命中meta_id=1108，但缺少该页面生效可见配置和UE，不能直接关闭。\n依据：Jira原票·评论/2026-07-22与07-29、Alchemy当前结果·meta_id=1108；Drive检索未读到微信互联关闭控件配置/UE。\n处理：补齐该页面的生效可见配置和UE，确认按钮是否应显示后再关闭或转研发；Android VUI负责人处理。",
+    "E": false,
+    "F": null,
+    "G": "待复核",
+    "H": null,
+    "I": "关键缺口是微信互联弹窗关闭控件的生效配置和UE图层",
+    "J": "Jira原票·描述/完整评论\nAlchemy当前结果/功能点\n工作说明·正式资料入口"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-38195\",\"PC-38195｜可见即可说关闭微信互联未执行\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38195"
+      },
+      {
+        "label": "Alchemy当前结果/功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "工作说明·正式资料入口",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38195"
+      },
+      {
+        "label": "Alchemy当前结果",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Drive",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38195"
+      },
+      {
+        "label": "Alchemy当前结果/功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "工作说明·正式资料入口",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-08-07",
+    "B": "PC-38195｜可见即可说关闭微信互联未执行",
+    "E": false,
+    "F": null,
+    "H": null
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

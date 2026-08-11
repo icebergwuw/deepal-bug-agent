@@ -1,0 +1,93 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "HUR-82934｜【PI】【语音】【新需求测试】【瑞典语】露营模式时长减少15分钟(24h>x>1分钟)/露营模式时长减少15分钟(24h>x>1分钟) 露营模式减少一点时长(模糊步长 10min),与对应音频不一致",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82934\",\"HUR-82934｜【PI】【语音】【新需求测试】【瑞典语】露营模式时长减少15分钟(24h>x>1分钟)/露营模式时长减少15分钟(24h>x>1分钟) 露营模式减少一点时长(模糊步长 10min),与对应音频不一致\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：客户语料中中文意图为“减少15分钟/减少一点时长”，对应瑞典语却表达“增加1小时15分钟/增加一点”，语义方向和步长均冲突。[Jira原票·描述/完整评论][更新后语料截图]\n证据：研发评论说明执行语料来自马自达客户下发；附件能证明语料内部不一致，但尚未定位客户正式语料表的文件名、Sheet、行号和最终生效版本。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82934"
+        },
+        {
+          "label": "更新后语料截图",
+          "url": "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待复核。当前不是运行时随机识别问题，而是需求语料本身存在中瑞语义冲突；在客户最终语料行和版本未定位前，不直接给研发修改值。\n依据：Jira描述、完整评论及更新后语料截图。\n处理：由J90A语音多语言需求负责人确认中文意图、瑞典语目标句及步长，回写客户正式语料并给出文件名/Sheet/行号，再进入开发与回归。",
+      "links": [
+        {
+          "label": "更新后语料截图",
+          "url": "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "测试用例已完整，无需补测试用例；需要补客户最终语料的可定位证据，并完成Alchemy链核验。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82934"
+        },
+        {
+          "label": "更新后语料截图",
+          "url": "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+        },
+        {
+          "label": "J90A_EU-PI_LanguageList",
+          "url": "https://docs.google.com/spreadsheets/d/1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y/edit"
+        }
+      ]
+    }
+  }
+}

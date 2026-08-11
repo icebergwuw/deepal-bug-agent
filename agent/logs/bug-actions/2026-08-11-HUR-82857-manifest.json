@@ -1,0 +1,97 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82857",
+  "comment_causality": "已完整读取Jira字段、描述、附件、关联问题和全部评论；测试预期、研发意见、当前实现与正式定义分别记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82857 Jira描述、附件、关联问题与完整评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题及活动日志（按时间升序）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本与模块",
+      "trigger": "现象：J90A冬季模式已开启时，音乐App点击氛围灯仍可开启音乐律动且无拦截提示。",
+      "target_behavior": "证明当前实现、测试主张与评论因果；不单独定义产品目标。",
+      "reason": "当前Jira页面可直接证明本票实现事实。"
+    },
+    {
+      "source_id": "winter_requirement",
+      "source": "HUR-24753 已完成需求及PRD入口",
+      "source_type": "customer_final_decision",
+      "source_location": "HUR-24753需求描述：冬季模式期间禁止开启音乐氛围灯；点击显示既定Toast；PRD heading=h.emfxkqkec3qq",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "J90A-All / Android-CarSettings与音乐氛围灯同一项目",
+      "trigger": "冬季模式开启时点击音乐氛围灯",
+      "target_behavior": "禁止开启并提示当前为冬季模式，需先关闭冬季模式。",
+      "reason": "已完成同项目需求直接定义该触发条件和目标行为。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "通用功能边界；无更具体专项画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-11",
+      "search_location": "HUR-24753已完成需求及其Google Docs PRD入口",
+      "queries": [
+        "J90A 冬季模式 音乐氛围灯",
+        "HUR-24753"
+      ],
+      "source_ids": [
+        "winter_requirement"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期和研发评论只作为主张/实现事实；只有同项目、同触发条件的生效正式定义可作为确定性目标，关键缺口存在时降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android-Music研发负责人（张齐财）",
+    "text": "结论：定义为音乐端实现缺陷。冬季模式开启即应禁止音乐氛围灯，不应再以winter_light联动开关作为第二个必要条件。\n依据：HUR-24753已完成需求及其PRD入口明确“冬季模式期间禁止开启”；HUR-82857评论记录音乐端现状为两个条件同时满足才拦截。\n处理：删除音乐端对winter_light的额外前置依赖，冬季模式开启时统一拦截并展示既定提示；Android-Music研发负责人（张齐财）处理。",
+    "implementation_source_ids": [
+      "jira_actual"
+    ]
+  },
+  "expected_behavior": {
+    "trigger": "冬季模式开启时点击音乐App氛围灯",
+    "target_state": "音乐氛围灯保持关闭",
+    "intent_function_signal": "冬季模式状态直接触发禁止规则",
+    "ui_tts_vehicle_behavior": "显示‘当前为冬季模式，无法打开音乐氛围灯，请先关闭冬季模式再操作’",
+    "boundary": "不以winter_light联动开关为额外必要条件",
+    "source_ids": [
+      "winter_requirement"
+    ]
+  }
+}

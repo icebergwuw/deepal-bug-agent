@@ -1,0 +1,3189 @@
+[
+  {
+    "key": "HUR-82823",
+    "row": 221,
+    "summary": "C385/LCDAText__33文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/LCDAText__33文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请注意后方车辆”的目标语译文与实车一致；Key行第548行目标语为空。[LanguageList源文·第77行][LanguageList重复Key·第548行][重复Key记录·第3985行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第548行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A548:AQ548"
+        },
+        {
+          "label": "重复Key记录·第3985行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3985:Z3985"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/LCDAText__33触发时应按正式source“请注意后方车辆”显示“يرجى الانتباه إلى السيارة من الخلف”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第77行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第548行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A548:AQ548"
+        },
+        {
+          "label": "重复Key记录·第3985行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3985:Z3985"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82822",
+    "row": 222,
+    "summary": "C385/LCDAText__31文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/LCDAText__31文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请注意后方车辆”的目标语译文与实车一致；Key行第547行目标语为空。[LanguageList源文·第77行][LanguageList重复Key·第547行][重复Key记录·第3984行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82822"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第547行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A547:AQ547"
+        },
+        {
+          "label": "重复Key记录·第3984行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3984:Z3984"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/LCDAText__31触发时应按正式source“请注意后方车辆”显示“يرجى الانتباه إلى السيارة من الخلف”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第77行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82822"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82822"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第547行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A547:AQ547"
+        },
+        {
+          "label": "重复Key记录·第3984行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3984:Z3984"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82820",
+    "row": 223,
+    "summary": "C385/LCDAText__30文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/LCDAText__30文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“开门预警功能已关闭”的目标语译文与实车一致；Key行第546行目标语为空。[LanguageList源文·第78行][LanguageList重复Key·第546行][重复Key记录·第3983行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82820"
+        },
+        {
+          "label": "LanguageList源文·第78行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A78:AQ78"
+        },
+        {
+          "label": "LanguageList重复Key·第546行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A546:AQ546"
+        },
+        {
+          "label": "重复Key记录·第3983行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3983:Z3983"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/LCDAText__30触发时应按正式source“开门预警功能已关闭”显示“وظيفة تحذير فتح الباب معطلة”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第78行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82820"
+        },
+        {
+          "label": "LanguageList源文·第78行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A78:AQ78"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82820"
+        },
+        {
+          "label": "LanguageList源文·第78行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A78:AQ78"
+        },
+        {
+          "label": "LanguageList重复Key·第546行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A546:AQ546"
+        },
+        {
+          "label": "重复Key记录·第3983行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3983:Z3983"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82805",
+    "row": 224,
+    "summary": "TipInfo/BCM_LowPowerWarning__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/BCM_LowPowerWarning__1文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“车辆将在2分钟内自动下电\n请启动车辆或检查蓄电池充电系统”的目标语译文与实车一致；Key行第376行目标语为空。[LanguageList源文·第202行][LanguageList重复Key·第376行][重复Key记录·第3813行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82805"
+        },
+        {
+          "label": "LanguageList源文·第202行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A202:AQ202"
+        },
+        {
+          "label": "LanguageList重复Key·第376行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A376:AQ376"
+        },
+        {
+          "label": "重复Key记录·第3813行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3813:Z3813"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。TipInfo/BCM_LowPowerWarning__1触发时应按正式source“车辆将在2分钟内自动下电\n请启动车辆或检查蓄电池充电系统”显示“سيتم إيقاف تشغيل السيارة آليًا في غضون دقيقتين \nيرجى تشغيل السيارة أو فحص نظام شحن البطارية”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第202行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82805"
+        },
+        {
+          "label": "LanguageList源文·第202行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A202:AQ202"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82805"
+        },
+        {
+          "label": "LanguageList源文·第202行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A202:AQ202"
+        },
+        {
+          "label": "LanguageList重复Key·第376行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A376:AQ376"
+        },
+        {
+          "label": "重复Key记录·第3813行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3813:Z3813"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82804",
+    "row": 225,
+    "summary": "TipInfo/EPB_TextDisplay__8文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/EPB_TextDisplay__8文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请切换至非P挡解除电子驻车”的目标语译文与实车一致；Key行第353行目标语为空。[LanguageList源文·第224行][LanguageList重复Key·第353行][重复Key记录·第3790行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82804"
+        },
+        {
+          "label": "LanguageList源文·第224行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A224:AQ224"
+        },
+        {
+          "label": "LanguageList重复Key·第353行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A353:AQ353"
+        },
+        {
+          "label": "重复Key记录·第3790行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3790:Z3790"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。TipInfo/EPB_TextDisplay__8触发时应按正式source“请切换至非P挡解除电子驻车”显示“غيِّر وضع الركن لتحرير Electric Parking Brake (EPB)‎”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第224行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82804"
+        },
+        {
+          "label": "LanguageList源文·第224行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A224:AQ224"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82804"
+        },
+        {
+          "label": "LanguageList源文·第224行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A224:AQ224"
+        },
+        {
+          "label": "LanguageList重复Key·第353行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A353:AQ353"
+        },
+        {
+          "label": "重复Key记录·第3790行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3790:Z3790"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82803",
+    "row": 226,
+    "summary": "TipInfo/TCU_ParkRelAPosnIPReq__2文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/TCU_ParkRelAPosnIPReq__2文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请按下解锁按钮以切换挡位”的目标语译文与实车一致；Key行第397行目标语为空。[LanguageList源文·第181行][LanguageList重复Key·第397行][重复Key记录·第3834行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82803"
+        },
+        {
+          "label": "LanguageList源文·第181行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A181:AQ181"
+        },
+        {
+          "label": "LanguageList重复Key·第397行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A397:AQ397"
+        },
+        {
+          "label": "重复Key记录·第3834行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3834:Z3834"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。TipInfo/TCU_ParkRelAPosnIPReq__2触发时应按正式source“请按下解锁按钮以切换挡位”显示“يرجى الضغط على زر الفتح لتحويل الغيار”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第181行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82803"
+        },
+        {
+          "label": "LanguageList源文·第181行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A181:AQ181"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82803"
+        },
+        {
+          "label": "LanguageList源文·第181行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A181:AQ181"
+        },
+        {
+          "label": "LanguageList重复Key·第397行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A397:AQ397"
+        },
+        {
+          "label": "重复Key记录·第3834行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3834:Z3834"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82802",
+    "row": 227,
+    "summary": "TipInfo/TCU_ParkRelAPosnIPReq__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/TCU_ParkRelAPosnIPReq__1文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请踩下制动踏板以切换挡位”的目标语译文与实车一致；Key行第396行目标语为空。[LanguageList源文·第182行][LanguageList重复Key·第396行][重复Key记录·第3833行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82802"
+        },
+        {
+          "label": "LanguageList源文·第182行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A182:AQ182"
+        },
+        {
+          "label": "LanguageList重复Key·第396行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A396:AQ396"
+        },
+        {
+          "label": "重复Key记录·第3833行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3833:Z3833"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。TipInfo/TCU_ParkRelAPosnIPReq__1触发时应按正式source“请踩下制动踏板以切换挡位”显示“يرجى الضغط على دواسة المكابح لتحويل الغيار”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第182行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82802"
+        },
+        {
+          "label": "LanguageList源文·第182行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A182:AQ182"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82802"
+        },
+        {
+          "label": "LanguageList源文·第182行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A182:AQ182"
+        },
+        {
+          "label": "LanguageList重复Key·第396行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A396:AQ396"
+        },
+        {
+          "label": "重复Key记录·第3833行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3833:Z3833"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82801",
+    "row": 228,
+    "summary": "TipInfo/APA_Condition_Notice__8文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/APA_Condition_Notice__8文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“天气差，智能泊车不可用”的目标语译文与实车一致；Key行第395行目标语为空。[LanguageList源文·第183行][LanguageList重复Key·第395行][重复Key记录·第3832行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82801"
+        },
+        {
+          "label": "LanguageList源文·第183行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A183:AQ183"
+        },
+        {
+          "label": "LanguageList重复Key·第395行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A395:AQ395"
+        },
+        {
+          "label": "重复Key记录·第3832行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3832:Z3832"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。TipInfo/APA_Condition_Notice__8触发时应按正式source“天气差，智能泊车不可用”显示“طقس سيء. نظام التوقف الذكي غير متاح”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第183行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82801"
+        },
+        {
+          "label": "LanguageList源文·第183行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A183:AQ183"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82801"
+        },
+        {
+          "label": "LanguageList源文·第183行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A183:AQ183"
+        },
+        {
+          "label": "LanguageList重复Key·第395行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A395:AQ395"
+        },
+        {
+          "label": "重复Key记录·第3832行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3832:Z3832"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82800",
+    "row": 229,
+    "summary": "TipInfo/APA_Condition_Notice__7文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/APA_Condition_Notice__7文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“光照不足，智能泊车不可用”的目标语译文与实车一致；Key行第394行目标语为空。[LanguageList源文·第184行][LanguageList重复Key·第394行][重复Key记录·第3831行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82800"
+        },
+        {
+          "label": "LanguageList源文·第184行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A184:AQ184"
+        },
+        {
+          "label": "LanguageList重复Key·第394行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A394:AQ394"
+        },
+        {
+          "label": "重复Key记录·第3831行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3831:Z3831"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。TipInfo/APA_Condition_Notice__7触发时应按正式source“光照不足，智能泊车不可用”显示“ظروف إضاءة سيئة. نظام التوقف غير متاح”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第184行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82800"
+        },
+        {
+          "label": "LanguageList源文·第184行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A184:AQ184"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82800"
+        },
+        {
+          "label": "LanguageList源文·第184行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A184:AQ184"
+        },
+        {
+          "label": "LanguageList重复Key·第394行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A394:AQ394"
+        },
+        {
+          "label": "重复Key记录·第3831行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3831:Z3831"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82799",
+    "row": 230,
+    "summary": "C385/IACCText__27文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/IACCText__27实际映射QML source“车道巡航临时退出\\n请注意控制方向”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第120行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82799"
+        },
+        {
+          "label": "LanguageList精确source·第120行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A120:AQ120"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/IACCText__27不对应；实际QML source“车道巡航临时退出\\n请注意控制方向”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第120行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82799"
+        },
+        {
+          "label": "LanguageList精确source·第120行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A120:AQ120"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82799"
+        },
+        {
+          "label": "LanguageList精确source·第120行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A120:AQ120"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82798",
+    "row": 231,
+    "summary": "C385/IACCText__11文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/IACCText__11实际映射QML source“车道巡航禁用中，%dS后解除”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82798"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/IACCText__11不对应；实际QML source“车道巡航禁用中，%dS后解除”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82798"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82798"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82797",
+    "row": 232,
+    "summary": "C385/IACCText__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/IACCText__1实际映射QML source“车道巡航已激活”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82797"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/IACCText__1不对应；实际QML source“车道巡航已激活”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82797"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82797"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82796",
+    "row": 233,
+    "summary": "C385/FatigueDetectText__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/FatigueDetectText__1实际映射QML source“您已疲劳驾驶，\\n请合理安排停车休息”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第643行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82796"
+        },
+        {
+          "label": "LanguageList精确source·第643行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A643:AQ643"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/FatigueDetectText__1不对应；实际QML source“您已疲劳驾驶，\\n请合理安排停车休息”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第643行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82796"
+        },
+        {
+          "label": "LanguageList精确source·第643行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A643:AQ643"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82796"
+        },
+        {
+          "label": "LanguageList精确source·第643行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A643:AQ643"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82795",
+    "row": 234,
+    "summary": "TipInfo/APA_Condition_Notice__6文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/APA_Condition_Notice__6文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“智能泊车不可用”的目标语译文与实车一致；Key行第393行目标语为空。[LanguageList源文·第185行][LanguageList重复Key·第393行][重复Key记录·第3830行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82795"
+        },
+        {
+          "label": "LanguageList源文·第185行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A185:AQ185"
+        },
+        {
+          "label": "LanguageList重复Key·第393行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A393:AQ393"
+        },
+        {
+          "label": "重复Key记录·第3830行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3830:Z3830"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。TipInfo/APA_Condition_Notice__6触发时应按正式source“智能泊车不可用”显示“نظام التوقف الذكي غير متاح”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第185行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82795"
+        },
+        {
+          "label": "LanguageList源文·第185行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A185:AQ185"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82795"
+        },
+        {
+          "label": "LanguageList源文·第185行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A185:AQ185"
+        },
+        {
+          "label": "LanguageList重复Key·第393行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A393:AQ393"
+        },
+        {
+          "label": "重复Key记录·第3830行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3830:Z3830"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82793",
+    "row": 235,
+    "summary": "C385/IACCText__23文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/IACCText__23文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“天气条件差，巡航暂不可用”的目标语译文与实车一致；Key行第478行目标语为空。[LanguageList源文·第83行][LanguageList重复Key·第478行][重复Key记录·第3915行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82793"
+        },
+        {
+          "label": "LanguageList源文·第83行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A83:AQ83"
+        },
+        {
+          "label": "LanguageList重复Key·第478行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A478:AQ478"
+        },
+        {
+          "label": "重复Key记录·第3915行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3915:Z3915"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/IACCText__23触发时应按正式source“天气条件差，巡航暂不可用”显示“ظروف جوية سيئة. التحكم في السرعة غير متاح مؤقتًا”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第83行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82793"
+        },
+        {
+          "label": "LanguageList源文·第83行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A83:AQ83"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82793"
+        },
+        {
+          "label": "LanguageList源文·第83行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A83:AQ83"
+        },
+        {
+          "label": "LanguageList重复Key·第478行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A478:AQ478"
+        },
+        {
+          "label": "重复Key记录·第3915行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3915:Z3915"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82789",
+    "row": 236,
+    "summary": "C385/IACCText__10文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/IACCText__10文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“巡航暂不可用”的目标语译文与实车一致；Key行第477行目标语为空。[LanguageList源文·第90行][LanguageList重复Key·第477行][重复Key记录·第3914行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82789"
+        },
+        {
+          "label": "LanguageList源文·第90行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A90:AQ90"
+        },
+        {
+          "label": "LanguageList重复Key·第477行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A477:AQ477"
+        },
+        {
+          "label": "重复Key记录·第3914行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3914:Z3914"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/IACCText__10触发时应按正式source“巡航暂不可用”显示“التحكم في السرعة غير متاح مؤقتًا”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第90行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82789"
+        },
+        {
+          "label": "LanguageList源文·第90行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A90:AQ90"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82789"
+        },
+        {
+          "label": "LanguageList源文·第90行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A90:AQ90"
+        },
+        {
+          "label": "LanguageList重复Key·第477行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A477:AQ477"
+        },
+        {
+          "label": "重复Key记录·第3914行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3914:Z3914"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82788",
+    "row": 237,
+    "summary": "C385/LCDAText__23文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/LCDAText__23文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请勿打开车门”的目标语译文与实车一致；Key行第545行目标语为空。[LanguageList源文·第79行][LanguageList重复Key·第545行][重复Key记录·第3982行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82788"
+        },
+        {
+          "label": "LanguageList源文·第79行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A79:AQ79"
+        },
+        {
+          "label": "LanguageList重复Key·第545行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A545:AQ545"
+        },
+        {
+          "label": "重复Key记录·第3982行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3982:Z3982"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/LCDAText__23触发时应按正式source“请勿打开车门”显示“يرجى عدم فتح الباب”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第79行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82788"
+        },
+        {
+          "label": "LanguageList源文·第79行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A79:AQ79"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82788"
+        },
+        {
+          "label": "LanguageList源文·第79行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A79:AQ79"
+        },
+        {
+          "label": "LanguageList重复Key·第545行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A545:AQ545"
+        },
+        {
+          "label": "重复Key记录·第3982行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3982:Z3982"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82786",
+    "row": 238,
+    "summary": "C385/IACCText__5文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/IACCText__5文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“巡航暂不可用”的目标语译文与实车一致；Key行第476行目标语为空。[LanguageList源文·第90行][LanguageList重复Key·第476行][重复Key记录·第3913行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82786"
+        },
+        {
+          "label": "LanguageList源文·第90行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A90:AQ90"
+        },
+        {
+          "label": "LanguageList重复Key·第476行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A476:AQ476"
+        },
+        {
+          "label": "重复Key记录·第3913行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3913:Z3913"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/IACCText__5触发时应按正式source“巡航暂不可用”显示“التحكم في السرعة غير متاح مؤقتًا”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第90行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82786"
+        },
+        {
+          "label": "LanguageList源文·第90行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A90:AQ90"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82786"
+        },
+        {
+          "label": "LanguageList源文·第90行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A90:AQ90"
+        },
+        {
+          "label": "LanguageList重复Key·第476行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A476:AQ476"
+        },
+        {
+          "label": "重复Key记录·第3913行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3913:Z3913"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82783",
+    "row": 239,
+    "summary": "C385/ACCTextTakeOver__3文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__3文言与当前清单/车机显示不一致。[Jira原票·描述/评论]\n证据：已核对正式LanguageList，但当前附件/Topic映射与精确QML source仍未形成唯一对应。[LanguageList·10_Instrument Panel检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82783"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：C385/ACCTextTakeOver__3文言与当前清单/车机显示不一致尚缺少唯一的Topic/value、QML source或附件映射，不能直接关闭或转研发。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel检索。\n处理：补充问题时段qlog/DLT与仪表资源版本，确认实车收到的Topic/value后再定责；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82783"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补充问题时段qlog/DLT与仪表资源版本，确认实车收到的Topic/value后再定责",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82783"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82773",
+    "row": 240,
+    "summary": "TipInfo/APA_Condition_Notice__8文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/APA_Condition_Notice__8实际映射QML source“天气差，泊车辅助不可用”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第183行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82773"
+        },
+        {
+          "label": "LanguageList精确source·第183行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A183:AQ183"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与TipInfo/APA_Condition_Notice__8不对应；实际QML source“天气差，泊车辅助不可用”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第183行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82773"
+        },
+        {
+          "label": "LanguageList精确source·第183行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A183:AQ183"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82773"
+        },
+        {
+          "label": "LanguageList精确source·第183行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A183:AQ183"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82746",
+    "row": 241,
+    "summary": "TipInfo/APA_Condition_Notice__7文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/APA_Condition_Notice__7实际映射QML source“光照不足，泊车辅助不可用”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第184行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82746"
+        },
+        {
+          "label": "LanguageList精确source·第184行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A184:AQ184"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与TipInfo/APA_Condition_Notice__7不对应；实际QML source“光照不足，泊车辅助不可用”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第184行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82746"
+        },
+        {
+          "label": "LanguageList精确source·第184行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A184:AQ184"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82746"
+        },
+        {
+          "label": "LanguageList精确source·第184行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A184:AQ184"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82745",
+    "row": 242,
+    "summary": "TipInfo/APA_Condition_Notice__2文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：TipInfo/APA_Condition_Notice__2实际映射QML source“坡度过大，泊车辅助不可用”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第189行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82745"
+        },
+        {
+          "label": "LanguageList精确source·第189行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A189:AQ189"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与TipInfo/APA_Condition_Notice__2不对应；实际QML source“坡度过大，泊车辅助不可用”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第189行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82745"
+        },
+        {
+          "label": "LanguageList精确source·第189行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A189:AQ189"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82745"
+        },
+        {
+          "label": "LanguageList精确source·第189行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A189:AQ189"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82743",
+    "row": 243,
+    "summary": "C385/IACCText__50文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/IACCText__50实际映射QML source“路况较好，可以试试辅助驾驶哦”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82743"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/IACCText__50不对应；实际QML source“路况较好，可以试试辅助驾驶哦”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82743"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82743"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82726",
+    "row": 244,
+    "summary": "C385/ELKTwoText__2文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ELKTwoText__2实际映射QML source“为避免干扰驾驶，\\n车道偏离预警将暂停5分钟”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第592行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82726"
+        },
+        {
+          "label": "LanguageList精确source·第592行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A592:AQ592"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ELKTwoText__2不对应；实际QML source“为避免干扰驾驶，\\n车道偏离预警将暂停5分钟”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第592行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82726"
+        },
+        {
+          "label": "LanguageList精确source·第592行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A592:AQ592"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82726"
+        },
+        {
+          "label": "LanguageList精确source·第592行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A592:AQ592"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82725",
+    "row": 245,
+    "summary": "C385/ELKTwoText__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ELKTwoText__1文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“车道偏离预警暂停”的目标语译文与实车一致；Key行第502行目标语为空；Jira评论确认阿语从右向左且换行为正常展示。[LanguageList源文·第106行][LanguageList重复Key·第502行][重复Key记录·第3939行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82725"
+        },
+        {
+          "label": "LanguageList源文·第106行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A106:AQ106"
+        },
+        {
+          "label": "LanguageList重复Key·第502行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A502:AQ502"
+        },
+        {
+          "label": "重复Key记录·第3939行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3939:Z3939"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/ELKTwoText__1触发时应按正式source“车道偏离预警暂停”显示“Lane Departure Warning System (LDWS) معلق”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第106行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82725"
+        },
+        {
+          "label": "LanguageList源文·第106行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A106:AQ106"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82725"
+        },
+        {
+          "label": "LanguageList源文·第106行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A106:AQ106"
+        },
+        {
+          "label": "LanguageList重复Key·第502行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A502:AQ502"
+        },
+        {
+          "label": "重复Key记录·第3939行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3939:Z3939"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82724",
+    "row": 246,
+    "summary": "C385/ELKText__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ELKText__1文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“紧急车道保持工作中”的目标语译文与实车一致；Key行第500行目标语为空。[LanguageList源文·第107行][LanguageList重复Key·第500行][重复Key记录·第3937行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82724"
+        },
+        {
+          "label": "LanguageList源文·第107行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A107:AQ107"
+        },
+        {
+          "label": "LanguageList重复Key·第500行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A500:AQ500"
+        },
+        {
+          "label": "重复Key记录·第3937行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3937:Z3937"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/ELKText__1触发时应按正式source“紧急车道保持工作中”显示“Emergency Lane Keeping (ELK) قيد التقدم”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第107行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82724"
+        },
+        {
+          "label": "LanguageList源文·第107行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A107:AQ107"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82724"
+        },
+        {
+          "label": "LanguageList源文·第107行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A107:AQ107"
+        },
+        {
+          "label": "LanguageList重复Key·第500行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A500:AQ500"
+        },
+        {
+          "label": "重复Key记录·第3937行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3937:Z3937"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82713",
+    "row": 247,
+    "summary": "C385/DMSText__2文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/DMSText__2实际映射QML source“检测到您有抽烟行为，\\n请专心驾驶”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第640行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82713"
+        },
+        {
+          "label": "LanguageList精确source·第640行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A640:AQ640"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/DMSText__2不对应；实际QML source“检测到您有抽烟行为，\\n请专心驾驶”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第640行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82713"
+        },
+        {
+          "label": "LanguageList精确source·第640行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A640:AQ640"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82713"
+        },
+        {
+          "label": "LanguageList精确source·第640行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A640:AQ640"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82712",
+    "row": 248,
+    "summary": "C385/DMSText__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/DMSText__1文言与当前清单/车机显示不一致。[Jira原票·描述/评论]\n证据：已核对正式LanguageList，但当前附件/Topic映射与精确QML source仍未形成唯一对应。[LanguageList·10_Instrument Panel检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82712"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：C385/DMSText__1文言与当前清单/车机显示不一致尚缺少唯一的Topic/value、QML source或附件映射，不能直接关闭或转研发。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel检索。\n处理：统一C385/DMSText__1实际QML source与正式清单对应行后再补译文或关闭；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82712"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "统一C385/DMSText__1实际QML source与正式清单对应行后再补译文或关闭",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82712"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82711",
+    "row": 249,
+    "summary": "C385/CallDetectText__1文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/CallDetectText__1实际映射QML source“检测到您有打电话行为，\\n请专心驾驶”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第641行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82711"
+        },
+        {
+          "label": "LanguageList精确source·第641行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A641:AQ641"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/CallDetectText__1不对应；实际QML source“检测到您有打电话行为，\\n请专心驾驶”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第641行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82711"
+        },
+        {
+          "label": "LanguageList精确source·第641行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A641:AQ641"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82711"
+        },
+        {
+          "label": "LanguageList精确source·第641行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A641:AQ641"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82684",
+    "row": 250,
+    "summary": "C385/ACCText__1026文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCText__1026实际映射QML source“自适应巡航临时退出，\\n请注意车速”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第683行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82684"
+        },
+        {
+          "label": "LanguageList精确source·第683行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A683:AQ683"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCText__1026不对应；实际QML source“自适应巡航临时退出，\\n请注意车速”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第683行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82684"
+        },
+        {
+          "label": "LanguageList精确source·第683行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A683:AQ683"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82684"
+        },
+        {
+          "label": "LanguageList精确source·第683行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A683:AQ683"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82681",
+    "row": 251,
+    "summary": "C385/ACCTextTakeOver__73文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__73实际映射QML source“驾驶模式已切换，\\n请立即控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第654行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82681"
+        },
+        {
+          "label": "LanguageList精确source·第654行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A654:AQ654"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__73不对应；实际QML source“驾驶模式已切换，\\n请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第654行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82681"
+        },
+        {
+          "label": "LanguageList精确source·第654行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A654:AQ654"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82681"
+        },
+        {
+          "label": "LanguageList精确source·第654行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A654:AQ654"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82680",
+    "row": 252,
+    "summary": "C385/ACCTextTakeOver__71文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__71实际映射QML source“胎压异常,请立即控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82680"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__71不对应；实际QML source“胎压异常,请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82680"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82680"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82679",
+    "row": 253,
+    "summary": "C385/ACCTextTakeOver__39文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__39实际映射QML source“请立即控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82679"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__39不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82679"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82679"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82677",
+    "row": 254,
+    "summary": "C385/ACCTextTakeOver__29文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__29实际映射QML source“进入安全停车，请立即控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82677"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__29不对应；实际QML source“进入安全停车，请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82677"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82677"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82676",
+    "row": 255,
+    "summary": "C385/ACCTextTakeOver__28文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__28实际映射QML source“请立即控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82676"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__28不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82676"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82676"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82675",
+    "row": 256,
+    "summary": "C385/ACCTextTakeOver__27文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__27实际映射QML source“请控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82675"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__27不对应；实际QML source“请控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82675"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82675"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82674",
+    "row": 257,
+    "summary": "C385/ACCTextTakeOver__22文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__22实际映射QML source“请立即控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82674"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__22不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82674"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82674"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82662",
+    "row": 258,
+    "summary": "C385/ACCTextTakeOver__21文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__21实际映射QML source“请控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList·10_Instrument Panel全表检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82662"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__21不对应；实际QML source“请控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82662"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82662"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel全表检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82661",
+    "row": 259,
+    "summary": "C385/ACCTextTakeOver__128文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__128实际映射QML source“请立即控制车辆”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第589行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82661"
+        },
+        {
+          "label": "LanguageList精确source·第589行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A589:AQ589"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与C385/ACCTextTakeOver__128不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第589行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82661"
+        },
+        {
+          "label": "LanguageList精确source·第589行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A589:AQ589"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82661"
+        },
+        {
+          "label": "LanguageList精确source·第589行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A589:AQ589"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82794",
+    "row": 260,
+    "summary": "部分仪表中文 source文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：部分仪表中文 source文言与当前清单/车机显示不一致。[Jira原票·描述/评论]\n证据：已核对正式LanguageList，但当前附件/Topic映射与精确QML source仍未形成唯一对应。[LanguageList·10_Instrument Panel检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：部分仪表中文 source文言与当前清单/车机显示不一致尚缺少唯一的Topic/value、QML source或附件映射，不能直接关闭或转研发。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel检索。\n处理：逐项读取附件Key并映射到当前正式source行，附件映射未完成前不批量关闭；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "逐项读取附件Key并映射到当前正式source行，附件映射未完成前不批量关闭",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82704",
+    "row": 261,
+    "summary": "Driver Monitoring Reduced / Remove Any Obstructions文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：Driver Monitoring Reduced / Remove Any Obstructions实际映射QML source“辅助驾驶系统过热，降温后恢复”，目标语资源缺失时回退显示中文或错误文言。[Jira原票·描述/评论]\n证据：正式LanguageList未覆盖该精确source的目标语译文，或精确source行目标语为空。[LanguageList精确source·第629行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82704"
+        },
+        {
+          "label": "LanguageList精确source·第629行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A629:AQ629"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：测试原预期与Driver Monitoring Reduced / Remove Any Obstructions不对应；实际QML source“辅助驾驶系统过热，降温后恢复”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList精确source·第629行。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82704"
+        },
+        {
+          "label": "LanguageList精确source·第629行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A629:AQ629"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "不得复用仅中文相近但换行或用词不同的source译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82704"
+        },
+        {
+          "label": "LanguageList精确source·第629行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A629:AQ629"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82678",
+    "row": 262,
+    "summary": "AR-HUD恢复默认模式弹窗文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：恢复HUD默认模式后显示“Default Settings Have Been Restored Successfully”，测试认为与文档不一致。[Jira原票·描述/评论]\n证据：正式LanguageList的settings_hud_reset_succeed目标英文与代码/实车显示一致。[LanguageList·19_Toast第341行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82678"
+        },
+        {
+          "label": "LanguageList·19_Toast第341行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1775341327#gid=1775341327&range=A341:AQ341"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。恢复HUD默认模式成功后应显示“Default Settings Have Been Restored Successfully”，当前代码与实车文言符合正式LanguageList。\n依据：Jira原票·描述/评论、LanguageList·19_Toast第341行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82678"
+        },
+        {
+          "label": "LanguageList·19_Toast第341行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1775341327#gid=1775341327&range=A341:AQ341"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "代码实现不能替代需求；本次关闭依据是正式LanguageList与实车一致",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82678"
+        },
+        {
+          "label": "LanguageList·19_Toast第341行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1775341327#gid=1775341327&range=A341:AQ341"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-80864",
+    "row": 263,
+    "summary": "快捷设置后视镜折叠文言文言与当前清单/车机显示不一致",
+    "C": {
+      "text": "现象：快捷设置后视镜折叠德语文言与正式翻译不一致。[Jira原票·描述/评论]\n证据：正式LanguageList在03_Vehicle Settings第522行定义rear_mirror_fold，Jira评论确认应按表中无多余符号的译文显示。[LanguageList精确source·第522行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：快捷设置rear_mirror_fold应严格显示正式LanguageList德语文言，当前多余符号/错误资源属于实现缺陷。\n依据：Jira原票·描述/评论、LanguageList精确source·第522行。\n处理：按第522行目标译文修正快捷设置资源并回归；J90A多语言资源研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "修正资源后需在EU-PI德语环境核对标点、换行和完整显示",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80864"
+        },
+        {
+          "label": "LanguageList精确source·第522行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=657987591#gid=657987591&range=A522:AQ522"
+        }
+      ]
+    }
+  },
+  {
+    "key": "SLV-44239",
+    "row": 264,
+    "summary": "隐式理发需求未触发附近理发店搜索",
+    "C": {
+      "text": "现象与实现：已完整读取SLV-44239描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44239"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：正式功能已支持将口语化理发需求落到美容美发POI搜索；“头发长了”当前误落meta_id=1919不支持兜底，属于NLU泛化缺陷。\n依据：Jira原票·评论/功能点1433、Alchemy当前结果·meta_id=1919、地图导航PRD V6.1·POI搜索。\n处理：将“头发长了/想剪头发”等映射至lookup_poi并补齐理发店poi_tag后回归；深蓝语音NLU负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SLV-44239"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "地图导航PRD V6.1",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "可转语音",
+    "I": "补齐同义说法时只扩展理发/美容美发POI，不泛化为任意隐式生活需求",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44239"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "PC-38942",
+    "row": 265,
+    "summary": "收藏POI后选择第一个时列表偶发收起",
+    "C": {
+      "text": "现象与实现：已完整读取PC-38942描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38942"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：meta_id=1455仅定义POI列表二次交互，现行资料未定义“第一个/选择第一个”后哪些动作关闭列表，当前差异属于交互规则空白。\n依据：Jira原票·评论/2026-08-04、POI推荐PRD V0.8·2.5.3、Alchemy当前结果·meta_id=1021/1455。\n处理：统一序号选择、收藏、导航和添加途经点后的列表关闭规则并下发需求；POI/VUI产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/PC-38942"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "POI推荐PRD V0.8",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "需求需逐项列出二次交互动作及列表保持/关闭规则",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38942"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "PC-38195",
+    "row": 266,
+    "summary": "可见即可说关闭微信互联未执行",
+    "C": {
+      "text": "现象与实现：已完整读取PC-38195描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38195"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：当前页面未显示“关闭微信互联”按钮，语义虽命中meta_id=1108，但缺少该页面生效可见配置和UE，不能直接关闭。\n依据：Jira原票·评论/2026-07-22与07-29、Alchemy当前结果·meta_id=1108；Drive检索未读到微信互联关闭控件配置/UE。\n处理：补齐该页面的生效可见配置和UE，确认按钮是否应显示后再关闭或转研发；Android VUI负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/PC-38195"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "关键缺口是微信互联弹窗关闭控件的生效配置和UE图层",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38195"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82554",
+    "row": 267,
+    "summary": "路线选择阶段可语音添加途经点",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82554描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82554"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：路线规划/路线选择阶段允许添加途经点；当前meta_id=1206进入添加途经点流程符合地图正式定义，测试预期“不在导航中无法添加”不成立。\n依据：Jira原票·评论/2026-07-31、地图导航PRD V6.1·4.8.1、Alchemy当前结果·meta_id=1206。\n处理：按非问题关闭本Bug并更正测试预期；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-82554"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "地图导航PRD V6.1",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "路线规划与实际导航状态不同，但均不构成本票的功能禁用条件",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82554"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82552",
+    "row": 268,
+    "summary": "路线选择阶段退出导航未关闭路线卡片",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82552描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：“退出导航”meta_id=1017只覆盖实际导航结束；路线选择阶段关闭路线卡片未在现行定义中覆盖，属于新增状态机交互。\n依据：Jira原票·描述/评论、地图导航PRD V6.1·4.1.1/4.7.4、Alchemy当前结果·meta_id=1017。\n处理：新增路线规划态退出指令，明确关闭卡片且不退出语音助手；J90A地图产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "地图导航PRD V6.1",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "新需求需区分NAV=1结束导航与ROUTE=2退出路线选择",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-80119",
+    "row": 269,
+    "summary": "荷兰语取消途经点未执行",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-80119描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80119"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：荷兰语取消途经点未执行的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为前者落拒识meta_id=2820，后者误识别为点播歌曲meta_id=1026；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A荷兰语取消途经点正式语料后，按标准功能增删途经点修正NLU映射；J90A语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐J90A荷兰语取消途经点正式语料后，按标准功能增删途经点修正NLU映射；J90A语音产品配置负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80119"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-80115",
+    "row": 270,
+    "summary": "荷兰语询问公司地址落入闲聊",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-80115描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80115"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：荷兰语询问公司地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A荷兰语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐J90A荷兰语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80115"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-80114",
+    "row": 271,
+    "summary": "荷兰语询问家庭地址落入闲聊",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-80114描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80114"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：荷兰语询问家庭地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A荷兰语家庭地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐J90A荷兰语家庭地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80114"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-80108",
+    "row": 272,
+    "summary": "挪威语询问公司地址落入闲聊",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-80108描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80108"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：挪威语询问公司地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A挪威语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐J90A挪威语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-80108"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-79831",
+    "row": 273,
+    "summary": "意大利语询问公司地址落入闲聊",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-79831描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-79831"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：意大利语询问公司地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A意大利语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐J90A意大利语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-79831"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-79830",
+    "row": 274,
+    "summary": "意大利语询问家庭地址落入闲聊",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-79830描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-79830"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：意大利语询问家庭地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A意大利语家庭地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐J90A意大利语家庭地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-79830"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "BGS-83308",
+    "row": 275,
+    "summary": "取消头枕音箱导航误识别为结束导航",
+    "C": {
+      "text": "现象与实现：已完整读取BGS-83308描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/BGS-83308"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：“取消头枕音箱导航”应关闭导航头枕播报，当前误命中结束导航meta_id=1017/其他音箱功能，属于NLU意图冲突。\n依据：Jira原票·完整测试用例/2026-07-14、Alchemy当前结果·meta_id=1017、Jira评论·目标功能点1659。\n处理：补充导航头枕播报关闭泛化并加结束导航反例后回归；深蓝语音产品配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/BGS-83308"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "可转语音",
+    "I": "回归需确认只关闭导航头枕播报，不结束导航或修改其他音箱通道",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/BGS-83308"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82516",
+    "row": 276,
+    "summary": "BCall闭锁后播报错误并自动挂断",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82516描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82516"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：BCall闭锁后播报错误并自动挂断的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为非用户NLU原话，Alchemy在线对话不适用；Jira记录错误TTS和自动挂断；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82516"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "BGS-83505",
+    "row": 277,
+    "summary": "深蓝管家车书链接无法通过打开第一个进入",
+    "C": {
+      "text": "现象与实现：已完整读取BGS-83505描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/BGS-83505"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：该客户提报缺少VIN/TUID、发生时完整上下文结果和可直接复现证据，不能据“打开第一个”误命中meta_id=1179直接定责或关闭。\n依据：Jira原票·ID20260804184403278、Alchemy当前结果·meta_id=1179；Deepal AI正式上下文/UE未读到。\n处理：向客户补齐完整测试用例并取得Deepal AI车书链接序号打开定义后复核；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/BGS-83505"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "Deepal AI正式上下文/UE",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "客户用例未完整前保持待确认，不以研发“没有此功能”直接关票",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/BGS-83505"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "SLV-43923",
+    "row": 278,
+    "summary": "分屏时再次点击媒体dock未全屏的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。",
+    "C": {
+      "text": "现象与实现：已完整读取SLV-43923描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SLV-43923"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：分屏时再次点击媒体dock未全屏的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。",
+      "links": [
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 SystemUI产品负责人处理。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SLV-43923"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "SD-6581",
+    "row": 279,
+    "summary": "法语通话中切换至手机文本显示不全的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；J90A蓝牙电话产品负责人处理。",
+    "C": {
+      "text": "现象与实现：已完整读取SD-6581描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6581"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：通话中switch_to_phone法语已确定改为“Passer au mobile”，当前显示不全按已下发翻译需求回归。\n依据：Jira原票·评论/2026-08-07、关联翻译需求·switch_to_phone。\n处理：合入新译文后在C673-G法语通话页验证单行/换行与完整显示；C673多语言资源研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-6581"
+        }
+      ]
+    },
+    "G": "待回归",
+    "I": "需回读关联翻译需求的合入版本后再关闭",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6581"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "SD-6579",
+    "row": 280,
+    "summary": "芬兰语通话中话筒已关闭文本显示不全的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；J90A蓝牙电话产品负责人处理。",
+    "C": {
+      "text": "现象与实现：已完整读取SD-6579描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6579"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：mic_is_off芬兰语显示不全已定位资源Key，但缺少实际截图/视频和可容纳字符边界，当前无法确定缩短幅度。\n依据：Jira原票·评论/2026-07-31与2026-08-07；Drive未读到该通话页精确UE图层。\n处理：补充实车截图/视频和UE文本框边界后确定芬兰语短译；C673多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-6579"
+        },
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "先补截图和UE边界，不能只凭“显示不全”任意缩短译文",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6579"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "SD-5364",
+    "row": 281,
+    "summary": "场景重构卡片展开时短按切换不收起的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 Launcher产品负责人处理。",
+    "C": {
+      "text": "现象与实现：已完整读取SD-5364描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：客户方案已下发，但当前0426海外分支已封版且正式资料未证明短按卡片切换必须收起场景重构卡片，不能直接关票或要求旧分支合入。\n依据：Jira原票·ID20260618182942474/完整用例、关联SM-17699、客户评论/2026-07-10。\n处理：确认客户方案适用版本及是否仍要求0426分支变更，再决定关闭旧票或转新版本需求；C673-G项目负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "客户方案内容和适用版本未回读前保持待确认",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-5364"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82718",
+    "row": 282,
+    "summary": "切换语言后重复弹出低续航提示的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；J90A地图产品负责人处理。",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82718描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82718"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：低续航提醒应由车辆低电量/低油量信号触发；切换语言导致地图模块重建并重复消费缓存，不属于新的提醒事件。\n依据：Jira原票·评论/2026-08-05、地图导航PRD V6.1·7.1。\n处理：同次上电同一低续航状态只提示一次，语言切换/桌面重建不得重置去重状态；J90A地图研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-82718"
+        },
+        {
+          "label": "地图导航PRD V6.1",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "下一次点火上电仍低续航时允许按新上电周期重新提示",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82718"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  {
+    "key": "HUR-82618",
+    "row": 283,
+    "summary": "3D车控HUD雪地模式未同步的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；J90A SystemUI产品负责人处理。",
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82618描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82618"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：J90A EL 3D车控HUD雪地模式与蓝湖稿不一致，但当前未读到同车型生效配置和可定位UE图层，不能用研发“无此需求”或测试稿单独关闭。\n依据：Jira原票·描述/评论；Drive按HUD雪地模式、3D车控和J90A EL检索未读到同范围正式定义。\n处理：补齐J90A EL生效配置及蓝湖/UE图层后再判定同步缺陷或测试预期错误；J90A SystemUI产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-82618"
+        },
+        {
+          "label": "Drive",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "异车型HUD定义不得替代J90A EL 3D车控页面目标",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82618"
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  }
+]

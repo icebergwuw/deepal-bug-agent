@@ -1,0 +1,88 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82618",
+  "comment_causality": "已完整读取HUR-82618当前字段、描述、附件、关联问题与评论时间线；当前现象为：3D车控HUD雪地模式未同步。Jira中的测试预期和研发/测试评论仅作为实现与调查事实，未替代生效正式定义。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82618 Jira描述、附件与完整评论时间线",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题与活动日志（按时间升序完整读取）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和模块",
+      "trigger": "3D车控HUD雪地模式未同步",
+      "target_behavior": "证明本票当前现象、测试主张和评论诊断；不单独定义产品目标。",
+      "reason": "Jira当前页面直接证明实现事实和调查因果链。"
+    }
+  ],
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体的专项画像，不重复使用通用画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及语音原话、NLU、VUI、TTS或语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图搜索、POI、路线选择、导航或途经点状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题涉及页面、卡片、文本、弹窗或可见控件状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：对应模块生效配置",
+      "queries": [
+        "3D车控HUD雪地模式未同步",
+        "正式配置"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：对应模块交互文档/UE",
+      "queries": [
+        "3D车控HUD雪地模式未同步",
+        "UE",
+        "交互"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、当前实现、Alchemy/配置结果与Drive正式资料分开记录；缺少同范围正式目标或存在分支/source冲突时不硬判，统一降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A SystemUI产品负责人",
+    "text": "结论：J90A EL 3D车控HUD雪地模式与蓝湖稿不一致，但当前未读到同车型生效配置和可定位UE图层，不能用研发“无此需求”或测试稿单独关闭。\n依据：Jira原票·描述/评论；Drive按HUD雪地模式、3D车控和J90A EL检索未读到同范围正式定义。\n处理：补齐J90A EL生效配置及蓝湖/UE图层后再判定同步缺陷或测试预期错误；J90A SystemUI产品负责人处理。"
+  }
+}

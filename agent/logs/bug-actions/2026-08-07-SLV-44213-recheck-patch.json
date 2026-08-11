@@ -1,0 +1,75 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44213",
+  "sheet": "吴优工作说明 / bug",
+  "row": 162,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：停车场标签颜色、尺寸、气泡点击热区及堆叠同时被提报。[Jira最新评论·0729客户会结论]\n证据：0729客户会确认UI问题要改；热区/堆叠受高德自定义图层限制，需客户与高德确认，不能混作同一研发结论。[C673地图UE V0.6·850页面/检索图层]",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44213"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：停车场标签颜色和尺寸按客户确认UI修复；热区与堆叠受高德自定义图层限制，拆分后由高德侧确认能力。\n依据：Jira最新评论·0729客户会结论、C673地图UE V0.6·850页面。\n处理：先修UI项并拆出高德能力项；C673地图UI研发负责人处理UI，高德接口负责人处理能力确认。",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44213"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "只流转颜色/尺寸UI项；热区与堆叠不得混入研发验收",
+    "J": {
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44213"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    }
+  },
+  "validated": true,
+  "submitted_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ]
+}

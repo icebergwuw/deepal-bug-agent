@@ -1,0 +1,211 @@
+{
+  "schema_version": 3,
+  "jira_key": "BEO-8846",
+  "comment_causality": "聂汉维评论与Alchemy在线复测一致：原话被识别为task，但命中meta_id=1919车型无此功能兜底；刘逸评论据此判断无产品定义。现行D587-G功能清单和Alchemy深蓝项目功能点24511实际已定义来电铃声音量静音通道，因此当前因果应判为语音指令匹配遗漏，而非产品能力缺失。",
+  "customer_issue": {"identified": false},
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ST-63851",
+        "relationship": "Jira关联的语音指令匹配跟踪票",
+        "read": true,
+        "outcome": "该票是通用分类容器，要求回原项目票分析，不定义BEO-8846的产品目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "BEO-8846 Jira描述、字段、附件及完整评论",
+      "source_location": "Jira描述；聂汉维2026-08-06 14:40评论；刘逸2026-08-11 17:25评论",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "D587-G",
+      "trigger": "来电铃声静音",
+      "target_behavior": "当前识别为task但落入meta_id=1919/common:func:not:supported，code=nlu_intent_others",
+      "match": "exact",
+      "reason": "覆盖本票原话、当前实现和评论因果；评论结论本身不作为正式产品定义。"
+    },
+    {
+      "source_id": "st-63851",
+      "source": "ST-63851 指令匹配跟踪票",
+      "source_location": "关联票描述、全部评论及关联问题列表",
+      "source_type": "jira",
+      "role": "context_only",
+      "project_model": "多项目通用跟踪",
+      "trigger": "语音指令匹配问题",
+      "target_behavior": "要求在原项目Jira完成分析",
+      "match": "partial",
+      "reason": "只提供流程背景，不定义D587-G产品目标。"
+    },
+    {
+      "source_id": "d587-full-function",
+      "source": "587-G座舱全功清单_20250912100354.xlsx",
+      "source_location": "05-系统设置·行571：来电铃声音量0-20可调；20-音频策略·行621：电话及铃声MUTE；行98：通话类含Ringtone",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "D587-G",
+      "trigger": "来电铃声静音",
+      "target_behavior": "D587-G存在独立来电铃声音量通道，并支持电话及铃声MUTE",
+      "match": "exact",
+      "reason": "同项目正式全功能清单直接定义目标通道及静音能力。"
+    },
+    {
+      "source_id": "d587-doc-index",
+      "source": "D587-G文档管理-20260729.xlsx",
+      "source_location": "行85：外置功放定义2.3.5，来电铃声音量独立控制；行155：系统设置定义4.7.5，新增来电铃声音量设置",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "D587-G",
+      "trigger": "来电铃声音量控制",
+      "target_behavior": "来电铃声音量作为独立设置项生效",
+      "match": "exact",
+      "reason": "最新项目文档索引定位到同项目生效功能定义条款。"
+    },
+    {
+      "source_id": "d587-voice-list",
+      "source": "D587-G项目语音控制车辆需求清单-v0.2.xlsx",
+      "source_location": "序号351：声音设置支持静音/取消静音；序号354-374：电话语音能力列表未单列来电铃声静音",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "D587-G",
+      "trigger": "静音/取消静音与电话控制",
+      "target_behavior": "清单支持声音静音，但未单列来电铃声静音泛化",
+      "match": "partial",
+      "reason": "用于识别语料清单遗漏，不单独推翻全功能清单和Alchemy项目配置。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·D587-G",
+      "source_location": "原话‘来电铃声静音’在线测试，classification=task，meta_id=1919，type=common:func:not:supported，code=nlu_intent_others",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "D587-G",
+      "trigger": "来电铃声静音",
+      "target_behavior": "当前返回车型无此功能兜底",
+      "match": "exact",
+      "reason": "在线复测与Jira日志一致，证明当前NLU路由实际。"
+    },
+    {
+      "source_id": "alchemy-standard-1188",
+      "source": "Alchemy标准功能点1366·（指定通道/全局）设置静音",
+      "source_location": "META ID 1188；示例含媒体静音、导航静音、设置静音；支持指定通道/全局静音",
+      "source_type": "alchemy_standard",
+      "role": "formal_target",
+      "project_model": "标准语音功能",
+      "trigger": "指定声音通道静音",
+      "target_behavior": "将目标声音通道设为静音并记忆当前音量",
+      "match": "exact",
+      "reason": "定义本句应落入的标准语义和执行边界。"
+    },
+    {
+      "source_id": "alchemy-project-24511",
+      "source": "Alchemy深蓝项目功能点24511·设置静音",
+      "source_location": "继承META ID 1188；设置项范围‘静音’包含多媒体音量、通话音量、来电铃声音量、智能语音、导航音量；执行策略支持指定通道",
+      "source_type": "alchemy_project",
+      "role": "formal_target",
+      "project_model": "深蓝项目/D587-G适用配置",
+      "trigger": "来电铃声静音",
+      "target_behavior": "按指定通道将来电铃声音量静音",
+      "match": "exact",
+      "reason": "项目配置明确将来电铃声音量纳入静音可选通道。"
+    },
+    {
+      "source_id": "alchemy-fallback-1919",
+      "source": "Alchemy标准/深蓝项目车型无此功能兜底",
+      "source_location": "标准功能点1442、META ID 1919；深蓝继承项目点24561",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "未命中已支持功能时兜底",
+      "target_behavior": "回复不支持，不执行目标功能",
+      "match": "exact",
+      "reason": "证明meta_id=1919只是当前兜底实现，不是来电铃声静音的产品目标。"
+    }
+  ],
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "语音画像已覆盖正式定义检索。"},
+    "voice": {"applicable": true, "reason": "涉及中文原话、NLU路由、Alchemy标准/项目功能点和执行策略。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航。"},
+    "visible_interaction": {"applicable": false, "reason": "本结论判断语音指令到既有音量通道的映射，不判断页面交互。"}
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": ["d587-full-function", "d587-doc-index", "d587-voice-list"],
+      "searched_at": "2026-08-11",
+      "search_location": "Google Drive/D587-G正式文档与需求清单",
+      "queries": [
+        {"kind": "jira_key", "text": "BEO-8846"},
+        {"kind": "problem_concept", "text": "来电铃声 静音；来电铃声音量；电话及铃声 MUTE"},
+        {"kind": "module_artifact", "text": "D587-G 语音PRD；声音设置；电话来电；语音控制车辆需求清单"}
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": ["alchemy-current"],
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy在线对话/D587-G",
+      "queries": [{"kind": "exact_trigger", "text": "来电铃声静音"}]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": ["alchemy-standard-1188", "alchemy-fallback-1919"],
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {"kind": "meta_or_function", "text": "静音；来电；meta_id=1188；meta_id=1919"}
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": ["alchemy-project-24511"],
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {"kind": "meta_or_function", "text": "设置静音；来电铃声音量；项目点24511"},
+        {"kind": "project_scope", "text": "深蓝/D587-G"}
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "trigger": "用户对D587-G说‘来电铃声静音’",
+    "target_state": "来电铃声音量通道进入静音状态",
+    "intent_function_signal": "命中META ID 1188的指定通道静音功能，目标通道=来电铃声音量",
+    "ui_tts_vehicle_behavior": "按项目功能点24511执行指定通道静音并正常反馈，不进入不支持兜底",
+    "boundary": "只静音来电铃声音量通道，不等同于通话音量或全局静音",
+    "source_ids": ["d587-full-function", "d587-doc-index", "alchemy-standard-1188", "alchemy-project-24511"]
+  },
+  "conflict_resolution": "Jira测试预期和评论只作为主张及当前实现；D587-G全功能清单、最新文档索引与Alchemy深蓝项目功能点共同定义目标。语音控制车辆需求清单未单列该泛化属于清单/训练覆盖缺口，不构成无能力依据。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "来电铃声静音",
+    "alchemy_tested": true,
+    "alchemy_result": "classification=task，当前命中meta_id=1919车型无此功能兜底",
+    "meta_id": "1919",
+    "standard_function": {
+      "status": "verified",
+      "name": "（指定通道/全局）设置静音（META ID 1188）",
+      "assessment": "已核对标准功能语义；本句属于指定来电铃声音量通道静音。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能点24511·设置静音",
+      "assessment": "设置项范围明确包含来电铃声音量，执行策略支持指定通道。"
+    }
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "语音指令匹配/NLU责任方（许俊）",
+    "implementation_source_ids": ["jira-actual", "alchemy-current"],
+    "text": "结论：‘来电铃声静音’应执行来电铃声音量通道静音；当前落入不支持兜底，属于语音指令匹配/NLU缺陷。\n依据：587-G座舱全功清单行571/621、D587-G文档管理行85/155、Alchemy深蓝项目功能点24511及Jira/Alchemy当前meta_id=1919结果。\n处理：将该原话及同义泛化映射到META ID 1188，目标通道设为来电铃声音量，并按项目点24511执行；语音指令匹配/NLU责任方（许俊）处理。"
+  }
+}

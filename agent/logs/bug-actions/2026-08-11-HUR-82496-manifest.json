@@ -1,0 +1,127 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82496",
+  "comment_causality": "已完整读取Jira字段、描述、附件、关联问题和全部评论；测试预期、研发意见、当前实现与正式定义分别记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82496 Jira描述、附件、关联问题与完整评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题及活动日志（按时间升序）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本与模块",
+      "trigger": "现象：儿童模式实时画面已显示时说“放大实时画面”，NLU落入NAVI/MAP_ADJUST_RESIZE并播报“已放大地图”。",
+      "target_behavior": "证明当前实现、测试主张与评论因果；不单独定义产品目标。",
+      "reason": "当前Jira页面可直接证明本票实现事实。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体画像，不重复选择。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、NLU、TTS或语音上下文。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-11",
+      "search_location": "Google Drive正式需求/配置",
+      "queries": [
+        "HUR-82496",
+        "【J90A】【0526】【情景模式-儿童模式】【语音】开启儿童模式后，语音“放大"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        "HUR-82496",
+        "【J90A】【0526】【情景模式-儿童模式】【语音】开启儿童模式后，语音“放大"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        "HUR-82496",
+        "【J90A】【0526】【情景模式-儿童模式】【语音】开启儿童模式后，语音“放大"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy项目功能点",
+      "queries": [
+        "HUR-82496",
+        "【J90A】【0526】【情景模式-儿童模式】【语音】开启儿童模式后，语音“放大"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期和研发评论只作为主张/实现事实；只有同项目、同触发条件的生效正式定义可作为确定性目标，关键缺口存在时降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "unavailable",
+    "alchemy_tested": false,
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "未完成标准功能点核验"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "未完成项目功能点核验"
+    },
+    "unavailable_reason": "本批次未取得可支撑确定性定责的完整Alchemy在线证据链。",
+    "next_action": "补齐当前原话、meta_id、标准功能点和项目功能点。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A语音VUI负责人",
+    "text": "结论：定义为待复核。当前可确认语义落到地图，但缺J90A儿童模式实时画面的正式VUI/UE节点及完整Alchemy功能点，不能直接判断由NLU还是页面所见即可说配置修复。\n依据：Jira完整评论中的NAVI/MAP_ADJUST_RESIZE结果；Drive同项目正式定义未命中。\n处理：补充J90A儿童模式实时画面UE/VUI节点和Alchemy当前/标准/项目功能点后定责；J90A语音VUI负责人处理。"
+  }
+}

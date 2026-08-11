@@ -1,0 +1,87 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82949",
+  "comment_causality": "已完整读取Jira字段、描述、附件、关联问题和全部评论；测试预期、研发意见、当前实现与正式定义分别记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82949 Jira描述、附件、关联问题与完整评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题及活动日志（按时间升序）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本与模块",
+      "trigger": "现象：J90A 0526分支切换英语后，仪表“Hybrid/Personalized”驾驶模式文字被报告字号过小，附件可证明当前显示效果。",
+      "target_behavior": "证明当前实现、测试主张与评论因果；不单独定义产品目标。",
+      "reason": "当前Jira页面可直接证明本票实现事实。"
+    }
+  ],
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体画像，不重复选择。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及可见页面、文字、浮层或控件状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-11",
+      "search_location": "Google Drive项目配置",
+      "queries": [
+        "HUR-82949",
+        "【J90A】【0526】【仪表】英语，仪表驾驶模式字体太小"
+      ],
+      "source_ids": [],
+      "reason": "未找到同项目、同版本且能直接定义目标状态的生效资料。",
+      "material": true,
+      "next_action": "补充同版本正式配置或UE节点后重新判断。"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-11",
+      "search_location": "Google Drive交互文档/UE",
+      "queries": [
+        "HUR-82949",
+        "【J90A】【0526】【仪表】英语，仪表驾驶模式字体太小"
+      ],
+      "source_ids": [],
+      "reason": "未找到同项目、同版本且能直接定义目标状态的生效资料。",
+      "material": true,
+      "next_action": "补充同版本正式配置或UE节点后重新判断。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期和研发评论只作为主张/实现事实；只有同项目、同触发条件的生效正式定义可作为确定性目标，关键缺口存在时降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A仪表产品/UE负责人",
+    "text": "结论：定义为待复核。现有证据只能证明当前视觉效果，无法证明违反哪一条生效字号/布局规范。\n依据：Jira描述与附件；Drive中J90A海外LanguageList不定义仪表字号，未检索到同版本仪表UE对应节点。\n处理：补充J90A仪表驾驶模式英语态UE节点或字号/自适应规范后，再判定研发是否修复；J90A仪表产品/UE负责人处理。"
+  }
+}

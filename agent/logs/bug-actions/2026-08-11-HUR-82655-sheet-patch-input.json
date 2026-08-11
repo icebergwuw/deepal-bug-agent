@@ -1,0 +1,84 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "HUR-82655｜BG20260803001140 【WT】【J90A-EL】【车辆设置】【实车】【静态】【必现】【SWC.00.0】拨打蓝牙电话中，再方控调节音量，音量值被蓝牙电话窗口遮挡",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82655\",\"HUR-82655｜BG20260803001140 【WT】【J90A-EL】【车辆设置】【实车】【静态】【必现】【SWC.00.0】拨打蓝牙电话中，再方控调节音量，音量值被蓝牙电话窗口遮挡\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：客户编号BG20260803001140，J90A-EL拨打蓝牙电话时用方控调节音量，音量值被电话窗口遮挡。[Jira原票·客户描述/视频]\n证据：Jira给出了场景、步骤、实际、预期、复现率和视频，但未给出可核验的完整软件版本/分支，也未找到同版本蓝牙电话与音量浮层层级UE。",
+      "links": [
+        {
+          "label": "Jira原票·客户描述/视频",
+          "url": "http://jira.i-tetris.com/browse/HUR-82655"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待确认。当前客户材料能复现遮挡现象，但缺完整版本信息和同版本图层优先级定义，不能仅凭“电话窗口层级高”决定改哪一层。\n依据：Jira客户描述、视频及研发评论；Drive检索未命中J90A-EL对应UE节点。\n处理：向客户收集完整客户测试用例（完整软件版本/分支、发生时间、原始视频），并补充蓝牙通话与音量浮层层级UE；吴优处理。",
+      "links": []
+    },
+    "G": "待确认",
+    "I": "客户测试用例不完整：缺完整软件版本/分支及可定位UE；向客户收集完整客户测试用例后再定责。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·客户描述/视频",
+          "url": "http://jira.i-tetris.com/browse/HUR-82655"
+        },
+        {
+          "label": "客户现象视频",
+          "url": "http://jira.i-tetris.com/secure/attachment/4221501/2.mp4"
+        },
+        {
+          "label": "外部客户票HUR-49746",
+          "url": "http://211.159.155.78:8080/browse/HUR-49746"
+        }
+      ]
+    }
+  }
+}

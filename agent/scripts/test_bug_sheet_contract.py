@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+import json
+from pathlib import Path
+import tempfile
 import unittest
 
 from bug_sheet_contract import (
@@ -8,11 +11,15 @@ from bug_sheet_contract import (
     build_batch_requests,
     build_patch_requests,
     build_row,
+    rich_text_cell,
     row_fingerprint,
     validate_append_readback,
     validate_patch_readback,
     validate_readback,
+    validate_bound_manifests,
+    required_platforms_for_manifests,
 )
+from test_bug_evidence_gate import hur_case
 
 
 class BugSheetContractTest(unittest.TestCase):
@@ -90,6 +97,73 @@ class BugSheetContractTest(unittest.TestCase):
         )
         self.assertEqual(first_c_link["startIndex"], 4)
 
+    def test_sheet_request_requires_one_manifest_per_key(self) -> None:
+        self.assertIn(
+            "写表请求必须为每个 Jira 绑定一个证据 manifest",
+            validate_bound_manifests([], ["HUR-82492"])[0],
+        )
+
+    def test_sheet_request_rejects_key_mismatch_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "manifest.json"
+            path.write_text(
+                json.dumps(hur_case(), ensure_ascii=False), encoding="utf-8"
+            )
+            errors = validate_bound_manifests([str(path)], ["ADS-TEST"])
+        self.assertTrue(any("Jira key 不一致" in error for error in errors), errors)
+
+    def test_sheet_request_accepts_valid_schema_v3_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "manifest.json"
+            path.write_text(
+                json.dumps(hur_case(), ensure_ascii=False), encoding="utf-8"
+            )
+            errors = validate_bound_manifests([str(path)], ["HUR-82492"])
+        self.assertEqual(errors, [])
+
+    def test_first_link_at_zero_has_one_run(self) -> None:
+        cell = rich_text_cell(
+            "Jira原票\n天气PRD",
+            [
+                {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-TEST"},
+                {"label": "天气PRD", "url": "https://drive.google.com/file/d/test"},
+            ],
+        )
+        zero_runs = [
+            run
+            for run in cell["textFormatRuns"]
+            if run.get("startIndex", 0) == 0
+        ]
+        self.assertEqual(len(zero_runs), 1)
+        self.assertEqual(
+            zero_runs[0]["format"]["link"]["uri"],
+            "http://jira.i-tetris.com/browse/ADS-TEST",
+        )
+
+    def test_single_j_link_uses_native_hyperlink_and_validates(self) -> None:
+        self.item["links"] = [
+            {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-TEST"}
+        ]
+        row = build_row(self.item)
+        self.assertEqual(
+            row[9]["userEnteredValue"],
+            {
+                "formulaValue": (
+                    '=HYPERLINK("http://jira.i-tetris.com/browse/ADS-TEST",'
+                    '"Jira原票")'
+                )
+            },
+        )
+        self.assertNotIn("textFormatRuns", row[9])
+
+        readback = self._readback_row()
+        readback["values"][9]["formattedValue"] = "Jira原票"
+        readback["values"][9]["effectiveValue"] = {"stringValue": "Jira原票"}
+        self.assertEqual(
+            validate_append_readback({"rowData": [readback]}, [self.item]),
+            [],
+        )
+
     def test_missing_inline_label_fails_closed(self) -> None:
         self.item["judgment_links"] = [
             {"label": "不存在的资料", "url": "https://example.com/missing"}
@@ -136,6 +210,17 @@ class BugSheetContractTest(unittest.TestCase):
             requests[2]["updateCells"]["fields"],
             "userEnteredValue,textFormatRuns",
         )
+
+    def test_voice_manifest_requires_alchemy_preflight(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "voice-manifest.json"
+            path.write_text(
+                json.dumps({"evidence_profiles": ["voice"]}), encoding="utf-8"
+            )
+            self.assertEqual(
+                required_platforms_for_manifests([str(path)]),
+                {"jira", "google_drive", "alchemy"},
+            )
 
     def test_build_rejects_visible_url_before_write(self) -> None:
         self.item["judgment"] = (

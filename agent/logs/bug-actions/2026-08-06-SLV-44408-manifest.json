@@ -1,0 +1,207 @@
+{
+  "schema_version": 2,
+  "jira_key": "SLV-44408",
+  "comment_causality": "Jira描述称导航地址选择卡片没有关闭按钮，3/3必现；video(3).mp4 00:00-00:07显示‘导航到观音桥’搜索结果列表标题区既无返回键也无关闭键。程云要求产品确认需求，吴优和熊双林均指出UE未找到该界面、类似卡片有关闭按钮。进一步核验后，现行正式配置及同项目导航UE对本场景的直接要求是搜索结果页显示返回键并返回上一级；关闭按钮只定义在地图选点详情阶段，不能套用于搜索结果列表。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "visible_cfg_result_list",
+      "source": "深蓝8155可见新表_v1.3",
+      "source_type": "formal_config",
+      "source_location": "Sheet‘地图-高德’第330行，03 搜索结果→1 结果列表→1.1 结果列表和地图显示：‘页面标题：显示返回键与结果标题。返回键：回到上一级页面。’",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "深蓝8155/C385&C673高德导航；Jira车型C673",
+      "trigger": "进入导航目的地搜索结果列表",
+      "target_behavior": "页面标题显示返回键和结果标题，点击返回键回到上一级页面；本条未要求显示关闭按钮。",
+      "reason": "现行同项目正式配置直接覆盖本票的搜索结果页面和标题控件。"
+    },
+    {
+      "source_id": "main_prd_result_list",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_type": "prd",
+      "source_location": "第23页，2.3.1 结果列表：默认显示5条匹配结果，列表与地图同框显示，向下滑动返回上页；第29页2.4.2的‘关闭’仅属于地图选点非POI点详情面板",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "C385&C673高德导航；Jira车型C673",
+      "trigger": "目的地搜索结果列表与地图选点详情两个不同交互阶段",
+      "target_behavior": "搜索结果列表按结果列表规则显示；地图选点详情的关闭面板规则不得移植到搜索结果列表。",
+      "reason": "主PRD用于确认本票交互阶段并排除地图选点关闭规则的误用。"
+    },
+    {
+      "source_id": "ue_base_result_list",
+      "source": "C385&673交互设计文档_导航高德地图_v0.3",
+      "source_type": "ue",
+      "source_location": "二、选取目的地→03 搜索结果→1 结果列表→1.1 结果列表和地图显示：‘页面标题：显示返回键与结果标题。返回键：回到上一级页面。’",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C385&C673高德导航；Jira车型C673",
+      "trigger": "进入目的地搜索结果列表",
+      "target_behavior": "显示返回键和结果标题，返回键回到上一级；不定义搜索结果页关闭按钮。",
+      "reason": "同项目全量交互文档直接定义本票页面，且与现行正式配置第330行一致。"
+    },
+    {
+      "source_id": "ue_current_scope",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+      "source_type": "ue",
+      "source_location": "第1页修改记录：V0.6，2026-04-29，修改章节为‘地图设置’，新增智能包离线步骤；全文7页未修改搜索结果交互",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "C385&C673高德导航当前增量UE",
+      "trigger": "核验当前增量版本是否改写搜索结果页",
+      "target_behavior": "V0.6仅更新地图设置，不覆盖或改写搜索结果页的返回控件定义。",
+      "reason": "用于核验当前增量UE的修改范围，确认没有与现行配置冲突的搜索结果变更。"
+    },
+    {
+      "source_id": "jira_video_actual",
+      "source": "SLV-44408 Jira视频附件video(3).mp4",
+      "source_type": "jira_attachment",
+      "source_location": "video(3).mp4 00:00-00:07：左侧‘导航到观音桥’结果列表卡片标题区无返回键和关闭键；约00:09.6卡片消失",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673，SWD.7.06，2026-08-02构建",
+      "trigger": "打开导航到观音桥的地址搜索结果列表",
+      "target_behavior": "当前实现未显示正式配置要求的返回控件。",
+      "reason": "视频直接证明本票版本和页面的当前可见行为。"
+    },
+    {
+      "source_id": "jira_timeline",
+      "source": "SLV-44408 Jira描述与完整评论时间线",
+      "source_type": "jira",
+      "source_location": "Jira描述；2026-08-03 12:13程云评论；2026-08-06 18:20吴优评论；2026-08-06 18:29熊双林评论",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "C673，Android-Map",
+      "trigger": "测试提报搜索结果卡片没有关闭按钮",
+      "target_behavior": "评论只提供确认请求和相似卡片参考，未形成正式目标定义。",
+      "reason": "保留完整评论因果链，但不把个人建议冒充正式产品定义。"
+    },
+    {
+      "source_id": "similar_map_point_screenshot",
+      "source": "SLV-44408 Jira截图附件image-2026-08-06-18-28-46-356.png",
+      "source_type": "jira_attachment",
+      "source_location": "截图‘地图选点’页面标题区同时显示返回箭头和X关闭按钮",
+      "role": "context_only",
+      "match": "mismatch",
+      "project_model": "相似地图选点界面；非本票搜索结果列表",
+      "trigger": "地图选点详情页面",
+      "target_behavior": "可作为相似布局参考，但不能证明搜索结果列表必须显示关闭按钮。",
+      "reason": "交互阶段不同，PRD也分别定义，不能跨页面推导关闭控件。"
+    }
+  ],
+  "evidence_profiles": [
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "问题已命中更具体的地图导航和可见交互画像，不重复选择通用画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "缺陷是页面控件缺失，不涉及ASR、NLU、VUI语义或语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "问题发生在高德地图目的地搜索结果流程，必须核验主PRD与专项定义。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题直接涉及搜索结果页标题栏的返回/关闭控件，必须核验正式配置及UE。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-06",
+      "search_location": "Google Drive：Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "queries": [
+        "搜索结果",
+        "结果列表",
+        "关闭",
+        "地图选点"
+      ],
+      "source_ids": [
+        "main_prd_result_list"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-06",
+      "search_location": "Google Drive专项检索与深蓝8155可见新表_v1.3，Sheet‘地图-高德’",
+      "queries": [
+        "C673 导航 地址选择 卡片 关闭 返回 UE",
+        "03 搜索结果",
+        "结果列表和地图显示"
+      ],
+      "source_ids": [
+        "visible_cfg_result_list"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-06",
+      "search_location": "深蓝8155可见新表_v1.3，Sheet‘地图-高德’",
+      "queries": [
+        "03 搜索结果",
+        "结果列表",
+        "返回键",
+        "关闭"
+      ],
+      "source_ids": [
+        "visible_cfg_result_list"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-06",
+      "search_location": "Google Drive：C385&673交互设计文档_导航高德地图_v0.3；C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "queries": [
+        "03 搜索结果",
+        "1.1 结果列表和地图显示",
+        "返回键",
+        "关闭",
+        "V0.6 修改记录"
+      ],
+      "source_ids": [
+        "ue_base_result_list",
+        "ue_current_scope"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "trigger": "用户进入导航目的地搜索结果列表",
+    "target_state": "保持搜索结果列表与地图同框显示，标题栏显示返回键和结果标题",
+    "intent_function_signal": "非语音场景；点击返回键触发返回上一级页面的UI导航动作",
+    "ui_tts_vehicle_behavior": "UI显示返回键，点击后回到上一级页面；不要求增加地图选点详情页的X关闭按钮；TTS和车端信号不适用",
+    "boundary": "适用于C385/C673高德导航的搜索结果列表；地图选点POI/非POI详情的关闭面板规则不适用",
+    "source_ids": [
+      "visible_cfg_result_list",
+      "ue_base_result_list"
+    ]
+  },
+  "conflict_resolution": "Jira测试预期和评论用相似卡片推导‘应有关闭按钮’，但现行正式配置与同项目UE对搜索结果页只要求返回键；主PRD中的关闭按钮属于地图选点详情阶段。以同项目同页面正式定义为准，不新增X关闭按钮，同时不能因测试写错控件名称而忽略当前实现确实缺少返回键。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android地图研发负责人",
+    "implementation_source_ids": [
+      "jira_video_actual"
+    ],
+    "text": "结论：定义为导航搜索结果卡片返回控件缺失；本场景不要求新增关闭按钮，但页面标题应显示返回键，当前实现未显示。\n依据：深蓝可见配置‘地图-高德’第330行及C385&673导航UE V0.3‘选取目的地→03搜索结果→1.1结果列表和地图显示’均明确页面标题显示返回键并返回上一级；当前V0.6修改记录仅更新地图设置，未改写搜索结果交互；Jira视频video(3).mp4 00:00-00:07显示‘导航到观音桥’结果卡片无返回控件。\n处理：补齐搜索结果卡片标题栏返回键，点击后返回上一级页面；不新增地图选点详情页的关闭按钮；Android地图研发负责人处理。"
+  }
+}

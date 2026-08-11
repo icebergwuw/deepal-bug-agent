@@ -1,0 +1,36 @@
+[
+  {
+    "key": "HUR-82442",
+    "summary": "阿联酋道路限速140时120超速报警被称持续播报",
+    "jira_url": "http://jira.i-tetris.com/browse/HUR-82442",
+    "date": "2026-08-05",
+    "info": "现象：J90A-EL阿联酋预生产车在道路限速140、车速约124时出现‘120km/h超速’文字和声音；测试称持续播报。截图只证明文字报警；日志在13:51:23和13:54:15各记录一次OverSpeed120请求，相隔约3分钟，未证明连续声音请求。[Jira原票][Jira截图与日志评论]\n正式目标：J90A-EL V1.6功能清单对GCC/UAE搭载120km/h指示灯、文字和声音报警；I102 V1.5规定指示车速>120显示文字+图片，低于118或OFF取消；声音规范V3.4规定单次响10声，信号持续超过10秒在第10秒停止。[EL功能清单V1.6][文字报警V1.5][报警提示音V3.4]\n限制：外部HUR-49712要求登录，无法读取其视频/评论；现有日志没有覆盖两次之间车速是否低于118，故不能判断第二次是正常再触发还是异常重复。发布说明虽列入SWC.00.1计划修复，但未定义修改目标。[外部HUR-49712][EL发布说明V1.3]",
+    "info_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/HUR-82442"},
+      {"label": "Jira截图与日志评论", "url": "http://jira.i-tetris.com/browse/HUR-82442"},
+      {"label": "EL功能清单V1.6", "url": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp"},
+      {"label": "文字报警V1.5", "url": "https://drive.google.com/file/d/1OWXiqrnl4vTrzCdYY_Luad1p2YkIcJhy"},
+      {"label": "报警提示音V3.4", "url": "https://drive.google.com/file/d/18zOtWGK6b6saLybR6znqs1ZCb-sXebCm"},
+      {"label": "外部HUR-49712", "url": "http://211.159.155.78:8080/browse/HUR-49712"},
+      {"label": "EL发布说明V1.3", "url": "https://drive.google.com/file/d/12QOFIc7WsuZd07M-YXe_pyY4Nam2aTTy"}
+    ],
+    "judgment": "结论：待复核；道路限速140不影响J90A-EL UAE/GCC固定120km/h报警，超过120触发文字、图标和单次10声属于产品预期；但若同一次超速条件未解除仍超过10秒连续播报，或未降到118km/h以下即再次触发，则属于报警重复缺陷。\n依据：Jira原票、EL功能清单V1.6、文字报警V1.5、报警提示音V3.4。\n处理：测试负责人朱翔宇补充13:51-13:55连续音视频和同步车速轨迹，或开放外部HUR-49712内容；QNX-IC Apps研发提供两次OverSpeed120之间的车速/信号翻转。确认单次不超过10声且第二次经过解除再触发后关闭，否则转QNX-IC Apps修复。",
+    "judgment_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/HUR-82442"},
+      {"label": "EL功能清单V1.6", "url": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp"},
+      {"label": "文字报警V1.5", "url": "https://drive.google.com/file/d/1OWXiqrnl4vTrzCdYY_Luad1p2YkIcJhy"},
+      {"label": "报警提示音V3.4", "url": "https://drive.google.com/file/d/18zOtWGK6b6saLybR6znqs1ZCb-sXebCm"},
+      {"label": "外部HUR-49712", "url": "http://211.159.155.78:8080/browse/HUR-49712"}
+    ],
+    "status": "待复核",
+    "note": "产品目标已明确：UAE/GCC固定120报警与道路限速无关；单次声音10声、最多10秒。当前仅缺本次声音时长和两次请求间是否低于118/信号解除的证据，补齐后只在‘关闭’与‘转QNX-IC Apps修复’之间二选一。",
+    "links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/HUR-82442"},
+      {"label": "外部HUR-49712", "url": "http://211.159.155.78:8080/browse/HUR-49712"},
+      {"label": "EL功能清单V1.6", "url": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp"},
+      {"label": "文字报警V1.5", "url": "https://drive.google.com/file/d/1OWXiqrnl4vTrzCdYY_Luad1p2YkIcJhy"},
+      {"label": "报警提示音V3.4", "url": "https://drive.google.com/file/d/18zOtWGK6b6saLybR6znqs1ZCb-sXebCm"},
+      {"label": "EL发布说明V1.3", "url": "https://drive.google.com/file/d/12QOFIc7WsuZd07M-YXe_pyY4Nam2aTTy"}
+    ]
+  }
+]

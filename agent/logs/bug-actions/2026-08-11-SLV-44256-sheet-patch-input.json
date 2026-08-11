@@ -1,0 +1,84 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "SLV-44256｜12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了导航",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44256\",\"SLV-44256｜12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了导航\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：用户在上一轮询问位置后说“目前的海拔高度”，rewrite_model把上一轮地址错误拼入本轮，随后触发天气和导航卡片刷新。[Jira原票·描述/完整评论][VOS请求链·reqId]\n证据：评论给出reqId=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404及origin_query/pre_query/rewrite_query，能证明当前多轮继承链；未检索到同车型生效PRD对该问法及上下文继承边界的明确条款。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44256"
+        },
+        {
+          "label": "VOS请求链·reqId",
+          "url": "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待复核。当前日志能定位到无关上一轮地址被继承，但缺同范围语音正式定义及完整Alchemy标准/项目功能点，不能仅凭研发诊断直接定责。\n依据：Jira描述/完整评论中的reqId与rewrite链；Drive正式定义检索未命中同车型、同问法条款。\n处理：补齐“海拔高度”能力边界和无关多轮上下文不得继承的生效语音定义，并完成Alchemy当前/标准/项目核验后定责；C673语音云端对话管理负责人处理。",
+      "links": []
+    },
+    "G": "待复核",
+    "I": "测试用例已含版本、VIN、步骤、预期、实际、日志与reqId，无需补测试用例；缺的是正式语音定义和Alchemy证据链。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44256"
+        },
+        {
+          "label": "VOS请求链·reqId",
+          "url": "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=0bc8b9d5-af51-4b9d-b1f2-b54bf3692404&ts=1784695219489"
+        }
+      ]
+    }
+  }
+}

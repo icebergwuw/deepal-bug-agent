@@ -1,0 +1,77 @@
+{
+  "jira_key": "PC-38093",
+  "comment_causality": "Jira客户用例与1.mp4显示C673-5/SWD.6.40在P挡进入场景卡片详情并试用后，00:08-00:23点击底部‘停止’无响应。曾爽于2026-07-16 19:13评论‘是，适用中不能点击退出’并按Workaround关闭，只证明当前实现限制；熊东森于2026-07-28 14:38要求产品确认后重开并转吴优。正式C673场景积木UE V3.4第6页明确试用期间可点击‘停止’终止试用，故按钮无响应为Android实现缺陷；但客户预期‘返回我的场景’与UE不符，停止后应恢复卡片详情非试用态，关闭详情按来源页返回。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260710111025232",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述给出C673-5、SWD.6.40、实车、ON/P挡、完整步骤、预期与实际结果、VIN及1.mp4复现视频；视频00:08-00:23覆盖试用中点击停止无响应。"
+    }
+  },
+  "related_issues": {"checked": true, "items": []},
+  "scope_checks": [
+    {
+      "source_id": "c673_ue_v34",
+      "source": "长安C673交互设计文档_场景积木_EV&EVE_v3.4",
+      "source_location": "PDF第6页‘场景空间-卡片详情-试用中’：试用期间可点击‘停止’终止试用；试用过程中‘添加场景’置灰不可点击；同页‘关闭’说明点击关闭按钮后返回主页面",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C673 EV&EVE；Jira车型C673-5",
+      "trigger": "P挡进入场景空间卡片详情并点击试用后，点击底部‘停止’",
+      "target_behavior": "停止按钮可点击并终止试用，恢复卡片详情非试用态；关闭详情页按来源页返回，不固定跳转我的场景。",
+      "reason": "同车型最新可读交互稿直接定义试用中按钮和页面返回边界。"
+    },
+    {
+      "source_id": "scene_prd_v13",
+      "source": "EPA1平台场景积木功能定义V1.3_20260421",
+      "source_location": "PDF目录标注第14页，2.4.3‘场景试用’：P挡允许试用并依次执行设定功能；从P挡进入非P挡时停止试用，停止逻辑按手动停止处理",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "EPA1/8155平台OS4.0，覆盖C673-5场景积木",
+      "trigger": "推荐场景试用及试用过程停止",
+      "target_behavior": "试用是可终止的独立运行状态，停止后不再继续执行未完成动作。",
+      "reason": "生效平台PRD定义试用和停止业务逻辑，页面细节以同车型UE为准。"
+    },
+    {
+      "source_id": "jira_video_1mp4",
+      "source": "PC-38093附件1.mp4",
+      "source_location": "附件1.mp4，00:08-00:23：场景详情进入试用，底部显示‘停止’，00:21点击后页面与试用态无变化直至视频结束",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673-5，SWD.6.40，实车",
+      "trigger": "试用中点击‘停止’",
+      "target_behavior": "当前点击无响应，无法终止试用。",
+      "reason": "客户视频直接证明本票当前实现现象。"
+    },
+    {
+      "source_id": "jira_comments",
+      "source": "PC-38093评论时间线",
+      "source_location": "曾爽2026-07-16 19:13评论‘是，适用中不能点击退出’；熊东森2026-07-28 14:38评论‘麻烦产品老师看看’并重开转吴优",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "PC-38093当前票",
+      "trigger": "试用态退出/停止按钮",
+      "target_behavior": "研发确认当前试用态不可点击，后续因缺产品目标重新打开。",
+      "reason": "完整评论链说明旧关闭仅基于实现限制，不是正式产品定义。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "不采纳曾爽‘适用中不能点击退出’作为产品目标，该评论只证明当前实现；也不采纳客户‘返回我的场景’作为页面目标。同车型UE第6页优先：试用中‘停止’必须可点击并终止试用，停止后恢复详情非试用态，关闭详情才按来源页返回。",
+  "voice_evidence": {"applicable": false},
+  "expected_behavior": {
+    "trigger": "C673-5/SWD.6.40实车处于P挡，从场景空间进入卡片详情，点击‘试用’后再点击‘停止’",
+    "target_state": "试用立即终止，卡片详情恢复非试用态",
+    "intent_function_signal": "非语音问题；Android场景积木前端应触发停止试用事件并结束当前试用执行链",
+    "ui_tts_vehicle_behavior": "‘停止’按钮可点击；终止后不再执行剩余动作，‘添加场景’恢复可用；页面保持卡片详情，关闭详情时按来源页返回",
+    "boundary": "只修复停止按钮响应与试用态收敛，不将停止动作改成固定跳转‘我的场景’，不改变关闭按钮的来源页返回规则",
+    "source_ids": ["c673_ue_v34", "scene_prd_v13"]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android场景积木研发负责人",
+    "implementation_source_ids": ["jira_video_1mp4", "jira_comments"],
+    "text": "结论：定义为场景积木试用停止按钮响应缺陷；C673-5在P挡试用场景时，‘停止’应可点击并终止试用，但不要求跳转‘我的场景’。\n依据：C673场景积木UE V3.4第6页‘场景空间-卡片详情-试用中’明确试用期间可点击‘停止’终止试用；场景积木PRD V1.3第14页2.4.3定义试用及停止逻辑；Jira视频1.mp4在00:08-00:23显示试用中点击‘停止’无响应。\n处理：修复‘停止’按钮点击事件，点击后终止试用并恢复卡片详情非试用态；关闭详情页按来源页返回，不固定跳转‘我的场景’；Android场景积木研发负责人处理。"
+  }
+}

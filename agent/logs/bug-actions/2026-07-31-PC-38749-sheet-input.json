@@ -1,0 +1,88 @@
+[
+  {
+    "date": "2026-07-31",
+    "key": "PC-38749",
+    "summary": "预约充电弹窗未按设计还原",
+    "jira_url": "http://jira.i-tetris.com/browse/PC-38749",
+    "info": "现象：当前预约充电弹窗只有起止时间和保存，Jira设计截图还显示“充满后停止”和取消；研发备注该修改涉及UE流程变化。[Jira原票]\n正式UE：C673 UE v7.2、C385MCA/C673ICA UE v2.2均能定位“充满后停止”；C385 UE EV v7.8（文件名v7.7）可定位预约充电，但未检索到“充满后停止”。\n功能定义：车辆设置功能定义V1.4覆盖预约充电，但业务流程仍标记“待修改”。\n关联：汇总票PC-36946只负责8155 DP4.0 UIUE走查归集，未定义本票目标车型或目标UE。",
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38749"
+      },
+      {
+        "label": "C673 UE v7.2",
+        "url": "https://mastergo.com/file/115820214701581?fileOpenFrom=project&page_id=1888%3A69417"
+      },
+      {
+        "label": "C385MCA/C673ICA UE v2.2",
+        "url": "https://mastergo.com/file/129321295605930?fileOpenFrom=project&page_id=1467%3A40659"
+      },
+      {
+        "label": "C385 UE EV v7.8（文件名v7.7）",
+        "url": "https://mastergo.com/file/95720618260061?fileOpenFrom=project&page_id=0%3A74"
+      },
+      {
+        "label": "车辆设置功能定义V1.4",
+        "url": "https://docs.google.com/document/d/1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B/edit"
+      },
+      {
+        "label": "汇总票PC-36946",
+        "url": "http://jira.i-tetris.com/browse/PC-36946"
+      }
+    ],
+    "judgment": "结论：本票不能按“全部车型统一还原”直接转研发；C673 v7.2与C385MCA/C673ICA v2.2正式UE均定义了“充满后停止”，但C385当前页EV v7.8（文件名v7.7）未检索到该元素，且车辆设置功能定义V1.4将预约充电业务流程标为“待修改”。\n依据：Jira原票、C673 UE v7.2、C385MCA/C673ICA UE v2.2、C385 UE EV v7.8（文件名v7.7）、车辆设置功能定义V1.4。\n处理：吴优先让测试确认复现车型/配置，并由车辆设置产品负责人指定该车型生效UE页；确认属于C673或C385MCA/C673ICA目标后，再转Android-General研发按生效UE还原预约充电弹窗。",
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38749"
+      },
+      {
+        "label": "C673 UE v7.2",
+        "url": "https://mastergo.com/file/115820214701581?fileOpenFrom=project&page_id=1888%3A69417"
+      },
+      {
+        "label": "C385MCA/C673ICA UE v2.2",
+        "url": "https://mastergo.com/file/129321295605930?fileOpenFrom=project&page_id=1467%3A40659"
+      },
+      {
+        "label": "C385 UE EV v7.8（文件名v7.7）",
+        "url": "https://mastergo.com/file/95720618260061?fileOpenFrom=project&page_id=0%3A74"
+      },
+      {
+        "label": "车辆设置功能定义V1.4",
+        "url": "https://docs.google.com/document/d/1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B/edit"
+      }
+    ],
+    "owner_judgment": "",
+    "status": "待复核",
+    "review_judgment": "",
+    "note": "阻塞点：Jira车型为All，附件未标实际车型；三份正式车型UE对“充满后停止”的定义不一致，且功能定义流程待修改。车型/配置与生效UE页确认前不转研发。",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38749"
+      },
+      {
+        "label": "C673 UE v7.2",
+        "url": "https://mastergo.com/file/115820214701581?fileOpenFrom=project&page_id=1888%3A69417"
+      },
+      {
+        "label": "C385MCA/C673ICA UE v2.2",
+        "url": "https://mastergo.com/file/129321295605930?fileOpenFrom=project&page_id=1467%3A40659"
+      },
+      {
+        "label": "C385 UE EV v7.8（文件名v7.7）",
+        "url": "https://mastergo.com/file/95720618260061?fileOpenFrom=project&page_id=0%3A74"
+      },
+      {
+        "label": "车辆设置功能定义V1.4",
+        "url": "https://docs.google.com/document/d/1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B/edit"
+      },
+      {
+        "label": "关联汇总PC-36946",
+        "url": "http://jira.i-tetris.com/browse/PC-36946"
+      }
+    ]
+  }
+]

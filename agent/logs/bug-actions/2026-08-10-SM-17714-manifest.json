@@ -1,0 +1,67 @@
+{
+  "schema_version": 2,
+  "jira_key": "SM-17714",
+  "comment_causality": "已完整读取SM-17714字段、描述、附件、关联票SM-17446及全部评论。甄洪奎关于选项不应有句号的评论仅记录为质疑，不覆盖SM-17446中同车型同Key的客户当地人校核定稿。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": [{"key": "SM-17446", "relationship": "同车型同资源Key客户译文定稿", "outcome": "已完整读取，作为本票正式目标。", "read": true}]},
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SM-17714 Jira描述、图片、关联票与评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件78cee3b6-0b9a-44c4-a888-f8ed845f9028.jpg、关联问题和活动日志",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673 0126无网版，俄语，车辆设置-声音-车内扬声器",
+      "trigger": "查看头枕扬声器关闭项",
+      "target_behavior": "图片显示当前文言为Выкл，缺少句号。",
+      "reason": "证明当前实现及评论争议，不单独定义目标。"
+    },
+    {
+      "source_id": "sm17446_target",
+      "source": "SM-17446客户当地人俄语校核定稿",
+      "source_type": "customer_final_decision",
+      "source_location": "SM-17446描述：C673 0126无网版；sound_speaker_channel_headrest_off=Выкл.；2026-06-05评论确认已完成并要求用2026-06-04后主线验证",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C673 0126无网版俄语",
+      "trigger": "资源Key sound_speaker_channel_headrest_off",
+      "target_behavior": "显示Выкл.，末尾保留句号。",
+      "reason": "同车型、同分支、同语言、同资源Key的客户最终译文。"
+    }
+  ],
+  "evidence_profiles": ["general"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "纯多语言资源值核对，以同范围客户定稿为正式目标。"},
+    "voice": {"applicable": false, "reason": "不涉及语音链路。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航。"},
+    "visible_interaction": {"applicable": false, "reason": "问题是单一资源Key的已定稿译文落地，不涉及布局、状态或UE交互目标。"}
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-10",
+      "search_location": "Jira关联票及Google Drive C673系统设置资料",
+      "queries": ["sound_speaker_channel_headrest_off", "C673 0126 俄语 头枕扬声器", "扬声器通道设置"],
+      "source_ids": ["sm17446_target"]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "以SM-17446同车型、同分支、同语言、同Key客户定稿优先；SM-17714中的研发疑问不构成产品目标变更。",
+  "voice_evidence": {"applicable": false},
+  "expected_behavior": {
+    "trigger": "C673 0126无网版俄语车辆设置中查看头枕扬声器关闭项",
+    "target_state": "资源Key sound_speaker_channel_headrest_off显示Выкл.，末尾保留句号。",
+    "intent_function_signal": "不适用；本票为UI资源值。",
+    "ui_tts_vehicle_behavior": "UI显示Выкл.。",
+    "boundary": "仅处理该Key及SM-17446同票要求核对的common_off，不扩展其他俄语资源。",
+    "source_ids": ["sm17446_target"]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android CarSettings研发负责人",
+    "text": "结论：定义为多语言资源实现缺陷。C673 0126无网版俄语头枕扬声器关闭项应显示“Выкл.”，当前缺少末尾句号。\n依据：SM-17446中客户当地人校核已明确资源Key sound_speaker_channel_headrest_off=Выкл.；SM-17714图片显示当前为Выкл。\n处理：将该资源Key修正为“Выкл.”，并与同票common_off一并核对后回归；Android CarSettings研发负责人处理。",
+    "implementation_source_ids": ["jira_actual"]
+  }
+}

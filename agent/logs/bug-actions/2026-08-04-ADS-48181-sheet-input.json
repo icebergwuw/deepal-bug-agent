@@ -1,0 +1,42 @@
+[
+  {
+    "key": "ADS-48181",
+    "summary": "风力查询只返回晴雨，湿度气压范围混入同票",
+    "date": "2026-08-04",
+    "info": "现象：Jira原票及日志评论记录C673-7在SWC.3.19分别询问“现在风力几级”“今天湿度大吗”“现在气压多少”，三条均只回复常规晴雨内容；两段复现视频和VOS风力链路可复核。\n正式定义：天气PRD与查询天气现象标准功能1975、深蓝项目功能26750均逐字支持“风力是多大”，项目继承未修改。\n平台现状或规则空白：Alchemy当前核验三句均落meta_id=1975；风力为canonical=wind，湿度为humidity，气压canonical为空。Jira范围评论称三项均无需求，与正式风力定义冲突；湿度、气压当前无正式回复字段。",
+    "info_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-48181"},
+      {"label": "日志评论", "url": "http://jira.i-tetris.com/browse/ADS-48181?focusedCommentId=8133424&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8133424"},
+      {"label": "复现视频", "url": "http://jira.i-tetris.com/secure/attachment/4196400/video%2816%29.mp4"},
+      {"label": "VOS风力链路", "url": "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=72c5e3a4-7ce6-4f21-8f6c-35d56fcf0e2d&ts=1785660011000"},
+      {"label": "天气PRD", "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"},
+      {"label": "查询天气现象标准功能1975", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"},
+      {"label": "深蓝项目功能26750", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"},
+      {"label": "Alchemy当前核验", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "Jira范围评论", "url": "http://jira.i-tetris.com/browse/ADS-48181?focusedCommentId=8133500&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8133500"}
+    ],
+    "judgment": "结论：产品预期确认：风力查询属于现有功能，车端仅回复晴雨是缺陷；湿度、气压未在现行PRD/功能点定义回复内容，不纳入本票Bug验收。\n依据：Jira原票及日志/视频、天气PRD、查询天气现象标准/深蓝项目功能点、Alchemy当前核验。\n处理：按meta_id=1975修复“现在风力几级”返回风力等级并做C673-7实车回归；语音天气DS研发处理。",
+    "judgment_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-48181"},
+      {"label": "日志/视频", "url": "http://jira.i-tetris.com/browse/ADS-48181?focusedCommentId=8133424&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8133424"},
+      {"label": "天气PRD", "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"},
+      {"label": "查询天气现象标准/深蓝项目功能点", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"},
+      {"label": "Alchemy当前核验", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ],
+    "status": "可转研发",
+    "note": "本票只按现行正式定义修复风力。湿度、气压如客户要求支持，另立需求补齐数据源、TTS/卡片字段及时间地点边界。Jira车型字段C385-2与标题/VIN C673-7冲突，回归按标题/VIN和SWC.3.19执行。",
+    "links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-48181"},
+      {"label": "Jira日志评论", "url": "http://jira.i-tetris.com/browse/ADS-48181?focusedCommentId=8133424&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8133424"},
+      {"label": "Jira范围评论", "url": "http://jira.i-tetris.com/browse/ADS-48181?focusedCommentId=8133500&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8133500"},
+      {"label": "Alchemy截图附件", "url": "http://jira.i-tetris.com/secure/attachment/4197530/image-2026-08-03-16-15-52-167.png"},
+      {"label": "复现视频16", "url": "http://jira.i-tetris.com/secure/attachment/4196400/video%2816%29.mp4"},
+      {"label": "复现视频17", "url": "http://jira.i-tetris.com/secure/attachment/4196406/video%2817%29.mp4"},
+      {"label": "VOS风力链路", "url": "https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=72c5e3a4-7ce6-4f21-8f6c-35d56fcf0e2d&ts=1785660011000"},
+      {"label": "天气PRD深蓝8155&8295", "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"},
+      {"label": "查询天气现象标准功能1975", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"},
+      {"label": "深蓝项目功能26750", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"},
+      {"label": "Alchemy当前核验", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ]
+  }
+]

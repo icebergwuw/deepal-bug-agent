@@ -1,0 +1,101 @@
+{
+  "schema_version": 2,
+  "jira_key": "SD-5364",
+  "comment_causality": "已完整读取SD-5364当前字段、描述、附件、关联问题与评论时间线；当前现象为：场景重构卡片展开时短按切换不收起。Jira中的测试预期和研发/测试评论仅作为实现与调查事实，未替代生效正式定义。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260618182942474",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述已包含车型/项目、软件版本、前置状态、步骤、触发、预期、实际及附件入口。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SM-17699",
+        "relationship": "Jira当前页面登记的直接关联/同场景参考票",
+        "outcome": "已完整读取；仅用于核对同功能或同文言冲突，不替代本票目标定义。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SD-5364 Jira描述、附件与完整评论时间线",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题与活动日志（按时间升序完整读取）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和模块",
+      "trigger": "场景重构卡片展开时短按切换不收起",
+      "target_behavior": "证明本票当前现象、测试主张和评论诊断；不单独定义产品目标。",
+      "reason": "Jira当前页面直接证明实现事实和调查因果链。"
+    }
+  ],
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体的专项画像，不重复使用通用画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及语音原话、NLU、VUI、TTS或语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图搜索、POI、路线选择、导航或途经点状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题涉及页面、卡片、文本、弹窗或可见控件状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：对应模块生效配置",
+      "queries": [
+        "场景重构卡片展开时短按切换不收起",
+        "正式配置"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：对应模块交互文档/UE",
+      "queries": [
+        "场景重构卡片展开时短按切换不收起",
+        "UE",
+        "交互"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、当前实现、Alchemy/配置结果与Drive正式资料分开记录；缺少同范围正式目标或存在分支/source冲突时不硬判，统一降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C673 Launcher产品负责人",
+    "text": "结论：场景重构卡片展开时短按切换不收起的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；C673 Launcher产品负责人处理。"
+  }
+}

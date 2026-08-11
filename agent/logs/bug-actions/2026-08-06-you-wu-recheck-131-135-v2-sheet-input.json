@@ -1,0 +1,16 @@
+{
+  "spreadsheet": "吴优工作说明",
+  "sheet": "bug",
+  "mode": "recheck",
+  "row": 135,
+  "key": "PC-37808",
+  "reason": "v1.7 v2 evidence gate correction after Drive PRD/UE search",
+  "changes": {
+    "C": "现象：‘导航到天安门走最快的路’后选择第一个POI，实际启动的不是最快路线。[Jira原票·描述/2026-07-17 16:15评论]\n当前证据：Alchemy正确下发meta_id=1209、route_preference=shortest_time；Jira日志显示POI确认后strategy=null。[Alchemy标准1433/项目24552][Jira评论·2026-07-17 16:15执行链]\n正式缺口：主PRD V6.1第33页只定义三路线展示及默认第一条，第104页未含最快偏好；当前UE V0.6也未定义POI确认后的shortest_time透传和选路。[地图PRD V6.1·第33/104页][地图UE V0.6·第3页]",
+    "D": "结论：语音已正确识别shortest_time，POI确认后strategy确实丢失，但现行产品正式资料未明确二次确认后的路线偏好透传与最快路线选择规则，暂不能直接定为研发缺陷。\n依据：主PRD V6.1第33页仅定义三路线展示及默认第一条，第104页未包含最快路线偏好；当前UE V0.6第3页也未定义shortest_time处理；Alchemy标准1433/项目24552只证明语义字段与POI二次交互，Jira 2026-07-17 16:15日志证明当前strategy=null。\n处理：补齐POI二次确认后route_preference的保留、选路和启动规则，再依据正式定义定责并复测；地图产品/交互负责人处理。",
+    "G": "待复核",
+    "I": "缺POI确认后shortest_time透传与选路正式定义；补齐后定责",
+    "J": "Jira原票·描述/2026-07-17执行链\n地图PRD V6.1·第33/104页\n地图UE V0.6·第3页\nAlchemy标准1433/项目24552·meta_id 1209"
+  },
+  "protected_columns": ["A", "B", "E", "F", "H"]
+}

@@ -1,0 +1,92 @@
+{
+  "jira_key": "PC-38749",
+  "comment_causality": "Jira 走查图要求按设计图还原预约充电弹窗；研发姜秋月指出该改动涉及 UE 流程变化并转产品确认。现状截图只有时间选择和保存按钮，设计截图还出现充满后停止及取消交互。核验三份正式车型 UE 后发现：C673 v7.2 与 C385MCA/C673ICA v2.2 可定位到充满后停止图层，C385 EV&EVE v7.7 未检索到该元素；Jira 车型字段却为 All，复现截图未注明实际车型。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "PC-36946",
+        "relationship": "is blocked by；8155 DP4.0 UIUE 走查问题汇总票",
+        "outcome": "仅用于归集和分派走查问题，没有给出 PC-38749 的目标车型、目标 UE 页或产品结论。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "PC-38749 原票、完整评论、两张附件及字段",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "8155 DP4.0；Jira Vehicle Model=All；复现版本 V1.4.133.0-20260724002135",
+      "trigger": "车辆设置-能量管理-预约充电弹窗 UIUE 走查",
+      "target_behavior": "当前弹窗仅显示预约起止时间和保存；Jira 设计截图还显示充满后停止和取消，但截图本身不是正式定义。",
+      "reason": "准确证明本票现象、当前实现和研发备注，不能单独证明跨车型统一目标。"
+    },
+    {
+      "source_id": "ue_c673",
+      "source": "长安C673 交互设计文档_车辆设置_EV&EVE_v7.2，page_id=1888:69417，充放电/组604/充满后停止",
+      "role": "formal_target",
+      "match": "partial",
+      "project_model": "C673 EV&EVE",
+      "trigger": "预约充电/充放电弹窗",
+      "target_behavior": "正式 UE 中存在充满后停止图层。",
+      "reason": "对 C673 是正式目标，但 Jira 没有确认复现车型就是 C673，不能覆盖 Vehicle Model=All。"
+    },
+    {
+      "source_id": "ue_mca_ica",
+      "source": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.2，page_id=1467:40659，C385MCA-能量管理-充放电/组604/充满后停止",
+      "role": "formal_target",
+      "match": "partial",
+      "project_model": "C385MCA 与 C673ICA",
+      "trigger": "预约充电/充放电弹窗",
+      "target_behavior": "正式 UE 中存在充满后停止图层。",
+      "reason": "对 C385MCA/C673ICA 是正式目标，但 Jira 未给出实际车型，不能跨车型套用。"
+    },
+    {
+      "source_id": "ue_c385",
+      "source": "长安深蓝C385交互设计文档_车辆设置_EV&EVE_v7.7，当前置顶页 EV v7.8，page_id=0:74",
+      "role": "formal_target",
+      "match": "partial",
+      "project_model": "C385 EV&EVE",
+      "trigger": "预约充电/充放电弹窗",
+      "target_behavior": "可检索预约充电图层，但未检索到充满后停止图层。",
+      "reason": "证明三份现行车型 UE 的目标并不一致，不能把 C673/MCA 的图层定义直接扩展到 C385 基础车型。"
+    },
+    {
+      "source_id": "prd_v14",
+      "source": "EPA1平台化_车辆设置功能定义V1.4.docx，预约充电章节",
+      "role": "formal_target",
+      "match": "partial",
+      "project_model": "EPA1 平台 8155 及以上",
+      "trigger": "预约充电设置",
+      "target_behavior": "功能定义覆盖预约充电，但业务流程仍标记为待修改。",
+      "reason": "可证明功能域和适用平台，不能提供本票弹窗的最终统一交互流程。"
+    },
+    {
+      "source_id": "vehicle_scope_gap",
+      "source": "Jira 车型与生效 UE 映射缺口",
+      "role": "context_only",
+      "match": "gap",
+      "material": true,
+      "project_model": "Jira 标记 All，但附件未标实际车型",
+      "trigger": "决定是否按某份车型 UE 转研发",
+      "target_behavior": "必须先确认复现车型/配置及该车型生效 UE 页，再判断是否存在实现偏差。",
+      "reason": "三份正式车型 UE 对充满后停止的定义不一致，会直接改变是否转研发及研发修改范围。",
+      "next_action": "吴优协调测试补充复现车型/配置，并由车辆设置产品负责人指定该车型生效 UE 页。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "不采用 Jira 设计截图直接覆盖全部车型，也不把研发所说 UE 流程变化当作关闭依据。以车型匹配的正式 UE 为准：C673 与 C385MCA/C673ICA 有充满后停止目标，C385 EV&EVE 未检索到；因本票实际车型缺失且功能定义流程待修改，先降级为待复核。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "吴优",
+    "text": "结论：本票不能按“全部车型统一还原”直接转研发；C673 v7.2 与 C385MCA/C673ICA v2.2 正式UE均定义了“充满后停止”，但 C385 当前页 EV v7.8（文件名v7.7）未检索到该元素，且功能定义V1.4将预约充电业务流程标为“待修改”。\n依据：Jira原票、C673车辆设置UE v7.2、C385MCA/C673ICA车辆设置UE v2.2、C385车辆设置UE EV v7.8、车辆设置功能定义V1.4。\n处理：吴优先让测试确认复现车型/配置，并由车辆设置产品负责人指定该车型生效UE页；确认属于C673或C385MCA/C673ICA目标后，再转Android-General研发按生效UE还原预约充电弹窗。"
+  }
+}

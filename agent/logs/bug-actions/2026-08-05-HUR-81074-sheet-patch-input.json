@@ -1,0 +1,49 @@
+{
+  "current_row": {
+    "values": [
+      {"formattedValue": "2026-07-13", "userEnteredValue": {"stringValue": "2026-07-13"}},
+      {"formattedValue": "HUR-81074｜小憩模式开启后仍然可以调出applist", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81074\",\"HUR-81074｜小憩模式开启后仍然可以调出applist\")"}},
+      {"formattedValue": "Jira：重新打开/P2->Medium，小憩模式开启后仍然可以调出applist；关键评论：廖礼凯：产品老师确认；工作说明对应模块未见直接结论。", "userEnteredValue": {"stringValue": "Jira：重新打开/P2->Medium，小憩模式开启后仍然可以调出applist；关键评论：廖礼凯：产品老师确认；工作说明对应模块未见直接结论。"}},
+      {"formattedValue": "情景模式研发（丁黎）按 Jira 预期结果修复当前差异并提供目标版本，测试回归。", "userEnteredValue": {"stringValue": "情景模式研发（丁黎）按 Jira 预期结果修复当前差异并提供目标版本，测试回归。"}},
+      {"formattedValue": "FALSE", "userEnteredValue": {"boolValue": false}, "dataValidation": {"condition": {"type": "BOOLEAN"}, "strict": true}},
+      {"formattedValue": ""},
+      {"formattedValue": "可转研发", "userEnteredValue": {"stringValue": "可转研发"}},
+      {"formattedValue": ""},
+      {"formattedValue": "经办人：吴优；已按时间线读取 4 条评论；按现象分流", "userEnteredValue": {"stringValue": "经办人：吴优；已按时间线读取 4 条评论；按现象分流"}},
+      {"formattedValue": "吴优工作说明", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892\",\"吴优工作说明\")"}}
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "J90A EU PI／重新打开／P2-Medium。前置：电源ON、P挡、小憩已开启；步骤：点击Dock的AppList入口；实际：小憩仍在运行时成功进入本地应用列表，复现1/5。四条评论仅有‘没需求设计/暂不修改’、‘待产品确认’和‘产品老师确认’，未提供确认内容或正式来源。视频已核实实际现象；J90A EU&EU PI功能清单确认情景模式需求与国内一致且小憩模式搭载，J90A正式PRD/交互定义小憩进入专属全屏页、屏蔽Dock和状态栏，离开小憩页应自动退出。核验入口：Jira原票、Jira视频、EU&EU PI功能清单V3.1、J90A情景模式PRD V2.4、J90A情景模式交互V2.6。",
+      "links": [
+        {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/HUR-81074"},
+        {"label": "Jira视频", "url": "http://jira.i-tetris.com/secure/attachment/4014693/video%2848%29.mp4"},
+        {"label": "EU&EU PI功能清单V3.1", "url": "https://drive.google.com/file/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK"},
+        {"label": "J90A情景模式PRD V2.4", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y"},
+        {"label": "J90A情景模式交互V2.6", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL"}
+      ]
+    },
+    "D": {
+      "text": "结论：定义为实现缺陷。J90A EU PI小憩模式开启后应进入专属全屏页并屏蔽Dock/状态栏，不允许调出AppList；若离开小憩页面，应自动退出小憩模式。\n依据：J90A EU&EU PI功能清单V3.1、J90A情景模式PRD V2.4、J90A情景模式交互V2.6、Jira视频。\n处理：修复小憩运行态对Dock/AppList的拦截，并验证离页退出逻辑；情景模式研发（丁黎，Android - SceneMode）负责，测试按原步骤回归。",
+      "links": [
+        {"label": "J90A EU&EU PI功能清单V3.1", "url": "https://drive.google.com/file/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK"},
+        {"label": "J90A情景模式PRD V2.4", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y"},
+        {"label": "J90A情景模式交互V2.6", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL"},
+        {"label": "Jira视频", "url": "http://jira.i-tetris.com/secure/attachment/4014693/video%2848%29.mp4"}
+      ]
+    },
+    "G": "可转研发",
+    "I": "普通复查；经办人吴优；已完整读取4条评论、描述、视频及附件清单；无同类关联票；J90A EU&EU PI车型继承链已核实；现有用例信息完整，无需补测试用例；未执行Jira评论、转派或状态变更。",
+    "J": {
+      "links": [
+        {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/HUR-81074"},
+        {"label": "Jira视频", "url": "http://jira.i-tetris.com/secure/attachment/4014693/video%2848%29.mp4"},
+        {"label": "Jira日志", "url": "http://jira.i-tetris.com/secure/attachment/4014692/logcat.log.073_2026_06_26_10_38_16.gz"},
+        {"label": "J90A EU&EU PI功能清单V3.1", "url": "https://drive.google.com/file/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK"},
+        {"label": "J90A情景模式PRD V2.4", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y"},
+        {"label": "J90A情景模式交互V2.6", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL"}
+      ]
+    }
+  }
+}

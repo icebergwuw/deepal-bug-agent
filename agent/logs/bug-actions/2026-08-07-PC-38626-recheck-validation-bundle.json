@@ -1,0 +1,74 @@
+{
+  "jira_key": "PC-38626",
+  "row": 172,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：BIGSUR现测“我要操作比例尺”命中meta_id=1919不支持；“我要设置比例尺”可命中meta_id=1020地图缩放。[Jira原票·最新评论/项目点24567][Alchemy当前结果/标准及项目功能点]\n证据：PC-37447/PC-37564已将放大/缩小表达下发到标准功能1448、项目功能24567，相关训练/标注/云端任务已关闭。[关联需求PC-37447/PC-37564·描述]",
+      "links": [
+        {
+          "label": "Jira原票·最新评论/项目点24567",
+          "url": "http://jira.i-tetris.com/browse/PC-38626"
+        },
+        {
+          "label": "关联需求PC-37447/PC-37564·描述",
+          "url": "http://jira.i-tetris.com/browse/PC-37447"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：地图缩放项目功能已下发，“我要操作比例尺”仍落入不支持兜底，属于语料映射缺陷。\n依据：Jira原票·最新评论/项目点24567、关联需求PC-37447/PC-37564·描述、Alchemy当前结果/标准及项目功能点。\n处理：将该表达映射至meta_id=1020并补设置/操作/调整比例尺同义语料回归；深蓝语音NLU负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·最新评论/项目点24567",
+          "url": "http://jira.i-tetris.com/browse/PC-38626"
+        },
+        {
+          "label": "关联需求PC-37447/PC-37564·描述",
+          "url": "http://jira.i-tetris.com/browse/PC-37447"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "可转语音",
+    "I": "回归需验证只调整地图比例尺，不误触其他设置",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·最新评论/项目点24567",
+          "url": "http://jira.i-tetris.com/browse/PC-38626"
+        },
+        {
+          "label": "关联需求PC-37447/PC-37564·描述",
+          "url": "http://jira.i-tetris.com/browse/PC-37447"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": "现象：BIGSUR现测“我要操作比例尺”命中meta_id=1919不支持；“我要设置比例尺”可命中meta_id=1020地图缩放。[Jira原票·最新评论/项目点24567][Alchemy当前结果/标准及项目功能点]\n证据：PC-37447/PC-37564已将放大/缩小表达下发到标准功能1448、项目功能24567，相关训练/标注/云端任务已关闭。[关联需求PC-37447/PC-37564·描述]",
+    "D": "结论：地图缩放项目功能已下发，“我要操作比例尺”仍落入不支持兜底，属于语料映射缺陷。\n依据：Jira原票·最新评论/项目点24567、关联需求PC-37447/PC-37564·描述、Alchemy当前结果/标准及项目功能点。\n处理：将该表达映射至meta_id=1020并补设置/操作/调整比例尺同义语料回归；深蓝语音NLU负责人处理。",
+    "G": "可转语音",
+    "I": "回归需验证只调整地图比例尺，不误触其他设置",
+    "J": "Jira原票·最新评论/项目点24567\n关联需求PC-37447/PC-37564·描述\nAlchemy当前结果/标准及项目功能点"
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

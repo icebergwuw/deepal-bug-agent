@@ -1,0 +1,129 @@
+{
+  "schema_version": 2,
+  "jira_key": "SLV-44272",
+  "comment_causality": "已完整读取SLV-44272字段、描述、视频与全部评论。评论中的1305、DA车型旧条件和高德接口适配已由Alchemy实时结果、标准功能、深蓝项目功能及C673-6功能清单分别核验。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SLV-44272 Jira描述、问题13.mp4与评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件问题13.mp4（00:13结尾仍停留地图主页，未出现历史记录卡片）、活动日志",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673基础款DA，0130版本",
+      "trigger": "已有导航历史时说打开导航历史记录",
+      "target_behavior": "当前播报没有找到导航历史记录，未打开历史记录页面。",
+      "reason": "证明当前实现失败及完整复现条件。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy在线对话当前结果",
+      "source_type": "alchemy_current",
+      "source_location": "在线对话原话=打开导航历史记录；classification=task；meta_id=1305；type=app:ctrl；target=navi_history",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Alchemy BIGSUR当前环境",
+      "trigger": "打开导航历史记录",
+      "target_behavior": "语义正确命中navi_history页面打开动作。",
+      "reason": "排除当前原话未识别或落域错误。"
+    },
+    {
+      "source_id": "alchemy_standard",
+      "source": "Alchemy标准功能1305",
+      "source_type": "alchemy_standard",
+      "source_location": "标准功能按MetaId=1305检索：ID1423 打开特定页面/APP；说明要求车端按关键字配置到相应页面；状态草稿",
+      "role": "formal_target",
+      "match": "partial",
+      "project_model": "Alchemy标准功能",
+      "trigger": "打开导航历史记录",
+      "target_behavior": "车端按页面关键字打开对应页面。",
+      "reason": "定义该meta_id的标准执行边界；不支持把测试主张的多结果TTS直接当验收依据。"
+    },
+    {
+      "source_id": "alchemy_project",
+      "source": "Alchemy深蓝项目功能1305",
+      "source_type": "alchemy_project",
+      "source_location": "深蓝项目按MetaId=1305检索：项目ID24542，打开特定页面/APP，已锁定，继承未修改(1423)；项目车型包含C673DA",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目，车型包含C673DA",
+      "trigger": "打开导航历史记录",
+      "target_behavior": "继承标准页面打开能力。",
+      "reason": "证明C673DA所属深蓝项目未排除该标准功能。"
+    },
+    {
+      "source_id": "c6736_map_list",
+      "source": "C673-6全功能清单V1.3可编辑",
+      "source_type": "formal_config",
+      "source_location": "Sheet 16_地图，第30行：搜索导航/历史记录/导航历史列表，各车型配置为●",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C673-6全功能清单",
+      "trigger": "进入导航历史列表",
+      "target_behavior": "车型具备导航历史列表GUI能力。",
+      "reason": "证明应用侧存在目标页面；不单独定义语音TTS。"
+    },
+    {
+      "source_id": "map_main_prd",
+      "source": "Megatronix多屏地图产品需求文档C673&C385 V1.2",
+      "source_type": "prd",
+      "source_location": "Google Drive文件1wk8_8PhNgNNfyGQw4qngaW6k2jelsCSO；地图主能力资料入口",
+      "role": "context_only",
+      "match": "partial",
+      "project_model": "C673&C385地图",
+      "trigger": "地图页面能力核对",
+      "target_behavior": "用于确认地图主产品资料范围；导航历史页面的精确配置以C673-6功能清单第30行为准。",
+      "reason": "完成地图主PRD检索，不将无精确条款部分用于决定TTS。"
+    }
+  ],
+  "evidence_profiles": ["voice", "map_navigation"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "已命中语音和地图专项画像。"},
+    "voice": {"applicable": true, "reason": "涉及原话、meta_id、项目继承及车端语音执行。"},
+    "map_navigation": {"applicable": true, "reason": "目标是导航历史页面。"},
+    "visible_interaction": {"applicable": false, "reason": "争议是语音打开既有页面的执行链，不是页面样式或可见控件定义。"}
+  },
+  "required_evidence_checks": [
+    {"check_id": "alchemy_current", "status": "read", "searched_at": "2026-08-10", "search_location": "Alchemy在线对话", "queries": ["打开导航历史记录"], "source_ids": ["alchemy_current"]},
+    {"check_id": "alchemy_standard", "status": "read", "searched_at": "2026-08-10", "search_location": "Alchemy标准功能", "queries": ["meta_id=1305"], "source_ids": ["alchemy_standard"]},
+    {"check_id": "alchemy_project", "status": "read", "searched_at": "2026-08-10", "search_location": "Alchemy深蓝项目功能", "queries": ["meta_id=1305", "C673DA"], "source_ids": ["alchemy_project"]},
+    {"check_id": "formal_definition_search", "status": "read", "searched_at": "2026-08-10", "search_location": "Google Drive C673-6全功能清单V1.3", "queries": ["导航历史", "历史记录"], "source_ids": ["c6736_map_list"]},
+    {"check_id": "main_prd_search", "status": "read", "searched_at": "2026-08-10", "search_location": "Google Drive Megatronix多屏地图产品需求文档C673&C385 V1.2", "queries": ["C673 地图", "导航历史", "历史记录"], "source_ids": ["map_main_prd"]},
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-10",
+      "search_location": "Google Drive C673-6全功能清单V1.3 Sheet 16_地图第30行",
+      "queries": ["C673 DA 导航历史", "高德 导航历史 语音", "打开导航历史记录"],
+      "source_ids": ["c6736_map_list"]
+    }
+  ],
+  "inheritance_chains": [{"id": "deepal_meta1305_c673da", "project_model": "深蓝项目/C673DA", "function": "打开特定页面/APP，target=navi_history", "project_source_id": "alchemy_project", "definition_source_id": "alchemy_standard", "verified": true, "reason": "深蓝项目ID24542明确继承标准功能ID1423/meta_id1305且未修改，项目车型列表包含C673DA。"}],
+  "conflict_resolution": "将已定义的页面打开能力与测试主张的多结果TTS拆开：前者证据完整，按实现缺陷处理；后者无专项定义，不纳入本Bug验收。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "打开导航历史记录",
+    "alchemy_result": "classification=task；meta_id=1305；type=app:ctrl；target=navi_history",
+    "meta_id": "1305",
+    "standard_function": {"status": "verified", "name": "打开特定页面/APP（ID1423）", "assessment": "要求车端按关键字打开对应页面。"},
+    "project_function": {"status": "verified", "name": "深蓝项目ID24542", "assessment": "已锁定，继承未修改(1423)，项目车型包含C673DA。"}
+  },
+  "expected_behavior": {
+    "trigger": "C673DA已有导航历史时说打开导航历史记录",
+    "target_state": "语义命中navi_history后，车端打开高德导航历史列表页面。",
+    "intent_function_signal": "classification=task；meta_id=1305；type=app:ctrl；target=navi_history。",
+    "ui_tts_vehicle_behavior": "打开导航历史列表；现有正式资料未定义‘找到多个结果，要选择第几个’的TTS，因此该TTS不作为本票验收。",
+    "boundary": "只修复DA车型页面打开适配，不新增多结果选择交互。",
+    "source_ids": ["c6736_map_list"]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android-VUI研发（甘杰）",
+    "text": "结论：定义为DA车型车端页面适配缺陷。‘打开导航历史记录’已正确命中meta_id=1305和target=navi_history，C673DA所属深蓝项目已继承该页面打开能力，当前未打开高德导航历史页面。\n依据：Alchemy在线对话1305、标准功能ID1423、深蓝项目功能ID24542，以及C673-6全功能清单16_地图第30行；测试主张的‘找到多个结果’TTS无专项定义，不作为本票验收口径。\n处理：取消DA车型旧排除条件并适配高德导航历史页面接口，按‘成功打开导航历史列表’回归；Android-VUI研发（甘杰）处理。",
+    "implementation_source_ids": ["jira_actual", "alchemy_current"]
+  }
+}

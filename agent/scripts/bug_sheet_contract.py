@@ -11,7 +11,8 @@ Alchemy/Drive 证据判断。输入应先由人工或上层流程整理成 JSON�
 
 build 示例：
     python3 agent/scripts/bug_sheet_contract.py build \
-      --sheet-id 149420397 --start-row-index 11 < rows.json > requests.json
+      --sheet-id 149420397 --start-row-index 11 --owner-id li-xin \
+      --manifest ADS-TEST-manifest.json < rows.json > requests.json
 
 validate 示例：
     python3 agent/scripts/bug_sheet_contract.py validate < readback.json
@@ -24,7 +25,9 @@ snapshot / patch 示例：
     python3 agent/scripts/bug_sheet_contract.py snapshot < current-row.json
     python3 agent/scripts/bug_sheet_contract.py patch \
       --sheet-id 2135747181 --row-number 145 --key ADS-47039 \
-      --mode recheck --preview-fingerprint <fingerprint> < patch.json
+      --owner-id wu-you \
+      --mode recheck --preview-fingerprint <fingerprint> \
+      --manifest ADS-47039-manifest.json < patch.json
 
 rows.json 是一个对象数组，每项至少包含 key、summary、info、judgment、status、
 note；可选 date、owner_judgment、review_judgment、links、info_links、
@@ -41,9 +44,19 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
+
+from bug_project_preflight import (
+    PLATFORMS,
+    assess,
+    load_owners,
+    load_profile,
+    skill_status,
+)
+from validate_bug_evidence_gate import validate_manifest
 from urllib.parse import urlparse
 
 
@@ -139,7 +152,7 @@ def rich_text_cell(text: str, links: Any) -> dict[str, Any]:
     if not normalized:
         return _cell(text)
 
-    runs: list[dict[str, Any]] = [{}]
+    runs: list[dict[str, Any]] = []
     cursor = 0
     for link in normalized:
         label = link["label"]
@@ -149,6 +162,10 @@ def rich_text_cell(text: str, links: Any) -> dict[str, Any]:
         end_char = start_char + len(label)
         start = len(text[:start_char].encode("utf-16-le")) // 2
         end = len(text[:end_char].encode("utf-16-le")) // 2
+        # At position 0, a default run would overlap the link run. Sheets
+        # expands that overlap into duplicate link targets on readback.
+        if not runs and start > 0:
+            runs.append({})
         runs.append(
             {
                 "startIndex": start,
@@ -175,6 +192,12 @@ def link_list_cell(links: Any) -> dict[str, Any]:
     normalized = _normalize_links(links)
     if not normalized:
         raise ValueError("J 列至少需要一个原始入口")
+    # Google Sheets drops a lone rich-text run that spans the entire cell.
+    # A single source must therefore use its native HYPERLINK formula; multiple
+    # sources remain rich text so every short label can carry its own URL.
+    if len(normalized) == 1:
+        link = normalized[0]
+        return _cell(hyperlink(link["url"], link["label"]))
     text = "\n".join(link["label"] for link in normalized)
     return rich_text_cell(text, normalized)
 
@@ -228,6 +251,14 @@ def _visible_text(cell: dict[str, Any]) -> str:
         if key in effective:
             return str(effective[key])
     entered = cell.get("userEnteredValue", {})
+    formula = str(entered.get("formulaValue", ""))
+    hyperlink = re.match(
+        r'^=HYPERLINK\("[^"]+"\s*,\s*"((?:[^"]|"")*)"\)$',
+        formula,
+        flags=re.IGNORECASE,
+    )
+    if hyperlink:
+        return hyperlink.group(1).replace('""', '"')
     for key in ("stringValue", "formulaValue", "numberValue", "boolValue"):
         if key in entered:
             return str(entered[key])
@@ -235,11 +266,16 @@ def _visible_text(cell: dict[str, Any]) -> str:
 
 
 def _link_uris(cell: dict[str, Any]) -> list[str]:
-    return [
+    rich_uris = [
         str(uri)
         for run in cell.get("textFormatRuns", [])
         if (uri := run.get("format", {}).get("link", {}).get("uri"))
     ]
+    if rich_uris:
+        return rich_uris
+    formula = str(cell.get("userEnteredValue", {}).get("formulaValue", ""))
+    match = re.match(r'^=HYPERLINK\("([^"]+)"\s*,', formula, flags=re.IGNORECASE)
+    return [match.group(1)] if match else []
 
 
 def _patch_cell(column: str, spec: Any) -> tuple[dict[str, Any], str, list[str]]:
@@ -616,9 +652,7 @@ def validate_append_readback(
                 )
 
         for column_index, column_name in ((2, "C"), (3, "D"), (7, "H"), (9, "J")):
-            expected_text = expected_cells[column_index].get(
-                "userEnteredValue", {}
-            ).get("stringValue", "")
+            expected_text = _visible_text(expected_cells[column_index])
             actual_text = _visible_text(actual_cells[column_index])
             if actual_text != expected_text:
                 errors.append(
@@ -641,6 +675,77 @@ def _load_json(stream: Any) -> Any:
     return json.load(stream)
 
 
+def validate_bound_manifests(
+    manifest_paths: list[str], expected_keys: list[str]
+) -> list[str]:
+    """Validate one schema-v3 evidence manifest for every pending sheet row."""
+
+    errors: list[str] = []
+    if len(manifest_paths) != len(expected_keys):
+        return [
+            "写表请求必须为每个 Jira 绑定一个证据 manifest："
+            f"keys={len(expected_keys)} manifests={len(manifest_paths)}"
+        ]
+    for index, (path_text, expected_key) in enumerate(
+        zip(manifest_paths, expected_keys), start=1
+    ):
+        path = Path(path_text)
+        if not path.is_file():
+            errors.append(f"第 {index} 个 manifest 不存在：{path}")
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as error:
+            errors.append(f"第 {index} 个 manifest 无法解析：{error.msg}")
+            continue
+        manifest_errors = validate_manifest(payload, expected_key)
+        errors.extend(
+            f"{expected_key} manifest：{error}" for error in manifest_errors
+        )
+    return errors
+
+
+def required_platforms_for_manifests(manifest_paths: list[str]) -> set[str]:
+    """Derive runtime platforms that must be freshly verified before writing."""
+
+    required = {"jira", "google_drive"}
+    for path_text in manifest_paths:
+        try:
+            payload = json.loads(Path(path_text).read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if "voice" in payload.get("evidence_profiles", []):
+            required.add("alchemy")
+    return required
+
+
+def validate_local_write_gate(
+    owner_id: str,
+    manifest_paths: list[str],
+    extra_platforms: list[str],
+) -> list[str]:
+    required_platforms = sorted(
+        required_platforms_for_manifests(manifest_paths) | set(extra_platforms)
+    )
+    try:
+        profile = load_profile()
+        result = assess(
+            profile,
+            load_owners(),
+            required_owner_id=owner_id,
+            required_platforms=required_platforms,
+            max_access_age_hours=24,
+            skill=skill_status(),
+        )
+    except (OSError, ValueError, json.JSONDecodeError) as error:
+        return [f"本机写前预检失败：{error}"]
+    if result["ok"]:
+        return []
+    errors = [f"本机写前预检：{item}" for item in result["blockers"]]
+    errors.extend(f"引导：{item}" for item in result["guidance"])
+    return errors
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -648,9 +753,23 @@ def main(argv: list[str] | None = None) -> int:
     build = sub.add_parser("build", help="从人工审核后的 bug JSON 生成 Sheets requests")
     build.add_argument("--sheet-id", type=int, required=True)
     build.add_argument("--start-row-index", type=int, required=True)
+    build.add_argument("--owner-id", required=True)
     build.add_argument("--date", default="")
     build.add_argument("--format-source-row-index", type=int, default=1)
     build.add_argument("--filter-end-row-index", type=int)
+    build.add_argument(
+        "--manifest",
+        action="append",
+        required=True,
+        help="每个新增 Jira 对应的 schema-v3 manifest；按输入行顺序重复传入",
+    )
+    build.add_argument(
+        "--require-platform",
+        action="append",
+        choices=PLATFORMS,
+        default=[],
+        help="除manifest自动推导外额外要求的已验证平台",
+    )
 
     validate = sub.add_parser("validate", help="校验 get_spreadsheet_cells 回读 JSON")
     validate.add_argument("--expected-keys", nargs="*")
@@ -672,11 +791,24 @@ def main(argv: list[str] | None = None) -> int:
         help="Google 表格界面显示的 1-based 行号",
     )
     patch.add_argument("--key", required=True)
+    patch.add_argument("--owner-id", required=True)
     patch.add_argument("--mode", choices=sorted(PATCH_ALLOWED_COLUMNS), required=True)
     patch.add_argument(
         "--preview-fingerprint",
         required=True,
         help="预览阶段 snapshot 生成的 fingerprint；current_row 必须在写前重新回读",
+    )
+    patch.add_argument(
+        "--require-platform",
+        action="append",
+        choices=PLATFORMS,
+        default=[],
+        help="除manifest自动推导外额外要求的已验证平台",
+    )
+    patch.add_argument(
+        "--manifest",
+        required=True,
+        help="与 --key 一致且已通过证据门禁的 schema-v3 manifest",
     )
 
     validate_patch = sub.add_parser("validate-patch", help="校验已有 Bug 列级更新回读")
@@ -691,6 +823,22 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "build":
         if not isinstance(payload, list):
             parser.error("build 输入必须是 JSON 数组")
+        preflight_errors = validate_local_write_gate(
+            args.owner_id, args.manifest, args.require_platform
+        )
+        manifest_errors = validate_bound_manifests(
+            args.manifest,
+            [str(item.get("key", "")) for item in payload],
+        )
+        if preflight_errors or manifest_errors:
+            json.dump(
+                {"ok": False, "errors": [*preflight_errors, *manifest_errors]},
+                sys.stdout,
+                ensure_ascii=False,
+                indent=2,
+            )
+            sys.stdout.write("\n")
+            return 1
         requests = build_batch_requests(
             args.sheet_id,
             args.start_row_index,
@@ -737,6 +885,19 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "patch":
         if not isinstance(payload, dict):
             parser.error("patch 输入必须是 JSON 对象")
+        preflight_errors = validate_local_write_gate(
+            args.owner_id, [args.manifest], args.require_platform
+        )
+        manifest_errors = validate_bound_manifests([args.manifest], [args.key])
+        if preflight_errors or manifest_errors:
+            json.dump(
+                {"ok": False, "errors": [*preflight_errors, *manifest_errors]},
+                sys.stdout,
+                ensure_ascii=False,
+                indent=2,
+            )
+            sys.stdout.write("\n")
+            return 1
         result = build_patch_requests(
             args.sheet_id,
             args.row_number,

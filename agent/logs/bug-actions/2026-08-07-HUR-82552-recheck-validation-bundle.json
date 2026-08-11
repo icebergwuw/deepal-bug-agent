@@ -1,0 +1,121 @@
+{
+  "jira_key": "HUR-82552",
+  "row": 268,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82552描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：“退出导航”meta_id=1017只覆盖实际导航结束；路线选择阶段关闭路线卡片未在现行定义中覆盖，属于新增状态机交互。\n依据：Jira原票·描述/评论、地图导航PRD V6.1·4.1.1/4.7.4、Alchemy当前结果·meta_id=1017。\n处理：新增路线规划态退出指令，明确关闭卡片且不退出语音助手；J90A地图产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "地图导航PRD V6.1",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "新需求需区分NAV=1结束导航与ROUTE=2退出路线选择",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": {
+      "text": "现象与实现：已完整读取HUR-82552描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：“退出导航”meta_id=1017只覆盖实际导航结束；路线选择阶段关闭路线卡片未在现行定义中覆盖，属于新增状态机交互。\n依据：Jira原票·描述/评论、地图导航PRD V6.1·4.1.1/4.7.4、Alchemy当前结果·meta_id=1017。\n处理：新增路线规划态退出指令，明确关闭卡片且不退出语音助手；J90A地图产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "地图导航PRD V6.1",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "新需求需区分NAV=1结束导航与ROUTE=2退出路线选择",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82552"
+        },
+        {
+          "label": "Alchemy当前结果/功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "工作说明·正式资料入口",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

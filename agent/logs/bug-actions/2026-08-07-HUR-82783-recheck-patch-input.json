@@ -1,0 +1,63 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82783",
+  "sheet": "吴优工作说明 / bug",
+  "row": 239,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：C385/ACCTextTakeOver__3文言与当前清单/车机显示不一致。[Jira原票·描述/评论]\n证据：已核对正式LanguageList，但当前附件/Topic映射与精确QML source仍未形成唯一对应。[LanguageList·10_Instrument Panel检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82783"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：C385/ACCTextTakeOver__3文言与当前清单/车机显示不一致尚缺少唯一的Topic/value、QML source或附件映射，不能直接关闭或转研发。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel检索。\n处理：补充问题时段qlog/DLT与仪表资源版本，确认实车收到的Topic/value后再定责；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82783"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "补充问题时段qlog/DLT与仪表资源版本，确认实车收到的Topic/value后再定责",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82783"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  }
+}

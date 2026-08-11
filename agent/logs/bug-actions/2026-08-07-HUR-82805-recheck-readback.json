@@ -1,0 +1,88 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82805",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 224,
+  "range": "A224:J224",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82805｜TipInfo/BCM_LowPowerWarning__1文言与当前清单/车机显示不一致",
+    "C": "现象：TipInfo/BCM_LowPowerWarning__1文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“车辆将在2分钟内自动下电\n请启动车辆或检查蓄电池充电系统”的目标语译文与实车一致；Key行第376行目标语为空。[LanguageList源文·第202行][LanguageList重复Key·第376行][重复Key记录·第3813行]",
+    "D": "结论：定义为非问题。TipInfo/BCM_LowPowerWarning__1触发时应按正式source“车辆将在2分钟内自动下电\n请启动车辆或检查蓄电池充电系统”显示“سيتم إيقاف تشغيل السيارة آليًا في غضون دقيقتين \nيرجى تشغيل السيارة أو فحص نظام شحن البطارية”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第202行。\n处理：按非问题关闭本Bug；吴优处理。",
+    "E": false,
+    "F": null,
+    "G": "可关闭",
+    "H": null,
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": "Jira原票·描述/评论\nLanguageList源文·第202行\nLanguageList重复Key·第376行\n重复Key记录·第3813行"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82805\",\"HUR-82805｜TipInfo/BCM_LowPowerWarning__1文言与当前清单/车机显示不一致\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82805"
+      },
+      {
+        "label": "LanguageList源文·第202行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A202:AQ202"
+      },
+      {
+        "label": "LanguageList重复Key·第376行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A376:AQ376"
+      },
+      {
+        "label": "重复Key记录·第3813行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3813:Z3813"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82805"
+      },
+      {
+        "label": "LanguageList源文·第202行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A202:AQ202"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82805"
+      },
+      {
+        "label": "LanguageList源文·第202行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A202:AQ202"
+      },
+      {
+        "label": "LanguageList重复Key·第376行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A376:AQ376"
+      },
+      {
+        "label": "重复Key记录·第3813行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3813:Z3813"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-08-07",
+    "B": "HUR-82805｜TipInfo/BCM_LowPowerWarning__1文言与当前清单/车机显示不一致",
+    "E": false,
+    "F": null,
+    "H": null
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

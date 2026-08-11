@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-08-07",
+    "key": "BGS-83308",
+    "summary": "取消头枕音箱导航误识别为结束导航",
+    "info": "现象：取消头枕音箱导航误识别为结束导航。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "judgment": "结论：取消头枕音箱导航误识别为结束导航的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=task；meta_id=1017；错误落入结束导航；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐头枕音箱导航播报开关的正式功能点与反向泛化，消除结束导航意图冲突；深蓝语音产品配置负责人处理。",
+    "status": "待复核",
+    "note": "下一步：补齐头枕音箱导航播报开关的正式功能点与反向泛化，消除结束导航意图冲突",
+    "links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/BGS-83308"
+      },
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/BGS-83308"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  }
+]

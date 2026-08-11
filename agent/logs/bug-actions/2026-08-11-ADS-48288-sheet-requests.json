@@ -1,0 +1,259 @@
+{
+  "key": "ADS-48288",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 319,
+  "rowIndex": 318,
+  "previewFingerprint": "13d940c8e0841089cb42f4d4a9148ff4d69ea8fd46b9db965faaf09721e40389",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "现象：C673-7说“以后叫我宝宝”，NLU命中meta_id=1325，车端服务按错误码205的重复字符规则拒绝设置。[Jira原票·描述/完整评论][ADS-47939·reqId/meta]\n证据：研发评论说明205规则为东风平台新增，当前提供“保留/深蓝绕过”两种方案；未检索到深蓝同版本自定义应答语对长度及重复字符的生效PRD条款。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48288",
+        "http://jira.i-tetris.com/browse/ADS-47939"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：定义为待复核。当前实现因复用东风错误码205拦截“宝宝”，但缺深蓝项目对2字昵称、重复字符和4-6字限制的正式定义，不能直接选择绕过方案。\n依据：ADS-48288完整评论与ADS-47939的meta_id=1325/reqId链；Drive未命中深蓝同版本条款，Alchemy项目功能点未完整核验。\n处理：明确深蓝自定义应答语的长度、重复字符和文明校验规则并形成生效配置，再决定是否对深蓝绕过205；深蓝语音服务产品负责人（吴优）处理。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "待复核",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "测试用例完整，无需补测试用例；需补深蓝正式规则及Alchemy当前/标准/项目证据。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "",
+      "after": "Jira原票·描述/完整评论\nADS-47939·reqId/meta",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48288",
+        "http://jira.i-tetris.com/browse/ADS-47939"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：C673-7说“以后叫我宝宝”，NLU命中meta_id=1325，车端服务按错误码205的重复字符规则拒绝设置。[Jira原票·描述/完整评论][ADS-47939·reqId/meta]\n证据：研发评论说明205规则为东风平台新增，当前提供“保留/深蓝绕过”两种方案；未检索到深蓝同版本自定义应答语对长度及重复字符的生效PRD条款。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48288",
+        "http://jira.i-tetris.com/browse/ADS-47939"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为待复核。当前实现因复用东风错误码205拦截“宝宝”，但缺深蓝项目对2字昵称、重复字符和4-6字限制的正式定义，不能直接选择绕过方案。\n依据：ADS-48288完整评论与ADS-47939的meta_id=1325/reqId链；Drive未命中深蓝同版本条款，Alchemy项目功能点未完整核验。\n处理：明确深蓝自定义应答语的长度、重复字符和文明校验规则并形成生效配置，再决定是否对深蓝绕过205；深蓝语音服务产品负责人（吴优）处理。",
+      "links": []
+    },
+    "G": {
+      "visible": "待复核",
+      "links": []
+    },
+    "I": {
+      "visible": "测试用例完整，无需补测试用例；需补深蓝正式规则及Alchemy当前/标准/项目证据。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·描述/完整评论\nADS-47939·reqId/meta",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48288",
+        "http://jira.i-tetris.com/browse/ADS-47939"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 318,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：C673-7说“以后叫我宝宝”，NLU命中meta_id=1325，车端服务按错误码205的重复字符规则拒绝设置。[Jira原票·描述/完整评论][ADS-47939·reqId/meta]\n证据：研发评论说明205规则为东风平台新增，当前提供“保留/深蓝绕过”两种方案；未检索到深蓝同版本自定义应答语对长度及重复字符的生效PRD条款。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 61,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48288"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 75
+                  },
+                  {
+                    "startIndex": 77,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47939"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 97
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 318,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为待复核。当前实现因复用东风错误码205拦截“宝宝”，但缺深蓝项目对2字昵称、重复字符和4-6字限制的正式定义，不能直接选择绕过方案。\n依据：ADS-48288完整评论与ADS-47939的meta_id=1325/reqId链；Drive未命中深蓝同版本条款，Alchemy项目功能点未完整核验。\n处理：明确深蓝自定义应答语的长度、重复字符和文明校验规则并形成生效配置，再决定是否对深蓝绕过205；深蓝语音服务产品负责人（吴优）处理。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 318,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 318,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "测试用例完整，无需补测试用例；需补深蓝正式规则及Alchemy当前/标准/项目证据。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 318,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/完整评论\nADS-47939·reqId/meta"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48288"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47939"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

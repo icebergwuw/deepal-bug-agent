@@ -1,0 +1,21 @@
+{
+  "jira_key": "BGS-83505",
+  "row": 276,
+  "range": "A276:J276",
+  "mode": "recheck",
+  "expected_source": "2026-08-07-BGS-83505-recheck-patch-input.json",
+  "actual_source": "2026-08-07-BGS-83505-recheck-readback.json",
+  "decision_text": "结论：Deepal AI返回电子手册入口时，‘第X个/打开第X个’应按当前回复的第X条URL打开对应电子手册页面；现车端未执行该已定义动作，属于研发缺陷。\n依据：8155大模型交互V0.1·第6页电子手册入口、Jira视频·video(36).mp4 00:00-00:32、Alchemy当前结果·BIGSUR/meta_id=1455。\n处理：按UE补齐Deepal AI电子手册入口的上下文序号选择到页面打开执行链并回归；Deepal AI研发处理。",
+  "actual_status": "可转研发",
+  "link_counts": {"C": 6, "D": 3, "J": 6},
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_labels_match": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true,
+    "saved_to_drive": true
+  }
+}

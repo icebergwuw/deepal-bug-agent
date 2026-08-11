@@ -1,0 +1,34 @@
+{
+  "changes": {
+    "C": {
+      "text": "复开争议：研发以天气/天气指数属于不同功能点、范围不同为由要求统一口径。[Jira当前评论]\n实车记录：今天本地全天天气误报“仅支持7天内”；天气指数的1天边界仍按定义执行。[Jira实车记录]\n正式定义：天气1249支持T~T+7；天气指数1251仅当天；天气PRD8155&8295与上述边界一致。[天气1249][天气指数1251][天气PRD8155&8295]",
+      "links": [
+        {"label": "Jira当前评论", "url": "http://jira.i-tetris.com/browse/ADS-47367"},
+        {"label": "Jira实车记录", "url": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"},
+        {"label": "天气1249", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"},
+        {"label": "天气指数1251", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"},
+        {"label": "天气PRD8155&8295", "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"}
+      ]
+    },
+    "D": {
+      "text": "结论：今天本地全天天气误报“仅支持7天内”属于执行缺陷；天气与天气指数分别为7天/1天的边界符合现行定义。\n依据：Jira实车记录、天气1249、天气指数1251、天气PRD8155&8295。\n处理：修正“全天”问法为返回当天天气；语音天气功能点研发处理。",
+      "links": [
+        {"label": "Jira实车记录", "url": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"},
+        {"label": "天气1249", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"},
+        {"label": "天气指数1251", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"},
+        {"label": "天气PRD8155&8295", "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"}
+      ]
+    },
+    "G": "可转研发",
+    "I": "天气/天气指数边界仅在客户确认调整现行定义后另立需求。",
+    "J": {
+      "links": [
+        {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-47367"},
+        {"label": "Jira实车记录", "url": "http://jira.i-tetris.com/browse/ADS-47367?focusedCommentId=8028858&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8028858"},
+        {"label": "天气1249功能点", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26751"},
+        {"label": "天气指数1251功能点", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"},
+        {"label": "天气PRD8155&8295", "url": "https://drive.google.com/file/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt"}
+      ]
+    }
+  }
+}

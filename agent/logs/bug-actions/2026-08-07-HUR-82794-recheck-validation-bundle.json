@@ -1,0 +1,97 @@
+{
+  "jira_key": "HUR-82794",
+  "row": 260,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：部分仪表中文 source文言与当前清单/车机显示不一致。[Jira原票·描述/评论]\n证据：已核对正式LanguageList，但当前附件/Topic映射与精确QML source仍未形成唯一对应。[LanguageList·10_Instrument Panel检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：部分仪表中文 source文言与当前清单/车机显示不一致尚缺少唯一的Topic/value、QML source或附件映射，不能直接关闭或转研发。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel检索。\n处理：逐项读取附件Key并映射到当前正式source行，附件映射未完成前不批量关闭；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "逐项读取附件Key并映射到当前正式source行，附件映射未完成前不批量关闭",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": {
+      "text": "现象：部分仪表中文 source文言与当前清单/车机显示不一致。[Jira原票·描述/评论]\n证据：已核对正式LanguageList，但当前附件/Topic映射与精确QML source仍未形成唯一对应。[LanguageList·10_Instrument Panel检索]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：部分仪表中文 source文言与当前清单/车机显示不一致尚缺少唯一的Topic/value、QML source或附件映射，不能直接关闭或转研发。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel检索。\n处理：逐项读取附件Key并映射到当前正式source行，附件映射未完成前不批量关闭；J90A多语言配置负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "逐项读取附件Key并映射到当前正式source行，附件映射未完成前不批量关闭",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82794"
+        },
+        {
+          "label": "LanguageList·10_Instrument Panel检索",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

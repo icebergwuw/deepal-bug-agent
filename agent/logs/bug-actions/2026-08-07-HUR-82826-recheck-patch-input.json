@@ -1,0 +1,24 @@
+{
+  "current_row": {"values": [
+    {"formattedValue": "2026-08-07", "userEnteredValue": {"numberValue": 46241}},
+    {"formattedValue": "HUR-82826｜C385/LCDAText__39文言与当前清单/车机显示不一致", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82826\",\"HUR-82826｜C385/LCDAText__39文言与当前清单/车机显示不一致\")"}},
+    {"formattedValue": "现象：C385/LCDAText__39文言与当前清单/车机显示不一致。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82826\",\"现象：C385/LCDAText__39文言与当前清单/车机显示不一致。Jira字段、描述、附件、关联票和完整评论已读。\"&CHAR(10)&\"证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。\")"}},
+    {"formattedValue": "结论：C385/LCDAText__39当前存在测试分支、Key行和相同中文source译文冲突，不能按‘文言表为空’直接判定车机显示错误。\n依据：Jira描述/评论记录当前显示，Drive中B0609/B0904 V0.5.8正式翻译清单的Key覆盖与本票QML source未形成唯一对应。\n处理：统一HUR-82826对应的生效分支、QML source及目标语种值后再判定是否修复；J90A多语言配置负责人处理。", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1dJeptWHkUXdFaOCH1m6D2ZSsNp1Xj2Dj/edit?gid=86683056#gid=86683056\",\"结论：C385/LCDAText__39当前存在测试分支、Key行和相同中文source译文冲突，不能按‘文言表为空’直接判定车机显示错误。\"&CHAR(10)&\"依据：Jira描述/评论记录当前显示，Drive中B0609/B0904 V0.5.8正式翻译清单的Key覆盖与本票QML source未形成唯一对应。\"&CHAR(10)&\"处理：统一HUR-82826对应的生效分支、QML source及目标语种值后再判定是否修复；J90A多语言配置负责人处理。\")"}},
+    {"formattedValue": "FALSE", "userEnteredValue": {"boolValue": false}, "dataValidation": {"condition": {"type": "BOOLEAN"}, "strict": true}},
+    {"formattedValue": ""}, {"formattedValue": "待会诊", "userEnteredValue": {"stringValue": "待会诊"}}, {"formattedValue": ""},
+    {"formattedValue": "下一步：统一HUR-82826对应的生效分支、QML source及目标语种值后再判定是否修复", "userEnteredValue": {"stringValue": "下一步：统一HUR-82826对应的生效分支、QML source及目标语种值后再判定是否修复"}},
+    {"formattedValue": "J90A文言V0.5.8·对应Key", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1dJeptWHkUXdFaOCH1m6D2ZSsNp1Xj2Dj/edit?gid=86683056#gid=86683056\",\"J90A文言V0.5.8·对应Key\")"}}
+  ]},
+  "changes": {
+    "C": {"text": "现象：J90A EL阿拉伯语环境下触发后向辅助系统异常警告，实车显示“تعطل نظام المساعدة الخلفي”，测试以C385/LCDAText__39重复Key行阿语列为空作为预期。[Jira原票·描述/2026-08-06]\n证据：当前正式LanguageList源文行的阿语与实车完全一致；对应重复Key迁移行阿语为空。[LanguageList源文·第76行][LanguageList重复Key·第550行][重复Key执行记录·第3987行]", "links": [
+      {"label": "Jira原票·描述/2026-08-06", "url": "http://jira.i-tetris.com/browse/HUR-82826"}, {"label": "LanguageList源文·第76行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A76:AQ76"}, {"label": "LanguageList重复Key·第550行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A550:AQ550"}, {"label": "重复Key执行记录·第3987行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3987:Z3987"}
+    ]},
+    "D": {"text": "结论：定义为非问题。J90A EL阿拉伯语环境下，后向辅助系统异常应显示为“تعطل نظام المساعدة الخلفي”；当前实车显示与生效LanguageList一致，不能以重复Key行阿语列为空作为“应显示空白”的产品预期。\n依据：Jira原票·描述/2026-08-06、LanguageList源文·第76行、LanguageList重复Key·第550行。\n处理：按非问题关闭本Bug；吴优处理。", "links": [
+      {"label": "Jira原票·描述/2026-08-06", "url": "http://jira.i-tetris.com/browse/HUR-82826"}, {"label": "LanguageList源文·第76行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A76:AQ76"}, {"label": "LanguageList重复Key·第550行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A550:AQ550"}
+    ]},
+    "G": "可关闭", "I": "Key行阿语空值另按LanguageList重复Key数据治理处理，不作为车机缺陷",
+    "J": {"links": [
+      {"label": "Jira原票·描述/2026-08-06", "url": "http://jira.i-tetris.com/browse/HUR-82826"}, {"label": "LanguageList源文·第76行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A76:AQ76"}, {"label": "LanguageList重复Key·第550行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A550:AQ550"}, {"label": "重复Key执行记录·第3987行", "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3987:Z3987"}
+    ]}
+  }
+}

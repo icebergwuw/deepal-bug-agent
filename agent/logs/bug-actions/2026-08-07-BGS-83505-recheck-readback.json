@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "BGS-83505",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 276,
+  "range": "A276:J276",
+  "values": {
+    "A": "2026-08-07",
+    "B": "BGS-83505｜深蓝管家车书链接无法通过打开第一个进入",
+    "C": "现象与实现：[Jira原票·描述/评论]客户用例已含VIN、版本、步骤、预期、实际和附件；[Jira视频·video(36).mp4 00:00-00:32]复现电子手册入口显示后说‘打开第一个’仍未打开。\n证据：[8155大模型交互V0.1·第6页电子手册入口]明确定义‘第X个/打开第X个’按URL打开对应页面；[Alchemy当前结果·BIGSUR/meta_id=1455]已识别为common:selection，[深蓝项目功能·ID24544/继承1425]已配置该选择功能。[8155大模型PRD V0.1·第5页二.2通用策略]过滤普通网页链接，不覆盖UE的电子手册专用入口。",
+    "D": "结论：Deepal AI返回电子手册入口时，‘第X个/打开第X个’应按当前回复的第X条URL打开对应电子手册页面；现车端未执行该已定义动作，属于研发缺陷。\n依据：8155大模型交互V0.1·第6页电子手册入口、Jira视频·video(36).mp4 00:00-00:32、Alchemy当前结果·BIGSUR/meta_id=1455。\n处理：按UE补齐Deepal AI电子手册入口的上下文序号选择到页面打开执行链并回归；Deepal AI研发处理。",
+    "E": false,
+    "F": null,
+    "G": "可转研发",
+    "H": null,
+    "I": "回归覆盖单/多入口、第X个/打开第X个、无URL不展示及上下文失效边界",
+    "J": "Jira原票·描述/评论\nJira视频·video(36).mp4 00:00-00:32\n8155大模型交互V0.1·第6页电子手册入口\n8155大模型PRD V0.1·第5页二.2通用策略\nAlchemy当前结果·BIGSUR/meta_id=1455\n深蓝项目功能·ID24544/继承1425"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/BGS-83505\",\"BGS-83505｜深蓝管家车书链接无法通过打开第一个进入\")"
+  },
+  "rich_links": {
+    "C": [
+      {"label": "Jira原票·描述/评论", "url": "http://jira.i-tetris.com/browse/BGS-83505"},
+      {"label": "Jira视频·video(36).mp4 00:00-00:32", "url": "http://jira.i-tetris.com/secure/attachment/4210978/video%2836%29.mp4"},
+      {"label": "8155大模型交互V0.1·第6页电子手册入口", "url": "https://docs.google.com/document/d/1Kn_hvdaQaEM0XBp2F7jxPs3LDsiPHCblOPAhDbDgutc/edit?tab=t.0"},
+      {"label": "Alchemy当前结果·BIGSUR/meta_id=1455", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "深蓝项目功能·ID24544/继承1425", "url": "https://alchemy.i-tetris.com/#/functional/project/detail/11"},
+      {"label": "8155大模型PRD V0.1·第5页二.2通用策略", "url": "https://docs.google.com/document/d/1T34IbvyT6BKLEotPNx5tV4uudpRcGkE3WEyhcJNwgDc/edit?tab=t.0"}
+    ],
+    "D": [
+      {"label": "8155大模型交互V0.1·第6页电子手册入口", "url": "https://docs.google.com/document/d/1Kn_hvdaQaEM0XBp2F7jxPs3LDsiPHCblOPAhDbDgutc/edit?tab=t.0"},
+      {"label": "Jira视频·video(36).mp4 00:00-00:32", "url": "http://jira.i-tetris.com/secure/attachment/4210978/video%2836%29.mp4"},
+      {"label": "Alchemy当前结果·BIGSUR/meta_id=1455", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ],
+    "J": [
+      {"label": "Jira原票·描述/评论", "url": "http://jira.i-tetris.com/browse/BGS-83505"},
+      {"label": "Jira视频·video(36).mp4 00:00-00:32", "url": "http://jira.i-tetris.com/secure/attachment/4210978/video%2836%29.mp4"},
+      {"label": "8155大模型交互V0.1·第6页电子手册入口", "url": "https://docs.google.com/document/d/1Kn_hvdaQaEM0XBp2F7jxPs3LDsiPHCblOPAhDbDgutc/edit?tab=t.0"},
+      {"label": "8155大模型PRD V0.1·第5页二.2通用策略", "url": "https://docs.google.com/document/d/1T34IbvyT6BKLEotPNx5tV4uudpRcGkE3WEyhcJNwgDc/edit?tab=t.0"},
+      {"label": "Alchemy当前结果·BIGSUR/meta_id=1455", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "深蓝项目功能·ID24544/继承1425", "url": "https://alchemy.i-tetris.com/#/functional/project/detail/11"}
+    ]
+  },
+  "checkbox": {"column": "E", "value": false, "type": "BOOLEAN", "data_validation": "checkbox"},
+  "protected_columns": {
+    "A": "2026-08-07",
+    "B": "BGS-83505｜深蓝管家车书链接无法通过打开第一个进入",
+    "E": false,
+    "F": null,
+    "H": null
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

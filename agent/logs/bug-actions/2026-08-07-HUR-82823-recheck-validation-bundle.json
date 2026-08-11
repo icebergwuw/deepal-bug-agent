@@ -1,0 +1,129 @@
+{
+  "jira_key": "HUR-82823",
+  "row": 221,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：C385/LCDAText__33文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请注意后方车辆”的目标语译文与实车一致；Key行第548行目标语为空。[LanguageList源文·第77行][LanguageList重复Key·第548行][重复Key记录·第3985行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第548行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A548:AQ548"
+        },
+        {
+          "label": "重复Key记录·第3985行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3985:Z3985"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/LCDAText__33触发时应按正式source“请注意后方车辆”显示“يرجى الانتباه إلى السيارة من الخلف”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第77行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第548行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A548:AQ548"
+        },
+        {
+          "label": "重复Key记录·第3985行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3985:Z3985"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": {
+      "text": "现象：C385/LCDAText__33文言与当前清单/车机显示不一致，测试以Key行空值或错误预期判断实车显示。[Jira原票·描述/评论]\n证据：正式源文“请注意后方车辆”的目标语译文与实车一致；Key行第548行目标语为空。[LanguageList源文·第77行][LanguageList重复Key·第548行][重复Key记录·第3985行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第548行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A548:AQ548"
+        },
+        {
+          "label": "重复Key记录·第3985行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3985:Z3985"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。C385/LCDAText__33触发时应按正式source“请注意后方车辆”显示“يرجى الانتباه إلى السيارة من الخلف”；当前实车显示与生效LanguageList一致，不能以重复Key行空值或其他Topic文言作为预期。\n依据：Jira原票·描述/评论、LanguageList源文·第77行。\n处理：按非问题关闭本Bug；吴优处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "重复Key空值另按LanguageList数据治理处理，不作为车机缺陷",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82823"
+        },
+        {
+          "label": "LanguageList源文·第77行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A77:AQ77"
+        },
+        {
+          "label": "LanguageList重复Key·第548行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328&range=A548:AQ548"
+        },
+        {
+          "label": "重复Key记录·第3985行",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=2045444661#gid=2045444661&range=A3985:Z3985"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

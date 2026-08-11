@@ -1,0 +1,115 @@
+{
+  "jira_key": "ADS-48181",
+  "comment_causality": "Jira最新评论以深蓝项目功能26750仅列晴、阴、雨、雪、霾为由，判断气压、湿度、风力均无需求。但同一功能点的正式说明以及其继承的标准功能1400都逐字把“风力是多大”列为支持示例，天气PRD也有相同定义；因此该评论只能说明气压、湿度缺少正式回复定义，不能否定风力查询。Jira日志和车端视频显示三类提问均只返回常规晴雨现象，当前应拆分口径：风力保留为现有功能缺陷，气压、湿度不纳入本票Bug验收。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260802200837508",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira标题、描述、日志评论和附件提供C673-7、VIN、SWC.3.19、静态环境、三条原话、期望/实际、发生时间、三个reqId及两段复现视频，足以确认现象；Jira车型字段C385-2与标题/VIN冲突，但不影响按标题、VIN和实车版本复核。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "weather_prd_20250613",
+      "source": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250613",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "深蓝8155&8295天气能力；本票为C673-7 8295平台",
+      "trigger": "查询天气现象，例如“风力是多大”",
+      "target_behavior": "查询指定时间、地点的天气现象并展示语音卡片，未指定时间/地点时分别默认当天和当前位置；回复来自天气API结果。",
+      "reason": "正式PRD逐字覆盖风力查询，并给出目标执行和回复边界。"
+    },
+    {
+      "source_id": "alchemy_standard_1975",
+      "source": "Alchemy标准功能1400 查询天气现象（META ID 1975）",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "语音标准天气功能",
+      "trigger": "天气现象查询；示例逐字包含“风力是多大”",
+      "target_behavior": "下发weather:query:check，查询指定时间指定城市天气现象并展示语音卡片；未指定时间/地点时默认当天/当前位置。",
+      "reason": "标准功能标题、META ID与本票在线及车端日志完全匹配。"
+    },
+    {
+      "source_id": "alchemy_project_26750",
+      "source": "Alchemy深蓝项目功能26750 查询天气现象（META ID 1975）",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目，来源状态继承未修改",
+      "trigger": "同标准功能1975，说明逐字包含“风力是多大”",
+      "target_behavior": "项目继承标准功能1400且未修改；设置项范围为国内城市/区县及T至T+7天。",
+      "reason": "证明深蓝项目没有删除风力查询，最新评论的三项均无需求说法与当前项目功能正文冲突。"
+    },
+    {
+      "source_id": "jira_actual",
+      "source": "ADS-48181原票、全部评论、日志链接和附件",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673-7实车，VIN LS6C3E2TXTF811974，SWC.3.19",
+      "trigger": "现在风力几级；今天湿度大吗；现在气压多少",
+      "target_behavior": "实车对三条问题只回复常规晴雨天气内容，未回答所问属性。",
+      "reason": "三条原话各有独立时间和reqId，两段视频及VOS链路可复核。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy BIGSUR在线对话当前独立会话核验",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "深蓝BIGSUR，对应C673-7语音项目",
+      "trigger": "三条原话分别独立新建会话测试",
+      "target_behavior": "三条均命中meta_id=1975、weather:query:check；风力canonical=wind，湿度canonical=humidity，气压仅有literal且canonical为空。",
+      "reason": "证明风力当前语义路由正确，车端错误位于天气结果/播报执行；也证明气压、湿度虽可进入同功能，但在线识别不能替代缺失的正式回复定义。"
+    }
+  ],
+  "inheritance_chains": [
+    {
+      "standard": "Alchemy标准功能1400 查询天气现象，META ID 1975",
+      "project": "Alchemy深蓝项目功能26750 查询天气现象，继承未修改",
+      "assessment": "标准和项目标题、META ID一致，项目正文保留“风力是多大”，不存在功能点错配。"
+    }
+  ],
+  "conflict_resolution": "以天气PRD、标准功能1400和深蓝项目功能26750的正文作为正式目标；Jira最新评论关于“气压、湿度、风力均无需求”的说法只保留为历史评论，不能覆盖正式定义。风力有明确目标，可判为执行缺陷；气压、湿度缺少正式TTS/卡片/数据字段定义，不以在线NLU命中直接扩张为现有需求。",
+  "expected_behavior": {
+    "trigger": "C673-7用户询问“现在风力几级”。",
+    "target_state": "系统查询当前位置当前时间的风力并回复风力等级，不得只回复晴、阴或是否下雨。",
+    "intent_function_signal": "meta_id=1975，weather:query:check，condition canonical=wind，time canonical=n。",
+    "ui_tts_vehicle_behavior": "TTS和天气卡片应回答风力属性；具体值以天气API返回为准。",
+    "boundary": "本票Bug验收只覆盖正式定义明确的风力查询。湿度、气压当前没有正式回复字段和边界，如需支持应另立需求；回归车型按标题/VIN的C673-7与SWC.3.19执行。",
+    "source_ids": [
+      "weather_prd_20250613",
+      "alchemy_standard_1975"
+    ]
+  },
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "现在风力几级；今天湿度大吗；现在气压多少",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR独立会话：三句均classification=task并命中1975 weather:query:check；风力condition=wind，湿度condition=humidity，气压condition canonical为空。",
+    "meta_id": "1975",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准功能1400 查询天气现象，META ID 1975",
+      "assessment": "标题和META ID匹配，说明逐字包含“风力是多大”。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能26750 查询天气现象，META ID 1975",
+      "assessment": "已锁定，继承标准功能1400且未修改，说明仍逐字包含“风力是多大”。"
+    }
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "语音天气DS研发",
+    "implementation_source_ids": [
+      "jira_actual",
+      "alchemy_current"
+    ],
+    "text": "结论：产品预期确认：风力查询属于现有功能，车端仅回复晴雨是缺陷；湿度、气压未在现行PRD/功能点定义回复内容，不纳入本票Bug验收。\n依据：Jira原票及日志/视频、天气PRD、查询天气现象标准/深蓝项目功能点、Alchemy当前核验。\n处理：按meta_id=1975修复“现在风力几级”返回风力等级并做C673-7实车回归；语音天气DS研发处理。"
+  }
+}

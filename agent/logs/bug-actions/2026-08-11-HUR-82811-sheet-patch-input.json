@@ -1,0 +1,84 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "HUR-82811｜【J90A】【0526】【user-debug】 15：43   多个电话联系人选择拨打页面-qurey：今天天气怎么样 TTS回复错误",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82811\",\"HUR-82811｜【J90A】【0526】【user-debug】 15：43   多个电话联系人选择拨打页面-qurey：今天天气怎么样 TTS回复错误\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：多个联系人待选择的模糊拨号二次交互阶段，用户改问天气，系统未保持电话选择上下文。[Jira原票·描述/完整评论]\n证据：关联票HUR-62579的产品结论明确：模糊拨号二次交互期间不响应其他指令；HUR-82811正处于多个联系人选择阶段。但本票Alchemy当前/标准/项目功能点未完整核验。[HUR-62579·二次交互边界]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82811"
+        },
+        {
+          "label": "HUR-62579·二次交互边界",
+          "url": "http://jira.i-tetris.com/browse/HUR-62579"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待复核。既有产品边界支持在多个联系人选择阶段屏蔽天气指令，但语音问题在Alchemy链未完整核验前不做确定性转研发。\n依据：HUR-62579完整评论中的“模糊拨打二次交互期间不响应其他指令”及HUR-82811当前页面阶段。\n处理：补齐本次原话在J90A项目的Alchemy当前、标准、项目功能点，确认上下文优先级后转J90A语音上下文负责人修复。",
+      "links": []
+    },
+    "G": "待复核",
+    "I": "测试用例完整，无需补测试用例；缺Alchemy项目链核验，不缺复现步骤。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82811"
+        },
+        {
+          "label": "HUR-62579·二次交互边界",
+          "url": "http://jira.i-tetris.com/browse/HUR-62579"
+        }
+      ]
+    }
+  }
+}

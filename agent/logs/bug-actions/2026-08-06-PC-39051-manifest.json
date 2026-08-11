@@ -1,0 +1,78 @@
+{
+  "jira_key": "PC-39051",
+  "comment_causality": "Jira无评论、无附件、无直接关联票，仅要求确认执行预期。VOS原话‘我要走高架路线’命中meta_id 1023后回复已切换高速优先，随后‘切换到高架路线’又回复路线偏好不支持高架路线。Alchemy当前BIGSUR在线对话复现同一原话，参数literal=走高架却映射canonical=expressway_first。正式C385&673导航UE的路线设置仅包含躲避拥堵、避免收费、不走高速、高速优先，没有高架路线；标准功能1450与深蓝项目功能24569确认meta_id 1023为设置地图偏好项且项目继承未修改。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "scope_checks": [
+    {
+      "source_id": "ue_nav",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+      "source_location": "章节‘地图设置’→‘01 设置’→‘路线设置’，界面枚举‘躲避拥堵、避免收费、不走高速、高速优先’",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C385与C673；Jira/VOS车型C6735属于C673范围",
+      "trigger": "用户设置导航路线偏好",
+      "target_behavior": "支持躲避拥堵、避免收费、不走高速和高速优先；不包含高架路线，不能把高架等同高速优先。",
+      "reason": "同车型正式UE直接定义路线偏好项及边界。"
+    },
+    {
+      "source_id": "alchemy_function_chain",
+      "source": "Alchemy标准功能1450与深蓝项目功能24569",
+      "source_location": "功能→标准功能→MetaId 1023：ID1450‘设置地图偏好项’；功能→项目功能→深蓝→MetaId 1023：ID24569，来源状态‘继承未修改(1450)’",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目，车型列表包含BIGSUR与C673",
+      "trigger": "meta_id 1023的功能点归属与继承关系核验",
+      "target_behavior": "meta_id 1023用于设置地图偏好项，深蓝项目未改写标准定义。",
+      "reason": "确认当前语音功能点身份、车型和继承关系，不替代同车型UE的偏好枚举。"
+    },
+    {
+      "source_id": "alchemy_actual",
+      "source": "Alchemy在线对话当前核验",
+      "source_location": "在线对话→项目BIGSUR→原话‘我要走高架路线’→operations[0]：meta_id=1023、type=navi:setting、route_preference literal=走高架、canonical=expressway_first",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "BIGSUR/深蓝",
+      "trigger": "我要走高架路线",
+      "target_behavior": "当前NLU把‘走高架’错误归一为expressway_first，即高速优先。",
+      "reason": "当前在线结果直接证明错误映射仍存在。"
+    },
+    {
+      "source_id": "vos_actual",
+      "source": "VOS标记日志56995",
+      "source_location": "请求a9b3146d-c12e-4f3a-b9a2-4e49e607a464，2026-08-03 18:02:36-18:02:55：‘我要走高架路线’回复‘已为您切换到高速优先’，随后‘切换到高架路线’回复‘路线偏好不支持高架路线’",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "长安C6735",
+      "trigger": "连续说‘我要走高架路线’与‘切换到高架路线’",
+      "target_behavior": "同一语义先被执行成高速优先，后又按不支持处理，行为不一致。",
+      "reason": "直接证明车端线上实际现象与前后矛盾。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "不采用Jira中的‘麻烦产品确认’作为定义，也不把‘高架’按字面近似成‘高速’。以同车型正式UE的路线设置枚举为准：高架不在支持项内；结合Alchemy当前错误canonical和VOS前后不一致，定性为语音NLU/泛化映射缺陷。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "我要走高架路线",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR当前下发meta_id 1023，route_preference literal=走高架、canonical=expressway_first",
+    "meta_id": "1023",
+    "standard_function": {"status": "verified", "name": "标准功能1450 设置地图偏好项", "assessment": "MetaId 1023，功能分类语音功能/地图/个人中心，已锁定。"},
+    "project_function": {"status": "verified", "name": "深蓝项目功能24569 设置地图偏好项", "assessment": "继承未修改标准功能1450，深蓝车型列表包含BIGSUR与C673。"}
+  },
+  "expected_behavior": {
+    "trigger": "用户说‘我要走高架路线’或‘切换到高架路线’",
+    "target_state": "不得切换为高速优先；按当前路线偏好边界提示不支持高架路线。",
+    "intent_function_signal": "不应把高架归一为expressway_first；如仍进入meta_id 1023，应走不支持兜底而非执行高速优先。",
+    "ui_tts_vehicle_behavior": "不改变地图路线偏好设置，并一致回复路线偏好不支持高架路线。",
+    "boundary": "只处理高架/走高架与expressway_first的错误泛化，不新增高架路线偏好，也不修改现有高速优先能力。",
+    "source_ids": ["ue_nav"]
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "语音NLU/泛化配置负责人",
+    "implementation_source_ids": ["alchemy_actual", "vos_actual"],
+    "text": "结论：定义为语音NLU映射缺陷；‘高架路线’不属于C385/C673路线偏好，不能映射为‘高速优先’。\n依据：C385&673导航UE V0.6‘地图设置→01 设置→路线设置’仅列躲避拥堵、避免收费、不走高速、高速优先；Alchemy标准功能1450/深蓝项目功能24569为meta_id 1023设置地图偏好项且项目继承未修改；Alchemy在线对话BIGSUR对‘我要走高架路线’却下发expressway_first，VOS日志56995在18:02:36-18:02:55先播‘已切换高速优先’，后对‘切换到高架路线’回复不支持。\n处理：语音NLU/泛化配置负责人删除‘高架/走高架’到expressway_first的错误映射，使‘我要走高架路线’‘切换到高架路线’均按不支持路线偏好处理；不改地图路线偏好定义。"
+  }
+}

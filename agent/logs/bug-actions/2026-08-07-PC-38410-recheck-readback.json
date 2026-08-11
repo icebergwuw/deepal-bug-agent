@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "PC-38410",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 173,
+  "range": "A173:J173",
+  "values": {
+    "A": "2026-07-30",
+    "B": "PC-38410｜[User][0130]10：14 query有流感吗，触发了大模型，期望默认查询当前定位地点当天的感冒指数",
+    "C": "现象：BIGSUR现测“有流感吗”已命中meta_id=1251 weather:query:suggestion，较历史进入大模型已有变化。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：当前路由已到天气建议，但未找到“流感”应查询感冒指数还是进入健康问答的正式产品目标。",
+    "D": "结论：当前已路由天气建议功能，但缺“流感”对应的正式指数与目标回复，不能据当前命中直接关闭。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点。\n处理：补齐流感/感冒指数意图归属和目标回复后做目标版本回归；深蓝语音产品负责人处理。",
+    "E": "FALSE",
+    "F": "",
+    "G": "待复核",
+    "H": "",
+    "I": "当前路由已变化；缺正式意图归属、指数及目标回复",
+    "J": "Jira原票·描述/完整评论\nAlchemy当前结果/标准及项目功能点"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-38410\",\"PC-38410｜[User][0130]10：14 query\"\"有流感吗\"\"，触发了大模型，期望默认查询当前定位地点当天的感冒指数\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38410"
+      },
+      {
+        "label": "Alchemy当前结果/标准及项目功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38410"
+      },
+      {
+        "label": "Alchemy当前结果/标准及项目功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38410"
+      },
+      {
+        "label": "Alchemy当前结果/标准及项目功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "PC-38410｜[User][0130]10：14 query有流感吗，触发了大模型，期望默认查询当前定位地点当天的感冒指数",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82824",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 220,
+  "range": "A220:J220",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82824｜C385/LCDAText__35文言与当前清单/车机显示不一致",
+    "C": "现象：C385/LCDAText__35文言与当前清单/车机显示不一致。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "D": "结论：C385/LCDAText__35当前存在测试分支、Key行和相同中文source译文冲突，不能按‘文言表为空’直接判定车机显示错误。\n依据：Jira描述/评论记录当前显示，Drive中B0609/B0904 V0.5.8正式翻译清单的Key覆盖与本票QML source未形成唯一对应。\n处理：统一HUR-82824对应的生效分支、QML source及目标语种值后再判定是否修复；J90A多语言配置负责人处理。",
+    "E": false,
+    "F": null,
+    "G": "待会诊",
+    "H": null,
+    "I": "下一步：统一HUR-82824对应的生效分支、QML source及目标语种值后再判定是否修复",
+    "J": "J90A文言V0.5.8·对应Key"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82824\",\"HUR-82824｜C385/LCDAText__35文言与当前清单/车机显示不一致\")",
+    "C": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82824\",\"现象：C385/LCDAText__35文言与当前清单/车机显示不一致。Jira字段、描述、附件、关联票和完整评论已读。\"&CHAR(10)&\"证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。\")",
+    "D": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1dJeptWHkUXdFaOCH1m6D2ZSsNp1Xj2Dj/edit?gid=86683056#gid=86683056\",\"结论：C385/LCDAText__35当前存在测试分支、Key行和相同中文source译文冲突，不能按‘文言表为空’直接判定车机显示错误。\"&CHAR(10)&\"依据：Jira描述/评论记录当前显示，Drive中B0609/B0904 V0.5.8正式翻译清单的Key覆盖与本票QML source未形成唯一对应。\"&CHAR(10)&\"处理：统一HUR-82824对应的生效分支、QML source及目标语种值后再判定是否修复；J90A多语言配置负责人处理。\")",
+    "J": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1dJeptWHkUXdFaOCH1m6D2ZSsNp1Xj2Dj/edit?gid=86683056#gid=86683056\",\"J90A文言V0.5.8·对应Key\")"
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "style_id": 58,
+    "source_style_matches_E215": true
+  },
+  "styles": {
+    "style_ids": [
+      17,
+      11,
+      46,
+      46,
+      58,
+      35,
+      14,
+      35,
+      35,
+      47
+    ],
+    "visual_style_matches_standard_row_215": false,
+    "row_height": "automatic",
+    "conditional_formatting": "none"
+  },
+  "filter": "$A$1:$J$283",
+  "protected_columns": {
+    "F": null,
+    "H": null
+  },
+  "manifest_validated": true,
+  "log_validated": true,
+  "jira_external_actions": []
+}

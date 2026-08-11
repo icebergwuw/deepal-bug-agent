@@ -1,0 +1,89 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "HUR-82949｜【J90A】【0526】【仪表】英语，仪表驾驶模式字体太小",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82949\",\"HUR-82949｜【J90A】【0526】【仪表】英语，仪表驾驶模式字体太小\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：J90A 0526分支切换英语后，仪表“Hybrid/Personalized”驾驶模式文字被报告字号过小，附件可证明当前显示效果。[Jira原票·描述/附件]\n证据：已检索J90A仪表、驾驶模式、英语及LanguageList资料，但LanguageList只能证明文案，未找到规定该仪表区域字号、字重或自适应规则的同版本UE。",
+      "links": [
+        {
+          "label": "Jira原票·描述/附件",
+          "url": "http://jira.i-tetris.com/browse/HUR-82949"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待复核。现有证据只能证明当前视觉效果，无法证明违反哪一条生效字号/布局规范。\n依据：Jira描述与附件；Drive中J90A海外LanguageList不定义仪表字号，未检索到同版本仪表UE对应节点。\n处理：补充J90A仪表驾驶模式英语态UE节点或字号/自适应规范后，再判定研发是否修复；J90A仪表产品/UE负责人处理。",
+      "links": [
+        {
+          "label": "J90A海外LanguageList",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "测试用例已含分支、语言、入口、预期、实际、复现率和图片，无需补测试用例；需补同版本仪表UE证据。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/附件",
+          "url": "http://jira.i-tetris.com/browse/HUR-82949"
+        },
+        {
+          "label": "现状图片",
+          "url": "http://jira.i-tetris.com/secure/attachment/4229552/99fc9aa4-b1e4-4a35-9efc-831a35d7476f.jpg"
+        },
+        {
+          "label": "J90A海外LanguageList",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit"
+        }
+      ]
+    }
+  }
+}

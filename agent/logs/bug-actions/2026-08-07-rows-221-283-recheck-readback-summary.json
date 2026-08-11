@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-07",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "range": "A221:J283",
+  "bug_count": 63,
+  "mode": "recheck",
+  "submitted_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "validation": {
+    "target_value_mismatches": 0,
+    "protected_value_mismatches": 0,
+    "jira_formula_count": 63,
+    "jira_formula_mismatches": 0,
+    "rich_link_cell_count": 252,
+    "expected_rich_link_targets": 466,
+    "actual_rich_link_targets": 466,
+    "rich_link_target_mismatches": 0,
+    "checkbox_values": "63 BOOLEAN false values",
+    "checkbox_validation_present": true,
+    "final_selection": "A221"
+  },
+  "corrected_source_links": [
+    {
+      "jira_key": "HUR-82678",
+      "row": 262,
+      "source": "LanguageList / 19_Toast / row 341",
+      "gid": "1775341327"
+    },
+    {
+      "jira_key": "HUR-80864",
+      "row": 263,
+      "source": "LanguageList / 03_Vehicle Settings / row 522",
+      "gid": "657987591"
+    }
+  ],
+  "artifacts": {
+    "per_bug_sets": 63,
+    "files_per_bug": 6,
+    "total_files": 378,
+    "manifest_gate_failures": 0,
+    "decision_log_gate_failures": 0,
+    "index_status_mismatches": 0
+  },
+  "jira_external_actions": []
+}

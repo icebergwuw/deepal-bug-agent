@@ -1,0 +1,259 @@
+{
+  "schema_version": 2,
+  "jira_key": "BGS-83505",
+  "comment_causality": "已完整读取当前Jira字段、描述、三项附件及全部评论。客户材料已包含VIN、版本、步骤、预期、实际和可复现视频；研发评论称没有上下文打开能力，但8155正式交互第6页已明确电子手册入口支持‘第X个/打开第X个’，因此研发评论只证明实现缺口，不能覆盖正式目标。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260804184403278",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira标题含VIN LS6A2E166SA568905；描述含C385ICA E.0.4.99、项目、步骤、预期、实际、发生日期和附件，video(35)/video(36)可复现。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "BGS-83505 Jira原票",
+      "source_type": "jira",
+      "source_location": "标题、描述、附件区及活动日志；评论8160064",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C385ICA2 / 8155 / C385ICA E.0.4.99",
+      "trigger": "Deepal AI返回电子手册入口后说‘打开第一个’",
+      "target_behavior": "证明客户用例完整、当前未打开及研发所述实现缺口；不单独定义产品目标。",
+      "reason": "Jira当前字段、附件和评论直接记录本车问题及实现现状。"
+    },
+    {
+      "source_id": "jira_video",
+      "source": "Jira附件 video(36).mp4",
+      "source_type": "jira_attachment",
+      "source_location": "video(36).mp4 00:00-00:32；15:39-15:40车端复现",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C385ICA2 / 8155实车",
+      "trigger": "电子手册入口已显示后说‘打开第一个’",
+      "target_behavior": "大模型弹窗仍停留，未打开返回的电子手册页面。",
+      "reason": "整段视频覆盖入口展示、二次语音和未跳转结果。"
+    },
+    {
+      "source_id": "prd_general",
+      "source": "长安深蓝_8155平台_大模型产品需求文档_Deepal AI&深蓝管家_V0.1",
+      "source_type": "prd",
+      "source_location": "第5页，二、GUI交互框架和通用策略 / 2.通用策略第4条",
+      "role": "context_only",
+      "match": "partial",
+      "project_model": "长安深蓝8155平台",
+      "trigger": "大模型返回普通网页链接",
+      "target_behavior": "普通网页链接通过预置prompt整体过滤，不直接展示。",
+      "reason": "该通用条款用于区分普通网页链接与UE另行定义的电子手册专用入口。"
+    },
+    {
+      "source_id": "ue_e_manual",
+      "source": "长安深蓝_8155平台_交互设计文档_语音大模型_V0.1",
+      "source_type": "ue",
+      "source_location": "第6页，深蓝管家 / 4.电子手册入口",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "长安深蓝8155平台 / 深蓝管家",
+      "trigger": "正文生成完成并返回一个或多个电子手册URL后，说‘第X个/打开第X个’",
+      "target_behavior": "关闭大模型弹窗，并按返回URL打开电子手册中对应板块页面；无URL不显示入口。",
+      "reason": "同平台、同功能、同交互阶段的正式专项定义直接覆盖本票场景。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy在线对话当前结果",
+      "source_type": "alchemy_current",
+      "source_location": "BIGSUR在线对话；原话=打开第一个；classification=task；meta_id=1455；type=common:selection；list_offset=1",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "深蓝BIGSUR当前环境",
+      "trigger": "打开第一个",
+      "target_behavior": "当前NLU已正确产出第一个的通用选择信号，未证明车端完成电子手册页面打开。",
+      "reason": "2026-08-07实时复测证明语音识别和参数现状。"
+    },
+    {
+      "source_id": "alchemy_standard",
+      "source": "Alchemy标准功能",
+      "source_type": "alchemy_standard",
+      "source_location": "MetaId=1455；标准功能ID=1425；选择-第N个/带选择条件",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Alchemy标准功能",
+      "trigger": "第N个/带选择条件",
+      "target_behavior": "生成common:selection及list_offset序号信号。",
+      "reason": "核验当前meta_id对应的标准语义。"
+    },
+    {
+      "source_id": "alchemy_project",
+      "source": "Alchemy深蓝项目功能",
+      "source_type": "alchemy_project",
+      "source_location": "深蓝项目ID=11；MetaId=1455；项目功能ID=24544；继承未修改(1425)",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目，含BIGSUR/C385等车型",
+      "trigger": "第N个/带选择条件",
+      "target_behavior": "深蓝项目已继承标准选择功能，当前不是项目功能点缺失。",
+      "reason": "核验标准选择功能已进入深蓝项目。"
+    },
+    {
+      "source_id": "deepal_selection_config",
+      "source": "Alchemy深蓝项目生效功能配置",
+      "source_type": "formal_config",
+      "source_location": "深蓝项目ID=11；项目功能ID=24544；MetaId=1455；继承未修改(1425)",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "深蓝BIGSUR/C385当前项目配置",
+      "trigger": "打开第一个",
+      "target_behavior": "项目应输出选择-第N个/带选择条件的common:selection信号。",
+      "reason": "生效项目配置与实时复测一致，证明语音选择功能已配置。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票同时命中语音和可见交互专项画像，通用正式定义检查已由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "问题涉及‘打开第一个’的NLU、meta_id、项目功能点和上下文执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图搜索、POI、路线或导航状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题涉及大模型弹窗中的电子手册入口及页面跳转。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive共享盘：大模型目录及搜索结果",
+      "queries": [
+        "Deepal AI 电子手册",
+        "长安深蓝 8155平台 交互设计文档 大模型",
+        "电子手册入口",
+        "链接"
+      ],
+      "source_ids": [
+        "prd_general",
+        "ue_e_manual"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy在线对话 / BIGSUR",
+      "queries": [
+        "打开第一个"
+      ],
+      "source_ids": [
+        "alchemy_current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy标准功能列表",
+      "queries": [
+        "MetaId=1455"
+      ],
+      "source_ids": [
+        "alchemy_standard"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy项目功能 / 深蓝项目ID=11",
+      "queries": [
+        "MetaId=1455",
+        "选择-第N个/带选择条件"
+      ],
+      "source_ids": [
+        "alchemy_project"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy项目功能 / 深蓝项目ID=11",
+      "queries": [
+        "MetaId=1455",
+        "项目功能ID=24544"
+      ],
+      "source_ids": [
+        "deepal_selection_config"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive共享盘 / 大模型 / 8155交互PDF",
+      "queries": [
+        "长安深蓝_8155平台_交互设计文档_语音大模型_V0.1",
+        "电子手册入口"
+      ],
+      "source_ids": [
+        "ue_e_manual"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "PRD第5页过滤的是普通网页链接；UE第6页对电子手册专用入口另作了同场景明确规定，属于更具体条款，优先采用UE。研发评论‘没有此功能’与UE冲突，只作为实现缺口；当前Alchemy已正确识别且深蓝项目已继承选择功能，因此问题收敛为Deepal AI上下文选择到电子手册页面打开的执行链缺陷。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "打开第一个",
+    "alchemy_result": "BIGSUR：classification=task；meta_id=1455；type=common:selection；list_offset=1",
+    "meta_id": "1455",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准功能ID=1425：选择-第N个/带选择条件",
+      "assessment": "与common:selection和list_offset=1一致。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能ID=24544：选择-第N个/带选择条件",
+      "assessment": "深蓝项目标记继承未修改(1425)，当前功能点已配置。"
+    }
+  },
+  "expected_behavior": {
+    "trigger": "Deepal AI正文生成完成并返回一个或多个电子手册入口后，用户说‘第X个/打开第X个’。",
+    "target_state": "关闭大模型弹窗，并按第X条返回URL打开电子手册中对应板块页面。",
+    "intent_function_signal": "common:selection，meta_id=1455，list_offset=X；深蓝项目功能ID=24544继承标准ID=1425。",
+    "ui_tts_vehicle_behavior": "有URL时正文完成后显示电子手册入口，多入口横排并换行；无URL不显示；入口固定弹窗底部；命中序号后关闭弹窗并打开对应页面。",
+    "boundary": "只在当前有效回复上下文且X位于返回入口范围内执行；无URL、越界或上下文失效不应误开其他功能。",
+    "source_ids": [
+      "ue_e_manual",
+      "deepal_selection_config"
+    ]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Deepal AI研发",
+    "implementation_source_ids": [
+      "jira_video",
+      "alchemy_current"
+    ],
+    "text": "结论：Deepal AI返回电子手册入口时，‘第X个/打开第X个’应按当前回复的第X条URL打开对应电子手册页面；现车端未执行该已定义动作，属于研发缺陷。\n依据：8155大模型交互V0.1·第6页电子手册入口、Jira视频·video(36).mp4 00:00-00:32、Alchemy当前结果·BIGSUR/meta_id=1455。\n处理：按UE补齐Deepal AI电子手册入口的上下文序号选择到页面打开执行链并回归；Deepal AI研发处理。"
+  }
+}

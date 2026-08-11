@@ -1,0 +1,82 @@
+{
+  "jira_key": "PC-38199",
+  "row": 176,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：暂停态页面已生成navigation_nav_pause可见节点，subjects含“暂停模拟导航”；第二次原话却走meta_id=1017停止导航并退出。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：主清单第130行仅证明支持模拟导航，MasterGo未检索到暂停态重复指令状态机/目标TTS。[C673功能清单·16_地图第130行][C673地图UE V0.6·850页面/检索图层]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38199"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第130行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：可见节点与语义停止导航发生冲突，但缺暂停态重复指令的正式状态机和目标TTS，当前不能直接定唯一修改方案。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点、C673功能清单·16_地图第130行。\n处理：补齐暂停态的可见优先级、重复指令动作和TTS后再转语音；地图VUI产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38199"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第130行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "缺暂停态重复指令状态机、可见优先级和目标TTS",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38199"
+        },
+        {
+          "label": "Alchemy当前结果/标准及项目功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "C673功能清单·16_地图第130行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": "现象：暂停态页面已生成navigation_nav_pause可见节点，subjects含“暂停模拟导航”；第二次原话却走meta_id=1017停止导航并退出。[Jira原票·描述/完整评论][Alchemy当前结果/标准及项目功能点]\n证据：主清单第130行仅证明支持模拟导航，MasterGo未检索到暂停态重复指令状态机/目标TTS。[C673功能清单·16_地图第130行][C673地图UE V0.6·850页面/检索图层]",
+    "D": "结论：可见节点与语义停止导航发生冲突，但缺暂停态重复指令的正式状态机和目标TTS，当前不能直接定唯一修改方案。\n依据：Jira原票·描述/完整评论、Alchemy当前结果/标准及项目功能点、C673功能清单·16_地图第130行。\n处理：补齐暂停态的可见优先级、重复指令动作和TTS后再转语音；地图VUI产品负责人处理。",
+    "G": "待复核",
+    "I": "缺暂停态重复指令状态机、可见优先级和目标TTS",
+    "J": "Jira原票·描述/完整评论\nAlchemy当前结果/标准及项目功能点\nC673功能清单·16_地图第130行\nC673地图UE V0.6·850页面/检索图层"
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

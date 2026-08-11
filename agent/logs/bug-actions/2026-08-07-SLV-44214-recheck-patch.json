@@ -1,0 +1,75 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44214",
+  "sheet": "吴优工作说明 / bug",
+  "row": 161,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：充电站快捷开关存在品牌图标缺失、卡片堆叠和视野跳转三项问题。[Jira最新评论·0729客户会结论]\n证据：0729客户会只先确认修复UI图已有品牌图标缺失；MasterGo含充电站气泡/深度信息，未形成其余两项最终规则。[C673地图UE V0.6·850页面/检索图层]",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44214"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：本票先按客户会明确范围修复充电品牌图标缺失；卡片堆叠和当前视野搜索不并入本次实现。\n依据：Jira最新评论·0729客户会结论、C673地图UE V0.6·850页面。\n处理：补齐品牌图标并回归；其余两项拆票补目标后处理；C673地图UI研发负责人处理。",
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44214"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "本票实现范围仅品牌图标；堆叠和视野策略需拆票",
+    "J": {
+      "links": [
+        {
+          "label": "Jira最新评论·0729客户会结论",
+          "url": "http://jira.i-tetris.com/browse/SLV-44214"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        }
+      ]
+    }
+  },
+  "validated": true,
+  "submitted_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ]
+}

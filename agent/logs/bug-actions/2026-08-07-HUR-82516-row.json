@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-08-07",
+    "key": "HUR-82516",
+    "summary": "BCall闭锁后播报错误并自动挂断",
+    "info": "现象：BCall闭锁后播报错误并自动挂断。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "judgment": "结论：BCall闭锁后播报错误并自动挂断的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为非用户NLU原话，Alchemy在线对话不适用；Jira记录错误TTS和自动挂断；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。",
+    "status": "待复核",
+    "note": "下一步：补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任",
+    "links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82516"
+      },
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82516"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  }
+]

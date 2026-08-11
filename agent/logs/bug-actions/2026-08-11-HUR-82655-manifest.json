@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82655",
+  "comment_causality": "已完整读取Jira字段、描述、附件、关联问题和全部评论；测试预期、研发意见、当前实现与正式定义分别记录。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "BG20260803001140",
+    "test_case": {
+      "checked": true,
+      "status": "incomplete",
+      "source": "Jira客户描述与视频；缺完整软件版本/分支和UE定位"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82655 Jira描述、附件、关联问题与完整评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题及活动日志（按时间升序）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本与模块",
+      "trigger": "现象：客户编号BG20260803001140，J90A-EL拨打蓝牙电话时用方控调节音量，音量值被电话窗口遮挡。",
+      "target_behavior": "证明当前实现、测试主张与评论因果；不单独定义产品目标。",
+      "reason": "当前Jira页面可直接证明本票实现事实。"
+    }
+  ],
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体画像，不重复选择。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及可见页面、文字、浮层或控件状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-11",
+      "search_location": "Google Drive项目配置",
+      "queries": [
+        "HUR-82655",
+        "BG20260803001140 【WT】【J90A-EL】【车辆设置】【实车】"
+      ],
+      "source_ids": [],
+      "reason": "未找到同项目、同版本且能直接定义目标状态的生效资料。",
+      "material": true,
+      "next_action": "补充同版本正式配置或UE节点后重新判断。"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-11",
+      "search_location": "Google Drive交互文档/UE",
+      "queries": [
+        "HUR-82655",
+        "BG20260803001140 【WT】【J90A-EL】【车辆设置】【实车】"
+      ],
+      "source_ids": [],
+      "reason": "未找到同项目、同版本且能直接定义目标状态的生效资料。",
+      "material": true,
+      "next_action": "补充同版本正式配置或UE节点后重新判断。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期和研发评论只作为主张/实现事实；只有同项目、同触发条件的生效正式定义可作为确定性目标，关键缺口存在时降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优",
+    "text": "结论：定义为待确认。当前客户材料能复现遮挡现象，但缺完整版本信息和同版本图层优先级定义，不能仅凭“电话窗口层级高”决定改哪一层。\n依据：Jira客户描述、视频及研发评论；Drive检索未命中J90A-EL对应UE节点。\n处理：向客户收集完整客户测试用例（完整软件版本/分支、发生时间、原始视频），并补充蓝牙通话与音量浮层层级UE；吴优处理。"
+  }
+}

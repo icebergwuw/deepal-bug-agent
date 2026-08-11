@@ -1,0 +1,230 @@
+{
+  "schema_version": 2,
+  "jira_key": "PC-38942",
+  "comment_causality": "已完整读取PC-38942当前字段、描述、附件、关联问题与评论时间线；当前现象为：收藏POI后选择第一个时列表偶发收起。Jira中的测试预期和研发/测试评论仅作为实现与调查事实，未替代生效正式定义。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "PC-38933",
+        "relationship": "Jira当前页面登记的直接关联/同场景参考票",
+        "outcome": "已完整读取；仅用于核对同功能或同文言冲突，不替代本票目标定义。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "PC-38942 Jira描述、附件与完整评论时间线",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题与活动日志（按时间升序完整读取）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和模块",
+      "trigger": "收藏POI后选择第一个时列表偶发收起",
+      "target_behavior": "证明本票当前现象、测试主张和评论诊断；不单独定义产品目标。",
+      "reason": "Jira当前页面直接证明实现事实和调查因果链。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy在线对话当前结果",
+      "source_type": "alchemy_current",
+      "source_location": "HUR/SLV/BIGSUR在线对话；原话=我要收藏西湖山水；第一个；结果=首轮meta_id=1021收藏POI；次轮meta_id=1455通用列表选择第一个",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Alchemy当前可选项目环境，按Jira项目选择HUR/SLV/BIGSUR",
+      "trigger": "我要收藏西湖山水；第一个",
+      "target_behavior": "首轮meta_id=1021收藏POI；次轮meta_id=1455通用列表选择第一个",
+      "reason": "实时平台结果证明当前分类、operations和meta_id状态。"
+    },
+    {
+      "source_id": "alchemy_standard",
+      "source": "Alchemy标准功能",
+      "source_type": "alchemy_standard",
+      "source_location": "标准功能按MetaId=1021/1455检索：收藏地址/POI；选择第N个",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Alchemy标准功能",
+      "trigger": "我要收藏西湖山水；第一个",
+      "target_behavior": "收藏地址/POI；选择第N个",
+      "reason": "用于核验当前meta_id对应的标准功能语义。"
+    },
+    {
+      "source_id": "alchemy_project",
+      "source": "Alchemy深蓝项目功能",
+      "source_type": "alchemy_project",
+      "source_location": "深蓝项目按MetaId=1021/1455检索：深蓝项目24551/24544，均继承未修改",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目，覆盖HUR/SLV/BIGSUR等车型",
+      "trigger": "我要收藏西湖山水；第一个",
+      "target_behavior": "深蓝项目24551/24544，均继承未修改",
+      "reason": "用于核验标准功能在深蓝项目的继承或缺失状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体的专项画像，不重复使用通用画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "问题涉及语音原话、NLU、VUI、TTS或语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "问题涉及地图搜索、POI、路线选择、导航或途经点状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题涉及页面、卡片、文本、弹窗或可见控件状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy在线对话测试（HUR/SLV/BIGSUR）",
+      "queries": [
+        "我要收藏西湖山水；第一个"
+      ],
+      "source_ids": [
+        "alchemy_current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy标准功能列表",
+      "queries": [
+        "meta_id=1021/1455",
+        "收藏地址/POI；选择第N个"
+      ],
+      "source_ids": [
+        "alchemy_standard"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "Alchemy深蓝项目功能列表",
+      "queries": [
+        "meta_id=1021/1455",
+        "深蓝"
+      ],
+      "source_ids": [
+        "alchemy_project"
+      ]
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：按Jira项目、原话、功能名检索主PRD/专项需求",
+      "queries": [
+        "我要收藏西湖山水；第一个",
+        "收藏POI后选择第一个时列表偶发收起",
+        "语音 功能定义"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发"
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：地图导航主PRD与J90A导航功能清单",
+      "queries": [
+        "我要收藏西湖山水；第一个",
+        "导航 路线选择 途经点 家 公司"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发"
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：地图专项定义/语音地图需求",
+      "queries": [
+        "我要收藏西湖山水；第一个",
+        "收藏POI后选择第一个时列表偶发收起"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发"
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：深蓝可见即可说配置、Deepal AI配置",
+      "queries": [
+        "我要收藏西湖山水；第一个",
+        "收藏POI后选择第一个时列表偶发收起",
+        "可见即可说"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive：对应页面交互或UE",
+      "queries": [
+        "收藏POI后选择第一个时列表偶发收起",
+        "UE",
+        "交互"
+      ],
+      "source_ids": [],
+      "reason": "已执行本票关键词检索，但未读到能直接定义同项目、同版本和同交互阶段目标行为的生效条款。",
+      "material": true,
+      "next_action": "补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、当前实现、Alchemy/配置结果与Drive正式资料分开记录；缺少同范围正式目标或存在分支/source冲突时不硬判，统一降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "我要收藏西湖山水；第一个",
+    "alchemy_result": "首轮meta_id=1021收藏POI；次轮meta_id=1455通用列表选择第一个",
+    "meta_id": "1021/1455",
+    "standard_function": {
+      "status": "verified",
+      "name": "收藏地址/POI；选择第N个",
+      "assessment": "与当前meta_id逐项核验。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24551/24544，均继承未修改",
+      "assessment": "已核验深蓝项目继承/来源状态。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "Android VUI负责人",
+    "text": "结论：收藏POI后选择第一个时列表偶发收起的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为首轮meta_id=1021收藏POI；次轮meta_id=1455通用列表选择第一个；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补充同一会话的VUI上下文日志和收藏列表UE，确认列表收起由会话状态还是页面状态触发；Android VUI负责人处理。"
+  }
+}

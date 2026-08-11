@@ -1,0 +1,127 @@
+{
+  "schema_version": 2,
+  "jira_key": "SLV-44256",
+  "comment_causality": "已完整读取Jira字段、描述、附件、关联问题和全部评论；测试预期、研发意见、当前实现与正式定义分别记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SLV-44256 Jira描述、附件、关联问题与完整评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件区、关联问题及活动日志（按时间升序）",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本与模块",
+      "trigger": "现象：用户在上一轮询问位置后说“目前的海拔高度”，rewrite_model把上一轮地址错误拼入本轮，随后触发天气和导航卡片刷新。",
+      "target_behavior": "证明当前实现、测试主张与评论因果；不单独定义产品目标。",
+      "reason": "当前Jira页面可直接证明本票实现事实。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已命中更具体画像，不重复选择。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、NLU、TTS或语音上下文。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不属于该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-11",
+      "search_location": "Google Drive正式需求/配置",
+      "queries": [
+        "SLV-44256",
+        "12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        "SLV-44256",
+        "12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        "SLV-44256",
+        "12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-08-11",
+      "search_location": "Alchemy项目功能点",
+      "queries": [
+        "SLV-44256",
+        "12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了"
+      ],
+      "source_ids": [],
+      "reason": "未取得能支撑本票确定性结论的同项目、同版本完整证据。",
+      "material": true,
+      "next_action": "补齐同范围正式定义及Alchemy当前/标准/项目证据后定责。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期和研发评论只作为主张/实现事实；只有同项目、同触发条件的生效正式定义可作为确定性目标，关键缺口存在时降级并指定补证责任方。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "unavailable",
+    "alchemy_tested": false,
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "未完成标准功能点核验"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "未完成项目功能点核验"
+    },
+    "unavailable_reason": "本批次未取得可支撑确定性定责的完整Alchemy在线证据链。",
+    "next_action": "补齐当前原话、meta_id、标准功能点和项目功能点。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C673语音云端对话管理负责人",
+    "text": "结论：定义为待复核。当前日志能定位到无关上一轮地址被继承，但缺同范围语音正式定义及完整Alchemy标准/项目功能点，不能仅凭研发诊断直接定责。\n依据：Jira描述/完整评论中的reqId与rewrite链；Drive正式定义检索未命中同车型、同问法条款。\n处理：补齐“海拔高度”能力边界和无关多轮上下文不得继承的生效语音定义，并完成Alchemy当前/标准/项目核验后定责；C673语音云端对话管理负责人处理。"
+  }
+}

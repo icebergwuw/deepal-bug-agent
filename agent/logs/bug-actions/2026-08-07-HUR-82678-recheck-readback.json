@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82678",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 262,
+  "range": "A262:J262",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82678｜AR-HUD恢复默认模式弹窗文言与当前清单/车机显示不一致",
+    "C": "现象：恢复HUD默认模式后显示“Default Settings Have Been Restored Successfully”，测试认为与文档不一致。[Jira原票·描述/评论]\n证据：正式LanguageList的settings_hud_reset_succeed目标英文与代码/实车显示一致。[LanguageList·19_Toast第341行]",
+    "D": "结论：定义为非问题。恢复HUD默认模式成功后应显示“Default Settings Have Been Restored Successfully”，当前代码与实车文言符合正式LanguageList。\n依据：Jira原票·描述/评论、LanguageList·19_Toast第341行。\n处理：按非问题关闭本Bug；吴优处理。",
+    "E": false,
+    "F": null,
+    "G": "可关闭",
+    "H": null,
+    "I": "代码实现不能替代需求；本次关闭依据是正式LanguageList与实车一致",
+    "J": "Jira原票·描述/评论\nLanguageList·19_Toast第341行"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82678\",\"HUR-82678｜AR-HUD恢复默认模式弹窗文言与当前清单/车机显示不一致\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82678"
+      },
+      {
+        "label": "LanguageList·19_Toast第341行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1775341327#gid=1775341327&range=A341:AQ341"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82678"
+      },
+      {
+        "label": "LanguageList·19_Toast第341行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1775341327#gid=1775341327&range=A341:AQ341"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82678"
+      },
+      {
+        "label": "LanguageList·19_Toast第341行",
+        "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1775341327#gid=1775341327&range=A341:AQ341"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-08-07",
+    "B": "HUR-82678｜AR-HUD恢复默认模式弹窗文言与当前清单/车机显示不一致",
+    "E": false,
+    "F": null,
+    "H": null
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

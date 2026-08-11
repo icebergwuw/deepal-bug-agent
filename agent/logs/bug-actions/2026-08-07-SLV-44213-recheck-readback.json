@@ -1,0 +1,76 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44213",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 162,
+  "range": "A162:J162",
+  "values": {
+    "A": "2026-07-30",
+    "B": "SLV-44213｜【客户UI问题】【地图】停车场搜索-算路页气泡入口-UI问题： 1.停车场深度信息标签颜色错误，不符合预期。包括列表和主图的停车场标签 2.",
+    "C": "现象：停车场标签颜色、尺寸、气泡点击热区及堆叠同时被提报。[Jira最新评论·0729客户会结论]\n证据：0729客户会确认UI问题要改；热区/堆叠受高德自定义图层限制，需客户与高德确认，不能混作同一研发结论。[C673地图UE V0.6·850页面/检索图层]",
+    "D": "结论：停车场标签颜色和尺寸按客户确认UI修复；热区与堆叠受高德自定义图层限制，拆分后由高德侧确认能力。\n依据：Jira最新评论·0729客户会结论、C673地图UE V0.6·850页面。\n处理：先修UI项并拆出高德能力项；C673地图UI研发负责人处理UI，高德接口负责人处理能力确认。",
+    "E": "FALSE",
+    "F": "",
+    "G": "可转研发",
+    "H": "",
+    "I": "只流转颜色/尺寸UI项；热区与堆叠不得混入研发验收",
+    "J": "Jira最新评论·0729客户会结论\nC673地图UE V0.6·850页面/检索图层\nC673功能清单·16_地图第45/85-93/298行"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44213\",\"SLV-44213｜【客户UI问题】【地图】停车场搜索-算路页气泡入口-UI问题： 1.停车场深度信息标签颜色错误，不符合预期。包括列表和主图的停车场标签 2.\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44213"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44213"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44213"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "SLV-44213｜【客户UI问题】【地图】停车场搜索-算路页气泡入口-UI问题： 1.停车场深度信息标签颜色错误，不符合预期。包括列表和主图的停车场标签 2.",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

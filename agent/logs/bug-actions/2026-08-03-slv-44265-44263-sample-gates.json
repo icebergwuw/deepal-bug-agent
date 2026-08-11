@@ -1,0 +1,219 @@
+{
+  "scope": "bug!156:158",
+  "generated_at": "2026-08-03",
+  "manifests": [
+    {
+      "jira_key": "SLV-44265",
+      "comment_causality": "Jira记录C673 BIGSUR原话“关闭自动进入巡航/关闭巡航自动”及车端实际；唯一评论称平台新增定义、要求产品确认。现查C673全功能清单和车辆设置PRD均没有“自动进入巡航”正式目标，Alchemy BIGSUR现测为：关闭自动进入巡航→meta1919不支持；关闭巡航自动→meta1003 cruise_auto_open。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "C673 BIGSUR，Jira所列版本",
+          "trigger": "关闭自动进入巡航/关闭巡航自动",
+          "target_behavior": "记录测试预期、车端实际和唯一评论",
+          "reason": "用于证明当前车端现象与评论事实"
+        },
+        {
+          "source_id": "alchemy_actual",
+          "source": "Alchemy BIGSUR在线对话现测",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "BIGSUR",
+          "trigger": "关闭自动进入巡航/关闭巡航自动",
+          "target_behavior": "关闭自动进入巡航→meta1919不支持；关闭巡航自动→meta1003 cruise_auto_open",
+          "reason": "用于证明当前项目在线路由结果"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "C673全功能清单与车辆设置PRD",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "C673 All / C673车辆设置",
+          "trigger": "关闭自动进入巡航/关闭巡航自动",
+          "target_behavior": "自动进入巡航的目标功能、同义边界、标准/项目功能点及目标TTS",
+          "reason": "正式资料仅有集成式自适应巡航，未定义自动进入巡航/巡航自动，不能支撑票面目标",
+          "next_action": "缺目标功能定义、同义边界及标准/项目功能点映射；C673语音产品需求负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "Jira测试预期和评论中的“平台新增定义”不能替代正式目标；集成式自适应巡航也不能在无同义/继承证明时替代自动进入巡航。保留现网路由事实并将状态降为待确认。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": true,
+        "original_utterance": "关闭自动进入巡航/关闭巡航自动",
+        "alchemy_result": "关闭自动进入巡航→meta1919不支持；关闭巡航自动→meta1003 cruise_auto_open",
+        "meta_id": "1919/1003",
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得对应标准功能点页面及正式功能名称"
+        },
+        "project_function": {
+          "status": "verified",
+          "name": "BIGSUR现测 1919/1003",
+          "assessment": "关闭自动进入巡航→meta1919不支持；关闭巡航自动→meta1003 cruise_auto_open"
+        },
+        "unavailable_reason": "标准功能点及正式目标/项目继承链未核验完整",
+        "next_action": "缺目标功能定义、同义边界及标准/项目功能点映射；C673语音产品需求负责人处理。"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "C673语音产品需求负责人",
+        "text": "结论：同一票的两种说法在BIGSUR被路由为不同结果，且正式资料未定义“自动进入巡航”与cruise_auto_open的同义关系，当前不能按现有功能缺陷定责。\n依据：Jira原票、C673全功能清单、车辆设置PRD、Alchemy BIGSUR现测。\n处理：补齐“自动进入巡航/巡航自动”的目标功能、同义边界及标准/项目功能点映射后重新判定；C673语音产品需求负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44264",
+      "comment_causality": "Jira记录C673 BIGSUR原话“打开巡航自动”及车端实际；唯一评论称平台新增定义、要求产品确认。现查C673全功能清单和车辆设置PRD均没有“自动进入巡航”正式目标，Alchemy BIGSUR现测为：meta1024 navi:map:journey:setting，target=cruise_auto_open。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "C673 BIGSUR，Jira所列版本",
+          "trigger": "打开巡航自动",
+          "target_behavior": "记录测试预期、车端实际和唯一评论",
+          "reason": "用于证明当前车端现象与评论事实"
+        },
+        {
+          "source_id": "alchemy_actual",
+          "source": "Alchemy BIGSUR在线对话现测",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "BIGSUR",
+          "trigger": "打开巡航自动",
+          "target_behavior": "meta1024 navi:map:journey:setting，target=cruise_auto_open",
+          "reason": "用于证明当前项目在线路由结果"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "C673全功能清单与车辆设置PRD",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "C673 All / C673车辆设置",
+          "trigger": "打开巡航自动",
+          "target_behavior": "自动进入巡航的目标功能、同义边界、标准/项目功能点及目标TTS",
+          "reason": "正式资料仅有集成式自适应巡航，未定义自动进入巡航/巡航自动，不能支撑票面目标",
+          "next_action": "缺cruise_auto_open标准定义、项目继承和目标TTS；C673语音产品需求负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "Jira测试预期和评论中的“平台新增定义”不能替代正式目标；集成式自适应巡航也不能在无同义/继承证明时替代自动进入巡航。保留现网路由事实并将状态降为待确认。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": true,
+        "original_utterance": "打开巡航自动",
+        "alchemy_result": "meta1024 navi:map:journey:setting，target=cruise_auto_open",
+        "meta_id": "1024",
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得对应标准功能点页面及正式功能名称"
+        },
+        "project_function": {
+          "status": "verified",
+          "name": "BIGSUR现测 1024",
+          "assessment": "meta1024 navi:map:journey:setting，target=cruise_auto_open"
+        },
+        "unavailable_reason": "标准功能点及正式目标/项目继承链未核验完整",
+        "next_action": "缺cruise_auto_open标准定义、项目继承和目标TTS；C673语音产品需求负责人处理。"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "C673语音产品需求负责人",
+        "text": "结论：BIGSUR已有“巡航自动”项目路由，但正式资料未证明其目标就是“自动进入巡航”，当前不能据车端TTS直接定为语音执行缺陷。\n依据：Jira原票、C673全功能清单、车辆设置PRD、Alchemy BIGSUR现测。\n处理：补齐cruise_auto_open的标准功能定义、C673项目继承及目标TTS后重新判定；C673语音产品需求负责人处理。"
+      }
+    },
+    {
+      "jira_key": "SLV-44263",
+      "comment_causality": "Jira记录C673 BIGSUR原话“打开自动进入巡航”及车端实际；唯一评论称平台新增定义、要求产品确认。现查C673全功能清单和车辆设置PRD均没有“自动进入巡航”正式目标，Alchemy BIGSUR现测为：meta1919 common:func:not:supported。",
+      "customer_issue": {
+        "identified": false
+      },
+      "related_issues": {
+        "checked": true,
+        "items": []
+      },
+      "scope_checks": [
+        {
+          "source_id": "jira_actual",
+          "source": "Jira原票及完整评论",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "C673 BIGSUR，Jira所列版本",
+          "trigger": "打开自动进入巡航",
+          "target_behavior": "记录测试预期、车端实际和唯一评论",
+          "reason": "用于证明当前车端现象与评论事实"
+        },
+        {
+          "source_id": "alchemy_actual",
+          "source": "Alchemy BIGSUR在线对话现测",
+          "role": "implementation_actual",
+          "match": "exact",
+          "project_model": "BIGSUR",
+          "trigger": "打开自动进入巡航",
+          "target_behavior": "meta1919 common:func:not:supported",
+          "reason": "用于证明当前项目在线路由结果"
+        },
+        {
+          "source_id": "formal_target_gap",
+          "source": "C673全功能清单与车辆设置PRD",
+          "role": "context_only",
+          "match": "gap",
+          "material": true,
+          "project_model": "C673 All / C673车辆设置",
+          "trigger": "打开自动进入巡航",
+          "target_behavior": "自动进入巡航的目标功能、同义边界、标准/项目功能点及目标TTS",
+          "reason": "正式资料仅有集成式自适应巡航，未定义自动进入巡航/巡航自动，不能支撑票面目标",
+          "next_action": "缺功能定义、配置词及标准/项目功能点；C673语音产品需求负责人处理。"
+        }
+      ],
+      "inheritance_chains": [],
+      "conflict_resolution": "Jira测试预期和评论中的“平台新增定义”不能替代正式目标；集成式自适应巡航也不能在无同义/继承证明时替代自动进入巡航。保留现网路由事实并将状态降为待确认。",
+      "voice_evidence": {
+        "applicable": true,
+        "availability": "partial",
+        "alchemy_tested": true,
+        "original_utterance": "打开自动进入巡航",
+        "alchemy_result": "meta1919 common:func:not:supported",
+        "meta_id": "1919",
+        "standard_function": {
+          "status": "unavailable",
+          "reason": "未取得对应标准功能点页面及正式功能名称"
+        },
+        "project_function": {
+          "status": "verified",
+          "name": "BIGSUR现测 1919",
+          "assessment": "meta1919 common:func:not:supported"
+        },
+        "unavailable_reason": "标准功能点及正式目标/项目继承链未核验完整",
+        "next_action": "缺功能定义、配置词及标准/项目功能点；C673语音产品需求负责人处理。"
+      },
+      "decision": {
+        "status": "待确认",
+        "owner": "C673语音产品需求负责人",
+        "text": "结论：正式资料与BIGSUR项目均未建立“自动进入巡航”的可验证目标，当前不能将“不支持”直接定义为现有功能缺陷。\n依据：Jira原票、C673全功能清单、车辆设置PRD、Alchemy BIGSUR现测。\n处理：补齐“自动进入巡航”的功能定义、配置词及标准/项目功能点后重新判定；C673语音产品需求负责人处理。"
+      }
+    }
+  ]
+}

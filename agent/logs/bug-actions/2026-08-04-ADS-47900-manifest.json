@@ -1,0 +1,80 @@
+{
+  "jira_key": "ADS-47900",
+  "comment_causality": "Jira首条评论指出meta_id=1188不是蓝牙电话功能点；第二条评论进一步要求确认话术是否支持、若支持应调节哪个音源通道，并明确现有通道枚举中没有蓝牙电话。结合截图可见，系统把‘蓝牙电话静音’路由到vehicle:audio:volume:mute，但channel只有literal=蓝牙电话、canonical为空。正式C673蓝牙电话定义中的静音是通话界面的麦克风静音开关；AIS语音蓝牙电话PRD只定义打开/关闭电话、拨号、来电接听/挂断等语音能力，没有定义通话中麦克风静音。因此不能把评论中的‘没有蓝牙电话通道’解释成应补一个音源通道，也不能直接把现状判为已有支持功能。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "c673_bt_prd_v0_8",
+      "source": "C673_功能定义_蓝牙电话功能定义V0.8",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C673蓝牙电话正式功能定义",
+      "trigger": "蓝牙电话呼出、呼入及通话中界面操作",
+      "target_behavior": "呼出、呼入和通话中界面均提供麦克风静音开关；音频输出仅定义车机端与手机端切换，没有名为蓝牙电话的音源通道。",
+      "reason": "同车型正式功能定义可确定‘静音’对象是通话麦克风，而不是通用音量体系中的蓝牙电话音源。"
+    },
+    {
+      "source_id": "ais_voice_bt_prd_v2_7",
+      "source": "AIS_语音蓝牙电话产品需求文档_v2.7",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "AIS共通语音蓝牙电话能力",
+      "trigger": "打开/关闭电话、拨号、来电接听/挂断及电话设置相关语音",
+      "target_behavior": "现行语音范围定义拨号、来电接听/挂断等能力；未定义‘蓝牙电话静音’或通话中麦克风静音语音控制。",
+      "reason": "该正式语音PRD是判断本话术是否属于现有语音需求的直接来源。"
+    },
+    {
+      "source_id": "jira_actual",
+      "source": "ADS-47900原票、全部两条评论及Alchemy截图附件",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira车型字段All，组件AI Cockpit - Voice/General",
+      "trigger": "用户原话‘蓝牙电话静音’",
+      "target_behavior": "截图显示classification=task，meta_id=1188，type=vehicle:audio:volume:mute，op=open；channel literal=蓝牙电话但canonical为空。",
+      "reason": "原票评论和附件完整呈现当前语义路由结果及通道缺口。"
+    },
+    {
+      "source_id": "alchemy_current_gap",
+      "source": "VOS标记链接及Alchemy在线会话、标准/项目功能点",
+      "role": "context_only",
+      "match": "gap",
+      "material": true,
+      "project_model": "当前深蓝语音平台",
+      "trigger": "复测‘蓝牙电话静音’并打开meta_id=1188标准功能和深蓝项目继承功能",
+      "target_behavior": "应核验当前在线结果、1188正式功能标题/参数范围，以及深蓝项目是否继承或修改；当前SSO登录态失效，页面不可读。",
+      "reason": "缺少当前Alchemy标准/项目功能点，无法确定1188的合法channel范围和最终语音责任边界。",
+      "next_action": "语音产品/Alchemy配置负责人恢复平台访问后，复测原话并回读1188标准功能、深蓝项目功能及继承状态。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "以AIS语音蓝牙电话PRD确定现行语音支持范围，以C673蓝牙电话功能定义确定静音对象；Jira截图只证明当前错误路由，不作为需求定义。评论中的‘没有蓝牙电话通道’与正式蓝牙电话定义一致，但不能替代1188标准/项目功能点核验。由于Alchemy当前不可访问，结论降级为待复核，不将该说法直接判为已有功能Bug、非Bug或转需求。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "蓝牙电话静音",
+    "alchemy_tested": false,
+    "alchemy_result": "Jira截图记录meta_id=1188、vehicle:audio:volume:mute，channel literal=蓝牙电话且canonical为空；本次未能完成当前在线复测。",
+    "meta_id": "1188",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "Alchemy跳转SSO登录页，未能读取meta_id=1188标准功能详情。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "Alchemy跳转SSO登录页，未能定位并读取深蓝项目功能及继承状态。"
+    },
+    "unavailable_reason": "VOS标记链接和Alchemy均跳转SSO登录页；未输入、索取或记录任何凭据。",
+    "next_action": "恢复Alchemy登录后，以原话独立复测，并核对1188标准功能标题、参数枚举、深蓝项目功能和继承链。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品/Alchemy配置负责人",
+    "text": "结论：待复核；现行语音蓝牙电话PRD未定义‘蓝牙电话静音’，C673蓝牙电话定义中的静音仅指通话界面的麦克风静音，不是音源通道；当前下发meta_id=1188且channel规范值为空，不能按‘蓝牙电话音源静音’交付。\n依据：Jira原票、全部两条评论及Alchemy截图，AIS语音蓝牙电话PRD v2.7、C673蓝牙电话功能定义V0.8；当前Alchemy登录失效，1188标准/深蓝项目功能点未完成核验。\n处理：语音产品/Alchemy配置负责人恢复平台后核验1188继承链，并先将该话术从通用音量通道匹配中隔离；如要支持，另立需求定义仅通话中映射麦克风静音/取消静音的独立功能点、状态、TTS与异常兜底。"
+  }
+}

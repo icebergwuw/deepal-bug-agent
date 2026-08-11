@@ -1,0 +1,112 @@
+{
+  "jira_key": "ADS-48057",
+  "comment_causality": "测试在未同意情景模式隐私政策时说“打开露营模式”，系统回复“好的，正在为你打开”。研发评论说明没有该场景专用TTS，只能执行打开并要求产品确认。附件视频显示实际只拉起情景模式隐私协议页、没有激活露营模式；V4.9支持语音打开露营/小憩，同时明确删除无系统需求输入的语音反馈内容，因此通用打开确认语可接受。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "scenario_v49",
+      "source": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C385/C673情景模式，V4.9",
+      "trigger": "语音打开露营模式或小憩模式",
+      "target_behavior": "支持语音打开/关闭露营和小憩；满足前置条件并成功开启后才进入模式激活流程；修订记录删除无系统需求输入的语音反馈内容",
+      "reason": "当前V4.9正式定义直接覆盖车型、模式触发、激活边界和语音反馈需求边界。"
+    },
+    {
+      "source_id": "jira_actual",
+      "source": "ADS-48057原票、描述、字段和完整评论",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673-7，HU V1.1.12.4",
+      "trigger": "未同意情景模式隐私政策时说打开露营/小憩模式",
+      "target_behavior": "系统回复“好的，正在为你打开”；研发说明没有专用TTS并请产品确认",
+      "reason": "证明问题场景、当前TTS和评论因果链。"
+    },
+    {
+      "source_id": "attachment_video",
+      "source": "ADS-48057附件video_1785390015.mp4",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673-7实车",
+      "trigger": "打开露营模式",
+      "target_behavior": "拉起情景模式隐私协议页并显示同意/暂不同意，未直接激活露营模式",
+      "reason": "视频直接证明当前UI和模式状态。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy BIGSUR在线对话当前结果",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "深蓝BIGSUR",
+      "trigger": "打开露营模式",
+      "target_behavior": "当前在线结果命中1919 common:func:not:supported",
+      "reason": "记录当前在线语义结果；与实车已执行打开不一致，但不改变本票对隐私门禁和TTS的产品判断。"
+    },
+    {
+      "source_id": "standard_1919",
+      "source": "Alchemy标准MetaId 1919，功能ID 1442",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "标准功能",
+      "trigger": "车型未配置当前功能",
+      "target_behavior": "车型无此功能兜底",
+      "reason": "说明当前在线测试命中的功能标题与语义。"
+    },
+    {
+      "source_id": "project_1919",
+      "source": "Alchemy深蓝项目MetaId 1919，项目功能ID 24561",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目，含C673_7",
+      "trigger": "车型未配置当前功能",
+      "target_behavior": "继承标准功能1442且未修改，状态已下发",
+      "reason": "证明深蓝项目中的1919标题和继承状态已核验。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "V4.9定义语音可打开露营/小憩且只有成功开启后才进入模式激活流程，并明确没有系统输入的专用语音反馈需求；附件视频显示未同意隐私时只打开协议页、未激活模式。Alchemy在线返回1919与实车行为不一致，但本票争议是隐私门禁下通用TTS是否符合产品预期，不是识别或落域失败，因此以实车视频说明实际，以V4.9定义目标。",
+  "expected_behavior": {
+    "trigger": "未同意情景模式隐私政策时，用户说“打开露营模式”或“打开小憩模式”。",
+    "target_state": "仅拉起情景模式隐私协议页，不直接激活露营或小憩模式。",
+    "intent_function_signal": "保留打开对应情景模式的意图；隐私门禁在模式激活前拦截并进入协议确认页。",
+    "ui_tts_vehicle_behavior": "UI显示隐私协议页；模式不激活；页面成功打开后可播通用确认语“好的，正在为你打开”，无需新增专用TTS。",
+    "boundary": "适用C385/C673情景模式；用户未同意隐私政策时不得进入模式激活流程，同意并满足模式前置条件后才可激活。",
+    "source_ids": [
+      "scenario_v49"
+    ]
+  },
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "打开露营模式",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR：打开露营模式 -> 1919 common:func:not:supported",
+    "meta_id": "1919",
+    "standard_function": {
+      "status": "verified",
+      "name": "MetaId 1919 / 功能ID 1442 车型无此功能兜底",
+      "assessment": "在线结果当前命中车型无此功能兜底，与实车已拉起协议页不一致；不作为本票TTS目标来源。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能ID 24561 车型无此功能兜底",
+      "assessment": "深蓝项目继承标准功能1442未修改，状态已下发；已核对项目包含C673_7。"
+    }
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "吴优",
+    "implementation_source_ids": [
+      "jira_actual",
+      "attachment_video"
+    ],
+    "text": "结论：产品预期确认：未同意情景模式隐私政策时，语音“打开露营/小憩模式”只需拉起情景模式隐私协议页，不直接激活模式；页面成功打开后播“好的，正在为你打开”符合预期，无需新增专用TTS。\n依据：Jira原票、附件视频、智能情景模式V4.9、Alchemy当前核验\n处理：按“打开协议页但不激活模式”修改测试预期并关闭本Bug；吴优产品负责人处理。"
+  }
+}

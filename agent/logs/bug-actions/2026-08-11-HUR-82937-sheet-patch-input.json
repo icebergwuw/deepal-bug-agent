@@ -1,0 +1,84 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "HUR-82937｜【PI】【0109】【语音】【新需求测试】【波兰语】展车模式开启，提示无法使用拖车模式的tts回复不对",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82937\",\"HUR-82937｜【PI】【0109】【语音】【新需求测试】【波兰语】展车模式开启，提示无法使用拖车模式的tts回复不对\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：PI 0109波兰语、展车模式开启时说“włącz tryb przyczepy”，当前回复不支持；测试预期为两条指定波兰语拦截TTS之一。[Jira原票·描述/完整评论]\n证据：研发评论明确此前未收到、未开发该TTS需求；Drive检索命中J90A多语言/拖车模式资料入口，但未读到能证明这两条TTS已生效下发的同版本需求行。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82937"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待复核，当前不能按Bug转研发，也不能把测试预期直接当正式需求。\n依据：Jira完整评论确认旧版本未接收该需求；现有Drive检索未定位两条波兰语TTS的生效配置行，Alchemy链亦未完整核验。\n处理：提供客户下发语料/需求表的文件名、Sheet、行号及生效版本，并完成Alchemy当前/标准/项目核验；J90A语音多语言需求负责人处理。",
+      "links": []
+    },
+    "G": "待复核",
+    "I": "测试用例本身完整，无需补测试用例；需补客户正式语料行和生效版本证据。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82937"
+        },
+        {
+          "label": "现状图片",
+          "url": "http://jira.i-tetris.com/secure/attachment/4229528/image-2026-08-10-14-04-56-829.png"
+        },
+        {
+          "label": "J90A_EU-PI_LanguageList",
+          "url": "https://docs.google.com/spreadsheets/d/1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y/edit"
+        }
+      ]
+    }
+  }
+}

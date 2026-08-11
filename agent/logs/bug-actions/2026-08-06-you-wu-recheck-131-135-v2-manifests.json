@@ -1,0 +1,1391 @@
+[
+  {
+    "jira_key": "PC-38056",
+    "comment_causality": "C673-ICA在高德个人中心已登录页面说“登出”不执行。Jira 2026-07-16 14:03评论记录旧日志落meta_id=2820并被拒绝，14:10评论说明未进入可见交互并要求核对配置；当前Alchemy则将“登出”映射为meta_id=1864‘登录个人中心账号’，与已登录场景相反。",
+    "customer_issue": {
+      "identified": false
+    },
+    "related_issues": {
+      "checked": true,
+      "items": []
+    },
+    "scope_checks": [
+      {
+        "source_id": "visible_row527",
+        "source": "深蓝8155可见新表_v1.3",
+        "source_location": "Sheet‘地图-高德’第527行，Key navigation_account_unbind：已登录账号页面仅配置‘解绑/解绑账号/账号解绑’，操作为点击/选择",
+        "role": "formal_target",
+        "match": "gap",
+        "material": true,
+        "project_model": "深蓝8155/C673-ICA，高德已登录账号页",
+        "trigger": "用户说‘登出’",
+        "target_behavior": "现行正式配置未定义‘登出’是否等同‘解绑’，无法直接确定应执行解绑。",
+        "reason": "同页面正式配置只覆盖解绑词，不覆盖登出词；该缺口会改变目标行为和责任方。",
+        "next_action": "地图可见配置负责人确认‘登出’与‘解绑’的产品等价关系并补充正式节点词表后复核。",
+        "source_type": "formal_config"
+      },
+      {
+        "source_id": "jira_pc38056",
+        "source": "PC-38056 Jira描述与评论",
+        "source_location": "Jira描述；2026-07-16 14:03、14:10评论",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "C673-ICA，本票10/10复现",
+        "trigger": "已登录高德个人中心说‘登出’",
+        "target_behavior": "当前未执行可见交互；旧日志meta_id=2820被拒绝。",
+        "reason": "当前票直接记录现象与排查时间线。",
+        "source_type": "jira"
+      },
+      {
+        "source_id": "alchemy_1864",
+        "source": "Alchemy在线对话与标准功能1670",
+        "source_location": "BIGSUR在线对话‘登出’；标准功能‘登录个人中心账号’，meta_id=1864，标准ID 1670；深蓝项目功能检索无对应项",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "深蓝项目/BIGSUR当前环境",
+        "trigger": "输入‘登出’",
+        "target_behavior": "当前下发meta_id=1864登录个人中心账号，无参数。",
+        "reason": "当前在线结果与已登录场景方向相反，证明语音路由现状。",
+        "source_type": "alchemy_current"
+      },
+      {
+        "source_id": "main_prd_pc38056",
+        "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "source_type": "prd",
+        "source_location": "Drive Google Doc，6.1 登录，第72页：账号退出区使用‘退出账号’，点击‘解绑’后提示‘账号已解绑’",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673高德账号",
+        "trigger": "已登录个人中心说‘登出’",
+        "target_behavior": "正式PRD定义账号解绑/退出流程，但未定义语音词‘登出’是否等同‘解绑’。",
+        "reason": "同车型现行主PRD只覆盖业务动作，不足以定义本票原话泛化。"
+      },
+      {
+        "source_id": "current_ue_pc38056",
+        "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+        "source_type": "ue",
+        "source_location": "Drive PDF共7页；全文核验未覆盖本票账号、协议、避开限行或充电站已选中态目标",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673高德地图当前增量UE",
+        "trigger": "本票对应页面/交互状态",
+        "target_behavior": "已读取当前增量UE并确认其适用范围；本票关键语音与状态目标需由PRD/正式配置补足。",
+        "reason": "记录当前UE实际检索结果，不将旧版全量UE冒充现行目标。"
+      },
+      {
+        "source_id": "alchemy_standard_pc38056",
+        "source": "Alchemy标准功能",
+        "source_type": "alchemy_standard",
+        "source_location": "标准功能ID1670，meta_id=1864，登录个人中心账号",
+        "role": "context_only",
+        "match": "exact",
+        "material": false,
+        "project_model": "Alchemy标准功能",
+        "trigger": "按Jira原话当前meta_id核验标准功能",
+        "target_behavior": "核验当前语义功能点身份与定义范围。",
+        "reason": "已读取当前meta_id对应标准功能。"
+      },
+      {
+        "source_id": "alchemy_project_pc38056",
+        "source": "Alchemy深蓝项目功能",
+        "source_type": "alchemy_project",
+        "source_location": "按meta_id=1864及功能名检索深蓝项目功能，无对应继承项",
+        "role": "context_only",
+        "match": "gap",
+        "material": false,
+        "project_model": "深蓝项目/BIGSUR",
+        "trigger": "按当前meta_id核验项目继承功能",
+        "target_behavior": "核验深蓝项目是否改写标准功能。",
+        "reason": "检索确认无对应项目继承项。"
+      }
+    ],
+    "inheritance_chains": [],
+    "conflict_resolution": "不沿用旧表‘登出应映射退出登录’的无来源结论，也不把Alchemy错误登录结果当目标。现行可见配置只正式定义‘解绑’，在未确认‘登出=解绑’前不能确定转语音或关闭。",
+    "voice_evidence": {
+      "applicable": true,
+      "availability": "complete",
+      "alchemy_tested": true,
+      "original_utterance": "登出",
+      "alchemy_result": "meta_id=1864，登录个人中心账号，无参数",
+      "meta_id": "1864",
+      "standard_function": {
+        "status": "verified",
+        "name": "登录个人中心账号（标准ID 1670）",
+        "assessment": "与已登录页的登出操作方向相反"
+      },
+      "project_function": {
+        "status": "not_applicable",
+        "reason": "已在深蓝项目功能中按meta_id/功能名检索，未发现项目继承功能点"
+      }
+    },
+    "decision": {
+      "status": "待复核",
+      "owner": "地图可见配置负责人",
+      "text": "结论：当前不能定义‘登出’应直接执行账号解绑；高德已登录页正式配置仅覆盖‘解绑’，而Alchemy当前把‘登出’错误映射为登录功能。\n依据：深蓝可见配置Sheet‘地图-高德’第527行仅定义navigation_account_unbind的‘解绑’词；Alchemy BIGSUR‘登出’当前落meta_id=1864‘登录个人中心账号’；Jira 2026-07-16 14:03/14:10评论记录旧路由被拒绝且未进入可见交互。\n处理：先确认并补齐‘登出’与‘解绑’的正式等价词配置，再按新配置复测语音路由；地图可见配置负责人处理。"
+    },
+    "schema_version": 2,
+    "evidence_profiles": [
+      "voice",
+      "map_navigation",
+      "visible_interaction"
+    ],
+    "evidence_profile_assessment": {
+      "general": {
+        "applicable": false,
+        "reason": "问题同时命中更具体的语音、地图导航和可见交互画像，不重复选择通用画像。"
+      },
+      "voice": {
+        "applicable": true,
+        "reason": "Jira原话经语音链路触发，必须核验Alchemy当前结果、标准功能和深蓝项目功能。"
+      },
+      "map_navigation": {
+        "applicable": true,
+        "reason": "问题发生在高德地图导航模块，必须检索Drive主PRD和专项定义。"
+      },
+      "visible_interaction": {
+        "applicable": true,
+        "reason": "问题涉及当前页面或POI二次交互状态，必须核验生效可见配置及UE。"
+      }
+    },
+    "required_evidence_checks": [
+      {
+        "check_id": "formal_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Drive主PRD、现行可见配置与当前UE",
+        "queries": [
+          "PC-38056",
+          "地图导航 正式定义",
+          "登出"
+        ],
+        "source_ids": [
+          "main_prd_pc38056",
+          "visible_row527"
+        ]
+      },
+      {
+        "check_id": "alchemy_current",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy在线对话 BIGSUR",
+        "queries": [
+          "登出",
+          "勾选",
+          "选择充电站",
+          "点击充电站"
+        ],
+        "source_ids": [
+          "alchemy_1864"
+        ]
+      },
+      {
+        "check_id": "alchemy_standard",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy标准功能",
+        "queries": [
+          "1864"
+        ],
+        "source_ids": [
+          "alchemy_standard_pc38056"
+        ]
+      },
+      {
+        "check_id": "alchemy_project",
+        "status": "not_applicable",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy深蓝项目功能",
+        "queries": [
+          "meta_id 1864",
+          "登录个人中心账号"
+        ],
+        "source_ids": [],
+        "reason": "按meta_id和功能名检索后无深蓝项目继承项。"
+      },
+      {
+        "check_id": "main_prd_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "算路结果",
+          "路线偏好"
+        ],
+        "source_ids": [
+          "main_prd_pc38056"
+        ]
+      },
+      {
+        "check_id": "special_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "PC-38056",
+          "登出"
+        ],
+        "source_ids": [
+          "visible_row527"
+        ]
+      },
+      {
+        "check_id": "formal_config_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "登出",
+          "navigation_"
+        ],
+        "source_ids": [
+          "visible_row527"
+        ]
+      },
+      {
+        "check_id": "interaction_or_ue_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "最快路线",
+          "路线卡片"
+        ],
+        "source_ids": [
+          "current_ue_pc38056"
+        ]
+      }
+    ]
+  },
+  {
+    "jira_key": "PC-38036",
+    "comment_causality": "C673-ICA高德设置中‘避开限行’已开启时说‘选择避开限行’，测试期望关闭。Jira 2026-07-16 11:54评论指出已开启态节点未配置‘选择’，旧NLU却下发meta_id=1023；当前Alchemy返回meta_id=1919不支持兜底。现行正式配置第537行明确已开启态只支持点击/关闭/退出。",
+    "customer_issue": {
+      "identified": false
+    },
+    "related_issues": {
+      "checked": true,
+      "items": []
+    },
+    "scope_checks": [
+      {
+        "source_id": "visible_row537",
+        "source": "深蓝8155可见新表_v1.3",
+        "source_location": "Sheet‘地图-高德’第537行，Key navigation_avoid_restriction_off：已开启避开限行，subject为‘避开限行’，operation为点击/关闭/退出",
+        "role": "formal_target",
+        "match": "exact",
+        "project_model": "深蓝8155/C673-ICA，高德导航设置",
+        "trigger": "避开限行已开启时说‘选择避开限行’",
+        "target_behavior": "‘选择’不属于已开启态关闭操作，不应关闭避开限行；按不支持处理。",
+        "reason": "同项目同页面正式配置直接规定已开启态支持边界。",
+        "source_type": "formal_config"
+      },
+      {
+        "source_id": "jira_pc38036",
+        "source": "PC-38036 Jira描述与评论",
+        "source_location": "Jira描述；2026-07-16 11:54评论",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "C673-ICA，本票场景",
+        "trigger": "已开启避开限行时说‘选择避开限行’",
+        "target_behavior": "旧NLU错误下发meta_id=1023；评论确认已开启态节点不配置‘选择’。",
+        "reason": "本票时间线证明历史异常与配置边界。",
+        "source_type": "jira"
+      },
+      {
+        "source_id": "alchemy_1919_pc38036",
+        "source": "Alchemy在线对话、标准功能1442与深蓝项目功能24561",
+        "source_location": "BIGSUR在线对话‘选择避开限行’；标准功能‘车型无此功能兜底’meta_id=1919/标准ID1442；深蓝项目功能24561继承未修改",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "深蓝项目/BIGSUR当前环境",
+        "trigger": "输入‘选择避开限行’",
+        "target_behavior": "当前下发meta_id=1919不支持兜底。",
+        "reason": "当前在线结果与正式边界一致。",
+        "source_type": "alchemy_current"
+      },
+      {
+        "source_id": "main_prd_pc38036",
+        "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "source_type": "prd",
+        "source_location": "Drive Google Doc，6.2 我的车，第75页：设置车牌后避开限行自动开启",
+        "role": "formal_target",
+        "match": "exact",
+        "project_model": "C385/C673高德导航设置",
+        "trigger": "避开限行已开启时再次说‘选择避开限行’",
+        "target_behavior": "场景前置状态为避开限行已开启；关闭能力须按已开启态配置执行。",
+        "reason": "同车型现行主PRD直接规定开关状态来源。"
+      },
+      {
+        "source_id": "current_ue_pc38036",
+        "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+        "source_type": "ue",
+        "source_location": "Drive PDF共7页；全文核验未覆盖本票账号、协议、避开限行或充电站已选中态目标",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673高德地图当前增量UE",
+        "trigger": "本票对应页面/交互状态",
+        "target_behavior": "已读取当前增量UE并确认其适用范围；本票关键语音与状态目标需由PRD/正式配置补足。",
+        "reason": "记录当前UE实际检索结果，不将旧版全量UE冒充现行目标。"
+      },
+      {
+        "source_id": "alchemy_standard_pc38036",
+        "source": "Alchemy标准功能",
+        "source_type": "alchemy_standard",
+        "source_location": "标准功能ID1442，meta_id=1919，车型无此功能兜底",
+        "role": "context_only",
+        "match": "exact",
+        "material": false,
+        "project_model": "Alchemy标准功能",
+        "trigger": "按Jira原话当前meta_id核验标准功能",
+        "target_behavior": "核验当前语义功能点身份与定义范围。",
+        "reason": "已读取当前meta_id对应标准功能。"
+      },
+      {
+        "source_id": "alchemy_project_pc38036",
+        "source": "Alchemy深蓝项目功能",
+        "source_type": "alchemy_project",
+        "source_location": "深蓝项目功能24561，继承标准功能1442且未修改",
+        "role": "context_only",
+        "match": "exact",
+        "material": false,
+        "project_model": "深蓝项目/BIGSUR",
+        "trigger": "按当前meta_id核验项目继承功能",
+        "target_behavior": "核验深蓝项目是否改写标准功能。",
+        "reason": "已读取项目功能与继承状态。"
+      }
+    ],
+    "inheritance_chains": [],
+    "conflict_resolution": "测试预期把‘选择’解释为关闭，与已开启态正式operation冲突；以Sheet‘地图-高德’第537行的同状态配置为准。旧meta_id=1023只代表历史错误实现，当前1919兜底符合目标。",
+    "voice_evidence": {
+      "applicable": true,
+      "availability": "complete",
+      "alchemy_tested": true,
+      "original_utterance": "选择避开限行",
+      "alchemy_result": "meta_id=1919，车型无此功能兜底",
+      "meta_id": "1919",
+      "standard_function": {
+        "status": "verified",
+        "name": "车型无此功能兜底（标准ID 1442）",
+        "assessment": "当前结果符合已开启态不支持‘选择’的边界"
+      },
+      "project_function": {
+        "status": "verified",
+        "name": "深蓝项目功能24561",
+        "assessment": "继承标准功能1442且未修改"
+      }
+    },
+    "expected_behavior": {
+      "trigger": "高德导航设置中避开限行已开启，用户说‘选择避开限行’",
+      "target_state": "保持避开限行开启，不执行关闭",
+      "intent_function_signal": "不下发navigation_avoid_restriction_off，语音按不支持兜底",
+      "ui_tts_vehicle_behavior": "设置开关不变化；TTS按不支持说法反馈",
+      "boundary": "已开启态关闭仅支持点击/关闭/退出；未开启态第536行的选择/开启能力不适用于本场景",
+      "source_ids": [
+        "visible_row537"
+      ]
+    },
+    "decision": {
+      "status": "可关闭",
+      "owner": "测试负责人",
+      "implementation_source_ids": [
+        "jira_pc38036",
+        "alchemy_1919_pc38036"
+      ],
+      "text": "结论：测试预期不成立；避开限行已开启时，‘选择避开限行’不等于关闭，当前按不支持处理符合状态化配置。\n依据：深蓝可见配置Sheet‘地图-高德’第537行的navigation_avoid_restriction_off仅支持点击/关闭/退出；Alchemy BIGSUR‘选择避开限行’当前落meta_id=1919不支持兜底；Jira 2026-07-16 11:54评论确认已开启态未配置‘选择’。\n处理：关闭本Bug，测试改用‘关闭/退出避开限行’验证关闭能力，并分别覆盖未开启态的开启词；测试负责人处理。"
+    },
+    "schema_version": 2,
+    "evidence_profiles": [
+      "voice",
+      "map_navigation",
+      "visible_interaction"
+    ],
+    "evidence_profile_assessment": {
+      "general": {
+        "applicable": false,
+        "reason": "问题同时命中更具体的语音、地图导航和可见交互画像，不重复选择通用画像。"
+      },
+      "voice": {
+        "applicable": true,
+        "reason": "Jira原话经语音链路触发，必须核验Alchemy当前结果、标准功能和深蓝项目功能。"
+      },
+      "map_navigation": {
+        "applicable": true,
+        "reason": "问题发生在高德地图导航模块，必须检索Drive主PRD和专项定义。"
+      },
+      "visible_interaction": {
+        "applicable": true,
+        "reason": "问题涉及当前页面或POI二次交互状态，必须核验生效可见配置及UE。"
+      }
+    },
+    "required_evidence_checks": [
+      {
+        "check_id": "formal_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Drive主PRD、现行可见配置与当前UE",
+        "queries": [
+          "PC-38036",
+          "地图导航 正式定义",
+          "选择避开限行"
+        ],
+        "source_ids": [
+          "main_prd_pc38036",
+          "visible_row537"
+        ]
+      },
+      {
+        "check_id": "alchemy_current",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy在线对话 BIGSUR",
+        "queries": [
+          "选择避开限行",
+          "勾选",
+          "选择充电站",
+          "点击充电站"
+        ],
+        "source_ids": [
+          "alchemy_1919_pc38036"
+        ]
+      },
+      {
+        "check_id": "alchemy_standard",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy标准功能",
+        "queries": [
+          "1919"
+        ],
+        "source_ids": [
+          "alchemy_standard_pc38036"
+        ]
+      },
+      {
+        "check_id": "alchemy_project",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy深蓝项目功能",
+        "queries": [
+          "1919"
+        ],
+        "source_ids": [
+          "alchemy_project_pc38036"
+        ]
+      },
+      {
+        "check_id": "main_prd_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "算路结果",
+          "路线偏好"
+        ],
+        "source_ids": [
+          "main_prd_pc38036"
+        ]
+      },
+      {
+        "check_id": "special_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "PC-38036",
+          "选择避开限行"
+        ],
+        "source_ids": [
+          "visible_row537"
+        ]
+      },
+      {
+        "check_id": "formal_config_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "选择避开限行",
+          "navigation_"
+        ],
+        "source_ids": [
+          "visible_row537"
+        ]
+      },
+      {
+        "check_id": "interaction_or_ue_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "最快路线",
+          "路线卡片"
+        ],
+        "source_ids": [
+          "current_ue_pc38036"
+        ]
+      }
+    ]
+  },
+  {
+    "jira_key": "PC-38029",
+    "comment_causality": "C673-ICA高德登录页说‘同意协议/勾选’未勾选协议。Jira 2026-07-16 11:36评论给出可见节点navigation_account_select_license及配置短语‘勾选协议/勾选账号协议/勾选绑定协议’、操作‘点击/选择’；现行正式Sheet第521行与评论一致。但当前Alchemy对‘同意协议’只回复已同意且无meta_id/operation，对‘勾选’落meta_id=2820并拒绝，完整执行链无法确认。",
+    "customer_issue": {
+      "identified": false
+    },
+    "related_issues": {
+      "checked": true,
+      "items": []
+    },
+    "scope_checks": [
+      {
+        "source_id": "visible_row521_context",
+        "source": "深蓝8155可见新表_v1.3",
+        "source_location": "Sheet‘地图-高德’第521行，Key navigation_account_select_license：未勾选账号绑定服务协议，支持‘勾选协议/勾选账号协议/勾选绑定协议’，操作为点击/选择",
+        "role": "context_only",
+        "match": "exact",
+        "project_model": "深蓝8155/C673-ICA，高德登录账号弹窗",
+        "trigger": "配置短语‘勾选协议’及完整变体",
+        "target_behavior": "命中可见节点并勾选协议。",
+        "reason": "正式配置证明节点能力存在，但未覆盖Jira原话‘同意协议’或孤立词‘勾选’。",
+        "source_type": "formal_config"
+      },
+      {
+        "source_id": "utterance_gap_pc38029",
+        "source": "深蓝8155可见新表_v1.3与Jira原话对照",
+        "source_location": "Sheet‘地图-高德’第521行与PC-38029 Jira描述/2026-07-16 11:36评论对照：配置为完整‘勾选协议’短语，原话为‘同意协议/勾选’",
+        "role": "formal_target",
+        "match": "gap",
+        "material": true,
+        "project_model": "C673-ICA，高德登录页",
+        "trigger": "用户说‘同意协议’或孤立‘勾选’",
+        "target_behavior": "正式资料未定义这两种说法是否应泛化到协议勾选节点。",
+        "reason": "该词义边界会直接改变转语音、转需求或关闭判断。",
+        "next_action": "语音可见路由负责人补齐Alchemy执行链并与地图可见配置负责人确认泛化边界。",
+        "source_type": "formal_config"
+      },
+      {
+        "source_id": "jira_pc38029",
+        "source": "PC-38029 Jira描述与评论",
+        "source_location": "Jira描述；2026-07-16 11:36评论给出assistName、subjects与operations",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "C673-ICA，本票登录页",
+        "trigger": "说‘同意协议/勾选’",
+        "target_behavior": "当前未勾选；评论记录节点配置。",
+        "reason": "本票证明实际失败和当时配置核查结果。",
+        "source_type": "jira"
+      },
+      {
+        "source_id": "alchemy_partial_pc38029",
+        "source": "Alchemy在线对话",
+        "source_location": "BIGSUR在线对话：‘同意协议’回复‘好的，协议已同意。’但无meta_id/operation；‘勾选’落meta_id=2820并拒绝",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "深蓝项目/BIGSUR当前环境",
+        "trigger": "分别输入‘同意协议’、‘勾选’",
+        "target_behavior": "当前结果未形成可执行协议节点链路。",
+        "reason": "平台当前结果直接证明语音证据链不完整。",
+        "source_type": "alchemy_current"
+      },
+      {
+        "source_id": "main_prd_pc38029",
+        "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "source_type": "prd",
+        "source_location": "Drive Google Doc，6.1 登录，第72页：登录前需同意相关条款",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673高德登录",
+        "trigger": "登录页说‘同意协议/勾选’",
+        "target_behavior": "登录前需要完成协议同意，但PRD未定义这两句语音原话的可见交互泛化。",
+        "reason": "主PRD证明业务动作存在，不足以定义语音词表。"
+      },
+      {
+        "source_id": "current_ue_pc38029",
+        "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+        "source_type": "ue",
+        "source_location": "Drive PDF共7页；全文核验未覆盖本票账号、协议、避开限行或充电站已选中态目标",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673高德地图当前增量UE",
+        "trigger": "本票对应页面/交互状态",
+        "target_behavior": "已读取当前增量UE并确认其适用范围；本票关键语音与状态目标需由PRD/正式配置补足。",
+        "reason": "记录当前UE实际检索结果，不将旧版全量UE冒充现行目标。"
+      },
+      {
+        "source_id": "alchemy_standard_pc38029",
+        "source": "Alchemy标准功能",
+        "source_type": "alchemy_standard",
+        "source_location": "按‘同意协议’当前无meta_id，无法定位对应标准功能点",
+        "role": "context_only",
+        "match": "gap",
+        "material": true,
+        "project_model": "Alchemy标准功能",
+        "trigger": "按Jira原话当前meta_id核验标准功能",
+        "target_behavior": "核验当前语义功能点身份与定义范围。",
+        "reason": "原话缺少meta_id，不能定位标准功能。",
+        "next_action": "语音可见路由负责人补齐原话meta_id/operation后重查。"
+      },
+      {
+        "source_id": "alchemy_project_pc38029",
+        "source": "Alchemy深蓝项目功能",
+        "source_type": "alchemy_project",
+        "source_location": "因‘同意协议’无meta_id，无法定位深蓝项目功能",
+        "role": "context_only",
+        "match": "gap",
+        "material": true,
+        "project_model": "深蓝项目/BIGSUR",
+        "trigger": "按当前meta_id核验项目继承功能",
+        "target_behavior": "核验深蓝项目是否改写标准功能。",
+        "reason": "缺少原话meta_id，无法完成项目功能核验。",
+        "next_action": "语音可见路由负责人补齐原话meta_id后重查。"
+      }
+    ],
+    "inheritance_chains": [],
+    "conflict_resolution": "现行配置能证明‘勾选协议’完整短语应执行，但不能据此自动扩大为‘同意协议’或孤立‘勾选’。当前Alchemy一条无meta_id、一条拒绝，故不保留旧‘可转语音’确定性状态。",
+    "voice_evidence": {
+      "applicable": true,
+      "availability": "partial",
+      "alchemy_tested": true,
+      "standard_function": {
+        "status": "unavailable",
+        "reason": "‘同意协议’未返回meta_id，无法按本票原话定位标准功能点"
+      },
+      "project_function": {
+        "status": "unavailable",
+        "reason": "缺少本票原话meta_id，无法核验对应深蓝项目执行功能点"
+      },
+      "unavailable_reason": "‘同意协议’只有聊天回复，无meta_id和operation；‘勾选’落meta_id=2820拒绝，不能形成同一条完整执行链。",
+      "next_action": "语音可见路由负责人核对分类/操作结果，并确认‘同意协议/勾选’是否纳入navigation_account_select_license。"
+    },
+    "decision": {
+      "status": "待复核",
+      "owner": "语音可见路由负责人",
+      "text": "结论：协议勾选节点存在，但‘同意协议/勾选’是否应命中尚不能定责；当前Alchemy未返回完整meta_id与operation链路。\n依据：深蓝可见配置Sheet‘地图-高德’第521行仅配置‘勾选协议/勾选账号协议/勾选绑定协议’及点击/选择；Alchemy BIGSUR‘同意协议’无meta_id/operation，‘勾选’落meta_id=2820并拒绝；Jira 2026-07-16 11:36评论给出的节点配置与现行表一致。\n处理：核对分类、operation及项目功能点，并确认‘同意协议/勾选’的正式泛化边界后再定转语音或需求；语音可见路由负责人处理。"
+    },
+    "schema_version": 2,
+    "evidence_profiles": [
+      "voice",
+      "map_navigation",
+      "visible_interaction"
+    ],
+    "evidence_profile_assessment": {
+      "general": {
+        "applicable": false,
+        "reason": "问题同时命中更具体的语音、地图导航和可见交互画像，不重复选择通用画像。"
+      },
+      "voice": {
+        "applicable": true,
+        "reason": "Jira原话经语音链路触发，必须核验Alchemy当前结果、标准功能和深蓝项目功能。"
+      },
+      "map_navigation": {
+        "applicable": true,
+        "reason": "问题发生在高德地图导航模块，必须检索Drive主PRD和专项定义。"
+      },
+      "visible_interaction": {
+        "applicable": true,
+        "reason": "问题涉及当前页面或POI二次交互状态，必须核验生效可见配置及UE。"
+      }
+    },
+    "required_evidence_checks": [
+      {
+        "check_id": "formal_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Drive主PRD、现行可见配置与当前UE",
+        "queries": [
+          "PC-38029",
+          "地图导航 正式定义",
+          "同意协议 勾选"
+        ],
+        "source_ids": [
+          "main_prd_pc38029",
+          "utterance_gap_pc38029"
+        ]
+      },
+      {
+        "check_id": "alchemy_current",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy在线对话 BIGSUR",
+        "queries": [
+          "同意协议",
+          "勾选",
+          "选择充电站",
+          "点击充电站"
+        ],
+        "source_ids": [
+          "alchemy_partial_pc38029"
+        ]
+      },
+      {
+        "check_id": "alchemy_standard",
+        "status": "unavailable",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy标准功能",
+        "queries": [
+          "同意协议",
+          "meta_id 2820"
+        ],
+        "source_ids": [
+          "alchemy_standard_pc38029"
+        ],
+        "reason": "原话‘同意协议’无meta_id，无法定位对应标准功能。",
+        "material": true,
+        "next_action": "补齐原话meta_id/operation后重查标准功能。"
+      },
+      {
+        "check_id": "alchemy_project",
+        "status": "unavailable",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy深蓝项目功能",
+        "queries": [
+          "同意协议",
+          "meta_id 2820"
+        ],
+        "source_ids": [
+          "alchemy_project_pc38029"
+        ],
+        "reason": "原话缺少meta_id，无法定位项目功能。",
+        "material": true,
+        "next_action": "补齐原话meta_id后重查项目功能。"
+      },
+      {
+        "check_id": "main_prd_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "算路结果",
+          "路线偏好"
+        ],
+        "source_ids": [
+          "main_prd_pc38029"
+        ]
+      },
+      {
+        "check_id": "special_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "PC-38029",
+          "同意协议 勾选"
+        ],
+        "source_ids": [
+          "utterance_gap_pc38029"
+        ]
+      },
+      {
+        "check_id": "formal_config_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "同意协议 勾选",
+          "navigation_"
+        ],
+        "source_ids": [
+          "utterance_gap_pc38029"
+        ]
+      },
+      {
+        "check_id": "interaction_or_ue_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "最快路线",
+          "路线卡片"
+        ],
+        "source_ids": [
+          "current_ue_pc38029"
+        ]
+      }
+    ]
+  },
+  {
+    "jira_key": "PC-38026",
+    "comment_causality": "C673-ICA高德首页充电站已选中时再次说‘选择充电站/点击充电站’不执行。Jira 2026-07-16 10:08评论称选中后节点切换为navigation_shortcut_bar_hide_charging_station，仅支持取消选择/隐藏/取消充电站；但现行正式Sheet只有第7行未选中态navigation_shortcut_bar_charging_station，未找到所述已选中态节点。当前Alchemy对‘选择充电站’落meta_id=1919，对‘点击充电站’落meta_id=1208搜索充电站，两个结果也不一致。",
+    "customer_issue": {
+      "identified": false
+    },
+    "related_issues": {
+      "checked": true,
+      "items": []
+    },
+    "scope_checks": [
+      {
+        "source_id": "visible_row7_context",
+        "source": "深蓝8155可见新表_v1.3",
+        "source_location": "Sheet‘地图-高德’第7行，Key navigation_shortcut_bar_charging_station：地图首页快捷导航栏充电站，支持点击/选择/搜索/寻找/查找等",
+        "role": "context_only",
+        "match": "exact",
+        "project_model": "深蓝8155/C673-ICA，高德地图首页",
+        "trigger": "充电站未选中态点击/选择/搜索",
+        "target_behavior": "执行充电站快捷入口。",
+        "reason": "正式配置只覆盖未选中态，不直接定义本票已选中态。",
+        "source_type": "formal_config"
+      },
+      {
+        "source_id": "selected_state_gap_pc38026",
+        "source": "深蓝8155可见新表_v1.3已选中态检索",
+        "source_location": "Sheet‘地图-高德’全表检索navigation_shortcut_bar_hide_charging_station、‘取消充电站’、‘隐藏充电站’，截至2026-08-06均未命中；仅第7行存在未选中态节点",
+        "role": "formal_target",
+        "match": "gap",
+        "material": true,
+        "project_model": "C673-ICA，高德充电站已选中态",
+        "trigger": "充电站已选中后再次说‘选择/点击充电站’",
+        "target_behavior": "当前正式表未定义已选中态应隐藏、取消还是重复选择。",
+        "reason": "缺失节点会改变测试预期与责任方。",
+        "next_action": "地图可见配置负责人确认已选中态节点是否仍生效，并在正式表补齐状态、subjects和operations。",
+        "source_type": "formal_config"
+      },
+      {
+        "source_id": "jira_pc38026",
+        "source": "PC-38026 Jira描述与评论",
+        "source_location": "Jira描述；2026-07-16 10:08评论关于navigation_shortcut_bar_hide_charging_station",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "C673-ICA，本票已选中态",
+        "trigger": "再次说‘选择充电站/点击充电站’",
+        "target_behavior": "当前不执行；评论声称节点切换到隐藏/取消。",
+        "reason": "本票记录当前现象和研发实现说明，但评论不是正式目标。",
+        "source_type": "jira"
+      },
+      {
+        "source_id": "alchemy_partial_pc38026",
+        "source": "Alchemy在线对话、标准功能1429/1442与深蓝项目功能24548/24561",
+        "source_location": "BIGSUR在线对话：‘选择充电站’落meta_id=1919不支持；‘点击充电站’落meta_id=1208‘搜索/展示地址’；标准ID1429/1442及深蓝项目24548/24561均已读取",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "深蓝项目/BIGSUR当前环境",
+        "trigger": "分别输入‘选择充电站’、‘点击充电站’",
+        "target_behavior": "两句当前路由分化为不支持与搜索充电站。",
+        "reason": "当前平台结果未收敛到同一状态化可见节点。",
+        "source_type": "alchemy_current"
+      },
+      {
+        "source_id": "main_prd_pc38026",
+        "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "source_type": "prd",
+        "source_location": "Drive Google Doc全文检索‘充电站/快捷栏/隐藏/取消’，未找到已选中态再次选择的目标定义",
+        "role": "formal_target",
+        "match": "gap",
+        "material": true,
+        "project_model": "C385/C673高德首页充电站快捷入口",
+        "trigger": "充电站已选中后再次说‘选择/点击充电站’",
+        "target_behavior": "主PRD未定义已选中态应重复选择、隐藏还是取消。",
+        "reason": "缺口会改变测试预期与责任方。",
+        "next_action": "地图产品与可见配置负责人补齐已选中态目标后复核。"
+      },
+      {
+        "source_id": "current_ue_pc38026",
+        "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+        "source_type": "ue",
+        "source_location": "Drive PDF共7页；全文核验未覆盖本票账号、协议、避开限行或充电站已选中态目标",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673高德地图当前增量UE",
+        "trigger": "本票对应页面/交互状态",
+        "target_behavior": "已读取当前增量UE并确认其适用范围；本票关键语音与状态目标需由PRD/正式配置补足。",
+        "reason": "记录当前UE实际检索结果，不将旧版全量UE冒充现行目标。"
+      },
+      {
+        "source_id": "alchemy_standard_pc38026",
+        "source": "Alchemy标准功能",
+        "source_type": "alchemy_standard",
+        "source_location": "标准功能ID1429/meta_id=1208与ID1442/meta_id=1919",
+        "role": "context_only",
+        "match": "exact",
+        "material": false,
+        "project_model": "Alchemy标准功能",
+        "trigger": "按Jira原话当前meta_id核验标准功能",
+        "target_behavior": "核验当前语义功能点身份与定义范围。",
+        "reason": "已读取当前meta_id对应标准功能。"
+      },
+      {
+        "source_id": "alchemy_project_pc38026",
+        "source": "Alchemy深蓝项目功能",
+        "source_type": "alchemy_project",
+        "source_location": "深蓝项目功能24548/24561，分别继承标准1429/1442且未修改",
+        "role": "context_only",
+        "match": "exact",
+        "material": false,
+        "project_model": "深蓝项目/BIGSUR",
+        "trigger": "按当前meta_id核验项目继承功能",
+        "target_behavior": "核验深蓝项目是否改写标准功能。",
+        "reason": "已读取项目功能与继承状态。"
+      }
+    ],
+    "inheritance_chains": [],
+    "conflict_resolution": "不以研发评论单独定义已选中态应取消，也不把第7行未选中态配置套用于已选中态。正式表缺少评论所述hide节点，且Alchemy两句结果分化，旧‘可关闭’证据不足，需先会诊配置与执行链。",
+    "voice_evidence": {
+      "applicable": true,
+      "availability": "partial",
+      "alchemy_tested": true,
+      "standard_function": {
+        "status": "verified",
+        "name": "标准功能1429搜索/展示地址与1442车型无此功能兜底",
+        "assessment": "两句原话分别落meta_id=1208和1919，未形成统一可见执行链"
+      },
+      "project_function": {
+        "status": "verified",
+        "name": "深蓝项目功能24548与24561",
+        "assessment": "均继承对应标准功能且未修改，但不能定义已选中态可见目标"
+      },
+      "unavailable_reason": "本票包含两句原话，当前分别落搜索和不支持，且缺少已选中态正式节点，无法完成状态化目标与执行映射核验。",
+      "next_action": "地图可见配置负责人牵头确认已选中态节点，语音可见路由负责人按确认后的节点复测两句原话。"
+    },
+    "decision": {
+      "status": "待会诊",
+      "owner": "地图可见配置负责人",
+      "text": "结论：不能按‘已选中态仅支持隐藏/取消’直接关闭；现行正式表缺少研发评论所述的已选中态节点，且两句原话当前路由不一致。\n依据：深蓝可见配置Sheet‘地图-高德’第7行只定义未选中态navigation_shortcut_bar_charging_station；全表未找到navigation_shortcut_bar_hide_charging_station；Alchemy BIGSUR‘选择充电站’落meta_id=1919，而‘点击充电站’落meta_id=1208；Jira 2026-07-16 10:08评论仅说明当前节点切换实现。\n处理：确认已选中态正式节点、目标操作和词表，补齐配置后统一复测‘选择/点击充电站’；地图可见配置负责人处理。"
+    },
+    "schema_version": 2,
+    "evidence_profiles": [
+      "voice",
+      "map_navigation",
+      "visible_interaction"
+    ],
+    "evidence_profile_assessment": {
+      "general": {
+        "applicable": false,
+        "reason": "问题同时命中更具体的语音、地图导航和可见交互画像，不重复选择通用画像。"
+      },
+      "voice": {
+        "applicable": true,
+        "reason": "Jira原话经语音链路触发，必须核验Alchemy当前结果、标准功能和深蓝项目功能。"
+      },
+      "map_navigation": {
+        "applicable": true,
+        "reason": "问题发生在高德地图导航模块，必须检索Drive主PRD和专项定义。"
+      },
+      "visible_interaction": {
+        "applicable": true,
+        "reason": "问题涉及当前页面或POI二次交互状态，必须核验生效可见配置及UE。"
+      }
+    },
+    "required_evidence_checks": [
+      {
+        "check_id": "formal_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Drive主PRD、现行可见配置与当前UE",
+        "queries": [
+          "PC-38026",
+          "地图导航 正式定义",
+          "同意协议 勾选"
+        ],
+        "source_ids": [
+          "main_prd_pc38026",
+          "selected_state_gap_pc38026"
+        ]
+      },
+      {
+        "check_id": "alchemy_current",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy在线对话 BIGSUR",
+        "queries": [
+          "同意协议",
+          "勾选",
+          "选择充电站",
+          "点击充电站"
+        ],
+        "source_ids": [
+          "alchemy_partial_pc38026"
+        ]
+      },
+      {
+        "check_id": "alchemy_standard",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy标准功能",
+        "queries": [
+          "1208 1919"
+        ],
+        "source_ids": [
+          "alchemy_standard_pc38026"
+        ]
+      },
+      {
+        "check_id": "alchemy_project",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy深蓝项目功能",
+        "queries": [
+          "1208 1919"
+        ],
+        "source_ids": [
+          "alchemy_project_pc38026"
+        ]
+      },
+      {
+        "check_id": "main_prd_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "算路结果",
+          "路线偏好"
+        ],
+        "source_ids": [
+          "main_prd_pc38026"
+        ]
+      },
+      {
+        "check_id": "special_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "PC-38026",
+          "同意协议 勾选"
+        ],
+        "source_ids": [
+          "selected_state_gap_pc38026"
+        ]
+      },
+      {
+        "check_id": "formal_config_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "同意协议 勾选",
+          "navigation_"
+        ],
+        "source_ids": [
+          "selected_state_gap_pc38026"
+        ]
+      },
+      {
+        "check_id": "interaction_or_ue_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "最快路线",
+          "路线卡片"
+        ],
+        "source_ids": [
+          "current_ue_pc38026"
+        ]
+      }
+    ]
+  },
+  {
+    "jira_key": "PC-37808",
+    "comment_causality": "用户说‘导航到天安门走最快的路’，Alchemy正确下发meta_id=1209及route_preference=shortest_time；用户选择第一个POI后，Jira 2026-07-17 16:15评论中的执行日志显示MapControlPresenter启动导航时strategy=null，三条路线耗时151980/149160/150720，系统选中route0而非最快route1，说明偏好在POI二次交互后丢失。",
+    "customer_issue": {
+      "identified": false
+    },
+    "related_issues": {
+      "checked": true,
+      "items": []
+    },
+    "scope_checks": [
+      {
+        "source_id": "alchemy_project_24552",
+        "source": "Alchemy标准功能1433与深蓝项目功能24552",
+        "source_location": "标准功能‘导航去【地址】’meta_id=1209/标准ID1433：规划条件包含direct、preference及POI列表二次交互；深蓝项目功能24552继承未修改",
+        "role": "context_only",
+        "match": "exact",
+        "project_model": "深蓝项目/C673语音导航",
+        "trigger": "说‘导航到天安门走最快的路’后从POI列表选择第一项",
+        "target_behavior": "保留preference=shortest_time，并在POI确认后的路线规划/选路中选择最快路线。",
+        "reason": "同项目当前功能点直接定义地址、偏好与POI二次交互链路。",
+        "source_type": "alchemy_project"
+      },
+      {
+        "source_id": "jira_pc37808",
+        "source": "PC-37808 Jira描述与执行分析评论",
+        "source_location": "Jira描述；2026-07-17 16:15评论：onActionStartNavigation strategy=null，route0/1/2耗时151980/149160/150720并选route0",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "本票STG环境",
+        "trigger": "带最快偏好导航并选择第一个POI",
+        "target_behavior": "当前POI确认后丢失strategy并选中非最快路线。",
+        "reason": "责任模块详细执行日志精确证明缺陷位置。",
+        "source_type": "jira"
+      },
+      {
+        "source_id": "alchemy_1209_pc37808",
+        "source": "Alchemy在线对话",
+        "source_location": "BIGSUR在线对话‘导航到天安门走最快的路’，功能点‘导航去【地址】’，meta_id=1209，route_preference=shortest_time",
+        "role": "implementation_actual",
+        "match": "exact",
+        "project_model": "深蓝项目/BIGSUR当前环境",
+        "trigger": "输入Jira原话",
+        "target_behavior": "NLU正确识别目的地与最快路线偏好。",
+        "reason": "当前在线结果排除NLU识别问题并把缺陷定位到后续地图执行链。",
+        "source_type": "alchemy_current"
+      },
+      {
+        "source_id": "main_prd_pc37808",
+        "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "source_type": "prd",
+        "source_location": "Drive Google Doc，3.1 算路结果第33页：展示三条路线且默认选择第一条；6.6.1第104页仅枚举拥堵/收费/高速偏好",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673地图导航",
+        "trigger": "说最快路线并在POI列表选择第一项",
+        "target_behavior": "PRD定义三路线展示与默认第一条，但未定义shortest_time在POI确认后的透传及自动选最短耗时路线。",
+        "reason": "现行主PRD没有覆盖本票关键执行目标。"
+      },
+      {
+        "source_id": "current_ue_pc37808",
+        "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+        "source_type": "ue",
+        "source_location": "Drive PDF共7页；第3页含路线卡片/开始导航示例，未定义shortest_time在POI确认后的处理",
+        "role": "context_only",
+        "match": "partial",
+        "project_model": "C385/C673高德地图当前增量UE",
+        "trigger": "本票对应页面/交互状态",
+        "target_behavior": "已读取当前增量UE并确认其适用范围；本票关键语音与状态目标需由PRD/正式配置补足。",
+        "reason": "记录当前UE实际检索结果，不将旧版全量UE冒充现行目标。"
+      },
+      {
+        "source_id": "alchemy_standard_pc37808",
+        "source": "Alchemy标准功能",
+        "source_type": "alchemy_standard",
+        "source_location": "标准功能ID1433，meta_id=1209，导航去【地址】，包含preference及POI二次交互",
+        "role": "context_only",
+        "match": "exact",
+        "material": false,
+        "project_model": "Alchemy标准功能",
+        "trigger": "按Jira原话当前meta_id核验标准功能",
+        "target_behavior": "核验当前语义功能点身份与定义范围。",
+        "reason": "已读取当前meta_id对应标准功能。"
+      },
+      {
+        "source_id": "alchemy_project_pc37808",
+        "source": "Alchemy深蓝项目功能",
+        "source_type": "alchemy_project",
+        "source_location": "深蓝项目功能24552，继承标准功能1433且未修改",
+        "role": "context_only",
+        "match": "exact",
+        "material": false,
+        "project_model": "深蓝项目/BIGSUR",
+        "trigger": "按当前meta_id核验项目继承功能",
+        "target_behavior": "核验深蓝项目是否改写标准功能。",
+        "reason": "已读取项目功能与继承状态。"
+      },
+      {
+        "source_id": "formal_gap_pc37808",
+        "source": "主PRD、当前UE与专项配置联合核验",
+        "source_type": "prd",
+        "source_location": "PRD V6.1第33/104页、UE V0.6第3页及现行可见配置检索",
+        "role": "formal_target",
+        "match": "gap",
+        "material": true,
+        "project_model": "C385/C673地图导航",
+        "trigger": "最快路线原话经POI列表二次确认",
+        "target_behavior": "现有产品正式资料未定义shortest_time在POI确认后的透传与自动选择最短耗时路线。",
+        "reason": "缺口直接决定测试预期及地图研发是否构成缺陷。",
+        "next_action": "地图产品/交互负责人补齐POI二次确认后的路线偏好执行定义。"
+      }
+    ],
+    "inheritance_chains": [],
+    "conflict_resolution": "Alchemy标准/项目功能定义了preference字段和POI二次交互，Jira日志证明当前strategy丢失，但现行PRD、UE和专项配置没有明确二次确认后必须按shortest_time自动选择最短耗时路线。按v1.7不得只依赖Alchemy下确定性产品目标，故降为待复核。",
+    "voice_evidence": {
+      "applicable": true,
+      "availability": "complete",
+      "alchemy_tested": true,
+      "original_utterance": "导航到天安门走最快的路",
+      "alchemy_result": "meta_id=1209，目的地天安门，route_preference=shortest_time",
+      "meta_id": "1209",
+      "standard_function": {
+        "status": "verified",
+        "name": "导航去【地址】（标准ID 1433）",
+        "assessment": "定义direct/preference规划条件及POI列表二次交互"
+      },
+      "project_function": {
+        "status": "verified",
+        "name": "深蓝项目功能24552",
+        "assessment": "继承标准功能1433且未修改，目标链适用于本票"
+      }
+    },
+    "decision": {
+      "status": "待复核",
+      "owner": "地图产品/交互负责人",
+      "text": "结论：语音已正确识别shortest_time，POI确认后strategy确实丢失，但现行产品正式资料未明确二次确认后的路线偏好透传与最快路线选择规则，暂不能直接定为研发缺陷。\n依据：主PRD V6.1第33页仅定义三路线展示及默认第一条，第104页未包含最快路线偏好；当前UE V0.6第3页也未定义shortest_time处理；Alchemy标准1433/项目24552只证明语义字段与POI二次交互，Jira 2026-07-17 16:15日志证明当前strategy=null。\n处理：补齐POI二次确认后route_preference的保留、选路和启动规则，再依据正式定义定责并复测；地图产品/交互负责人处理。"
+    },
+    "schema_version": 2,
+    "evidence_profiles": [
+      "voice",
+      "map_navigation",
+      "visible_interaction"
+    ],
+    "evidence_profile_assessment": {
+      "general": {
+        "applicable": false,
+        "reason": "问题同时命中更具体的语音、地图导航和可见交互画像，不重复选择通用画像。"
+      },
+      "voice": {
+        "applicable": true,
+        "reason": "Jira原话经语音链路触发，必须核验Alchemy当前结果、标准功能和深蓝项目功能。"
+      },
+      "map_navigation": {
+        "applicable": true,
+        "reason": "问题发生在高德地图导航模块，必须检索Drive主PRD和专项定义。"
+      },
+      "visible_interaction": {
+        "applicable": true,
+        "reason": "问题涉及当前页面或POI二次交互状态，必须核验生效可见配置及UE。"
+      }
+    },
+    "required_evidence_checks": [
+      {
+        "check_id": "formal_definition_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Drive主PRD、现行可见配置与当前UE",
+        "queries": [
+          "PC-37808",
+          "地图导航 正式定义",
+          "导航到天安门走最快的路"
+        ],
+        "source_ids": [
+          "main_prd_pc37808"
+        ]
+      },
+      {
+        "check_id": "alchemy_current",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy在线对话 BIGSUR",
+        "queries": [
+          "导航到天安门走最快的路",
+          "勾选",
+          "选择充电站",
+          "点击充电站"
+        ],
+        "source_ids": [
+          "alchemy_1209_pc37808"
+        ]
+      },
+      {
+        "check_id": "alchemy_standard",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy标准功能",
+        "queries": [
+          "1209"
+        ],
+        "source_ids": [
+          "alchemy_standard_pc37808"
+        ]
+      },
+      {
+        "check_id": "alchemy_project",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Alchemy深蓝项目功能",
+        "queries": [
+          "1209"
+        ],
+        "source_ids": [
+          "alchemy_project_pc37808"
+        ]
+      },
+      {
+        "check_id": "main_prd_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "算路结果",
+          "路线偏好"
+        ],
+        "source_ids": [
+          "main_prd_pc37808"
+        ]
+      },
+      {
+        "check_id": "special_definition_search",
+        "status": "not_found",
+        "searched_at": "2026-08-06",
+        "search_location": "Drive专项定义与深蓝现行可见配置",
+        "queries": [
+          "shortest_time",
+          "最快路线",
+          "POI确认",
+          "route_preference"
+        ],
+        "source_ids": [],
+        "reason": "未找到明确规定POI二次确认后必须透传shortest_time并自动选择最短耗时路线的产品正式定义。",
+        "material": true,
+        "next_action": "地图产品/交互负责人补齐POI二次确认后的路线偏好执行定义。"
+      },
+      {
+        "check_id": "formal_config_search",
+        "status": "not_found",
+        "searched_at": "2026-08-06",
+        "search_location": "深蓝8155可见新表_v1.3，地图-高德",
+        "queries": [
+          "shortest_time",
+          "route_preference",
+          "最快路线"
+        ],
+        "source_ids": [],
+        "reason": "现行可见配置未定义路线偏好在POI确认后的执行目标。",
+        "material": true,
+        "next_action": "地图产品/交互负责人补齐正式执行定义后复核。"
+      },
+      {
+        "check_id": "interaction_or_ue_search",
+        "status": "read",
+        "searched_at": "2026-08-06",
+        "search_location": "Google Drive：C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+        "queries": [
+          "登录",
+          "协议",
+          "避开限行",
+          "充电站",
+          "最快路线",
+          "路线卡片"
+        ],
+        "source_ids": [
+          "current_ue_pc37808"
+        ]
+      }
+    ]
+  }
+]

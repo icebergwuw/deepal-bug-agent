@@ -5,20 +5,24 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "agent/skills/deepal-product-bug-handler/SKILL.md"
-DEFAULT_TARGET = Path(
-    "/Users/you.wu/.codex/skills/deepal-product-bug-handler/SKILL.md"
-)
+
+
+def default_target() -> Path:
+    configured = os.environ.get("CODEX_HOME")
+    codex_home = Path(configured).expanduser() if configured else Path.home() / ".codex"
+    return codex_home / "skills/deepal-product-bug-handler/SKILL.md"
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--target", type=Path, default=DEFAULT_TARGET)
+    parser.add_argument("--target", type=Path, default=default_target())
     parser.add_argument(
         "--install",
         action="store_true",

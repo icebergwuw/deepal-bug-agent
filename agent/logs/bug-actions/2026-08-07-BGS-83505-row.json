@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-08-07",
+    "key": "BGS-83505",
+    "summary": "深蓝管家车书链接无法通过打开第一个进入",
+    "info": "现象：深蓝管家车书链接无法通过打开第一个进入。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "judgment": "结论：深蓝管家车书链接无法通过打开第一个进入的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=task；meta_id=1179；误命中打开头枕音响；深蓝项目未检出该继承功能点；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：先核对Deepal AI车书链接是否定义序号打开能力，再决定新增上下文选择功能或维持仅闲聊边界；Deepal AI产品负责人处理。",
+    "status": "待复核",
+    "note": "下一步：先核对Deepal AI车书链接是否定义序号打开能力，再决定新增上下文选择功能或维持仅闲聊边界",
+    "links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/BGS-83505"
+      },
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/BGS-83505"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  }
+]

@@ -1,0 +1,130 @@
+{
+  "schema_version": 2,
+  "jira_key": "SLV-44215",
+  "comment_causality": "已完整读取SLV-44215当前字段、描述、附件、关联问题与评论时间线；重新核对2026-08-07当前正式资料和平台结果。Jira测试预期未直接充当正式目标。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SLV-44215 Jira当前字段、描述、附件与完整评论",
+      "source_type": "jira",
+      "source_location": "http://jira.i-tetris.com/browse/SLV-44215",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "停车推荐点击去这里后进入路线推荐页",
+      "target_behavior": "证明现象、状态、日志和评论因果链。",
+      "reason": "2026-08-07已按时间线完整读取。"
+    },
+    {
+      "source_id": "formal_gap",
+      "source": "正式资料检索结果",
+      "source_type": "work_instruction",
+      "source_location": "Google Drive/MasterGo/Alchemy按本票关键词检索",
+      "role": "context_only",
+      "match": "gap",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "停车推荐点击去这里后进入路线推荐页",
+      "target_behavior": "缺口会改变结论。",
+      "reason": "缺客户最终点击链路；确认前不按旧UE推定直达重算",
+      "material": true,
+      "next_action": "缺客户最终点击链路；确认前不按旧UE推定直达重算"
+    }
+  ],
+  "evidence_profiles": [
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图搜索、路线或导航状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及页面、气泡、卡片、控件或可见状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "C673全功能清单 Sheet 16_地图 A1:AZ500",
+      "queries": [
+        "SLV-44215",
+        "停车推荐点击去这里后进入路线推荐页"
+      ],
+      "source_ids": [],
+      "reason": "缺客户最终点击链路；确认前不按旧UE推定直达重算",
+      "material": true,
+      "next_action": "缺客户最终点击链路；确认前不按旧UE推定直达重算"
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "MasterGo C385&673地图UE 850页面",
+      "queries": [
+        "SLV-44215",
+        "停车推荐点击去这里后进入路线推荐页"
+      ],
+      "source_ids": [],
+      "reason": "缺客户最终点击链路；确认前不按旧UE推定直达重算",
+      "material": true,
+      "next_action": "缺客户最终点击链路；确认前不按旧UE推定直达重算"
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive生效页面配置检索",
+      "queries": [
+        "SLV-44215",
+        "停车推荐点击去这里后进入路线推荐页"
+      ],
+      "source_ids": [],
+      "reason": "缺客户最终点击链路；确认前不按旧UE推定直达重算",
+      "material": true,
+      "next_action": "缺客户最终点击链路；确认前不按旧UE推定直达重算"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "MasterGo/Drive交互或UE检索",
+      "queries": [
+        "SLV-44215",
+        "停车推荐点击去这里后进入路线推荐页"
+      ],
+      "source_ids": [],
+      "reason": "缺客户最终点击链路；确认前不按旧UE推定直达重算",
+      "material": true,
+      "next_action": "缺客户最终点击链路；确认前不按旧UE推定直达重算"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira主张、客户最终结论、正式资料和当前实现分开记录；确定性结论仅引用有效正式目标，关键缺口存在时保持待定。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优对接张俊华确认",
+    "text": "结论：直接重算还是进入路线推荐页尚无客户最终点击流程，当前不能按地图缺陷转研发。\n依据：Jira最新评论·等待客户补需求、C673地图UE V0.6·850页面。\n处理：补齐“去这里”点击后的目标页面、重算触发和异常分支；吴优对接张俊华确认。"
+  }
+}

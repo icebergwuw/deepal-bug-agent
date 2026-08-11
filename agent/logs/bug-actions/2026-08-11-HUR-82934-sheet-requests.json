@@ -1,0 +1,302 @@
+{
+  "key": "HUR-82934",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 293,
+  "rowIndex": 292,
+  "previewFingerprint": "fee915d46cedf7bbb1e4bd2ee89e0146ffdd4b446f68a69e74cb4c49ce526d9e",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "现象：客户语料中中文意图为“减少15分钟/减少一点时长”，对应瑞典语却表达“增加1小时15分钟/增加一点”，语义方向和步长均冲突。[Jira原票·描述/完整评论][更新后语料截图]\n证据：研发评论说明执行语料来自马自达客户下发；附件能证明语料内部不一致，但尚未定位客户正式语料表的文件名、Sheet、行号和最终生效版本。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82934",
+        "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：定义为待复核。当前不是运行时随机识别问题，而是需求语料本身存在中瑞语义冲突；在客户最终语料行和版本未定位前，不直接给研发修改值。\n依据：Jira描述、完整评论及更新后语料截图。\n处理：由J90A语音多语言需求负责人确认中文意图、瑞典语目标句及步长，回写客户正式语料并给出文件名/Sheet/行号，再进入开发与回归。",
+      "links": [
+        "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "待复核",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "测试用例已完整，无需补测试用例；需要补客户最终语料的可定位证据，并完成Alchemy链核验。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "",
+      "after": "Jira原票·描述/完整评论\n更新后语料截图\nJ90A_EU-PI_LanguageList",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82934",
+        "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png",
+        "https://docs.google.com/spreadsheets/d/1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y/edit"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：客户语料中中文意图为“减少15分钟/减少一点时长”，对应瑞典语却表达“增加1小时15分钟/增加一点”，语义方向和步长均冲突。[Jira原票·描述/完整评论][更新后语料截图]\n证据：研发评论说明执行语料来自马自达客户下发；附件能证明语料内部不一致，但尚未定位客户正式语料表的文件名、Sheet、行号和最终生效版本。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82934",
+        "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为待复核。当前不是运行时随机识别问题，而是需求语料本身存在中瑞语义冲突；在客户最终语料行和版本未定位前，不直接给研发修改值。\n依据：Jira描述、完整评论及更新后语料截图。\n处理：由J90A语音多语言需求负责人确认中文意图、瑞典语目标句及步长，回写客户正式语料并给出文件名/Sheet/行号，再进入开发与回归。",
+      "links": [
+        "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+      ]
+    },
+    "G": {
+      "visible": "待复核",
+      "links": []
+    },
+    "I": {
+      "visible": "测试用例已完整，无需补测试用例；需要补客户最终语料的可定位证据，并完成Alchemy链核验。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·描述/完整评论\n更新后语料截图\nJ90A_EU-PI_LanguageList",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82934",
+        "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png",
+        "https://docs.google.com/spreadsheets/d/1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y/edit"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 292,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：客户语料中中文意图为“减少15分钟/减少一点时长”，对应瑞典语却表达“增加1小时15分钟/增加一点”，语义方向和步长均冲突。[Jira原票·描述/完整评论][更新后语料截图]\n证据：研发评论说明执行语料来自马自达客户下发；附件能证明语料内部不一致，但尚未定位客户正式语料表的文件名、Sheet、行号和最终生效版本。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82934"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  },
+                  {
+                    "startIndex": 82,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 292,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为待复核。当前不是运行时随机识别问题，而是需求语料本身存在中瑞语义冲突；在客户最终语料行和版本未定位前，不直接给研发修改值。\n依据：Jira描述、完整评论及更新后语料截图。\n处理：由J90A语音多语言需求负责人确认中文意图、瑞典语目标句及步长，回写客户正式语料并给出文件名/Sheet/行号，再进入开发与回归。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 83,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 90
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 292,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 292,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "测试用例已完整，无需补测试用例；需要补客户最终语料的可定位证据，并完成Alchemy链核验。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 292,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/完整评论\n更新后语料截图\nJ90A_EU-PI_LanguageList"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82934"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4230256/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17863447154709.png"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 22
+                  },
+                  {
+                    "startIndex": 23,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

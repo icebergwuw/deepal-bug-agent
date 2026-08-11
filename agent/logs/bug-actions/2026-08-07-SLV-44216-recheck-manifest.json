@@ -1,0 +1,173 @@
+{
+  "schema_version": 2,
+  "jira_key": "SLV-44216",
+  "comment_causality": "已完整读取SLV-44216当前字段、描述、附件、关联问题与评论时间线；重新核对2026-08-07当前正式资料和平台结果。Jira测试预期未直接充当正式目标。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SLV-44216 Jira当前字段、描述、附件与完整评论",
+      "source_type": "jira",
+      "source_location": "http://jira.i-tetris.com/browse/SLV-44216",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "地图设置缺少停车场推荐和步行接续开关",
+      "target_behavior": "证明现象、状态、日志和评论因果链。",
+      "reason": "2026-08-07已按时间线完整读取。"
+    },
+    {
+      "source_id": "formal_target",
+      "source": "0729客户最终结论+地图UE",
+      "source_type": "customer_final_decision",
+      "source_location": "客户会议录屏24:45；MasterGo 850_V0.5&V0.6页面",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "地图设置缺少停车场推荐和步行接续开关",
+      "target_behavior": "结论：停车场推荐和步行接续设置项按0729客户会及生效UI补齐，属于实现缺失。",
+      "reason": "同功能、同交互阶段的生效目标。"
+    },
+    {
+      "source_id": "map_prd",
+      "source": "C673-6全功能清单V1.3",
+      "source_type": "prd",
+      "source_location": "Sheet 16_地图 A1:AZ500；重点第45/78-93/130/298行",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "地图设置缺少停车场推荐和步行接续开关",
+      "target_behavior": "证明地图主能力和适用范围。",
+      "reason": "2026-08-07完整检索地图主功能清单。"
+    },
+    {
+      "source_id": "map_interaction",
+      "source": "C385&673地图交互设计文档V0.6",
+      "source_type": "interaction",
+      "source_location": "MasterGo 850_V0.5&V0.6页面；按停车场/充电站/步行接续等关键词检索图层",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "地图设置缺少停车场推荐和步行接续开关",
+      "target_behavior": "证明专项页面、气泡、深度信息和入口设计。",
+      "reason": "2026-08-07读取页面与检索图层。"
+    },
+    {
+      "source_id": "visible_config",
+      "source": "C673生效功能清单",
+      "source_type": "formal_config",
+      "source_location": "对应Sheet与精确行号；详见本票C/D",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "地图设置缺少停车场推荐和步行接续开关",
+      "target_behavior": "证明功能在C673配置范围内。",
+      "reason": "2026-08-07读取生效功能清单。"
+    }
+  ],
+  "evidence_profiles": [
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图搜索、路线或导航状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及页面、气泡、卡片、控件或可见状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "C673全功能清单 Sheet 16_地图 A1:AZ500",
+      "queries": [
+        "SLV-44216",
+        "地图设置缺少停车场推荐和步行接续开关"
+      ],
+      "source_ids": [
+        "map_prd"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "MasterGo C385&673地图UE 850_V0.5&V0.6页面",
+      "queries": [
+        "SLV-44216",
+        "地图设置缺少停车场推荐和步行接续开关"
+      ],
+      "source_ids": [
+        "map_interaction"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "C673生效功能清单对应Sheet与精确行号",
+      "queries": [
+        "SLV-44216",
+        "地图设置缺少停车场推荐和步行接续开关"
+      ],
+      "source_ids": [
+        "visible_config"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "MasterGo/功能清单精确页面与图层检索",
+      "queries": [
+        "SLV-44216",
+        "地图设置缺少停车场推荐和步行接续开关"
+      ],
+      "source_ids": [
+        "map_interaction"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira主张、客户最终结论、正式资料和当前实现分开记录；确定性结论仅引用有效正式目标，关键缺口存在时保持待定。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "C673地图研发负责人",
+    "text": "结论：停车场推荐和步行接续设置项按0729客户会及生效UI补齐，属于实现缺失。\n依据：Jira最新评论·0729客户会结论、客户会议录屏·24:45、C673功能清单·16_地图第45行、C673地图UE V0.6·850页面。\n处理：补齐两个设置入口、开关状态和回归用例；C673地图研发负责人处理。",
+    "implementation_source_ids": [
+      "jira_actual"
+    ]
+  },
+  "expected_behavior": {
+    "trigger": "地图设置缺少停车场推荐和步行接续开关",
+    "target_state": "停车场推荐和步行接续设置项按0729客户会及生效UI补齐，属于实现缺失。",
+    "intent_function_signal": "按正式目标进入对应功能状态。",
+    "ui_tts_vehicle_behavior": "停车场推荐和步行接续设置项按0729客户会及生效UI补齐，属于实现缺失。",
+    "boundary": "按客户会范围实现两个开关，不扩展未确认的推荐策略",
+    "source_ids": [
+      "formal_target"
+    ]
+  }
+}

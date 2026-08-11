@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "PC-38201",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 175,
+  "range": "A175:J175",
+  "values": {
+    "A": "2026-07-30",
+    "B": "PC-38201｜【主线】【User】【可见即可说】13：50 微信互联弹窗 query：向上滑/向下滑，未执行可见",
+    "C": "现象：微信互联步骤弹窗中说“向上滑/向下滑”10/10未执行；研发说明页面使用ViewPager2，当前框架未支持。[Jira原票·描述/完整评论]\n证据：C673主清单第72行仅明确Hicar可视即可说，未覆盖本票微信互联弹窗和ViewPager2滑动边界。[C673功能清单·12_手机互联第72行]",
+    "D": "结论：现有正式清单不能证明微信互联该弹窗必须支持上下滑可见指令，当前不直接转研发。\n依据：Jira原票·描述/完整评论、C673功能清单·12_手机互联第72行。\n处理：补齐微信互联弹窗页面级VUI控件清单、滑动条件和ViewPager2适配目标；手机互联VUI产品负责人处理。",
+    "E": "FALSE",
+    "F": "",
+    "G": "待确认",
+    "H": "",
+    "I": "Hicar条目不能外推微信弹窗；缺页面级控件和滑动定义",
+    "J": "Jira原票·描述/完整评论\nC673功能清单·12_手机互联第72行"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-38201\",\"PC-38201｜【主线】【User】【可见即可说】13：50 微信互联弹窗 query：向上滑/向下滑，未执行可见\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38201"
+      },
+      {
+        "label": "C673功能清单·12_手机互联第72行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1401474663#gid=1401474663"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38201"
+      },
+      {
+        "label": "C673功能清单·12_手机互联第72行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1401474663#gid=1401474663"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/PC-38201"
+      },
+      {
+        "label": "C673功能清单·12_手机互联第72行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1401474663#gid=1401474663"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "PC-38201｜【主线】【User】【可见即可说】13：50 微信互联弹窗 query：向上滑/向下滑，未执行可见",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

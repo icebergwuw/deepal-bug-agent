@@ -1,0 +1,115 @@
+{
+  "jira_key": "ADS-47871",
+  "comment_causality": "Jira先按TTS超时将等待时长从10秒延长到60秒，内部实车20次回归通过后关闭；客户随后用另一台C673-7实车回归仍失败并重新打开。最新评论又确认Claw POI Agent暂不支持沿途搜索。正式Alchemy标准功能1005和深蓝项目功能24549已定义并继承沿途搜索能力，当前在线原话也正确下发1209生成路线和1005沿途搜索，因此不能把Claw自身能力缺口当作产品未定义，结论收敛为现有语音执行路由缺陷。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260726185110175",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira标题和描述提供C673-7、VIN、云端/网络前置条件、原话、期望、实际、版本和发生时间；评论补充日志、内部20次回归结果、客户失败回归视频及另一台VIN，足以确认当前实现现象。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ST-65870",
+        "relationship": "Jira当前直接关联的MegaClaw通用归集票",
+        "read": true,
+        "outcome": "已完整读取；该票为通用归集票，未提供本票专属产品目标，不能替代正式功能点。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "alchemy_standard_1005",
+      "source": "Alchemy标准功能1005 沿途搜索/展示【地址】（内部ID 1430）",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "语音标准功能，适用于地图导航沿途地址搜索",
+      "trigger": "在导航状态下搜索导航路线沿途的地址或POI类型",
+      "target_behavior": "下发action=search和地址参数；示例包含沿途搜索充电站、路上找厕所、沿途找加油站",
+      "reason": "正式功能点直接定义本票沿途服务区搜索目标。"
+    },
+    {
+      "source_id": "alchemy_project_24549",
+      "source": "Alchemy深蓝项目功能24549 沿途搜索/展示【地址】",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目，车型列表含BIGSUR与C673_7",
+      "trigger": "meta_id=1005沿途搜索",
+      "target_behavior": "继承标准功能1430且未修改，功能状态已锁定",
+      "reason": "证明深蓝项目已继承现有沿途搜索能力，并非项目能力空白。"
+    },
+    {
+      "source_id": "jira_actual",
+      "source": "ADS-47871原票、全部评论、附件和状态时间线",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673-7实车，c673_7 hqx.4.5.5版本",
+      "trigger": "重庆主城到四面山的沿途服务区",
+      "target_behavior": "实车超时关闭对话；延长等待后内部20次通过但客户回归仍失败，Claw评论称当前不支持沿途搜索",
+      "reason": "证明客户原话、实际故障、临时修复和失败回归。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy BIGSUR在线对话当前原话核验",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "深蓝BIGSUR，对应C673-7语音项目",
+      "trigger": "重庆主城到四面山的沿途服务区",
+      "target_behavior": "classification=task；先下发1209生成重庆主城到四面山路线，再下发1005沿途搜索服务区",
+      "reason": "证明当前NLU已能给出正确现有功能链，缺陷位于实车后续仲裁或执行。"
+    },
+    {
+      "source_id": "poi_prd_v08",
+      "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+      "role": "context_only",
+      "match": "partial",
+      "project_model": "深蓝8295大模型POI推荐",
+      "trigger": "模糊推荐、中心点及筛选条件类POI请求",
+      "target_behavior": "大模型返回POI推荐列表并支持二轮交互和导航跨域",
+      "reason": "该PRD未定义沿途搜索，不能用来把本票明确沿途搜索改走Claw自由推荐。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "以Alchemy标准功能1005作为沿途搜索正式目标，以深蓝项目功能24549证明车型项目继承，以Jira实车和Alchemy当前结果分别说明车端实际与当前语义输出。Claw评论只说明当前组件能力，不具有覆盖正式功能点的效力；POI推荐PRD只覆盖推荐类模糊意图，也不覆盖本票明确沿途搜索。",
+  "expected_behavior": {
+    "trigger": "用户说“重庆主城到四面山的沿途服务区”。",
+    "target_state": "先形成重庆主城到四面山的导航路线，再展示该路线沿途的服务区结果列表。",
+    "intent_function_signal": "先下发meta_id=1209生成路线，再下发meta_id=1005、navi:dest:search:around_route，poi_tag=服务区。",
+    "ui_tts_vehicle_behavior": "地图进入对应路线并展示沿途服务区列表；不得仅延长等待后仍以超时关闭对话，也不得由不支持沿途搜索的Claw拦截。",
+    "boundary": "适用深蓝8295/BIGSUR/C673-7；沿途搜索按既有地图功能点执行，大模型POI推荐仅适用于其PRD定义的推荐类意图。",
+    "source_ids": [
+      "alchemy_standard_1005"
+    ]
+  },
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "重庆主城到四面山的沿途服务区",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR：classification=task；1209 navi:dest:search（from=重庆主城，dest=四面山，action=navi）+ 1005 navi:dest:search:around_route（action=search，poi_tag=服务区）",
+    "meta_id": "1209；1005",
+    "standard_function": {
+      "status": "verified",
+      "name": "1005 沿途搜索/展示【地址】（内部ID 1430）",
+      "assessment": "标题与meta_id匹配；说明明确在导航状态下搜索导航路线沿途地址，参数示例覆盖沿途POI类型搜索。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能24549 沿途搜索/展示【地址】",
+      "assessment": "深蓝项目已锁定并继承标准功能1430且未修改，适用车型列表包含BIGSUR和C673_7。"
+    }
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "语音在线仲裁/DS研发",
+    "implementation_source_ids": [
+      "jira_actual",
+      "alchemy_current"
+    ],
+    "text": "结论：产品预期确认：“重庆主城到四面山的沿途服务区”应先生成路线，再按meta_id=1005搜索并展示路线沿途服务区列表；不得因Claw暂不支持沿途搜索而超时关闭对话。\n依据：Jira原票、客户回归附件、沿途搜索标准/深蓝项目功能点、Alchemy当前核验\n处理：移除该指令的Claw抢占并按现有1209+1005功能链执行；语音在线仲裁/DS研发处理。"
+  }
+}

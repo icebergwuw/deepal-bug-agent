@@ -1,0 +1,84 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "ADS-48288｜【C673-7】query以后叫我宝宝，不能设置成功，回复要求4-6字",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48288\",\"ADS-48288｜【C673-7】query以后叫我宝宝，不能设置成功，回复要求4-6字\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：C673-7说“以后叫我宝宝”，NLU命中meta_id=1325，车端服务按错误码205的重复字符规则拒绝设置。[Jira原票·描述/完整评论][ADS-47939·reqId/meta]\n证据：研发评论说明205规则为东风平台新增，当前提供“保留/深蓝绕过”两种方案；未检索到深蓝同版本自定义应答语对长度及重复字符的生效PRD条款。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/ADS-48288"
+        },
+        {
+          "label": "ADS-47939·reqId/meta",
+          "url": "http://jira.i-tetris.com/browse/ADS-47939"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待复核。当前实现因复用东风错误码205拦截“宝宝”，但缺深蓝项目对2字昵称、重复字符和4-6字限制的正式定义，不能直接选择绕过方案。\n依据：ADS-48288完整评论与ADS-47939的meta_id=1325/reqId链；Drive未命中深蓝同版本条款，Alchemy项目功能点未完整核验。\n处理：明确深蓝自定义应答语的长度、重复字符和文明校验规则并形成生效配置，再决定是否对深蓝绕过205；深蓝语音服务产品负责人（吴优）处理。",
+      "links": []
+    },
+    "G": "待复核",
+    "I": "测试用例完整，无需补测试用例；需补深蓝正式规则及Alchemy当前/标准/项目证据。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/ADS-48288"
+        },
+        {
+          "label": "ADS-47939·reqId/meta",
+          "url": "http://jira.i-tetris.com/browse/ADS-47939"
+        }
+      ]
+    }
+  }
+}

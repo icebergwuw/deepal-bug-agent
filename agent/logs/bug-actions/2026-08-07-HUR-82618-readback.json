@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82618",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 283,
+  "range": "A283:J283",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82618｜3D车控HUD雪地模式未同步",
+    "C": "现象：3D车控HUD雪地模式未同步。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "D": "结论：3D车控HUD雪地模式未同步的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\n依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\n处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；J90A SystemUI产品负责人处理。",
+    "E": false,
+    "F": null,
+    "G": "待复核",
+    "H": null,
+    "I": "下一步：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现",
+    "J": "Drive检索·待定位正式定义/UE"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82618\",\"HUR-82618｜3D车控HUD雪地模式未同步\")",
+    "C": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82618\",\"现象：3D车控HUD雪地模式未同步。Jira字段、描述、附件、关联票和完整评论已读。\"&CHAR(10)&\"证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。\")",
+    "D": "=HYPERLINK(\"https://drive.google.com/drive/u/0/search?q=3D%E8%BD%A6%E6%8E%A7HUD%E9%9B%AA%E5%9C%B0%E6%A8%A1%E5%BC%8F%E6%9C%AA%E5%90%8C%E6%AD%A5\",\"结论：3D车控HUD雪地模式未同步的Jira现象成立，但当前未读到能定义同版本目标行为的正式配置或UE，暂不作关闭或研发定责。\"&CHAR(10)&\"依据：Jira描述、附件与评论时间线已完整读取；Drive已按模块、页面和版本检索，现有结果未覆盖本票精确交互阶段。\"&CHAR(10)&\"处理：补齐同项目、同版本和同交互阶段的正式定义/UE，并对照附件或日志复核当前实现；J90A SystemUI产品负责人处理。\")",
+    "J": "=HYPERLINK(\"https://drive.google.com/drive/u/0/search?q=3D%E8%BD%A6%E6%8E%A7HUD%E9%9B%AA%E5%9C%B0%E6%A8%A1%E5%BC%8F%E6%9C%AA%E5%90%8C%E6%AD%A5\",\"Drive检索·待定位正式定义/UE\")"
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "style_id": 58,
+    "source_style_matches_E215": true
+  },
+  "styles": {
+    "style_ids": [
+      17,
+      11,
+      46,
+      46,
+      58,
+      35,
+      14,
+      35,
+      35,
+      47
+    ],
+    "visual_style_matches_standard_row_215": false,
+    "row_height": "automatic",
+    "conditional_formatting": "none"
+  },
+  "filter": "$A$1:$J$283",
+  "protected_columns": {
+    "F": null,
+    "H": null
+  },
+  "manifest_validated": true,
+  "log_validated": true,
+  "jira_external_actions": []
+}

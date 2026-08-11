@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-82554",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 267,
+  "range": "A267:J267",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-82554｜路线选择阶段可语音添加途经点",
+    "C": "现象与实现：已完整读取HUR-82554描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+    "D": "结论：路线规划/路线选择阶段允许添加途经点；当前meta_id=1206进入添加途经点流程符合地图正式定义，测试预期“不在导航中无法添加”不成立。\n依据：Jira原票·评论/2026-07-31、地图导航PRD V6.1·4.8.1、Alchemy当前结果·meta_id=1206。\n处理：按非问题关闭本Bug并更正测试预期；吴优处理。",
+    "E": false,
+    "F": null,
+    "G": "可关闭",
+    "H": null,
+    "I": "路线规划与实际导航状态不同，但均不构成本票的功能禁用条件",
+    "J": "Jira原票·描述/完整评论\nAlchemy当前结果/功能点\n工作说明·正式资料入口"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82554\",\"HUR-82554｜路线选择阶段可语音添加途经点\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82554"
+      },
+      {
+        "label": "Alchemy当前结果/功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "工作说明·正式资料入口",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-82554"
+      },
+      {
+        "label": "Alchemy当前结果",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "地图导航PRD V6.1",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82554"
+      },
+      {
+        "label": "Alchemy当前结果/功能点",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "工作说明·正式资料入口",
+        "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-08-07",
+    "B": "HUR-82554｜路线选择阶段可语音添加途经点",
+    "E": false,
+    "F": null,
+    "H": null
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-80119",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 269,
+  "range": "A269:J269",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-80119｜荷兰语取消途经点未执行",
+    "C": "现象：荷兰语取消途经点未执行。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "D": "结论：荷兰语取消途经点未执行的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为前者落拒识meta_id=2820，后者误识别为点播歌曲meta_id=1026；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A荷兰语取消途经点正式语料后，按标准功能增删途经点修正NLU映射；J90A语音产品配置负责人处理。",
+    "E": false,
+    "F": null,
+    "G": "待复核",
+    "H": null,
+    "I": "下一步：补齐J90A荷兰语取消途经点正式语料后，按标准功能增删途经点修正NLU映射",
+    "J": "Alchemy当前结果·原话/MetaId"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-80119\",\"HUR-80119｜荷兰语取消途经点未执行\")",
+    "C": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-80119\",\"现象：荷兰语取消途经点未执行。Jira字段、描述、附件、关联票和完整评论已读。\"&CHAR(10)&\"证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。\")",
+    "D": "=HYPERLINK(\"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=\",\"结论：荷兰语取消途经点未执行的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\"&CHAR(10)&\"依据：Jira当前描述/评论；Alchemy实测为前者落拒识meta_id=2820，后者误识别为点播歌曲meta_id=1026；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\"&CHAR(10)&\"处理：补齐J90A荷兰语取消途经点正式语料后，按标准功能增删途经点修正NLU映射；J90A语音产品配置负责人处理。\")",
+    "J": "=HYPERLINK(\"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=\",\"Alchemy当前结果·原话/MetaId\")"
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "style_id": 58,
+    "source_style_matches_E215": true
+  },
+  "styles": {
+    "style_ids": [
+      17,
+      11,
+      46,
+      46,
+      58,
+      35,
+      14,
+      35,
+      35,
+      47
+    ],
+    "visual_style_matches_standard_row_215": false,
+    "row_height": "automatic",
+    "conditional_formatting": "none"
+  },
+  "filter": "$A$1:$J$283",
+  "protected_columns": {
+    "F": null,
+    "H": null
+  },
+  "manifest_validated": true,
+  "log_validated": true,
+  "jira_external_actions": []
+}

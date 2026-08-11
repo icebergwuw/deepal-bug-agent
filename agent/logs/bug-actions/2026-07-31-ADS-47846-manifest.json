@@ -1,0 +1,129 @@
+{
+  "jira_key": "ADS-47846",
+  "comment_causality": "客户要求“申请记忆账号/开一个记忆账号”进入记忆ID创建；Jira日志显示“开一个记忆账号”命中1305和1876并被送入DEEPAL AI。正式PRD逐字定义两类表达属于创建记忆ID入口，但Jira标题、车型字段和修复版本分别指向C673-7、C385-2、C385-5，且未填写P挡、是否已有记忆ID等前置，因此先补齐客户测试用例再按目标车型复核。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260725182521798",
+    "test_case": {
+      "checked": true,
+      "status": "incomplete",
+      "source": "Jira描述和两段视频提供原话、期望、实际、VIN与软件版本，但前置条件仍为模板，车型字段互相冲突，未说明P挡和是否已有记忆ID。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ST-65879",
+        "relationship": "Jira历史关联的MegaClaw落域归集票",
+        "read": true,
+        "outcome": "已读全票；为陈歌名下的通用归集票，未定义ADS-47846目标行为。"
+      },
+      {
+        "key": "ST-65870",
+        "relationship": "Jira历史关联后移除的MegaClaw落域归集票",
+        "read": true,
+        "outcome": "已读全票；为李蒙名下的通用归集票，未定义ADS-47846目标行为。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "ADS-47846原票、评论、附件信息与语音日志",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "标题C673-7，字段C385-2，修复版本C385-5",
+      "trigger": "申请记忆账号；开一个记忆账号",
+      "target_behavior": "当前车辆把开一个记忆账号送入DEEPAL AI；日志命中1305和1876",
+      "reason": "证明客户现象、当前实现和字段冲突。"
+    },
+    {
+      "source_id": "memory_prd_v06",
+      "source": "记忆空间-需求文档-v0.6.pdf 2.2.1.1",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "8295平台，适用C673-7、C385-5",
+      "trigger": "申请/开通/新建+记忆ID或记忆账号；开一个记忆账号",
+      "target_behavior": "镁佳识别创建记忆ID；无ID进入创建页，有ID进入账号信息页",
+      "reason": "当前Drive同文档家族最高版本且正文逐字覆盖本票原话。"
+    },
+    {
+      "source_id": "alchemy_current",
+      "source": "Alchemy BIGSUR在线对话当前结果",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "深蓝BIGSUR",
+      "trigger": "申请记忆账号；开一个记忆账号",
+      "target_behavior": "前者当前命中1919不支持，后者当前命中1305和1876",
+      "reason": "复现当前语义路由；与Jira日志对后一句一致。"
+    },
+    {
+      "source_id": "alchemy_1305",
+      "source": "Alchemy标准功能1305 打开特定页面/APP",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "标准功能；深蓝24542继承未修改",
+      "trigger": "打开某页面或APP",
+      "target_behavior": "识别打开意图并下发页面或APP目标",
+      "reason": "说明当前第一路命中的函数语义。"
+    },
+    {
+      "source_id": "alchemy_1876",
+      "source": "Alchemy标准功能1876 打开账号自动记忆",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "标准功能，深蓝项目未继承",
+      "trigger": "打开自动记忆、打开账号自动记忆、打开记忆偏好",
+      "target_behavior": "打开当前账号的自动记忆开关",
+      "reason": "证明1876并非创建记忆ID。"
+    },
+    {
+      "source_id": "alchemy_3205",
+      "source": "Alchemy深蓝项目功能3205 记忆空间身份",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "深蓝项目新增",
+      "trigger": "当前无泛化说明",
+      "target_behavior": "草稿且说明、执行策略均为空",
+      "reason": "说明深蓝已有记忆空间身份占位功能，但尚未形成可执行定义。"
+    },
+    {
+      "source_id": "customer_scope_gap",
+      "source": "客户测试用例车型、版本与前置条件",
+      "role": "context_only",
+      "match": "gap",
+      "material": true,
+      "project_model": "C673-7/C385-2/C385-5冲突",
+      "trigger": "两句客户原话",
+      "target_behavior": "需确认实际车型、软件版本、P挡和记忆ID状态后匹配PRD适用范围",
+      "reason": "会改变适用车型、目标页面和后续责任流转。",
+      "next_action": "吴优向客户补齐完整测试用例并按同版本复核。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "以Drive最新同族PRD V0.6作为目标定义，不采纳评论中“需要需求重做”作为产品目标；以Alchemy当前结果和Jira日志说明实现。由于客户实际车型与前置状态冲突，先降级待确认，不关闭、不转需求，也不提前定责给语音研发。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "申请记忆账号；开一个记忆账号",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR：申请记忆账号 -> 1919 common:func:not:supported；开一个记忆账号 -> 1305 app:ctrl + 1876 system:account:account_auto_memory:ctrl",
+    "meta_id": "1919；1305；1876",
+    "standard_function": {
+      "status": "verified",
+      "name": "1305 打开特定页面/APP；1876 打开账号自动记忆",
+      "assessment": "1305是通用打开入口；1876控制账号自动记忆开关，均不等同于创建记忆ID。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝24542继承1305；深蓝3205记忆空间身份",
+      "assessment": "24542继承1305未修改；3205为项目新增草稿，说明、泛化和执行策略为空；深蓝未继承1876。"
+    }
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优",
+    "text": "结论：正式定义支持“申请记忆账号”“开一个记忆账号”进入记忆ID创建/账号信息页，但本票标题、车型字段和修复版本分别指向C673-7、C385-2、C385-5，且未说明P挡、记忆ID有无等前置，当前因客户测试用例不完整保持待确认，不关闭、不转需求。\n依据：Jira原票、记忆空间PRD V0.6、Alchemy当前核验、深蓝项目功能3205\n处理：向客户补齐客户测试用例中的实际车型/软件版本、P挡及记忆ID状态、两句原话的期望页面和同条件复现；吴优处理。"
+  }
+}

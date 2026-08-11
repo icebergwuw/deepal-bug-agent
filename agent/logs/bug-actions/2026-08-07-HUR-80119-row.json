@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-08-07",
+    "key": "HUR-80119",
+    "summary": "荷兰语取消途经点未执行",
+    "info": "现象：荷兰语取消途经点未执行。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "judgment": "结论：荷兰语取消途经点未执行的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为前者落拒识meta_id=2820，后者误识别为点播歌曲meta_id=1026；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A荷兰语取消途经点正式语料后，按标准功能增删途经点修正NLU映射；J90A语音产品配置负责人处理。",
+    "status": "待复核",
+    "note": "下一步：补齐J90A荷兰语取消途经点正式语料后，按标准功能增删途经点修正NLU映射",
+    "links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-80119"
+      },
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-80119"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44212",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 163,
+  "range": "A163:J163",
+  "values": {
+    "A": "2026-07-30",
+    "B": "SLV-44212｜【客户UI问题】【地图】停车场搜索-周边搜、停车场搜索-关键字搜-UI问题： 功能实现问题： 问题一：不符合预期：搜过结果的呈现应当同停车场",
+    "C": "现象：周边搜和关键词搜结果未按客户UI展示停车场气泡。[Jira最新评论·0729客户会结论]\n证据：0729客户会纠正了旧理解并明确补UI气泡；主清单第85-93行定义周边搜、结果同框和停车场深度信息，MasterGo含停车场气泡/详情图层。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+    "D": "结论：停车场周边搜和关键词搜均应补齐客户确认的UI气泡呈现，属于实现缺失。\n依据：Jira最新评论·0729客户会结论、C673功能清单·16_地图第85-93行、C673地图UE V0.6·850页面。\n处理：按两类入口补齐气泡、详情联动并分别回归；C673地图UI研发负责人处理。",
+    "E": "FALSE",
+    "F": "",
+    "G": "可转研发",
+    "H": "",
+    "I": "两类入口分别回归，避免只修周边搜遗漏关键词搜",
+    "J": "Jira最新评论·0729客户会结论\nC673功能清单·16_地图第45/85-93/298行\nC673地图UE V0.6·850页面/检索图层"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44212\",\"SLV-44212｜【客户UI问题】【地图】停车场搜索-周边搜、停车场搜索-关键字搜-UI问题： 功能实现问题： 问题一：不符合预期：搜过结果的呈现应当同停车场\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44212"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44212"
+      },
+      {
+        "label": "C673功能清单·16_地图第85-93行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44212"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "SLV-44212｜【客户UI问题】【地图】停车场搜索-周边搜、停车场搜索-关键字搜-UI问题： 功能实现问题： 问题一：不符合预期：搜过结果的呈现应当同停车场",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

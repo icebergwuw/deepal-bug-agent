@@ -1,0 +1,278 @@
+{
+  "key": "HUR-82857",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 315,
+  "rowIndex": 314,
+  "previewFingerprint": "4a9055456e7666ef9d232e7de182ecec053fbd727f0c9db1b74581d462040315",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "现象：J90A冬季模式已开启时，音乐App点击氛围灯仍可开启音乐律动且无拦截提示。[Jira原票·描述/完整评论]\n证据：已完成需求HUR-24753明确冬季模式期间禁止开启音乐氛围灯，点击时提示“当前为冬季模式，无法打开音乐氛围灯，请先关闭冬季模式再操作”；当前音乐端代码额外要求winter_light开启才拦截。[HUR-24753·需求定义/PRD入口]",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82857",
+        "http://jira.i-tetris.com/browse/HUR-24753"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：定义为音乐端实现缺陷。冬季模式开启即应禁止音乐氛围灯，不应再以winter_light联动开关作为第二个必要条件。\n依据：HUR-24753已完成需求及其PRD入口明确“冬季模式期间禁止开启”；HUR-82857评论记录音乐端现状为两个条件同时满足才拦截。\n处理：删除音乐端对winter_light的额外前置依赖，冬季模式开启时统一拦截并展示既定提示；Android-Music研发负责人（张齐财）处理。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "可转研发",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "测试用例完整，无需补测试用例；未执行Jira评论、转派或状态变更。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "",
+      "after": "Jira原票·描述/完整评论\nHUR-24753·需求定义/PRD入口\nPRD·冬季模式音乐氛围灯",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82857",
+        "http://jira.i-tetris.com/browse/HUR-24753",
+        "https://docs.google.com/document/d/1LpVkJsQLb1_9e_x3c3n9dK5Kc_tn7AqRKiEspioc1O0/edit#heading=h.emfxkqkec3qq"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：J90A冬季模式已开启时，音乐App点击氛围灯仍可开启音乐律动且无拦截提示。[Jira原票·描述/完整评论]\n证据：已完成需求HUR-24753明确冬季模式期间禁止开启音乐氛围灯，点击时提示“当前为冬季模式，无法打开音乐氛围灯，请先关闭冬季模式再操作”；当前音乐端代码额外要求winter_light开启才拦截。[HUR-24753·需求定义/PRD入口]",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82857",
+        "http://jira.i-tetris.com/browse/HUR-24753"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为音乐端实现缺陷。冬季模式开启即应禁止音乐氛围灯，不应再以winter_light联动开关作为第二个必要条件。\n依据：HUR-24753已完成需求及其PRD入口明确“冬季模式期间禁止开启”；HUR-82857评论记录音乐端现状为两个条件同时满足才拦截。\n处理：删除音乐端对winter_light的额外前置依赖，冬季模式开启时统一拦截并展示既定提示；Android-Music研发负责人（张齐财）处理。",
+      "links": []
+    },
+    "G": {
+      "visible": "可转研发",
+      "links": []
+    },
+    "I": {
+      "visible": "测试用例完整，无需补测试用例；未执行Jira评论、转派或状态变更。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·描述/完整评论\nHUR-24753·需求定义/PRD入口\nPRD·冬季模式音乐氛围灯",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82857",
+        "http://jira.i-tetris.com/browse/HUR-24753",
+        "https://docs.google.com/document/d/1LpVkJsQLb1_9e_x3c3n9dK5Kc_tn7AqRKiEspioc1O0/edit#heading=h.emfxkqkec3qq"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 314,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：J90A冬季模式已开启时，音乐App点击氛围灯仍可开启音乐律动且无拦截提示。[Jira原票·描述/完整评论]\n证据：已完成需求HUR-24753明确冬季模式期间禁止开启音乐氛围灯，点击时提示“当前为冬季模式，无法打开音乐氛围灯，请先关闭冬季模式再操作”；当前音乐端代码额外要求winter_light开启才拦截。[HUR-24753·需求定义/PRD入口]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 42,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82857"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 56
+                  },
+                  {
+                    "startIndex": 160,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-24753"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 180
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 314,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为音乐端实现缺陷。冬季模式开启即应禁止音乐氛围灯，不应再以winter_light联动开关作为第二个必要条件。\n依据：HUR-24753已完成需求及其PRD入口明确“冬季模式期间禁止开启”；HUR-82857评论记录音乐端现状为两个条件同时满足才拦截。\n处理：删除音乐端对winter_light的额外前置依赖，冬季模式开启时统一拦截并展示既定提示；Android-Music研发负责人（张齐财）处理。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 314,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 314,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "测试用例完整，无需补测试用例；未执行Jira评论、转派或状态变更。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 314,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/完整评论\nHUR-24753·需求定义/PRD入口\nPRD·冬季模式音乐氛围灯"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82857"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-24753"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 35
+                  },
+                  {
+                    "startIndex": 36,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1LpVkJsQLb1_9e_x3c3n9dK5Kc_tn7AqRKiEspioc1O0/edit#heading=h.emfxkqkec3qq"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

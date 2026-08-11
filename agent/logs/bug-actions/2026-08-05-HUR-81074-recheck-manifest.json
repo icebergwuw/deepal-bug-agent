@@ -1,0 +1,124 @@
+{
+  "jira_key": "HUR-81074",
+  "comment_causality": "四条评论中，研发仅表示‘没需求设计、暂不修改’，测试要求产品确认，最后一条只有‘产品老师确认’，均未给出确认内容或正式来源。重新核对 J90A EU&EU PI 功能清单、J90A 情景模式 PRD/交互和 Jira 视频后，正式资料明确小憩模式进入专属全屏页并屏蔽 Dock/状态栏，离开小憩页面应自动退出；视频却显示小憩仍在运行时通过 Dock 调出 AppList，因此改为依据正式资料确认是实现缺陷。",
+  "customer_issue": {
+    "identified": false,
+    "external_id": "",
+    "test_case": {
+      "checked": false,
+      "status": "not_applicable",
+      "source": "Jira 未提供客户问题长编号；本票为内部测试故障。现有 Jira 已包含车型、版本、VIN、前置条件、步骤、期望、实际、概率、视频和日志，足够回归，不新增测试用例补充动作。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [],
+    "outcome": "Jira 未挂接同类关联问题；HUR-5 仅为 Epic，不作为本票目标依据。"
+  },
+  "scope_checks": [
+    {
+      "source_id": "j90a_eu_pi_feature_list_v31",
+      "source": "J90A EU&EU PI座舱功能清单V3.1 20251211",
+      "source_location": "Sheet「J90A EU座舱功能清单」序号938（I2-F70-00-00，需求备注‘0222：需求和国内保持一致’）与序号939（I2-F70-SF01-00，小憩模式）",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "J90A EU&EU PI",
+      "trigger": "J90A EU PI 小憩模式",
+      "target_behavior": "情景模式需求与国内保持一致；小憩模式 I2-F70-SF01-00 已搭载并完成。",
+      "reason": "确认国内 J90A 情景模式 PRD/交互可作为 EU PI 同功能目标定义。"
+    },
+    {
+      "source_id": "j90a_scene_prd_v24",
+      "source": "马自达J90A_情景模式_需求文档_V2.4",
+      "source_location": "第13页，章节「情景模式-小憩模式」；区域「小憩模式专属页面」「小憩模式异常提示/其他情况」「页面层级」",
+      "role": "formal_target",
+      "match": "partial",
+      "inheritance_chain_id": "j90a_eu_pi_scene_prd",
+      "project_model": "马自达 J90A",
+      "trigger": "小憩模式开启并进入专属页面",
+      "target_behavior": "离开小憩页面时小憩模式自动退出；专属页面仅定义时间、音乐、座椅、音量和空调等受控操作。",
+      "reason": "直接定义小憩运行态和离开页面的处理。"
+    },
+    {
+      "source_id": "j90a_scene_ue_v26",
+      "source": "马自达J90A交互设计文档_情景模式_V2.6",
+      "source_location": "第13页，章节「情景模式-小憩模式」；区域「小憩模式专属页面」「小憩模式异常提示/其他情况」「页面层级」",
+      "role": "formal_target",
+      "match": "partial",
+      "inheritance_chain_id": "j90a_eu_pi_scene_ue",
+      "project_model": "马自达 J90A",
+      "trigger": "小憩模式准备页倒计时结束",
+      "target_behavior": "进入小憩模式专属页面；全屏显示，屏蔽 Dock 栏和状态栏。",
+      "reason": "直接覆盖本票通过 Dock 调出 AppList 的交互边界。"
+    },
+    {
+      "source_id": "jira_video_actual",
+      "source": "HUR-81074 Jira 描述、四条评论和视频附件 video(48).mp4",
+      "source_location": "Jira附件 video(48).mp4，00:02仍为小憩专属页，00:05已进入本地应用列表，关键复现段00:02-00:06",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "J90A EU PI / SWD.00.2",
+      "trigger": "小憩模式运行中点击 Dock 的 AppList 入口",
+      "target_behavior": "实际成功进入本地应用 AppList，随后仍可回到小憩专属页面。",
+      "reason": "视频逐帧确认当前实现与正式交互目标不一致。"
+    }
+  ],
+  "inheritance_chains": [
+    {
+      "id": "j90a_eu_pi_scene_prd",
+      "project_model": "J90A EU&EU PI",
+      "function": "小憩模式",
+      "project_source_id": "j90a_eu_pi_feature_list_v31",
+      "definition_source_id": "j90a_scene_prd_v24",
+      "verified": true,
+      "reason": "功能清单序号938明确情景模式需求与国内保持一致，序号939确认小憩模式搭载，因此国内J90A PRD定义可用于EU PI同功能。"
+    },
+    {
+      "id": "j90a_eu_pi_scene_ue",
+      "project_model": "J90A EU&EU PI",
+      "function": "小憩模式",
+      "project_source_id": "j90a_eu_pi_feature_list_v31",
+      "definition_source_id": "j90a_scene_ue_v26",
+      "verified": true,
+      "reason": "功能清单序号938明确情景模式需求与国内保持一致，序号939确认小憩模式搭载，因此国内J90A交互定义可用于EU PI同功能。"
+    }
+  ],
+  "conflict_resolution": "以 J90A EU&EU PI 功能清单建立车型继承关系，以 J90A PRD/交互定义目标，以 Jira 视频定义实现；研发‘没需求设计’和‘产品老师确认’没有可追溯目标内容，不能覆盖正式资料。",
+  "expected_behavior": {
+    "trigger": "J90A EU PI 车辆在 P 挡、电源 ON 等条件满足时开启小憩模式并完成 5 秒倒计时。",
+    "target_state": "保持小憩模式专属全屏页面；Dock 栏和状态栏被屏蔽。",
+    "intent_function_signal": "点击或手势不得从小憩专属页面调出 AppList；若确实离开小憩页面，应按 PRD 自动退出小憩模式。",
+    "ui_tts_vehicle_behavior": "UI 不展示 AppList；正常保留时间、音乐、音量、座椅和空调等专属页能力。离开页面时按 PRD执行退出提示和恢复逻辑。",
+    "boundary": "适用 J90A EU&EU PI 小憩模式运行态；蓝牙来电和 U 盘插入是 PRD 明确的不退出例外，不包含 AppList。",
+    "source_ids": [
+      "j90a_scene_prd_v24",
+      "j90a_scene_ue_v26"
+    ]
+  },
+  "voice_evidence": {
+    "applicable": false,
+    "availability": "not_applicable",
+    "original_utterance": "",
+    "alchemy_tested": false,
+    "alchemy_result": "",
+    "meta_id": "",
+    "standard_function": {
+      "status": "not_applicable",
+      "name": "",
+      "assessment": "非语音问题。"
+    },
+    "project_function": {
+      "status": "not_applicable",
+      "name": "",
+      "assessment": "非语音问题。"
+    }
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "情景模式研发（丁黎，Android - SceneMode）",
+    "implementation_source_ids": [
+      "jira_video_actual"
+    ],
+    "text": "结论：定义为实现缺陷。J90A EU PI 小憩模式开启后应进入专属全屏页并屏蔽 Dock/状态栏，不允许调出 AppList；若离开小憩页面，应自动退出小憩模式。\n依据：功能清单V3.1·Sheet J90A EU座舱功能清单·序号938/939、情景模式PRD V2.4·第13页、情景模式交互V2.6·第13页、Jira视频·00:02-00:06。\n处理：修复小憩运行态对 Dock/AppList 的拦截，并验证离页退出逻辑；情景模式研发（丁黎，Android - SceneMode）负责，测试按原步骤回归。"
+  }
+}

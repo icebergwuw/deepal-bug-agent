@@ -1,0 +1,80 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SD-6404",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 167,
+  "range": "A167:J167",
+  "values": {
+    "A": "2026-07-30",
+    "B": "SD-6404｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21 11：07导航中，导航卡片上出现重叠",
+    "C": "现象：导航中卡片相互遮挡；Jira评论要求产品/UI定义显示边界。[Jira原票·描述/完整评论]\n证据：已查C673主清单及MasterGo地图UE，未定位该卡片的精确层级、避让优先级和尺寸边界。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+    "D": "结论：卡片重叠现象明确，但缺生效层级、避让优先级和尺寸边界，当前不能直接定研发修改方案。\n依据：Jira原票·描述/完整评论、C673地图UE V0.6·850页面。\n处理：补齐卡片层级、互斥/避让规则和横竖屏边界后再转实现；C673地图UI产品负责人处理。",
+    "E": "FALSE",
+    "F": "",
+    "G": "待确认",
+    "H": "",
+    "I": "缺精确UE图层、遮挡优先级及尺寸边界",
+    "J": "Jira原票·描述/完整评论\nC673功能清单·16_地图第45/85-93/298行\nC673地图UE V0.6·850页面/检索图层"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-6404\",\"SD-6404｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21 11：07导航中，导航卡片上出现重叠\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SD-6404"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SD-6404"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira原票·描述/完整评论",
+        "url": "http://jira.i-tetris.com/browse/SD-6404"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "SD-6404｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21 11：07导航中，导航卡片上出现重叠",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

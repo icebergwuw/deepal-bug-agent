@@ -1,0 +1,80 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44215",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 160,
+  "range": "A160:J160",
+  "values": {
+    "A": "2026-07-30",
+    "B": "SLV-44215｜【客户UI问题】【地图】导航-停车场推荐-功能实现问题： 预期效果： 点击去这里之后，应该直接重新算路去这里，而不是要进入路线推荐页。",
+    "C": "现象：点击停车推荐“去这里”后进入路线推荐页，票面主张应直接重算。[Jira最新评论·等待客户补需求]\n证据：最新评论为“等待张俊华补充需求”；C673主清单和MasterGo仅证明停车场能力，未定义该点击后的直达/中转流程。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+    "D": "结论：直接重算还是进入路线推荐页尚无客户最终点击流程，当前不能按地图缺陷转研发。\n依据：Jira最新评论·等待客户补需求、C673地图UE V0.6·850页面。\n处理：补齐“去这里”点击后的目标页面、重算触发和异常分支；吴优对接张俊华确认。",
+    "E": "FALSE",
+    "F": "",
+    "G": "待确认",
+    "H": "",
+    "I": "缺客户最终点击链路；确认前不按旧UE推定直达重算",
+    "J": "Jira最新评论·等待客户补需求\nC673功能清单·16_地图第45/85-93/298行\nC673地图UE V0.6·850页面/检索图层"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44215\",\"SLV-44215｜【客户UI问题】【地图】导航-停车场推荐-功能实现问题： 预期效果： 点击去这里之后，应该直接重新算路去这里，而不是要进入路线推荐页。\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira最新评论·等待客户补需求",
+        "url": "http://jira.i-tetris.com/browse/SLV-44215"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira最新评论·等待客户补需求",
+        "url": "http://jira.i-tetris.com/browse/SLV-44215"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira最新评论·等待客户补需求",
+        "url": "http://jira.i-tetris.com/browse/SLV-44215"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "SLV-44215｜【客户UI问题】【地图】导航-停车场推荐-功能实现问题： 预期效果： 点击去这里之后，应该直接重新算路去这里，而不是要进入路线推荐页。",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

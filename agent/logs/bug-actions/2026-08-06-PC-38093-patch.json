@@ -1,0 +1,32 @@
+{
+  "changes": {
+    "C": {
+      "text": "客户用例：ID20260710111025232，C673-5/SWD.6.40实车，ON/P挡进入场景卡片详情并试用；Jira视频1.mp4在00:08-00:23显示点击底部‘停止’后无响应。[Jira原票·描述][Jira视频1.mp4·00:08-00:23]\n评论链：曾爽2026-07-16 19:13称‘适用中不能点击退出’并按Workaround关闭；熊东森2026-07-28 14:38要求产品确认后重开并转吴优。该评论只证明当前限制，不定义目标。[Jira评论·曾爽2026-07-16/熊东森2026-07-28]\n正式目标：C673场景积木UE V3.4第6页规定试用中可点击‘停止’终止试用、‘添加场景’置灰；PRD V1.3第14页2.4.3定义试用及停止逻辑。停止后恢复详情非试用态，客户提出的固定跳转‘我的场景’不成立。[C673场景积木UE V3.4·第6页][场景积木PRD V1.3·第14页2.4.3]",
+      "links": [
+        {"label": "Jira原票·描述", "url": "http://jira.i-tetris.com/browse/PC-38093"},
+        {"label": "Jira视频1.mp4·00:08-00:23", "url": "http://jira.i-tetris.com/secure/attachment/4113368/1.mp4"},
+        {"label": "Jira评论·曾爽2026-07-16/熊东森2026-07-28", "url": "http://jira.i-tetris.com/browse/PC-38093?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel"},
+        {"label": "C673场景积木UE V3.4·第6页", "url": "https://drive.google.com/file/d/11342AyGNZHoOLtS4OkldWnKwqzclNXD-/view"},
+        {"label": "场景积木PRD V1.3·第14页2.4.3", "url": "https://drive.google.com/file/d/14rpzfX2IPw7CeuB_iKoikERN5Q_wKdL9/view"}
+      ]
+    },
+    "D": {
+      "text": "结论：定义为场景积木试用停止按钮响应缺陷；C673-5在P挡试用场景时，‘停止’应可点击并终止试用，但不要求跳转‘我的场景’。\n依据：C673场景积木UE V3.4第6页‘场景空间-卡片详情-试用中’明确试用期间可点击‘停止’终止试用；场景积木PRD V1.3第14页2.4.3定义试用及停止逻辑；Jira视频1.mp4在00:08-00:23显示试用中点击‘停止’无响应。\n处理：修复‘停止’按钮点击事件，点击后终止试用并恢复卡片详情非试用态；关闭详情页按来源页返回，不固定跳转‘我的场景’；Android场景积木研发负责人处理。",
+      "links": [
+        {"label": "C673场景积木UE V3.4第6页‘场景空间-卡片详情-试用中’", "url": "https://drive.google.com/file/d/11342AyGNZHoOLtS4OkldWnKwqzclNXD-/view"},
+        {"label": "场景积木PRD V1.3第14页2.4.3", "url": "https://drive.google.com/file/d/14rpzfX2IPw7CeuB_iKoikERN5Q_wKdL9/view"},
+        {"label": "Jira视频1.mp4在00:08-00:23", "url": "http://jira.i-tetris.com/secure/attachment/4113368/1.mp4"}
+      ]
+    },
+    "G": "可转研发",
+    "I": "停止应终止试用并留在详情；固定跳转‘我的场景’不属于目标",
+    "J": {
+      "links": [
+        {"label": "Jira原票·描述/完整评论", "url": "http://jira.i-tetris.com/browse/PC-38093"},
+        {"label": "Jira视频1.mp4·00:08-00:23", "url": "http://jira.i-tetris.com/secure/attachment/4113368/1.mp4"},
+        {"label": "C673场景积木UE V3.4·第6页", "url": "https://drive.google.com/file/d/11342AyGNZHoOLtS4OkldWnKwqzclNXD-/view"},
+        {"label": "场景积木PRD V1.3·第14页2.4.3", "url": "https://drive.google.com/file/d/14rpzfX2IPw7CeuB_iKoikERN5Q_wKdL9/view"}
+      ]
+    }
+  }
+}

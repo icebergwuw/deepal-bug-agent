@@ -1,0 +1,32 @@
+{
+  "date": "2026-08-11",
+  "jira_key": "BEO-8846",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 320,
+  "range": "A320:J320",
+  "values": {
+    "A": "2026-08-11",
+    "B": "BEO-8846｜[D587-G][中文]来电铃声静音误回复暂不支持",
+    "C": "现象：D587-G中文原话‘来电铃声静音’，当前识别为task，但落入meta_id=1919车型无此功能兜底。[Jira原票·描述/完整评论][Alchemy当前测试]\n正式定义：来电铃声音量为独立通道，支持电话及铃声MUTE；深蓝项目静音功能点24511的设置项范围明确包含来电铃声音量。[587-G全功清单·行571/621][D587-G文档管理·行85/155][Alchemy项目点24511]\n关联：ST-63851为通用指令匹配跟踪票，不定义本票产品目标；语音控制车辆需求清单v0.2仅列通用静音，未单列该原话泛化。[ST-63851][语音控制车辆需求清单v0.2·序号351/354-374]",
+    "D": "结论：‘来电铃声静音’应执行来电铃声音量通道静音；当前落入不支持兜底，属于语音指令匹配/NLU缺陷。\n依据：587-G座舱全功清单行571/621、D587-G文档管理行85/155、Alchemy深蓝项目功能点24511及Jira/Alchemy当前meta_id=1919结果。\n处理：将该原话及同义泛化映射到META ID 1188，目标通道设为来电铃声音量，并按项目点24511执行；语音指令匹配/NLU责任方（许俊）处理。",
+    "E": false,
+    "F": null,
+    "G": "可转语音",
+    "H": null,
+    "I": "测试用例已包含环境、版本、原话、预期、实际及10/10复现，无需补测试用例；需补充该原话及同义泛化覆盖。",
+    "J": "Jira原票·描述/完整评论\nAlchemy当前测试\n587-G全功清单·行571/621\nD587-G文档管理·行85/155\nAlchemy项目点24511\nST-63851\n语音控制车辆需求清单v0.2·序号351/354-374"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/BEO-8846\",\"BEO-8846｜[D587-G][中文]来电铃声静音误回复暂不支持\")"
+  },
+  "rich_text_link_counts": {"C": 7, "D": 4, "H": 0, "J": 7},
+  "checkbox": {"column": "E", "value": false, "validation": "BOOLEAN", "strict": true},
+  "protected_columns": {"F": null, "H": null},
+  "styles": {"source_row": 2, "wrap": true, "row_height": "automatic"},
+  "filter": "bug!A1:J320",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "duplicate_search_after_write": "passed: exactly one match at row 320",
+  "jira_external_actions": []
+}

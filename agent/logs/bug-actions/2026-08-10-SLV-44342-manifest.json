@@ -1,0 +1,75 @@
+{
+  "schema_version": 2,
+  "jira_key": "SLV-44342",
+  "comment_causality": "已完整读取SLV-44342描述、三张附件、拆分来源SLV-44420及全部评论。评论只证明应用层圆角与系统阴影的实现限制，没有提供C673ICA生效UE或客户验收口径。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "Jira未提供",
+    "test_case": {"checked": true, "status": "incomplete", "source": "Jira仅有模块、页面、问题一句话和截图；缺版本、前置条件、复现步骤、图层/阴影验收标准。"}
+  },
+  "related_issues": {"checked": true, "items": [{"key": "SLV-44420", "relationship": "本票拆分来源", "outcome": "已完整读取，仅指向SLV-44342继续跟踪，无新增正式目标。", "read": true}]},
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SLV-44342 Jira描述、三张图片与评论",
+      "source_type": "jira",
+      "source_location": "Jira描述、附件row_92_col_10、row_92_col_11、image-2026-08-04及活动日志",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673ICA，非华为导航分屏",
+      "trigger": "进入非华为导航分屏",
+      "target_behavior": "附件展示现状与目标视觉差异；评论定位到WindowManager/Shell圆角、阴影实现限制。",
+      "reason": "证明当前现象和技术调查，不单独定义产品目标。"
+    }
+  ],
+  "evidence_profiles": ["general", "visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "客户问题需要核对正式目标和完整用例。"},
+    "voice": {"applicable": false, "reason": "不涉及语音链路。"},
+    "map_navigation": {"applicable": false, "reason": "争议点是系统分屏容器样式，不是导航业务流程。"},
+    "visible_interaction": {"applicable": true, "reason": "涉及分屏容器圆角和系统阴影的可见样式。"}
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-10",
+      "search_location": "Google Drive：C673ICA产品功能清单及分屏专项资料",
+      "queries": ["C673ICA 分屏 圆角", "C673 ICA 分屏 非华为 导航", "C673-ICA 分屏"],
+      "source_ids": [],
+      "reason": "未读到同项目C673ICA、同分屏场景定义圆角和阴影验收目标的生效条款。",
+      "material": true,
+      "next_action": "向客户补齐C673ICA生效UE图层、版本和验收口径。"
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-10",
+      "search_location": "Google Drive：C673-ICA产品功能清单V1.2及相关全功能清单",
+      "queries": ["分屏", "非华为导航", "圆角", "WindowManager"],
+      "source_ids": [],
+      "reason": "功能清单未检出可定义该容器圆角/阴影的配置项。",
+      "material": true,
+      "next_action": "确认系统窗口层目标样式及车型配置边界。"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-10",
+      "search_location": "Google Drive：C673ICA分屏交互/UE；仅检到C673-5分屏V0.1，车型范围不一致",
+      "queries": ["C673ICA 分屏 交互", "C673ICA 分屏 UE", "非华为导航 分屏 圆角"],
+      "source_ids": [],
+      "reason": "未读到C673ICA生效UE；C673-5资料不可跨车型替代。",
+      "material": true,
+      "next_action": "向客户补齐C673ICA生效UE图层和可接受的阴影效果。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "研发评论仅作为实现约束；因正式目标和客户用例均不完整，结论保持待确认。",
+  "voice_evidence": {"applicable": false},
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优",
+    "text": "结论：现有资料不能确认C673ICA非华为导航分屏必须按附件目标图实现圆角，也不能据应用层实现限制直接关闭。\n依据：Jira三张附件仅展示现状/目标差异；完整评论只证明应用窗口圆角与系统阴影的技术限制；Drive未读到C673ICA同场景生效UE或配置条款。\n处理：向客户收集完整客户测试用例，并补齐C673ICA生效UE图层、适用版本及圆角/阴影验收效果，资料齐备后再拆系统窗口改造；吴优处理。"
+  }
+}

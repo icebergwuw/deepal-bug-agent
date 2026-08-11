@@ -1,0 +1,76 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44214",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 161,
+  "range": "A161:J161",
+  "values": {
+    "A": "2026-07-30",
+    "B": "SLV-44214｜【客户UI走查】【地图】首页-充电站快捷开关-UI问题： 1.卡片缺失充电品牌图标 2.卡片存在堆叠 预期效果： 1.充电站卡片的布局应该进",
+    "C": "现象：充电站快捷开关存在品牌图标缺失、卡片堆叠和视野跳转三项问题。[Jira最新评论·0729客户会结论]\n证据：0729客户会只先确认修复UI图已有品牌图标缺失；MasterGo含充电站气泡/深度信息，未形成其余两项最终规则。[C673地图UE V0.6·850页面/检索图层]",
+    "D": "结论：本票先按客户会明确范围修复充电品牌图标缺失；卡片堆叠和当前视野搜索不并入本次实现。\n依据：Jira最新评论·0729客户会结论、C673地图UE V0.6·850页面。\n处理：补齐品牌图标并回归；其余两项拆票补目标后处理；C673地图UI研发负责人处理。",
+    "E": "FALSE",
+    "F": "",
+    "G": "可转研发",
+    "H": "",
+    "I": "本票实现范围仅品牌图标；堆叠和视野策略需拆票",
+    "J": "Jira最新评论·0729客户会结论\nC673地图UE V0.6·850页面/检索图层\nC673功能清单·16_地图第45/85-93/298行"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44214\",\"SLV-44214｜【客户UI走查】【地图】首页-充电站快捷开关-UI问题： 1.卡片缺失充电品牌图标 2.卡片存在堆叠 预期效果： 1.充电站卡片的布局应该进\")"
+  },
+  "rich_links": {
+    "C": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44214"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "D": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44214"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      }
+    ],
+    "J": [
+      {
+        "label": "Jira最新评论·0729客户会结论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44214"
+      },
+      {
+        "label": "C673地图UE V0.6·850页面/检索图层",
+        "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+      },
+      {
+        "label": "C673功能清单·16_地图第45/85-93/298行",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+      }
+    ]
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "type": "BOOLEAN",
+    "data_validation": "checkbox"
+  },
+  "protected_columns": {
+    "A": "2026-07-30",
+    "B": "SLV-44214｜【客户UI走查】【地图】首页-充电站快捷开关-UI问题： 1.卡片缺失充电品牌图标 2.卡片存在堆叠 预期效果： 1.充电站卡片的布局应该进",
+    "E": "FALSE",
+    "F": "",
+    "H": ""
+  },
+  "mode": "recheck",
+  "manifest_validated": true,
+  "sheet_readback_validated": true,
+  "jira_external_actions": []
+}

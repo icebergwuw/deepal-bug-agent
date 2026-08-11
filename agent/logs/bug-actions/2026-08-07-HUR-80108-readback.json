@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "HUR-80108",
+  "owner": "吴优",
+  "sheet": "吴优工作说明 / bug",
+  "row": 272,
+  "range": "A272:J272",
+  "values": {
+    "A": "2026-08-07",
+    "B": "HUR-80108｜挪威语询问公司地址落入闲聊",
+    "C": "现象：挪威语询问公司地址落入闲聊。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "D": "结论：挪威语询问公司地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A挪威语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。",
+    "E": false,
+    "F": null,
+    "G": "待复核",
+    "H": null,
+    "I": "下一步：补齐J90A挪威语公司地址正式语料与项目功能点后复测",
+    "J": "Alchemy当前结果·原话/MetaId"
+  },
+  "formulas": {
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-80108\",\"HUR-80108｜挪威语询问公司地址落入闲聊\")",
+    "C": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-80108\",\"现象：挪威语询问公司地址落入闲聊。Jira字段、描述、附件、关联票和完整评论已读。\"&CHAR(10)&\"证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。\")",
+    "D": "=HYPERLINK(\"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=\",\"结论：挪威语询问公司地址落入闲聊的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\"&CHAR(10)&\"依据：Jira当前描述/评论；Alchemy实测为classification=chat；无operations与meta_id；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\"&CHAR(10)&\"处理：补齐J90A挪威语公司地址正式语料与项目功能点后复测；J90A语音产品配置负责人处理。\")",
+    "J": "=HYPERLINK(\"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=\",\"Alchemy当前结果·原话/MetaId\")"
+  },
+  "checkbox": {
+    "column": "E",
+    "value": false,
+    "style_id": 58,
+    "source_style_matches_E215": true
+  },
+  "styles": {
+    "style_ids": [
+      17,
+      11,
+      46,
+      46,
+      58,
+      35,
+      14,
+      35,
+      35,
+      47
+    ],
+    "visual_style_matches_standard_row_215": false,
+    "row_height": "automatic",
+    "conditional_formatting": "none"
+  },
+  "filter": "$A$1:$J$283",
+  "protected_columns": {
+    "F": null,
+    "H": null
+  },
+  "manifest_validated": true,
+  "log_validated": true,
+  "jira_external_actions": []
+}

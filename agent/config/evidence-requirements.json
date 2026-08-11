@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "manifest_schema_version": 3,
+  "check_statuses": ["read", "not_found", "unavailable", "not_applicable"],
+  "query_kinds": [
+    "jira_key",
+    "exact_trigger",
+    "expected_output",
+    "problem_concept",
+    "module_artifact",
+    "meta_or_function",
+    "project_scope"
+  ],
+  "candidate_dispositions": ["read", "excluded", "unavailable"],
+  "source_types": [
+    "jira",
+    "jira_attachment",
+    "prd",
+    "special_prd",
+    "interaction",
+    "ue",
+    "formal_config",
+    "alchemy_current",
+    "alchemy_standard",
+    "alchemy_project",
+    "implementation_log",
+    "test_result",
+    "customer_final_decision",
+    "work_instruction",
+    "historical"
+  ],
+  "formal_target_allowed_source_types": [
+    "prd",
+    "special_prd",
+    "interaction",
+    "ue",
+    "formal_config",
+    "alchemy_standard",
+    "alchemy_project",
+    "customer_final_decision"
+  ],
+  "product_formal_source_types": [
+    "prd",
+    "special_prd",
+    "interaction",
+    "ue",
+    "formal_config",
+    "customer_final_decision"
+  ],
+  "checks": {
+    "formal_definition_search": {
+      "label": "生效正式定义检索",
+      "allowed_source_types": [
+        "prd",
+        "special_prd",
+        "interaction",
+        "ue",
+        "formal_config",
+        "customer_final_decision"
+      ],
+      "allow_not_applicable": false,
+      "missing_is_material": true,
+      "required_query_kinds": ["jira_key", "problem_concept", "module_artifact"],
+      "requires_candidate_audit_for_not_found": true
+    },
+    "alchemy_current": {
+      "label": "Alchemy当前原话测试",
+      "allowed_source_types": ["alchemy_current"],
+      "allow_not_applicable": false,
+      "missing_is_material": true,
+      "required_query_kinds": ["exact_trigger"],
+      "requires_candidate_audit_for_not_found": false
+    },
+    "alchemy_standard": {
+      "label": "Alchemy标准功能点",
+      "allowed_source_types": ["alchemy_standard"],
+      "allow_not_applicable": false,
+      "missing_is_material": true,
+      "required_query_kinds": ["meta_or_function"],
+      "requires_candidate_audit_for_not_found": false
+    },
+    "alchemy_project": {
+      "label": "Alchemy项目功能点",
+      "allowed_source_types": ["alchemy_project"],
+      "allow_not_applicable": true,
+      "missing_is_material": true,
+      "required_query_kinds": ["meta_or_function", "project_scope"],
+      "requires_candidate_audit_for_not_found": false
+    },
+    "main_prd_search": {
+      "label": "Drive主PRD检索",
+      "allowed_source_types": ["prd"],
+      "allow_not_applicable": false,
+      "missing_is_material": true,
+      "required_query_kinds": ["jira_key", "problem_concept", "module_artifact"],
+      "requires_candidate_audit_for_not_found": true
+    },
+    "special_definition_search": {
+      "label": "Drive专项定义检索",
+      "allowed_source_types": ["special_prd", "interaction", "formal_config"],
+      "allow_not_applicable": false,
+      "missing_is_material": true,
+      "required_query_kinds": ["jira_key", "problem_concept", "module_artifact"],
+      "requires_candidate_audit_for_not_found": true
+    },
+    "formal_config_search": {
+      "label": "生效项目配置检索",
+      "allowed_source_types": ["formal_config"],
+      "allow_not_applicable": false,
+      "missing_is_material": true,
+      "required_query_kinds": ["jira_key", "problem_concept", "module_artifact"],
+      "requires_candidate_audit_for_not_found": true
+    },
+    "interaction_or_ue_search": {
+      "label": "交互文档或UE检索",
+      "allowed_source_types": ["interaction", "ue"],
+      "allow_not_applicable": false,
+      "missing_is_material": true,
+      "required_query_kinds": ["jira_key", "problem_concept", "module_artifact"],
+      "requires_candidate_audit_for_not_found": true
+    }
+  },
+  "profiles": {
+    "general": {
+      "label": "通用产品定义",
+      "required_checks": ["formal_definition_search"],
+      "requires_product_formal_target": true
+    },
+    "voice": {
+      "label": "语音/NLU/VUI",
+      "required_checks": [
+        "formal_definition_search",
+        "alchemy_current",
+        "alchemy_standard",
+        "alchemy_project"
+      ],
+      "requires_product_formal_target": true
+    },
+    "map_navigation": {
+      "label": "地图导航",
+      "required_checks": ["main_prd_search", "special_definition_search"],
+      "requires_product_formal_target": true
+    },
+    "visible_interaction": {
+      "label": "可见交互/UI状态",
+      "required_checks": ["formal_config_search", "interaction_or_ue_search"],
+      "requires_product_formal_target": true
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-10",
+        "userEnteredValue": {
+          "stringValue": "2026-08-10"
+        }
+      },
+      {
+        "formattedValue": "HUR-82496｜【J90A】【0526】【情景模式-儿童模式】【语音】开启儿童模式后，语音“放大实时画面”，执行为放大地图",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82496\",\"HUR-82496｜【J90A】【0526】【情景模式-儿童模式】【语音】开启儿童模式后，语音“放大实时画面”，执行为放大地图\")"
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      },
+      {
+        "formattedValue": ""
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：儿童模式实时画面已显示时说“放大实时画面”，NLU落入NAVI/MAP_ADJUST_RESIZE并播报“已放大地图”。[Jira原票·描述/完整评论]\n证据：评论给出当前NLU domain/action/operation；Drive只检索到非J90A项目儿童模式需求，未找到J90A同页面“实时画面”所见即可说节点或语音指令配置。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82496"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为待复核。当前可确认语义落到地图，但缺J90A儿童模式实时画面的正式VUI/UE节点及完整Alchemy功能点，不能直接判断由NLU还是页面所见即可说配置修复。\n依据：Jira完整评论中的NAVI/MAP_ADJUST_RESIZE结果；Drive同项目正式定义未命中。\n处理：补充J90A儿童模式实时画面UE/VUI节点和Alchemy当前/标准/项目功能点后定责；J90A语音VUI负责人处理。",
+      "links": []
+    },
+    "G": "待复核",
+    "I": "测试用例完整，无需补测试用例；需补同项目VUI/UE和Alchemy证据。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/HUR-82496"
+        },
+        {
+          "label": "现象视频",
+          "url": "http://jira.i-tetris.com/secure/attachment/4174061/video_1785234456.mp4"
+        },
+        {
+          "label": "非同项目儿童模式资料·仅旁证",
+          "url": "https://drive.google.com/file/d/1LyjsT7qMVuzl9-PWnr2v83gTvK5_vRw7/view"
+        }
+      ]
+    }
+  }
+}

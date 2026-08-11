@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82824",
+  "comment_causality": "已完整读取HUR-82824当前字段、描述、附件、关联问题与评论时间线。测试以重复Key行阿语列为空作为预期，但Jira实车显示与当前同版本LanguageList源文行的阿语目标完全一致；两类记录用途不同，不能以迁移Key行空值替代用户可见文言定义。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "scope_checks": [
+    {"source_id": "jira_actual", "source": "HUR-82824 Jira描述、附件与完整时间线", "source_type": "jira", "source_location": "Jira描述/2026-08-06；附件4217946：J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.8-260612-B0609-260616 (1).xlsx", "role": "implementation_actual", "match": "exact", "project_model": "J90A EL，J90A-EL_LS_20261012，0609构建，阿拉伯语", "trigger": "车辆ON且触发后方追尾危险仪表警告", "target_behavior": "实车显示“خطر الاصطدام الخلفي”。", "reason": "Jira当前描述和同票附件直接证明测试场景与实际显示。"},
+    {"source_id": "language_source", "source": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key", "source_type": "formal_config", "source_location": "10_Instrument Panel!A54/AQ54：后方追尾危险 / خطر الاصطدام الخلفي", "role": "formal_target", "match": "exact", "project_model": "J90A海外LanguageList V0.5.8，Instrument Panel，阿拉伯语", "trigger": "后方追尾危险仪表文言", "target_behavior": "显示“خطر الاصطدام الخلفي”，不得显示空白。", "reason": "当前同版本正式LanguageList源文行直接定义用户可见阿语目标。"},
+    {"source_id": "duplicate_key_record", "source": "同一LanguageList重复Key迁移记录", "source_type": "formal_config", "source_location": "10_Instrument Panel!A549/AQ549：C385/LCDAText__35阿语为空；重复Key执行记录_0801!3986记录迁移至All Key", "role": "context_only", "match": "partial", "project_model": "J90A海外LanguageList V0.5.8重复Key治理", "trigger": "查询C385/LCDAText__35迁移行", "target_behavior": "记录重复Key迁移和数据治理状态，不单独定义车机应显示空白。", "reason": "解释测试预期来源，并证明该空值属于重复Key数据治理差异。"},
+    {"source_id": "ue_search_record", "source": "J90A海外LanguageList UE_list", "source_type": "ue", "source_location": "UE_list全表检索C385/LCDAText__35及后方追尾危险，均无匹配项", "role": "context_only", "match": "exact", "project_model": "J90A海外LanguageList V0.5.8附带UE索引", "trigger": "核验该仪表文言是否另有布局或交互定义", "target_behavior": "未登记该Key或源文的独立UE条目；本票不涉及布局、操作或交互差异。", "reason": "证明已完成UE必查检索，并界定其对纯文言值判断不构成冲突。"}
+  ],
+  "evidence_profiles": ["visible_interaction"],
+  "evidence_profile_assessment": {"general": {"applicable": false, "reason": "已命中更具体的可见文言画像。"}, "voice": {"applicable": false, "reason": "不涉及语音识别、VUI或TTS。"}, "map_navigation": {"applicable": false, "reason": "不涉及地图或导航。"}, "visible_interaction": {"applicable": true, "reason": "争议对象是仪表可见阿语文言。"}},
+  "required_evidence_checks": [
+    {"check_id": "formal_config_search", "status": "read", "searched_at": "2026-08-07", "search_location": "Google Sheets：J90A海外LanguageList V0.5.8，10_Instrument Panel及重复Key执行记录_0801", "queries": ["C385/LCDAText__35", "后方追尾危险", "خطر الاصطدام الخلفي"], "source_ids": ["language_source", "duplicate_key_record"]},
+    {"check_id": "interaction_or_ue_search", "status": "read", "searched_at": "2026-08-07", "search_location": "LanguageList UE_list及Drive当前资料", "queries": ["C385/LCDAText__35", "后方追尾危险"], "source_ids": ["ue_search_record"]}
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "以当前同版本LanguageList源文行定义用户可见阿语目标，以Jira描述记录实车实际；重复Key迁移行空值仅作为数据治理上下文。实际与正式目标完全一致，因此按非问题关闭。",
+  "expected_behavior": {"trigger": "J90A EL阿拉伯语环境、车辆ON，触发后方追尾危险警告。", "target_state": "仪表显示对应阿拉伯语警告，不显示空白。", "intent_function_signal": "后方追尾危险告警源映射至LanguageList正式阿语文言。", "ui_tts_vehicle_behavior": "UI显示“خطر الاصطدام الخلفي”；不涉及语音或TTS。", "boundary": "适用J90A EL、0609构建、阿拉伯语、后方追尾危险仪表警告。", "source_ids": ["language_source"]},
+  "voice_evidence": {"applicable": false},
+  "decision": {"status": "可关闭", "owner": "吴优", "implementation_source_ids": ["jira_actual"], "text": "结论：定义为非问题。J90A EL阿拉伯语环境下，后方追尾危险应显示为“خطر الاصطدام الخلفي”；当前实车显示与生效LanguageList一致，不能以重复Key行阿语列为空作为“应显示空白”的产品预期。\n依据：Jira原票·描述/2026-08-06、LanguageList V0.5.8·10_Instrument Panel第54/549行。\n处理：按非问题关闭本Bug；吴优处理。"}
+}

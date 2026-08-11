@@ -1,0 +1,62 @@
+{
+  "jira_key": "PC-38201",
+  "row": 175,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：微信互联步骤弹窗中说“向上滑/向下滑”10/10未执行；研发说明页面使用ViewPager2，当前框架未支持。[Jira原票·描述/完整评论]\n证据：C673主清单第72行仅明确Hicar可视即可说，未覆盖本票微信互联弹窗和ViewPager2滑动边界。[C673功能清单·12_手机互联第72行]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38201"
+        },
+        {
+          "label": "C673功能清单·12_手机互联第72行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1401474663#gid=1401474663"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：现有正式清单不能证明微信互联该弹窗必须支持上下滑可见指令，当前不直接转研发。\n依据：Jira原票·描述/完整评论、C673功能清单·12_手机互联第72行。\n处理：补齐微信互联弹窗页面级VUI控件清单、滑动条件和ViewPager2适配目标；手机互联VUI产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38201"
+        },
+        {
+          "label": "C673功能清单·12_手机互联第72行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1401474663#gid=1401474663"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "Hicar条目不能外推微信弹窗；缺页面级控件和滑动定义",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/PC-38201"
+        },
+        {
+          "label": "C673功能清单·12_手机互联第72行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1401474663#gid=1401474663"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": "现象：微信互联步骤弹窗中说“向上滑/向下滑”10/10未执行；研发说明页面使用ViewPager2，当前框架未支持。[Jira原票·描述/完整评论]\n证据：C673主清单第72行仅明确Hicar可视即可说，未覆盖本票微信互联弹窗和ViewPager2滑动边界。[C673功能清单·12_手机互联第72行]",
+    "D": "结论：现有正式清单不能证明微信互联该弹窗必须支持上下滑可见指令，当前不直接转研发。\n依据：Jira原票·描述/完整评论、C673功能清单·12_手机互联第72行。\n处理：补齐微信互联弹窗页面级VUI控件清单、滑动条件和ViewPager2适配目标；手机互联VUI产品负责人处理。",
+    "G": "待确认",
+    "I": "Hicar条目不能外推微信弹窗；缺页面级控件和滑动定义",
+    "J": "Jira原票·描述/完整评论\nC673功能清单·12_手机互联第72行"
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

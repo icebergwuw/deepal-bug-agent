@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-08-07",
+    "key": "HUR-82552",
+    "summary": "路线选择阶段退出导航未关闭路线卡片",
+    "info": "现象：路线选择阶段退出导航未关闭路线卡片。Jira字段、描述、附件、关联票和完整评论已读。\n证据：已按本票画像完成平台/Drive检索；缺少同项目、同版本正式目标或存在关键冲突，结论已按门禁降级。",
+    "judgment": "结论：路线选择阶段退出导航未关闭路线卡片的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为classification=task；meta_id=1017；结束导航；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐J90A路线选择阶段的退出交互定义，明确关闭卡片与结束导航的状态机边界；J90A地图产品负责人处理。",
+    "status": "待复核",
+    "note": "下一步：补齐J90A路线选择阶段的退出交互定义，明确关闭卡片与结束导航的状态机边界",
+    "links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82552"
+      },
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·描述/附件/评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-82552"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前结果·原话/MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  }
+]

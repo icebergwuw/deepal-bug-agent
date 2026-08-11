@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-07",
+  "jira_key": "SLV-44215",
+  "sheet": "吴优工作说明 / bug",
+  "row": 160,
+  "mode": "recheck",
+  "allowed_columns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "protected_columns": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "H"
+  ],
+  "changes": {
+    "C": {
+      "text": "现象：点击停车推荐“去这里”后进入路线推荐页，票面主张应直接重算。[Jira最新评论·等待客户补需求]\n证据：最新评论为“等待张俊华补充需求”；C673主清单和MasterGo仅证明停车场能力，未定义该点击后的直达/中转流程。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+      "links": [
+        {
+          "label": "Jira最新评论·等待客户补需求",
+          "url": "http://jira.i-tetris.com/browse/SLV-44215"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：直接重算还是进入路线推荐页尚无客户最终点击流程，当前不能按地图缺陷转研发。\n依据：Jira最新评论·等待客户补需求、C673地图UE V0.6·850页面。\n处理：补齐“去这里”点击后的目标页面、重算触发和异常分支；吴优对接张俊华确认。",
+      "links": [
+        {
+          "label": "Jira最新评论·等待客户补需求",
+          "url": "http://jira.i-tetris.com/browse/SLV-44215"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "缺客户最终点击链路；确认前不按旧UE推定直达重算",
+    "J": {
+      "links": [
+        {
+          "label": "Jira最新评论·等待客户补需求",
+          "url": "http://jira.i-tetris.com/browse/SLV-44215"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": 2,
+  "jira_key": "HUR-82679",
+  "comment_causality": "已完整读取HUR-82679当前字段、描述、附件、关联问题与评论时间线，并重新核对正式资料；当前现象为：C385/ACCTextTakeOver__39文言与当前清单/车机显示不一致。Jira评论只作为调查和实现事实，不替代正式定义。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-82661",
+        "relationship": "Jira当前页面登记的直接关联/同场景参考票",
+        "outcome": "已完整读取；仅用于核对同功能或同文言冲突，不替代本票目标定义。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82679 Jira当前字段、描述、附件与完整评论",
+      "source_type": "jira",
+      "source_location": "http://jira.i-tetris.com/browse/HUR-82679",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "C385/ACCTextTakeOver__39文言与当前清单/车机显示不一致",
+      "target_behavior": "证明本票当前现象、实车/平台结果和调查因果链。",
+      "reason": "Jira当前页面已在本次recheck中完整读取。"
+    },
+    {
+      "source_id": "formal_definition",
+      "source": "LanguageList·10_Instrument Panel全表检索",
+      "source_type": "formal_config",
+      "source_location": "LanguageList·10_Instrument Panel全表检索；https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "C385/ACCTextTakeOver__39文言与当前清单/车机显示不一致",
+      "target_behavior": "结论：测试原预期与C385/ACCTextTakeOver__39不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。",
+      "reason": "已核对与本票同功能、同交互阶段的正式定义或生效配置。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "问题以正式产品定义或正式配置为判定依据。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不命中该专项证据画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不命中该专项证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不命中该专项证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-07",
+      "search_location": "LanguageList·10_Instrument Panel全表检索；https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?gid=1406593328#gid=1406593328",
+      "queries": [
+        "HUR-82679",
+        "C385/ACCTextTakeOver__39文言与当前清单/车机显示不一致",
+        "LanguageList·10_Instrument Panel全表检索"
+      ],
+      "source_ids": [
+        "formal_definition"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、当前实现和正式定义分开记录；本次结论只使用同功能、同交互阶段的正式来源定义目标，并以Jira/Alchemy当前结果证明实现现状。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "C385/ACCTextTakeOver__39文言与当前清单/车机显示不一致",
+    "target_state": "测试原预期与C385/ACCTextTakeOver__39不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。",
+    "intent_function_signal": "触发本票所述功能、Key或意图时进入正式定义对应的唯一功能状态。",
+    "ui_tts_vehicle_behavior": "测试原预期与C385/ACCTextTakeOver__39不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。",
+    "boundary": "不得复用仅中文相近但换行或用词不同的source译文",
+    "source_ids": [
+      "formal_definition"
+    ]
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "J90A多语言配置负责人",
+    "text": "结论：测试原预期与C385/ACCTextTakeOver__39不对应；实际QML source“请立即控制车辆”缺少目标语正式译文，属于翻译需求缺口。\n依据：Jira原票·描述/评论、LanguageList·10_Instrument Panel全表检索。\n处理：为该精确source补齐目标语译文并同步正式清单及TS资源后回归；J90A多语言配置负责人处理。",
+    "implementation_source_ids": [
+      "jira_actual"
+    ]
+  }
+}

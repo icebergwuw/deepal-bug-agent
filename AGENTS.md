@@ -4,8 +4,9 @@
 
 ## 身份与默认立场
 
-- 用户是吴优，镁佳 Megatronix 产品组成员，为长安深蓝汽车提供智能座舱服务。
-- Jira bug 输出必须站在吴优的产品负责人视角，直接判断用户预期、功能边界、处理动作和责任方。
+- 本项目供镁佳 Megatronix 产品组成员使用，为长安深蓝汽车提供智能座舱服务。
+- 当前操作者身份只从已忽略的 `agent/config/local-profile.json` 读取；首次运行、身份缺失或身份变更时必须执行 `agent/onboarding.md`，不得根据电脑用户名、浏览器账号或聊天称呼猜身份。
+- Jira bug 输出必须站在已绑定操作者的产品负责人视角，直接判断用户预期、功能边界、处理动作和责任方。
 - 不写“请产品确认 / 产品定口径 / 建议产品判断”；应写“定义为 / 关闭 / 转需求 / 转某责任方处理”。
 - `产品Agent判断` 必须包含一个明确动作和一个明确责任方。
 
@@ -15,6 +16,7 @@
 - 用户再次发送同一 Jira、要求“再看 / 重新确认 / 二次处理”且没有提供会议纪要、leader/客户复盘材料时，仍走普通 Bug 流程；按 `agent/config/sheet-update-modes.json` 的 `recheck` 模式更新原行，不因已有历史判断而只写 H。
 - 用户明确说“只看 / 不更新 / 我来评价 / 只整理事实”时，只读证据，不更新表、不评论或流转 Jira。
 - 用户提供会议纪要、可姐/leader 教学、客户复盘或明确的复盘材料时，按复盘流程和 `review` 模式更新原行；H 保存最终判断，D/F 保留初次判断和人工判断。
+- 本机身份、目标负责人写入范围或必需平台权限未通过 `agent/scripts/bug_project_preflight.py` 时，只能读取、整理事实和提供登录/授权引导，不得更新线上清单、本地索引、Jira或外部系统。
 
 ## 负责人路由
 
@@ -29,6 +31,10 @@
 - 复盘与会议反馈流程：`agent/workflows/review.md`
 - A:J 列职责、内容写法和样式：`agent/sheet-contract.md`
 - 已有行更新模式允许列/保护列：`agent/config/sheet-update-modes.json`
+- 可组合证据画像、必查动作和来源类型：`agent/config/evidence-requirements.json`
+- 写表前决策核验：`agent/scripts/validate_bug_evidence_gate.py`
+- 首次运行、身份绑定和平台权限引导：`agent/onboarding.md`
+- 本机写前预检：`agent/scripts/bug_project_preflight.py`
 - 固定身份、链接和资料入口：`agent/context.md`
 - 产品知识库：`agent/product-kb/`
 - 会议纪要与待办：`agent/meetings/`
@@ -45,4 +51,5 @@
 - 复盘时更新 H 列不等于授权 Jira 外部动作。
 - 每次更新表格、规则、知识库、会议沉淀或执行 Jira 动作都要留痕并回读；重建历史记录必须标记 `reconstructed`。
 - 不在回复、表格、知识库、日志或 Skill 中记录密码、token、测试账号明文或平台访问口令。
+- Git 只传递规则、脚本和非密钥配置；`agent/config/local-profile.json`、浏览器 Cookie、连接器授权和定时任务均为本机状态，不进入仓库。
 - 读不到的资料按 `agent/evidence-contract.md` 记录限制，不猜；对外结论按 `agent/output-contract.md` 生成，不另写一版。

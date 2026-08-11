@@ -1,0 +1,130 @@
+{
+  "schema_version": 2,
+  "jira_key": "SD-6404",
+  "comment_causality": "已完整读取SD-6404当前字段、描述、附件、关联问题与评论时间线；重新核对2026-08-07当前正式资料和平台结果。Jira测试预期未直接充当正式目标。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SD-6404 Jira当前字段、描述、附件与完整评论",
+      "source_type": "jira",
+      "source_location": "http://jira.i-tetris.com/browse/SD-6404",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "导航卡片发生重叠",
+      "target_behavior": "证明现象、状态、日志和评论因果链。",
+      "reason": "2026-08-07已按时间线完整读取。"
+    },
+    {
+      "source_id": "formal_gap",
+      "source": "正式资料检索结果",
+      "source_type": "work_instruction",
+      "source_location": "Google Drive/MasterGo/Alchemy按本票关键词检索",
+      "role": "context_only",
+      "match": "gap",
+      "project_model": "Jira当前登记车型、版本和功能范围",
+      "trigger": "导航卡片发生重叠",
+      "target_behavior": "缺口会改变结论。",
+      "reason": "缺精确UE图层、遮挡优先级及尺寸边界",
+      "material": true,
+      "next_action": "缺精确UE图层、遮挡优先级及尺寸边界"
+    }
+  ],
+  "evidence_profiles": [
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不命中该画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图搜索、路线或导航状态。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及页面、气泡、卡片、控件或可见状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "C673全功能清单 Sheet 16_地图 A1:AZ500",
+      "queries": [
+        "SD-6404",
+        "导航卡片发生重叠"
+      ],
+      "source_ids": [],
+      "reason": "缺精确UE图层、遮挡优先级及尺寸边界",
+      "material": true,
+      "next_action": "缺精确UE图层、遮挡优先级及尺寸边界"
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "MasterGo C385&673地图UE 850页面",
+      "queries": [
+        "SD-6404",
+        "导航卡片发生重叠"
+      ],
+      "source_ids": [],
+      "reason": "缺精确UE图层、遮挡优先级及尺寸边界",
+      "material": true,
+      "next_action": "缺精确UE图层、遮挡优先级及尺寸边界"
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "Google Drive生效页面配置检索",
+      "queries": [
+        "SD-6404",
+        "导航卡片发生重叠"
+      ],
+      "source_ids": [],
+      "reason": "缺精确UE图层、遮挡优先级及尺寸边界",
+      "material": true,
+      "next_action": "缺精确UE图层、遮挡优先级及尺寸边界"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-07",
+      "search_location": "MasterGo/Drive交互或UE检索",
+      "queries": [
+        "SD-6404",
+        "导航卡片发生重叠"
+      ],
+      "source_ids": [],
+      "reason": "缺精确UE图层、遮挡优先级及尺寸边界",
+      "material": true,
+      "next_action": "缺精确UE图层、遮挡优先级及尺寸边界"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira主张、客户最终结论、正式资料和当前实现分开记录；确定性结论仅引用有效正式目标，关键缺口存在时保持待定。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "C673地图UI产品负责人",
+    "text": "结论：卡片重叠现象明确，但缺生效层级、避让优先级和尺寸边界，当前不能直接定研发修改方案。\n依据：Jira原票·描述/完整评论、C673地图UE V0.6·850页面。\n处理：补齐卡片层级、互斥/避让规则和横竖屏边界后再转实现；C673地图UI产品负责人处理。"
+  }
+}

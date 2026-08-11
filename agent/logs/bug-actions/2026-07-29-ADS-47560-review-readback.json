@@ -1,0 +1,2911 @@
+{
+  "before_row": {
+    "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?ouid=109136590267032001782",
+    "properties": {
+      "title": "吴优工作说明",
+      "locale": "en_US",
+      "timeZone": "Asia/Shanghai"
+    },
+    "sheets": [
+      {
+        "properties": {
+          "sheetId": 2135747181,
+          "title": "bug",
+          "index": 3,
+          "sheetType": "GRID",
+          "gridProperties": {
+            "rowCount": 1014,
+            "columnCount": 10,
+            "frozenRowCount": 1,
+            "hideGridlines": true
+          }
+        },
+        "data": [
+          {
+            "startRow": 149,
+            "rowData": [
+              {
+                "values": [
+                  {
+                    "formattedValue": "2026-07-29",
+                    "userEnteredValue": {
+                      "stringValue": "2026-07-29"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "2026-07-29"
+                    },
+                    "userEnteredFormat": {
+                      "numberFormat": {
+                        "type": "DATE",
+                        "pattern": "yyyy-mm-dd"
+                      },
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.05882353,
+                          "green": 0.24705882,
+                          "blue": 0.6
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.05882353,
+                            "green": 0.24705882,
+                            "blue": 0.6
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "ADS-47560｜小憩低电量退出阈值",
+                    "userEnteredValue": {
+                      "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47560\",\"ADS-47560｜小憩低电量退出阈值\")"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "ADS-47560｜小憩低电量退出阈值"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.05882353,
+                          "green": 0.24705882,
+                          "blue": 0.6
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.05882353,
+                            "green": 0.24705882,
+                            "blue": 0.6
+                          }
+                        },
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "现象：小憩以21%SOC进入，运行中降至17%后退出，测试预期7%。[Jira原票]\n实现：日志为socLow2，当前实现以SOC<18%且非充电作为退出条件。[Jira当前评论]\n正式定义：小憩进入SOC≥20%或外接充电；激活中SOC<18%且非充电时退出。[智能情景模式V3.8 6.3.1]\n关联：ADS-47556在同版本14%结束充电退出，已按同一条款核验。[关联票ADS-47556]",
+                    "userEnteredValue": {
+                      "stringValue": "现象：小憩以21%SOC进入，运行中降至17%后退出，测试预期7%。[Jira原票]\n实现：日志为socLow2，当前实现以SOC<18%且非充电作为退出条件。[Jira当前评论]\n正式定义：小憩进入SOC≥20%或外接充电；激活中SOC<18%且非充电时退出。[智能情景模式V3.8 6.3.1]\n关联：ADS-47556在同版本14%结束充电退出，已按同一条款核验。[关联票ADS-47556]"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "现象：小憩以21%SOC进入，运行中降至17%后退出，测试预期7%。[Jira原票]\n实现：日志为socLow2，当前实现以SOC<18%且非充电作为退出条件。[Jira当前评论]\n正式定义：小憩进入SOC≥20%或外接充电；激活中SOC<18%且非充电时退出。[智能情景模式V3.8 6.3.1]\n关联：ADS-47556在同版本14%结束充电退出，已按同一条款核验。[关联票ADS-47556]"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 35,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 41
+                      },
+                      {
+                        "startIndex": 81,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 89
+                      },
+                      {
+                        "startIndex": 132,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 148
+                      },
+                      {
+                        "startIndex": 186,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47556"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 198
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "结论：小憩运行中SOC低于18%且未充电时应退出；本票17%退出符合现行定义，7%预期不成立。\n依据：Jira原票、智能情景模式V3.8 6.3.1、关联票ADS-47556。\n处理：按现行定义关闭本Bug；吴优产品负责人处理。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：小憩运行中SOC低于18%且未充电时应退出；本票17%退出符合现行定义，7%预期不成立。\n依据：Jira原票、智能情景模式V3.8 6.3.1、关联票ADS-47556。\n处理：按现行定义关闭本Bug；吴优产品负责人处理。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：小憩运行中SOC低于18%且未充电时应退出；本票17%退出符合现行定义，7%预期不成立。\n依据：Jira原票、智能情景模式V3.8 6.3.1、关联票ADS-47556。\n处理：按现行定义关闭本Bug；吴优产品负责人处理。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 51,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 57
+                      },
+                      {
+                        "startIndex": 58,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 74
+                      },
+                      {
+                        "startIndex": 75,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47556"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 87
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "FALSE",
+                    "userEnteredValue": {
+                      "boolValue": false
+                    },
+                    "effectiveValue": {
+                      "boolValue": false
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "dataValidation": {
+                      "condition": {
+                        "type": "BOOLEAN"
+                      },
+                      "strict": true
+                    }
+                  },
+                  {
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "可关闭",
+                    "userEnteredValue": {
+                      "stringValue": "可关闭"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "可关闭"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "仅当客户改为7%退出时另立需求，并明确充电切换边界。",
+                    "userEnteredValue": {
+                      "stringValue": "仅当客户改为7%退出时另立需求，并明确充电切换边界。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "仅当客户改为7%退出时另立需求，并明确充电切换边界。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "Jira原票\n智能情景模式V3.8 6.3.1\n关联票ADS-47556",
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票\n智能情景模式V3.8 6.3.1\n关联票ADS-47556"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "Jira原票\n智能情景模式V3.8 6.3.1\n关联票ADS-47556"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 6
+                      },
+                      {
+                        "startIndex": 7,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 23
+                      },
+                      {
+                        "startIndex": 24,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47556"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "after_row": {
+    "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?ouid=109136590267032001782",
+    "properties": {
+      "title": "吴优工作说明",
+      "locale": "en_US",
+      "timeZone": "Asia/Shanghai"
+    },
+    "sheets": [
+      {
+        "properties": {
+          "sheetId": 2135747181,
+          "title": "bug",
+          "index": 3,
+          "sheetType": "GRID",
+          "gridProperties": {
+            "rowCount": 1014,
+            "columnCount": 10,
+            "frozenRowCount": 1,
+            "hideGridlines": true
+          }
+        },
+        "data": [
+          {
+            "startRow": 149,
+            "rowData": [
+              {
+                "values": [
+                  {
+                    "formattedValue": "2026-07-29",
+                    "userEnteredValue": {
+                      "stringValue": "2026-07-29"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "2026-07-29"
+                    },
+                    "userEnteredFormat": {
+                      "numberFormat": {
+                        "type": "DATE",
+                        "pattern": "yyyy-mm-dd"
+                      },
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.05882353,
+                          "green": 0.24705882,
+                          "blue": 0.6
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.05882353,
+                            "green": 0.24705882,
+                            "blue": 0.6
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "ADS-47560｜小憩低电量退出阈值",
+                    "userEnteredValue": {
+                      "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47560\",\"ADS-47560｜小憩低电量退出阈值\")"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "ADS-47560｜小憩低电量退出阈值"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.05882353,
+                          "green": 0.24705882,
+                          "blue": 0.6
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.05882353,
+                            "green": 0.24705882,
+                            "blue": 0.6
+                          }
+                        },
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "现象：小憩以21%SOC进入，运行中降至17%后退出，测试预期7%。[Jira原票]\n实现：日志为socLow2，当前实现以SOC<18%且非充电作为退出条件。[Jira当前评论]\n正式定义：小憩进入SOC≥20%或外接充电；激活中SOC<18%且非充电时退出。[智能情景模式V3.8 6.3.1]\n关联：ADS-47556在同版本14%结束充电退出，已按同一条款核验。[关联票ADS-47556]",
+                    "userEnteredValue": {
+                      "stringValue": "现象：小憩以21%SOC进入，运行中降至17%后退出，测试预期7%。[Jira原票]\n实现：日志为socLow2，当前实现以SOC<18%且非充电作为退出条件。[Jira当前评论]\n正式定义：小憩进入SOC≥20%或外接充电；激活中SOC<18%且非充电时退出。[智能情景模式V3.8 6.3.1]\n关联：ADS-47556在同版本14%结束充电退出，已按同一条款核验。[关联票ADS-47556]"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "现象：小憩以21%SOC进入，运行中降至17%后退出，测试预期7%。[Jira原票]\n实现：日志为socLow2，当前实现以SOC<18%且非充电作为退出条件。[Jira当前评论]\n正式定义：小憩进入SOC≥20%或外接充电；激活中SOC<18%且非充电时退出。[智能情景模式V3.8 6.3.1]\n关联：ADS-47556在同版本14%结束充电退出，已按同一条款核验。[关联票ADS-47556]"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 35,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 41
+                      },
+                      {
+                        "startIndex": 81,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 89
+                      },
+                      {
+                        "startIndex": 132,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 148
+                      },
+                      {
+                        "startIndex": 186,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47556"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 198
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "结论：小憩运行中SOC低于18%且未充电时应退出；本票17%退出符合现行定义，7%预期不成立。\n依据：Jira原票、智能情景模式V3.8 6.3.1、关联票ADS-47556。\n处理：按现行定义关闭本Bug；吴优产品负责人处理。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：小憩运行中SOC低于18%且未充电时应退出；本票17%退出符合现行定义，7%预期不成立。\n依据：Jira原票、智能情景模式V3.8 6.3.1、关联票ADS-47556。\n处理：按现行定义关闭本Bug；吴优产品负责人处理。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：小憩运行中SOC低于18%且未充电时应退出；本票17%退出符合现行定义，7%预期不成立。\n依据：Jira原票、智能情景模式V3.8 6.3.1、关联票ADS-47556。\n处理：按现行定义关闭本Bug；吴优产品负责人处理。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 51,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 57
+                      },
+                      {
+                        "startIndex": 58,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 74
+                      },
+                      {
+                        "startIndex": 75,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47556"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 87
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "FALSE",
+                    "userEnteredValue": {
+                      "boolValue": false
+                    },
+                    "effectiveValue": {
+                      "boolValue": false
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "dataValidation": {
+                      "condition": {
+                        "type": "BOOLEAN"
+                      },
+                      "strict": true
+                    }
+                  },
+                  {
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "待确认",
+                    "userEnteredValue": {
+                      "stringValue": "待确认"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "待确认"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "结论：本票为客户问题；现有资料只能证明17%退出符合18%定义，尚缺客户测试用例，不能据此关闭。\n依据：用户复盘口径（本轮对话，无外部入口）、Jira原票、智能情景模式V3.8 6.3.1。\n处理：向客户收集车型/版本、SOC起止值、充电状态、完整步骤、预期7%依据和日志后复核；吴优产品负责人处理。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：本票为客户问题；现有资料只能证明17%退出符合18%定义，尚缺客户测试用例，不能据此关闭。\n依据：用户复盘口径（本轮对话，无外部入口）、Jira原票、智能情景模式V3.8 6.3.1。\n处理：向客户收集车型/版本、SOC起止值、充电状态、完整步骤、预期7%依据和日志后复核；吴优产品负责人处理。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：本票为客户问题；现有资料只能证明17%退出符合18%定义，尚缺客户测试用例，不能据此关闭。\n依据：用户复盘口径（本轮对话，无外部入口）、Jira原票、智能情景模式V3.8 6.3.1。\n处理：向客户收集车型/版本、SOC起止值、充电状态、完整步骤、预期7%依据和日志后复核；吴优产品负责人处理。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 71,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 77
+                      },
+                      {
+                        "startIndex": 78,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 94
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "客户测试用例回收前保持待确认，不执行关闭。",
+                    "userEnteredValue": {
+                      "stringValue": "客户测试用例回收前保持待确认，不执行关闭。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "客户测试用例回收前保持待确认，不执行关闭。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "Jira原票\n智能情景模式V3.8 6.3.1\n关联票ADS-47556",
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票\n智能情景模式V3.8 6.3.1\n关联票ADS-47556"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "Jira原票\n智能情景模式V3.8 6.3.1\n关联票ADS-47556"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47560"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 6
+                      },
+                      {
+                        "startIndex": 7,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 23
+                      },
+                      {
+                        "startIndex": 24,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-47556"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "changes": {
+    "G": "待确认",
+    "H": {
+      "text": "结论：本票为客户问题；现有资料只能证明17%退出符合18%定义，尚缺客户测试用例，不能据此关闭。\n依据：用户复盘口径（本轮对话，无外部入口）、Jira原票、智能情景模式V3.8 6.3.1。\n处理：向客户收集车型/版本、SOC起止值、充电状态、完整步骤、预期7%依据和日志后复核；吴优产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/ADS-47560"
+        },
+        {
+          "label": "智能情景模式V3.8 6.3.1",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+        }
+      ]
+    },
+    "I": "客户测试用例回收前保持待确认，不执行关闭。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/ADS-47560"
+        },
+        {
+          "label": "智能情景模式V3.8 6.3.1",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME"
+        },
+        {
+          "label": "关联票ADS-47556",
+          "url": "http://jira.i-tetris.com/browse/ADS-47556"
+        }
+      ]
+    }
+  }
+}

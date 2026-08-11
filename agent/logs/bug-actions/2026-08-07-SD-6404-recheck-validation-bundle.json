@@ -1,0 +1,70 @@
+{
+  "jira_key": "SD-6404",
+  "row": 167,
+  "mode": "recheck",
+  "expected": {
+    "C": {
+      "text": "现象：导航中卡片相互遮挡；Jira评论要求产品/UI定义显示边界。[Jira原票·描述/完整评论]\n证据：已查C673主清单及MasterGo地图UE，未定位该卡片的精确层级、避让优先级和尺寸边界。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6404"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：卡片重叠现象明确，但缺生效层级、避让优先级和尺寸边界，当前不能直接定研发修改方案。\n依据：Jira原票·描述/完整评论、C673地图UE V0.6·850页面。\n处理：补齐卡片层级、互斥/避让规则和横竖屏边界后再转实现；C673地图UI产品负责人处理。",
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6404"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    },
+    "G": "待确认",
+    "I": "缺精确UE图层、遮挡优先级及尺寸边界",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·描述/完整评论",
+          "url": "http://jira.i-tetris.com/browse/SD-6404"
+        },
+        {
+          "label": "C673功能清单·16_地图第45/85-93/298行",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"
+        },
+        {
+          "label": "C673地图UE V0.6·850页面/检索图层",
+          "url": "https://mastergo.com/file/131302242181530?page_id=689%3A156261"
+        }
+      ]
+    }
+  },
+  "actual": {
+    "C": "现象：导航中卡片相互遮挡；Jira评论要求产品/UI定义显示边界。[Jira原票·描述/完整评论]\n证据：已查C673主清单及MasterGo地图UE，未定位该卡片的精确层级、避让优先级和尺寸边界。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]",
+    "D": "结论：卡片重叠现象明确，但缺生效层级、避让优先级和尺寸边界，当前不能直接定研发修改方案。\n依据：Jira原票·描述/完整评论、C673地图UE V0.6·850页面。\n处理：补齐卡片层级、互斥/避让规则和横竖屏边界后再转实现；C673地图UI产品负责人处理。",
+    "G": "待确认",
+    "I": "缺精确UE图层、遮挡优先级及尺寸边界",
+    "J": "Jira原票·描述/完整评论\nC673功能清单·16_地图第45/85-93/298行\nC673地图UE V0.6·850页面/检索图层"
+  },
+  "checks": {
+    "target_columns_match": true,
+    "protected_columns_match_write_before_snapshot": true,
+    "jira_formula_preserved": true,
+    "checkbox_boolean_preserved": true,
+    "rich_link_targets_match": true,
+    "selection_restored_to_single_cell": true
+  }
+}

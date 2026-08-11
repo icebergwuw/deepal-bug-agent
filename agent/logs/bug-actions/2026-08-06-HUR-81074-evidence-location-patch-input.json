@@ -1,0 +1,47 @@
+{
+  "current_row": {
+    "values": [
+      {"formattedValue": "2026-07-13", "userEnteredValue": {"stringValue": "2026-07-13"}},
+      {"formattedValue": "HUR-81074｜小憩模式开启后仍然可以调出applist", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81074\",\"HUR-81074｜小憩模式开启后仍然可以调出applist\")"}},
+      {"formattedValue": "J90A EU PI／重新打开／P2-Medium。前置：电源ON、P挡、小憩已开启；步骤：点击Dock的AppList入口；实际：小憩仍在运行时成功进入本地应用列表，复现1/5。四条评论仅有‘没需求设计/暂不修改’、‘待产品确认’和‘产品老师确认’，未提供确认内容或正式来源。视频已核实实际现象；J90A EU&EU PI功能清单确认情景模式需求与国内一致且小憩模式搭载，J90A正式PRD/交互定义小憩进入专属全屏页、屏蔽Dock和状态栏，离开小憩页应自动退出。核验入口：Jira原票、Jira视频、EU&EU PI功能清单V3.1、J90A情景模式PRD V2.4、J90A情景模式交互V2.6。", "userEnteredValue": {"stringValue": "J90A EU PI／重新打开／P2-Medium。前置：电源ON、P挡、小憩已开启；步骤：点击Dock的AppList入口；实际：小憩仍在运行时成功进入本地应用列表，复现1/5。四条评论仅有‘没需求设计/暂不修改’、‘待产品确认’和‘产品老师确认’，未提供确认内容或正式来源。视频已核实实际现象；J90A EU&EU PI功能清单确认情景模式需求与国内一致且小憩模式搭载，J90A正式PRD/交互定义小憩进入专属全屏页、屏蔽Dock和状态栏，离开小憩页应自动退出。核验入口：Jira原票、Jira视频、EU&EU PI功能清单V3.1、J90A情景模式PRD V2.4、J90A情景模式交互V2.6。"}},
+      {"formattedValue": "结论：定义为实现缺陷。J90A EU PI小憩模式开启后应进入专属全屏页并屏蔽Dock/状态栏，不允许调出AppList；若离开小憩页面，应自动退出小憩模式。\n依据：J90A EU&EU PI功能清单V3.1、J90A情景模式PRD V2.4、J90A情景模式交互V2.6、Jira视频。\n处理：修复小憩运行态对Dock/AppList的拦截，并验证离页退出逻辑；情景模式研发（丁黎，Android - SceneMode）负责，测试按原步骤回归。", "userEnteredValue": {"stringValue": "结论：定义为实现缺陷。J90A EU PI小憩模式开启后应进入专属全屏页并屏蔽Dock/状态栏，不允许调出AppList；若离开小憩页面，应自动退出小憩模式。\n依据：J90A EU&EU PI功能清单V3.1、J90A情景模式PRD V2.4、J90A情景模式交互V2.6、Jira视频。\n处理：修复小憩运行态对Dock/AppList的拦截，并验证离页退出逻辑；情景模式研发（丁黎，Android - SceneMode）负责，测试按原步骤回归。"}},
+      {"formattedValue": "FALSE", "userEnteredValue": {"boolValue": false}, "dataValidation": {"condition": {"type": "BOOLEAN"}, "strict": true}},
+      {},
+      {"formattedValue": "可转研发", "userEnteredValue": {"stringValue": "可转研发"}},
+      {},
+      {"formattedValue": "普通复查；经办人吴优；已完整读取4条评论、描述、视频及附件清单；无同类关联票；J90A EU&EU PI车型继承链已核实；现有用例信息完整，无需补测试用例；未执行Jira评论、转派或状态变更。", "userEnteredValue": {"stringValue": "普通复查；经办人吴优；已完整读取4条评论、描述、视频及附件清单；无同类关联票；J90A EU&EU PI车型继承链已核实；现有用例信息完整，无需补测试用例；未执行Jira评论、转派或状态变更。"}},
+      {"formattedValue": "Jira原票\nJira视频\nJira日志\nJ90A EU&EU PI功能清单V3.1\nJ90A情景模式PRD V2.4\nJ90A情景模式交互V2.6", "userEnteredValue": {"stringValue": "Jira原票\nJira视频\nJira日志\nJ90A EU&EU PI功能清单V3.1\nJ90A情景模式PRD V2.4\nJ90A情景模式交互V2.6"}}
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "J90A EU PI／重新打开／P2-Medium。Jira原票·描述/4条评论未提供可追溯的正式目标；Jira视频·00:02-00:06显示00:02仍在小憩专属页、00:05已进入本地应用列表。车型链：功能清单V3.1·Sheet J90A EU座舱功能清单·序号938/939，其中938（I2-F70-00-00）注明需求和国内保持一致，939（I2-F70-SF01-00）确认小憩模式搭载。正式目标：情景模式PRD V2.4·第13页和情景模式交互V2.6·第13页的「情景模式-小憩模式」均写明小憩专属页面、全屏显示并屏蔽Dock栏和状态栏；同页「小憩模式异常提示/其他情况」写明离开小憩页面时自动退出。",
+      "links": [
+        {"label": "Jira原票·描述/4条评论", "url": "http://jira.i-tetris.com/browse/HUR-81074"},
+        {"label": "Jira视频·00:02-00:06", "url": "http://jira.i-tetris.com/secure/attachment/4014693/video%2848%29.mp4"},
+        {"label": "功能清单V3.1·Sheet J90A EU座舱功能清单·序号938/939", "url": "https://drive.google.com/file/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK"},
+        {"label": "情景模式PRD V2.4·第13页", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y"},
+        {"label": "情景模式交互V2.6·第13页", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL"}
+      ]
+    },
+    "D": {
+      "text": "结论：定义为实现缺陷。J90A EU PI小憩模式开启后应进入专属全屏页并屏蔽Dock/状态栏，不允许调出AppList；若离开小憩页面，应自动退出小憩模式。\n依据：功能清单V3.1·序号938/939、情景模式PRD V2.4·第13页、情景模式交互V2.6·第13页、Jira视频·00:02-00:06。\n处理：修复小憩运行态对Dock/AppList的拦截，并验证离页退出逻辑；情景模式研发（丁黎，Android - SceneMode）负责，测试按原步骤回归。",
+      "links": [
+        {"label": "功能清单V3.1·序号938/939", "url": "https://drive.google.com/file/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK"},
+        {"label": "情景模式PRD V2.4·第13页", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y"},
+        {"label": "情景模式交互V2.6·第13页", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL"},
+        {"label": "Jira视频·00:02-00:06", "url": "http://jira.i-tetris.com/secure/attachment/4014693/video%2848%29.mp4"}
+      ]
+    },
+    "I": "普通复查；证据已定位到功能清单Sheet/序号、PRD/交互页码与Jira视频时间码；未执行Jira外部动作。",
+    "J": {
+      "links": [
+        {"label": "Jira原票·描述/4条评论", "url": "http://jira.i-tetris.com/browse/HUR-81074"},
+        {"label": "Jira视频·00:02-00:06", "url": "http://jira.i-tetris.com/secure/attachment/4014693/video%2848%29.mp4"},
+        {"label": "功能清单V3.1·Sheet J90A EU座舱功能清单·序号938/939", "url": "https://drive.google.com/file/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK"},
+        {"label": "情景模式PRD V2.4·第13页", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y"},
+        {"label": "情景模式交互V2.6·第13页", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL"}
+      ]
+    }
+  }
+}
