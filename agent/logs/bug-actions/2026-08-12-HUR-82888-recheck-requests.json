@@ -1,0 +1,196 @@
+{
+  "key": "HUR-82888",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 323,
+  "rowIndex": 322,
+  "previewFingerprint": "b49f12014eb38232b0b89a7b46d9c38ad62de2fd8bab465839c0f7b7848fea12",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Jira原票：J90A 在“我要打电话”的二次交互阶段说“打开前备箱”被截断；评论称电话二次交互当前不响应电话外指令，但该说明仅证明实现边界，未提供生效产品目标。描述引用 HUR-82884 日志票，已完整读取。",
+      "after": "Jira原票：J90A 在“我要打电话”的二次交互阶段说“打开前备箱”被截断；评论称电话二次交互当前不响应电话外指令，但该说明仅证明实现边界，未提供生效产品目标。描述引用 HUR-82884 日志票，已完整读取。\nDrive复核：检索回执中的候选已逐项排除，仍未定位同项目同场景正式目标。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82888"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：电话二次交互截断前备箱指令的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；J90A蓝牙电话语音产品负责人处理。",
+      "after": "结论：电话二次交互截断前备箱指令的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；J90A蓝牙电话语音产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82888"
+      ]
+    },
+    {
+      "column": "I",
+      "before": "重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义",
+      "after": "重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；Drive候选已逐项排除，仍需补齐同范围正式资料及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票",
+      "after": "Jira原票",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82888"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "Jira原票：J90A 在“我要打电话”的二次交互阶段说“打开前备箱”被截断；评论称电话二次交互当前不响应电话外指令，但该说明仅证明实现边界，未提供生效产品目标。描述引用 HUR-82884 日志票，已完整读取。\nDrive复核：检索回执中的候选已逐项排除，仍未定位同项目同场景正式目标。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82888"
+      ]
+    },
+    "D": {
+      "visible": "结论：电话二次交互截断前备箱指令的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；J90A蓝牙电话语音产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82888"
+      ]
+    },
+    "I": {
+      "visible": "重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；Drive候选已逐项排除，仍需补齐同范围正式资料及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82888"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 322,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票：J90A 在“我要打电话”的二次交互阶段说“打开前备箱”被截断；评论称电话二次交互当前不响应电话外指令，但该说明仅证明实现边界，未提供生效产品目标。描述引用 HUR-82884 日志票，已完整读取。\nDrive复核：检索回执中的候选已逐项排除，仍未定位同项目同场景正式目标。"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82888"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 322,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：电话二次交互截断前备箱指令的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；J90A蓝牙电话语音产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 67,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82888"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 73
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 322,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；Drive候选已逐项排除，仍需补齐同范围正式资料及Alchemy当前/标准/项目功能点"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 322,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82888\",\"Jira原票\")"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

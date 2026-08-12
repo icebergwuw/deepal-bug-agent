@@ -34,7 +34,7 @@
 3. 完整执行画像要求，按问题类型核对正式定义、当前实现和规则空白；每个必查动作记录检索日期、实际入口、关键词、已读 `source_ids` 或不可用限制。
 4. 识别为客户提报 Bug 时，按 `agent/evidence-contract.md` 检查客户测试用例；缺失或不完整时保持 `待确认`，由当前产品负责人向客户收集，不得仅凭正式定义或研发日志关闭。
 5. 用 `agent/product-kb/` 发现资料入口、责任边界和相似案例，但只复用检索方法；最终判断必须回到当前 Jira、生效正式资料和当前平台结果。
-6. 在判断、写表前完成 `schema_version=3` 决策核验清单：备注因果链、客户问题识别、关联票、证据画像与必查资料、资料适用范围、冲突处理和唯一结论。每条来源必须登记 `source_id`、`source_type`、`source_location`、角色和范围；项目继承必须登记已核验的继承链。
+6. 在判断、写表前完成 `schema_version=4` 决策核验清单：备注因果链、客户问题识别、关联票、证据画像与必查资料、资料适用范围、冲突处理和唯一结论。每条来源必须登记 `source_id`、`source_type`、`source_location`、角色和范围；项目继承必须登记已核验的继承链。
 7. 填写预期行为卡并让唯一结论分别引用有效产品目标来源和实现来源；语音类同时记录 Alchemy 原话、当前结果、`meta_id`、标准功能点和项目功能点的可用状态。
 8. 无论最终是确定性还是待定状态，都用 `agent/scripts/validate_bug_evidence_gate.py` 校验结构化清单；缺少必查动作时停止写表，已检索但命中关键缺口、未核验继承链或不完整语音证据时降级为 `待复核 / 待确认 / 待会诊`。
 9. 将同一画像、必查资料和结论字段回写本票日志；批量任务每个 Jira 使用独立决策核验卡。
@@ -52,7 +52,7 @@
 
 - 写入前再次运行预检：通用任务至少要求 Jira、Google Drive和目标负责人范围；语音或MasterGo任务按证据画像增加对应平台。只有结果为 `ok=true + mode=read_write` 才能继续。
 - 严格按 `agent/sheet-contract.md` 写当前负责人页。
-- 调用 `agent/scripts/bug_sheet_contract.py` 生成 `build / patch` 请求时，必须传入当前负责人 `--owner-id`、本票已通过校验且 Jira key 一致的 schema v3 manifest；脚本自动执行本机身份/负责人范围/Jira/Drive门禁，语音画像同时要求Alchemy短期回执。批量任务每票各传一份manifest，缺失或错配即停止生成写表请求。
+- 调用 `agent/scripts/bug_sheet_contract.py` 生成 `build / patch` 请求时，必须传入当前负责人 `--owner-id`、本票已通过校验且 Jira key 一致的 schema v4 manifest，以及同批次 `--run-bundle`。脚本自动执行本机身份/负责人范围/Jira/Drive门禁，语音画像同时要求Alchemy短期回执；还会核对真实 Drive 检索回执、逐 Key 决策卡和行号绑定。任一项缺失或错配即停止生成写表请求。
 - 已有 Jira 更新原行；新 Jira 追加一行。写后回读 A:J，核对 B 公式、E 复选框、列位、行高和筛选边界。
 - 普通二次复查使用 `recheck` 模式；D 写本次重新核验后的当前 `decision_text`，不是把新结论绕写到 H。
 - 同步对应 `agent/bug-owners/<owner>/index.md`。索引以线上页为准，不凭历史静态清单追加。
@@ -63,8 +63,11 @@
 - 遵守 `AGENTS.md` 的全局外部动作权限；Jira 评论、转派和状态修改均需用户明确授权。
 - 外部动作的文本复用、链接和回读按 `agent/output-contract.md` 执行。
 - 每批操作在 `agent/logs/bug-actions/` 留日志，记录负责人、每一个 Jira key、证据、线上位置、写入摘要、回读校验和未执行动作。
+- 每次执行先生成唯一 `run_id` 和 run bundle；即使本次无新增，也必须保存查询范围、数量、去重结果和“本次无新增”的操作日志。
+- 有写入时，run bundle 在写前绑定每票 manifest 与逐 Key 决策卡，写后再绑定原始回读、校验结果及 `readback_sha256`，并用 `validate_bug_run.py --phase final` 收口。
 - 批量任务必须在日志正文逐条列 key，或引用同目录 manifest；manifest 至少包含 Jira key、负责人、表格行号。范围描述不能替代逐条清单。
 - 旧线上数据没有日志时不伪造补录；标为历史未审计，后续触及时再按完整流程核验并留痕。
+- 本次本地文件更新通过全部适用校验和敏感信息检查后，按 `AGENTS.md` 提交并推送当前分支；只有远端确认包含新提交后才报告“已上传 GitHub”。
 
 ## 交付前检查
 

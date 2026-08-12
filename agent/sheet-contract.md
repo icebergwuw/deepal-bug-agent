@@ -29,7 +29,7 @@
 - 更新已有行必须使用列级定向写入，不得用 A:J 整行 payload 覆盖；写前核对负责人页、行号、B 列 Jira Key 和当前 A:J，写后回读 A:J。
 - “保持不变”表示本次请求不得提交该列；不是先读取旧值再随整行写回。
 - 预览后、真正发送 batchUpdate 前必须再次通过 `get_cells` 新鲜回读同一行完整 A:J，并用预览 fingerprint 对比；不一致就停止。Google Sheets 没有本流程可用的单元格原子条件写，写后仍必须立即回读。
-- `agent/scripts/bug_sheet_contract.py` 的 `build / patch` 请求必须传当前负责人 `--owner-id`，并绑定本 Jira 已通过门禁且 key 一致的 schema v3 manifest。脚本同时校验本机身份、负责人范围、Jira/Drive短期访问回执；语音manifest自动要求Alchemy回执。任一门禁失败时不得生成写表请求。
+- `agent/scripts/bug_sheet_contract.py` 的 `build / patch` 请求必须传当前负责人 `--owner-id`、本 Jira 已通过门禁且 key 一致的 schema v4 manifest 和同批次 `--run-bundle`。脚本同时校验本机身份、负责人范围、Jira/Drive短期访问回执、Drive检索回执、逐 Key 决策卡及表格行号；语音manifest自动要求Alchemy回执。任一门禁失败时不得生成写表请求。
 
 ## 内容规则
 
@@ -67,4 +67,5 @@
 7. 用户反馈链接不可见或不可点时，必须按用户实际界面复核并修复短标签的链接元数据或写入方式；J 仍不得显示完整 URL，不能以标签有颜色或仅存在 API 元数据为由结束处理。
 8. 回读 C 的 `textFormatRuns[].format.link.uri`，逐项确认 C 中每个证据名称原位可点击且目标正确；J 有链接但 C 内证据不可点，不算通过。
 9. 回读 D/H 的 `formattedValue` 与 `textFormatRuns[].format.link.uri`：可见文本必须与 `agent/output-contract.md` 一致；每个依据短标签必须绑定正确原始链接，单元格不得显示长 URL。
-10. 更新已有行时对比写前、写后 A:J：除当前模式允许且实际声明修改的列外，其余列的值、公式和富文本链接必须一致。
+10. 保存本次原始 A:J 回读和校验 JSON，在 run bundle 中登记路径与 `readback_sha256`；只有 `validate_bug_run.py --phase final` 通过后才能报告完成。
+11. 更新已有行时对比写前、写后 A:J：除当前模式允许且实际声明修改的列外，其余列的值、公式和富文本链接必须一致。

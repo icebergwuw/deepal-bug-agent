@@ -1,0 +1,237 @@
+{
+  "schema_version": 4,
+  "jira_key": "HUR-72809",
+  "comment_causality": "J90A-EU 荷兰语“Open energiebeheer”执行为打开车辆设置能量管理，而测试预期为能量流App；评论已确认两者不是同一功能，但客户变更语料使用同一表达，现有目标冲突。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-72809 Jira当前页面",
+      "source_location": "Jira字段、描述、附件区、问题链接及活动日志（全部评论按时间顺序）",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A-EU语音语料产品负责人",
+      "trigger": "荷兰语能量流与能量管理同词冲突",
+      "target_behavior": "J90A-EU 荷兰语“Open energiebeheer”执行为打开车辆设置能量管理，而测试预期为能量流App；评论已确认两者不是同一功能，但客户变更语料使用同一表达，现有目标冲突。",
+      "match": "exact",
+      "reason": "证明本票当前实现、复现和评论因果，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-j90a-v11",
+      "source": "J90A海外LanguageList V1.1",
+      "source_location": "Sheet‘16_Energy Flow’与‘13_Energy Management’各A1:AQ1000检索‘Open energiebeheer’，均0条命中",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "J90A-EU语音语料产品负责人",
+      "trigger": "荷兰语能量流与能量管理同词冲突",
+      "target_behavior": "当前正式交付表未定位该荷兰语条目，能量流与能量管理映射仍冲突",
+      "match": "gap",
+      "material": true,
+      "next_action": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射；J90A-EU语音语料产品负责人处理。",
+      "reason": "已读取最新交付表并分Sheet精确检索，当前MRE语料仍不可追溯。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：同项目PRD、专项定义、交互、UE和正式配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-72809"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "J90A EU LanguageList 能量流 能量管理"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A EU LanguageList 能量流 能量管理"
+        }
+      ],
+      "source_ids": [
+        "drive-j90a-v11"
+      ],
+      "reason": "已完成同项目正式资料检索，但未读到可直接定义本票目标行为的生效条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+            "title": "J90A_海外LanguageList_V1.1_260807",
+            "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-j90a-v11"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "HUR-72809-formal_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "荷兰语能量流与能量管理同词冲突"
+        }
+      ],
+      "source_ids": [],
+      "reason": "Alchemy当前跳转SSO登录页，自动化运行无有效登录态，无法读取当前结果或功能点。",
+      "material": true,
+      "next_action": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "荷兰语能量流与能量管理同词冲突"
+        }
+      ],
+      "source_ids": [],
+      "reason": "Alchemy当前跳转SSO登录页，自动化运行无有效登录态，无法读取当前结果或功能点。",
+      "material": true,
+      "next_action": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "荷兰语能量流与能量管理同词冲突"
+        },
+        {
+          "kind": "project_scope",
+          "text": "J90A-EU语音语料产品负责人"
+        }
+      ],
+      "source_ids": [],
+      "reason": "Alchemy当前跳转SSO登录页，自动化运行无有效登录态，无法读取当前结果或功能点。",
+      "material": true,
+      "next_action": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、研发评论、关联票与正式目标分开记录；研发所述当前实现不能替代formal_target。Alchemy登录失效和同范围正式目标缺失均为material gap，因此降级为待复核。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "unavailable",
+    "original_utterance": "荷兰语能量流与能量管理同词冲突",
+    "alchemy_tested": false,
+    "alchemy_result": "不可用：SSO登录失效",
+    "meta_id": null,
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "Alchemy登录失效，未读取标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "Alchemy登录失效，未读取项目功能点。"
+    },
+    "unavailable_reason": "Alchemy当前跳转SSO登录页。",
+    "next_action": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A-EU语音语料产品负责人",
+    "implementation_source_ids": [
+      "jira-actual"
+    ],
+    "text": "结论：荷兰语能量流与能量管理同词冲突的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive候选已逐项打开或排除，仍缺同范围决定性目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射；J90A-EU语音语料产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "20260812T105609+0800-daily-bug-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 331
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-72809-formal_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-72809"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "J90A EU LanguageList 能量流 能量管理"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A EU LanguageList 能量流 能量管理"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+          "title": "J90A_海外LanguageList_V1.1_260807",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ]
+}

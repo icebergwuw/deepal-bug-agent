@@ -29,8 +29,10 @@ REQUIRED_FILES = (
     "agent/scripts/bug_sheet_contract.py",
     "agent/scripts/bug_project_preflight.py",
     "agent/scripts/validate_bug_evidence_gate.py",
+    "agent/scripts/validate_bug_run.py",
     "agent/scripts/sync_bug_skill.py",
     "agent/scripts/test_bug_evidence_gate.py",
+    "agent/scripts/test_bug_run.py",
     "agent/scripts/test_bug_sheet_contract.py",
     "agent/scripts/test_bug_project_preflight.py",
 )
@@ -73,9 +75,11 @@ OPERATIONAL_SCRIPT_ALLOWLIST = {
     "bug_project_preflight.py",
     "sync_bug_skill.py",
     "test_bug_evidence_gate.py",
+    "test_bug_run.py",
     "test_bug_sheet_contract.py",
     "test_bug_project_preflight.py",
     "validate_bug_evidence_gate.py",
+    "validate_bug_run.py",
     "validate_rule_architecture.py",
 }
 
@@ -203,6 +207,7 @@ def validate(root: Path, skill: Path) -> list[str]:
         "def validate_bound_manifests",
         "UPDATE_MODES_PATH",
         "--manifest",
+        "--run-bundle",
         "--row-number",
         "--preview-fingerprint",
         '"fields": "userEnteredValue,textFormatRuns"',
@@ -279,8 +284,8 @@ def validate(root: Path, skill: Path) -> list[str]:
             requirements = json.loads(read(evidence_requirements_path))
             if requirements.get("schema_version") != 1:
                 errors.append("证据配置 schema_version 必须为 1")
-            if requirements.get("manifest_schema_version") != 3:
-                errors.append("证据配置 manifest_schema_version 必须为 3")
+            if requirements.get("manifest_schema_version") != 4:
+                errors.append("证据配置 manifest_schema_version 必须为 4")
 
             query_kinds = set(requirements["query_kinds"])
             candidate_dispositions = set(requirements["candidate_dispositions"])
@@ -393,6 +398,9 @@ def validate(root: Path, skill: Path) -> list[str]:
         "required_evidence_checks",
         "required_query_kinds",
         "candidate_audit",
+        "search_receipts",
+        "search_receipt_ids",
+        "run_context",
         "source_type",
         "客户问题识别",
         "客户测试用例缺失或不完整时禁止关闭或判为非 Bug",
@@ -406,6 +414,9 @@ def validate(root: Path, skill: Path) -> list[str]:
             errors.append(f"操作日志规范缺少决策核验字段：{token}")
     if "## PC-12345 决策核验卡" not in log_readme:
         errors.append("操作日志规范未要求批量任务按 Jira 分卡")
+    for token in ("Run ID", "run bundle", "无新增", "readback_sha256"):
+        if token not in log_readme:
+            errors.append(f"操作日志规范缺少运行闭环字段：{token}")
 
     comment_signals = read(root / "agent/product-kb/rules/jira-comment-signals.md")
     if "agent/evidence-contract.md" not in comment_signals:

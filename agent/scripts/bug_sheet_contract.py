@@ -57,6 +57,7 @@ from bug_project_preflight import (
     skill_status,
 )
 from validate_bug_evidence_gate import validate_manifest
+from validate_bug_run import validate_run_bundle
 from urllib.parse import urlparse
 
 
@@ -678,7 +679,7 @@ def _load_json(stream: Any) -> Any:
 def validate_bound_manifests(
     manifest_paths: list[str], expected_keys: list[str]
 ) -> list[str]:
-    """Validate one schema-v3 evidence manifest for every pending sheet row."""
+    """Validate one schema-v4 evidence manifest for every pending sheet row."""
 
     errors: list[str] = []
     if len(manifest_paths) != len(expected_keys):
@@ -703,6 +704,19 @@ def validate_bound_manifests(
             f"{expected_key} manifest：{error}" for error in manifest_errors
         )
     return errors
+
+
+def validate_bound_run_bundle(bundle_path: str) -> list[str]:
+    """Validate the complete per-run log/manifest binding before any write request."""
+
+    path = Path(bundle_path)
+    if not path.is_file():
+        return [f"run bundle 不存在：{path}"]
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        return [f"run bundle 无法解析：{error.msg}"]
+    return validate_run_bundle(payload, phase="prewrite")
 
 
 def required_platforms_for_manifests(manifest_paths: list[str]) -> set[str]:
@@ -761,8 +775,9 @@ def main(argv: list[str] | None = None) -> int:
         "--manifest",
         action="append",
         required=True,
-        help="每个新增 Jira 对应的 schema-v3 manifest；按输入行顺序重复传入",
+        help="每个新增 Jira 对应的 schema-v4 manifest；按输入行顺序重复传入",
     )
+    build.add_argument("--run-bundle", required=True, help="完整批次 run bundle")
     build.add_argument(
         "--require-platform",
         action="append",
@@ -808,8 +823,9 @@ def main(argv: list[str] | None = None) -> int:
     patch.add_argument(
         "--manifest",
         required=True,
-        help="与 --key 一致且已通过证据门禁的 schema-v3 manifest",
+        help="与 --key 一致且已通过证据门禁的 schema-v4 manifest",
     )
+    patch.add_argument("--run-bundle", required=True, help="完整批次 run bundle")
 
     validate_patch = sub.add_parser("validate-patch", help="校验已有 Bug 列级更新回读")
     validate_patch.add_argument("--key", required=True)
@@ -830,9 +846,10 @@ def main(argv: list[str] | None = None) -> int:
             args.manifest,
             [str(item.get("key", "")) for item in payload],
         )
-        if preflight_errors or manifest_errors:
+        run_errors = validate_bound_run_bundle(args.run_bundle)
+        if preflight_errors or manifest_errors or run_errors:
             json.dump(
-                {"ok": False, "errors": [*preflight_errors, *manifest_errors]},
+                {"ok": False, "errors": [*preflight_errors, *manifest_errors, *run_errors]},
                 sys.stdout,
                 ensure_ascii=False,
                 indent=2,
@@ -889,9 +906,10 @@ def main(argv: list[str] | None = None) -> int:
             args.owner_id, [args.manifest], args.require_platform
         )
         manifest_errors = validate_bound_manifests([args.manifest], [args.key])
-        if preflight_errors or manifest_errors:
+        run_errors = validate_bound_run_bundle(args.run_bundle)
+        if preflight_errors or manifest_errors or run_errors:
             json.dump(
-                {"ok": False, "errors": [*preflight_errors, *manifest_errors]},
+                {"ok": False, "errors": [*preflight_errors, *manifest_errors, *run_errors]},
                 sys.stdout,
                 ensure_ascii=False,
                 indent=2,

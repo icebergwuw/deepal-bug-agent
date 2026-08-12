@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "errors": [],
+  "per_key": {
+    "ADS-48729": {
+      "ok": true,
+      "errors": []
+    },
+    "ADS-48572": {
+      "ok": true,
+      "errors": []
+    },
+    "HUR-82888": {
+      "ok": true,
+      "errors": []
+    },
+    "PC-38473": {
+      "ok": true,
+      "errors": []
+    },
+    "PC-38472": {
+      "ok": true,
+      "errors": []
+    },
+    "PC-38471": {
+      "ok": true,
+      "errors": []
+    },
+    "ADS-47316": {
+      "ok": true,
+      "errors": []
+    },
+    "SLV-44180": {
+      "ok": true,
+      "errors": []
+    },
+    "ADS-46860": {
+      "ok": true,
+      "errors": []
+    },
+    "HUR-77192": {
+      "ok": true,
+      "errors": []
+    },
+    "HUR-72809": {
+      "ok": true,
+      "errors": []
+    }
+  },
+  "checks": {
+    "range": "bug!A321:J331",
+    "row_count": 11,
+    "protected_columns_unchanged": true,
+    "target_key_counts": {
+      "ADS-48729": 1,
+      "ADS-48572": 1,
+      "HUR-82888": 1,
+      "PC-38473": 1,
+      "PC-38472": 1,
+      "PC-38471": 1,
+      "ADS-47316": 1,
+      "SLV-44180": 1,
+      "ADS-46860": 1,
+      "HUR-77192": 1,
+      "HUR-72809": 1
+    },
+    "historical_duplicates": {
+      "SLV-44272": 2
+    },
+    "formula_boolean_links_format": "validated"
+  }
+}

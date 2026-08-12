@@ -1,0 +1,299 @@
+[
+  {
+    "date": "2026-08-12",
+    "key": "ADS-48729",
+    "summary": "小憩模式位置切换误回复不支持",
+    "info": "Jira原票：C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。",
+    "judgment": "结论：小憩模式位置切换误回复不支持的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；C385-5语音产品/执行负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-48729"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-48729"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-48729"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "ADS-48572",
+    "summary": "POI推荐二次交互选错列表",
+    "info": "Jira原票：C385-5 STG 在火锅店推荐播报中插入“导航去观音桥”，随后说“第一个”时选中了原火锅店列表；关联总票 ADS-48560 与评论均记录该二次交互现象，研发所述“可见优先级高”只证明当前实现。",
+    "judgment": "结论：POI推荐二次交互选错列表的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义；C385-5语音产品/可见交互负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-48572"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-48572"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-48572"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "HUR-82888",
+    "summary": "电话二次交互截断前备箱指令",
+    "info": "Jira原票：J90A 在“我要打电话”的二次交互阶段说“打开前备箱”被截断；评论称电话二次交互当前不响应电话外指令，但该说明仅证明实现边界，未提供生效产品目标。描述引用 HUR-82884 日志票，已完整读取。",
+    "judgment": "结论：电话二次交互截断前备箱指令的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；J90A蓝牙电话语音产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-82888"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-82888"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-82888"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "PC-38473",
+    "summary": "语音设置页唤醒词编辑删除不可见",
+    "info": "Jira原票：C673-ICA 语音设置页说“编辑/删除唤醒词”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。",
+    "judgment": "结论：语音设置页唤醒词编辑删除不可见的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并补齐语音设置页生效可见配置、节点命名及冲突消歧规则；C673-ICA可见即可说产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy并补齐语音设置页生效可见配置、节点命名及冲突消歧规则",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38473"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38473"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38473"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "PC-38472",
+    "summary": "语音设置页应答语序号不可见",
+    "info": "Jira原票：C673-ICA 语音设置页说“编辑/删除应答语1、2、3”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。",
+    "judgment": "结论：语音设置页应答语序号不可见的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并补齐语音设置页生效可见配置、应答语节点命名及序号消歧规则；C673-ICA可见即可说产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy并补齐语音设置页生效可见配置、应答语节点命名及序号消歧规则",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38472"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38472"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38472"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "PC-38471",
+    "summary": "语音设置页第二项播放编辑删除不可见",
+    "info": "Jira原票：C673-ICA 语音设置页说“播放/编辑/删除第二个”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。",
+    "judgment": "结论：语音设置页第二项播放编辑删除不可见的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则；C673-ICA可见即可说产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38471"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38471"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-38471"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "ADS-47316",
+    "summary": "下一首播放歌手歌曲执行边界待核",
+    "info": "Jira原票：C673-7 说“下一首播放刘德华的歌曲”5/5直接播放刘德华歌曲，测试预期为不支持；关联总票 ADS-47224 已读取，只有测试主张与执行结果，没有同项目正式能力边界。",
+    "judgment": "结论：下一首播放歌手歌曲执行边界待核的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；C673-7媒体语音产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-47316"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-47316"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-47316"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "SLV-44180",
+    "summary": "行车指数查询参数映射失败",
+    "info": "Jira原票：C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。",
+    "judgment": "结论：行车指数查询参数映射失败的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；C673基础款天气语音产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/SLV-44180"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/SLV-44180"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/SLV-44180"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "ADS-46860",
+    "summary": "花瓣地图未上报家和公司地址",
+    "info": "Jira原票：C673-7 Megaclaw 多意图“先去公司，再去机场”无法规划；关联票 ADS-46859、PC-38930、ADS-47922/47925/47928 已读取，评论一致指出花瓣地图未上报家/公司地址，其他票的AIS空值兜底已修复但本票能力方案仍未确定。",
+    "judgment": "结论：花瓣地图未上报家和公司地址的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义；C673-7地图/语音产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-46860"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-46860"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-46860"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "HUR-77192",
+    "summary": "挪威语智能远光灯语料目标冲突",
+    "info": "Jira原票：J90A-EU PI 挪威语“Avslutt Automatiske fjernlys”未关闭智能远光灯；评论显示该语料来自客户/MRE变更，但语义与自动大灯/智能远光灯目标存在冲突，未给出可追溯的当前MRE条目。",
+    "judgment": "结论：挪威语智能远光灯语料目标冲突的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并取得MRE当前挪威语语料清单的具体行号，明确智能远光灯与自动大灯目标功能；J90A-EU PI语音语料产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy并取得MRE当前挪威语语料清单的具体行号，明确智能远光灯与自动大灯目标功能",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-77192"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-77192"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-77192"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-12",
+    "key": "HUR-72809",
+    "summary": "荷兰语能量流与能量管理同词冲突",
+    "info": "Jira原票：J90A-EU 荷兰语“Open energiebeheer”执行为打开车辆设置能量管理，而测试预期为能量流App；评论已确认两者不是同一功能，但客户变更语料使用同一表达，现有目标冲突。",
+    "judgment": "结论：荷兰语能量流与能量管理同词冲突的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射；J90A-EU语音语料产品负责人处理。",
+    "status": "待复核",
+    "note": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射",
+    "links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-72809"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-72809"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-72809"
+      }
+    ]
+  }
+]

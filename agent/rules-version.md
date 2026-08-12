@@ -1,9 +1,9 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.9.0-trial.1`
+- 当前版本：`v1.10.1-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-08-11`
-- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
+- 生效日期：`2026-08-12`
+- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 唯一模板：`agent/skills/deepal-product-bug-handler/SKILL.md`；安装位置由 `$CODEX_HOME` 决定，未设置时使用当前用户目录下的 `.codex/skills/deepal-product-bug-handler/SKILL.md`。安装副本不定义独立业务口径且必须与模板一致。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
@@ -14,6 +14,84 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.10.1-trial.1 — 2026-08-12
+
+### 试行内容
+
+- 固化用户授权：项目规则、脚本、索引、操作日志、知识库或会议沉淀更新通过校验和敏感信息检查后，必须提交并推送当前分支的受控私有GitHub远端。
+- 只有远端确认包含新提交后才能报告“已上传”；无变化不创建空提交，远端不可达、权限失败或私有性无法确认时停止并报告具体状态。
+- 修正Bug与复盘流程中遗留的`schema_version=3`文字为当前schema v4，并修正表格写后校验序号。
+
+### 修改原因
+
+- 用户明确要求本次上传且以后所有项目更新均上传GitHub；此前v1.10修复仅在本地，未提交和推送。
+- 当前Bug与复盘流程残留schema v3文字，可能误导后续执行生成旧manifest。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/onboarding.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-12-github-delivery-policy-v1.10.1-trial.1.md`
+
+### 验证案例
+
+- 架构、证据门禁、run bundle、表格契约和preflight测试全部通过；全仓敏感信息检查和`git diff --check`通过。
+- 本次提交推送后，用`git ls-remote origin refs/heads/main`核对远端main指向新提交。
+
+### 回滚口径
+
+- 通过新提交恢复v1.10.0-trial.1，不使用`git reset --hard`；用户持续上传授权如需撤销，必须由用户明确提出。
+
+## v1.10.0-trial.1 — 2026-08-12
+
+### 试行内容
+
+- manifest 升级为 `schema_version=4`：Drive 类必查动作在 `read / not_found` 时都必须绑定真实检索回执，候选数量和 id 必须与回执逐项一致，禁止用人工 `results_count=0` 隐藏命中项。
+- 新增 `run_context`、唯一 `run_id` 和 run bundle；每票 manifest、操作者、目标负责人、页签、行号及逐 Key 决策卡必须在写前一致。
+- 新增 `validate_bug_run.py`：写后必须保存原始 A:J 回读、校验 JSON 和 `readback_sha256`，最终校验通过后才可报告完成。
+- 自动化无新增时也必须保存查询范围、计数、去重结果、明确“本次无新增”的日志及 `status=no_changes` run bundle。
+
+### 修改原因
+
+- 2026-08-12 首次每日新增批次虽完成 11 行写入和在线回读，但 manifest 将实际命中的 Drive 强候选统一记为 `results_count=0`，现有门禁仍通过；批量日志也缺逐 Key 七项卡、run_id 和落盘回读证据。
+- 现行文字规则已经要求打开候选和完整留痕，问题位于执行层缺少可校验的来源回执与运行闭环，因此本次只加硬门禁，不改变产品判断口径。
+
+### 影响文件
+
+- `agent/config/evidence-requirements.json`
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/sheet-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/archive/scripts/README.md`
+- `agent/archive/scripts/rebuild_2026_08_12_run_closure.py`
+- `agent/archive/scripts/build_2026_08_12_recheck_patches.py`
+- `agent/archive/scripts/validate_2026_08_12_recheck.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-12-run-evidence-log-closure-v1.10.0-trial.1.md`
+
+### 验证案例
+
+- Drive 回执存在结果而候选审计写 0、回执缺失或候选 id 不匹配时，证据门禁拒绝通过。
+- 写表前 run bundle 缺任一 manifest、逐 Key 决策卡、负责人、页签或行号时拒绝；写后缺回读、校验文件或 sha256 不一致时拒绝完成。
+- 无新增运行仍需有操作日志和 no_changes bundle；缺“本次无新增”时拒绝完成。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.9.0-trial.1 对应规则，不执行 `git reset --hard`。
+- 回滚不得删除本次操作日志、检索回执、run bundle 或回读证据；schema v4 作为历史证据保留，不改写为旧版本。
 
 ## v1.9.0-trial.1 — 2026-08-11
 

@@ -1,0 +1,269 @@
+{
+  "key": "ADS-48729",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 321,
+  "rowIndex": 320,
+  "previewFingerprint": "662fe54062e5f9d3892e9403d6e2fb1739b7c80ca322095ed421289dbad50bb9",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Jira原票：C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。",
+      "after": "Jira原票：C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。\nDrive复核：智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48729",
+        "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：小憩模式位置切换误回复不支持的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；C385-5语音产品/执行负责人处理。",
+      "after": "结论：小憩模式位置切换误回复不支持的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；C385-5语音产品/执行负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48729",
+        "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+      ]
+    },
+    {
+      "column": "I",
+      "before": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义",
+      "after": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票",
+      "after": "Jira原票\n智能情景模式功能定义V4.9",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48729",
+        "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "Jira原票：C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。\nDrive复核：智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48729",
+        "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+      ]
+    },
+    "D": {
+      "visible": "结论：小憩模式位置切换误回复不支持的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；C385-5语音产品/执行负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48729",
+        "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+      ]
+    },
+    "I": {
+      "visible": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n智能情景模式功能定义V4.9",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48729",
+        "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 320,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票：C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。\nDrive复核：智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE。"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48729"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 144,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 158
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 320,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：小憩模式位置切换误回复不支持的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；C385-5语音产品/执行负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 68,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48729"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 74
+                  },
+                  {
+                    "startIndex": 75,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 320,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 320,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n智能情景模式功能定义V4.9"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48729"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

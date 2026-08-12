@@ -17,7 +17,7 @@
 4. `规则沉淀`：只沉淀可复用、证据明确的方法。
 5. `待补信息`：列出仍会改变判断的未知项。
 
-每个 Bug 的证据复核按 `agent/evidence-contract.md`；复盘同样形成当前要求的 `schema_version=3` manifest，使用 `agent/config/evidence-requirements.json` 完成全部画像和必查资料，并在写 H 前通过 `agent/scripts/validate_bug_evidence_gate.py`。标准结论、Jira 草稿和聊天复用按 `agent/output-contract.md`。
+每个 Bug 的证据复核按 `agent/evidence-contract.md`；复盘同样形成当前要求的 `schema_version=4` manifest，使用 `agent/config/evidence-requirements.json` 完成全部画像和必查资料，并在写 H 前通过 `agent/scripts/validate_bug_evidence_gate.py`。标准结论、Jira 草稿和聊天复用按 `agent/output-contract.md`。
 
 ## Bug 表更新
 

@@ -60,7 +60,7 @@
 
 ## 证据画像与必查资料
 
-每个新建、普通复查和复盘 Bug 都使用 manifest `schema_version=3`，并在读取资料前完成 `evidence_profile_assessment`。必须对配置中的每个画像分别写 `applicable=true/false` 和理由，再把适用画像写入 `evidence_profiles`；不能只登记命中的画像而静默跳过其他画像。
+每个新建、普通复查和复盘 Bug 都使用 manifest `schema_version=4`，并在读取资料前完成 `evidence_profile_assessment`。必须对配置中的每个画像分别写 `applicable=true/false` 和理由，再把适用画像写入 `evidence_profiles`；不能只登记命中的画像而静默跳过其他画像。
 
 画像可组合，不是单选分类：
 
@@ -76,7 +76,9 @@
 3. `read` 时引用已登记且类型匹配的 `source_ids`。
 4. `not_found / unavailable` 时记录 `reason`、`material` 和关键缺口的 `next_action`。
 5. 只有机器配置明确允许时才能使用 `not_applicable`，并写核验理由；不能用它跳过应查资料。
-6. 对机器配置要求候选审计的检索，`not_found` 必须填写 `candidate_audit`，记录结果数量及每个强候选的标题、入口、处置和理由；存在已读候选时不得标为 `not_found`。
+6. 对机器配置要求候选审计的 Drive 检索，`read / not_found` 都必须保存连接器返回的 `search_receipts`，并在必查动作中用 `search_receipt_ids` 绑定；回执记录查询、时间和每个结果的 id、标题、入口与 MIME 类型。
+7. `candidate_audit` 的数量和候选 id 必须与绑定回执逐项一致；每个结果都标记 `read / excluded / unavailable` 并说明去留。不能人工填写 `results_count=0` 隐藏回执中的命中项；存在已读候选时不得标为 `not_found`。
+8. manifest 必须用 `run_context` 绑定同一批次的 `run_id`、操作者、目标负责人、页签和 1-based 行号；单票 manifest 不得脱离本次运行上下文复用。
 
 完整流程即使最终状态为待复核、待确认或待会诊，也必须完成检索动作或记录不可用限制。缺少必查动作本身不能通过门禁；已执行检索但关键资料未找到时，记录为 material gap 并降级。UE 只由 `visible_interaction` 等相关画像要求，纯后端或纯语义问题不一律强制读取 UE。
 

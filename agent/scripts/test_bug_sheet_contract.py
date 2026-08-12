@@ -112,7 +112,7 @@ class BugSheetContractTest(unittest.TestCase):
             errors = validate_bound_manifests([str(path)], ["ADS-TEST"])
         self.assertTrue(any("Jira key 不一致" in error for error in errors), errors)
 
-    def test_sheet_request_accepts_valid_schema_v3_manifest(self) -> None:
+    def test_sheet_request_accepts_valid_schema_v4_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "manifest.json"
             path.write_text(

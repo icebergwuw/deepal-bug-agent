@@ -12,9 +12,70 @@ def queries(*items: tuple[str, str]) -> list[dict[str, str]]:
     return [{"kind": kind, "text": text} for kind, text in items]
 
 
+def bind_manifest(payload: dict) -> dict:
+    payload["schema_version"] = 4
+    payload["run_context"] = {
+        "run_id": "test-run-001",
+        "operator_owner_id": "wu-you",
+        "target_owner_id": "wu-you",
+        "sheet_name": "bug",
+        "sheet_row": 2,
+    }
+    payload["search_receipts"] = []
+    for check in payload["required_evidence_checks"]:
+        if check["check_id"] not in {
+            "formal_definition_search",
+            "main_prd_search",
+            "special_definition_search",
+            "formal_config_search",
+            "interaction_or_ue_search",
+        } or check["status"] not in {"read", "not_found"}:
+            continue
+        receipt_id = f"receipt-{check['check_id']}"
+        results = []
+        candidates = []
+        for source_id in check.get("source_ids", []):
+            source = next(
+                item for item in payload["scope_checks"] if item["source_id"] == source_id
+            )
+            result = {
+                "id": source_id,
+                "title": source["source"],
+                "url": f"https://drive.google.com/open?id={source_id}",
+                "mime_type": "application/vnd.google-apps.document",
+            }
+            results.append(result)
+            candidates.append(
+                {
+                    "id": source_id,
+                    "title": source["source"],
+                    "url": result["url"],
+                    "disposition": "read",
+                    "source_ids": [source_id],
+                }
+            )
+        payload["search_receipts"].append(
+            {
+                "receipt_id": receipt_id,
+                "provider": "google_drive",
+                "check_id": check["check_id"],
+                "searched_at": "2026-08-06T09:00:00+08:00",
+                "queries": deepcopy(check["queries"]),
+                "results": results,
+            }
+        )
+        check["search_receipt_ids"] = [receipt_id]
+        check["candidate_audit"] = {
+            "completed": True,
+            "results_count": len(results),
+            "candidates": candidates,
+        }
+    return payload
+
+
 def hur_case() -> dict:
-    return {
-        "schema_version": 3,
+    return bind_manifest({
+        "schema_version": 4,
         "jira_key": "HUR-82492",
         "comment_causality": (
             "拒绝麦克风权限后，手机/HFP 对端反复请求 eSCO；"
@@ -127,12 +188,12 @@ def hur_case() -> dict:
                 "处理：维持 Invalid，由手机端/蓝牙对端设备兼容责任方处理。"
             ),
         },
-    }
+    })
 
 
 def pc37681_case() -> dict:
-    return {
-        "schema_version": 3,
+    return bind_manifest({
+        "schema_version": 4,
         "jira_key": "PC-37681",
         "comment_causality": (
             "模式1正常开启；模式2原话被路由到通用恒温座舱意图，"
@@ -370,7 +431,7 @@ def pc37681_case() -> dict:
                 "处理：补齐模式2到低功耗项目功能点的映射；语音 NLU 责任方处理。"
             ),
         },
-    }
+    })
 
 
 class BugEvidenceGateTest(unittest.TestCase):
@@ -755,11 +816,30 @@ class BugEvidenceGateTest(unittest.TestCase):
                 "next_action": "继续补查正式定义。",
             }
         )
+        del formal["candidate_audit"]
         errors = validate_manifest(item)
         self.assertIn(
-            "必查资料 formal_definition_search not_found 时缺少候选文件审计",
+            "必查资料 formal_definition_search 缺少候选文件审计",
             errors,
         )
+
+    def test_fake_zero_candidate_count_cannot_hide_receipt_results(self) -> None:
+        item = hur_case()
+        formal = item["required_evidence_checks"][0]
+        formal["candidate_audit"] = {
+            "completed": True,
+            "results_count": 0,
+            "candidates": [],
+        }
+        errors = validate_manifest(item)
+        self.assertTrue(any("候选数量与检索回执不一致" in error for error in errors), errors)
+        self.assertTrue(any("检索回执结果未逐项审计" in error for error in errors), errors)
+
+    def test_drive_read_requires_bound_search_receipt(self) -> None:
+        item = hur_case()
+        item["required_evidence_checks"][0]["search_receipt_ids"] = ["missing"]
+        errors = validate_manifest(item)
+        self.assertTrue(any("检索回执不存在" in error for error in errors), errors)
 
     def test_read_candidate_cannot_be_hidden_as_not_found(self) -> None:
         item = pc37681_case()

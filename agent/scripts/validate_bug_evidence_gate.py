@@ -124,6 +124,59 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
     elif expected_key and jira_key != expected_key:
         errors.append(f"Jira key 不一致：期望 {expected_key}，实际 {jira_key}")
 
+    run_context = payload.get("run_context")
+    if not isinstance(run_context, dict):
+        errors.append("缺少 run_context")
+        run_context = {}
+    for field in ("run_id", "operator_owner_id", "target_owner_id", "sheet_name"):
+        if not nonempty(run_context.get(field)):
+            errors.append(f"run_context 缺少 {field}")
+    if not isinstance(run_context.get("sheet_row"), int) or run_context.get("sheet_row", 0) < 1:
+        errors.append("run_context.sheet_row 必须是正整数")
+
+    receipt_by_id: dict[str, dict[str, Any]] = {}
+    search_receipts = payload.get("search_receipts")
+    if not isinstance(search_receipts, list):
+        errors.append("search_receipts 必须是数组")
+        search_receipts = []
+    for index, receipt in enumerate(search_receipts, start=1):
+        if not isinstance(receipt, dict):
+            errors.append(f"检索回执第 {index} 项不是对象")
+            continue
+        receipt_id = receipt.get("receipt_id")
+        if not nonempty(receipt_id):
+            errors.append(f"检索回执第 {index} 项缺少 receipt_id")
+        elif receipt_id in receipt_by_id:
+            errors.append(f"检索回执 receipt_id 重复：{receipt_id}")
+        else:
+            receipt_by_id[receipt_id] = receipt
+        if receipt.get("provider") != "google_drive":
+            errors.append(f"检索回执 {receipt_id or index} provider 必须为 google_drive")
+        if not nonempty(receipt.get("check_id")):
+            errors.append(f"检索回执 {receipt_id or index} 缺少 check_id")
+        if not nonempty(receipt.get("searched_at")):
+            errors.append(f"检索回执 {receipt_id or index} 缺少 searched_at")
+        receipt_queries = receipt.get("queries")
+        if not isinstance(receipt_queries, list) or not receipt_queries:
+            errors.append(f"检索回执 {receipt_id or index} queries 必须是非空数组")
+        receipt_results = receipt.get("results")
+        if not isinstance(receipt_results, list):
+            errors.append(f"检索回执 {receipt_id or index} results 必须是数组")
+            continue
+        seen_result_ids: set[str] = set()
+        for result_index, result in enumerate(receipt_results, start=1):
+            if not isinstance(result, dict):
+                errors.append(f"检索回执 {receipt_id or index} 结果第 {result_index} 项不是对象")
+                continue
+            for field in ("id", "title", "url", "mime_type"):
+                if not nonempty(result.get(field)):
+                    errors.append(f"检索回执 {receipt_id or index} 结果第 {result_index} 项缺少 {field}")
+            result_id = result.get("id")
+            if nonempty(result_id):
+                if result_id in seen_result_ids:
+                    errors.append(f"检索回执 {receipt_id or index} 结果 id 重复：{result_id}")
+                seen_result_ids.add(result_id)
+
     if not nonempty(payload.get("comment_causality")):
         errors.append("缺少备注因果链")
 
@@ -350,12 +403,38 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
                     f"{source.get('source_type')}"
                 )
 
-        if status == "not_found" and rule.get(
-            "requires_candidate_audit_for_not_found"
-        ):
+        if rule.get("requires_candidate_audit_for_not_found") and status in {"read", "not_found"}:
+            receipt_ids = check.get("search_receipt_ids")
+            if not isinstance(receipt_ids, list) or not receipt_ids:
+                errors.append(f"必查资料 {check_id} 缺少 search_receipt_ids")
+                receipt_ids = []
+            receipt_results: dict[str, dict[str, Any]] = {}
+            check_query_pairs = {
+                (item.get("kind"), item.get("text"))
+                for item in queries
+                if isinstance(item, dict)
+            }
+            for receipt_id in receipt_ids:
+                receipt = receipt_by_id.get(receipt_id)
+                if receipt is None:
+                    errors.append(f"必查资料 {check_id} 检索回执不存在：{receipt_id}")
+                    continue
+                if receipt.get("check_id") != check_id:
+                    errors.append(f"必查资料 {check_id} 检索回执 check_id 不匹配：{receipt_id}")
+                receipt_query_pairs = {
+                    (item.get("kind"), item.get("text"))
+                    for item in receipt.get("queries", [])
+                    if isinstance(item, dict)
+                }
+                if not check_query_pairs.issubset(receipt_query_pairs):
+                    errors.append(f"必查资料 {check_id} 检索回执未覆盖声明 queries：{receipt_id}")
+                for result in receipt.get("results", []):
+                    if isinstance(result, dict) and nonempty(result.get("id")):
+                        receipt_results[result["id"]] = result
+
             audit = check.get("candidate_audit")
             if not isinstance(audit, dict):
-                errors.append(f"必查资料 {check_id} not_found 时缺少候选文件审计")
+                errors.append(f"必查资料 {check_id} 缺少候选文件审计")
             else:
                 if audit.get("completed") is not True:
                     errors.append(f"必查资料 {check_id} 候选文件审计未完成")
@@ -371,21 +450,30 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
                         f"必查资料 {check_id} candidate_audit.candidates 必须是数组"
                     )
                     candidates = []
-                if results_count > 0 and not candidates:
+                if results_count != len(receipt_results):
                     errors.append(
-                        f"必查资料 {check_id} 有搜索结果但未登记候选文件"
+                        f"必查资料 {check_id} 候选数量与检索回执不一致："
+                        f"audit={results_count} receipts={len(receipt_results)}"
                     )
+                candidate_ids: set[str] = set()
                 for candidate_index, candidate in enumerate(candidates, start=1):
                     if not isinstance(candidate, dict):
                         errors.append(
                             f"必查资料 {check_id} 候选第 {candidate_index} 项不是对象"
                         )
                         continue
-                    for field in ("title", "url"):
+                    for field in ("id", "title", "url"):
                         if not nonempty(candidate.get(field)):
                             errors.append(
                                 f"必查资料 {check_id} 候选第 {candidate_index} 项缺少 {field}"
                             )
+                    candidate_id = candidate.get("id")
+                    if nonempty(candidate_id):
+                        if candidate_id in candidate_ids:
+                            errors.append(f"必查资料 {check_id} 候选 id 重复：{candidate_id}")
+                        candidate_ids.add(candidate_id)
+                        if candidate_id not in receipt_results:
+                            errors.append(f"必查资料 {check_id} 候选未命中检索回执：{candidate_id}")
                     disposition = candidate.get("disposition")
                     if disposition not in CANDIDATE_DISPOSITIONS:
                         errors.append(
@@ -403,15 +491,22 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
                                     errors.append(
                                         f"必查资料 {check_id} 候选 source_id 未命中资料范围：{source_id}"
                                     )
-                        errors.append(
-                            f"必查资料 {check_id} 存在已读候选，不能标记 not_found；"
-                            "应改为 read 并另记规则缺口"
-                        )
+                        if status == "not_found":
+                            errors.append(
+                                f"必查资料 {check_id} 存在已读候选，不能标记 not_found；"
+                                "应改为 read 并另记规则缺口"
+                            )
                     elif not nonempty(candidate.get("reason")):
                         errors.append(
                             f"必查资料 {check_id} 候选第 {candidate_index} 项 "
                             f"{disposition} 时缺少 reason"
                         )
+                missing_candidates = set(receipt_results) - candidate_ids
+                if missing_candidates:
+                    errors.append(
+                        f"必查资料 {check_id} 检索回执结果未逐项审计："
+                        + "、".join(sorted(missing_candidates))
+                    )
 
         if status in {"not_found", "unavailable", "not_applicable"}:
             if not nonempty(check.get("reason")):

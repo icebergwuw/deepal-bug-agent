@@ -1,0 +1,269 @@
+{
+  "key": "ADS-47316",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 327,
+  "rowIndex": 326,
+  "previewFingerprint": "9dab4362b6892739fa891a4fd7b03dcea6bf4e80a974e9b5fec96b781140c2b6",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Jira原票：C673-7 说“下一首播放刘德华的歌曲”5/5直接播放刘德华歌曲，测试预期为不支持；关联总票 ADS-47224 已读取，只有测试主张与执行结果，没有同项目正式能力边界。",
+      "after": "Jira原票：C673-7 说“下一首播放刘德华的歌曲”5/5直接播放刘德华歌曲，测试预期为不支持；关联总票 ADS-47224 已读取，只有测试主张与执行结果，没有同项目正式能力边界。\nDrive复核：深蓝项目语音功能点260731·提取内容行63‘资源切换-上/下一首/集/季’、行66‘指定第N首/集/季’；未定义‘下一首+指定歌手’组合。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-47316",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：下一首播放歌手歌曲执行边界待核的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；C673-7媒体语音产品负责人处理。",
+      "after": "结论：下一首播放歌手歌曲执行边界待核的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝项目语音功能点260731·提取内容行63‘资源切换-上/下一首/集/季’、行66‘指定第N首/集/季’；未定义‘下一首+指定歌手’组合；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；C673-7媒体语音产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-47316",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    {
+      "column": "I",
+      "before": "重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界",
+      "after": "重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票",
+      "after": "Jira原票\n深蓝项目语音功能点260731",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-47316",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "Jira原票：C673-7 说“下一首播放刘德华的歌曲”5/5直接播放刘德华歌曲，测试预期为不支持；关联总票 ADS-47224 已读取，只有测试主张与执行结果，没有同项目正式能力边界。\nDrive复核：深蓝项目语音功能点260731·提取内容行63‘资源切换-上/下一首/集/季’、行66‘指定第N首/集/季’；未定义‘下一首+指定歌手’组合。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-47316",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    "D": {
+      "visible": "结论：下一首播放歌手歌曲执行边界待核的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝项目语音功能点260731·提取内容行63‘资源切换-上/下一首/集/季’、行66‘指定第N首/集/季’；未定义‘下一首+指定歌手’组合；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；C673-7媒体语音产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-47316",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    "I": {
+      "visible": "重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n深蓝项目语音功能点260731",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-47316",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 326,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票：C673-7 说“下一首播放刘德华的歌曲”5/5直接播放刘德华歌曲，测试预期为不支持；关联总票 ADS-47224 已读取，只有测试主张与执行结果，没有同项目正式能力边界。\nDrive复核：深蓝项目语音功能点260731·提取内容行63‘资源切换-上/下一首/集/季’、行66‘指定第N首/集/季’；未定义‘下一首+指定歌手’组合。"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47316"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 102,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 117
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 326,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：下一首播放歌手歌曲执行边界待核的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝项目语音功能点260731·提取内容行63‘资源切换-上/下一首/集/季’、行66‘指定第N首/集/季’；未定义‘下一首+指定歌手’组合；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；C673-7媒体语音产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 69,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47316"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 75
+                  },
+                  {
+                    "startIndex": 76,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 91
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 326,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "重新登录Alchemy核验当前原话与媒体功能点，并补齐“下一首+指定歌手歌曲”的组合指令正式边界；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 326,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n深蓝项目语音功能点260731"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47316"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

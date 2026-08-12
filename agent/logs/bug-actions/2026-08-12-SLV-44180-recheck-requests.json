@@ -1,0 +1,269 @@
+{
+  "key": "SLV-44180",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 328,
+  "rowIndex": 327,
+  "previewFingerprint": "e95227b79bb8a34ceb899e2836213b770529df7706945dd0518df996e81f9374",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Jira原票：C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。",
+      "after": "Jira原票：C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。\nDrive复核：深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：行车指数查询参数映射失败的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票·描述/全部评论；关联票已逐票读取；Drive检索未定位同范围生效目标；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；C673基础款天气语音产品负责人处理。",
+      "after": "结论：行车指数查询参数映射失败的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；C673基础款天气语音产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    {
+      "column": "I",
+      "before": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射",
+      "after": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票",
+      "after": "Jira原票\n深蓝项目语音功能点260731",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "Jira原票：C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。\nDrive复核：深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    "D": {
+      "visible": "结论：行车指数查询参数映射失败的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；C673基础款天气语音产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    },
+    "I": {
+      "visible": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n深蓝项目语音功能点260731",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票：C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。\nDrive复核：深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射。"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44180"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 147,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 162
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：行车指数查询参数映射失败的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；C673基础款天气语音产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44180"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 72
+                  },
+                  {
+                    "startIndex": 73,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 88
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n深蓝项目语音功能点260731"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44180"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}
