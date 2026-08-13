@@ -1,0 +1,527 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-47447",
+  "comment_causality": "NLU/Alchemy均正确下发1325和“你好我好”；车端mCode 205叠词前置条件拒绝，ADS-48288说明该规则来自其他项目历史实现。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-47376",
+        "relationship": "原始总票",
+        "read": true,
+        "outcome": "完整读取字段、描述、附件、全部评论和关联关系，确认原始用例。"
+      },
+      {
+        "key": "ADS-48288",
+        "relationship": "重复同类票",
+        "read": true,
+        "outcome": "完整读取字段、描述、全部评论和关联关系，确认mCode 205及深蓝跳过选项。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira",
+      "source": "ADS-47447 Jira",
+      "source_location": "字段、描述、全部评论；2026-08-12实现日志及ADS-47376/48288",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "设置自定义应答语“你好我好”",
+      "target_behavior": "NLU下发1325；车端mCode 205拒绝",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "ac",
+      "source": "Alchemy在线对话",
+      "source_location": "BIGSUR；2026-08-13原话实时测试",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝/C385-5",
+      "trigger": "自定义应答语设置为你好我好",
+      "target_behavior": "task；meta_id 1325；keywords=你好我好",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "as",
+      "source": "Alchemy标准功能点1250",
+      "source_location": "语音功能功能点_下发修改·产品需求第484行",
+      "source_type": "alchemy_standard",
+      "role": "formal_target",
+      "project_model": "通用标准",
+      "trigger": "新增自定义应答语",
+      "target_behavior": "COMMON；MetaId 1325",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "pc",
+      "source": "深蓝8155&8295项目功能点_0901",
+      "source_location": "第332行项目点24435；第796-798行测试说法",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "深蓝8155&8295/C385-5",
+      "trigger": "新增应答语",
+      "target_behavior": "REQUIRE_LOCK；INHERIT_UPDATE；标准1250",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "ap",
+      "source": "Alchemy深蓝项目功能点24435",
+      "source_location": "深蓝8155&8295项目功能点_0901第332行及Alchemy项目功能点入口",
+      "source_type": "alchemy_project",
+      "role": "formal_target",
+      "project_model": "深蓝8155&8295/C385-5",
+      "trigger": "新增应答语",
+      "target_behavior": "项目点24435；MetaId 1325；继承标准1250",
+      "match": "exact",
+      "reason": "核验深蓝项目功能点。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及原话、meta_id、标准及项目功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Google Drive深蓝语音功能清单",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47447"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "1325 自定义应答语"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "1325 自定义应答语"
+        }
+      ],
+      "source_ids": [
+        "pc"
+      ],
+      "reason": "已读同项目正式配置。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 20,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1ByDODhRof2IyXp8YfJllsmWc65Aa8kqy",
+            "title": "D587G拉美西语翻译校核清单20260630 (1).xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1ByDODhRof2IyXp8YfJllsmWc65Aa8kqy/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1zjRNbHAkru8m8idDvVboO-myUqtjgm4X",
+            "title": "D587G巴西葡语翻译校核清单20260630 (1).xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1zjRNbHAkru8m8idDvVboO-myUqtjgm4X/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1rkNooW0r4F_Mcbbfa2pCGMHYyq3mhYR4",
+            "title": "P57 S01 信号对比0926.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1rkNooW0r4F_Mcbbfa2pCGMHYyq3mhYR4/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+            "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1KP2e343sC-EB_pRwSFBkdzlShm4iaxCy",
+            "title": "P59 车机功能清单J3版V3.120240614.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1KP2e343sC-EB_pRwSFBkdzlShm4iaxCy/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1ECxIdNGw6EcfjwIwFvzVHkgU7sz1mVhx",
+            "title": "P59 整车功能清单J3版V3.3【20240628】to镁佳.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1ECxIdNGw6EcfjwIwFvzVHkgU7sz1mVhx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1gnHr_bI6C4zHIi_buZ9-kwY-3Mtb2NM0",
+            "title": "语音功能功能点_泛化和设置项范围补充.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gnHr_bI6C4zHIi_buZ9-kwY-3Mtb2NM0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "18mSf-FXKFj_tBHDHMzQ6NfOFmGv7oxDG",
+            "title": "车控功能点-东风检查.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/18mSf-FXKFj_tBHDHMzQ6NfOFmGv7oxDG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1_bAaJDtTgobMqwkm3X1Fv2De-M4yNoIV",
+            "title": "WT_J90A_埋点数据汇总表_V1.7_20240814.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1_bAaJDtTgobMqwkm3X1Fv2De-M4yNoIV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1Rt5kWbU5FxSN4QczWmYHxH0XwgJgDx9QjNpU4hzRoAs",
+            "title": "WT_J90A_埋点数据汇总表_V1.2_20240819--最新修改(梧桐更新)",
+            "url": "https://docs.google.com/spreadsheets/d/1Rt5kWbU5FxSN4QczWmYHxH0XwgJgDx9QjNpU4hzRoAs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF",
+            "title": "WT_J90A_埋点数据汇总表_V1.2_20240819--最新修改(梧桐更新).xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1jFWe-rzhEz5Y2a10WnbImLaydhHpT0Of",
+            "title": "WT_J90A_埋点数据汇总表_V1.0_20231108.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1jFWe-rzhEz5Y2a10WnbImLaydhHpT0Of/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1VbrsBdwFxyOff0KmLlFm5h6jxwMLvwXt",
+            "title": "WT_J90A_埋点数据汇总表_V1.0_20231121.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1VbrsBdwFxyOff0KmLlFm5h6jxwMLvwXt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1AJhsinkGtp8LZCqQcAI_5mlKJ5fKMLgn",
+            "title": "车控功能点-深蓝检查.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1AJhsinkGtp8LZCqQcAI_5mlKJ5fKMLgn/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx",
+            "title": "深蓝8155&8295项目功能点_0901.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": [
+              "pc"
+            ]
+          },
+          {
+            "id": "1X70WCtG-T4QheN-IyR39Own2KPqyOfAm",
+            "title": "WT_J90A_埋点数据汇总表_V1.0_20231128（20231127会议后回复）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1X70WCtG-T4QheN-IyR39Own2KPqyOfAm/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "1z5vRXbzNmdwS2rYJTrRkjvZ_0F2run2X",
+            "title": "WT_J90A_埋点数据汇总表_V1.0_20231129号版本（20231127会议后回复）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1z5vRXbzNmdwS2rYJTrRkjvZ_0F2run2X/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "15IcfjUrBwBe2Fl56u2CXlYn-2H41W0FyGDjOoBZCXag",
+            "title": "【历史存档】JMC-CX835_语音助手-task类功能清单_V1.8",
+            "url": "https://docs.google.com/spreadsheets/d/15IcfjUrBwBe2Fl56u2CXlYn-2H41W0FyGDjOoBZCXag/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          },
+          {
+            "id": "10Mcg5g1bezi_gdoqDtm7iFx0NqJGc2Tt",
+            "title": "S73 功能核查清单 V2版-娱乐域.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/10Mcg5g1bezi_gdoqDtm7iFx0NqJGc2Tt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "非深蓝自定义应答语生效定义，或属于其他项目/历史/工作表。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "r474"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Alchemy在线对话BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "自定义应答语设置为你好我好"
+        }
+      ],
+      "source_ids": [
+        "ac"
+      ],
+      "reason": "已实时测试。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Alchemy标准功能点及Drive镜像",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1325 新增自定义应答语"
+        }
+      ],
+      "source_ids": [
+        "as"
+      ],
+      "reason": "标准1250已核验。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Alchemy深蓝项目功能点及Drive清单",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1325 新增应答语"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝8155&8295 C385-5"
+        }
+      ],
+      "source_ids": [
+        "ap"
+      ],
+      "reason": "项目24435已核验。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "正式项目功能和实时解析支持新增应答语；mCode 205仅证明实现现状，不能覆盖深蓝正式目标。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "自定义应答语设置为你好我好",
+    "alchemy_tested": true,
+    "alchemy_result": "task；meta_id 1325；reply_text_ctrl；keywords=你好我好",
+    "meta_id": "1325",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1250 新增自定义应答语",
+      "assessment": "COMMON；MetaId 1325。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24435 新增应答语",
+      "assessment": "INHERIT_UPDATE标准1250；MetaId 1325。"
+    }
+  },
+  "expected_behavior": {
+    "trigger": "说“自定义应答语设置为你好我好”",
+    "target_state": "保存“你好我好”为自定义应答语",
+    "intent_function_signal": "meta_id 1325及keywords=你好我好",
+    "ui_tts_vehicle_behavior": "校验通过后设置成功，不因mCode 205拒绝",
+    "boundary": "保留正式长度及文明内容校验，不继承未正式定义的其他项目叠词拦截",
+    "source_ids": [
+      "pc"
+    ]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "C385-5语音执行/车端研发",
+    "implementation_source_ids": [
+      "jira",
+      "ac"
+    ],
+    "text": "结论：定义“你好我好”可作为深蓝自定义应答语，当前拒绝属于车端前置条件错误；转C385-5语音执行/车端研发修复。\n依据：Alchemy当前原话·meta_id 1325；深蓝项目功能点·项目点24435/第332、796-798行；Jira实现日志·mCode 205。\n处理：C385-5语音执行/车端研发对深蓝项目取消或调整mCode 205叠词拦截，保留不文明内容与正式长度边界校验，并回归“你好我好”；责任方为C385-5语音执行/车端研发。"
+  },
+  "run_context": {
+    "run_id": "20260813T090118+0800-daily-new-bugs",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 332
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "r474",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-13T09:01:18+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47447"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "1325 自定义应答语"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "1325 自定义应答语"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ByDODhRof2IyXp8YfJllsmWc65Aa8kqy",
+          "title": "D587G拉美西语翻译校核清单20260630 (1).xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ByDODhRof2IyXp8YfJllsmWc65Aa8kqy/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1zjRNbHAkru8m8idDvVboO-myUqtjgm4X",
+          "title": "D587G巴西葡语翻译校核清单20260630 (1).xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1zjRNbHAkru8m8idDvVboO-myUqtjgm4X/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1rkNooW0r4F_Mcbbfa2pCGMHYyq3mhYR4",
+          "title": "P57 S01 信号对比0926.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1rkNooW0r4F_Mcbbfa2pCGMHYyq3mhYR4/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1KP2e343sC-EB_pRwSFBkdzlShm4iaxCy",
+          "title": "P59 车机功能清单J3版V3.120240614.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1KP2e343sC-EB_pRwSFBkdzlShm4iaxCy/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ECxIdNGw6EcfjwIwFvzVHkgU7sz1mVhx",
+          "title": "P59 整车功能清单J3版V3.3【20240628】to镁佳.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ECxIdNGw6EcfjwIwFvzVHkgU7sz1mVhx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1gnHr_bI6C4zHIi_buZ9-kwY-3Mtb2NM0",
+          "title": "语音功能功能点_泛化和设置项范围补充.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gnHr_bI6C4zHIi_buZ9-kwY-3Mtb2NM0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "18mSf-FXKFj_tBHDHMzQ6NfOFmGv7oxDG",
+          "title": "车控功能点-东风检查.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18mSf-FXKFj_tBHDHMzQ6NfOFmGv7oxDG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1_bAaJDtTgobMqwkm3X1Fv2De-M4yNoIV",
+          "title": "WT_J90A_埋点数据汇总表_V1.7_20240814.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1_bAaJDtTgobMqwkm3X1Fv2De-M4yNoIV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Rt5kWbU5FxSN4QczWmYHxH0XwgJgDx9QjNpU4hzRoAs",
+          "title": "WT_J90A_埋点数据汇总表_V1.2_20240819--最新修改(梧桐更新)",
+          "url": "https://docs.google.com/spreadsheets/d/1Rt5kWbU5FxSN4QczWmYHxH0XwgJgDx9QjNpU4hzRoAs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF",
+          "title": "WT_J90A_埋点数据汇总表_V1.2_20240819--最新修改(梧桐更新).xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1jFWe-rzhEz5Y2a10WnbImLaydhHpT0Of",
+          "title": "WT_J90A_埋点数据汇总表_V1.0_20231108.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1jFWe-rzhEz5Y2a10WnbImLaydhHpT0Of/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1VbrsBdwFxyOff0KmLlFm5h6jxwMLvwXt",
+          "title": "WT_J90A_埋点数据汇总表_V1.0_20231121.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1VbrsBdwFxyOff0KmLlFm5h6jxwMLvwXt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1AJhsinkGtp8LZCqQcAI_5mlKJ5fKMLgn",
+          "title": "车控功能点-深蓝检查.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1AJhsinkGtp8LZCqQcAI_5mlKJ5fKMLgn/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx",
+          "title": "深蓝8155&8295项目功能点_0901.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1X70WCtG-T4QheN-IyR39Own2KPqyOfAm",
+          "title": "WT_J90A_埋点数据汇总表_V1.0_20231128（20231127会议后回复）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1X70WCtG-T4QheN-IyR39Own2KPqyOfAm/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1z5vRXbzNmdwS2rYJTrRkjvZ_0F2run2X",
+          "title": "WT_J90A_埋点数据汇总表_V1.0_20231129号版本（20231127会议后回复）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1z5vRXbzNmdwS2rYJTrRkjvZ_0F2run2X/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "15IcfjUrBwBe2Fl56u2CXlYn-2H41W0FyGDjOoBZCXag",
+          "title": "【历史存档】JMC-CX835_语音助手-task类功能清单_V1.8",
+          "url": "https://docs.google.com/spreadsheets/d/15IcfjUrBwBe2Fl56u2CXlYn-2H41W0FyGDjOoBZCXag/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "10Mcg5g1bezi_gdoqDtm7iFx0NqJGc2Tt",
+          "title": "S73 功能核查清单 V2版-娱乐域.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/10Mcg5g1bezi_gdoqDtm7iFx0NqJGc2Tt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "date": "2026-08-13",
+    "key": "ADS-47447",
+    "summary": "自定义应答语“你好我好”被叠词规则拒绝",
+    "info": "Jira原票：NLU正确下发meta_id 1325及keywords=你好我好；车端因mCode 205叠词前置条件拒绝。Alchemy当前原话：实时命中1325。深蓝项目功能点：项目点24435“新增应答语”继承标准1250。",
+    "judgment": "结论：定义“你好我好”可作为深蓝自定义应答语，当前拒绝属于车端前置条件错误；转C385-5语音执行/车端研发修复。\n依据：Alchemy当前原话·meta_id 1325；深蓝项目功能点·项目点24435/第332、796-798行；Jira实现日志·mCode 205。\n处理：C385-5语音执行/车端研发对深蓝项目取消或调整mCode 205叠词拦截，保留不文明内容与正式长度边界校验，并回归“你好我好”；责任方为C385-5语音执行/车端研发。",
+    "status": "可转研发",
+    "note": "回归“你好我好”；仅调整深蓝mCode 205，保留正式长度与文明校验",
+    "links": [
+      {
+        "label": "Jira原票·ADS-47447",
+        "url": "http://jira.i-tetris.com/browse/ADS-47447"
+      },
+      {
+        "label": "关联票·ADS-48288",
+        "url": "http://jira.i-tetris.com/browse/ADS-48288"
+      },
+      {
+        "label": "Alchemy当前原话·1325",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "深蓝项目功能点·24435",
+        "url": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-47447"
+      },
+      {
+        "label": "Alchemy当前原话",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "深蓝项目功能点",
+        "url": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前原话·meta_id 1325",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "深蓝项目功能点·项目点24435/第332、796-798行",
+        "url": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit"
+      },
+      {
+        "label": "Jira实现日志·mCode 205",
+        "url": "http://jira.i-tetris.com/browse/ADS-47447"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-13",
+    "key": "ADS-48590",
+    "summary": "附近停车场部分POI无实景图",
+    "info": "Jira原票：有photos时展示第一张，无photos时展示默认图；已排除接口/加载故障。Alchemy当前原话：“附近的停车场”命中meta_id 1208、nearby、car_park。正式交互v1.5明确无图展示默认图。",
+    "judgment": "结论：当前行为符合正式交互定义，本票按非问题关闭；不要求每个停车场都必须返回实景图。\n依据：语音大模型交互v1.5·POI内容显示信息/图片；POI推荐PRD v0.8·2.3.2；Jira实现分析·photos字段。\n处理：吴优按定义关闭本票并同步测试修改预期：有图展示第一张，无图展示默认图；不转讯飞做强制补图或过滤。责任方为吴优（产品）。",
+    "status": "可关闭",
+    "note": "未执行Jira关闭；后续仅同步测试按默认图规则验收",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48590",
+        "url": "http://jira.i-tetris.com/browse/ADS-48590"
+      },
+      {
+        "label": "交互v1.5·POI图片",
+        "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view"
+      },
+      {
+        "label": "POI推荐PRD v0.8·2.3.2",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"
+      },
+      {
+        "label": "Alchemy当前原话·1208",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-48590"
+      },
+      {
+        "label": "Alchemy当前原话",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "正式交互v1.5",
+        "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "语音大模型交互v1.5·POI内容显示信息/图片",
+        "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view"
+      },
+      {
+        "label": "POI推荐PRD v0.8·2.3.2",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"
+      },
+      {
+        "label": "Jira实现分析·photos字段",
+        "url": "http://jira.i-tetris.com/browse/ADS-48590"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1840 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-48590",
+  "comment_causality": "Jira分析已排除接口与加载故障：有photos显示首图，无photos显示默认图；每条均有实景图只是测试预期。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-48560",
+        "relationship": "原始总票及日志/视频来源",
+        "read": true,
+        "outcome": "完整读取字段、描述、附件、全部评论和关联关系；第18条为本票用例，无客户新定义。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira",
+      "source": "ADS-48590 Jira",
+      "source_location": "字段、描述、全部评论；2026-08-12 photos分析及ADS-48560",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "附近停车场部分POI无实景图",
+      "target_behavior": "有photos显示首图；无photos显示默认图",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "ac",
+      "source": "Alchemy在线对话",
+      "source_location": "BIGSUR；2026-08-13原话实时测试",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝/C385-5",
+      "trigger": "附近的停车场",
+      "target_behavior": "meta_id 1208；nearby；car_park",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "as",
+      "source": "Alchemy标准功能点1429",
+      "source_location": "标准功能搜索【地址】",
+      "source_type": "alchemy_standard",
+      "role": "formal_target",
+      "project_model": "通用标准",
+      "trigger": "搜索附近停车场",
+      "target_behavior": "MetaId 1208",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "ap",
+      "source": "深蓝8155&8295项目功能点_0901",
+      "source_location": "第27行项目点24548搜索【地址】",
+      "source_type": "alchemy_project",
+      "role": "formal_target",
+      "project_model": "深蓝/C385-5",
+      "trigger": "附近停车场搜索",
+      "target_behavior": "INHERIT标准1429；MetaId 1208",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "prd",
+      "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+      "source_location": "2.3.2 POI返回信息",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "长安深蓝8295/C385-5",
+      "trigger": "POI推荐返回信息",
+      "target_behavior": "默认20个POI；信息含名称、地址、距离、图片",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "ue",
+      "source": "长安深蓝8295平台交互设计文档_语音大模型_v1.5",
+      "source_location": "POI内容显示信息·图片；提取文本第372-374行",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "长安深蓝8295/C385-5",
+      "trigger": "POI图片展示",
+      "target_behavior": "未返回图展示默认图；多图展示第一张",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "map",
+      "source": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901",
+      "source_location": "周边搜索及停车场POI标签",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8155&8295",
+      "trigger": "附近停车场",
+      "target_behavior": "支持周边停车场POI搜索",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    },
+    {
+      "source_id": "cfg",
+      "source": "C673-7&C385-5产品需求清单LS锁定版本",
+      "source_location": "大模型模块关联8295 POI推荐文档",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C385-5",
+      "trigger": "C385-5 POI推荐",
+      "target_behavior": "项目范围连接到8295 POI推荐",
+      "match": "exact",
+      "reason": "已核验适用范围。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "入口为语音原话。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "发生于附近停车场POI搜索。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "争议是POI图片展示。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Drive长安深蓝8295 POI正式资料",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "source_ids": [
+        "prd",
+        "ue"
+      ],
+      "reason": "已读取生效资料并逐项审计候选。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 20,
+        "candidates": [
+          {
+            "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+            "title": "8295文档集合",
+            "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+            "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": [
+              "prd"
+            ]
+          },
+          {
+            "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+            "title": "【深蓝】需求评审记录&验收",
+            "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+            "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "ue"
+            ]
+          },
+          {
+            "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+            "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+            "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+            "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+            "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+            "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+            "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+            "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+            "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+            "title": "长安深蓝8295平台大模型架构文档_v1.1",
+            "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+            "title": "8295平台C673-7开发计划V1.2",
+            "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+            "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+            "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": [
+              "map"
+            ]
+          },
+          {
+            "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+            "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+            "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "p-formal_definition_search"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Alchemy在线对话BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "附近的停车场"
+        }
+      ],
+      "source_ids": [
+        "ac"
+      ],
+      "reason": "实时命中1208。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1208 搜索地址"
+        }
+      ],
+      "source_ids": [
+        "as"
+      ],
+      "reason": "标准1429已核验。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1208 搜索地址"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝8155&8295 C385-5"
+        }
+      ],
+      "source_ids": [
+        "ap"
+      ],
+      "reason": "项目24548已核验。"
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Drive POI推荐及地图主PRD",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "source_ids": [
+        "prd",
+        "map"
+      ],
+      "reason": "已读取生效资料并逐项审计候选。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 20,
+        "candidates": [
+          {
+            "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+            "title": "8295文档集合",
+            "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+            "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": [
+              "prd"
+            ]
+          },
+          {
+            "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+            "title": "【深蓝】需求评审记录&验收",
+            "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+            "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+            "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+            "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+            "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+            "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+            "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+            "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+            "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+            "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+            "title": "长安深蓝8295平台大模型架构文档_v1.1",
+            "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+            "title": "8295平台C673-7开发计划V1.2",
+            "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+            "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+            "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": [
+              "map"
+            ]
+          },
+          {
+            "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+            "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+            "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "p-main_prd_search"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Drive语音大模型交互专项",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "source_ids": [
+        "ue"
+      ],
+      "reason": "已读取生效资料并逐项审计候选。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 20,
+        "candidates": [
+          {
+            "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+            "title": "8295文档集合",
+            "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+            "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+            "title": "【深蓝】需求评审记录&验收",
+            "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+            "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "ue"
+            ]
+          },
+          {
+            "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+            "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+            "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+            "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+            "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+            "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+            "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+            "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+            "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+            "title": "长安深蓝8295平台大模型架构文档_v1.1",
+            "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+            "title": "8295平台C673-7开发计划V1.2",
+            "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+            "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+            "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+            "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+            "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "p-special_definition_search"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Drive C385-5锁定需求清单",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385-5 POI推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385-5 POI推荐"
+        }
+      ],
+      "source_ids": [
+        "cfg"
+      ],
+      "reason": "已读取生效资料并逐项审计候选。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 20,
+        "candidates": [
+          {
+            "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+            "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1FsTj7gRYhFHJOG0bRK48admdAeh5Isczys96A1zNdBA",
+            "title": "C385-5项目管理计划",
+            "url": "https://docs.google.com/spreadsheets/d/1FsTj7gRYhFHJOG0bRK48admdAeh5Isczys96A1zNdBA/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Aw8eH_pDbY91BSTzYJX36aod5iRa3PR_",
+            "title": "C673-G3、G5座舱全功清单_V1.3_20260206.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Aw8eH_pDbY91BSTzYJX36aod5iRa3PR_/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1JHhpR3zHxdCYmGzvpQEi8r8YM4A8-BF2",
+            "title": "座舱全功清单_C673-7_C2L车型_0909.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1JHhpR3zHxdCYmGzvpQEi8r8YM4A8-BF2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1lmCxItFkQ9xwKTB-RNcPaWSSDl5l42m7",
+            "title": "座舱全功清单_C673-7_C2L车型_0820.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1lmCxItFkQ9xwKTB-RNcPaWSSDl5l42m7/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Nc0opLDr8cOfbZs3SPxgFNDiYw8fVWA_",
+            "title": "C673-G3、G5座舱全功清单_V1.4_20260401.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Nc0opLDr8cOfbZs3SPxgFNDiYw8fVWA_/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1-RO5XkxumrFoFRvZDdFanTBNQJNG7G9E",
+            "title": "座舱全功清单_C673-7_C2L车型_1022.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1-RO5XkxumrFoFRvZDdFanTBNQJNG7G9E/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1-d7JJ5GA7slxlBOAjk1rpgWJa2H441_-",
+            "title": "座舱全功清单_C385_5合并项目_1215.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1-d7JJ5GA7slxlBOAjk1rpgWJa2H441_-/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1vVvJ8NXPv-I56lzVTwirr9UA_vPta8Jx",
+            "title": "【废弃】座舱全功清单_C385_5合并项目_1215.xlsx）",
+            "url": "https://docs.google.com/spreadsheets/d/1vVvJ8NXPv-I56lzVTwirr9UA_vPta8Jx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1YR9juEExfNlJemcQ3CwTjgQL7xn-6awz",
+            "title": "C673-G3、G5座舱全功清单_V1.4_20260408.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1YR9juEExfNlJemcQ3CwTjgQL7xn-6awz/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1j0LK0IZc_cP2eZ0Ra_NVLI7Fv7QT6_yj",
+            "title": "C673-G3、G5座舱全功清单_V1.4_20260410.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1j0LK0IZc_cP2eZ0Ra_NVLI7Fv7QT6_yj/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1TXuOuh7S9pvWUDjCfkS8xRIVRI3rI9ls",
+            "title": "C673-G3、G5座舱全功清单_V1.4_20260421.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1TXuOuh7S9pvWUDjCfkS8xRIVRI3rI9ls/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1m-XQr6V1qeezCmiDSlIUoTQYulCtm_kI",
+            "title": "座舱全功清单_C673-7_华为车型_20251205.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1m-XQr6V1qeezCmiDSlIUoTQYulCtm_kI/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+            "title": "8295平台C673-7开发计划V1.2",
+            "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1ZuqIlXCoc6_xZm7sqwEL_6F530A5-r2b",
+            "title": "座舱全功清单_C385-5_C673-7大激光_20260731.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1ZuqIlXCoc6_xZm7sqwEL_6F530A5-r2b/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+            "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1g9YXfWyn1TN6DJ0vz5S8bP_rBLLbwRJ1QguvKpbE2xQ",
+            "title": "C673-7&C385-5产品需求清单LS锁定版本",
+            "url": "https://docs.google.com/spreadsheets/d/1g9YXfWyn1TN6DJ0vz5S8bP_rBLLbwRJ1QguvKpbE2xQ/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "cfg"
+            ]
+          },
+          {
+            "id": "1ilgN7fp56JwNw_8-XJ86olAiMZdC2Yty",
+            "title": "座舱全功清单_C673-7_C2L车型_0820.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1ilgN7fp56JwNw_8-XJ86olAiMZdC2Yty/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1MmeyJaDPUV5E8Q20nHtbfp8FD6KtLDQE",
+            "title": "座舱全功清单_C385-5-20260213160614.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1MmeyJaDPUV5E8Q20nHtbfp8FD6KtLDQE/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10",
+            "title": "座舱全功清单_C385-5全功能清单20260126导出.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "p-formal_config_search"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-13",
+      "search_location": "Drive长安深蓝8295交互",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "source_ids": [
+        "ue"
+      ],
+      "reason": "已读取生效资料并逐项审计候选。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 20,
+        "candidates": [
+          {
+            "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+            "title": "8295文档集合",
+            "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+            "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+            "title": "【深蓝】需求评审记录&验收",
+            "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+            "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "ue"
+            ]
+          },
+          {
+            "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+            "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+            "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+            "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+            "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+            "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+            "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+            "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+            "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+            "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+            "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+            "title": "长安深蓝8295平台大模型架构文档_v1.1",
+            "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+            "title": "8295平台C673-7开发计划V1.2",
+            "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+            "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+            "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+            "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+            "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          },
+          {
+            "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+            "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+            "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "已逐项核对标题、版本和项目范围；旧版/作废版/架构或工作表不覆盖本票当前图片兜底目标。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "p-interaction_or_ue_search"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期要求每条实景图；v1.5交互明确无图显示默认图，正式定义优先。实现与目标一致。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "附近的停车场",
+    "alchemy_tested": true,
+    "alchemy_result": "meta_id 1208；navi:dest:search；nearby；car_park",
+    "meta_id": "1208",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1429 搜索【地址】",
+      "assessment": "MetaId 1208。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24548 搜索【地址】",
+      "assessment": "INHERIT标准1429；MetaId 1208。"
+    }
+  },
+  "expected_behavior": {
+    "trigger": "说“附近的停车场”进入POI推荐",
+    "target_state": "展示附近停车场列表",
+    "intent_function_signal": "meta_id 1208；nearby；car_park",
+    "ui_tts_vehicle_behavior": "有图展示第一张；无图展示默认图",
+    "boundary": "不承诺每个POI必须有实景图；强制补图需另立需求",
+    "source_ids": [
+      "prd",
+      "ue"
+    ]
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "吴优（产品）",
+    "implementation_source_ids": [
+      "jira",
+      "ac"
+    ],
+    "text": "结论：当前行为符合正式交互定义，本票按非问题关闭；不要求每个停车场都必须返回实景图。\n依据：语音大模型交互v1.5·POI内容显示信息/图片；POI推荐PRD v0.8·2.3.2；Jira实现分析·photos字段。\n处理：吴优按定义关闭本票并同步测试修改预期：有图展示第一张，无图展示默认图；不转讯飞做强制补图或过滤。责任方为吴优（产品）。"
+  },
+  "run_context": {
+    "run_id": "20260813T090118+0800-daily-new-bugs",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 333
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "p-formal_definition_search",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-13T09:01:18+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "results": [
+        {
+          "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+          "title": "8295文档集合",
+          "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+          "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+          "title": "【深蓝】需求评审记录&验收",
+          "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+          "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+          "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+          "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+          "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+          "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+          "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+          "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+          "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+          "title": "长安深蓝8295平台大模型架构文档_v1.1",
+          "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+          "title": "8295平台C673-7开发计划V1.2",
+          "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+          "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+          "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+          "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+          "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "p-main_prd_search",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-13T09:01:18+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "results": [
+        {
+          "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+          "title": "8295文档集合",
+          "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+          "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+          "title": "【深蓝】需求评审记录&验收",
+          "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+          "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+          "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+          "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+          "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+          "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+          "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+          "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+          "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+          "title": "长安深蓝8295平台大模型架构文档_v1.1",
+          "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+          "title": "8295平台C673-7开发计划V1.2",
+          "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+          "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+          "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+          "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+          "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "p-special_definition_search",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-13T09:01:18+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "results": [
+        {
+          "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+          "title": "8295文档集合",
+          "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+          "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+          "title": "【深蓝】需求评审记录&验收",
+          "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+          "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+          "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+          "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+          "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+          "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+          "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+          "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+          "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+          "title": "长安深蓝8295平台大模型架构文档_v1.1",
+          "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+          "title": "8295平台C673-7开发计划V1.2",
+          "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+          "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+          "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+          "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+          "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "p-formal_config_search",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-13T09:01:18+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385-5 POI推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385-5 POI推荐"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+          "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1FsTj7gRYhFHJOG0bRK48admdAeh5Isczys96A1zNdBA",
+          "title": "C385-5项目管理计划",
+          "url": "https://docs.google.com/spreadsheets/d/1FsTj7gRYhFHJOG0bRK48admdAeh5Isczys96A1zNdBA/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Aw8eH_pDbY91BSTzYJX36aod5iRa3PR_",
+          "title": "C673-G3、G5座舱全功清单_V1.3_20260206.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Aw8eH_pDbY91BSTzYJX36aod5iRa3PR_/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1JHhpR3zHxdCYmGzvpQEi8r8YM4A8-BF2",
+          "title": "座舱全功清单_C673-7_C2L车型_0909.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1JHhpR3zHxdCYmGzvpQEi8r8YM4A8-BF2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1lmCxItFkQ9xwKTB-RNcPaWSSDl5l42m7",
+          "title": "座舱全功清单_C673-7_C2L车型_0820.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1lmCxItFkQ9xwKTB-RNcPaWSSDl5l42m7/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Nc0opLDr8cOfbZs3SPxgFNDiYw8fVWA_",
+          "title": "C673-G3、G5座舱全功清单_V1.4_20260401.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Nc0opLDr8cOfbZs3SPxgFNDiYw8fVWA_/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1-RO5XkxumrFoFRvZDdFanTBNQJNG7G9E",
+          "title": "座舱全功清单_C673-7_C2L车型_1022.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-RO5XkxumrFoFRvZDdFanTBNQJNG7G9E/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1-d7JJ5GA7slxlBOAjk1rpgWJa2H441_-",
+          "title": "座舱全功清单_C385_5合并项目_1215.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-d7JJ5GA7slxlBOAjk1rpgWJa2H441_-/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1vVvJ8NXPv-I56lzVTwirr9UA_vPta8Jx",
+          "title": "【废弃】座舱全功清单_C385_5合并项目_1215.xlsx）",
+          "url": "https://docs.google.com/spreadsheets/d/1vVvJ8NXPv-I56lzVTwirr9UA_vPta8Jx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1YR9juEExfNlJemcQ3CwTjgQL7xn-6awz",
+          "title": "C673-G3、G5座舱全功清单_V1.4_20260408.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1YR9juEExfNlJemcQ3CwTjgQL7xn-6awz/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1j0LK0IZc_cP2eZ0Ra_NVLI7Fv7QT6_yj",
+          "title": "C673-G3、G5座舱全功清单_V1.4_20260410.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1j0LK0IZc_cP2eZ0Ra_NVLI7Fv7QT6_yj/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1TXuOuh7S9pvWUDjCfkS8xRIVRI3rI9ls",
+          "title": "C673-G3、G5座舱全功清单_V1.4_20260421.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1TXuOuh7S9pvWUDjCfkS8xRIVRI3rI9ls/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1m-XQr6V1qeezCmiDSlIUoTQYulCtm_kI",
+          "title": "座舱全功清单_C673-7_华为车型_20251205.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1m-XQr6V1qeezCmiDSlIUoTQYulCtm_kI/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+          "title": "8295平台C673-7开发计划V1.2",
+          "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ZuqIlXCoc6_xZm7sqwEL_6F530A5-r2b",
+          "title": "座舱全功清单_C385-5_C673-7大激光_20260731.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ZuqIlXCoc6_xZm7sqwEL_6F530A5-r2b/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+          "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1g9YXfWyn1TN6DJ0vz5S8bP_rBLLbwRJ1QguvKpbE2xQ",
+          "title": "C673-7&C385-5产品需求清单LS锁定版本",
+          "url": "https://docs.google.com/spreadsheets/d/1g9YXfWyn1TN6DJ0vz5S8bP_rBLLbwRJ1QguvKpbE2xQ/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ilgN7fp56JwNw_8-XJ86olAiMZdC2Yty",
+          "title": "座舱全功清单_C673-7_C2L车型_0820.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ilgN7fp56JwNw_8-XJ86olAiMZdC2Yty/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1MmeyJaDPUV5E8Q20nHtbfp8FD6KtLDQE",
+          "title": "座舱全功清单_C385-5-20260213160614.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1MmeyJaDPUV5E8Q20nHtbfp8FD6KtLDQE/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10",
+          "title": "座舱全功清单_C385-5全功能清单20260126导出.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "p-interaction_or_ue_search",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-13T09:01:18+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48590"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝 8295 POI 推荐"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝 8295 POI 推荐"
+        }
+      ],
+      "results": [
+        {
+          "id": "1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc",
+          "title": "8295文档集合",
+          "url": "https://docs.google.com/spreadsheets/d/1QMQUAtEH5ez63OstEoFgBhDyruy_Z_cu4tJYCAP6IEc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "17krMz_ugr07N1lD0CfJWwfP6F_6E15n3",
+          "title": "8295平台C673-7开发计划V1.2（作废）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/17krMz_ugr07N1lD0CfJWwfP6F_6E15n3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ",
+          "title": "【深蓝】需求评审记录&验收",
+          "url": "https://docs.google.com/spreadsheets/d/1V5QOERm6NxinizD0f-lwunmzzQD-zKqX6y6T_tZY6xQ/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf",
+          "url": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI",
+          "title": "胡皓渊的工作说明&工作交接（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1D3cKagt9LwrsHT2pyn3TrF-vkbHcB8ipKA8BKqrOSnI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_V1.2.pdf",
+          "url": "https://drive.google.com/file/d/1DQ_F73JTthbv2dLnwT6LK_hIbQFXxf_3/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.3.pdf",
+          "url": "https://drive.google.com/file/d/1KxjRBvYedhnsGofiR_-rxJ0zGJnCJxC2/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v1.4.pdf",
+          "url": "https://drive.google.com/file/d/12oWRx6FGnt0q9P8NlqzcYSe8bzUY2qNs/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.9_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1h8aHVMkMDQajosjbihAYcTaaz1Q9ign8/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v1.0_20250619.pdf",
+          "url": "https://drive.google.com/file/d/1AyxIu35yyh8udDgpGTTJYqYZkA2dCcH0/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U",
+          "title": "长安深蓝_8295平台_交互设计文档_语音大模型_v0.8_20250523.pdf",
+          "url": "https://drive.google.com/file/d/1rHvAWkE2uNw-LP_mGVsBF3DBgru8JB8U/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C",
+          "title": "长安深蓝8295平台交互设计文档_语音大模型_v0.7 .pdf",
+          "url": "https://drive.google.com/file/d/1Q7mOgmdP77JkC7ySSQuX2LJVmYpX9C0C/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE",
+          "title": "长安深蓝8295平台大模型架构文档_v1.1",
+          "url": "https://docs.google.com/document/d/1Ygf_wjpavWhsV51Zi7DSFc-hfnU2Z2Eua0Udqop-XSE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+          "title": "8295平台C673-7开发计划V1.2",
+          "url": "https://docs.google.com/spreadsheets/d/1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+          "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+          "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I5CWpXLFy2_qJjxVhSF6A9Y_VfERIWvX/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU",
+          "title": "长安深蓝_8295平台_交互设计文档_Mini-Agent_V0.5_20250530.pdf",
+          "url": "https://drive.google.com/file/d/1I9Ti6uVt-cMmSEyaRYfMc8nSjIFI9yTU/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw",
+          "title": "【废弃】长安深蓝_8295平台_交互设计文档_语音GUI_V0.5_20250514.pdf",
+          "url": "https://drive.google.com/file/d/1we6O-d3rSMCQFAQK-FhbP3xz8uccBigw/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ]
+}

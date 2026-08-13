@@ -1,0 +1,516 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 331,
+          "endRowIndex": 333,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 331,
+          "endRowIndex": 333,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 331,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-13"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47447\",\"ADS-47447｜自定义应答语“你好我好”被叠词规则拒绝\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票：NLU正确下发meta_id 1325及keywords=你好我好；车端因mCode 205叠词前置条件拒绝。Alchemy当前原话：实时命中1325。深蓝项目功能点：项目点24435“新增应答语”继承标准1250。"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47447"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 62,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 73
+                  },
+                  {
+                    "startIndex": 83,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 90
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义“你好我好”可作为深蓝自定义应答语，当前拒绝属于车端前置条件错误；转C385-5语音执行/车端研发修复。\n依据：Alchemy当前原话·meta_id 1325；深蓝项目功能点·项目点24435/第332、796-798行；Jira实现日志·mCode 205。\n处理：C385-5语音执行/车端研发对深蓝项目取消或调整mCode 205叠词拦截，保留不文明内容与正式长度边界校验，并回归“你好我好”；责任方为C385-5语音执行/车端研发。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 61,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 85
+                  },
+                  {
+                    "startIndex": 86,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 116
+                  },
+                  {
+                    "startIndex": 117,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47447"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 135
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "回归“你好我好”；仅调整深蓝mCode 205，保留正式长度与文明校验"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-47447\n关联票·ADS-48288\nAlchemy当前原话·1325\n深蓝项目功能点·24435"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47447"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48288"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 47
+                  },
+                  {
+                    "startIndex": 48,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1qxZ3-iAHisaoB1QPFPZwXdSKL3N0vvKx/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-13"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48590\",\"ADS-48590｜附近停车场部分POI无实景图\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票：有photos时展示第一张，无photos时展示默认图；已排除接口/加载故障。Alchemy当前原话：“附近的停车场”命中meta_id 1208、nearby、car_park。正式交互v1.5明确无图展示默认图。"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48590"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 46,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 57
+                  },
+                  {
+                    "startIndex": 97,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 105
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：当前行为符合正式交互定义，本票按非问题关闭；不要求每个停车场都必须返回实景图。\n依据：语音大模型交互v1.5·POI内容显示信息/图片；POI推荐PRD v0.8·2.3.2；Jira实现分析·photos字段。\n处理：吴优按定义关闭本票并同步测试修改预期：有图展示第一张，无图展示默认图；不转讯飞做强制补图或过滤。责任方为吴优（产品）。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 46,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 70
+                  },
+                  {
+                    "startIndex": 71,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 90
+                  },
+                  {
+                    "startIndex": 91,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48590"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 108
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "未执行Jira关闭；后续仅同步测试按默认图规则验收"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48590\n交互v1.5·POI图片\nPOI推荐PRD v0.8·2.3.2\nAlchemy当前原话·1208"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48590"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1dVVJ2h-edBXfggfAaQxQfeZglAXcYkcy/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 29
+                  },
+                  {
+                    "startIndex": 30,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 49
+                  },
+                  {
+                    "startIndex": 50,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 331,
+          "endIndex": 333
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 333,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}
