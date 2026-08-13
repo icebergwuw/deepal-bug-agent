@@ -390,7 +390,7 @@ def main() -> None:
         "query_summary": "重审8月12日11条需重新登录Alchemy的Bug；逐条补齐当前原话、标准功能点、项目功能点与Drive正式资料",
         "action_log": str(LOG / "2026-08-13-aug12-alchemy-recheck.md"),
         "items": items,
-        "completed_at": "2026-08-13T16:40:00+08:00",
+        "completed_at": "2026-08-13T13:48:00+08:00",
     }
     (LOG / "2026-08-13-aug12-alchemy-recheck-run.json").write_text(json.dumps(run_bundle, ensure_ascii=False, indent=2) + "\n")
 
