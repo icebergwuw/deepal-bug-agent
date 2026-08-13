@@ -1,0 +1,209 @@
+{
+  "run_id": "20260813T113000+0800-aug12-alchemy-recheck",
+  "sheet": "冯智秀bug",
+  "row": 63,
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 1069511239,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 1069511239,
+          "startRowIndex": 62,
+          "endRowIndex": 63,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 1069511239,
+          "startRowIndex": 62,
+          "endRowIndex": 63,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 1069511239,
+          "rowIndex": 62,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-13"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47316\",\"ADS-47316｜下一首播放歌手歌曲定义与项目配置冲突\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票·描述/关联ADS-47224]车端直接播放刘德华歌曲，测试预期不支持。\nAlchemy：[在线对话·BIGSUR]精确原话命中3012 media:play_list:add；[标准1718·Query举例/执行策略]逐字包含“下一首播放刘德华的歌”，目标为预约到播放列表下一首、当前歌曲结束后播放。\n配置冲突：[深蓝项目功能]按3012检索无项目功能点；[深蓝项目语音功能点260731·第63/66行]只列上/下一首和指定第N首，未列预约歌曲。Jira当前经办人已变更为冯智秀。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：测试预期“不支持”、标准1718“预约下一首”、车端“立即播放”三方冲突；BIGSUR虽已命中3012，但深蓝项目未继承该功能点，不能直接关闭或转研发，需会诊确定C673-7是否正式支持预约播歌。\n依据：Jira原票及ADS-47224、Alchemy BIGSUR当前结果、标准1718、深蓝项目3012零命中、深蓝项目语音功能点260731第63/66行。\n处理：若支持则补深蓝项目点并按预约下一首实现；若不支持则移除BIGSUR泛化并按不支持兜底；C673-7媒体语音产品配置负责人（冯智秀）处理。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira已转冯智秀；Alchemy补证后发现测试预期、标准定义、深蓝项目配置三方冲突。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·命中meta_id=3012，media:play_list:add，artists=刘德华、category=music\n标准1718（已锁定）逐字包含该Query，目标为预约歌曲到播放列表下一首，不是立即播放\n深蓝项目按meta_id=3012检索无项目功能点\n深蓝项目语音功能点260731·第63/66行"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47316"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 95
+                  },
+                  {
+                    "startIndex": 96,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1718"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 140
+                  },
+                  {
+                    "startIndex": 141,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 166
+                  },
+                  {
+                    "startIndex": 167,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1ULkxn1d8ZZMBKFX8gA7mCHWccuN6qdSh/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 1069511239,
+          "dimension": "ROWS",
+          "startIndex": 62,
+          "endIndex": 63
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 1069511239,
+            "startRowIndex": 0,
+            "endRowIndex": 63,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

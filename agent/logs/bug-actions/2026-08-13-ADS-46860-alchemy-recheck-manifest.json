@@ -1,0 +1,559 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-46860",
+  "comment_causality": "C673-7 Megaclaw 多意图“先去公司，再去机场”无法规划；关联票 ADS-46859、PC-38930、ADS-47922/47925/47928 已读取，评论一致指出花瓣地图未上报家/公司地址，其他票的AIS空值兜底已修复但本票能力方案仍未确定。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-46859",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      },
+      {
+        "key": "PC-38930",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      },
+      {
+        "key": "ADS-47922",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      },
+      {
+        "key": "ADS-47925",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      },
+      {
+        "key": "ADS-47928",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-46860 Jira当前页面",
+      "source_location": "Jira字段、描述、附件区、问题链接及活动日志（全部评论按时间顺序）",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-7地图/语音产品负责人",
+      "trigger": "花瓣地图未上报家和公司地址",
+      "target_behavior": "C673-7 Megaclaw 多意图“先去公司，再去机场”无法规划；关联票 ADS-46859、PC-38930、ADS-47922/47925/47928 已读取，评论一致指出花瓣地图未上报家/公司地址，其他票的AIS空值兜底已修复但本票能力方案仍未确定。",
+      "match": "exact",
+      "reason": "证明本票当前实现、复现和评论因果，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-map-voice-list",
+      "source": "深蓝花瓣地图语音清单",
+      "source_location": "提取内容行14‘设置/修改快捷地址（家/公司）’，说明仅支持修改家且需明确；行21-25为POI搜索/路线规划",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-7地图/语音产品负责人",
+      "trigger": "花瓣地图未上报家和公司地址",
+      "target_behavior": "定义家/公司快捷地址与POI导航单能力，未定义‘先去公司再去机场’多意图上报边界",
+      "match": "partial",
+      "material": false,
+      "next_action": "重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义；C673-7地图/语音产品负责人处理。",
+      "reason": "正文已读，能证明单能力但不能直接定义本票多意图兜底。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "原话=先去公司，再去机场；当前结果=当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "先去公司，再去机场",
+      "target_behavior": "当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi",
+      "match": "exact",
+      "reason": "当前登录态下按Jira原话实测；只证明当前平台结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "标准1433（已锁定）明确带途经点导航应同时下发目的地和途径条件",
+      "source_location": "标准功能详情ID 1433：说明、Query举例、下发参数、执行策略及状态",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "先去公司，再去机场",
+      "target_behavior": "标准1433（已锁定）明确带途经点导航应同时下发目的地和途径条件",
+      "match": "exact",
+      "reason": "证明标准语义、参数与执行策略；不单独替代正式PRD/UE。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "深蓝项目24552（已锁定、继承未修改）",
+      "source_location": "项目功能列表按meta_id检索：深蓝项目24552（已锁定、继承未修改）",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "先去公司，再去机场",
+      "target_behavior": "深蓝项目24552（已锁定、继承未修改）",
+      "match": "exact",
+      "material": false,
+      "reason": "已实时核验项目功能点继承状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：同项目PRD、专项定义、交互、UE和正式配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-46860"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        }
+      ],
+      "source_ids": [
+        "drive-map-voice-list"
+      ],
+      "reason": "已完成同项目正式资料检索，但未读到可直接定义本票目标行为的生效条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m",
+            "title": "深蓝_花瓣地图语音清单.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-map-voice-list"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-46860-formal_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "not_found",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：地图导航主PRD",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-46860"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        }
+      ],
+      "source_ids": [],
+      "reason": "已逐项审计检索回执；命中项不是本检查允许的生效来源，或正文不定义本票目标。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m",
+            "title": "深蓝_花瓣地图语音清单.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-46860-main_prd_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：地图专项定义",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-46860"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        }
+      ],
+      "source_ids": [
+        "drive-map-voice-list"
+      ],
+      "reason": "已检索地图专项定义，未读到同项目同场景的生效目标条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m",
+            "title": "深蓝_花瓣地图语音清单.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-map-voice-list"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-46860-special_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "花瓣地图未上报家和公司地址"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已登录并实测：当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "花瓣地图未上报家和公司地址"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "标准1433（已锁定）明确带途经点导航应同时下发目的地和途径条件",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "花瓣地图未上报家和公司地址"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-7地图/语音产品负责人"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "深蓝项目24552（已锁定、继承未修改）",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：目标语义应是公司为途经点、机场为目的地；但Jira历史实现重复公司途经点，Alchemy当前又完全丢失公司，两个实现版本不一致，需会诊确认当前线上链路后定修复层。\n依据：Jira原票完整评论、Alchemy BIGSUR当前结果、标准1433/深蓝项目24552、深蓝花瓣地图语音清单第14及21-25行。\n处理：用同原话抓当前req_id；若Cloud仍重复则修正去重与顺序，若当前已丢via则先修NLU/多意图拆分，最终只下发一个公司via和一个机场目的地；C673-7地图多站点语音产品/Cloud研发负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "先去公司，再去机场",
+    "alchemy_tested": true,
+    "alchemy_result": "当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi",
+    "meta_id": "当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1433（已锁定）明确带途经点导航应同时下发目的地和途径条件",
+      "assessment": "已读取说明、Query举例、下发参数、执行策略与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24552（已锁定、继承未修改）",
+      "assessment": "已按meta_id读取项目功能列表并核对继承及状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "Alchemy链已补齐；当前结果与Jira历史Cloud结果冲突，需当前req_id确认修复层。"
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "C673-7地图多站点语音产品/Cloud研发负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：目标语义应是公司为途经点、机场为目的地；但Jira历史实现重复公司途经点，Alchemy当前又完全丢失公司，两个实现版本不一致，需会诊确认当前线上链路后定修复层。\n依据：Jira原票完整评论、Alchemy BIGSUR当前结果、标准1433/深蓝项目24552、深蓝花瓣地图语音清单第14及21-25行。\n处理：用同原话抓当前req_id；若Cloud仍重复则修正去重与顺序，若当前已丢via则先修NLU/多意图拆分，最终只下发一个公司via和一个机场目的地；C673-7地图多站点语音产品/Cloud研发负责人处理。"
+  },
+  "run_context": {
+    "run_id": "20260813T113000+0800-aug12-alchemy-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 329
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-46860-formal_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-46860"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m",
+          "title": "深蓝_花瓣地图语音清单.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-46860-main_prd_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-46860"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m",
+          "title": "深蓝_花瓣地图语音清单.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-46860-special_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-46860"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 花瓣地图 家 公司 地址"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m",
+          "title": "深蓝_花瓣地图语音清单.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1yXOtNYf6W79kdXXs-f48nTyh5HxTKn4m/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}

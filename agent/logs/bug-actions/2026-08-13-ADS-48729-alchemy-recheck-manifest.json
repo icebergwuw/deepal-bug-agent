@@ -1,0 +1,316 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-48729",
+  "comment_causality": "C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-48377",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48729 Jira当前页面",
+      "source_location": "Jira字段、描述、附件区、问题链接及活动日志（全部评论按时间顺序）",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385-5语音产品/执行负责人",
+      "trigger": "小憩模式位置切换误回复不支持",
+      "target_behavior": "C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。",
+      "match": "exact",
+      "reason": "证明本票当前实现、复现和评论因果，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-v49",
+      "source": "智能情景模式功能定义V4.9",
+      "source_location": "章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE",
+      "source_type": "special_prd",
+      "role": "context_only",
+      "project_model": "C385-5语音产品/执行负责人",
+      "trigger": "小憩模式位置切换误回复不支持",
+      "target_behavior": "情景模式互斥；当前模式响应退出及指定语音控制内容",
+      "match": "partial",
+      "material": false,
+      "next_action": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；C385-5语音产品/执行负责人处理。",
+      "reason": "正文已读，但适用范围未直接覆盖C385-5且未给出‘设置为前排’当前话术映射。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "原话=小憩模式设置为前排；当前结果=meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "小憩模式设置为前排",
+      "target_behavior": "meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row",
+      "match": "exact",
+      "reason": "当前登录态下按Jira原话实测；只证明当前平台结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "标准1364（已锁定）打开特定情景模式；小憩示例含左/右前，执行策略要求有位置参数时打开模式并调节对应位置座椅",
+      "source_location": "标准功能详情ID 1364：说明、Query举例、下发参数、执行策略及状态",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "小憩模式设置为前排",
+      "target_behavior": "标准1364（已锁定）打开特定情景模式；小憩示例含左/右前，执行策略要求有位置参数时打开模式并调节对应位置座椅",
+      "match": "exact",
+      "reason": "证明标准语义、参数与执行策略；不单独替代正式PRD/UE。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "深蓝项目24510（已锁定、继承未修改）",
+      "source_location": "项目功能列表按meta_id检索：深蓝项目24510（已锁定、继承未修改）",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "小憩模式设置为前排",
+      "target_behavior": "深蓝项目24510（已锁定、继承未修改）",
+      "match": "exact",
+      "material": false,
+      "reason": "已实时核验项目功能点继承状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：同项目PRD、专项定义、交互、UE和正式配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48729"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音控制 小憩模式 前排"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音控制 小憩模式 前排"
+        }
+      ],
+      "source_ids": [
+        "drive-v49"
+      ],
+      "reason": "已完成同项目正式资料检索，但未读到可直接定义本票目标行为的生效条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+            "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-v49"
+            ]
+          },
+          {
+            "id": "1ExhJGRZW8mBS43ft1niD2oF-MXEH8uyJ",
+            "title": "C673-EVE_功能描述_语音控制V1.0.5.docx",
+            "url": "https://docs.google.com/document/d/1ExhJGRZW8mBS43ft1niD2oF-MXEH8uyJ/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1l7MovYoHx10SQhHUNIBYBkt_7iTZeC_n",
+            "title": "C673_功能描述_语音控制V1.0.4.pdf",
+            "url": "https://drive.google.com/file/d/1l7MovYoHx10SQhHUNIBYBkt_7iTZeC_n/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48729-formal_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "小憩模式位置切换误回复不支持"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已登录并实测：meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "小憩模式位置切换误回复不支持"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "标准1364（已锁定）打开特定情景模式；小憩示例含左/右前，执行策略要求有位置参数时打开模式并调节对应位置座椅",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "小憩模式位置切换误回复不支持"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C385-5语音产品/执行负责人"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "深蓝项目24510（已锁定、继承未修改）",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：Alchemy当前已正确识别“前排”并下发小憩位置参数，车端不支持回复与当前语音链不一致；但现行正式配置没有C385-5列，也未定义front_row在该车型应落副驾还是其他位置，暂不作确定性定责。\n依据：Jira原票及ADS-48377、Alchemy BIGSUR原话结果、标准1364/深蓝项目24510、深蓝情景模式配置Sheet‘情景模式’第25-33行、智能情景模式功能定义V4.9适应范围。\n处理：补齐C385-5小憩支持位置及front_row映射后，对照req_id判断是执行拒绝还是车型配置缺失；C385-5情景模式语音产品/执行负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "小憩模式设置为前排",
+    "alchemy_tested": true,
+    "alchemy_result": "meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row",
+    "meta_id": "meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1364（已锁定）打开特定情景模式；小憩示例含左/右前，执行策略要求有位置参数时打开模式并调节对应位置座椅",
+      "assessment": "已读取说明、Query举例、下发参数、执行策略与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24510（已锁定、继承未修改）",
+      "assessment": "已按meta_id读取项目功能列表并核对继承及状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "Alchemy链已补齐；未完成项仅剩C385-5车型级小憩位置配置及front_row映射。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C385-5情景模式语音产品/执行负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：Alchemy当前已正确识别“前排”并下发小憩位置参数，车端不支持回复与当前语音链不一致；但现行正式配置没有C385-5列，也未定义front_row在该车型应落副驾还是其他位置，暂不作确定性定责。\n依据：Jira原票及ADS-48377、Alchemy BIGSUR原话结果、标准1364/深蓝项目24510、深蓝情景模式配置Sheet‘情景模式’第25-33行、智能情景模式功能定义V4.9适应范围。\n处理：补齐C385-5小憩支持位置及front_row映射后，对照req_id判断是执行拒绝还是车型配置缺失；C385-5情景模式语音产品/执行负责人处理。"
+  },
+  "run_context": {
+    "run_id": "20260813T113000+0800-aug12-alchemy-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 321
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48729-formal_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48729"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音控制 小憩模式 前排"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音控制 小憩模式 前排"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1ExhJGRZW8mBS43ft1niD2oF-MXEH8uyJ",
+          "title": "C673-EVE_功能描述_语音控制V1.0.5.docx",
+          "url": "https://docs.google.com/document/d/1ExhJGRZW8mBS43ft1niD2oF-MXEH8uyJ/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1l7MovYoHx10SQhHUNIBYBkt_7iTZeC_n",
+          "title": "C673_功能描述_语音控制V1.0.4.pdf",
+          "url": "https://drive.google.com/file/d/1l7MovYoHx10SQhHUNIBYBkt_7iTZeC_n/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ]
+}

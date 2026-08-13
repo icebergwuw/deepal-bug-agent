@@ -1,0 +1,2811 @@
+{
+  "run_id": "20260813T113000+0800-aug12-alchemy-recheck",
+  "patches": [
+    {
+      "key": "ADS-48729",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 321,
+      "rowIndex": 320,
+      "previewFingerprint": "8910ae84bfcd5c5acb0f1165a9111de1eb845440ce179c280c07ac3532db1ad4",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：C385-5 当前小憩模式非主驾时说“小憩模式设置为前排”，5/5 回复不支持；关联总票 ADS-48377 的日志定位到 req_id 2a46608c-d776-4f67-bc63-66582c37c1e2，并记录 ASR 曾将“副驾”识别为“前排”。\nDrive复核：智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE。",
+          "after": "现象：[Jira原票·描述/关联ADS-48377]C385-5当前小憩模式非主驾时说“小憩模式设置为前排”，车端5/5回复无法切换位置。\nAlchemy：[在线对话·BIGSUR]原话当前命中meta_id=1127，mode=rest、op=open、position=front_row；[标准1364/深蓝项目24510]已定义带位置打开小憩并调节对应座椅。\n正式范围：[深蓝情景模式配置·Sheet‘情景模式’第25-33行]只列385基础车/ICA/DA、385MCA等列，未列C385-5；[智能情景模式功能定义V4.9·适应范围/语音控制方式]适用C673EV/C673EVE，不能外推C385-5。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：小憩模式位置切换误回复不支持的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；智能情景模式功能定义V4.9·章节“语音控制方式”及“小憩模式设置功能（美洲项目只有主驾小憩）”；文档适用范围写C673EV/C673EVE；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；C385-5语音产品/执行负责人处理。",
+          "after": "结论：Alchemy当前已正确识别“前排”并下发小憩位置参数，车端不支持回复与当前语音链不一致；但现行正式配置没有C385-5列，也未定义front_row在该车型应落副驾还是其他位置，暂不作确定性定责。\n依据：Jira原票及ADS-48377、Alchemy BIGSUR原话结果、标准1364/深蓝项目24510、深蓝情景模式配置Sheet‘情景模式’第25-33行、智能情景模式功能定义V4.9适应范围。\n处理：补齐C385-5小憩支持位置及front_row映射后，对照req_id判断是执行拒绝还是车型配置缺失；C385-5情景模式语音产品/执行负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy核验“设置为前排”的当前结果、meta_id、标准/项目功能点，并补齐C385-5小憩位置切换正式定义；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy链已补齐；未完成项仅剩C385-5车型级小憩位置配置及front_row映射。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\n智能情景模式功能定义V4.9",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row\n标准1364（已锁定）打开特定情景模式；小憩示例含左/右前，执行策略要求有位置参数时打开模式并调节对应位置座椅\n深蓝项目24510（已锁定、继承未修改）\n深蓝情景模式配置·情景模式第25-33行\n智能情景模式功能定义V4.9·适应范围/语音控制方式",
+          "links": [
+            "http://jira.i-tetris.com/browse/ADS-48729",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1364",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1Dokcgp1J5sW_lWcXOJ2DsJUd-m9KAfX3ZHe0T88s6nk/edit#gid=2132905669",
+            "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/关联ADS-48377]C385-5当前小憩模式非主驾时说“小憩模式设置为前排”，车端5/5回复无法切换位置。\nAlchemy：[在线对话·BIGSUR]原话当前命中meta_id=1127，mode=rest、op=open、position=front_row；[标准1364/深蓝项目24510]已定义带位置打开小憩并调节对应座椅。\n正式范围：[深蓝情景模式配置·Sheet‘情景模式’第25-33行]只列385基础车/ICA/DA、385MCA等列，未列C385-5；[智能情景模式功能定义V4.9·适应范围/语音控制方式]适用C673EV/C673EVE，不能外推C385-5。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：Alchemy当前已正确识别“前排”并下发小憩位置参数，车端不支持回复与当前语音链不一致；但现行正式配置没有C385-5列，也未定义front_row在该车型应落副驾还是其他位置，暂不作确定性定责。\n依据：Jira原票及ADS-48377、Alchemy BIGSUR原话结果、标准1364/深蓝项目24510、深蓝情景模式配置Sheet‘情景模式’第25-33行、智能情景模式功能定义V4.9适应范围。\n处理：补齐C385-5小憩支持位置及front_row映射后，对照req_id判断是执行拒绝还是车型配置缺失；C385-5情景模式语音产品/执行负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy链已补齐；未完成项仅剩C385-5车型级小憩位置配置及front_row映射。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row\n标准1364（已锁定）打开特定情景模式；小憩示例含左/右前，执行策略要求有位置参数时打开模式并调节对应位置座椅\n深蓝项目24510（已锁定、继承未修改）\n深蓝情景模式配置·情景模式第25-33行\n智能情景模式功能定义V4.9·适应范围/语音控制方式",
+          "links": [
+            "http://jira.i-tetris.com/browse/ADS-48729",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1364",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1Dokcgp1J5sW_lWcXOJ2DsJUd-m9KAfX3ZHe0T88s6nk/edit#gid=2132905669",
+            "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 320,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/关联ADS-48377]C385-5当前小憩模式非主驾时说“小憩模式设置为前排”，车端5/5回复无法切换位置。\nAlchemy：[在线对话·BIGSUR]原话当前命中meta_id=1127，mode=rest、op=open、position=front_row；[标准1364/深蓝项目24510]已定义带位置打开小憩并调节对应座椅。\n正式范围：[深蓝情景模式配置·Sheet‘情景模式’第25-33行]只列385基础车/ICA/DA、385MCA等列，未列C385-5；[智能情景模式功能定义V4.9·适应范围/语音控制方式]适用C673EV/C673EVE，不能外推C385-5。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 320,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：Alchemy当前已正确识别“前排”并下发小憩位置参数，车端不支持回复与当前语音链不一致；但现行正式配置没有C385-5列，也未定义front_row在该车型应落副驾还是其他位置，暂不作确定性定责。\n依据：Jira原票及ADS-48377、Alchemy BIGSUR原话结果、标准1364/深蓝项目24510、深蓝情景模式配置Sheet‘情景模式’第25-33行、智能情景模式功能定义V4.9适应范围。\n处理：补齐C385-5小憩支持位置及front_row映射后，对照req_id判断是执行拒绝还是车型配置缺失；C385-5情景模式语音产品/执行负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 320,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 320,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy链已补齐；未完成项仅剩C385-5车型级小憩位置配置及front_row映射。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 320,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·meta_id=1127，vehicle:scenario:ctrl，mode=rest、op=open、position=front_row\n标准1364（已锁定）打开特定情景模式；小憩示例含左/右前，执行策略要求有位置参数时打开模式并调节对应位置座椅\n深蓝项目24510（已锁定、继承未修改）\n深蓝情景模式配置·情景模式第25-33行\n智能情景模式功能定义V4.9·适应范围/语音控制方式"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-48729"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 105
+                      },
+                      {
+                        "startIndex": 106,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1364"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 161
+                      },
+                      {
+                        "startIndex": 162,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 182
+                      },
+                      {
+                        "startIndex": 183,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1Dokcgp1J5sW_lWcXOJ2DsJUd-m9KAfX3ZHe0T88s6nk/edit#gid=2132905669"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 203
+                      },
+                      {
+                        "startIndex": 204,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ADS-48572",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 322,
+      "rowIndex": 321,
+      "previewFingerprint": "f59f38e650dd01a13ed27564096c50f52e67735d47366eff05d3ca664689b752",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：C385-5 STG 在火锅店推荐播报中插入“导航去观音桥”，随后说“第一个”时选中了原火锅店列表；关联总票 ADS-48560 与评论均记录该二次交互现象，研发所述“可见优先级高”只证明当前实现。\nDrive复核：地图导航交互V0.6·修改记录及POI/备选站/列表选择相关页面正文；未检出‘火锅店/第一个/可见节点优先级’条款。",
+          "after": "现象：[Jira原票·描述/关联ADS-48560]火锅店推荐中插入“导航去观音桥”，随后说“第一个”却选中旧火锅店列表。\nAlchemy：[在线对话·BIGSUR]三轮依次命中1208、1209；第三轮同时保留观音桥目的地并下发list_offset=1；[标准1433/深蓝项目24552]定义POI列表二次交互使用本轮完整Query和前轮结果列表。\n正式缺口：[地图导航交互V0.6·修改记录及POI列表页]仍未定义被新导航Query打断后，新旧列表/可见节点的唯一优先级。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：POI推荐二次交互选错列表的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；地图导航交互V0.6·修改记录及POI/备选站/列表选择相关页面正文；未检出‘火锅店/第一个/可见节点优先级’条款；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义；C385-5语音产品/可见交互负责人处理。",
+          "after": "结论：Alchemy当前三轮上下文已切换到观音桥，车端仍选旧火锅店列表的现象成立；但现行正式交互资料未定义新导航Query打断后新旧列表与可见节点的优先级，不能只凭平台当前实现直接定责。\n依据：Jira原票及ADS-48560、Alchemy BIGSUR三轮结果、标准1433/深蓝项目24552、地图导航交互V0.6。\n处理：补齐跨列表打断后的上下文替换和可见优先级条款，再按同三轮用例复测并定责；C385-5语音上下文/可见交互产品负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy链已补齐；未完成项为跨列表打断后的正式优先级定义。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\n地图导航交互V0.6",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209\n标准1433（已锁定）导航去地址，定义前轮POI列表二次交互和本轮完整Query匹配\n深蓝项目24552（已锁定、继承未修改）\n地图导航交互V0.6·POI列表页",
+          "links": [
+            "http://jira.i-tetris.com/browse/ADS-48572",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1433",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/关联ADS-48560]火锅店推荐中插入“导航去观音桥”，随后说“第一个”却选中旧火锅店列表。\nAlchemy：[在线对话·BIGSUR]三轮依次命中1208、1209；第三轮同时保留观音桥目的地并下发list_offset=1；[标准1433/深蓝项目24552]定义POI列表二次交互使用本轮完整Query和前轮结果列表。\n正式缺口：[地图导航交互V0.6·修改记录及POI列表页]仍未定义被新导航Query打断后，新旧列表/可见节点的唯一优先级。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：Alchemy当前三轮上下文已切换到观音桥，车端仍选旧火锅店列表的现象成立；但现行正式交互资料未定义新导航Query打断后新旧列表与可见节点的优先级，不能只凭平台当前实现直接定责。\n依据：Jira原票及ADS-48560、Alchemy BIGSUR三轮结果、标准1433/深蓝项目24552、地图导航交互V0.6。\n处理：补齐跨列表打断后的上下文替换和可见优先级条款，再按同三轮用例复测并定责；C385-5语音上下文/可见交互产品负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy链已补齐；未完成项为跨列表打断后的正式优先级定义。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209\n标准1433（已锁定）导航去地址，定义前轮POI列表二次交互和本轮完整Query匹配\n深蓝项目24552（已锁定、继承未修改）\n地图导航交互V0.6·POI列表页",
+          "links": [
+            "http://jira.i-tetris.com/browse/ADS-48572",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1433",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 321,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/关联ADS-48560]火锅店推荐中插入“导航去观音桥”，随后说“第一个”却选中旧火锅店列表。\nAlchemy：[在线对话·BIGSUR]三轮依次命中1208、1209；第三轮同时保留观音桥目的地并下发list_offset=1；[标准1433/深蓝项目24552]定义POI列表二次交互使用本轮完整Query和前轮结果列表。\n正式缺口：[地图导航交互V0.6·修改记录及POI列表页]仍未定义被新导航Query打断后，新旧列表/可见节点的唯一优先级。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 321,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：Alchemy当前三轮上下文已切换到观音桥，车端仍选旧火锅店列表的现象成立；但现行正式交互资料未定义新导航Query打断后新旧列表与可见节点的优先级，不能只凭平台当前实现直接定责。\n依据：Jira原票及ADS-48560、Alchemy BIGSUR三轮结果、标准1433/深蓝项目24552、地图导航交互V0.6。\n处理：补齐跨列表打断后的上下文替换和可见优先级条款，再按同三轮用例复测并定责；C385-5语音上下文/可见交互产品负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 321,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 321,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy链已补齐；未完成项为跨列表打断后的正式优先级定义。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 321,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209\n标准1433（已锁定）导航去地址，定义前轮POI列表二次交互和本轮完整Query匹配\n深蓝项目24552（已锁定、继承未修改）\n地图导航交互V0.6·POI列表页"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-48572"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 84
+                      },
+                      {
+                        "startIndex": 85,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1433"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 127
+                      },
+                      {
+                        "startIndex": 128,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 148
+                      },
+                      {
+                        "startIndex": 149,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "HUR-82888",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 323,
+      "rowIndex": 322,
+      "previewFingerprint": "df6956614b0fc636556ec45307cddd323300a293914c1f59bf6fb073dbe7d0a4",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：J90A 在“我要打电话”的二次交互阶段说“打开前备箱”被截断；评论称电话二次交互当前不响应电话外指令，但该说明仅证明实现边界，未提供生效产品目标。描述引用 HUR-82884 日志票，已完整读取。\nDrive复核：检索回执中的候选已逐项排除，仍未定位同项目同场景正式目标。",
+          "after": "现象：[Jira原票·描述]J90A在“我要打电话”的二次交互阶段说“打开前备箱”发生识别截断。描述所写日志票HUR-82884实际是“自定义应答语敏感词”Bug，与本票链路无关。\nAlchemy：[在线对话·HUR]两轮文本分别命中meta_id=1059电话入口、meta_id=2031打开前备箱，未发生截断；[标准1338/1659]覆盖两句语义。\n配置缺口：[马自达项目功能]有1059项目点25986，但检索2031无项目功能点；Alchemy文本输入不能验证ASR截断，也没有电话二次交互跨域退出状态机正式条款。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：电话二次交互截断前备箱指令的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；J90A蓝牙电话语音产品负责人处理。",
+          "after": "结论：Alchemy文本链证明两句NLU可分别识别，但不能证明实车ASR不会截断；同时HUR未配置2031项目功能点，且Jira引用的HUR-82884不是本票日志，当前证据不能唯一判断是ASR、电话状态机还是项目能力缺口。\n依据：Jira原票、HUR-82884完整页面、Alchemy HUR两轮结果、标准1338/1659、马自达项目功能检索。\n处理：补正确req_id/ASR原始日志和电话二次交互跨域退出定义，并确认J90A是否应继承2031后再定责；J90A电话二次交互/语音识别产品负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy核验二次原话与功能点，并补齐电话二次交互是否允许跨域退出的正式状态机定义；Drive候选已逐项排除，仍需补齐同范围正式资料及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy链已补齐；缺正确ASR日志、跨域状态机及J90A meta_id=2031项目能力。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·两轮分别命中1059电话入口和2031打开前备箱；文本链未截断\n标准1338为电话入口（草稿）；标准1659打开前备箱（已锁定）\n马自达项目25986继承1059；检索meta_id=2031无项目功能点\nHUR-82884·误引用的敏感词Bug",
+          "links": [
+            "http://jira.i-tetris.com/browse/HUR-82888",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1659",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/15",
+            "http://jira.i-tetris.com/browse/HUR-82884"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述]J90A在“我要打电话”的二次交互阶段说“打开前备箱”发生识别截断。描述所写日志票HUR-82884实际是“自定义应答语敏感词”Bug，与本票链路无关。\nAlchemy：[在线对话·HUR]两轮文本分别命中meta_id=1059电话入口、meta_id=2031打开前备箱，未发生截断；[标准1338/1659]覆盖两句语义。\n配置缺口：[马自达项目功能]有1059项目点25986，但检索2031无项目功能点；Alchemy文本输入不能验证ASR截断，也没有电话二次交互跨域退出状态机正式条款。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：Alchemy文本链证明两句NLU可分别识别，但不能证明实车ASR不会截断；同时HUR未配置2031项目功能点，且Jira引用的HUR-82884不是本票日志，当前证据不能唯一判断是ASR、电话状态机还是项目能力缺口。\n依据：Jira原票、HUR-82884完整页面、Alchemy HUR两轮结果、标准1338/1659、马自达项目功能检索。\n处理：补正确req_id/ASR原始日志和电话二次交互跨域退出定义，并确认J90A是否应继承2031后再定责；J90A电话二次交互/语音识别产品负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy链已补齐；缺正确ASR日志、跨域状态机及J90A meta_id=2031项目能力。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·两轮分别命中1059电话入口和2031打开前备箱；文本链未截断\n标准1338为电话入口（草稿）；标准1659打开前备箱（已锁定）\n马自达项目25986继承1059；检索meta_id=2031无项目功能点\nHUR-82884·误引用的敏感词Bug",
+          "links": [
+            "http://jira.i-tetris.com/browse/HUR-82888",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1659",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/15",
+            "http://jira.i-tetris.com/browse/HUR-82884"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 322,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述]J90A在“我要打电话”的二次交互阶段说“打开前备箱”发生识别截断。描述所写日志票HUR-82884实际是“自定义应答语敏感词”Bug，与本票链路无关。\nAlchemy：[在线对话·HUR]两轮文本分别命中meta_id=1059电话入口、meta_id=2031打开前备箱，未发生截断；[标准1338/1659]覆盖两句语义。\n配置缺口：[马自达项目功能]有1059项目点25986，但检索2031无项目功能点；Alchemy文本输入不能验证ASR截断，也没有电话二次交互跨域退出状态机正式条款。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 322,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：Alchemy文本链证明两句NLU可分别识别，但不能证明实车ASR不会截断；同时HUR未配置2031项目功能点，且Jira引用的HUR-82884不是本票日志，当前证据不能唯一判断是ASR、电话状态机还是项目能力缺口。\n依据：Jira原票、HUR-82884完整页面、Alchemy HUR两轮结果、标准1338/1659、马自达项目功能检索。\n处理：补正确req_id/ASR原始日志和电话二次交互跨域退出定义，并确认J90A是否应继承2031后再定责；J90A电话二次交互/语音识别产品负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 322,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 322,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy链已补齐；缺正确ASR日志、跨域状态机及J90A meta_id=2031项目能力。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 322,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·两轮分别命中1059电话入口和2031打开前备箱；文本链未截断\n标准1338为电话入口（草稿）；标准1659打开前备箱（已锁定）\n马自达项目25986继承1059；检索meta_id=2031无项目功能点\nHUR-82884·误引用的敏感词Bug"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/HUR-82888"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 62
+                      },
+                      {
+                        "startIndex": 63,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1659"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 95
+                      },
+                      {
+                        "startIndex": 96,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/15"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 133
+                      },
+                      {
+                        "startIndex": 134,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/HUR-82884"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "PC-38473",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 324,
+      "rowIndex": 323,
+      "previewFingerprint": "8caf8c08a55bde0df4662a5d300f527e13de772ca75a0c46ab58c1854353517f",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：C673-ICA 语音设置页说“编辑/删除唤醒词”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。\nDrive复核：C673语音控制V1.0.5·功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款；8295页面开启需求v2.6·Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条。",
+          "after": "现象：[Jira原票·描述/附件]C673-ICA语音设置页说“编辑/删除唤醒词”10/10不执行可见；相关Gerrit 1114070已废弃。\nAlchemy：[在线对话·BIGSUR]“编辑唤醒词”命中1324，“删除唤醒词”命中1395；[标准1239/1233、深蓝项目24428/24425]均有对应能力，1239明确包含修改意图，1233执行策略为打开自定义唤醒词界面。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗第34行]只定义新增唤醒词页面，未定义当前列表编辑/删除可见节点；MasterGo当前配置未取得。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：语音设置页唤醒词编辑删除不可见的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；C673语音控制V1.0.5·功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款；8295页面开启需求v2.6·Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并补齐语音设置页生效可见配置、节点命名及冲突消歧规则；C673-ICA可见即可说产品负责人处理。",
+          "after": "结论：两句原话的通用语音能力及深蓝项目点已存在，但本票发生在语音设置页可见上下文；当前正式页面资料仅覆盖新增页面，缺编辑/删除节点及页面态冲突消歧，暂不能把不执行直接定为语音或客户端缺陷。\n依据：Jira原票、Alchemy BIGSUR结果、标准1239/1233及深蓝项目24428/24425、8295页面开启需求v2.6第34行。\n处理：取得生效MasterGo/可见配置的编辑与删除节点、节点名和页面状态后复测；C673-ICA可见即可说产品负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy并补齐语音设置页生效可见配置、节点命名及冲突消歧规则；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy链已补齐；未完成项为语音设置页编辑/删除唤醒词的生效可见节点。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\nC673语音控制V1.0.5\n8295页面开启需求v2.6",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1324新增/修改自定义唤醒词、1395删除自定义唤醒词\n标准1239/1233均已锁定；1239明确支持修改意图，1233执行打开自定义唤醒词界面\n深蓝项目24428/24425均已锁定、继承未修改\n8295页面开启需求v2.6·第34行",
+          "links": [
+            "http://jira.i-tetris.com/browse/PC-38473",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1239",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/附件]C673-ICA语音设置页说“编辑/删除唤醒词”10/10不执行可见；相关Gerrit 1114070已废弃。\nAlchemy：[在线对话·BIGSUR]“编辑唤醒词”命中1324，“删除唤醒词”命中1395；[标准1239/1233、深蓝项目24428/24425]均有对应能力，1239明确包含修改意图，1233执行策略为打开自定义唤醒词界面。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗第34行]只定义新增唤醒词页面，未定义当前列表编辑/删除可见节点；MasterGo当前配置未取得。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：两句原话的通用语音能力及深蓝项目点已存在，但本票发生在语音设置页可见上下文；当前正式页面资料仅覆盖新增页面，缺编辑/删除节点及页面态冲突消歧，暂不能把不执行直接定为语音或客户端缺陷。\n依据：Jira原票、Alchemy BIGSUR结果、标准1239/1233及深蓝项目24428/24425、8295页面开启需求v2.6第34行。\n处理：取得生效MasterGo/可见配置的编辑与删除节点、节点名和页面状态后复测；C673-ICA可见即可说产品负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy链已补齐；未完成项为语音设置页编辑/删除唤醒词的生效可见节点。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1324新增/修改自定义唤醒词、1395删除自定义唤醒词\n标准1239/1233均已锁定；1239明确支持修改意图，1233执行打开自定义唤醒词界面\n深蓝项目24428/24425均已锁定、继承未修改\n8295页面开启需求v2.6·第34行",
+          "links": [
+            "http://jira.i-tetris.com/browse/PC-38473",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1239",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 323,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/附件]C673-ICA语音设置页说“编辑/删除唤醒词”10/10不执行可见；相关Gerrit 1114070已废弃。\nAlchemy：[在线对话·BIGSUR]“编辑唤醒词”命中1324，“删除唤醒词”命中1395；[标准1239/1233、深蓝项目24428/24425]均有对应能力，1239明确包含修改意图，1233执行策略为打开自定义唤醒词界面。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗第34行]只定义新增唤醒词页面，未定义当前列表编辑/删除可见节点；MasterGo当前配置未取得。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 323,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：两句原话的通用语音能力及深蓝项目点已存在，但本票发生在语音设置页可见上下文；当前正式页面资料仅覆盖新增页面，缺编辑/删除节点及页面态冲突消歧，暂不能把不执行直接定为语音或客户端缺陷。\n依据：Jira原票、Alchemy BIGSUR结果、标准1239/1233及深蓝项目24428/24425、8295页面开启需求v2.6第34行。\n处理：取得生效MasterGo/可见配置的编辑与删除节点、节点名和页面状态后复测；C673-ICA可见即可说产品负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 323,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 323,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy链已补齐；未完成项为语音设置页编辑/删除唤醒词的生效可见节点。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 323,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1324新增/修改自定义唤醒词、1395删除自定义唤醒词\n标准1239/1233均已锁定；1239明确支持修改意图，1233执行打开自定义唤醒词界面\n深蓝项目24428/24425均已锁定、继承未修改\n8295页面开启需求v2.6·第34行"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/PC-38473"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 66
+                      },
+                      {
+                        "startIndex": 67,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1239"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 112
+                      },
+                      {
+                        "startIndex": 113,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 138
+                      },
+                      {
+                        "startIndex": 139,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "PC-38472",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 325,
+      "rowIndex": 324,
+      "previewFingerprint": "95221a1046a2c93ae0d9efe03479f573284c06044b801d316739859497e19c71",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：C673-ICA 语音设置页说“编辑/删除应答语1、2、3”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。\nDrive复核：C673语音控制V1.0.5·功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款；8295页面开启需求v2.6·Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条。",
+          "after": "现象：[Jira原票·描述/附件]语音设置页说“编辑/删除应答语1、2、3”均不执行可见。\nAlchemy：[在线对话·BIGSUR]“编辑应答语1”落1325但只有keywords=1、无编辑op；“删除应答语1”落3069且op=cancel。[标准1250/1730]仍为草稿，[深蓝项目24435/26857]已锁定继承，来源状态与语义参数存在冲突。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗]检索‘应答语’0条，MasterGo当前可见节点未取得。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：语音设置页应答语序号不可见的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；C673语音控制V1.0.5·功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款；8295页面开启需求v2.6·Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并补齐语音设置页生效可见配置、应答语节点命名及序号消歧规则；C673-ICA可见即可说产品负责人处理。",
+          "after": "结论：删除应答语已落正确功能点，编辑应答语缺少编辑op；同时标准点仍为草稿、深蓝项目点却已锁定，且页面可见节点缺失，需会诊统一配置状态与页面节点后拆分处理。\n依据：Jira原票、Alchemy BIGSUR两句结果、标准1250/1730、深蓝项目24435/26857、8295页面开启需求v2.6检索结果。\n处理：统一编辑/删除应答语的生效功能点、op与可见节点，再分别回归1/2/3序号；C673-ICA应答语语音配置/可见交互负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待会诊",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy并补齐语音设置页生效可见配置、应答语节点命名及序号消歧规则；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy链已补齐；冲突为编辑op缺失、标准草稿/项目锁定不一致及可见节点缺失。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\nC673语音控制V1.0.5\n8295页面开启需求v2.6",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1325新增自定义应答语（keywords=1，无op）和3069删除自定义应答语（op=cancel）\n标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面\n深蓝项目24435/26857已锁定、继承未修改\n8295页面开启需求v2.6·应答语0命中",
+          "links": [
+            "http://jira.i-tetris.com/browse/PC-38472",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1730",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/附件]语音设置页说“编辑/删除应答语1、2、3”均不执行可见。\nAlchemy：[在线对话·BIGSUR]“编辑应答语1”落1325但只有keywords=1、无编辑op；“删除应答语1”落3069且op=cancel。[标准1250/1730]仍为草稿，[深蓝项目24435/26857]已锁定继承，来源状态与语义参数存在冲突。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗]检索‘应答语’0条，MasterGo当前可见节点未取得。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：删除应答语已落正确功能点，编辑应答语缺少编辑op；同时标准点仍为草稿、深蓝项目点却已锁定，且页面可见节点缺失，需会诊统一配置状态与页面节点后拆分处理。\n依据：Jira原票、Alchemy BIGSUR两句结果、标准1250/1730、深蓝项目24435/26857、8295页面开启需求v2.6检索结果。\n处理：统一编辑/删除应答语的生效功能点、op与可见节点，再分别回归1/2/3序号；C673-ICA应答语语音配置/可见交互负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待会诊",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy链已补齐；冲突为编辑op缺失、标准草稿/项目锁定不一致及可见节点缺失。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1325新增自定义应答语（keywords=1，无op）和3069删除自定义应答语（op=cancel）\n标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面\n深蓝项目24435/26857已锁定、继承未修改\n8295页面开启需求v2.6·应答语0命中",
+          "links": [
+            "http://jira.i-tetris.com/browse/PC-38472",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1730",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 324,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/附件]语音设置页说“编辑/删除应答语1、2、3”均不执行可见。\nAlchemy：[在线对话·BIGSUR]“编辑应答语1”落1325但只有keywords=1、无编辑op；“删除应答语1”落3069且op=cancel。[标准1250/1730]仍为草稿，[深蓝项目24435/26857]已锁定继承，来源状态与语义参数存在冲突。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗]检索‘应答语’0条，MasterGo当前可见节点未取得。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 324,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：删除应答语已落正确功能点，编辑应答语缺少编辑op；同时标准点仍为草稿、深蓝项目点却已锁定，且页面可见节点缺失，需会诊统一配置状态与页面节点后拆分处理。\n依据：Jira原票、Alchemy BIGSUR两句结果、标准1250/1730、深蓝项目24435/26857、8295页面开启需求v2.6检索结果。\n处理：统一编辑/删除应答语的生效功能点、op与可见节点，再分别回归1/2/3序号；C673-ICA应答语语音配置/可见交互负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 324,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待会诊"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 324,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy链已补齐；冲突为编辑op缺失、标准草稿/项目锁定不一致及可见节点缺失。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 324,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1325新增自定义应答语（keywords=1，无op）和3069删除自定义应答语（op=cancel）\n标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面\n深蓝项目24435/26857已锁定、继承未修改\n8295页面开启需求v2.6·应答语0命中"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/PC-38472"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 90
+                      },
+                      {
+                        "startIndex": 91,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1730"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 130
+                      },
+                      {
+                        "startIndex": 131,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 155
+                      },
+                      {
+                        "startIndex": 156,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "PC-38471",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 326,
+      "rowIndex": 325,
+      "previewFingerprint": "40d56a4d0ad498c063b45ba72c4e8453ffcdfbd780bb8b46c944e2740283aabc",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：C673-ICA 语音设置页说“播放/编辑/删除第二个”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。\nDrive复核：C673语音控制V1.0.5·功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款；8295页面开启需求v2.6·Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条。",
+          "after": "现象：[Jira原票·描述/附件]语音设置页说“播放/编辑/删除第二个”或名称，10/10不执行可见。\nAlchemy：[在线对话·BIGSUR]脱离页面上下文测试时分别落1035媒体切换、1455通用列表选择、1919不支持；[标准1470/1425/1442及深蓝项目24583/24544/24561]只证明通用语义，未形成语音设置页专用动作。\n正式缺口：C673语音控制V1.0.5及8295页面开启需求v2.6均未定义该列表节点，MasterGo当前可见配置未取得。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：语音设置页第二项播放编辑删除不可见的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；C673语音控制V1.0.5·功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款；8295页面开启需求v2.6·Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则；C673-ICA可见即可说产品负责人处理。",
+          "after": "结论：三句短指令在无页面上下文时分别落媒体、通用列表和兜底，不能用该结果证明语音设置页内的目标动作；缺少生效可见节点和页面上下文注入规则，暂不定责。\n依据：Jira原票、Alchemy BIGSUR三句结果、标准/深蓝项目功能点、C673语音控制V1.0.5、8295页面开启需求v2.6。\n处理：取得列表项播放/编辑/删除节点及上下文注入规则后，在语音设置页复测同三句；C673-ICA可见即可说产品负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy链已补齐；未完成项为页面可见节点和上下文注入规则。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\nC673语音控制V1.0.5\n8295页面开启需求v2.6",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底\n标准1470资源切换、1425列表选择、1442兜底均已锁定\n深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义\nC673语音控制V1.0.5\n8295页面开启需求v2.6",
+          "links": [
+            "http://jira.i-tetris.com/browse/PC-38471",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1425",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/document/d/1KQxZVsSzaTyoabOsT9K7cD8Jo9Yfdg8j/edit",
+            "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/附件]语音设置页说“播放/编辑/删除第二个”或名称，10/10不执行可见。\nAlchemy：[在线对话·BIGSUR]脱离页面上下文测试时分别落1035媒体切换、1455通用列表选择、1919不支持；[标准1470/1425/1442及深蓝项目24583/24544/24561]只证明通用语义，未形成语音设置页专用动作。\n正式缺口：C673语音控制V1.0.5及8295页面开启需求v2.6均未定义该列表节点，MasterGo当前可见配置未取得。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：三句短指令在无页面上下文时分别落媒体、通用列表和兜底，不能用该结果证明语音设置页内的目标动作；缺少生效可见节点和页面上下文注入规则，暂不定责。\n依据：Jira原票、Alchemy BIGSUR三句结果、标准/深蓝项目功能点、C673语音控制V1.0.5、8295页面开启需求v2.6。\n处理：取得列表项播放/编辑/删除节点及上下文注入规则后，在语音设置页复测同三句；C673-ICA可见即可说产品负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy链已补齐；未完成项为页面可见节点和上下文注入规则。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底\n标准1470资源切换、1425列表选择、1442兜底均已锁定\n深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义\nC673语音控制V1.0.5\n8295页面开启需求v2.6",
+          "links": [
+            "http://jira.i-tetris.com/browse/PC-38471",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1425",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/document/d/1KQxZVsSzaTyoabOsT9K7cD8Jo9Yfdg8j/edit",
+            "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 325,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/附件]语音设置页说“播放/编辑/删除第二个”或名称，10/10不执行可见。\nAlchemy：[在线对话·BIGSUR]脱离页面上下文测试时分别落1035媒体切换、1455通用列表选择、1919不支持；[标准1470/1425/1442及深蓝项目24583/24544/24561]只证明通用语义，未形成语音设置页专用动作。\n正式缺口：C673语音控制V1.0.5及8295页面开启需求v2.6均未定义该列表节点，MasterGo当前可见配置未取得。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 325,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：三句短指令在无页面上下文时分别落媒体、通用列表和兜底，不能用该结果证明语音设置页内的目标动作；缺少生效可见节点和页面上下文注入规则，暂不定责。\n依据：Jira原票、Alchemy BIGSUR三句结果、标准/深蓝项目功能点、C673语音控制V1.0.5、8295页面开启需求v2.6。\n处理：取得列表项播放/编辑/删除节点及上下文注入规则后，在语音设置页复测同三句；C673-ICA可见即可说产品负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 325,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 325,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy链已补齐；未完成项为页面可见节点和上下文注入规则。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 325,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底\n标准1470资源切换、1425列表选择、1442兜底均已锁定\n深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义\nC673语音控制V1.0.5\n8295页面开启需求v2.6"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/PC-38471"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 70
+                      },
+                      {
+                        "startIndex": 71,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1425"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 101
+                      },
+                      {
+                        "startIndex": 102,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 143
+                      },
+                      {
+                        "startIndex": 144,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/document/d/1KQxZVsSzaTyoabOsT9K7cD8Jo9Yfdg8j/edit"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 158
+                      },
+                      {
+                        "startIndex": 159,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1j8yX3iGEwPSFsMvRHFu7kOuof-fRnDdg/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "SLV-44180",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 328,
+      "rowIndex": 327,
+      "previewFingerprint": "0519034a72bd7fee627cf7a8b0e3d217c39b5244fec4ea113d73cf885a4c8528",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。\nDrive复核：深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射。",
+          "after": "现象：[Jira原票·描述/关联PC-38411、PC-38412、SLV-44177、SLV-44179]旧车端三句行车指数查询失败，评论记录当时canonical为空。\nAlchemy：[在线对话·SLV]三句当前均命中1251 weather:query:suggestion，suggestion canonical=traffic；[标准1398·说明/设置范围、深蓝项目26748]已包含行车/行车指数。\n版本差异：[深蓝项目语音功能点260731·第49行]有通用查询天气指数，但未逐字列行车指数；当前平台结果已与Jira旧日志不同。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：行车指数查询参数映射失败的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝项目语音功能点260731·全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；C673基础款天气语音产品负责人处理。",
+          "after": "结论：当前SLV在线平台已为三句行车问法下发canonical=traffic，旧日志中的canonical为空现象已不复现于当前平台；先按原车型/版本升级后的同环境回归，不再维持“Alchemy未核验”。\n依据：Jira原票及四个关联票、Alchemy SLV三句当前结果、标准1398/深蓝项目26748、深蓝项目语音功能点260731第49行。\n处理：在C673基础款最新集成版本回归三句并核对天气接口入参；若仍失败转天气接口映射研发，否则关闭；C673基础款天气语音测试/研发负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy当前三句均已下发traffic；未完成项为实车最新版本回归与天气接口入参核对。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\n深蓝项目语音功能点260731",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·SLV·三句均命中1251 weather:query:suggestion，suggestion canonical=traffic\n标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数\n深蓝项目26748（已锁定、继承未修改）\n深蓝项目语音功能点260731·第49行",
+          "links": [
+            "http://jira.i-tetris.com/browse/SLV-44180",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1398",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1ULkxn1d8ZZMBKFX8gA7mCHWccuN6qdSh/edit"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/关联PC-38411、PC-38412、SLV-44177、SLV-44179]旧车端三句行车指数查询失败，评论记录当时canonical为空。\nAlchemy：[在线对话·SLV]三句当前均命中1251 weather:query:suggestion，suggestion canonical=traffic；[标准1398·说明/设置范围、深蓝项目26748]已包含行车/行车指数。\n版本差异：[深蓝项目语音功能点260731·第49行]有通用查询天气指数，但未逐字列行车指数；当前平台结果已与Jira旧日志不同。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：当前SLV在线平台已为三句行车问法下发canonical=traffic，旧日志中的canonical为空现象已不复现于当前平台；先按原车型/版本升级后的同环境回归，不再维持“Alchemy未核验”。\n依据：Jira原票及四个关联票、Alchemy SLV三句当前结果、标准1398/深蓝项目26748、深蓝项目语音功能点260731第49行。\n处理：在C673基础款最新集成版本回归三句并核对天气接口入参；若仍失败转天气接口映射研发，否则关闭；C673基础款天气语音测试/研发负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy当前三句均已下发traffic；未完成项为实车最新版本回归与天气接口入参核对。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·SLV·三句均命中1251 weather:query:suggestion，suggestion canonical=traffic\n标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数\n深蓝项目26748（已锁定、继承未修改）\n深蓝项目语音功能点260731·第49行",
+          "links": [
+            "http://jira.i-tetris.com/browse/SLV-44180",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1398",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1ULkxn1d8ZZMBKFX8gA7mCHWccuN6qdSh/edit"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 327,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/关联PC-38411、PC-38412、SLV-44177、SLV-44179]旧车端三句行车指数查询失败，评论记录当时canonical为空。\nAlchemy：[在线对话·SLV]三句当前均命中1251 weather:query:suggestion，suggestion canonical=traffic；[标准1398·说明/设置范围、深蓝项目26748]已包含行车/行车指数。\n版本差异：[深蓝项目语音功能点260731·第49行]有通用查询天气指数，但未逐字列行车指数；当前平台结果已与Jira旧日志不同。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 327,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：当前SLV在线平台已为三句行车问法下发canonical=traffic，旧日志中的canonical为空现象已不复现于当前平台；先按原车型/版本升级后的同环境回归，不再维持“Alchemy未核验”。\n依据：Jira原票及四个关联票、Alchemy SLV三句当前结果、标准1398/深蓝项目26748、深蓝项目语音功能点260731第49行。\n处理：在C673基础款最新集成版本回归三句并核对天气接口入参；若仍失败转天气接口映射研发，否则关闭；C673基础款天气语音测试/研发负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 327,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 327,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy当前三句均已下发traffic；未完成项为实车最新版本回归与天气接口入参核对。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 327,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·SLV·三句均命中1251 weather:query:suggestion，suggestion canonical=traffic\n标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数\n深蓝项目26748（已锁定、继承未修改）\n深蓝项目语音功能点260731·第49行"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/SLV-44180"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 94
+                      },
+                      {
+                        "startIndex": 95,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1398"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 130
+                      },
+                      {
+                        "startIndex": 131,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 151
+                      },
+                      {
+                        "startIndex": 152,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1ULkxn1d8ZZMBKFX8gA7mCHWccuN6qdSh/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ADS-46860",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 329,
+      "rowIndex": 328,
+      "previewFingerprint": "a6e91354967f7b2734b6e36dbc2831996c12d6c8c837afa6d9a77738a61b82e8",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：C673-7 Megaclaw 多意图“先去公司，再去机场”无法规划；关联票 ADS-46859、PC-38930、ADS-47922/47925/47928 已读取，评论一致指出花瓣地图未上报家/公司地址，其他票的AIS空值兜底已修复但本票能力方案仍未确定。\nDrive复核：深蓝花瓣地图语音清单·提取内容行14‘设置/修改快捷地址（家/公司）’，说明仅支持修改家且需明确；行21-25为POI搜索/路线规划。",
+          "after": "现象：[Jira原票·完整评论/关联ADS-46859等]历史Cloud把机场作为目的地但重复下发两个公司via_poi，导致导航请求不合法。\nAlchemy：[在线对话·BIGSUR]当前原话只下发机场目的地1209，完全丢失公司途经点；[标准1433·下发参数/一般导航意向、深蓝项目24552]明确带途经点导航需同时包含目的地与途径条件。\n正式资料：[深蓝花瓣地图语音清单·第14、21-25行]只定义快捷地址和POI/路线规划，未逐字定义该多意图组合；当前平台与Jira历史实现也不一致。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：花瓣地图未上报家和公司地址的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；深蓝花瓣地图语音清单·提取内容行14‘设置/修改快捷地址（家/公司）’，说明仅支持修改家且需明确；行21-25为POI搜索/路线规划；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义；C673-7地图/语音产品负责人处理。",
+          "after": "结论：目标语义应是公司为途经点、机场为目的地；但Jira历史实现重复公司途经点，Alchemy当前又完全丢失公司，两个实现版本不一致，需会诊确认当前线上链路后定修复层。\n依据：Jira原票完整评论、Alchemy BIGSUR当前结果、标准1433/深蓝项目24552、深蓝花瓣地图语音清单第14及21-25行。\n处理：用同原话抓当前req_id；若Cloud仍重复则修正去重与顺序，若当前已丢via则先修NLU/多意图拆分，最终只下发一个公司via和一个机场目的地；C673-7地图多站点语音产品/Cloud研发负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待会诊",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy核验多意图执行链，并补齐花瓣地图家/公司地址上报能力或正式兜底话术定义；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy链已补齐；当前结果与Jira历史Cloud结果冲突，需当前req_id确认修复层。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\n深蓝花瓣地图语音清单",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi\n标准1433（已锁定）明确带途经点导航应同时下发目的地和途径条件\n深蓝项目24552（已锁定、继承未修改）\n深蓝花瓣地图语音清单·第14/21-25行",
+          "links": [
+            "http://jira.i-tetris.com/browse/ADS-46860",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1433",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1N9PZpRpoMfUa5T8wHDObEwweSaLyEN1Z/edit"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·完整评论/关联ADS-46859等]历史Cloud把机场作为目的地但重复下发两个公司via_poi，导致导航请求不合法。\nAlchemy：[在线对话·BIGSUR]当前原话只下发机场目的地1209，完全丢失公司途经点；[标准1433·下发参数/一般导航意向、深蓝项目24552]明确带途经点导航需同时包含目的地与途径条件。\n正式资料：[深蓝花瓣地图语音清单·第14、21-25行]只定义快捷地址和POI/路线规划，未逐字定义该多意图组合；当前平台与Jira历史实现也不一致。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：目标语义应是公司为途经点、机场为目的地；但Jira历史实现重复公司途经点，Alchemy当前又完全丢失公司，两个实现版本不一致，需会诊确认当前线上链路后定修复层。\n依据：Jira原票完整评论、Alchemy BIGSUR当前结果、标准1433/深蓝项目24552、深蓝花瓣地图语音清单第14及21-25行。\n处理：用同原话抓当前req_id；若Cloud仍重复则修正去重与顺序，若当前已丢via则先修NLU/多意图拆分，最终只下发一个公司via和一个机场目的地；C673-7地图多站点语音产品/Cloud研发负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待会诊",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy链已补齐；当前结果与Jira历史Cloud结果冲突，需当前req_id确认修复层。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi\n标准1433（已锁定）明确带途经点导航应同时下发目的地和途径条件\n深蓝项目24552（已锁定、继承未修改）\n深蓝花瓣地图语音清单·第14/21-25行",
+          "links": [
+            "http://jira.i-tetris.com/browse/ADS-46860",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1433",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/11",
+            "https://docs.google.com/spreadsheets/d/1N9PZpRpoMfUa5T8wHDObEwweSaLyEN1Z/edit"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 328,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·完整评论/关联ADS-46859等]历史Cloud把机场作为目的地但重复下发两个公司via_poi，导致导航请求不合法。\nAlchemy：[在线对话·BIGSUR]当前原话只下发机场目的地1209，完全丢失公司途经点；[标准1433·下发参数/一般导航意向、深蓝项目24552]明确带途经点导航需同时包含目的地与途径条件。\n正式资料：[深蓝花瓣地图语音清单·第14、21-25行]只定义快捷地址和POI/路线规划，未逐字定义该多意图组合；当前平台与Jira历史实现也不一致。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 328,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：目标语义应是公司为途经点、机场为目的地；但Jira历史实现重复公司途经点，Alchemy当前又完全丢失公司，两个实现版本不一致，需会诊确认当前线上链路后定修复层。\n依据：Jira原票完整评论、Alchemy BIGSUR当前结果、标准1433/深蓝项目24552、深蓝花瓣地图语音清单第14及21-25行。\n处理：用同原话抓当前req_id；若Cloud仍重复则修正去重与顺序，若当前已丢via则先修NLU/多意图拆分，最终只下发一个公司via和一个机场目的地；C673-7地图多站点语音产品/Cloud研发负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 328,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待会诊"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 328,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy链已补齐；当前结果与Jira历史Cloud结果冲突，需当前req_id确认修复层。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 328,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·当前只下发机场目的地1209，未带via_poi；Jira历史日志则重复下发两个公司via_poi\n标准1433（已锁定）明确带途经点导航应同时下发目的地和途径条件\n深蓝项目24552（已锁定、继承未修改）\n深蓝花瓣地图语音清单·第14/21-25行"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/ADS-46860"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 83
+                      },
+                      {
+                        "startIndex": 84,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1433"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 116
+                      },
+                      {
+                        "startIndex": 117,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/11"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 137
+                      },
+                      {
+                        "startIndex": 138,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1N9PZpRpoMfUa5T8wHDObEwweSaLyEN1Z/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "HUR-77192",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 330,
+      "rowIndex": 329,
+      "previewFingerprint": "29aa90d2e8af1d6598815488f0c4a07a98b4716a1aaf7cea80ca6713f1ab0e0a",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：J90A-EU PI 挪威语“Avslutt Automatiske fjernlys”未关闭智能远光灯；评论显示该语料来自客户/MRE变更，但语义与自动大灯/智能远光灯目标存在冲突，未给出可追溯的当前MRE条目。\nDrive复核：J90A海外LanguageList V1.1·Sheet‘03_Vehicle Settings’ A1:AQ1000检索‘Avslutt Automatiske fjernlys’，0条命中。",
+          "after": "现象：[Jira原票·描述/完整评论]挪威语关闭智能远光灯未执行；车端日志显示Cerence语义正确，但离线映射降级2820，在线withCerence又被车外灯安全策略拦截为-6。\nAlchemy：[在线对话·HUR]当前原话直接落classification=chat、meta_id=2820；[标准1689/马自达项目26049]只证明当前拒识链。\n正式缺口：[J90A海外LanguageList V1.1·03_Vehicle Settings全表]及[内部版V1.0_260806·03_Vehicle Settings A1:AQ1900]精确原话均0命中；Jira最新评论仍要求与客户确认智能远光灯/自动大灯冲突。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：挪威语智能远光灯语料目标冲突的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；J90A海外LanguageList V1.1·Sheet‘03_Vehicle Settings’ A1:AQ1000检索‘Avslutt Automatiske fjernlys’，0条命中；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并取得MRE当前挪威语语料清单的具体行号，明确智能远光灯与自动大灯目标功能；J90A-EU PI语音语料产品负责人处理。",
+          "after": "结论：当前平台和实车链路均未正确执行，但目标语料仍未在两份当前LanguageList中落行，且智能远光灯与自动大灯目标存在冲突；不能仅凭工程分析把票直接转DS。\n依据：Jira原票完整评论、Alchemy HUR当前2820、标准1689/马自达项目26049、J90A海外LanguageList V1.1与内部版V1.0精确零命中。\n处理：取得客户/MRE生效语料行并明确目标灯光后，统一byCerence/withCerence路由及离线映射；J90A-EU PI语料产品/DS路由配置负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy并取得MRE当前挪威语语料清单的具体行号，明确智能远光灯与自动大灯目标功能；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy当前为2820；未完成项为MRE生效语料行及智能远光灯/自动大灯目标确认。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\nJ90A海外LanguageList V1.1",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·classification=chat，meta_id=2820 dialogue:method:reject\n标准1689拒识（草稿）\n马自达项目26049拒识（已锁定、继承未修改）\nJ90A海外LanguageList V1.1·03_Vehicle Settings\nJ90A海外LanguageList内部版V1.0·03_Vehicle Settings",
+          "links": [
+            "http://jira.i-tetris.com/browse/HUR-77192",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1689",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/15",
+            "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+            "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit#gid=657987591"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/完整评论]挪威语关闭智能远光灯未执行；车端日志显示Cerence语义正确，但离线映射降级2820，在线withCerence又被车外灯安全策略拦截为-6。\nAlchemy：[在线对话·HUR]当前原话直接落classification=chat、meta_id=2820；[标准1689/马自达项目26049]只证明当前拒识链。\n正式缺口：[J90A海外LanguageList V1.1·03_Vehicle Settings全表]及[内部版V1.0_260806·03_Vehicle Settings A1:AQ1900]精确原话均0命中；Jira最新评论仍要求与客户确认智能远光灯/自动大灯冲突。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：当前平台和实车链路均未正确执行，但目标语料仍未在两份当前LanguageList中落行，且智能远光灯与自动大灯目标存在冲突；不能仅凭工程分析把票直接转DS。\n依据：Jira原票完整评论、Alchemy HUR当前2820、标准1689/马自达项目26049、J90A海外LanguageList V1.1与内部版V1.0精确零命中。\n处理：取得客户/MRE生效语料行并明确目标灯光后，统一byCerence/withCerence路由及离线映射；J90A-EU PI语料产品/DS路由配置负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy当前为2820；未完成项为MRE生效语料行及智能远光灯/自动大灯目标确认。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·classification=chat，meta_id=2820 dialogue:method:reject\n标准1689拒识（草稿）\n马自达项目26049拒识（已锁定、继承未修改）\nJ90A海外LanguageList V1.1·03_Vehicle Settings\nJ90A海外LanguageList内部版V1.0·03_Vehicle Settings",
+          "links": [
+            "http://jira.i-tetris.com/browse/HUR-77192",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1689",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/15",
+            "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+            "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit#gid=657987591"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 329,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/完整评论]挪威语关闭智能远光灯未执行；车端日志显示Cerence语义正确，但离线映射降级2820，在线withCerence又被车外灯安全策略拦截为-6。\nAlchemy：[在线对话·HUR]当前原话直接落classification=chat、meta_id=2820；[标准1689/马自达项目26049]只证明当前拒识链。\n正式缺口：[J90A海外LanguageList V1.1·03_Vehicle Settings全表]及[内部版V1.0_260806·03_Vehicle Settings A1:AQ1900]精确原话均0命中；Jira最新评论仍要求与客户确认智能远光灯/自动大灯冲突。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 329,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：当前平台和实车链路均未正确执行，但目标语料仍未在两份当前LanguageList中落行，且智能远光灯与自动大灯目标存在冲突；不能仅凭工程分析把票直接转DS。\n依据：Jira原票完整评论、Alchemy HUR当前2820、标准1689/马自达项目26049、J90A海外LanguageList V1.1与内部版V1.0精确零命中。\n处理：取得客户/MRE生效语料行并明确目标灯光后，统一byCerence/withCerence路由及离线映射；J90A-EU PI语料产品/DS路由配置负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 329,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 329,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy当前为2820；未完成项为MRE生效语料行及智能远光灯/自动大灯目标确认。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 329,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·classification=chat，meta_id=2820 dialogue:method:reject\n标准1689拒识（草稿）\n马自达项目26049拒识（已锁定、继承未修改）\nJ90A海外LanguageList V1.1·03_Vehicle Settings\nJ90A海外LanguageList内部版V1.0·03_Vehicle Settings"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/HUR-77192"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 86
+                      },
+                      {
+                        "startIndex": 87,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1689"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 99
+                      },
+                      {
+                        "startIndex": 100,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/15"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 123
+                      },
+                      {
+                        "startIndex": 124,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 167
+                      },
+                      {
+                        "startIndex": 168,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit#gid=657987591"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    },
+    {
+      "key": "HUR-72809",
+      "mode": "recheck",
+      "sheetId": 2135747181,
+      "sheetRow": 331,
+      "rowIndex": 330,
+      "previewFingerprint": "e87bf0e071cc7989f167541c649a78bd83810b10e1bc0415ca8ad4072bd698eb",
+      "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+      "changedColumns": [
+        "C",
+        "D",
+        "G",
+        "I",
+        "J"
+      ],
+      "manifest": [
+        {
+          "column": "C",
+          "before": "Jira原票：J90A-EU 荷兰语“Open energiebeheer”执行为打开车辆设置能量管理，而测试预期为能量流App；评论已确认两者不是同一功能，但客户变更语料使用同一表达，现有目标冲突。\nDrive复核：J90A海外LanguageList V1.1·Sheet‘16_Energy Flow’与‘13_Energy Management’各A1:AQ1000检索‘Open energiebeheer’，均0条命中。",
+          "after": "现象：[Jira原票·描述/完整评论]“Open energiebeheer”实车打开车辆设置能量管理，测试预期能量流App，评论确认两者不是同一功能但表达冲突。\nAlchemy：[在线对话·HUR]当前进一步误落1026 media:music:play；[标准1097/马自达项目25979]均是点播歌曲，只证明当前NLU错误。\n正式缺口：[J90A海外LanguageList V1.1]及[内部版V1.0_260806]的16_Energy Flow、13_Energy Management对应全表精确原话均0命中，未取得MRE当前语料条目。",
+          "links": []
+        },
+        {
+          "column": "D",
+          "before": "结论：荷兰语能量流与能量管理同词冲突的当前现象和评论因果已核验，但Alchemy实时证据及同项目正式目标不完整，暂不作确定性定责。\n依据：Jira原票；J90A海外LanguageList V1.1·Sheet‘16_Energy Flow’与‘13_Energy Management’各A1:AQ1000检索‘Open energiebeheer’，均0条命中；Drive候选已逐项审计；Alchemy当前停在SSO登录页。\n处理：重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射；J90A-EU语音语料产品负责人处理。",
+          "after": "结论：当前Alchemy误落音乐，实车历史又打开能量管理；两种实现都不能证明能量流目标。由于同一句荷兰语对应能量流/能量管理的正式语料未落表，暂不直接转语音。\n依据：Jira原票完整评论、Alchemy HUR当前1026、标准1097/马自达项目25979、两版J90A LanguageList相关Sheet精确零命中。\n处理：让客户/MRE明确能量流App与车辆设置能量管理的两套荷兰语表达并提供生效条目，再分别配置项目功能点和回归；J90A-EU荷兰语语料产品负责人处理。",
+          "links": []
+        },
+        {
+          "column": "G",
+          "before": "待复核",
+          "after": "待复核",
+          "links": []
+        },
+        {
+          "column": "I",
+          "before": "重新登录Alchemy并取得MRE当前荷兰语语料条目，明确能量流App与车辆设置能量管理的两套说法及映射；Drive正文已读，仍需补齐同范围决定性条款及Alchemy当前/标准/项目功能点",
+          "after": "Alchemy当前误落音乐；未完成项为MRE两套荷兰语表达及生效功能点。",
+          "links": []
+        },
+        {
+          "column": "J",
+          "before": "Jira原票\nJ90A海外LanguageList V1.1",
+          "after": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·误命中1026 media:music:play，op=open、name=energiebeheer\n标准1097点播歌曲（已锁定），与目标能量功能无关\n马自达项目25979点播歌曲（已锁定、继承未修改）\nJ90A海外LanguageList V1.1·16/13 Sheet\nJ90A海外LanguageList内部版V1.0·16/13 Sheet",
+          "links": [
+            "http://jira.i-tetris.com/browse/HUR-72809",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1097",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/15",
+            "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+            "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit"
+          ]
+        }
+      ],
+      "expectedAfter": {
+        "C": {
+          "visible": "现象：[Jira原票·描述/完整评论]“Open energiebeheer”实车打开车辆设置能量管理，测试预期能量流App，评论确认两者不是同一功能但表达冲突。\nAlchemy：[在线对话·HUR]当前进一步误落1026 media:music:play；[标准1097/马自达项目25979]均是点播歌曲，只证明当前NLU错误。\n正式缺口：[J90A海外LanguageList V1.1]及[内部版V1.0_260806]的16_Energy Flow、13_Energy Management对应全表精确原话均0命中，未取得MRE当前语料条目。",
+          "links": []
+        },
+        "D": {
+          "visible": "结论：当前Alchemy误落音乐，实车历史又打开能量管理；两种实现都不能证明能量流目标。由于同一句荷兰语对应能量流/能量管理的正式语料未落表，暂不直接转语音。\n依据：Jira原票完整评论、Alchemy HUR当前1026、标准1097/马自达项目25979、两版J90A LanguageList相关Sheet精确零命中。\n处理：让客户/MRE明确能量流App与车辆设置能量管理的两套荷兰语表达并提供生效条目，再分别配置项目功能点和回归；J90A-EU荷兰语语料产品负责人处理。",
+          "links": []
+        },
+        "G": {
+          "visible": "待复核",
+          "links": []
+        },
+        "I": {
+          "visible": "Alchemy当前误落音乐；未完成项为MRE两套荷兰语表达及生效功能点。",
+          "links": []
+        },
+        "J": {
+          "visible": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·误命中1026 media:music:play，op=open、name=energiebeheer\n标准1097点播歌曲（已锁定），与目标能量功能无关\n马自达项目25979点播歌曲（已锁定、继承未修改）\nJ90A海外LanguageList V1.1·16/13 Sheet\nJ90A海外LanguageList内部版V1.0·16/13 Sheet",
+          "links": [
+            "http://jira.i-tetris.com/browse/HUR-72809",
+            "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+            "https://alchemy.i-tetris.com/#/functional/points/detail/1097",
+            "https://alchemy.i-tetris.com/#/functional/project/detail/15",
+            "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+            "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit"
+          ]
+        }
+      },
+      "requests": [
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 330,
+              "columnIndex": 2
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "现象：[Jira原票·描述/完整评论]“Open energiebeheer”实车打开车辆设置能量管理，测试预期能量流App，评论确认两者不是同一功能但表达冲突。\nAlchemy：[在线对话·HUR]当前进一步误落1026 media:music:play；[标准1097/马自达项目25979]均是点播歌曲，只证明当前NLU错误。\n正式缺口：[J90A海外LanguageList V1.1]及[内部版V1.0_260806]的16_Energy Flow、13_Energy Management对应全表精确原话均0命中，未取得MRE当前语料条目。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 330,
+              "columnIndex": 3
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "结论：当前Alchemy误落音乐，实车历史又打开能量管理；两种实现都不能证明能量流目标。由于同一句荷兰语对应能量流/能量管理的正式语料未落表，暂不直接转语音。\n依据：Jira原票完整评论、Alchemy HUR当前1026、标准1097/马自达项目25979、两版J90A LanguageList相关Sheet精确零命中。\n处理：让客户/MRE明确能量流App与车辆设置能量管理的两套荷兰语表达并提供生效条目，再分别配置项目功能点和回归；J90A-EU荷兰语语料产品负责人处理。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 330,
+              "columnIndex": 6
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "待复核"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 330,
+              "columnIndex": 8
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Alchemy当前误落音乐；未完成项为MRE两套荷兰语表达及生效功能点。"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue"
+          }
+        },
+        {
+          "updateCells": {
+            "start": {
+              "sheetId": 2135747181,
+              "rowIndex": 330,
+              "columnIndex": 9
+            },
+            "rows": [
+              {
+                "values": [
+                  {
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·描述/全部评论\nAlchemy在线对话·HUR·误命中1026 media:music:play，op=open、name=energiebeheer\n标准1097点播歌曲（已锁定），与目标能量功能无关\n马自达项目25979点播歌曲（已锁定、继承未修改）\nJ90A海外LanguageList V1.1·16/13 Sheet\nJ90A海外LanguageList内部版V1.0·16/13 Sheet"
+                    },
+                    "textFormatRuns": [
+                      {
+                        "startIndex": 0,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/HUR-72809"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 14
+                      },
+                      {
+                        "startIndex": 15,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 82
+                      },
+                      {
+                        "startIndex": 83,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1097"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 108
+                      },
+                      {
+                        "startIndex": 109,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/functional/project/detail/15"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 134
+                      },
+                      {
+                        "startIndex": 135,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 170
+                      },
+                      {
+                        "startIndex": 171,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.0667,
+                            "green": 0.3333,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": "userEnteredValue,textFormatRuns"
+          }
+        }
+      ]
+    }
+  ]
+}

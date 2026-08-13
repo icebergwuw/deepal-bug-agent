@@ -1,0 +1,754 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-48572",
+  "comment_causality": "C385-5 STG 在火锅店推荐播报中插入“导航去观音桥”，随后说“第一个”时选中了原火锅店列表；关联总票 ADS-48560 与评论均记录该二次交互现象，研发所述“可见优先级高”只证明当前实现。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-48560",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48572 Jira当前页面",
+      "source_location": "Jira字段、描述、附件区、问题链接及活动日志（全部评论按时间顺序）",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385-5语音产品/可见交互负责人",
+      "trigger": "POI推荐二次交互选错列表",
+      "target_behavior": "C385-5 STG 在火锅店推荐播报中插入“导航去观音桥”，随后说“第一个”时选中了原火锅店列表；关联总票 ADS-48560 与评论均记录该二次交互现象，研发所述“可见优先级高”只证明当前实现。",
+      "match": "exact",
+      "reason": "证明本票当前实现、复现和评论因果，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-map-v06",
+      "source": "地图导航交互V0.6",
+      "source_location": "修改记录及POI/备选站/列表选择相关页面正文；未检出‘火锅店/第一个/可见节点优先级’条款",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "C385-5语音产品/可见交互负责人",
+      "trigger": "POI推荐二次交互选错列表",
+      "target_behavior": "定义地图POI及列表交互，但缺本票跨列表二次交互优先级",
+      "match": "gap",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义；C385-5语音产品/可见交互负责人处理。",
+      "reason": "正文已读，资料覆盖C385/C673地图交互但缺决定性优先级条款。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "原话=推荐一下附近的火锅店 → 导航去观音桥 → 第一个；当前结果=依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "推荐一下附近的火锅店 → 导航去观音桥 → 第一个",
+      "target_behavior": "依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209",
+      "match": "exact",
+      "reason": "当前登录态下按Jira原话实测；只证明当前平台结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "标准1433（已锁定）导航去地址，定义前轮POI列表二次交互和本轮完整Query匹配",
+      "source_location": "标准功能详情ID 1433：说明、Query举例、下发参数、执行策略及状态",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "推荐一下附近的火锅店 → 导航去观音桥 → 第一个",
+      "target_behavior": "标准1433（已锁定）导航去地址，定义前轮POI列表二次交互和本轮完整Query匹配",
+      "match": "exact",
+      "reason": "证明标准语义、参数与执行策略；不单独替代正式PRD/UE。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "深蓝项目24552（已锁定、继承未修改）",
+      "source_location": "项目功能列表按meta_id检索：深蓝项目24552（已锁定、继承未修改）",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "推荐一下附近的火锅店 → 导航去观音桥 → 第一个",
+      "target_behavior": "深蓝项目24552（已锁定、继承未修改）",
+      "match": "exact",
+      "material": false,
+      "reason": "已实时核验项目功能点继承状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：同项目PRD、专项定义、交互、UE和正式配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "source_ids": [
+        "drive-map-v06"
+      ],
+      "reason": "已完成同项目正式资料检索，但未读到可直接定义本票目标行为的生效条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "disposition": "read",
+            "source_ids": [
+              "drive-map-v06"
+            ]
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48572-formal_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "not_found",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：地图导航主PRD",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "source_ids": [],
+      "reason": "已逐项审计检索回执；命中项不是本检查允许的生效来源，或正文不定义本票目标。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48572-main_prd_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：地图专项定义",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "source_ids": [
+        "drive-map-v06"
+      ],
+      "reason": "已检索地图专项定义，未读到同项目同场景的生效目标条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "disposition": "read",
+            "source_ids": [
+              "drive-map-v06"
+            ]
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48572-special_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：生效可见配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "source_ids": [],
+      "reason": "已逐项审计检索回执；命中项不是本检查允许的生效来源，或正文不定义本票目标。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48572-formal_config_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：交互文档或UE",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "source_ids": [
+        "drive-map-v06"
+      ],
+      "reason": "已检索交互文档或UE，未读到同项目同页面的生效目标条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三段原话与上下文结果，并补齐POI推荐、导航列表和可见节点的优先级正式定义",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "disposition": "read",
+            "source_ids": [
+              "drive-map-v06"
+            ]
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48572-interaction_or_ue_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "POI推荐二次交互选错列表"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已登录并实测：依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "POI推荐二次交互选错列表"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "标准1433（已锁定）导航去地址，定义前轮POI列表二次交互和本轮完整Query匹配",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "POI推荐二次交互选错列表"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C385-5语音产品/可见交互负责人"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "深蓝项目24552（已锁定、继承未修改）",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：Alchemy当前三轮上下文已切换到观音桥，车端仍选旧火锅店列表的现象成立；但现行正式交互资料未定义新导航Query打断后新旧列表与可见节点的优先级，不能只凭平台当前实现直接定责。\n依据：Jira原票及ADS-48560、Alchemy BIGSUR三轮结果、标准1433/深蓝项目24552、地图导航交互V0.6。\n处理：补齐跨列表打断后的上下文替换和可见优先级条款，再按同三轮用例复测并定责；C385-5语音上下文/可见交互产品负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "推荐一下附近的火锅店 → 导航去观音桥 → 第一个",
+    "alchemy_tested": true,
+    "alchemy_result": "依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209",
+    "meta_id": "依次命中1208、1209；第三轮返回观音桥目的地1209并追加list_offset=1的1209",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1433（已锁定）导航去地址，定义前轮POI列表二次交互和本轮完整Query匹配",
+      "assessment": "已读取说明、Query举例、下发参数、执行策略与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24552（已锁定、继承未修改）",
+      "assessment": "已按meta_id读取项目功能列表并核对继承及状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "Alchemy链已补齐；未完成项为跨列表打断后的正式优先级定义。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C385-5语音上下文/可见交互产品负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：Alchemy当前三轮上下文已切换到观音桥，车端仍选旧火锅店列表的现象成立；但现行正式交互资料未定义新导航Query打断后新旧列表与可见节点的优先级，不能只凭平台当前实现直接定责。\n依据：Jira原票及ADS-48560、Alchemy BIGSUR三轮结果、标准1433/深蓝项目24552、地图导航交互V0.6。\n处理：补齐跨列表打断后的上下文替换和可见优先级条款，再按同三轮用例复测并定责；C385-5语音上下文/可见交互产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "20260813T113000+0800-aug12-alchemy-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 322
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48572-formal_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48572-main_prd_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48572-special_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48572-formal_config_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48572-interaction_or_ue_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48572"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 POI 二次交互 功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 POI 二次交互 功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ]
+}

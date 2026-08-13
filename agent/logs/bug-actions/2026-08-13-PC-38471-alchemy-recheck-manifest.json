@@ -1,0 +1,545 @@
+{
+  "schema_version": 4,
+  "jira_key": "PC-38471",
+  "comment_causality": "C673-ICA 语音设置页说“播放/编辑/删除第二个”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-38471 Jira当前页面",
+      "source_location": "Jira字段、描述、附件区、问题链接及活动日志（全部评论按时间顺序）",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-ICA可见即可说产品负责人",
+      "trigger": "语音设置页第二项播放编辑删除不可见",
+      "target_behavior": "C673-ICA 语音设置页说“播放/编辑/删除第二个”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。",
+      "match": "exact",
+      "reason": "证明本票当前实现、复现和评论因果，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-c673-voice",
+      "source": "C673语音控制V1.0.5",
+      "source_location": "功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C673-ICA可见即可说产品负责人",
+      "trigger": "语音设置页第二项播放编辑删除不可见",
+      "target_behavior": "通用语音车控定义未覆盖本票可见列表操作",
+      "match": "gap",
+      "material": true,
+      "next_action": "重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则；C673-ICA可见即可说产品负责人处理。",
+      "reason": "正文已读，缺本票可见即可说目标。"
+    },
+    {
+      "source_id": "drive-1305-v26",
+      "source": "8295页面开启需求v2.6",
+      "source_location": "Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-ICA可见即可说产品负责人",
+      "trigger": "语音设置页第二项播放编辑删除不可见",
+      "target_behavior": "只定义打开新增唤醒词页面，不定义列表项播放/编辑/删除及序号消歧",
+      "match": "partial",
+      "material": false,
+      "next_action": "重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则；C673-ICA可见即可说产品负责人处理。",
+      "reason": "已按Sheet/行读取，未覆盖本票操作目标。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "原话=播放第二个；编辑第二个；删除第二个；当前结果=分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "播放第二个；编辑第二个；删除第二个",
+      "target_behavior": "分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底",
+      "match": "exact",
+      "reason": "当前登录态下按Jira原话实测；只证明当前平台结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "标准1470资源切换、1425列表选择、1442兜底均已锁定",
+      "source_location": "标准功能详情ID 1425：说明、Query举例、下发参数、执行策略及状态",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "播放第二个；编辑第二个；删除第二个",
+      "target_behavior": "标准1470资源切换、1425列表选择、1442兜底均已锁定",
+      "match": "exact",
+      "reason": "证明标准语义、参数与执行策略；不单独替代正式PRD/UE。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义",
+      "source_location": "项目功能列表按meta_id检索：深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "播放第二个；编辑第二个；删除第二个",
+      "target_behavior": "深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义",
+      "match": "exact",
+      "material": false,
+      "reason": "已实时核验项目功能点继承状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：同项目PRD、专项定义、交互、UE和正式配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38471"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "source_ids": [
+        "drive-c673-voice",
+        "drive-1305-v26"
+      ],
+      "reason": "已完成同项目正式资料检索，但未读到可直接定义本票目标行为的生效条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+            "title": "C673_功能描述_语音控制V1.0.5.docx",
+            "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-c673-voice"
+            ]
+          },
+          {
+            "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+            "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-1305-v26"
+            ]
+          },
+          {
+            "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+            "title": "奇瑞T29 语音车控功能点",
+            "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "PC-38471-formal_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：生效可见配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38471"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "source_ids": [
+        "drive-1305-v26"
+      ],
+      "reason": "已检索生效可见配置，未读到同项目同页面的生效目标条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+            "title": "C673_功能描述_语音控制V1.0.5.docx",
+            "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+            "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-1305-v26"
+            ]
+          },
+          {
+            "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+            "title": "奇瑞T29 语音车控功能点",
+            "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "PC-38471-formal_config_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：交互文档或UE",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38471"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "source_ids": [],
+      "reason": "已逐项审计检索回执；命中项不是本检查允许的生效来源，或正文不定义本票目标。",
+      "material": true,
+      "next_action": "重新登录Alchemy并补齐语音设置页生效可见配置、列表序号节点及冲突消歧规则",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+            "title": "C673_功能描述_语音控制V1.0.5.docx",
+            "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+            "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+            "title": "奇瑞T29 语音车控功能点",
+            "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "PC-38471-interaction_or_ue_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "语音设置页第二项播放编辑删除不可见"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已登录并实测：分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "语音设置页第二项播放编辑删除不可见"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "标准1470资源切换、1425列表选择、1442兜底均已锁定",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "语音设置页第二项播放编辑删除不可见"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-ICA可见即可说产品负责人"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：三句短指令在无页面上下文时分别落媒体、通用列表和兜底，不能用该结果证明语音设置页内的目标动作；缺少生效可见节点和页面上下文注入规则，暂不定责。\n依据：Jira原票、Alchemy BIGSUR三句结果、标准/深蓝项目功能点、C673语音控制V1.0.5、8295页面开启需求v2.6。\n处理：取得列表项播放/编辑/删除节点及上下文注入规则后，在语音设置页复测同三句；C673-ICA可见即可说产品负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "播放第二个；编辑第二个；删除第二个",
+    "alchemy_tested": true,
+    "alchemy_result": "分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底",
+    "meta_id": "分别误落1035媒体切换、1455通用列表选择、1919车型无此功能兜底",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1470资源切换、1425列表选择、1442兜底均已锁定",
+      "assessment": "已读取说明、Query举例、下发参数、执行策略与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24583/24544/24561均存在；当前原话未形成语音设置页专用语义",
+      "assessment": "已按meta_id读取项目功能列表并核对继承及状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "Alchemy链已补齐；未完成项为页面可见节点和上下文注入规则。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C673-ICA可见即可说产品负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：三句短指令在无页面上下文时分别落媒体、通用列表和兜底，不能用该结果证明语音设置页内的目标动作；缺少生效可见节点和页面上下文注入规则，暂不定责。\n依据：Jira原票、Alchemy BIGSUR三句结果、标准/深蓝项目功能点、C673语音控制V1.0.5、8295页面开启需求v2.6。\n处理：取得列表项播放/编辑/删除节点及上下文注入规则后，在语音设置页复测同三句；C673-ICA可见即可说产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "20260813T113000+0800-aug12-alchemy-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 326
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-38471-formal_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38471"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+          "title": "C673_功能描述_语音控制V1.0.5.docx",
+          "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+          "title": "奇瑞T29 语音车控功能点",
+          "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38471-formal_config_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38471"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+          "title": "C673_功能描述_语音控制V1.0.5.docx",
+          "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+          "title": "奇瑞T29 语音车控功能点",
+          "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38471-interaction_or_ue_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38471"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+          "title": "C673_功能描述_语音控制V1.0.5.docx",
+          "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+          "title": "奇瑞T29 语音车控功能点",
+          "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ]
+}

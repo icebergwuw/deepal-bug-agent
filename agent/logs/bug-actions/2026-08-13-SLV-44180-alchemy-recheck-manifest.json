@@ -1,0 +1,334 @@
+{
+  "schema_version": 4,
+  "jira_key": "SLV-44180",
+  "comment_causality": "C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "PC-38411",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      },
+      {
+        "key": "PC-38412",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      },
+      {
+        "key": "SLV-44177",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      },
+      {
+        "key": "SLV-44179",
+        "relationship": "Jira描述、评论或问题链接直接引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件、全部评论和关联关系；仅用于实现因果或同类问题范围，不替代本票正式目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SLV-44180 Jira当前页面",
+      "source_location": "Jira字段、描述、附件区、问题链接及活动日志（全部评论按时间顺序）",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673基础款天气语音产品负责人",
+      "trigger": "行车指数查询参数映射失败",
+      "target_behavior": "C673基础款三条行车指数问法均命中 meta_id 1251，但评论记录 slot canonical 为空、天气接口使用英文映射，导致车端无法匹配；PC-38411、PC-38412、SLV-44177、SLV-44179 均已完整读取，仅证明同类实现问题。",
+      "match": "exact",
+      "reason": "证明本票当前实现、复现和评论因果，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-deepal-function",
+      "source": "深蓝项目语音功能点260731",
+      "source_location": "全文提取检索‘行车指数’无命中；meta_id 1251仅出现在行14‘暂停播报’继承列，未形成行车指数正式映射",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673基础款天气语音产品负责人",
+      "trigger": "行车指数查询参数映射失败",
+      "target_behavior": "未找到行车指数到天气接口字段的正式映射",
+      "match": "gap",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射；C673基础款天气语音产品负责人处理。",
+      "reason": "正文已读，但未覆盖本票功能点与slot映射。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·SLV",
+      "source_location": "原话=适合行车吗；适合开车吗；行车指数是多少；当前结果=三句均命中1251 weather:query:suggestion，suggestion canonical=traffic",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "SLV",
+      "trigger": "适合行车吗；适合开车吗；行车指数是多少",
+      "target_behavior": "三句均命中1251 weather:query:suggestion，suggestion canonical=traffic",
+      "match": "exact",
+      "reason": "当前登录态下按Jira原话实测；只证明当前平台结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数",
+      "source_location": "标准功能详情ID 1398：说明、Query举例、下发参数、执行策略及状态",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "SLV",
+      "trigger": "适合行车吗；适合开车吗；行车指数是多少",
+      "target_behavior": "标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数",
+      "match": "exact",
+      "reason": "证明标准语义、参数与执行策略；不单独替代正式PRD/UE。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "深蓝项目26748（已锁定、继承未修改）",
+      "source_location": "项目功能列表按meta_id检索：深蓝项目26748（已锁定、继承未修改）",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "SLV",
+      "trigger": "适合行车吗；适合开车吗；行车指数是多少",
+      "target_behavior": "深蓝项目26748（已锁定、继承未修改）",
+      "match": "exact",
+      "material": false,
+      "reason": "已实时核验项目功能点继承状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：同项目PRD、专项定义、交互、UE和正式配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44180"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 行车指数 语音 功能点"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 行车指数 语音 功能点"
+        }
+      ],
+      "source_ids": [
+        "drive-deepal-function"
+      ],
+      "reason": "已完成同项目正式资料检索，但未读到可直接定义本票目标行为的生效条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy核验三条原话、标准/项目功能点及slot property，并补齐行车指数到天气接口字段的正式映射",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1ffuMGFP-jf07RmDSdXg9JBcruks7KK2Z",
+            "title": "语音对标评测记录表S05S07S09-20250918.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1ffuMGFP-jf07RmDSdXg9JBcruks7KK2Z/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T",
+            "title": "语音功能功能点-二轮白名单（短期）.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa",
+            "title": "深蓝项目语音功能点 260731.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-deepal-function"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "SLV-44180-formal_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "行车指数查询参数映射失败"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已登录并实测：三句均命中1251 weather:query:suggestion，suggestion canonical=traffic",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "行车指数查询参数映射失败"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "行车指数查询参数映射失败"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673基础款天气语音产品负责人"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "深蓝项目26748（已锁定、继承未修改）",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：当前SLV在线平台已为三句行车问法下发canonical=traffic，旧日志中的canonical为空现象已不复现于当前平台；先按原车型/版本升级后的同环境回归，不再维持“Alchemy未核验”。\n依据：Jira原票及四个关联票、Alchemy SLV三句当前结果、标准1398/深蓝项目26748、深蓝项目语音功能点260731第49行。\n处理：在C673基础款最新集成版本回归三句并核对天气接口入参；若仍失败转天气接口映射研发，否则关闭；C673基础款天气语音测试/研发负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "适合行车吗；适合开车吗；行车指数是多少",
+    "alchemy_tested": true,
+    "alchemy_result": "三句均命中1251 weather:query:suggestion，suggestion canonical=traffic",
+    "meta_id": "三句均命中1251 weather:query:suggestion，suggestion canonical=traffic",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数",
+      "assessment": "已读取说明、Query举例、下发参数、执行策略与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目26748（已锁定、继承未修改）",
+      "assessment": "已按meta_id读取项目功能列表并核对继承及状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "Alchemy当前三句均已下发traffic；未完成项为实车最新版本回归与天气接口入参核对。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C673基础款天气语音测试/研发负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：当前SLV在线平台已为三句行车问法下发canonical=traffic，旧日志中的canonical为空现象已不复现于当前平台；先按原车型/版本升级后的同环境回归，不再维持“Alchemy未核验”。\n依据：Jira原票及四个关联票、Alchemy SLV三句当前结果、标准1398/深蓝项目26748、深蓝项目语音功能点260731第49行。\n处理：在C673基础款最新集成版本回归三句并核对天气接口入参；若仍失败转天气接口映射研发，否则关闭；C673基础款天气语音测试/研发负责人处理。"
+  },
+  "run_context": {
+    "run_id": "20260813T113000+0800-aug12-alchemy-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 328
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SLV-44180-formal_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44180"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝 行车指数 语音 功能点"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 行车指数 语音 功能点"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ffuMGFP-jf07RmDSdXg9JBcruks7KK2Z",
+          "title": "语音对标评测记录表S05S07S09-20250918.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ffuMGFP-jf07RmDSdXg9JBcruks7KK2Z/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T",
+          "title": "语音功能功能点-二轮白名单（短期）.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa",
+          "title": "深蓝项目语音功能点 260731.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}
