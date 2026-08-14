@@ -23,6 +23,7 @@ REQUIRED_FILES = (
     "agent/context.md",
     "agent/bug-owners/registry.yaml",
     "agent/config/evidence-requirements.json",
+    "agent/config/external-skills.json",
     "agent/config/sheet-update-modes.json",
     "agent/config/local-profile.example.json",
     "agent/skills/deepal-product-bug-handler/SKILL.md",
@@ -241,6 +242,28 @@ def validate(root: Path, skill: Path) -> list[str]:
                         errors.append(f"更新模式配置错误：{mode}.{field}")
         except (KeyError, TypeError, json.JSONDecodeError):
             errors.append("sheet-update-modes.json 无法解析")
+
+    external_skills_path = root / "agent/config/external-skills.json"
+    if external_skills_path.is_file():
+        try:
+            external_skills = json.loads(read(external_skills_path))
+            audit_skill = next(
+                skill
+                for skill in external_skills["skills"]
+                if skill.get("name") == "audit-ue-voice-coverage"
+            )
+            if external_skills.get("schema_version") != 1:
+                errors.append("external-skills.json schema_version 必须为 1")
+            if audit_skill.get("visibility") != "private":
+                errors.append("UE 语音覆盖 Skill 必须使用私有仓库")
+            if not re.fullmatch(r"v\d+\.\d+\.\d+", audit_skill.get("version", "")):
+                errors.append("UE 语音覆盖 Skill 缺少独立语义版本")
+            if not re.fullmatch(r"[0-9a-f]{40}", audit_skill.get("commit", "")):
+                errors.append("UE 语音覆盖 Skill 缺少精确提交锁定")
+            if "audit-ue-voice-coverage" not in audit_skill.get("repository", ""):
+                errors.append("UE 语音覆盖 Skill 仓库地址无效")
+        except (KeyError, StopIteration, TypeError, json.JSONDecodeError):
+            errors.append("external-skills.json 无法解析或缺少 UE 语音覆盖 Skill")
 
     onboarding = read(root / "agent/onboarding.md")
     for token in (

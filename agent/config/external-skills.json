@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "audit-ue-voice-coverage",
+      "repository": "https://github.com/icebergwuw/audit-ue-voice-coverage.git",
+      "visibility": "private",
+      "version": "v1.0.0",
+      "commit": "7fd08f9ca4f3d553d37ac24e9fc48011849fb21d",
+      "install_path": "${CODEX_HOME:-~/.codex}/skills/audit-ue-voice-coverage"
+    }
+  ]
+}

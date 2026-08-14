@@ -1,10 +1,10 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.13.0-trial.1`
+- 当前版本：`v1.13.1-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-08-14`
-- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/audit-ue-voice-coverage/SKILL.md`、`agent/skills/audit-ue-voice-coverage/agents/openai.yaml`、`agent/skills/audit-ue-voice-coverage/references/audit-contract.md`、`agent/skills/audit-ue-voice-coverage/references/team-module-sources.json`、`agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`、`agent/skills/audit-ue-voice-coverage/scripts/validate_team_sources.py`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
-- Skill 模板：Bug 流程使用 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核使用 `agent/skills/audit-ue-voice-coverage/SKILL.md`。安装位置由 `$CODEX_HOME` 决定，未设置时使用当前用户目录下的 `.codex/skills/<skill-name>/SKILL.md`。安装副本不定义独立业务口径且必须与仓库模板一致。
+- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
+- Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
 ## 版本规则
@@ -14,6 +14,39 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.13.1-trial.1 — 2026-08-14
+
+### 试行内容
+
+- 将 `audit-ue-voice-coverage` 从 Bug 规则仓库拆分到独立私有 GitHub 仓库，以 `v1.0.0` 和精确提交号独立管理。
+- Bug 仓库只保留外部 Skill 依赖声明、审核 manifest 和操作日志，不再保留第二份 Skill 源码。
+- 架构校验新增外部 Skill 的私有性、语义版本和精确提交锁定检查。
+
+### 修改原因
+
+- UE 语音覆盖审核流程与 Bug 处理规则是两个不同产品；共用 `v1.13` 会让同事误以为 Skill 版本等于 Bug 处理规则版本。
+- 单一源仓库可以让同事直接安装和升级 Skill，避免 Bug 仓库中的复制源码漂移。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/config/external-skills.json`
+- `agent/rules-version.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/logs/bug-actions/2026-08-14-audit-skill-repository-split.md`
+- 删除当前源码中的 `agent/skills/audit-ue-voice-coverage/`，历史记录中的原路径保留不变。
+
+### 验证案例
+
+- 独立 Skill 结构校验、团队来源校验和三份已有语音覆盖 manifest 校验全部通过。
+- Bug 项目架构校验必须识别外部 Skill 的私有仓库、`v1.0.0` 和 40 位提交号。
+- 删除 Bug 仓库中的 Skill 副本后，现有 Bug 单元测试和审核 manifest 校验仍必须通过。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.13.0-trial.1`，不使用 `git reset --hard`。
+- 回滚 Bug 仓库引用不删除已创建的独立私有 Skill 仓库、标签或历史审核记录。
 
 ## v1.13.0-trial.1 — 2026-08-14
 
