@@ -1,0 +1,1468 @@
+{
+  "items": [
+    {
+      "date": "2026-08-14",
+      "key": "SLV-44574",
+      "summary": "通话记录同步按钮未执行可见",
+      "info": "现象：蓝牙电话通话记录数据未同步态说‘同步’，3/3未执行；Jira附件录屏显示手动点击可进入同步确认。正式配置：非3D可见表V1.0·蓝牙电话第5行已定义btphone_calllog_synchronize，subject=同步|同步数据。实时链路：Alchemy BIGSUR中‘同步/点击同步/选择同步’均误命中1273温区同步且visible_result为空。",
+      "judgment": "结论：正式配置已支持通话记录数据未同步态的‘同步’按钮，当前原话被温区同步功能点抢占，属于语音NLU/页面可见路由缺陷，可转语音处理。\n依据：非3D可见表V1.0·蓝牙电话第5行；Alchemy BIGSUR实时结果·1273/1305；Jira附件录屏。\n处理：深蓝语音NLU/可见路由配置负责人修正页面上下文优先级：当前节点可见时让‘同步/同步数据’命中btphone_calllog_synchronize，避免落1273温区同步或1305仅打开通话记录，并回归‘同步、点击同步、选择同步、同步通话记录’。",
+      "status": "可转语音",
+      "note": "未执行Jira评论/转派/状态变更；SLV-44564为错误日志引用，已排除。",
+      "links": [
+        {
+          "label": "Jira原票·SLV-44574",
+          "url": "http://jira.i-tetris.com/browse/SLV-44574"
+        },
+        {
+          "label": "非3D可见表V1.0·蓝牙电话第5行",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+        },
+        {
+          "label": "Alchemy BIGSUR·1273/1305",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "蓝牙电话PRD v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
+        }
+      ],
+      "info_links": [
+        {
+          "label": "Jira附件录屏",
+          "url": "http://jira.i-tetris.com/browse/SLV-44574"
+        },
+        {
+          "label": "非3D可见表V1.0·蓝牙电话第5行",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+        },
+        {
+          "label": "Alchemy BIGSUR",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ],
+      "judgment_links": [
+        {
+          "label": "非3D可见表V1.0·蓝牙电话第5行",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+        },
+        {
+          "label": "Alchemy BIGSUR实时结果·1273/1305",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        },
+        {
+          "label": "Jira附件录屏",
+          "url": "http://jira.i-tetris.com/browse/SLV-44574"
+        }
+      ]
+    }
+  ],
+  "readback": {
+    "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?ouid=109136590267032001782",
+    "properties": {
+      "title": "吴优工作说明",
+      "locale": "en_US",
+      "timeZone": "Asia/Shanghai"
+    },
+    "sheets": [
+      {
+        "properties": {
+          "sheetId": 2135747181,
+          "title": "bug",
+          "index": 3,
+          "sheetType": "GRID",
+          "gridProperties": {
+            "rowCount": 1012,
+            "columnCount": 10,
+            "frozenRowCount": 1,
+            "hideGridlines": true
+          }
+        },
+        "data": [
+          {
+            "startRow": 333,
+            "rowData": [
+              {
+                "values": [
+                  {
+                    "formattedValue": "2026-08-14",
+                    "userEnteredValue": {
+                      "stringValue": "2026-08-14"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "2026-08-14"
+                    },
+                    "userEnteredFormat": {
+                      "numberFormat": {
+                        "type": "DATE",
+                        "pattern": "yyyy-mm-dd"
+                      },
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.05882353,
+                          "green": 0.24705882,
+                          "blue": 0.6
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.05882353,
+                            "green": 0.24705882,
+                            "blue": 0.6
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "SLV-44574｜通话记录同步按钮未执行可见",
+                    "userEnteredValue": {
+                      "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44574\",\"SLV-44574｜通话记录同步按钮未执行可见\")"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "SLV-44574｜通话记录同步按钮未执行可见"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.05882353,
+                          "green": 0.24705882,
+                          "blue": 0.6
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.05882353,
+                            "green": 0.24705882,
+                            "blue": 0.6
+                          }
+                        },
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/SLV-44574"
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "hyperlink": "http://jira.i-tetris.com/browse/SLV-44574"
+                  },
+                  {
+                    "formattedValue": "现象：蓝牙电话通话记录数据未同步态说‘同步’，3/3未执行；Jira附件录屏显示手动点击可进入同步确认。正式配置：非3D可见表V1.0·蓝牙电话第5行已定义btphone_calllog_synchronize，subject=同步|同步数据。实时链路：Alchemy BIGSUR中‘同步/点击同步/选择同步’均误命中1273温区同步且visible_result为空。",
+                    "userEnteredValue": {
+                      "stringValue": "现象：蓝牙电话通话记录数据未同步态说‘同步’，3/3未执行；Jira附件录屏显示手动点击可进入同步确认。正式配置：非3D可见表V1.0·蓝牙电话第5行已定义btphone_calllog_synchronize，subject=同步|同步数据。实时链路：Alchemy BIGSUR中‘同步/点击同步/选择同步’均误命中1273温区同步且visible_result为空。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "现象：蓝牙电话通话记录数据未同步态说‘同步’，3/3未执行；Jira附件录屏显示手动点击可进入同步确认。正式配置：非3D可见表V1.0·蓝牙电话第5行已定义btphone_calllog_synchronize，subject=同步|同步数据。实时链路：Alchemy BIGSUR中‘同步/点击同步/选择同步’均误命中1273温区同步且visible_result为空。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 30,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/SLV-44574"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 38
+                      },
+                      {
+                        "startIndex": 57,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 75
+                      },
+                      {
+                        "startIndex": 127,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 141
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "结论：正式配置已支持通话记录数据未同步态的‘同步’按钮，当前原话被温区同步功能点抢占，属于语音NLU/页面可见路由缺陷，可转语音处理。\n依据：非3D可见表V1.0·蓝牙电话第5行；Alchemy BIGSUR实时结果·1273/1305；Jira附件录屏。\n处理：深蓝语音NLU/可见路由配置负责人修正页面上下文优先级：当前节点可见时让‘同步/同步数据’命中btphone_calllog_synchronize，避免落1273温区同步或1305仅打开通话记录，并回归‘同步、点击同步、选择同步、同步通话记录’。",
+                    "userEnteredValue": {
+                      "stringValue": "结论：正式配置已支持通话记录数据未同步态的‘同步’按钮，当前原话被温区同步功能点抢占，属于语音NLU/页面可见路由缺陷，可转语音处理。\n依据：非3D可见表V1.0·蓝牙电话第5行；Alchemy BIGSUR实时结果·1273/1305；Jira附件录屏。\n处理：深蓝语音NLU/可见路由配置负责人修正页面上下文优先级：当前节点可见时让‘同步/同步数据’命中btphone_calllog_synchronize，避免落1273温区同步或1305仅打开通话记录，并回归‘同步、点击同步、选择同步、同步通话记录’。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "结论：正式配置已支持通话记录数据未同步态的‘同步’按钮，当前原话被温区同步功能点抢占，属于语音NLU/页面可见路由缺陷，可转语音处理。\n依据：非3D可见表V1.0·蓝牙电话第5行；Alchemy BIGSUR实时结果·1273/1305；Jira附件录屏。\n处理：深蓝语音NLU/可见路由配置负责人修正页面上下文优先级：当前节点可见时让‘同步/同步数据’命中btphone_calllog_synchronize，避免落1273温区同步或1305仅打开通话记录，并回归‘同步、点击同步、选择同步、同步通话记录’。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {},
+                      {
+                        "startIndex": 71,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 89
+                      },
+                      {
+                        "startIndex": 90,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 118
+                      },
+                      {
+                        "startIndex": 119,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/SLV-44574"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 127
+                      }
+                    ]
+                  },
+                  {
+                    "formattedValue": "FALSE",
+                    "userEnteredValue": {
+                      "boolValue": false
+                    },
+                    "effectiveValue": {
+                      "boolValue": false
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "dataValidation": {
+                      "condition": {
+                        "type": "BOOLEAN"
+                      },
+                      "strict": true
+                    }
+                  },
+                  {
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "可转语音",
+                    "userEnteredValue": {
+                      "stringValue": "可转语音"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "可转语音"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "horizontalAlignment": "CENTER",
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": true
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "未执行Jira评论/转派/状态变更；SLV-44564为错误日志引用，已排除。",
+                    "userEnteredValue": {
+                      "stringValue": "未执行Jira评论/转派/状态变更；SLV-44564为错误日志引用，已排除。"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "未执行Jira评论/转派/状态变更；SLV-44564为错误日志引用，已排除。"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "formattedValue": "Jira原票·SLV-44574\n非3D可见表V1.0·蓝牙电话第5行\nAlchemy BIGSUR·1273/1305\n蓝牙电话PRD v2.7",
+                    "userEnteredValue": {
+                      "stringValue": "Jira原票·SLV-44574\n非3D可见表V1.0·蓝牙电话第5行\nAlchemy BIGSUR·1273/1305\n蓝牙电话PRD v2.7"
+                    },
+                    "effectiveValue": {
+                      "stringValue": "Jira原票·SLV-44574\n非3D可见表V1.0·蓝牙电话第5行\nAlchemy BIGSUR·1273/1305\n蓝牙电话PRD v2.7"
+                    },
+                    "userEnteredFormat": {
+                      "backgroundColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      },
+                      "borders": {
+                        "top": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "bottom": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8784314,
+                            "green": 0.8980392,
+                            "blue": 0.92941177
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8784314,
+                              "green": 0.8980392,
+                              "blue": 0.92941177
+                            }
+                          }
+                        },
+                        "left": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        },
+                        "right": {
+                          "style": "SOLID",
+                          "width": 1,
+                          "color": {
+                            "red": 0.8980392,
+                            "green": 0.91764706,
+                            "blue": 0.9490196
+                          },
+                          "colorStyle": {
+                            "rgbColor": {
+                              "red": 0.8980392,
+                              "green": 0.91764706,
+                              "blue": 0.9490196
+                            }
+                          }
+                        }
+                      },
+                      "padding": {
+                        "top": 6,
+                        "right": 8,
+                        "bottom": 6,
+                        "left": 8
+                      },
+                      "verticalAlignment": "MIDDLE",
+                      "wrapStrategy": "WRAP",
+                      "textFormat": {
+                        "foregroundColor": {
+                          "red": 0.11764706,
+                          "green": 0.14901961,
+                          "blue": 0.2
+                        },
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.11764706,
+                            "green": 0.14901961,
+                            "blue": 0.2
+                          }
+                        }
+                      },
+                      "hyperlinkDisplayType": "LINKED",
+                      "backgroundColorStyle": {
+                        "rgbColor": {
+                          "red": 1,
+                          "green": 1,
+                          "blue": 1
+                        }
+                      }
+                    },
+                    "textFormatRuns": [
+                      {
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "http://jira.i-tetris.com/browse/SLV-44574"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 16
+                      },
+                      {
+                        "startIndex": 17,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 35
+                      },
+                      {
+                        "startIndex": 36,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                          }
+                        }
+                      },
+                      {
+                        "startIndex": 60
+                      },
+                      {
+                        "startIndex": 61,
+                        "format": {
+                          "foregroundColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          },
+                          "underline": true,
+                          "foregroundColorStyle": {
+                            "rgbColor": {
+                              "red": 0.06666667,
+                              "green": 0.32941177,
+                              "blue": 0.8
+                            }
+                          },
+                          "link": {
+                            "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

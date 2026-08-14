@@ -1,0 +1,297 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 333,
+          "endRowIndex": 334,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 333,
+          "endRowIndex": 334,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 333,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-14"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44574\",\"SLV-44574｜通话记录同步按钮未执行可见\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：蓝牙电话通话记录数据未同步态说‘同步’，3/3未执行；Jira附件录屏显示手动点击可进入同步确认。正式配置：非3D可见表V1.0·蓝牙电话第5行已定义btphone_calllog_synchronize，subject=同步|同步数据。实时链路：Alchemy BIGSUR中‘同步/点击同步/选择同步’均误命中1273温区同步且visible_result为空。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 30,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44574"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 38
+                  },
+                  {
+                    "startIndex": 57,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 75
+                  },
+                  {
+                    "startIndex": 127,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 141
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：正式配置已支持通话记录数据未同步态的‘同步’按钮，当前原话被温区同步功能点抢占，属于语音NLU/页面可见路由缺陷，可转语音处理。\n依据：非3D可见表V1.0·蓝牙电话第5行；Alchemy BIGSUR实时结果·1273/1305；Jira附件录屏。\n处理：深蓝语音NLU/可见路由配置负责人修正页面上下文优先级：当前节点可见时让‘同步/同步数据’命中btphone_calllog_synchronize，避免落1273温区同步或1305仅打开通话记录，并回归‘同步、点击同步、选择同步、同步通话记录’。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 71,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  },
+                  {
+                    "startIndex": 90,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 118
+                  },
+                  {
+                    "startIndex": 119,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44574"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 127
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转语音"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "未执行Jira评论/转派/状态变更；SLV-44564为错误日志引用，已排除。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·SLV-44574\n非3D可见表V1.0·蓝牙电话第5行\nAlchemy BIGSUR·1273/1305\n蓝牙电话PRD v2.7"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44574"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 35
+                  },
+                  {
+                    "startIndex": 36,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 60
+                  },
+                  {
+                    "startIndex": 61,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 333,
+          "endIndex": 334
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 334,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

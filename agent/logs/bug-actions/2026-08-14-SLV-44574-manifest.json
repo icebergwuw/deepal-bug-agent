@@ -1,0 +1,394 @@
+{
+  "schema_version": 4,
+  "jira_key": "SLV-44574",
+  "comment_causality": "C673通话记录数据未同步态说“同步”3/3未执行；评论称未定义可见语言，但Jira附件和生效非3D可见表均显示该按钮已配置subject与operation。Jira描述引用的SLV-44564实际为QQ音乐取消收藏票，属于错误日志引用。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SLV-44564",
+        "relationship": "Jira描述中的日志引用",
+        "read": true,
+        "outcome": "已完整读取；该票为QQ音乐歌单取消收藏且已Invalid，与蓝牙电话无业务关联，按错误引用排除。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SLV-44574 Jira原票",
+      "source_location": "字段、描述、全部评论；附件video.mp4 00:00-00:08、screenshot.png、comment.png",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673 / OTA_DP4.0 / 0805分支",
+      "trigger": "蓝牙电话-通话记录-数据未同步态，用户说‘同步’",
+      "target_behavior": "3/3未执行可见；录屏显示按钮可手动点击并弹出同步确认框",
+      "match": "exact",
+      "reason": "证明实车页面状态、用户原话和当前失败现象，不定义产品目标。"
+    },
+    {
+      "source_id": "visible-non3d-v10",
+      "source": "深蓝8295可见新表—非3DV1.0",
+      "source_location": "Sheet‘蓝牙电话’第5行：assist_name=btphone_calllog_synchronize，subject=同步|同步数据，operation=打开|开启|选择|查看|进入",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673 / BIGSUR / 非3D蓝牙电话",
+      "trigger": "通话记录数据未同步态可见‘同步’按钮",
+      "target_behavior": "说‘同步’或‘同步数据’应命中btphone_calllog_synchronize并执行可见按钮",
+      "match": "exact",
+      "reason": "生效项目可见配置直接定义本票页面节点、subject和operation。"
+    },
+    {
+      "source_id": "visible-interaction-non3d-v10",
+      "source": "深蓝8295可见新表—非3DV1.0",
+      "source_location": "Sheet‘蓝牙电话’第5行；同Sheet第34-36行另定义更多设置的数据同步开关及弹窗同步按钮",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "C673 / BIGSUR / 非3D蓝牙电话",
+      "trigger": "通话记录数据未同步态可见‘同步’按钮",
+      "target_behavior": "通话记录页第5行节点与更多设置第34-36行节点按页面上下文区分执行",
+      "match": "exact",
+      "reason": "同一生效配置同时给出页面状态和节点边界。"
+    },
+    {
+      "source_id": "visible-3d-v49",
+      "source": "深蓝8295可见新表—给3D_V4.9",
+      "source_location": "全部6个可见Sheet元数据已核对；‘0801新增配置项’与‘临时补丁方案’检索‘同步’均0命中，且无蓝牙电话Sheet",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673 / 3D",
+      "trigger": "蓝牙电话同步按钮",
+      "target_behavior": "3D V4.9未承载蓝牙电话节点，本票目标以非3D V1.0蓝牙电话Sheet为准",
+      "match": "gap",
+      "material": false,
+      "reason": "排除用户同步的另一张可见表对本票目标的覆盖。"
+    },
+    {
+      "source_id": "bluetooth-prd-v27",
+      "source": "AIS_语音蓝牙电话产品需求文档_v2.7",
+      "source_location": "正文第1.4节‘通话记录筛选’及其后‘2、蓝牙已连接数据未同步’区域",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝蓝牙电话",
+      "trigger": "蓝牙已连接且数据未同步",
+      "target_behavior": "定义该状态下通话记录页面行为，但未逐字定义‘同步’按钮话术",
+      "match": "partial",
+      "material": false,
+      "reason": "主PRD提供页面状态背景；按钮可见操作目标由生效可见配置第5行直接定义。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-14 Chrome登录态实时测试：同步、点击同步、选择同步、同步通话记录",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "同步；点击同步；选择同步；同步通话记录",
+      "target_behavior": "前三句均命中meta_id 1273打开温区同步且visible_result为空；同步通话记录命中meta_id 1305打开call_history且visible_result为空",
+      "match": "exact",
+      "reason": "实时结果证明当前NLU/路由未把页面原话交给可见节点。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点1329/1423",
+      "source_location": "标准1329‘打开温区同步’（MetaId 1273，已锁定）；标准1423‘打开特定页面/APP’（MetaId 1305，草稿）",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "同步；同步通话记录",
+      "target_behavior": "1273语义为温区同步；1305用于打开页面/APP，均不是当前页面‘同步’按钮执行结果",
+      "match": "exact",
+      "reason": "证明当前命中的标准功能语义及状态，不替代页面产品目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点24477/24542",
+      "source_location": "项目24477‘打开温区同步’继承未修改1329、已锁定；项目24542‘打开特定页面/APP’继承未修改1423、已锁定",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝 / C673",
+      "trigger": "同步；同步通话记录",
+      "target_behavior": "深蓝保留1273温区同步泛化并继承1305通用页面点，当前与页面可见节点发生路由冲突",
+      "match": "exact",
+      "reason": "已实时核验深蓝项目继承状态、车型范围和执行策略。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票由voice与visible_interaction专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、NLU MetaId、标准功能点和深蓝项目继承。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题直接发生在蓝牙电话页面可见按钮节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Google Drive：蓝牙电话主PRD与生效可见配置",
+      "queries": [
+        {"kind": "jira_key", "text": "SLV-44574"},
+        {"kind": "problem_concept", "text": "蓝牙电话 通话记录 数据未同步 同步按钮"},
+        {"kind": "module_artifact", "text": "AIS_语音蓝牙电话产品需求文档_v2.7"}
+      ],
+      "source_ids": ["bluetooth-prd-v27", "visible-non3d-v10"],
+      "reason": "已读取主PRD正文和非3D V1.0蓝牙电话目标行。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+            "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+            "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit",
+            "disposition": "read",
+            "source_ids": ["bluetooth-prd-v27"]
+          },
+          {
+            "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+            "title": "深蓝8295可见新表—非3DV1.0",
+            "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641",
+            "disposition": "read",
+            "source_ids": ["visible-non3d-v10"]
+          }
+        ]
+      },
+      "search_receipt_ids": ["SLV-44574-formal-definition-drive-20260814"]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Google Sheets：深蓝8295可见新表—非3DV1.0 / 给3D_V4.9",
+      "queries": [
+        {"kind": "jira_key", "text": "SLV-44574"},
+        {"kind": "problem_concept", "text": "同步 同步数据 通话记录 数据未同步"},
+        {"kind": "module_artifact", "text": "深蓝8295 蓝牙电话 可见配置"}
+      ],
+      "source_ids": ["visible-non3d-v10", "visible-3d-v49"],
+      "reason": "非3D V1.0蓝牙电话第5行命中目标节点；3D V4.9无蓝牙电话节点。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+            "title": "深蓝8295可见新表—非3DV1.0",
+            "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641",
+            "disposition": "read",
+            "source_ids": ["visible-non3d-v10"]
+          },
+          {
+            "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+            "title": "深蓝8295可见新表—给3D_V4.9",
+            "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=63592135#gid=63592135",
+            "disposition": "read",
+            "source_ids": ["visible-3d-v49"]
+          }
+        ]
+      },
+      "search_receipt_ids": ["SLV-44574-formal-config-drive-20260814"]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Google Sheets：非3DV1.0·蓝牙电话第5、34-36行",
+      "queries": [
+        {"kind": "jira_key", "text": "SLV-44574"},
+        {"kind": "problem_concept", "text": "通话记录数据未同步态同步按钮"},
+        {"kind": "module_artifact", "text": "蓝牙电话可见节点"}
+      ],
+      "source_ids": ["visible-interaction-non3d-v10"],
+      "reason": "生效配置给出通话记录与更多设置的页面状态、节点及操作边界。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+            "title": "深蓝8295可见新表—非3DV1.0",
+            "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641",
+            "disposition": "read",
+            "source_ids": ["visible-interaction-non3d-v10"]
+          }
+        ]
+      },
+      "search_receipt_ids": ["SLV-44574-interaction-drive-20260814"]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Alchemy在线对话·BIGSUR",
+      "queries": [{"kind": "exact_trigger", "text": "同步；点击同步；选择同步；同步通话记录"}],
+      "source_ids": ["alchemy-current"],
+      "reason": "四句已在当前登录态实时测试并记录MetaId与visible_result。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Alchemy标准功能详情",
+      "queries": [{"kind": "meta_or_function", "text": "1273 打开温区同步；1305 打开特定页面/APP"}],
+      "source_ids": ["alchemy-standard"],
+      "reason": "已读取标准1329/1423的说明、状态、下发参数、继承点和执行策略。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Alchemy深蓝项目功能详情",
+      "queries": [
+        {"kind": "meta_or_function", "text": "1273/1305"},
+        {"kind": "project_scope", "text": "深蓝 C673 BIGSUR"}
+      ],
+      "source_ids": ["alchemy-project"],
+      "reason": "已读取深蓝项目24477/24542的继承状态、锁定状态、车型范围和执行策略。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "SLV-44574-formal-definition-drive-20260814",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-14T12:10:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "SLV-44574"},
+        {"kind": "problem_concept", "text": "蓝牙电话 通话记录 数据未同步 同步按钮"},
+        {"kind": "module_artifact", "text": "AIS_语音蓝牙电话产品需求文档_v2.7"}
+      ],
+      "results": [
+        {
+          "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+          "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+          "title": "深蓝8295可见新表—非3DV1.0",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SLV-44574-formal-config-drive-20260814",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-14T12:20:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "SLV-44574"},
+        {"kind": "problem_concept", "text": "同步 同步数据 通话记录 数据未同步"},
+        {"kind": "module_artifact", "text": "深蓝8295 蓝牙电话 可见配置"}
+      ],
+      "results": [
+        {
+          "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+          "title": "深蓝8295可见新表—非3DV1.0",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+          "title": "深蓝8295可见新表—给3D_V4.9",
+          "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=63592135#gid=63592135",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SLV-44574-interaction-drive-20260814",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-14T12:20:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "SLV-44574"},
+        {"kind": "problem_concept", "text": "通话记录数据未同步态同步按钮"},
+        {"kind": "module_artifact", "text": "蓝牙电话可见节点"}
+      ],
+      "results": [
+        {
+          "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+          "title": "深蓝8295可见新表—非3DV1.0",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira评论‘未定义可见语言’与生效非3D V1.0蓝牙电话第5行冲突；以正式配置为产品目标。Alchemy实时结果证明原话被温区同步1273抢占，‘同步通话记录’又落到通用页面1305，故定性为语音NLU/页面可见路由缺陷，而非UI未定义或新增需求。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "同步",
+    "alchemy_tested": true,
+    "alchemy_result": "同步/点击同步/选择同步均命中1273打开温区同步且visible_result为空；同步通话记录命中1305打开call_history且visible_result为空",
+    "meta_id": "1273；1305",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1329打开温区同步（MetaId 1273，已锁定）；标准1423打开特定页面/APP（MetaId 1305，草稿）",
+      "assessment": "已读取标准功能说明、状态、下发参数、继承功能点和执行策略。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24477打开温区同步；24542打开特定页面/APP",
+      "assessment": "两项目点均已锁定且继承未修改；当前需要在页面上下文中避免抢占正式可见节点。"
+    },
+    "unavailable_reason": "",
+    "next_action": "修正同步词在蓝牙电话页面上下文中的NLU/可见路由优先级并回归。"
+  },
+  "expected_behavior": {
+    "trigger": "蓝牙电话通话记录处于数据未同步态，页面显示‘同步’按钮，用户说‘同步’或‘同步数据’",
+    "target_state": "命中assist_name=btphone_calllog_synchronize并执行当前可见同步按钮",
+    "intent_function_signal": "subject=同步|同步数据；operation=打开|开启|选择|查看|进入",
+    "ui_tts_vehicle_behavior": "执行当前页面‘同步’按钮并进入与手动点击一致的同步确认流程，不操作空调温区",
+    "boundary": "仅在该页面节点可见且满足数据未同步状态时消费；更多设置的数据同步开关/弹窗节点按第34-36行另行匹配",
+    "source_ids": ["visible-non3d-v10", "visible-interaction-non3d-v10"]
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "深蓝语音NLU/可见路由配置负责人",
+    "implementation_source_ids": ["jira-actual", "alchemy-current"],
+    "text": "结论：正式配置已支持通话记录数据未同步态的‘同步’按钮，当前原话被温区同步功能点抢占，属于语音NLU/页面可见路由缺陷，可转语音处理。\n依据：非3D可见表V1.0·蓝牙电话第5行；Alchemy BIGSUR实时结果·1273/1305；Jira附件录屏。\n处理：深蓝语音NLU/可见路由配置负责人修正页面上下文优先级：当前节点可见时让‘同步/同步数据’命中btphone_calllog_synchronize，避免落1273温区同步或1305仅打开通话记录，并回归‘同步、点击同步、选择同步、同步通话记录’。"
+  },
+  "run_context": {
+    "run_id": "20260814T122520+0800-SLV-44574",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 334
+  }
+}

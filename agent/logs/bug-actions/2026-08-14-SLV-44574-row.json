@@ -1,0 +1,27 @@
+[
+  {
+    "date": "2026-08-14",
+    "key": "SLV-44574",
+    "summary": "通话记录同步按钮未执行可见",
+    "info": "现象：蓝牙电话通话记录数据未同步态说‘同步’，3/3未执行；Jira附件录屏显示手动点击可进入同步确认。正式配置：非3D可见表V1.0·蓝牙电话第5行已定义btphone_calllog_synchronize，subject=同步|同步数据。实时链路：Alchemy BIGSUR中‘同步/点击同步/选择同步’均误命中1273温区同步且visible_result为空。",
+    "judgment": "结论：正式配置已支持通话记录数据未同步态的‘同步’按钮，当前原话被温区同步功能点抢占，属于语音NLU/页面可见路由缺陷，可转语音处理。\n依据：非3D可见表V1.0·蓝牙电话第5行；Alchemy BIGSUR实时结果·1273/1305；Jira附件录屏。\n处理：深蓝语音NLU/可见路由配置负责人修正页面上下文优先级：当前节点可见时让‘同步/同步数据’命中btphone_calllog_synchronize，避免落1273温区同步或1305仅打开通话记录，并回归‘同步、点击同步、选择同步、同步通话记录’。",
+    "status": "可转语音",
+    "note": "未执行Jira评论/转派/状态变更；SLV-44564为错误日志引用，已排除。",
+    "links": [
+      {"label": "Jira原票·SLV-44574", "url": "http://jira.i-tetris.com/browse/SLV-44574"},
+      {"label": "非3D可见表V1.0·蓝牙电话第5行", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"},
+      {"label": "Alchemy BIGSUR·1273/1305", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "蓝牙电话PRD v2.7", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"}
+    ],
+    "info_links": [
+      {"label": "Jira附件录屏", "url": "http://jira.i-tetris.com/browse/SLV-44574"},
+      {"label": "非3D可见表V1.0·蓝牙电话第5行", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"},
+      {"label": "Alchemy BIGSUR", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ],
+    "judgment_links": [
+      {"label": "非3D可见表V1.0·蓝牙电话第5行", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=802022641#gid=802022641"},
+      {"label": "Alchemy BIGSUR实时结果·1273/1305", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "Jira附件录屏", "url": "http://jira.i-tetris.com/browse/SLV-44574"}
+    ]
+  }
+]
