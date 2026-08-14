@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260814T010123Z-213a9634-5bcc-4e03-bf2a-b976f5bd7b04",
+  "automation_id": "bug",
+  "status": "planned",
+  "started_at": "2026-08-14T09:01:23+08:00",
+  "query_summary": "Jira查询143条；线上吴优bug页332个非空登记、331个唯一Key；去重后新增10条；因缺结构化Sheets写入与原始A:J回读能力停在写前",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-14-daily-new-bugs.md",
+  "items": [],
+  "blockers": [
+    "当前运行环境无Google Drive/Sheets结构化连接器，不能按sheet-contract完成写入和原始A:J回读校验",
+    "Drive强候选尚未逐项打开或排除，不能生成真实schema v4 search_receipts",
+    "语音票的Alchemy当前原话、标准功能点和项目功能点尚未逐票核验",
+    "BEO-8993与SLV-44574所需MasterGo证据无有效访问回执"
+  ],
+  "new_jira_keys": [
+    "ADS-48614",
+    "ADS-48732",
+    "BEO-8993",
+    "HUR-81740",
+    "HUR-82887",
+    "HUR-83012",
+    "HUR-83099",
+    "HUR-83103",
+    "HUR-83119",
+    "SLV-44574"
+  ],
+  "completion": {
+    "evidence_gate": "not_run",
+    "prewrite_validation": "failed: 有写入计划的 run 必须包含 items",
+    "sheet_write": "not_run",
+    "readback_validation": "not_run",
+    "final_validation": "not_run"
+  }
+}
