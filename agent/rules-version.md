@@ -1,10 +1,10 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.10.1-trial.1`
+- 当前版本：`v1.11.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-08-12`
-- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
-- Skill 唯一模板：`agent/skills/deepal-product-bug-handler/SKILL.md`；安装位置由 `$CODEX_HOME` 决定，未设置时使用当前用户目录下的 `.codex/skills/deepal-product-bug-handler/SKILL.md`。安装副本不定义独立业务口径且必须与模板一致。
+- 生效日期：`2026-08-14`
+- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/audit-ue-voice-coverage/SKILL.md`、`agent/skills/audit-ue-voice-coverage/agents/openai.yaml`、`agent/skills/audit-ue-voice-coverage/references/audit-contract.md`、`agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
+- Skill 模板：Bug 流程使用 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核使用 `agent/skills/audit-ue-voice-coverage/SKILL.md`。安装位置由 `$CODEX_HOME` 决定，未设置时使用当前用户目录下的 `.codex/skills/<skill-name>/SKILL.md`。安装副本不定义独立业务口径且必须与仓库模板一致。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
 ## 版本规则
@@ -14,6 +14,42 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.11.0-trial.1 — 2026-08-14
+
+### 试行内容
+
+- 新增 `audit-ue-voice-coverage` Skill，用于从负责模块和 UE 链接出发，逐项核验 MasterGo/Drive 当前有效控件与 Alchemy 实际语音执行结果，并更新语音覆盖走查表。
+- 增加页面状态硬门槛：MasterGo MCP 能读取到节点不代表需求仍有效；标记为删除、搁置、废弃、草稿、备份或历史版本的页面禁止测试和申报，结构读取必须结合当前画布视觉状态。
+- 增加 Alchemy 正确性门槛：`classification=task` 不代表通过；必须核对目标、动作及必要值。误映射、空 canonical、仅聊天文本、场景阻断和 GUI-only 均按失败分类。
+- 新增 `validate_audit.py` 和审核 manifest，机器阻止非 active 页面控件进入申报，并要求通过项的目标、动作和值全部匹配。
+
+### 修改原因
+
+- 首次情景模式走查只按可抽取控件判断，未识别 V1.9 第 3、4 页恒温座舱的删除区域和“离车不下电模式（搁置）”状态，导致搁置功能被误写入申报表。
+- 用户明确要求只保留“UE 中存在且未删除、语音平台无法正确执行”的能力，并要求把审核流程固化为 Skill。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/rules-version.md`
+- `agent/skills/audit-ue-voice-coverage/SKILL.md`
+- `agent/skills/audit-ue-voice-coverage/agents/openai.yaml`
+- `agent/skills/audit-ue-voice-coverage/references/audit-contract.md`
+- `agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`
+- `agent/logs/bug-actions/2026-08-14-scenario-voice-coverage.md`
+- `agent/logs/bug-actions/2026-08-14-scenario-voice-coverage-audit.json`
+
+### 验证案例
+
+- 情景模式审核 manifest 校验通过；将控件绑定到 `deleted` 页面时校验器拒绝通过。
+- Skill `quick_validate.py` 结构校验通过。
+- 线上表格将“离车不下电模式大灯设置”替换为“睡眠空间座椅设置入口”，回读 `A2:I15` 与最终 13 项一致。
+
+### 回滚口径
+
+- 通过新提交恢复 v1.10.1-trial.1，不使用 `git reset --hard`。
+- 回滚不得恢复已确认属于搁置页面的“离车不下电模式大灯设置”申报项；本次审核日志和 manifest 作为历史证据保留。
 
 ## v1.10.1-trial.1 — 2026-08-12
 

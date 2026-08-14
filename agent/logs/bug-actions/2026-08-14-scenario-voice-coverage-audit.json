@@ -1,0 +1,261 @@
+{
+  "module": "情景模式",
+  "vehicle": "8295",
+  "alchemy_environment": "BIGSUR",
+  "pages": [
+    {
+      "id": "543:54419",
+      "name": "3.情景模式-恒温座舱",
+      "status": "deleted",
+      "evidence": "V1.9 画布第 3 页位于红色 v1.9删除区域"
+    },
+    {
+      "id": "543:53811",
+      "name": "3.情景模式-恒温座舱",
+      "status": "deleted",
+      "evidence": "V1.9 画布第 4 页位于红色 v1.9删除区域"
+    },
+    {
+      "id": "543:48581",
+      "name": "11.离车不下电模式（搁置）",
+      "status": "shelved",
+      "evidence": "V1.9 当前图层名称明确标注搁置"
+    },
+    {
+      "id": "543:58241",
+      "name": "小憩模式",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面"
+    },
+    {
+      "id": "543:49168",
+      "name": "10.情景模式-睡眠空间",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面"
+    },
+    {
+      "id": "543:50288",
+      "name": "8.情景模式-车内关怀（依赖OMS）",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面"
+    },
+    {
+      "id": "543:52488",
+      "name": "4.情景模式-视听联动",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面"
+    }
+  ],
+  "controls": [
+    {
+      "id": "sleep-seat-settings-entry",
+      "page_id": "543:49168",
+      "name": "睡眠空间座椅设置入口",
+      "query": "打开睡眠空间座椅设置",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": false,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "返回 app:ctrl，但没有座椅 target canonical"
+      },
+      "report": true
+    },
+    {
+      "id": "nap-seat-position",
+      "page_id": "543:58241",
+      "name": "小憩模式座椅位置选择",
+      "query": "小憩模式设置为主驾",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "返回 common:func:not:supported"
+      },
+      "report": true
+    },
+    {
+      "id": "nap-end-time",
+      "page_id": "543:58241",
+      "name": "小憩模式结束时间设置",
+      "query": "小憩模式结束时间设置为20点30分",
+      "verdict": "misrouted",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": true,
+        "evidence": "误生成充电预约操作"
+      },
+      "report": true
+    },
+    {
+      "id": "nap-unlimited",
+      "page_id": "543:58241",
+      "name": "小憩模式不限时开关",
+      "query": "打开小憩模式不限时",
+      "verdict": "blocked",
+      "operation_check": {
+        "target_match": true,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "返回 llm:scenario_block"
+      },
+      "report": true
+    },
+    {
+      "id": "nap-sound",
+      "page_id": "543:58241",
+      "name": "小憩模式音效选择",
+      "query": "小憩模式音效切换为夜阑听雨",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "未形成可执行的小憩音效选择操作"
+      },
+      "report": true
+    },
+    {
+      "id": "nap-screen-off",
+      "page_id": "543:58241",
+      "name": "小憩模式熄屏",
+      "query": "小憩模式熄屏",
+      "verdict": "misrouted",
+      "operation_check": {
+        "target_match": true,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "熄屏同时被解析为关闭小憩模式"
+      },
+      "report": true
+    },
+    {
+      "id": "nap-music-switch",
+      "page_id": "543:58241",
+      "name": "小憩模式音乐切换",
+      "query": "小憩模式切换音乐",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "未形成可执行的小憩音乐切换操作"
+      },
+      "report": true
+    },
+    {
+      "id": "sleep-volume",
+      "page_id": "543:49168",
+      "name": "睡眠空间音量调节",
+      "query": "睡眠空间音量调高",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": false,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "vehicle:audio:volume:adjust 的 channel canonical 为空"
+      },
+      "report": true
+    },
+    {
+      "id": "sleep-skip-voice",
+      "page_id": "543:49168",
+      "name": "睡眠空间跳过人声",
+      "query": "睡眠空间跳过人声",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": true,
+        "action_match": false,
+        "value_match": true,
+        "evidence": "vehicle:scenario:theme_adjust 的 operation canonical 为空"
+      },
+      "report": true
+    },
+    {
+      "id": "sleep-diagnosis",
+      "page_id": "543:49168",
+      "name": "打开睡眠问诊",
+      "query": "打开睡眠问诊",
+      "verdict": "chat_only",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": true,
+        "evidence": "classification=chat，仅返回已打开的文本，无 operation"
+      },
+      "report": true
+    },
+    {
+      "id": "sleep-unlimited",
+      "page_id": "543:49168",
+      "name": "睡眠空间不限时设置",
+      "query": "睡眠空间设置为不限时",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": false,
+        "evidence": "duration 仅有 literal=不限时，canonical 为空"
+      },
+      "report": true
+    },
+    {
+      "id": "care-window-mode",
+      "page_id": "543:50288",
+      "name": "车内关怀窗口模式切换",
+      "query": "车内关怀切换为小窗",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "小窗指令返回 common:func:not:supported；全屏可执行"
+      },
+      "report": true
+    },
+    {
+      "id": "music-light-show-download",
+      "page_id": "543:52488",
+      "name": "下载音乐灯光秀",
+      "query": "下载音乐灯光秀",
+      "verdict": "misrouted",
+      "operation_check": {
+        "target_match": true,
+        "action_match": false,
+        "value_match": true,
+        "evidence": "误生成打开音乐灯光秀操作，未执行下载/打开应用商城"
+      },
+      "report": true
+    },
+    {
+      "id": "sleep-screen-off",
+      "page_id": "543:49168",
+      "name": "睡眠空间熄屏",
+      "query": "睡眠空间熄屏",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "返回 vehicle:display:ctrl:screen_off，target_screen=default_screen"
+      },
+      "report": false
+    },
+    {
+      "id": "sleep-air-conditioner-entry",
+      "page_id": "543:49168",
+      "name": "睡眠空间空调设置入口",
+      "query": "打开睡眠空间空调设置",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "返回 app:ctrl open，target=air_conditioner"
+      },
+      "report": false
+    }
+  ]
+}

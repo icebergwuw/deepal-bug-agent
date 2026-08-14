@@ -41,6 +41,7 @@
 - 操作日志：`agent/logs/bug-actions/`
 - 规则版本与变更记录：`agent/rules-version.md`
 - Skill 安装模板：`agent/skills/deepal-product-bug-handler/SKILL.md`
+- UE 语音覆盖审核 Skill：`agent/skills/audit-ue-voice-coverage/SKILL.md`
 - 历史资料：`agent/archive/`，仅作证据，不覆盖现行规则。
 
 旧入口 `agent/workflow.md`、`agent/meeting-feedback-workflow.md`、`agent/sheet-template.md`、`agent/sheet-style.md` 只用于兼容跳转，不定义独立规则。若文件冲突，按上述权威文件的职责边界执行。
