@@ -27,6 +27,7 @@ REPORTABLE = {
     "gui_only",
 }
 VERDICTS = REPORTABLE | {"pass", "ambiguous"}
+EXPECTED_EFFECTS = {"direct", "navigate", "configure", "content_operation"}
 
 
 def require_text(value: object, field: str, errors: list[str]) -> None:
@@ -80,6 +81,22 @@ def validate(data: object) -> list[str]:
         require_text(control_id, f"{prefix}.id", errors)
         require_text(control.get("name"), f"{prefix}.name", errors)
         require_text(control.get("query"), f"{prefix}.query", errors)
+        tested_queries = control.get("tested_queries")
+        if tested_queries is not None:
+            if not isinstance(tested_queries, list) or not tested_queries:
+                errors.append(f"{prefix}.tested_queries must be a non-empty array")
+            else:
+                for query_index, query in enumerate(tested_queries):
+                    require_text(
+                        query,
+                        f"{prefix}.tested_queries[{query_index}]",
+                        errors,
+                    )
+        expected_effect = control.get("expected_effect", "direct")
+        if expected_effect not in EXPECTED_EFFECTS:
+            errors.append(
+                f"{prefix}.expected_effect is invalid: {expected_effect!r}"
+            )
         if isinstance(control_id, str) and control_id:
             if control_id in seen_controls:
                 errors.append(f"duplicate control id: {control_id}")
@@ -113,11 +130,25 @@ def validate(data: object) -> list[str]:
         for field in ("target_match", "action_match", "value_match"):
             if not isinstance(check.get(field), bool):
                 errors.append(f"{prefix}.operation_check.{field} must be boolean")
+        context_match = check.get("context_match")
+        if context_match is not None and not isinstance(context_match, bool):
+            errors.append(f"{prefix}.operation_check.context_match must be boolean")
+        if expected_effect in {"configure", "content_operation"} and not isinstance(
+            context_match, bool
+        ):
+            errors.append(
+                f"{prefix} {expected_effect} requires boolean context_match"
+            )
         if verdict == "pass" and not all(
             check.get(field) is True
             for field in ("target_match", "action_match", "value_match")
         ):
             errors.append(f"{prefix} pass requires all operation checks to be true")
+        if verdict == "pass" and expected_effect in {
+            "configure",
+            "content_operation",
+        } and context_match is not True:
+            errors.append(f"{prefix} pass requires context_match=true")
 
     return errors
 

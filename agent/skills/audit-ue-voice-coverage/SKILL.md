@@ -20,8 +20,8 @@ Audit only current, effective UE behavior. Treat a visible control as reportable
 3. Open the MasterGo UE first. If no usable MasterGo document exists, search the authorized Drive UE source. Report modules with no readable UE; do not infer controls.
 4. Build a page-state matrix before extracting controls.
 5. Extract every user-operable control from active pages: switches, sliders, steppers, selectors, segmented modes, buttons, and direct setting entrances.
-6. Generate concrete Chinese voice queries that include the mode, target, action, and value when applicable.
-7. Run each query in the correct Alchemy project/environment and inspect the returned operation, not only the classification.
+6. Generate concrete Chinese voice queries that include the parent configuration context, mode, target, action, and value when applicable.
+7. Run each query in the correct Alchemy project/environment and inspect the returned operation, not only the classification. For configuration UIs, verify that the operation changes the configuration instead of immediately executing the underlying vehicle action.
 8. Classify each control using [references/audit-contract.md](references/audit-contract.md).
 9. Build an audit manifest and run `scripts/validate_audit.py <manifest.json>` before writing.
 10. Deduplicate against the target sheet. Add only controls whose active UE behavior cannot be executed correctly by voice.
@@ -53,6 +53,9 @@ A query passes only when its returned operation can perform the UE action with t
 - chat text without an executable operation;
 - scenario block for an otherwise valid UE action;
 - GUI-only response when the requested voice action should execute directly.
+- direct execution of an underlying vehicle action when the UE control is configuring a trigger, precondition, delayed action, scenario action, automation, or another parent object.
+
+For configuration UIs, set `expected_effect=configure` and require `operation_check.context_match=true`. A correct door, window, seat, climate, media, or navigation operation is still `misrouted` when it acts immediately instead of updating the named configuration object.
 
 Do not report a query merely because its wording could be improved. Try one direct, unambiguous query first; use a second natural paraphrase only when the first result is ambiguous. Preserve both results when they disagree.
 
@@ -60,6 +63,8 @@ Do not report a query merely because its wording could be improved. Try one dire
 
 - Use the operator and vehicle values supplied by the source task or bound profile.
 - Describe the control, value domain, and example command precisely.
+- Keep semantically different contexts separate even when they share the same underlying target, such as a trigger condition versus a precondition versus an execution action.
+- For large option sets, use one row per independently implementable control family and combine repeated positions, modes, or numeric values in the range column. Preserve every exact test query in the manifest `tested_queries` array.
 - Replace or remove stale rows when a later audit proves the UE was deleted or shelved.
 - Report the final added, removed, and unchanged counts after exact-range readback.
 

@@ -29,6 +29,17 @@ Record the exact visual/layer evidence for every non-active status.
 
 `classification: task` is not proof of success. Inspect every operation and parameter.
 
+## Expected effect and context
+
+| `expected_effect` | Meaning | Required check |
+| --- | --- | --- |
+| `direct` | Execute the target function now | Target/action/value match |
+| `navigate` | Open the correct app, page, panel, or setting | Target/action/value match |
+| `configure` | Change a trigger, precondition, scenario action, automation, or other parent configuration | Target/action/value match and `context_match=true` |
+| `content_operation` | Create, edit, delete, sort, save, share, or otherwise mutate an app-owned object | Target/action/value match and `context_match=true` |
+
+For `configure` and `content_operation`, an operation that immediately controls the underlying vehicle function is `misrouted`, even when the vehicle target, action, and value are otherwise correct.
+
 ## Manifest shape
 
 ```json
@@ -50,11 +61,14 @@ Record the exact visual/layer evidence for every non-active status.
       "page_id": "543:456",
       "name": "睡眠空间座椅设置入口",
       "query": "打开睡眠空间座椅设置",
+      "tested_queries": ["打开睡眠空间座椅设置"],
+      "expected_effect": "navigate",
       "verdict": "empty_required_slot",
       "operation_check": {
         "target_match": false,
         "action_match": true,
         "value_match": true,
+        "context_match": true,
         "evidence": "app:ctrl returned without a seat target"
       },
       "report": true
@@ -63,4 +77,6 @@ Record the exact visual/layer evidence for every non-active status.
 }
 ```
 
-For `pass`, all three `operation_check` booleans must be true. For reportable failures, `report` must be true. Controls on non-active pages are forbidden even when `report` is false; excluded pages belong only in `pages`.
+`query` is the primary sheet example. Use `tested_queries` to preserve every exact query when one sheet row aggregates positions, values, or closely related controls.
+
+For `pass`, target, action, value, and any required context check must be true. `configure` and `content_operation` always require a boolean `context_match`; `context_match=false` cannot pass. For reportable failures, `report` must be true. Controls on non-active pages are forbidden even when `report` is false; excluded pages belong only in `pages`.

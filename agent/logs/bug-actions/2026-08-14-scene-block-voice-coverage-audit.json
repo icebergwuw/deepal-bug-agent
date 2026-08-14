@@ -1,0 +1,233 @@
+{
+  "module": "场景积木",
+  "vehicle": "8295",
+  "ue_source": "https://mastergo.com/file/149705038244031?fileOpenFrom=project",
+  "ue_version": "V1.0",
+  "alchemy_environment": "BIGSUR",
+  "aggregation_policy": "One row per independently implementable control family; positions, modes, and numeric values remain in tested_queries and the sheet range column.",
+  "pages": [
+    {"id": "1335:32153", "name": "1.场景积木-场景空间", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "1335:29890", "name": "2.场景积木-我的场景", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "1335:28617", "name": "3.场景积木-触发条件", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "1335:23840", "name": "4.我的场景-前置条件", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "1335:22081", "name": "5.我的场景-执行动作", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "1335:24583", "name": "6.新手引导", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "1335:24996", "name": "7.场景分享", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "1335:27062", "name": "8.AI生成场景积木", "status": "active", "evidence": "V1.0 current page"},
+    {"id": "version-v0.9", "name": "V0.9", "status": "deprecated", "evidence": "MasterGo page list shows V0.9 below current V1.0"},
+    {"id": "version-v0.8", "name": "V0.8", "status": "deprecated", "evidence": "MasterGo page list shows V0.8 below current V1.0"},
+    {"id": "controls-do-not-use", "name": "控件（不要）", "status": "deprecated", "evidence": "MasterGo page name explicitly marks the page as do not use"}
+  ],
+  "controls": [
+    {
+      "id": "space-tab-navigation", "page_id": "1335:32153", "name": "场景空间与我的场景页签切换", "query": "打开场景积木的场景空间",
+      "tested_queries": ["打开场景积木的场景空间", "打开场景积木的我的场景"], "expected_effect": "navigate", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": true, "value_match": true, "context_match": false, "evidence": "app:ctrl lacked a target or custom scenario control was returned instead of the requested tab"}, "report": true
+    },
+    {
+      "id": "recommended-scene-detail", "page_id": "1335:32153", "name": "推荐场景详情打开", "query": "打开第一个推荐场景详情",
+      "tested_queries": ["打开第一个推荐场景详情"], "expected_effect": "navigate", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "recommended-scene-add", "page_id": "1335:32153", "name": "推荐场景添加到我的场景", "query": "把第一个推荐场景添加到我的场景",
+      "tested_queries": ["把第一个推荐场景添加到我的场景"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "custom-scene-create", "page_id": "1335:29890", "name": "创建自定义场景", "query": "创建一个场景积木",
+      "tested_queries": ["创建一个场景积木"], "expected_effect": "content_operation", "verdict": "blocked",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": false, "context_match": false, "evidence": "llm:scenario_block returned instead of creating a scene"}, "report": true
+    },
+    {
+      "id": "custom-scene-edit", "page_id": "1335:29890", "name": "编辑自定义场景", "query": "编辑第一个场景积木",
+      "tested_queries": ["编辑第一个场景积木"], "expected_effect": "content_operation", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "misrouted to media:music:play and llm:draw:image"}, "report": true
+    },
+    {
+      "id": "custom-scene-rename", "page_id": "1335:29890", "name": "自定义场景重命名", "query": "把第一个场景积木重命名为下班回家",
+      "tested_queries": ["把第一个场景积木重命名为下班回家"], "expected_effect": "content_operation", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "misrouted to navigation favorite home"}, "report": true
+    },
+    {
+      "id": "custom-scene-delete", "page_id": "1335:29890", "name": "自定义场景删除与批量删除", "query": "删除第一个场景积木",
+      "tested_queries": ["删除第一个场景积木"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "custom-scene-sort", "page_id": "1335:29890", "name": "自定义场景排序", "query": "把第一个场景积木排到第二个",
+      "tested_queries": ["把第一个场景积木排到第二个"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "custom-scene-execute", "page_id": "1335:29890", "name": "执行场景与跳过前置条件执行", "query": "执行第一个场景积木",
+      "tested_queries": ["执行第一个场景积木", "跳过前置条件执行第一个场景积木"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "both queries returned common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "custom-scene-auto-execute", "page_id": "1335:29890", "name": "场景自动执行开关", "query": "打开第一个场景积木自动执行",
+      "tested_queries": ["打开第一个场景积木自动执行", "关闭第一个场景积木自动执行"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": false, "context_match": false, "evidence": "opened or closed the sceneblock app instead of changing the selected scene auto-execute switch"}, "report": true
+    },
+    {
+      "id": "custom-scene-trial", "page_id": "1335:32153", "name": "场景试用与暂停", "query": "试用第一个场景积木",
+      "tested_queries": ["试用第一个场景积木", "暂停试用场景积木"], "expected_effect": "content_operation", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": false, "context_match": false, "evidence": "opened or closed the app instead of starting or pausing scene trial"}, "report": true
+    },
+    {
+      "id": "onboarding-controls", "page_id": "1335:24583", "name": "新手引导进入、翻页、跳过、完成与关闭", "query": "打开场景积木新手引导",
+      "tested_queries": ["打开场景积木新手引导", "场景积木新手引导下一步", "场景积木新手引导上一步", "跳过场景积木新手引导", "开始体验场景积木", "关闭场景积木新手引导"], "expected_effect": "navigate", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "guide target canonical was empty; step actions were unsupported or misrouted to navigation"}, "report": true
+    },
+    {
+      "id": "scene-share-code", "page_id": "1335:24996", "name": "场景分享、分享码生成与复制", "query": "生成第一个场景积木的分享码",
+      "tested_queries": ["分享第一个场景积木", "生成第一个场景积木的分享码", "复制第一个场景积木的分享码"], "expected_effect": "content_operation", "verdict": "chat_only",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "chat text claimed sharing, generation, or copy success but no executable operation was returned"}, "report": true
+    },
+    {
+      "id": "share-code-add", "page_id": "1335:24996", "name": "输入分享码添加场景", "query": "输入分享码123456789添加场景积木",
+      "tested_queries": ["输入分享码123456789添加场景积木"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "ai-scene-generate", "page_id": "1335:27062", "name": "AI生成场景积木", "query": "用AI生成一个下班回家场景积木",
+      "tested_queries": ["用AI生成一个下班回家场景积木"], "expected_effect": "content_operation", "verdict": "chat_only",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "chat text described a generated scene but no executable scene-generation operation was returned"}, "report": true
+    },
+    {
+      "id": "ai-scene-pause-close", "page_id": "1335:27062", "name": "AI生成暂停与卡片关闭", "query": "暂停AI生成场景积木",
+      "tested_queries": ["暂停AI生成场景积木", "关闭AI生成场景积木卡片"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "both queries returned common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "ai-scene-save", "page_id": "1335:27062", "name": "保存AI生成场景", "query": "保存AI生成的场景积木",
+      "tested_queries": ["保存AI生成的场景积木"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "ai-scene-edit", "page_id": "1335:27062", "name": "编辑AI生成场景", "query": "去编辑AI生成的场景积木",
+      "tested_queries": ["去编辑AI生成的场景积木"], "expected_effect": "content_operation", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "trigger-time", "page_id": "1335:28617", "name": "触发条件-时间", "query": "把场景积木的触发条件设置为每天8点",
+      "tested_queries": ["把场景积木的触发条件设置为每天8点"], "expected_effect": "configure", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "trigger-driving", "page_id": "1335:28617", "name": "触发条件-驾驶与能量", "query": "把场景积木的触发条件设置为P挡",
+      "tested_queries": ["把场景积木的触发条件设置为P挡", "把场景积木的触发条件设置为车速大于30公里每小时", "把场景积木的触发条件设置为舒适驾驶模式", "把场景积木的触发条件设置为强制纯电", "把场景积木的触发条件设置为电池电量低于20%"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "queries were unsupported or immediately changed driving/energy functions; battery query navigated to a charging station"}, "report": true
+    },
+    {
+      "id": "trigger-body", "page_id": "1335:28617", "name": "触发条件-车门车窗", "query": "把场景积木的触发条件设置为主驾车门打开",
+      "tested_queries": ["把场景积木的触发条件设置为主驾车门打开", "把场景积木的触发条件设置为左侧儿童锁开启", "把场景积木的触发条件设置为主驾车窗降下", "把场景积木的触发条件设置为遮阳帘打开", "把场景积木的触发条件设置为全车门锁上锁"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "door, child-lock, window, and sunshade actions executed immediately; door-lock condition was unsupported"}, "report": true
+    },
+    {
+      "id": "trigger-occupant", "page_id": "1335:28617", "name": "触发条件-乘员", "query": "把场景积木的触发条件设置为主驾有人",
+      "tested_queries": ["把场景积木的触发条件设置为主驾有人", "把场景积木的触发条件设置为主驾安全带系上"], "expected_effect": "configure", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "both queries returned common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "trigger-environment", "page_id": "1335:28617", "name": "触发条件-环境", "query": "把场景积木的触发条件设置为空气质量重度污染",
+      "tested_queries": ["把场景积木的触发条件设置为空气质量重度污染", "把场景积木的触发条件设置为车内温度高于30度", "把场景积木的触发条件设置为环境光昏暗", "把场景积木的触发条件设置为雨天"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "air-quality query became a weather query, temperature changed AC immediately, and light/weather conditions were unsupported"}, "report": true
+    },
+    {
+      "id": "trigger-navigation", "page_id": "1335:28617", "name": "触发条件-导航", "query": "把场景积木的触发条件设置为预计到达时间早于20点",
+      "tested_queries": ["把场景积木的触发条件设置为预计到达时间早于20点", "场景积木触发条件设为距离目的地小于3公里"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": true, "context_match": false, "evidence": "returned journey query/charging booking or immediate navigation search instead of storing a trigger"}, "report": true
+    },
+    {
+      "id": "trigger-charging", "page_id": "1335:28617", "name": "触发条件-充电状态", "query": "把场景积木的触发条件设置为开始充电",
+      "tested_queries": ["把场景积木的触发条件设置为开始充电"], "expected_effect": "configure", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "precondition-time-location", "page_id": "1335:23840", "name": "前置条件-时间与位置", "query": "把场景积木的前置条件设置为每天8点到9点",
+      "tested_queries": ["把场景积木的前置条件设置为每天8点到9点", "把场景积木的前置条件设置为距离家2公里以内"], "expected_effect": "configure", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "both queries returned common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "precondition-vehicle-state", "page_id": "1335:23840", "name": "前置条件-车辆状态", "query": "把场景积木的前置条件设置为未充电",
+      "tested_queries": ["把场景积木的前置条件设置为未充电", "把场景积木的前置条件设置为四门车窗全关"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "charging state was unsupported and window state immediately closed all windows"}, "report": true
+    },
+    {
+      "id": "precondition-navigation-media", "page_id": "1335:23840", "name": "前置条件-导航与媒体状态", "query": "把场景积木的前置条件设置为导航中",
+      "tested_queries": ["把场景积木的前置条件设置为导航中", "把场景积木的前置条件设置为媒体播放中"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "misrouted to navigation favorite control or media playback"}, "report": true
+    },
+    {
+      "id": "precondition-connection", "page_id": "1335:23840", "name": "前置条件-连接状态", "query": "把场景积木的前置条件设置为蓝牙已连接",
+      "tested_queries": ["把场景积木的前置条件设置为蓝牙已连接", "把场景积木的前置条件设置为WLAN已连接", "把场景积木的前置条件设置为无线充电中"], "expected_effect": "configure", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "all connection-state queries returned common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "action-body", "page_id": "1335:22081", "name": "执行动作-车身", "query": "把场景积木的执行动作设置为打开门把手",
+      "tested_queries": ["把场景积木的执行动作设置为打开门把手", "把场景积木的执行动作设置为全车门锁上锁", "把场景积木的执行动作设置为开启左侧儿童锁", "把场景积木的执行动作设置为四门车窗开度50%", "把场景积木的执行动作设置为主驾车窗开度30%", "把场景积木的执行动作设置为后视镜折叠", "把场景积木的执行动作设置为前雨刮低速", "把场景积木的执行动作设置为后雨刮开启", "把场景积木的执行动作设置为升起电动尾翼"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "underlying body controls executed immediately or were unsupported; no scenario action was stored"}, "report": true
+    },
+    {
+      "id": "action-seat", "page_id": "1335:22081", "name": "执行动作-座椅", "query": "把场景积木的执行动作设置为主驾座椅位置向前",
+      "tested_queries": ["把场景积木的执行动作设置为主驾座椅位置向前", "把场景积木的执行动作设置为副驾座椅位置向后", "把场景积木的执行动作设置为开启主驾座椅加热", "把场景积木的执行动作设置为开启主驾座椅通风", "把场景积木的执行动作设置为主驾按摩高强度波浪模式"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "seat operations executed immediately; no scenario action was stored"}, "report": true
+    },
+    {
+      "id": "action-light", "page_id": "1335:22081", "name": "执行动作-灯光", "query": "把场景积木的执行动作设置为打开大灯",
+      "tested_queries": ["把场景积木的执行动作设置为打开左转向灯", "把场景积木的执行动作设置为打开大灯", "把场景积木的执行动作设置为打开后雾灯"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "returned immediate light control or light clarification instead of storing a scenario action"}, "report": true
+    },
+    {
+      "id": "action-climate", "page_id": "1335:22081", "name": "执行动作-空调", "query": "把场景积木的执行动作设置为打开空调",
+      "tested_queries": ["把场景积木的执行动作设置为打开空调", "把场景积木的执行动作设置为主驾空调25度", "把场景积木的执行动作设置为空调内循环", "把场景积木的执行动作设置为打开空气净化", "把场景积木的执行动作设置为空调风量5级", "把场景积木的执行动作设置为空调吹脸", "把场景积木的执行动作设置为打开自动空调", "把场景积木的执行动作设置为空调制冷"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "all climate operations controlled the current vehicle immediately instead of storing a scenario action"}, "report": true
+    },
+    {
+      "id": "action-media", "page_id": "1335:22081", "name": "执行动作-媒体与应用", "query": "把场景积木的执行动作设置为播放蓝牙音乐",
+      "tested_queries": ["把场景积木的执行动作设置为播放蓝牙音乐", "把场景积木的执行动作设置为播放网易云音乐今日推荐", "把场景积木的执行动作设置为播放QQ音乐我的收藏", "把场景积木的执行动作设置为播放周杰伦的晴天", "把场景积木的执行动作设置为媒体暂停"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "media operations played or paused content immediately instead of storing a scenario action"}, "report": true
+    },
+    {
+      "id": "action-navigation", "page_id": "1335:22081", "name": "执行动作-导航", "query": "把场景积木的执行动作设置为导航回家",
+      "tested_queries": ["把场景积木的执行动作设置为导航回家"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "immediate navigation to home was returned instead of storing a scenario action"}, "report": true
+    },
+    {
+      "id": "action-driving-energy", "page_id": "1335:22081", "name": "执行动作-驾驶与能量", "query": "把场景积木的执行动作设置为舒适驾驶模式",
+      "tested_queries": ["把场景积木的执行动作设置为舒适驾驶模式", "把场景积木的执行动作设置为强制纯电"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "driving or energy mode changed immediately instead of storing a scenario action"}, "report": true
+    },
+    {
+      "id": "action-network-settings", "page_id": "1335:22081", "name": "执行动作-连接与车辆设置", "query": "把场景积木的执行动作设置为打开蓝牙",
+      "tested_queries": ["把场景积木的执行动作设置为打开低速提示音", "把场景积木的执行动作设置为打开蓝牙", "把场景积木的执行动作设置为打开无线热点", "把场景积木的执行动作设置为打开无线充电", "把场景积木的执行动作设置为打开WLAN", "把场景积木的执行动作设置为打开离车记录", "把场景积木的执行动作设置为打开智能钥匙感应闭锁", "把场景积木的执行动作设置为打开蓝牙钥匙感应闭锁", "把场景积木的执行动作设置为打开智能钥匙感应解锁", "把场景积木的执行动作设置为打开蓝牙钥匙感应解锁", "把场景积木的执行动作设置为打开闭锁音", "把场景积木的执行动作设置为打开后排安全带未系提示"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "settings were controlled immediately or unsupported; no scenario action was stored"}, "report": true
+    },
+    {
+      "id": "action-broadcast-delay", "page_id": "1335:22081", "name": "执行动作-语音播报与延时", "query": "把场景积木的执行动作设置为语音播报欢迎回家",
+      "tested_queries": ["把场景积木的执行动作设置为语音播报欢迎回家", "把场景积木的执行动作设置为延时30秒"], "expected_effect": "configure", "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "both queries returned common:func:not:supported"}, "report": true
+    },
+    {
+      "id": "action-display-hud", "page_id": "1335:22081", "name": "执行动作-屏幕与HUD", "query": "把场景积木的执行动作设置为中控屏亮度60%",
+      "tested_queries": ["把场景积木的执行动作设置为中控旋转屏10度", "把场景积木的执行动作设置为副驾屏展开", "把场景积木的执行动作设置为中控屏旋转", "把场景积木的执行动作设置为中控屏熄屏", "把场景积木的执行动作设置为中控屏亮度60%", "把场景积木的执行动作设置为打开自动亮度", "把场景积木的执行动作设置为中控屏深色背景模式", "把场景积木的执行动作设置为打开HUD", "把场景积木的执行动作设置为HUD标准模式"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": false, "context_match": false, "evidence": "screen/HUD controls executed immediately, were unsupported, or had empty canonical; no scenario action was stored"}, "report": true
+    },
+    {
+      "id": "action-audio-volume", "page_id": "1335:22081", "name": "执行动作-音量", "query": "把场景积木的执行动作设置为多媒体音量16",
+      "tested_queries": ["把场景积木的执行动作设置为多媒体音量16", "把场景积木的执行动作设置为通话音量16", "把场景积木的执行动作设置为导航播报音量16", "把场景积木的执行动作设置为语音播报音量16"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": true, "context_match": false, "evidence": "volume operations ran immediately and some channels were empty or polluted by sceneblock"}, "report": true
+    },
+    {
+      "id": "action-thermostatic-box", "page_id": "1335:22081", "name": "执行动作-冷暖箱", "query": "把场景积木的执行动作设置为冷暖箱制冷5度",
+      "tested_queries": ["把场景积木的执行动作设置为冷暖箱制冷5度"], "expected_effect": "configure", "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": true, "context_match": false, "evidence": "cold-box temperature changed immediately instead of storing a scenario action"}, "report": true
+    },
+    {
+      "id": "sceneblock-app-entry", "page_id": "1335:32153", "name": "打开场景积木", "query": "打开场景积木",
+      "tested_queries": ["打开场景积木"], "expected_effect": "navigate", "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "context_match": true, "evidence": "app:ctrl open target=sceneblock"}, "report": false
+    }
+  ]
+}

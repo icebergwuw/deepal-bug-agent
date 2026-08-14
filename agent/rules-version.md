@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.11.0-trial.1`
+- 当前版本：`v1.12.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-08-14`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/audit-ue-voice-coverage/SKILL.md`、`agent/skills/audit-ue-voice-coverage/agents/openai.yaml`、`agent/skills/audit-ue-voice-coverage/references/audit-contract.md`、`agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
@@ -14,6 +14,40 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.12.0-trial.1 — 2026-08-14
+
+### 试行内容
+
+- UE 语音覆盖审核新增操作语境门槛：配置触发条件、前置条件、执行动作、自动化或内容对象时，必须核对 operation 是否修改指定父对象；立即执行底层车控不算配置成功。
+- manifest 新增 `expected_effect`、`operation_check.context_match` 和可选 `tested_queries`。`configure` 与 `content_operation` 必须提供布尔型 `context_match`，通过项必须为 `true`。
+- 大型 UE 允许按独立可实现能力点聚合写表；相同控件的席位、模式和数值可合并，但触发条件、前置条件和执行动作等不同语义上下文必须分开，并在 `tested_queries` 保留全部精确实测。
+
+### 修改原因
+
+- 场景积木 V1.0 真实审核中，多条指令返回了目标、动作和值均正确的即时车控，但没有把该动作写入场景积木配置。原三项 operation check 无法机器区分该类假通过。
+- 执行动作页包含大量重复位置与数值，逐口令写表会产生不可实现的重复行，需要固定可追溯的聚合粒度。
+
+### 影响文件
+
+- `agent/rules-version.md`
+- `agent/skills/audit-ue-voice-coverage/SKILL.md`
+- `agent/skills/audit-ue-voice-coverage/references/audit-contract.md`
+- `agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`
+- `agent/logs/bug-actions/2026-08-14-scene-block-voice-coverage.md`
+- `agent/logs/bug-actions/2026-08-14-scene-block-voice-coverage-audit.json`
+
+### 验证案例
+
+- 场景积木 manifest 包含 11 个页面状态、42 个汇总控件、121 条精确查询；41 个失败项写入线上表格，1 个通过项不申报。
+- `把场景积木的执行动作设置为四门车窗开度50%` 返回即时开窗 operation，`context_match=false`，按 `misrouted` 申报。
+- 负向用例将 `expected_effect=configure`、`verdict=pass` 与 `context_match=false` 组合时，校验器必须拒绝。
+- 线上表格 `A16:I56` 写后逐字回读一致，原有 `A1:I15` 未修改。
+
+### 回滚口径
+
+- 通过新提交恢复 v1.11.0-trial.1，不使用 `git reset --hard`。
+- 回滚规则不得删除本次线上场景积木审核结果；审核日志和 manifest 作为历史证据保留。
 
 ## v1.11.0-trial.1 — 2026-08-14
 
