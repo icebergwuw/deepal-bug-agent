@@ -1,0 +1,378 @@
+{
+  "key": "PC-38472",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 325,
+  "rowIndex": 324,
+  "previewFingerprint": "46c0ef14ab12165c1b49094bbbd0d73dd2a7702d9fcbd54d4dc000bea881a0a8",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "现象：[Jira原票·描述/附件]语音设置页说“编辑/删除应答语1、2、3”均不执行可见。\nAlchemy：[在线对话·BIGSUR]“编辑应答语1”落1325但只有keywords=1、无编辑op；“删除应答语1”落3069且op=cancel。[标准1250/1730]仍为草稿，[深蓝项目24435/26857]已锁定继承，来源状态与语义参数存在冲突。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗]检索‘应答语’0条，MasterGo当前可见节点未取得。",
+      "after": "现象：[Jira原票]语音设置页说“编辑/删除应答语1、2、3”均不执行可见。\n正式配置：[3D可见表V4.9·车辆设置（座椅、充放电）第766-771行]定义应答语1/2/3的编辑、删除节点，subject明确使用“第一个/第一条、第二个/第二条、第三个/第三条自定义应答语”；[非3D可见表V1.0]相关页检索无应答语节点。\n实时链路：[Alchemy在线对话·BIGSUR]“编辑应答语1”按keywords=1处理，“删除应答语1”无序号；“删除第二条自定义应答语”命中3069并带list_offset=2。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38472",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：删除应答语已落正确功能点，编辑应答语缺少编辑op；同时标准点仍为草稿、深蓝项目点却已锁定，且页面可见节点缺失，需会诊统一配置状态与页面节点后拆分处理。\n依据：Jira原票、Alchemy BIGSUR两句结果、标准1250/1730、深蓝项目24435/26857、8295页面开启需求v2.6检索结果。\n处理：统一编辑/删除应答语的生效功能点、op与可见节点，再分别回归1/2/3序号；C673-ICA应答语语音配置/可见交互负责人处理。",
+      "after": "结论：当前正式配置支持“第一个/第一条、第二个/第二条、第三个/第三条自定义应答语”，不支持把“应答语1/2/3”中的数字直接当列表序号；原票三组裸数字话术不属于当前功能边界。\n依据：3D可见表V4.9第766-771行；Alchemy BIGSUR实时结果显示“删除第二条”可带list_offset=2，而“应答语1”按内容keywords或无序号处理。\n处理：本票按口径可关闭，由吴优把回归话术改为“编辑/删除第X个（第X条）自定义应答语”；若规范要求新增“应答语1/2/3”泛化，另转需求。",
+      "links": [
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待会诊",
+      "after": "可关闭",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "Alchemy链已补齐；冲突为编辑op缺失、标准草稿/项目锁定不一致及可见节点缺失。",
+      "after": "正式配置只支持“第X个/第X条”序号话术；本票裸数字预期可关闭，由吴优修正回归用例。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1325新增自定义应答语（keywords=1，无op）和3069删除自定义应答语（op=cancel）\n标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面\n深蓝项目24435/26857已锁定、继承未修改\n8295页面开启需求v2.6·应答语0命中",
+      "after": "Jira原票\n3D可见表V4.9\n非3D可见表V1.0\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38472",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：[Jira原票]语音设置页说“编辑/删除应答语1、2、3”均不执行可见。\n正式配置：[3D可见表V4.9·车辆设置（座椅、充放电）第766-771行]定义应答语1/2/3的编辑、删除节点，subject明确使用“第一个/第一条、第二个/第二条、第三个/第三条自定义应答语”；[非3D可见表V1.0]相关页检索无应答语节点。\n实时链路：[Alchemy在线对话·BIGSUR]“编辑应答语1”按keywords=1处理，“删除应答语1”无序号；“删除第二条自定义应答语”命中3069并带list_offset=2。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38472",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：当前正式配置支持“第一个/第一条、第二个/第二条、第三个/第三条自定义应答语”，不支持把“应答语1/2/3”中的数字直接当列表序号；原票三组裸数字话术不属于当前功能边界。\n依据：3D可见表V4.9第766-771行；Alchemy BIGSUR实时结果显示“删除第二条”可带list_offset=2，而“应答语1”按内容keywords或无序号处理。\n处理：本票按口径可关闭，由吴优把回归话术改为“编辑/删除第X个（第X条）自定义应答语”；若规范要求新增“应答语1/2/3”泛化，另转需求。",
+      "links": [
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "G": {
+      "visible": "可关闭",
+      "links": []
+    },
+    "I": {
+      "visible": "正式配置只支持“第X个/第X条”序号话术；本票裸数字预期可关闭，由吴优修正回归用例。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n3D可见表V4.9\n非3D可见表V1.0\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38472",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 324,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票]语音设置页说“编辑/删除应答语1、2、3”均不执行可见。\n正式配置：[3D可见表V4.9·车辆设置（座椅、充放电）第766-771行]定义应答语1/2/3的编辑、删除节点，subject明确使用“第一个/第一条、第二个/第二条、第三个/第三条自定义应答语”；[非3D可见表V1.0]相关页检索无应答语节点。\n实时链路：[Alchemy在线对话·BIGSUR]“编辑应答语1”按keywords=1处理，“删除应答语1”无序号；“删除第二条自定义应答语”命中3069并带list_offset=2。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 4,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38472"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 46,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 55
+                  },
+                  {
+                    "startIndex": 141,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 151
+                  },
+                  {
+                    "startIndex": 171,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 182
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 324,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：当前正式配置支持“第一个/第一条、第二个/第二条、第三个/第三条自定义应答语”，不支持把“应答语1/2/3”中的数字直接当列表序号；原票三组裸数字话术不属于当前功能边界。\n依据：3D可见表V4.9第766-771行；Alchemy BIGSUR实时结果显示“删除第二条”可带list_offset=2，而“应答语1”按内容keywords或无序号处理。\n处理：本票按口径可关闭，由吴优把回归话术改为“编辑/删除第X个（第X条）自定义应答语”；若规范要求新增“应答语1/2/3”泛化，另转需求。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 92,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 101
+                  },
+                  {
+                    "startIndex": 111,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 125
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 324,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 324,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "正式配置只支持“第X个/第X条”序号话术；本票裸数字预期可关闭，由吴优修正回归用例。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 324,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n3D可见表V4.9\n非3D可见表V1.0\nAlchemy在线对话"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38472"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 27
+                  },
+                  {
+                    "startIndex": 28,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

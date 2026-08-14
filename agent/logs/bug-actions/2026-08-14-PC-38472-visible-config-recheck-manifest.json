@@ -1,0 +1,580 @@
+{
+  "schema_version": 4,
+  "jira_key": "PC-38472",
+  "comment_causality": "C673-ICA 语音设置页说“编辑/删除应答语1、2、3”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-38472 Jira当前页面",
+      "source_location": "Jira字段、描述、附件区、问题链接及活动日志（全部评论按时间顺序）",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-ICA可见即可说产品负责人",
+      "trigger": "语音设置页应答语序号不可见",
+      "target_behavior": "C673-ICA 语音设置页说“编辑/删除应答语1、2、3”10/10不执行；评论说明相关可见能力曾关闭，并提出内容与序号冲突，但未提供当前生效配置或UE。",
+      "match": "exact",
+      "reason": "证明本票当前实现、复现和评论因果，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-c673-voice",
+      "source": "C673语音控制V1.0.5",
+      "source_location": "功能需求正文；未检出语音设置页列表项播放/编辑/删除的可见节点条款",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C673-ICA可见即可说产品负责人",
+      "trigger": "语音设置页应答语序号不可见",
+      "target_behavior": "通用语音车控定义未覆盖本票可见列表操作",
+      "match": "gap",
+      "material": false,
+      "next_action": "",
+      "reason": "正文已读，缺本票可见即可说目标。 当前3D V4.9正式配置已补齐目标节点，旧PRD缺口不再改变判断。"
+    },
+    {
+      "source_id": "drive-1305-v26",
+      "source": "8295页面开启需求v2.6",
+      "source_location": "Sheet‘设置APP内页面&弹窗’第34行：新增唤醒词页面已下发；备注界面有置灰逻辑，当前能力不能直达按钮位置；‘应答语’检索0条",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-ICA可见即可说产品负责人",
+      "trigger": "语音设置页应答语序号不可见",
+      "target_behavior": "只定义打开新增唤醒词页面，不定义列表项播放/编辑/删除及序号消歧",
+      "match": "partial",
+      "material": false,
+      "next_action": "重新登录Alchemy并补齐语音设置页生效可见配置、应答语节点命名及序号消歧规则；C673-ICA可见即可说产品负责人处理。",
+      "reason": "已按Sheet/行读取，未覆盖本票操作目标。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-14 Chrome登录态实时复跑；编辑应答语1→1325（op=编辑、keywords=1）；删除应答语1→3069（op=cancel）；删除第二条自定义应答语→3069并带list_offset=2",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "编辑应答语1；删除应答语1",
+      "target_behavior": "编辑应答语1→1325（op=编辑、keywords=1）；删除应答语1→3069（op=cancel）；删除第二条自定义应答语→3069并带list_offset=2",
+      "match": "exact",
+      "reason": "当前登录态逐句新建会话实测，只证明当前识别结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面",
+      "source_location": "标准功能详情ID 1730：说明、Query举例、下发参数、执行策略及状态",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "编辑应答语1；删除应答语1",
+      "target_behavior": "标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面",
+      "match": "exact",
+      "reason": "证明标准语义、参数与执行策略；不单独替代正式PRD/UE。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "深蓝项目24435/26857已锁定、继承未修改",
+      "source_location": "项目功能列表按meta_id检索：深蓝项目24435/26857已锁定、继承未修改",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "BIGSUR",
+      "trigger": "编辑应答语1；删除应答语1",
+      "target_behavior": "深蓝项目24435/26857已锁定、继承未修改",
+      "match": "exact",
+      "material": false,
+      "reason": "已实时核验项目功能点继承状态。"
+    },
+    {
+      "source_id": "visible-config-3d-v49",
+      "source": "深蓝8295可见新表—给3D_V4.9",
+      "source_location": "Sheet‘车辆设置（座椅、充放电）’第766-771行：应答语1/2/3编辑、删除节点；subject明确为‘第一个/第一条’等序号说法",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-ICA / BIGSUR",
+      "trigger": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内",
+      "target_behavior": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内",
+      "match": "exact",
+      "reason": "当前生效3D可见配置直接定义本票目标页面节点和话术边界。"
+    },
+    {
+      "source_id": "visible-config-non3d-v10",
+      "source": "深蓝8295可见新表—非3DV1.0",
+      "source_location": "Sheet‘车辆设置&系统设置’A1:AC129及‘systemUI’A1:K910分别检索‘唤醒词’‘应答语’均0命中",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-ICA / 非3D",
+      "trigger": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内",
+      "target_behavior": "非3D配置未承载本票语音设置页节点",
+      "match": "gap",
+      "material": false,
+      "reason": "确认本票正式节点位于3D配置，不在非3D配置中。"
+    },
+    {
+      "source_id": "visible-interaction-3d-v49",
+      "source": "深蓝8295可见新表—给3D_V4.9",
+      "source_location": "Sheet‘车辆设置（座椅、充放电）’第766-771行：应答语1/2/3编辑、删除节点；subject明确为‘第一个/第一条’等序号说法",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "C673-ICA / BIGSUR",
+      "trigger": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内",
+      "target_behavior": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内",
+      "match": "exact",
+      "reason": "同一生效可见配置同时承担页面交互节点定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "本票命中该专项画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Google Drive：同项目PRD、专项定义、交互、UE和正式配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38472"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "source_ids": [
+        "drive-c673-voice",
+        "drive-1305-v26"
+      ],
+      "reason": "已完成同项目正式资料检索，但未读到可直接定义本票目标行为的生效条款。",
+      "material": true,
+      "next_action": "重新登录Alchemy并补齐语音设置页生效可见配置、应答语节点命名及序号消歧规则",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "线上负责人工作表，仅用于查重和定位，不定义产品目标。"
+          },
+          {
+            "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+            "title": "C673_功能描述_语音控制V1.0.5.docx",
+            "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-c673-voice"
+            ]
+          },
+          {
+            "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+            "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-1305-v26"
+            ]
+          },
+          {
+            "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+            "title": "奇瑞T29 语音车控功能点",
+            "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+            "disposition": "excluded",
+            "reason": "已核对元数据或正文；不属于本检查的同范围生效来源，或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "PC-38472-formal_definition_search-drive-20260812"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Google Sheets：深蓝8295可见新表—给3D_V4.9 / 非3DV1.0",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38472"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝8295 可见 3D 语音设置"
+        }
+      ],
+      "source_ids": [
+        "visible-config-3d-v49",
+        "visible-config-non3d-v10"
+      ],
+      "reason": "已读取3D V4.9目标行并对非3D两张相关页执行精确检索。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+            "title": "深蓝8295可见新表—给3D_V4.9",
+            "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+            "disposition": "read",
+            "source_ids": [
+              "visible-config-3d-v49"
+            ]
+          },
+          {
+            "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+            "title": "深蓝8295可见新表—非3DV1.0",
+            "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+            "disposition": "read",
+            "source_ids": [
+              "visible-config-non3d-v10"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "PC-38472-formal-config-drive-20260814"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Google Sheets：深蓝8295可见新表—给3D_V4.9·车辆设置（座椅、充放电）",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38472"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "source_ids": [
+        "visible-interaction-3d-v49"
+      ],
+      "reason": "3D V4.9生效可见配置直接定义页面交互节点、subject与operation。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+            "title": "深蓝8295可见新表—给3D_V4.9",
+            "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+            "disposition": "read",
+            "source_ids": [
+              "visible-interaction-3d-v49"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "PC-38472-interaction-config-drive-20260814"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-14",
+      "search_location": "Alchemy在线对话·BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "语音设置页应答语序号不可见"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "Chrome登录态实时复跑：编辑应答语1→1325（op=编辑、keywords=1）；删除应答语1→3069（op=cancel）；删除第二条自定义应答语→3069并带list_offset=2",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "语音设置页应答语序号不可见"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-12",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "语音设置页应答语序号不可见"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-ICA可见即可说产品负责人"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "深蓝项目24435/26857已锁定、继承未修改",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：当前正式配置支持‘第一个/第一条、第二个/第二条、第三个/第三条自定义应答语’，不支持把‘应答语1/2/3’中的数字直接当列表序号；原票三组裸数字话术不属于当前功能边界。\n依据：3D可见表V4.9第766-771行；Alchemy BIGSUR实时结果显示‘删除第二条’可带list_offset=2，而‘应答语1’按内容keywords或无序号处理。\n处理：本票按口径可关闭，由吴优把回归话术改为‘编辑/删除第X个（第X条）自定义应答语’；若规范要求新增‘应答语1/2/3’泛化，另转需求。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "编辑/删除应答语1；编辑第二个自定义应答语；删除第二条自定义应答语",
+    "alchemy_tested": true,
+    "alchemy_result": "编辑应答语1→1325（op=编辑、keywords=1）；删除应答语1→3069（op=cancel）；删除第二条自定义应答语→3069并带list_offset=2",
+    "meta_id": "编辑应答语1→1325（op=编辑、keywords=1）；删除应答语1→3069（op=cancel）；删除第二条自定义应答语→3069并带list_offset=2",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1250/1730当前为草稿；1730示例含删除第二条应答语并打开设置界面",
+      "assessment": "已读取说明、Query举例、下发参数、执行策略与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24435/26857已锁定、继承未修改",
+      "assessment": "已按meta_id读取项目功能列表并核对继承及状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "正式配置只支持‘第X个/第X条’序号话术；本票裸数字预期可关闭，由吴优修正回归用例。"
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "吴优（产品口径与测试用例）",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：当前正式配置支持‘第一个/第一条、第二个/第二条、第三个/第三条自定义应答语’，不支持把‘应答语1/2/3’中的数字直接当列表序号；原票三组裸数字话术不属于当前功能边界。\n依据：3D可见表V4.9第766-771行；Alchemy BIGSUR实时结果显示‘删除第二条’可带list_offset=2，而‘应答语1’按内容keywords或无序号处理。\n处理：本票按口径可关闭，由吴优把回归话术改为‘编辑/删除第X个（第X条）自定义应答语’；若规范要求新增‘应答语1/2/3’泛化，另转需求。"
+  },
+  "run_context": {
+    "run_id": "20260814T105716+0800-visible-config-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 325
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-38472-formal_definition_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38472"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+          "title": "C673_功能描述_语音控制V1.0.5.docx",
+          "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+          "title": "奇瑞T29 语音车控功能点",
+          "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38472-formal_config_search-drive-20260812",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-12T10:56:09+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38472"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "results": [
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e",
+          "title": "C673_功能描述_语音控制V1.0.5.docx",
+          "url": "https://docs.google.com/document/d/1cJnfFBlv3o7qkrmUjvKISa1-jAkePV3e/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk",
+          "title": "奇瑞T29 语音车控功能点",
+          "url": "https://docs.google.com/spreadsheets/d/1QcxlyPKWRlQ5HB4dKkkmwkkvKqwQbnCjLNpr-yC69zk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38472-formal-config-drive-20260814",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-14T10:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38472"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝8295 可见 3D 语音设置"
+        }
+      ],
+      "results": [
+        {
+          "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+          "title": "深蓝8295可见新表—给3D_V4.9",
+          "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+          "title": "深蓝8295可见新表—非3DV1.0",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38472-interaction-config-drive-20260814",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-14T10:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38472"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 语音设置 可见即可说"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 语音设置 可见即可说"
+        }
+      ],
+      "results": [
+        {
+          "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+          "title": "深蓝8295可见新表—给3D_V4.9",
+          "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内",
+    "target_state": "应答语编辑/删除支持‘第X个/第X条自定义应答语’；裸说‘应答语1/2/3’不在当前正式泛化内",
+    "intent_function_signal": "编辑应答语1→1325（op=编辑、keywords=1）；删除应答语1→3069（op=cancel）；删除第二条自定义应答语→3069并带list_offset=2",
+    "ui_tts_vehicle_behavior": "在语音设置页可见上下文中命中正式节点并执行对应按钮操作",
+    "boundary": "不把内容数字‘应答语1’自动解释为列表序号；需使用‘第一个/第一条’等明确序号",
+    "source_ids": [
+      "visible-config-3d-v49"
+    ]
+  }
+}

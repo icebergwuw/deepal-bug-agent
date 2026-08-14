@@ -1,6 +1,6 @@
 # Sources
 
-最后整理：2026-07-17。来源表记录可复用入口和读取边界，不以文件修改时间代替资料核验。
+最后整理：2026-08-14。来源表记录可复用入口和读取边界，不以文件修改时间代替资料核验。
 
 ## 当前业务主数据与平台
 
@@ -11,6 +11,8 @@
 | [Jira](http://jira.i-tetris.com) | Jira | Jira 字段、描述、评论时间线、附件和当前流转 | 需当前登录态；每个 bug 必须完整读取 |
 | [Alchemy 在线对话](https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=) / [功能分类](https://alchemy.i-tetris.com/#/functional/classify) | Web 平台 | 语音原话测试、`meta_id`、标准功能、项目继承和执行策略 | 需当前平台登录态；本地缓存不能替代实时读取 |
 | Google Drive 项目资料 | Drive / Docs / Sheets / Office 文件 | PRD、UE、需求说明、组织架构、项目资料 | 每个问题按模块和版本检索；Office 文件按可用方式读取 |
+| [深蓝8295可见新表—非3DV1.0](https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908) | Google Sheet / 正式可见配置 | 非3D页面可见节点、subject、operation | 当前记录版本V1.0；2026-08-14已读取。语音设置唤醒词/应答语需同时核对3D表，不能以本表0命中外推为不支持 |
+| [深蓝8295可见新表—给3D_V4.9](https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=63592135#gid=63592135) | Google Sheet / 正式可见配置 | 3D车辆设置及语音设置页可见节点、subject、operation | 当前版本V4.9，2026-08-06更新；2026-08-14已读取。语音设置自定义唤醒词/应答语节点位于“车辆设置（座椅、充放电）”第763-771行 |
 | MasterGo 设计链接 | 设计平台 | UE/UI 证据和页面行为核对 | MasterGo Magic MCP v0.2.4 的启动、鉴权和工具发现已于 2026-07-17 验证；设计读取需 `fileId + layerId` 或 MasterGo 短链。只有 `page_id` 的工作说明链接不能算已读 UE；账号还需具备团队版及团队项目访问条件。`.mastergo/` 缓存不是正式来源 |
 
 ## 项目 / 产品资料

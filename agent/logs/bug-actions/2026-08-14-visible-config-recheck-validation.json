@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "errors": [],
+  "run_id": "20260814T105716+0800-visible-config-recheck",
+  "spreadsheet_id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+  "range": "bug!A324:J326",
+  "checked_at": "2026-08-14T11:10:31+08:00",
+  "checks": {
+    "PC-38473": {
+      "target_columns_match": true,
+      "protected_columns_match_write_before_snapshot": true,
+      "rich_link_targets_match": true
+    },
+    "PC-38472": {
+      "target_columns_match": true,
+      "protected_columns_match_write_before_snapshot": true,
+      "rich_link_targets_match": true
+    },
+    "PC-38471": {
+      "target_columns_match": true,
+      "protected_columns_match_write_before_snapshot": true,
+      "rich_link_targets_match": true
+    },
+    "visual_quality": {
+      "normal_zoom": "100%",
+      "wrapping_readable": true,
+      "overlap_detected": false,
+      "google_drive_saved": true
+    }
+  }
+}

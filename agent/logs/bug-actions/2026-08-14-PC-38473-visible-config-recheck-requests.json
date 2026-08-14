@@ -1,0 +1,397 @@
+{
+  "key": "PC-38473",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 324,
+  "rowIndex": 323,
+  "previewFingerprint": "18aef1425925681d27937aa75243ca75570c438a854f07bb9a40eb3ea0aa4c1f",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "现象：[Jira原票·描述/附件]C673-ICA语音设置页说“编辑/删除唤醒词”10/10不执行可见；相关Gerrit 1114070已废弃。\nAlchemy：[在线对话·BIGSUR]“编辑唤醒词”命中1324，“删除唤醒词”命中1395；[标准1239/1233、深蓝项目24428/24425]均有对应能力，1239明确包含修改意图，1233执行策略为打开自定义唤醒词界面。\n正式缺口：[8295页面开启需求v2.6·设置APP内页面&弹窗第34行]只定义新增唤醒词页面，未定义当前列表编辑/删除可见节点；MasterGo当前配置未取得。",
+      "after": "现象：[Jira原票]语音设置页说“编辑/删除唤醒词”10/10不执行可见。\n正式配置：[3D可见表V4.9·车辆设置（座椅、充放电）第763-764行]已定义custom_wakeup_delete_btn和custom_wakeup_edit_btn，支持已新增唤醒词的删除、编辑；[非3D可见表V1.0]相关页检索无该节点。\n实时链路：[Alchemy在线对话·BIGSUR]“编辑唤醒词”命中1324（op=add），“删除唤醒词”命中1395（op=delete），自定义唤醒词说法结果一致。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38473",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：两句原话的通用语音能力及深蓝项目点已存在，但本票发生在语音设置页可见上下文；当前正式页面资料仅覆盖新增页面，缺编辑/删除节点及页面态冲突消歧，暂不能把不执行直接定为语音或客户端缺陷。\n依据：Jira原票、Alchemy BIGSUR结果、标准1239/1233及深蓝项目24428/24425、8295页面开启需求v2.6第34行。\n处理：取得生效MasterGo/可见配置的编辑与删除节点、节点名和页面状态后复测；C673-ICA可见即可说产品负责人处理。",
+      "after": "结论：正式可见配置已定义已新增唤醒词的编辑、删除节点，Alchemy也能识别两句原话；车机10/10不执行属于可见交互实现缺陷。\n依据：Jira复现；3D可见表V4.9第763-764行；Alchemy BIGSUR实时结果1324/1395；标准1239/1233及深蓝项目24428/24425。\n处理：转Android -VUI甘杰排查BigsurCarSettings节点注册、页面态注入和点击执行链。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38473",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "可转研发",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "Alchemy链已补齐；未完成项为语音设置页编辑/删除唤醒词的生效可见节点。",
+      "after": "已补齐3D可见表V4.9正式节点；转Android -VUI甘杰处理BigsurCarSettings可见交互实现。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·描述/全部评论\nAlchemy在线对话·BIGSUR·分别命中1324新增/修改自定义唤醒词、1395删除自定义唤醒词\n标准1239/1233均已锁定；1239明确支持修改意图，1233执行打开自定义唤醒词界面\n深蓝项目24428/24425均已锁定、继承未修改\n8295页面开启需求v2.6·第34行",
+      "after": "Jira原票\n3D可见表V4.9\n非3D可见表V1.0\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38473",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：[Jira原票]语音设置页说“编辑/删除唤醒词”10/10不执行可见。\n正式配置：[3D可见表V4.9·车辆设置（座椅、充放电）第763-764行]已定义custom_wakeup_delete_btn和custom_wakeup_edit_btn，支持已新增唤醒词的删除、编辑；[非3D可见表V1.0]相关页检索无该节点。\n实时链路：[Alchemy在线对话·BIGSUR]“编辑唤醒词”命中1324（op=add），“删除唤醒词”命中1395（op=delete），自定义唤醒词说法结果一致。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38473",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：正式可见配置已定义已新增唤醒词的编辑、删除节点，Alchemy也能识别两句原话；车机10/10不执行属于可见交互实现缺陷。\n依据：Jira复现；3D可见表V4.9第763-764行；Alchemy BIGSUR实时结果1324/1395；标准1239/1233及深蓝项目24428/24425。\n处理：转Android -VUI甘杰排查BigsurCarSettings节点注册、页面态注入和点击执行链。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38473",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "G": {
+      "visible": "可转研发",
+      "links": []
+    },
+    "I": {
+      "visible": "已补齐3D可见表V4.9正式节点；转Android -VUI甘杰处理BigsurCarSettings可见交互实现。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n3D可见表V4.9\n非3D可见表V1.0\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38473",
+        "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0",
+        "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 323,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票]语音设置页说“编辑/删除唤醒词”10/10不执行可见。\n正式配置：[3D可见表V4.9·车辆设置（座椅、充放电）第763-764行]已定义custom_wakeup_delete_btn和custom_wakeup_edit_btn，支持已新增唤醒词的删除、编辑；[非3D可见表V1.0]相关页检索无该节点。\n实时链路：[Alchemy在线对话·BIGSUR]“编辑唤醒词”命中1324（op=add），“删除唤醒词”命中1395（op=delete），自定义唤醒词说法结果一致。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 4,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38473"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 45,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 54
+                  },
+                  {
+                    "startIndex": 144,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 154
+                  },
+                  {
+                    "startIndex": 172,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 183
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 323,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：正式可见配置已定义已新增唤醒词的编辑、删除节点，Alchemy也能识别两句原话；车机10/10不执行属于可见交互实现缺陷。\n依据：Jira复现；3D可见表V4.9第763-764行；Alchemy BIGSUR实时结果1324/1395；标准1239/1233及深蓝项目24428/24425。\n处理：转Android -VUI甘杰排查BigsurCarSettings节点注册、页面态注入和点击执行链。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 68,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38473"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 74
+                  },
+                  {
+                    "startIndex": 75,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 84
+                  },
+                  {
+                    "startIndex": 94,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 108
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 323,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 323,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "已补齐3D可见表V4.9正式节点；转Android -VUI甘杰处理BigsurCarSettings可见交互实现。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 323,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n3D可见表V4.9\n非3D可见表V1.0\nAlchemy在线对话"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38473"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=0#gid=0"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 27
+                  },
+                  {
+                    "startIndex": 28,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}
