@@ -1,0 +1,416 @@
+{
+  "module": "充放电",
+  "vehicle": "8295 / D587-G",
+  "alchemy_environment": "BIGSUR / D587-G",
+  "sources": [
+    "MasterGo 172508423930376 能源明细 V0.1",
+    "MasterGo 133021642782284 车辆设置 V3.5",
+    "MasterGo 154590851736324 D587-G车辆设置 V1.1"
+  ],
+  "pages": [
+    {"id": "854:77410", "name": "能源明细 V0.1 / 能源明细", "status": "active"},
+    {"id": "1020:64596", "name": "车辆设置 V3.5 / 充电桌面", "status": "active"},
+    {"id": "1020:64372", "name": "车辆设置 V3.5 / 放电", "status": "active"},
+    {"id": "1020:64168", "name": "车辆设置 V3.5 / 即时加热", "status": "active"},
+    {"id": "1020:55689", "name": "车辆设置 V3.5 / 能量", "status": "active"},
+    {"id": "345:28175", "name": "D587-G车辆设置 V1.1 / 能量", "status": "active"}
+  ],
+  "controls": [
+    {
+      "id": "charge-now",
+      "page_id": "1020:64596",
+      "name": "立即充电",
+      "query": "立即充电",
+      "tested_queries": ["立即充电"],
+      "expected_effect": "direct",
+      "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": true, "evidence": "BIGSUR returned navi:dest:search for a charging station instead of starting vehicle charging"},
+      "report": true
+    },
+    {
+      "id": "charge-stop",
+      "page_id": "1020:64596",
+      "name": "结束充电",
+      "query": "结束充电",
+      "tested_queries": ["结束充电"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned energy:charging:ctrl close charge"},
+      "report": false
+    },
+    {
+      "id": "charge-book-switch",
+      "page_id": "1020:64596",
+      "name": "预约充电开关",
+      "query": "打开预约充电",
+      "tested_queries": ["打开预约充电", "关闭预约充电"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned charge_book open and close operations"},
+      "report": false
+    },
+    {
+      "id": "charge-book-time",
+      "page_id": "1020:64596",
+      "name": "预约充电开始与结束时间",
+      "query": "把预约充电开始时间设置为晚上10点",
+      "tested_queries": ["把预约充电开始时间设置为晚上10点", "把预约充电结束时间设置为早上6点"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned booking start and end time operations with canonical values"},
+      "report": false
+    },
+    {
+      "id": "charge-book-full-stop",
+      "page_id": "1020:64596",
+      "name": "预约充电充满后停止",
+      "query": "预约充电结束方式设置为充满后停止",
+      "tested_queries": ["预约充电设置为充满后停止", "预约充电结束方式设置为充满后停止"],
+      "expected_effect": "direct",
+      "verdict": "misrouted",
+      "operation_check": {"target_match": true, "action_match": false, "value_match": false, "evidence": "BIGSUR closed charge_book instead of setting the completion mode"},
+      "report": true
+    },
+    {
+      "id": "charge-book-confirm",
+      "page_id": "1020:64596",
+      "name": "预约充电设置确认",
+      "query": "确认预约充电设置",
+      "tested_queries": ["确认预约充电设置"],
+      "expected_effect": "direct",
+      "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": true, "evidence": "BIGSUR returned navi:dest:via:add with empty params"},
+      "report": true
+    },
+    {
+      "id": "charge-current-limit",
+      "page_id": "1020:64596",
+      "name": "充电电流限值",
+      "query": "把充电电流限值设置为8A",
+      "tested_queries": ["把充电电流限值设置为8A", "把充电电流限值设置为10A", "把充电电流限值设置为16A", "把充电电流限值设置为32A"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned charge_current with 8, 10, 16 and 32 amp values"},
+      "report": false
+    },
+    {
+      "id": "discharge-outward",
+      "page_id": "1020:64372",
+      "name": "对外放电开关",
+      "query": "打开对外放电",
+      "tested_queries": ["打开对外放电", "关闭对外放电"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned open/close for canonical discharge_outward"},
+      "report": false
+    },
+    {
+      "id": "pulse-heating",
+      "page_id": "1020:64168",
+      "name": "脉冲加热",
+      "query": "开启脉冲加热",
+      "tested_queries": ["开启脉冲加热"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned vehicle:energy:battery:ctrl open pulse_heat"},
+      "report": false
+    },
+    {
+      "id": "slow-charge-auto-unlock",
+      "page_id": "1020:55689",
+      "name": "慢充口自动解锁",
+      "query": "打开慢充口自动解锁",
+      "tested_queries": ["打开慢充口自动解锁", "关闭慢充口自动解锁"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned charge_gun_auto_unlock open and close"},
+      "report": false
+    },
+    {
+      "id": "consumption-method-domestic",
+      "page_id": "1020:55689",
+      "name": "能耗计量方式",
+      "query": "能耗计量方式设置为CLTC工况",
+      "tested_queries": ["能耗计量方式设置为CLTC工况", "能耗计量方式设置为WLTC工况"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned cltc and wltc consumption_method modes"},
+      "report": false
+    },
+    {
+      "id": "energy-display",
+      "page_id": "1020:55689",
+      "name": "能量显示方式",
+      "query": "能量显示设置为剩余里程",
+      "tested_queries": ["能量显示设置为剩余里程", "能量显示设置为剩余电量"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned mileage and energy display_method modes"},
+      "report": false
+    },
+    {
+      "id": "dc-vin-authorization",
+      "page_id": "1020:55689",
+      "name": "直流充电VIN授权",
+      "query": "打开直流充电VIN授权",
+      "tested_queries": ["打开直流充电VIN授权", "关闭直流充电VIN授权"],
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {"target_match": false, "action_match": true, "value_match": true, "evidence": "BIGSUR returned energy:charging:ctrl but setting_item canonical was empty for both directions"},
+      "report": true
+    },
+    {
+      "id": "super-power-saving",
+      "page_id": "1020:55689",
+      "name": "超级省电开关",
+      "query": "打开超级省电",
+      "tested_queries": ["打开超级省电", "关闭超级省电", "确认开启超级省电"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned super_power_saving open/close operations"},
+      "report": false
+    },
+    {
+      "id": "charge-pile-connection-switch",
+      "page_id": "1020:55689",
+      "name": "充电桩连接开关",
+      "query": "打开充电桩连接",
+      "tested_queries": ["打开充电桩连接", "关闭充电桩连接"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned charge_pile_connection open and close"},
+      "report": false
+    },
+    {
+      "id": "charge-pile-device-operations",
+      "page_id": "1020:55689",
+      "name": "充电桩设备连接、断开、忘记、重试与取消配对",
+      "query": "忘记已连接的充电桩",
+      "tested_queries": ["断开已连接的充电桩", "忘记已连接的充电桩", "连接第一个充电桩", "重试连接充电桩", "取消充电桩配对"],
+      "expected_effect": "content_operation",
+      "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "context_match": false, "evidence": "BIGSUR either returned unsupported or only toggled the global charge_pile_connection switch without the selected device operation"},
+      "report": true
+    },
+    {
+      "id": "fuel-charge-switch",
+      "page_id": "1020:55689",
+      "name": "燃油补电开关",
+      "query": "打开燃油补电",
+      "tested_queries": ["打开燃油补电", "关闭燃油补电", "确认开启燃油补电"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned charge_with_fuel open and close"},
+      "report": false
+    },
+    {
+      "id": "fuel-charge-level",
+      "page_id": "1020:55689",
+      "name": "燃油补电档位",
+      "query": "燃油补电档位设置为低",
+      "tested_queries": ["燃油补电档位设置为低", "燃油补电档位设置为中", "燃油补电档位设置为高"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned low, medium and high fuel charging power values"},
+      "report": false
+    },
+    {
+      "id": "fuel-charge-soc-limit",
+      "page_id": "1020:55689",
+      "name": "燃油补电SOC上限",
+      "query": "燃油补电SOC上限设置为60%",
+      "tested_queries": ["燃油补电SOC上限设置为60%"],
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "evidence": "BIGSUR returned common:func:not:supported"},
+      "report": true
+    },
+    {
+      "id": "energy-management-domestic",
+      "page_id": "1020:55689",
+      "name": "国内能量管理模式",
+      "query": "能量管理设置为市区模式",
+      "tested_queries": ["能量管理设置为市区模式", "能量管理设置为高速模式", "能量管理设置为山地模式"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned urban, highway and mountain management modes"},
+      "report": false
+    },
+    {
+      "id": "forced-pure-electric",
+      "page_id": "1020:55689",
+      "name": "强制纯电开关",
+      "query": "打开强制纯电",
+      "tested_queries": ["打开强制纯电", "关闭强制纯电", "确认开启强制纯电"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned forced_pure_electricity open and close"},
+      "report": false
+    },
+    {
+      "id": "soc-target",
+      "page_id": "1020:55689",
+      "name": "电量保持目标",
+      "query": "电量保持目标设置为60%",
+      "tested_queries": ["电量保持目标设置为60%"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned soc_target scale_percent 60%"},
+      "report": false
+    },
+    {
+      "id": "energy-management-memory",
+      "page_id": "1020:55689",
+      "name": "能量管理记忆开关",
+      "query": "打开能量管理记忆",
+      "tested_queries": ["打开能量管理记忆", "关闭能量管理记忆"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned energy_management_memory open and close"},
+      "report": false
+    },
+    {
+      "id": "battery-insulation",
+      "page_id": "1020:55689",
+      "name": "电池保温开关",
+      "query": "打开电池保温",
+      "tested_queries": ["打开电池保温", "关闭电池保温"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "BIGSUR returned battery_insulation open and close"},
+      "report": false
+    },
+    {
+      "id": "energy-detail-entry",
+      "page_id": "854:77410",
+      "name": "能源明细入口",
+      "query": "打开能源明细",
+      "tested_queries": ["打开能源明细"],
+      "expected_effect": "navigate",
+      "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": true, "evidence": "BIGSUR returned common:func:not:supported"},
+      "report": true
+    },
+    {
+      "id": "energy-detail-tabs",
+      "page_id": "854:77410",
+      "name": "能源明细页签切换",
+      "query": "能源明细切换到能耗曲线",
+      "tested_queries": ["能源明细切换到能耗曲线", "切换能源明细到能耗曲线", "能源明细切换到行程信息"],
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "evidence": "BIGSUR returned common:func:not:supported for both tabs"},
+      "report": true
+    },
+    {
+      "id": "energy-curve-mode",
+      "page_id": "854:77410",
+      "name": "能耗曲线筛选",
+      "query": "能耗曲线选择全部",
+      "tested_queries": ["能耗曲线选择全部", "能耗曲线选择电耗", "能耗曲线选择油耗"],
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": false, "evidence": "BIGSUR returned statistical/curve mode operations with empty params for all three values"},
+      "report": true
+    },
+    {
+      "id": "trip-reset",
+      "page_id": "854:77410",
+      "name": "小计行程清零及确认取消",
+      "query": "清零小计行程",
+      "tested_queries": ["清零小计行程", "确认清除小计行程", "取消清除小计行程"],
+      "expected_effect": "direct",
+      "verdict": "misrouted",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "evidence": "BIGSUR returned an empty energy curve mode operation or unsupported responses instead of trip reset"},
+      "report": true
+    },
+    {
+      "id": "charging-info-entry",
+      "page_id": "1020:64596",
+      "name": "充电信息弹窗入口",
+      "query": "打开充电信息",
+      "tested_queries": ["打开充电信息"],
+      "expected_effect": "navigate",
+      "verdict": "empty_required_slot",
+      "operation_check": {"target_match": false, "action_match": true, "value_match": true, "evidence": "BIGSUR returned app:ctrl open without a target"},
+      "report": true
+    },
+    {
+      "id": "discharging-info-entry",
+      "page_id": "1020:64372",
+      "name": "放电信息弹窗入口",
+      "query": "打开放电信息",
+      "tested_queries": ["打开放电信息"],
+      "expected_effect": "navigate",
+      "verdict": "empty_required_slot",
+      "operation_check": {"target_match": false, "action_match": true, "value_match": true, "evidence": "BIGSUR returned app:ctrl open with an empty target canonical"},
+      "report": true
+    },
+    {
+      "id": "battery-reminder-dismiss",
+      "page_id": "1020:64596",
+      "name": "动力电池提醒关闭",
+      "query": "关闭动力电池提醒",
+      "tested_queries": ["关闭动力电池提醒"],
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": true, "evidence": "BIGSUR returned common:func:not:supported"},
+      "report": true
+    },
+    {
+      "id": "d587-auto-unlock",
+      "page_id": "345:28175",
+      "name": "D587-G充电枪自动解锁",
+      "query": "打开充电枪自动解锁",
+      "tested_queries": ["打开充电枪自动解锁", "关闭充电枪自动解锁"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "D587-G returned charge_gun_auto_unlock open and close"},
+      "report": false
+    },
+    {
+      "id": "d587-consumption-method",
+      "page_id": "345:28175",
+      "name": "D587-G能耗计量方式",
+      "query": "能耗计量方式设置为NEDC工况",
+      "tested_queries": ["能耗计量方式设置为NEDC工况", "能耗计量方式设置为WLTP工况"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "D587-G returned nedc and wltp modes"},
+      "report": false
+    },
+    {
+      "id": "d587-energy-modes-pass",
+      "page_id": "345:28175",
+      "name": "D587-G燃油优先与纯电优先",
+      "query": "能量管理设置为燃油优先",
+      "tested_queries": ["能量管理设置为燃油优先", "能量管理设置为纯电优先"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {"target_match": true, "action_match": true, "value_match": true, "evidence": "D587-G returned pv and ev energy modes"},
+      "report": false
+    },
+    {
+      "id": "d587-energy-hold-mode",
+      "page_id": "345:28175",
+      "name": "D587-G电量保持模式",
+      "query": "能量管理设置为电量保持",
+      "tested_queries": ["能量管理设置为电量保持"],
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {"target_match": false, "action_match": false, "value_match": false, "evidence": "D587-G returned common:func:not:supported"},
+      "report": true
+    }
+  ],
+  "sheet_write": {
+    "spreadsheet_id": "1cuGcoJl6tdopXul1pbg9GDvvc3CY9gqL2bl0e3OgWag",
+    "sheet_gid": "1756053093",
+    "planned_range": "A57:I70",
+    "readback": {
+      "range": "A57:I70",
+      "row_count": 14,
+      "exact_match": true,
+      "verified_at": "2026-08-14"
+    }
+  }
+}

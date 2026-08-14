@@ -1,9 +1,9 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.12.0-trial.1`
+- 当前版本：`v1.13.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-08-14`
-- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/audit-ue-voice-coverage/SKILL.md`、`agent/skills/audit-ue-voice-coverage/agents/openai.yaml`、`agent/skills/audit-ue-voice-coverage/references/audit-contract.md`、`agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
+- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/audit-ue-voice-coverage/SKILL.md`、`agent/skills/audit-ue-voice-coverage/agents/openai.yaml`、`agent/skills/audit-ue-voice-coverage/references/audit-contract.md`、`agent/skills/audit-ue-voice-coverage/references/team-module-sources.json`、`agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`、`agent/skills/audit-ue-voice-coverage/scripts/validate_team_sources.py`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 模板：Bug 流程使用 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核使用 `agent/skills/audit-ue-voice-coverage/SKILL.md`。安装位置由 `$CODEX_HOME` 决定，未设置时使用当前用户目录下的 `.codex/skills/<skill-name>/SKILL.md`。安装副本不定义独立业务口径且必须与仓库模板一致。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
@@ -14,6 +14,42 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.13.0-trial.1 — 2026-08-14
+
+### 试行内容
+
+- UE 语音覆盖 Skill 增加独立操作者绑定门槛：首次使用必须询问姓名，不得从系统用户名、浏览器账号、Git 作者或聊天称呼推断身份；确认前只允许只读发现。
+- 预载吴优、冯智秀、罗稚钦、李欣四人的工作模块来源，按各自真实页签与 module/UE 列映射读取，不再假设同一工作簿结构。
+- 非预载人员必须在授权 Drive 检索其工作说明或工作模块表，打开候选并让操作者确认精确文件与页签后才能本地绑定。
+- 新增 `validate_team_sources.py`，阻止负责人、显示名、页签映射、列名或模块列表重复/缺失。
+
+### 修改原因
+
+- 团队成员使用不同工作簿、不同页签和不同列保存负责模块；只预载 URL 的默认 gid 会落到问题或 Bug 页，无法稳定找到模块和 UE。
+- 用户要求 Skill 首次使用确认操作者，名单外人员必须通过 Drive 查找并引导确认，且需要把流程上传 GitHub 供同事使用。
+
+### 影响文件
+
+- `.gitignore`
+- `agent/rules-version.md`
+- `agent/skills/audit-ue-voice-coverage/SKILL.md`
+- `agent/skills/audit-ue-voice-coverage/references/team-module-sources.json`
+- `agent/skills/audit-ue-voice-coverage/scripts/validate_team_sources.py`
+- `agent/logs/bug-actions/2026-08-14-charge-discharge-voice-coverage.md`
+- `agent/logs/bug-actions/2026-08-14-charge-discharge-voice-coverage-audit.json`
+
+### 验证案例
+
+- 四位预载负责人均有唯一 owner id、显示名、工作簿与至少一个模块页签；冯智秀使用 A/D 列、罗稚钦使用 B/F 列、李欣使用 A/G 列、吴优使用 B/F 列。
+- 充放电审核记录 35 组控件、72 条精确 Alchemy 指令；21 组通过，14 组失败写入线上表格 `A57:I70` 并逐字回读一致。
+- 将负责人显示名、页签映射或模块名改为重复值时，团队来源校验器必须拒绝。
+- 本地审核身份文件保持 Git 忽略，Skill 来源文件不包含密码、Cookie、Token 或浏览器会话。
+
+### 回滚口径
+
+- 通过新提交恢复 v1.12.0-trial.1，不使用 `git reset --hard`。
+- 回滚不得删除本次线上充放电审核结果、审核日志或 manifest；团队来源映射作为历史证据保留。
 
 ## v1.12.0-trial.1 — 2026-08-14
 

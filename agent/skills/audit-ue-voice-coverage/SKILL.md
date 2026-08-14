@@ -13,10 +13,20 @@ Audit only current, effective UE behavior. Treat a visible control as reportable
 - Use the signed-in browser for visual status checks, Alchemy tests, Drive fallback, and Google Sheets edits.
 - When working in a governed project, read and follow its `AGENTS.md`, identity preflight, logging, and Git delivery rules.
 
+## Operator binding
+
+Before reading assigned modules, resolve the operator from a machine-local binding. In a governed project, prefer its ignored `agent/config/local-profile.json`; otherwise use the ignored `agent/config/audit-ue-local-profile.json`.
+
+- If no binding exists, ask the operator for their name. Never infer identity from the OS username, browser account, Git author, or chat nickname.
+- Read [references/team-module-sources.json](references/team-module-sources.json). For a preloaded person, show the matched workbook and module sheet names and ask them to confirm before persisting the binding.
+- If the name is not preloaded, search the authorized Drive for that person's work-instruction or work-module sheet. Inspect the candidate workbook and module tab, then ask the operator to confirm the exact file and tab before binding it.
+- Store only the confirmed display name, stable local owner id, workbook id, sheet name/gid, and column mapping. Keep the binding machine-local and Git-ignored; never store credentials or browser session data.
+- A missing or unconfirmed binding permits read-only discovery only. Do not update the coverage sheet until identity and target write scope are confirmed.
+
 ## Workflow
 
-1. Verify operator identity and write access before changing a sheet.
-2. Read assigned module names from the requested source column and the matching UE link from its UE column.
+1. Resolve and confirm the operator binding, then verify write access before changing a sheet.
+2. Read assigned module names from the confirmed module sheet and its declared module/UE columns. Do not assume every coworker uses the same tab or columns.
 3. Open the MasterGo UE first. If no usable MasterGo document exists, search the authorized Drive UE source. Report modules with no readable UE; do not infer controls.
 4. Build a page-state matrix before extracting controls.
 5. Extract every user-operable control from active pages: switches, sliders, steppers, selectors, segmented modes, buttons, and direct setting entrances.
@@ -27,6 +37,8 @@ Audit only current, effective UE behavior. Treat a visible control as reportable
 10. Deduplicate against the target sheet. Add only controls whose active UE behavior cannot be executed correctly by voice.
 11. Preserve the sheet's existing column order, wording style, formatting, formulas, and unrelated rows. Re-read the exact written range.
 12. Record the source, UE version, Alchemy environment, page-state exclusions, test evidence, changed range, and readback. Do not perform Jira actions for this workflow.
+
+When the team source registry changes, run `scripts/validate_team_sources.py references/team-module-sources.json` and re-read every source workbook used for the change.
 
 ## Page-status hard gate
 
