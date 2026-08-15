@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260815T010241Z-4da62f50-b3cc-4765-8ab3-900b36a48465",
+  "automation_id": "bug",
+  "status": "planned",
+  "started_at": "2026-08-15T09:02:41+08:00",
+  "query_summary": "Jira查询98个唯一Key；线上吴优bug页333个非空登记、332个唯一Key；去重后新增18条；完成Jira、Drive和Alchemy实时读取，但因无结构化Sheets写入/原始A:J回读能力且3票存在material gap，按fail-closed未写表",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-15-daily-new-bugs.md",
+  "evidence_receipts": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-15-daily-new-bugs-evidence-receipts.json",
+  "items": [],
+  "new_jira_keys": [
+    "ADS-48571",
+    "ADS-48769",
+    "ADS-48813",
+    "ADS-48814",
+    "ADS-48815",
+    "ADS-48829",
+    "ADS-48852",
+    "ADS-48969",
+    "HUR-81740",
+    "HUR-82887",
+    "HUR-83012",
+    "HUR-83099",
+    "HUR-83268",
+    "HUR-83269",
+    "HUR-83271",
+    "HUR-83275",
+    "PC-38464",
+    "SD-6929"
+  ],
+  "jira_count": 98,
+  "sheet_registered_nonempty": 333,
+  "sheet_unique_keys": 332,
+  "sheet_duplicates": {"SLV-44272": [155, 285]},
+  "blockers": [
+    "当前运行环境无Google Sheets结构化写入与原始A:J单元格元数据回读接口，不能验证富文本链接、公式、BOOLEAN、保护列、样式、筛选范围和readback_sha256",
+    "ADS-48571未找到生效8295多意图策略的精确正式条款",
+    "HUR-83099票面缺完整、可比对的预期TTS和实际TTS",
+    "SD-6929未找到C673-G3/G5手动雨刮能力与洗车模式雨刮状态的精确正式条款",
+    "逐票schema v4 manifest尚未生成，证据门禁未运行"
+  ],
+  "completion": {
+    "jira_read": "complete",
+    "drive_search_receipts": "saved",
+    "alchemy_current": "complete_for_applicable_voice_cases",
+    "evidence_gate": "not_run",
+    "prewrite_validation": "expected_failure: items为空",
+    "sheet_write": "not_run",
+    "readback_validation": "not_run",
+    "final_validation": "not_run"
+  }
+}
