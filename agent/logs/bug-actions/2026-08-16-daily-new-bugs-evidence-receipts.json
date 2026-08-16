@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260816T011046Z-704cc4a4-51d4-417f-aba6-43bfafb5b5da",
+  "generated_at": "2026-08-16T01:14:54Z",
+  "jira": {
+    "query": "assignee = \"you.wu\" AND project in (SD,HUR,ADS,BGS,BEO,PC,SM,SLV) AND issuetype = Bug AND status in (\"To Do\",Reopened,\"In Progress\",Pending) ORDER BY key ASC",
+    "source": "Jira Issue Navigator + 所有内容视图",
+    "count": 99,
+    "unique_count": 99,
+    "new_since_previous_query": ["ADS-48158"],
+    "new_since_previous_query_already_registered": ["ADS-48158"],
+    "unregistered_keys": ["ADS-48571", "ADS-48769", "ADS-48813", "ADS-48814", "ADS-48815", "ADS-48829", "ADS-48852", "ADS-48969", "HUR-81740", "HUR-82887", "HUR-83012", "HUR-83099", "HUR-83268", "HUR-83269", "HUR-83271", "HUR-83275", "PC-38464", "SD-6929"]
+  },
+  "sheet": {
+    "source": "Google Sheets gviz select B",
+    "sheet_name": "bug",
+    "rows_including_header": 334,
+    "registered_nonempty": 333,
+    "unique_keys": 332,
+    "duplicates": {"SLV-44272": [155, 285]}
+  },
+  "issue_read_receipts": {
+    "ADS-48571": {"updated": "2026-08-14", "comments": 5, "text_length": 1762, "sha256": "712218b3caf4b8f512b314c61cab5025434c7ea5531017c2c480a3399a5f33c5", "related": ["ADS-48560"]},
+    "ADS-48769": {"updated": "2026-08-14", "comments": 1, "text_length": 1091, "sha256": "8e75b47a0c55a0f025c05d6ed23d901dc2a2ca2362d2302042e7cd0cb26986e9", "related": []},
+    "ADS-48813": {"updated": "2026-08-14", "comments": 3, "text_length": 1733, "sha256": "39cf953445bec02e8945b966b53d64c9862341d2d48f1c8abed85573bb30440a", "related": ["ADS-48739"]},
+    "ADS-48814": {"updated": "2026-08-14", "comments": 3, "text_length": 1781, "sha256": "728414e84b16f590bd949712a89af840c06c31564c5aaeff41d9bccc3e72a53a", "related": ["ADS-48739"]},
+    "ADS-48815": {"updated": "2026-08-14", "comments": 3, "text_length": 1773, "sha256": "e1ddf389a9195feb5112540deea39276f3ae86d8ec80436d2b0d42626a4bf108", "related": ["ADS-48739"]},
+    "ADS-48829": {"updated": "2026-08-14", "comments": 3, "text_length": 1671, "sha256": "c8d60ba4d6df409599ae6878bf45c5562ca0f3be02332ffb8e6f51bf3ebcd137", "related": ["ADS-48774"]},
+    "ADS-48852": {"updated": "2026-08-14", "comments": 4, "text_length": 1904, "sha256": "5475b05428654dbf3a849291a18b80022e3da5cdcfa717560249a8cd9da4043d", "related": ["ADS-48784"]},
+    "ADS-48969": {"updated": "2026-08-14", "comments": 0, "text_length": 917, "sha256": "90b1729b4fc0e8e2fa7ebdabf39fd3553606a6e2f8d06b76314ae222b4790842", "related": ["ADS-48964"]},
+    "HUR-81740": {"updated": "2026-08-13", "comments": 12, "text_length": 7687, "sha256": "ed72ebd2e8d67790c518db3a001b799ff01561cc7a2e0e0f70cb90a4c0129037", "related": []},
+    "HUR-82887": {"updated": "2026-08-13", "comments": 4, "text_length": 3779, "sha256": "fb5d0dab54a667c121da91e9588c94a1c3f510a918c23c5711bc30c4aa1e72fc", "related": []},
+    "HUR-83012": {"updated": "2026-08-13", "comments": 2, "text_length": 900, "sha256": "b0de181fb8730b960c1c9a1951c5efaf268bfa8cede8443d2161d5d9ab1bf69d", "related": []},
+    "HUR-83099": {"updated": "2026-08-13", "comments": 1, "text_length": 793, "sha256": "4046542e717387e8618dfcab9d627a497a65a277da49823fbec194311561dce0", "related": []},
+    "HUR-83268": {"updated": "2026-08-14", "comments": 0, "text_length": 877, "sha256": "3073736c797d4649465363f84abe81cc2391bc309b68b8ac8529fa3a2181caf8", "related": []},
+    "HUR-83269": {"updated": "2026-08-14", "comments": 0, "text_length": 869, "sha256": "69219b1dde26205fe194466c3c339a286f06a036ae04016a7685a26b05480b68", "related": []},
+    "HUR-83271": {"updated": "2026-08-14", "comments": 0, "text_length": 867, "sha256": "d4509bf4b092148d661505090b2c10723e73dc0c6f00a39f5607e57cc148d539", "related": []},
+    "HUR-83275": {"updated": "2026-08-14", "comments": 0, "text_length": 869, "sha256": "46e8285d4db8aa1c14b88632f4f281affbd329e13fd2cfa9675e81f0195be5f8", "related": []},
+    "PC-38464": {"updated": "2026-08-14", "comments": 9, "text_length": 2688, "sha256": "0e16a678fc759923c079db3b47d0fe8cb60778cb8fa2527262c63e8e4c06aca7", "related": ["GL-5959"]},
+    "SD-6929": {"updated": "2026-08-14", "comments": 1, "text_length": 952, "sha256": "7938595747a64ec422aaa4c284f82ce839b4045d1b4973d654fd0704a1538e59", "related": []}
+  },
+  "historical_evidence_reference": {
+    "path": "agent/logs/bug-actions/2026-08-15-daily-new-bugs-evidence-receipts.json",
+    "role": "historical_context_only",
+    "note": "其中16次Drive检索回执和Alchemy结果未伪装为本次实时回执；本次未生成schema v4 manifest。"
+  }
+}
+
