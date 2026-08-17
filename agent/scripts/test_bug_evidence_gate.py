@@ -13,7 +13,7 @@ def queries(*items: tuple[str, str]) -> list[dict[str, str]]:
 
 
 def bind_manifest(payload: dict) -> dict:
-    payload["schema_version"] = 4
+    payload["schema_version"] = 5
     payload["run_context"] = {
         "run_id": "test-run-001",
         "operator_owner_id": "wu-you",
@@ -34,6 +34,7 @@ def bind_manifest(payload: dict) -> dict:
         receipt_id = f"receipt-{check['check_id']}"
         results = []
         candidates = []
+        version_families = []
         for source_id in check.get("source_ids", []):
             source = next(
                 item for item in payload["scope_checks"] if item["source_id"] == source_id
@@ -52,8 +53,22 @@ def bind_manifest(payload: dict) -> dict:
                     "url": result["url"],
                     "disposition": "read",
                     "source_ids": [source_id],
+                    "references": [],
                 }
             )
+            if " V" in source["source"]:
+                family = source["source"].rsplit(" V", 1)[0]
+                candidates[-1]["version_family"] = family
+                version_families.append(
+                    {
+                        "family": family,
+                        "status": "enumerated",
+                        "receipt_ids": [receipt_id],
+                        "selected_candidate_id": source_id,
+                        "selection_reason": "测试夹具中唯一且最新的可读版本。",
+                        "newer_version_checked": True,
+                    }
+                )
         payload["search_receipts"].append(
             {
                 "receipt_id": receipt_id,
@@ -64,11 +79,20 @@ def bind_manifest(payload: dict) -> dict:
                 "results": results,
             }
         )
+        for family in version_families:
+            payload["search_receipts"][-1]["queries"].append(
+                {"kind": "version_family", "text": family["family"]}
+            )
         check["search_receipt_ids"] = [receipt_id]
         check["candidate_audit"] = {
             "completed": True,
             "results_count": len(results),
             "candidates": candidates,
+        }
+        check["search_completion"] = {
+            "completed": True,
+            "referenced_sources": [],
+            "version_families": version_families,
         }
     return payload
 
@@ -881,6 +905,113 @@ class BugEvidenceGateTest(unittest.TestCase):
             any("存在已读候选，不能标记 not_found" in error for error in errors),
             errors,
         )
+
+    def test_candidate_document_reference_requires_follow_up(self) -> None:
+        item = hur_case()
+        formal = item["required_evidence_checks"][0]
+        candidate = formal["candidate_audit"]["candidates"][0]
+        candidate["references"] = [
+            {"reference_text": "J90A&J90AEU_功能定义_系统设置功能定义V2.1"}
+        ]
+        errors = validate_manifest(item)
+        self.assertTrue(any("引用文档未追查" in error for error in errors), errors)
+
+    def test_reference_follow_up_requires_exact_document_name_receipt(self) -> None:
+        item = hur_case()
+        formal = item["required_evidence_checks"][0]
+        candidate = formal["candidate_audit"]["candidates"][0]
+        reference_text = "J90A&J90AEU_功能定义_系统设置功能定义V2.1"
+        candidate["references"] = [{"reference_text": reference_text}]
+        formal["search_completion"]["referenced_sources"] = [
+            {
+                "source_candidate_id": candidate["id"],
+                "reference_text": reference_text,
+                "status": "searched",
+                "receipt_ids": formal["search_receipt_ids"],
+            }
+        ]
+        errors = validate_manifest(item)
+        self.assertTrue(any("未按完整名称检索" in error for error in errors), errors)
+
+    def test_versioned_candidate_requires_family_enumeration(self) -> None:
+        item = hur_case()
+        formal = item["required_evidence_checks"][0]
+        formal["search_completion"]["version_families"] = []
+        errors = validate_manifest(item)
+        self.assertTrue(any("未完成同系列枚举" in error for error in errors), errors)
+
+    def test_version_family_requires_series_name_receipt(self) -> None:
+        item = hur_case()
+        receipt = item["search_receipts"][0]
+        receipt["queries"] = [
+            query for query in receipt["queries"] if query["kind"] != "version_family"
+        ]
+        errors = validate_manifest(item)
+        self.assertTrue(any("版本族未按系列名检索" in error for error in errors), errors)
+
+    def test_exact_reference_and_latest_version_completion_passes(self) -> None:
+        item = hur_case()
+        formal = item["required_evidence_checks"][0]
+        candidate = formal["candidate_audit"]["candidates"][0]
+        reference_text = "J90A&J90AEU_功能定义_系统设置功能定义V2.3"
+        candidate["references"] = [{"reference_text": reference_text}]
+        exact_receipt_id = "receipt-formal-definition-exact-name"
+        item["search_receipts"].append(
+            {
+                "receipt_id": exact_receipt_id,
+                "provider": "google_drive",
+                "check_id": formal["check_id"],
+                "searched_at": "2026-08-17T14:00:00+08:00",
+                "queries": queries(("exact_document_name", reference_text)),
+                "results": [
+                    {
+                        "id": candidate["id"],
+                        "title": candidate["title"],
+                        "url": candidate["url"],
+                        "mime_type": "application/vnd.google-apps.document",
+                    }
+                ],
+            }
+        )
+        formal["search_receipt_ids"].append(exact_receipt_id)
+        formal["search_completion"]["referenced_sources"] = [
+            {
+                "source_candidate_id": candidate["id"],
+                "reference_text": reference_text,
+                "status": "read",
+                "receipt_ids": [exact_receipt_id],
+            }
+        ]
+        self.assertEqual(validate_manifest(item), [])
+
+    def test_reference_marked_read_requires_read_result(self) -> None:
+        item = hur_case()
+        formal = item["required_evidence_checks"][0]
+        candidate = formal["candidate_audit"]["candidates"][0]
+        reference_text = "J90A&J90AEU_功能定义_系统设置功能定义V2.3"
+        candidate["references"] = [{"reference_text": reference_text}]
+        exact_receipt_id = "receipt-empty-exact-name"
+        item["search_receipts"].append(
+            {
+                "receipt_id": exact_receipt_id,
+                "provider": "google_drive",
+                "check_id": formal["check_id"],
+                "searched_at": "2026-08-17T14:00:00+08:00",
+                "queries": queries(("exact_document_name", reference_text)),
+                "results": [],
+            }
+        )
+        formal["search_receipt_ids"].append(exact_receipt_id)
+        formal["search_completion"]["referenced_sources"] = [
+            {
+                "source_candidate_id": candidate["id"],
+                "reference_text": reference_text,
+                "status": "read",
+                "receipt_ids": [exact_receipt_id],
+            }
+        ]
+        errors = validate_manifest(item)
+        self.assertTrue(any("标记 read 但无已读命中" in error for error in errors), errors)
 
     def test_batch_log_requires_one_card_per_jira(self) -> None:
         text = """# 批量处理

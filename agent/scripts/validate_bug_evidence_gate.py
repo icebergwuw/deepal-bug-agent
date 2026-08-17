@@ -37,6 +37,9 @@ QUERY_KINDS = set(EVIDENCE_REQUIREMENTS["query_kinds"])
 CANDIDATE_DISPOSITIONS = set(
     EVIDENCE_REQUIREMENTS["candidate_dispositions"]
 )
+REFERENCE_STATUSES = {"searched", "read", "unavailable", "not_applicable"}
+VERSION_FAMILY_STATUSES = {"enumerated", "unavailable", "not_applicable"}
+VERSION_PATTERN = re.compile(r"(?i)(?:^|[^a-z0-9])v\d+(?:\.\d+)+")
 
 SCOPE_MATCHES = {"exact", "partial", "mismatch", "gap"}
 SOURCE_ROLES = {"formal_target", "implementation_actual", "context_only"}
@@ -159,6 +162,15 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
         receipt_queries = receipt.get("queries")
         if not isinstance(receipt_queries, list) or not receipt_queries:
             errors.append(f"检索回执 {receipt_id or index} queries 必须是非空数组")
+            receipt_queries = []
+        for query_index, query in enumerate(receipt_queries, start=1):
+            if not isinstance(query, dict):
+                errors.append(f"检索回执 {receipt_id or index} query 第 {query_index} 项不是对象")
+                continue
+            if query.get("kind") not in QUERY_KINDS:
+                errors.append(f"检索回执 {receipt_id or index} query 第 {query_index} 项 kind 未登记")
+            if not nonempty(query.get("text")):
+                errors.append(f"检索回执 {receipt_id or index} query 第 {query_index} 项缺少 text")
         receipt_results = receipt.get("results")
         if not isinstance(receipt_results, list):
             errors.append(f"检索回执 {receipt_id or index} results 必须是数组")
@@ -409,6 +421,7 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
                 errors.append(f"必查资料 {check_id} 缺少 search_receipt_ids")
                 receipt_ids = []
             receipt_results: dict[str, dict[str, Any]] = {}
+            bound_receipt_query_pairs: set[tuple[Any, Any]] = set()
             check_query_pairs = {
                 (item.get("kind"), item.get("text"))
                 for item in queries
@@ -426,13 +439,17 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
                     for item in receipt.get("queries", [])
                     if isinstance(item, dict)
                 }
-                if not check_query_pairs.issubset(receipt_query_pairs):
-                    errors.append(f"必查资料 {check_id} 检索回执未覆盖声明 queries：{receipt_id}")
+                bound_receipt_query_pairs.update(receipt_query_pairs)
                 for result in receipt.get("results", []):
                     if isinstance(result, dict) and nonempty(result.get("id")):
                         receipt_results[result["id"]] = result
+            if not check_query_pairs.issubset(bound_receipt_query_pairs):
+                errors.append(f"必查资料 {check_id} 绑定检索回执未覆盖声明 queries")
 
             audit = check.get("candidate_audit")
+            audited_candidates: dict[str, dict[str, Any]] = {}
+            discovered_references: set[tuple[str, str]] = set()
+            discovered_version_families: set[str] = set()
             if not isinstance(audit, dict):
                 errors.append(f"必查资料 {check_id} 缺少候选文件审计")
             else:
@@ -472,9 +489,37 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
                         if candidate_id in candidate_ids:
                             errors.append(f"必查资料 {check_id} 候选 id 重复：{candidate_id}")
                         candidate_ids.add(candidate_id)
+                        audited_candidates[candidate_id] = candidate
                         if candidate_id not in receipt_results:
                             errors.append(f"必查资料 {check_id} 候选未命中检索回执：{candidate_id}")
                     disposition = candidate.get("disposition")
+                    references = candidate.get("references")
+                    if not isinstance(references, list):
+                        errors.append(
+                            f"必查资料 {check_id} 候选第 {candidate_index} 项 references 必须是数组"
+                        )
+                        references = []
+                    for reference_index, reference in enumerate(references, start=1):
+                        if not isinstance(reference, dict) or not nonempty(
+                            reference.get("reference_text")
+                        ):
+                            errors.append(
+                                f"必查资料 {check_id} 候选第 {candidate_index} 项引用第 "
+                                f"{reference_index} 项缺少 reference_text"
+                            )
+                        elif nonempty(candidate_id):
+                            discovered_references.add(
+                                (candidate_id, reference["reference_text"].strip())
+                            )
+                    title = candidate.get("title")
+                    version_family = candidate.get("version_family")
+                    if nonempty(title) and VERSION_PATTERN.search(title):
+                        if not nonempty(version_family):
+                            errors.append(
+                                f"必查资料 {check_id} 版本化候选第 {candidate_index} 项缺少 version_family"
+                            )
+                        else:
+                            discovered_version_families.add(version_family.strip())
                     if disposition not in CANDIDATE_DISPOSITIONS:
                         errors.append(
                             f"必查资料 {check_id} 候选第 {candidate_index} 项 disposition 未登记"
@@ -507,6 +552,143 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
                         f"必查资料 {check_id} 检索回执结果未逐项审计："
                         + "、".join(sorted(missing_candidates))
                     )
+
+            completion = check.get("search_completion")
+            if not isinstance(completion, dict):
+                errors.append(f"必查资料 {check_id} 缺少检索闭环")
+            else:
+                if completion.get("completed") is not True:
+                    errors.append(f"必查资料 {check_id} 检索闭环未完成")
+                referenced_sources = completion.get("referenced_sources")
+                if not isinstance(referenced_sources, list):
+                    errors.append(
+                        f"必查资料 {check_id} search_completion.referenced_sources 必须是数组"
+                    )
+                    referenced_sources = []
+                completed_references: set[tuple[str, str]] = set()
+                for reference_index, reference in enumerate(referenced_sources, start=1):
+                    if not isinstance(reference, dict):
+                        errors.append(f"必查资料 {check_id} 引用闭环第 {reference_index} 项不是对象")
+                        continue
+                    source_candidate_id = reference.get("source_candidate_id")
+                    reference_text = reference.get("reference_text")
+                    if not nonempty(source_candidate_id) or not nonempty(reference_text):
+                        errors.append(
+                            f"必查资料 {check_id} 引用闭环第 {reference_index} 项缺少来源候选或文档名"
+                        )
+                        continue
+                    pair = (source_candidate_id, reference_text.strip())
+                    completed_references.add(pair)
+                    if pair not in discovered_references:
+                        errors.append(f"必查资料 {check_id} 引用闭环未命中候选声明：{reference_text}")
+                    reference_status = reference.get("status")
+                    if reference_status not in REFERENCE_STATUSES:
+                        errors.append(f"必查资料 {check_id} 引用文档状态未完成：{reference_text}")
+                    reference_receipt_ids = reference.get("receipt_ids")
+                    if reference_status in {"searched", "read"}:
+                        if not isinstance(reference_receipt_ids, list) or not reference_receipt_ids:
+                            errors.append(f"必查资料 {check_id} 引用文档缺少精确检索回执：{reference_text}")
+                            reference_receipt_ids = []
+                        exact_query_found = False
+                        reference_result_ids: set[str] = set()
+                        for reference_receipt_id in reference_receipt_ids:
+                            if reference_receipt_id not in receipt_ids:
+                                errors.append(
+                                    f"必查资料 {check_id} 引用文档回执未绑定必查动作：{reference_receipt_id}"
+                                )
+                            reference_receipt = receipt_by_id.get(reference_receipt_id)
+                            if reference_receipt is None or reference_receipt.get("check_id") != check_id:
+                                continue
+                            exact_query_found = exact_query_found or any(
+                                item.get("kind") == "exact_document_name"
+                                and item.get("text") == reference_text
+                                for item in reference_receipt.get("queries", [])
+                                if isinstance(item, dict)
+                            )
+                            reference_result_ids.update(
+                                result.get("id")
+                                for result in reference_receipt.get("results", [])
+                                if isinstance(result, dict) and nonempty(result.get("id"))
+                            )
+                        if not exact_query_found:
+                            errors.append(f"必查资料 {check_id} 引用文档未按完整名称检索：{reference_text}")
+                        if reference_status == "read" and not any(
+                            audited_candidates.get(result_id, {}).get("disposition") == "read"
+                            for result_id in reference_result_ids
+                        ):
+                            errors.append(f"必查资料 {check_id} 引用文档标记 read 但无已读命中：{reference_text}")
+                    elif not nonempty(reference.get("reason")):
+                        errors.append(f"必查资料 {check_id} 引用文档 {reference_status} 时缺少 reason：{reference_text}")
+                for source_candidate_id, reference_text in sorted(
+                    discovered_references - completed_references
+                ):
+                    errors.append(
+                        f"必查资料 {check_id} 候选 {source_candidate_id} 的引用文档未追查：{reference_text}"
+                    )
+
+                version_families = completion.get("version_families")
+                if not isinstance(version_families, list):
+                    errors.append(
+                        f"必查资料 {check_id} search_completion.version_families 必须是数组"
+                    )
+                    version_families = []
+                completed_families: set[str] = set()
+                for family_index, family in enumerate(version_families, start=1):
+                    if not isinstance(family, dict) or not nonempty(family.get("family")):
+                        errors.append(f"必查资料 {check_id} 版本族第 {family_index} 项缺少 family")
+                        continue
+                    family_name = family["family"].strip()
+                    completed_families.add(family_name)
+                    if family_name not in discovered_version_families:
+                        errors.append(f"必查资料 {check_id} 版本族未命中候选声明：{family_name}")
+                    family_status = family.get("status")
+                    if family_status not in VERSION_FAMILY_STATUSES:
+                        errors.append(f"必查资料 {check_id} 版本族状态未完成：{family_name}")
+                        continue
+                    if family_status == "enumerated":
+                        family_receipt_ids = family.get("receipt_ids")
+                        if not isinstance(family_receipt_ids, list) or not family_receipt_ids:
+                            errors.append(f"必查资料 {check_id} 版本族缺少枚举回执：{family_name}")
+                            family_receipt_ids = []
+                        family_result_ids: set[str] = set()
+                        family_query_found = False
+                        for family_receipt_id in family_receipt_ids:
+                            if family_receipt_id not in receipt_ids:
+                                errors.append(
+                                    f"必查资料 {check_id} 版本族回执未绑定必查动作：{family_receipt_id}"
+                                )
+                            family_receipt = receipt_by_id.get(family_receipt_id)
+                            if family_receipt is None or family_receipt.get("check_id") != check_id:
+                                continue
+                            family_query_found = family_query_found or any(
+                                item.get("kind") == "version_family"
+                                and item.get("text") == family_name
+                                for item in family_receipt.get("queries", [])
+                                if isinstance(item, dict)
+                            )
+                            family_result_ids.update(
+                                result.get("id")
+                                for result in family_receipt.get("results", [])
+                                if isinstance(result, dict) and nonempty(result.get("id"))
+                            )
+                        if not family_query_found:
+                            errors.append(f"必查资料 {check_id} 版本族未按系列名检索：{family_name}")
+                        selected_candidate_id = family.get("selected_candidate_id")
+                        selected = audited_candidates.get(selected_candidate_id)
+                        if selected_candidate_id not in family_result_ids:
+                            errors.append(f"必查资料 {check_id} 版本族选中文档未命中枚举回执：{family_name}")
+                        if selected is None or selected.get("disposition") != "read":
+                            errors.append(f"必查资料 {check_id} 版本族选中文档未审计为 read：{family_name}")
+                        elif selected.get("version_family") != family_name:
+                            errors.append(f"必查资料 {check_id} 版本族选中文档不属于该系列：{family_name}")
+                        if not nonempty(family.get("selection_reason")):
+                            errors.append(f"必查资料 {check_id} 版本族缺少版本选择理由：{family_name}")
+                        if family.get("newer_version_checked") is not True:
+                            errors.append(f"必查资料 {check_id} 版本族未确认无更新版本：{family_name}")
+                    elif not nonempty(family.get("reason")):
+                        errors.append(f"必查资料 {check_id} 版本族 {family_status} 时缺少 reason：{family_name}")
+                for family_name in sorted(discovered_version_families - completed_families):
+                    errors.append(f"必查资料 {check_id} 版本化候选未完成同系列枚举：{family_name}")
 
         if status in {"not_found", "unavailable", "not_applicable"}:
             if not nonempty(check.get("reason")):

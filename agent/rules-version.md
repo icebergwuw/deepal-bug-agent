@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.13.1-trial.1`
+- 当前版本：`v1.14.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-08-14`
+- 生效日期：`2026-08-17`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -14,6 +14,46 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.14.0-trial.1 — 2026-08-17
+
+### 试行内容
+
+- manifest 升级为 `schema_version=5`。每个 Drive 候选必须显式登记正文引用；引用文档必须按完整名称追搜并绑定 `exact_document_name` 回执。
+- 标题含版本号的候选必须登记版本族，绑定 `version_family` 枚举回执，选择一个已读候选并确认已检查更新版本。
+- 新增 `search_completion` 闭环门禁；引用链未追完、版本族未枚举、精确名称回执缺失或选中版本未读时，禁止生成写表请求。
+- 多份检索回执改为合并覆盖必查动作的声明查询，支持宽泛检索、精确文档名追查和版本族枚举分别留痕。
+
+### 修改原因
+
+- HUR-81975 的首次复查虽然通过 v4 候选审计，但只停留在功能清单和宽泛 Drive 搜索，没有按清单中的系统设置定义全名继续追查，也没有枚举同系列 V2.1、V2.2、V2.3，导致“未找到定义”的错误结论通过门禁。
+- 原规则已有“命中索引后追原文”的文字要求，但脚本无法识别引用链和版本选择是否完成，需要把要求变成结构化、可失败的机器校验。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/config/evidence-requirements.json`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-17-drive-search-completion-gate-v1.14.0-trial.1.md`
+
+### 验证案例
+
+- 候选正文声明系统设置功能定义，但未登记引用追查时，门禁必须拒绝。
+- 引用追查只绑定宽泛查询、没有 `exact_document_name` 回执时，门禁必须拒绝。
+- 版本化候选未登记版本族，或没有 `version_family` 回执、已读选中版本和更新版本确认时，门禁必须拒绝。
+- 精确文档名回执与版本族回执齐全、最新适用候选审计为 `read` 时，门禁通过。
+- 全套 Bug 证据、run bundle、表格契约、预检与规则架构测试必须通过。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.13.1-trial.1` 的 schema v4 门禁，不使用 `git reset --hard`。
+- 回滚不改写已有 v5 manifest 或本次规则维护日志；它们保留为历史证据，后续重新处理时明确选择当前生效 schema。
 
 ## v1.13.1-trial.1 — 2026-08-14
 

@@ -29,7 +29,7 @@
 - 更新已有行必须使用列级定向写入，不得用 A:J 整行 payload 覆盖；写前核对负责人页、行号、B 列 Jira Key 和当前 A:J，写后回读 A:J。
 - “保持不变”表示本次请求不得提交该列；不是先读取旧值再随整行写回。
 - 预览后、真正发送 batchUpdate 前必须再次通过 `get_cells` 新鲜回读同一行完整 A:J，并用预览 fingerprint 对比；不一致就停止。Google Sheets 没有本流程可用的单元格原子条件写，写后仍必须立即回读。
-- `agent/scripts/bug_sheet_contract.py` 的 `build / patch` 请求必须传当前负责人 `--owner-id`、本 Jira 已通过门禁且 key 一致的 schema v4 manifest 和同批次 `--run-bundle`。脚本同时校验本机身份、负责人范围、Jira/Drive短期访问回执、Drive检索回执、逐 Key 决策卡及表格行号；语音manifest自动要求Alchemy回执。任一门禁失败时不得生成写表请求。
+- `agent/scripts/bug_sheet_contract.py` 的 `build / patch` 请求必须传当前负责人 `--owner-id`、本 Jira 已通过门禁且 key 一致的 schema v5 manifest 和同批次 `--run-bundle`。脚本同时校验本机身份、负责人范围、Jira/Drive短期访问回执、Drive检索回执、引用文档追查、版本族枚举、逐 Key 决策卡及表格行号；语音manifest自动要求Alchemy回执。任一门禁失败时不得生成写表请求。
 
 ## 内容规则
 

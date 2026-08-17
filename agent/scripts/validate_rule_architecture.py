@@ -307,13 +307,15 @@ def validate(root: Path, skill: Path) -> list[str]:
             requirements = json.loads(read(evidence_requirements_path))
             if requirements.get("schema_version") != 1:
                 errors.append("证据配置 schema_version 必须为 1")
-            if requirements.get("manifest_schema_version") != 4:
-                errors.append("证据配置 manifest_schema_version 必须为 4")
+            if requirements.get("manifest_schema_version") != 5:
+                errors.append("证据配置 manifest_schema_version 必须为 5")
 
             query_kinds = set(requirements["query_kinds"])
             candidate_dispositions = set(requirements["candidate_dispositions"])
             if not query_kinds:
                 errors.append("证据配置 query_kinds 不能为空")
+            if not {"exact_document_name", "version_family"} <= query_kinds:
+                errors.append("证据配置缺少引用文档或版本族查询类型")
             if candidate_dispositions != {"read", "excluded", "unavailable"}:
                 errors.append("证据配置 candidate_dispositions 不完整")
 

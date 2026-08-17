@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "manifest_schema_version": 4,
+  "manifest_schema_version": 5,
   "check_statuses": ["read", "not_found", "unavailable", "not_applicable"],
   "query_kinds": [
     "jira_key",
@@ -8,6 +8,8 @@
     "expected_output",
     "problem_concept",
     "module_artifact",
+    "exact_document_name",
+    "version_family",
     "meta_or_function",
     "project_scope"
   ],
