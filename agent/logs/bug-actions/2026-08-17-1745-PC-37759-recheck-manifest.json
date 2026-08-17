@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "PC-37759",
   "comment_causality": "蓝牙已连接但通讯录未授权时，Jira以仍可拨打10086为异常；当前Alchemy先命中1059再命中1061，正式电话PRD明确直接号码拨打不依赖联系人同步。",
   "customer_issue": {
@@ -119,7 +119,8 @@
       "material": false,
       "next_action": "",
       "search_receipt_ids": [
-        "PC-37759-formal_definition_search-drive-20260817"
+        "PC-37759-formal_definition_search-drive-20260817",
+        "PC-37759-formal_definition_search-drive-20260817-version-family"
       ],
       "candidate_audit": {
         "completed": true,
@@ -132,7 +133,25 @@
             "disposition": "read",
             "source_ids": [
               "formal-target"
-            ]
+            ],
+            "references": [],
+            "version_family": "AIS_语音蓝牙电话产品需求文档系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "AIS_语音蓝牙电话产品需求文档系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-37759-formal_definition_search-drive-20260817-version-family"
+            ],
+            "selected_candidate_id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+            "selection_reason": "已按版本族检索；选择当前已读且与本票项目范围匹配的生效候选。",
+            "newer_version_checked": true
           }
         ]
       }
@@ -252,6 +271,26 @@
         {
           "kind": "module_artifact",
           "text": "AIS_语音蓝牙电话产品需求文档_v2.7"
+        }
+      ],
+      "results": [
+        {
+          "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+          "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-37759-formal_definition_search-drive-20260817-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "AIS_语音蓝牙电话产品需求文档系列"
         }
       ],
       "results": [

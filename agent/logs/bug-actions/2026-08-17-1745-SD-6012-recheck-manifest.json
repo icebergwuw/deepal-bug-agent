@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "SD-6012",
   "comment_causality": "翻译表确认两个Key重复冲突；SD-6806完成删除需求，Gerrit已合入，当前Jira已关闭。",
   "customer_issue": {
@@ -96,9 +96,15 @@
             "disposition": "read",
             "source_ids": [
               "formal-target"
-            ]
+            ],
+            "references": []
           }
         ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
       }
     }
   ],

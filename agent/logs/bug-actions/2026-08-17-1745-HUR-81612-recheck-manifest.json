@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "HUR-81612",
   "comment_causality": "本票质疑洗车模式英文全部单词首字母大写；翻译与现行资源一致，客户关联票最终回复“设计如此”，Jira已关闭。",
   "customer_issue": {
@@ -83,7 +83,8 @@
       "material": false,
       "next_action": "",
       "search_receipt_ids": [
-        "HUR-81612-formal_definition_search-drive-20260817"
+        "HUR-81612-formal_definition_search-drive-20260817",
+        "HUR-81612-formal_definition_search-drive-20260817-version-family"
       ],
       "candidate_audit": {
         "completed": true,
@@ -96,7 +97,25 @@
             "disposition": "read",
             "source_ids": [
               "customer-final"
-            ]
+            ],
+            "references": [],
+            "version_family": "马自达J90A_情景模式_需求文档系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "马自达J90A_情景模式_需求文档系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-81612-formal_definition_search-drive-20260817-version-family"
+            ],
+            "selected_candidate_id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "selection_reason": "已按版本族检索；选择当前已读且与本票项目范围匹配的生效候选。",
+            "newer_version_checked": true
           }
         ]
       }
@@ -140,6 +159,26 @@
         {
           "kind": "module_artifact",
           "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+          "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+          "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-81612-formal_definition_search-drive-20260817-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "马自达J90A_情景模式_需求文档系列"
         }
       ],
       "results": [

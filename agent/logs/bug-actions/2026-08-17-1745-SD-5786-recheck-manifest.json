@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "SD-5786",
   "comment_causality": "历史车端正确下发1563但副驾未拦截；项目点26663缺少位置条件，当前两个C673在线车型又把原话误识别为1026音乐，配置链仍未闭环。",
   "customer_issue": {
@@ -132,9 +132,15 @@
             "disposition": "read",
             "source_ids": [
               "formal-target"
-            ]
+            ],
+            "references": []
           }
         ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
       }
     },
     {

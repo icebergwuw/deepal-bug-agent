@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "HUR-81081",
   "comment_causality": "J90A电话定义规定未授权时提示3秒并回到未同步，但没有定义切换语言或回主页是否重新初始化同步；本票反复弹窗缺少目标口径。",
   "customer_issue": {
@@ -83,7 +83,8 @@
       "material": false,
       "next_action": "",
       "search_receipt_ids": [
-        "HUR-81081-formal_definition_search-drive-20260817"
+        "HUR-81081-formal_definition_search-drive-20260817",
+        "HUR-81081-formal_definition_search-drive-20260817-version-family"
       ],
       "candidate_audit": {
         "completed": true,
@@ -96,7 +97,25 @@
             "disposition": "read",
             "source_ids": [
               "formal-context"
-            ]
+            ],
+            "references": [],
+            "version_family": "J90A_功能定义_蓝牙电话功能定义系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_功能定义_蓝牙电话功能定义系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-81081-formal_definition_search-drive-20260817-version-family"
+            ],
+            "selected_candidate_id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+            "selection_reason": "已按版本族检索；选择当前已读且与本票项目范围匹配的生效候选。",
+            "newer_version_checked": true
           }
         ]
       }
@@ -137,6 +156,26 @@
         {
           "kind": "module_artifact",
           "text": "J90A_功能定义_蓝牙电话功能定义V0.5.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-81081-formal_definition_search-drive-20260817-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "J90A_功能定义_蓝牙电话功能定义系列"
         }
       ],
       "results": [

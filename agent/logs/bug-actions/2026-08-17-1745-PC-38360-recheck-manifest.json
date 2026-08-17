@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "PC-38360",
   "comment_causality": "Jira附件实际界面只有详细/简洁/静音三项，目标图包含智能播报四项；评论称DP4.0新增需求当时设计未更新，当前交互V0.6已补四项，但票内没有目标版本修复回归。",
   "customer_issue": {
@@ -95,7 +95,8 @@
       "material": false,
       "next_action": "",
       "search_receipt_ids": [
-        "PC-38360-formal_config_search-drive-20260817"
+        "PC-38360-formal_config_search-drive-20260817",
+        "PC-38360-formal_config_search-drive-20260817-version-family"
       ],
       "candidate_audit": {
         "completed": true,
@@ -108,7 +109,25 @@
             "disposition": "read",
             "source_ids": [
               "formal-config-context"
-            ]
+            ],
+            "references": [],
+            "version_family": "C385&673交互设计文档_地图导航（高德）_850系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385&673交互设计文档_地图导航（高德）_850系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-38360-formal_config_search-drive-20260817-version-family"
+            ],
+            "selected_candidate_id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "selection_reason": "已按版本族检索；选择当前已读且与本票项目范围匹配的生效候选。",
+            "newer_version_checked": true
           }
         ]
       }
@@ -139,7 +158,8 @@
       "material": false,
       "next_action": "",
       "search_receipt_ids": [
-        "PC-38360-interaction_or_ue_search-drive-20260817"
+        "PC-38360-interaction_or_ue_search-drive-20260817",
+        "PC-38360-interaction_or_ue_search-drive-20260817-version-family"
       ],
       "candidate_audit": {
         "completed": true,
@@ -152,7 +172,25 @@
             "disposition": "read",
             "source_ids": [
               "formal-target"
-            ]
+            ],
+            "references": [],
+            "version_family": "C385&673交互设计文档_地图导航（高德）_850系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385&673交互设计文档_地图导航（高德）_850系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-38360-interaction_or_ue_search-drive-20260817-version-family"
+            ],
+            "selected_candidate_id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "selection_reason": "已按版本族检索；选择当前已读且与本票项目范围匹配的生效候选。",
+            "newer_version_checked": true
           }
         ]
       }
@@ -224,6 +262,46 @@
         {
           "kind": "module_artifact",
           "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38360-formal_config_search-drive-20260817-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）_850系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38360-interaction_or_ue_search-drive-20260817-version-family",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）_850系列"
         }
       ],
       "results": [

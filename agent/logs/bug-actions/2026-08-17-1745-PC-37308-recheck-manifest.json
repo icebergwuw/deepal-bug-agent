@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "PC-37308",
   "comment_causality": "日志证明续导恢复了原终点但未恢复途经点，后续新导航又替换路线；正式地图PRD只定义24小时内继续上次导航，未定义途经点持久化。",
   "customer_issue": {
@@ -95,7 +95,8 @@
       "material": false,
       "next_action": "",
       "search_receipt_ids": [
-        "PC-37308-main_prd_search-drive-20260817"
+        "PC-37308-main_prd_search-drive-20260817",
+        "PC-37308-main_prd_search-drive-20260817-version-family"
       ],
       "candidate_audit": {
         "completed": true,
@@ -108,7 +109,25 @@
             "disposition": "read",
             "source_ids": [
               "formal-context"
-            ]
+            ],
+            "references": [],
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-37308-main_prd_search-drive-20260817-version-family"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "已按版本族检索；选择当前已读且与本票项目范围匹配的生效候选。",
+            "newer_version_checked": true
           }
         ]
       }
@@ -139,7 +158,8 @@
       "material": false,
       "next_action": "",
       "search_receipt_ids": [
-        "PC-37308-special_definition_search-drive-20260817"
+        "PC-37308-special_definition_search-drive-20260817",
+        "PC-37308-special_definition_search-drive-20260817-version-family"
       ],
       "candidate_audit": {
         "completed": true,
@@ -152,7 +172,25 @@
             "disposition": "read",
             "source_ids": [
               "map-special"
-            ]
+            ],
+            "references": [],
+            "version_family": "C385&673交互设计文档_地图导航（高德）_850系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385&673交互设计文档_地图导航（高德）_850系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-37308-special_definition_search-drive-20260817-version-family"
+            ],
+            "selected_candidate_id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "selection_reason": "已按版本族检索；选择当前已读且与本票项目范围匹配的生效候选。",
+            "newer_version_checked": true
           }
         ]
       }
@@ -221,6 +259,46 @@
         {
           "kind": "module_artifact",
           "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-37308-main_prd_search-drive-20260817-version-family",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-37308-special_definition_search-drive-20260817-version-family",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）_850系列"
         }
       ],
       "results": [
