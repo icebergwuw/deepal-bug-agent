@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260817T025126Z-16b5fde6-2222-4684-a3db-f3d5aa010147",
+  "generated_at": "2026-08-17T02:58:37Z",
+  "jira": {
+    "query": "assignee = \"you.wu\" AND project in (SD,HUR,ADS,BGS,BEO,PC,SM,SLV) AND issuetype = Bug AND status in (\"To Do\",Reopened,\"In Progress\",Pending) ORDER BY key ASC",
+    "source": "Jira REST API /rest/api/2/search and per-issue fields/comments endpoints",
+    "count": 99,
+    "unique_count": 99,
+    "registered_in_sheet": 81,
+    "unregistered_keys": ["ADS-48571", "ADS-48769", "ADS-48813", "ADS-48814", "ADS-48815", "ADS-48829", "ADS-48852", "ADS-48969", "HUR-81740", "HUR-82887", "HUR-83012", "HUR-83099", "HUR-83268", "HUR-83269", "HUR-83271", "HUR-83275", "PC-38464", "SD-6929"]
+  },
+  "sheet": {
+    "source": "Google Sheets authenticated Chrome tab; selected A1:J334 and copied visible cell values as quoted TSV",
+    "sheet_name": "bug",
+    "range": "A1:J334",
+    "rows_including_header": 334,
+    "registered_nonempty": 333,
+    "unique_keys": 332,
+    "duplicates": {"SLV-44272": [155, 285]},
+    "parser_check": {"column_counts": [10], "all_target_keys_absent": true}
+  },
+  "issue_read_receipts": {
+    "ADS-48571": {"updated": "2026-08-14T11:01:22.000+0000", "comments": 5, "comment_total": 5, "attachments": 1, "bytes": 34643, "sha256": "9f3d4859cb2601fe30d33862286666896df375ca8929d43d86f3c08ce62d0ab3", "related": ["ADS-48560"]},
+    "ADS-48769": {"updated": "2026-08-14T05:55:57.000+0000", "comments": 1, "comment_total": 1, "attachments": 2, "bytes": 19903, "sha256": "d08416e6f9d52154c5bcf254ad5a4cef71e0cb667b492fcb05ab8d07e1a99427", "related": []},
+    "ADS-48813": {"updated": "2026-08-14T06:15:01.000+0000", "comments": 3, "comment_total": 3, "attachments": 0, "bytes": 26965, "sha256": "0e6a2c4e0eaa641b751fb7817d4fd0e94d3b49298e10e1a143a294b75e47005d", "related": ["ADS-48739"]},
+    "ADS-48814": {"updated": "2026-08-14T06:15:05.000+0000", "comments": 3, "comment_total": 3, "attachments": 0, "bytes": 27072, "sha256": "96c338aaaa390d6ec8870f636b8e57995cb723754b32119c8786b1765ae55708", "related": ["ADS-48739"]},
+    "ADS-48815": {"updated": "2026-08-14T06:15:09.000+0000", "comments": 3, "comment_total": 3, "attachments": 0, "bytes": 27103, "sha256": "6a73d1d5b50b152a9baf6a2a2701a1fab127b7e0e9831a96fb4664bb8b025ba3", "related": ["ADS-48739"]},
+    "ADS-48829": {"updated": "2026-08-14T05:42:12.000+0000", "comments": 3, "comment_total": 3, "attachments": 2, "bytes": 30682, "sha256": "e3683dce3aa7add4149355d1ac2a64f2cdd3ab35f575cb76a0eebc21e29d1eb3", "related": ["ADS-48774"]},
+    "ADS-48852": {"updated": "2026-08-14T06:37:25.000+0000", "comments": 4, "comment_total": 4, "attachments": 0, "bytes": 29451, "sha256": "03573b7a51b153d8dbd15fd87b95900afece5e7fdbb966e5a94c7eae33d99eff", "related": ["ADS-48784"]},
+    "ADS-48969": {"updated": "2026-08-14T09:44:27.000+0000", "comments": 0, "comment_total": 0, "attachments": 0, "bytes": 14361, "sha256": "687bf0d42ae0b95eea7de8017c0348fbf260821834fd048d3a067ca7364bed5e", "related": ["ADS-48964"]},
+    "HUR-81740": {"updated": "2026-08-13T09:07:59.000+0000", "comments": 12, "comment_total": 12, "attachments": 9, "bytes": 94068, "sha256": "9787c1b579ac522fbc49f631bc35de7cbc395de680fc912dcae089fd2a6b2374", "related": []},
+    "HUR-82887": {"updated": "2026-08-13T02:56:04.000+0000", "comments": 4, "comment_total": 4, "attachments": 4, "bytes": 41653, "sha256": "890bd8419b2d9d147b500134d8f2d656ce850a7589d0dcb539095009db92a9f9", "related": []},
+    "HUR-83012": {"updated": "2026-08-13T08:10:28.000+0000", "comments": 2, "comment_total": 2, "attachments": 2, "bytes": 22459, "sha256": "484eae1feafa35cd6b2cdd9a6c7374556576ab1e8e346b3ba8d283ad40baf951", "related": []},
+    "HUR-83099": {"updated": "2026-08-13T07:32:54.000+0000", "comments": 1, "comment_total": 1, "attachments": 2, "bytes": 19074, "sha256": "0bb7666104c5a57c5d517fd3a2673cffa8f88c8f873f23020f33ede2bdc5c33f", "related": []},
+    "HUR-83268": {"updated": "2026-08-14T08:18:05.000+0000", "comments": 0, "comment_total": 0, "attachments": 2, "bytes": 16954, "sha256": "f87deb45938a089773b07089e0319794f123155f3a4664059a4cf7fc8b7a75d9", "related": []},
+    "HUR-83269": {"updated": "2026-08-14T08:29:36.000+0000", "comments": 0, "comment_total": 0, "attachments": 2, "bytes": 16951, "sha256": "cf3f3be7502f9c38d9d04b63878b872df7668199931ea9d1311db59d8113268c", "related": []},
+    "HUR-83271": {"updated": "2026-08-14T08:43:39.000+0000", "comments": 0, "comment_total": 0, "attachments": 2, "bytes": 16945, "sha256": "ce9f9fbe782aebc0028c886e03632c13e4a83f65e1b10f80a6a659f9d3af24fd", "related": []},
+    "HUR-83275": {"updated": "2026-08-14T09:05:37.000+0000", "comments": 0, "comment_total": 0, "attachments": 2, "bytes": 16951, "sha256": "daa7b7a2b4d397c4cea98ee3ec1cd021cbad176e4cee21622cd600a0f0d8659f", "related": []},
+    "PC-38464": {"updated": "2026-08-14T11:13:41.000+0000", "comments": 9, "comment_total": 9, "attachments": 2, "bytes": 47811, "sha256": "868e171227b3457e6d4c3e8fd1276a7182f9a62044775d2b920d5a57f53f1fc0", "related": ["GL-5959"]},
+    "SD-6929": {"updated": "2026-08-14T03:49:52.000+0000", "comments": 1, "comment_total": 1, "attachments": 4, "bytes": 23378, "sha256": "d75014fd7ba4e73944d35d54e0594a193f633b437e0cf900d9c548c1856b936a", "related": []}
+  },
+  "related_issue_read_receipts": {
+    "ADS-48560": {"updated": "2026-08-08T06:11:39.000+0000", "comments": 9, "comment_total": 9, "attachments": 24, "bytes": 175761, "sha256": "06761e36ef8907b3069f10500d71d09dac8765cce14d12239a76cf6c25b7b42c"},
+    "ADS-48739": {"updated": "2026-08-13T03:13:13.000+0000", "comments": 3, "comment_total": 3, "attachments": 13, "bytes": 88860, "sha256": "5d1e20d5f3f7d609a4a54a2205375ca1ef77bae81467df9097170c286e44c73a"},
+    "ADS-48774": {"updated": "2026-08-13T03:23:42.000+0000", "comments": 3, "comment_total": 3, "attachments": 7, "bytes": 57483, "sha256": "33aa7aa1187d42109b17aa25cee5f6e8950918094157dafee618826b7a2187d8"},
+    "ADS-48784": {"updated": "2026-08-13T07:32:58.000+0000", "comments": 3, "comment_total": 3, "attachments": 10, "bytes": 70195, "sha256": "124a5e15f08a8a7a5e3f1264758aeb7cc0e4e0b0d2e1ef11b3c669233d0cc1a3"},
+    "ADS-48964": {"updated": "2026-08-14T09:46:07.000+0000", "comments": 3, "comment_total": 3, "attachments": 4, "bytes": 39777, "sha256": "1ecaafa78da92caa937832db5aa8d45cf4705dca71b8deb3542f0f7ab2cd44d7"},
+    "GL-5959": {"updated": "2026-08-13T10:26:23.000+0000", "comments": 2, "comment_total": 2, "attachments": 0, "bytes": 107034, "sha256": "cb5d94a7ed50b09e3558ec236c1339063b91a97c87531567c98bfacca2240925"}
+  },
+  "platform_access": {
+    "jira": "verified_current_via_rest_with_secure_runtime_config",
+    "google_drive": "verified_current_via_authenticated_sheet_read",
+    "alchemy": "access_receipt_fresh_but_per_issue_results_not_retested",
+    "mastergo": "not_refreshed"
+  },
+  "historical_evidence_reference": {
+    "path": "agent/logs/bug-actions/2026-08-15-daily-new-bugs-evidence-receipts.json",
+    "role": "historical_context_only",
+    "note": "2026-08-15 的 Drive 候选列表和 Alchemy 逐票结果未作为本次 schema v4 search receipts；本次未生成逐票 manifest。"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260817T025126Z-16b5fde6-2222-4684-a3db-f3d5aa010147",
+  "automation_id": "bug",
+  "status": "planned",
+  "started_at": "2026-08-17T10:51:26+08:00",
+  "query_summary": "Jira实时查询99个唯一Key；吴优bug页333个非空登记、332个唯一Key；逐Key对比后18个未登记Key与09:03运行相同；已完整重读18票和6个直接关联票，但缺本次Drive结构化search receipts、逐票schema v4 manifest及Sheets原始A:J写回能力，按fail-closed未写表",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-17-1051-daily-new-bugs.md",
+  "evidence_receipts": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-17-1051-daily-new-bugs-evidence-receipts.json",
+  "items": [],
+  "new_jira_keys": ["ADS-48571", "ADS-48769", "ADS-48813", "ADS-48814", "ADS-48815", "ADS-48829", "ADS-48852", "ADS-48969", "HUR-81740", "HUR-82887", "HUR-83012", "HUR-83099", "HUR-83268", "HUR-83269", "HUR-83271", "HUR-83275", "PC-38464", "SD-6929"],
+  "jira_count": 99,
+  "sheet_registered_nonempty": 333,
+  "sheet_unique_keys": 332,
+  "sheet_duplicates": {"SLV-44272": [155, 285]},
+  "blockers": [
+    "当前工具没有可绑定schema v4的Google Drive结构化检索回执接口，不能逐项证明全部候选已打开或排除",
+    "当前工具没有Google Sheets结构化写入与原始A:J元数据回读接口，不能验证富文本链接、公式、BOOLEAN、保护列、格式、筛选范围和readback_sha256",
+    "ADS-48571未找到生效8295多意图策略的精确正式条款",
+    "HUR-83099票面缺完整、可比对的预期TTS和实际TTS",
+    "SD-6929未找到C673-G3/G5手动雨刮能力与洗车模式雨刮状态的精确正式条款",
+    "逐票schema v4 manifest未生成，证据门禁未运行"
+  ],
+  "completion": {
+    "jira_query": "complete",
+    "jira_current_read": "complete_for_18_unregistered_keys_and_6_related_keys",
+    "sheet_dedup_read": "complete",
+    "drive_search_receipts": "blocked_no_structured_connector",
+    "alchemy_access": "fresh_access_receipt_but_per_issue_results_not_retested",
+    "evidence_gate": "not_run",
+    "prewrite_validation": "expected_failure_items_empty",
+    "sheet_write": "not_run",
+    "readback_validation": "not_run",
+    "final_validation": "not_run"
+  }
+}
