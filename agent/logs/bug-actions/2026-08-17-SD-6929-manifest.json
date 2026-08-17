@@ -1,0 +1,231 @@
+{
+  "schema_version": 4,
+  "jira_key": "SD-6929",
+  "comment_causality": "雨刮已关闭但洗车模式仍显示未关闭；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-6929 Jira原票",
+      "source_location": "当前字段、完整描述、undefined条全部评论、4个附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "SD",
+      "trigger": "雨刮已关闭但洗车模式仍显示未关闭",
+      "target_behavior": "Jira记录当前实际现象：[镁佳][C673-G3/G5][0309] [22扬]15:32洗车模式开启，雨刮已关闭，洗车模式上还显示雨刮未关闭",
+      "match": "exact",
+      "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
+    },
+    {
+      "source_id": "visible-drive-formal_config_search-1",
+      "source": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "深蓝8295/本票车型",
+      "trigger": "雨刮已关闭但洗车模式仍显示未关闭",
+      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
+      "match": "partial",
+      "material": false,
+      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
+    }
+  ],
+  "evidence_profiles": [
+    "general",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "涉及通用产品定义与状态同步。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不涉及语音。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及可见节点或页面状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "雨刮已关闭但洗车模式仍显示未关闭"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '洗车模式' and name contains '功能定义'"
+        }
+      ],
+      "source_ids": [],
+      "reason": "精确检索返回0项，未找到同范围生效定义。",
+      "material": true,
+      "next_action": "补齐C673-G3/G5洗车模式生效UE/状态映射，核对雨刮实际信号与页面状态文案的数据源后由UI状态同步负责人修正。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 0,
+        "candidates": []
+      },
+      "search_receipt_ids": [
+        "SD-6929-formal_definition_search-20260817"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "雨刮已关闭但洗车模式仍显示未关闭"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'C673-G3、G5座舱全功清单'"
+        }
+      ],
+      "source_ids": [
+        "visible-drive-formal_config_search-1"
+      ],
+      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": [
+              "visible-drive-formal_config_search-1"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "SD-6929-formal_config_search-20260817"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "unavailable",
+      "searched_at": "2026-08-17",
+      "search_location": "Drive与现有UE入口",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "雨刮已关闭但洗车模式仍显示未关闭"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "洗车模式状态UE"
+        }
+      ],
+      "source_ids": [],
+      "reason": "未取得覆盖C673-G3/G5当前版本的洗车模式生效UE。",
+      "material": true,
+      "next_action": "补齐C673-G3/G5洗车模式生效UE/状态映射，核对雨刮实际信号与页面状态文案的数据源后由UI状态同步负责人修正。"
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "SD-6929-formal_definition_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T06:26:36.353211+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "雨刮已关闭但洗车模式仍显示未关闭"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '洗车模式' and name contains '功能定义'"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "SD-6929-formal_config_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-17T06:26:37.208004+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "雨刮已关闭但洗车模式仍显示未关闭"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'C673-G3、G5座舱全功清单'"
+        }
+      ],
+      "results": [
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "洗车模式UI状态同步负责人",
+    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Drive全功清单/洗车模式检索及UE缺口见manifest。\n处理：洗车模式UI状态同步负责人补齐C673-G3/G5洗车模式生效UE/状态映射，核对雨刮实际信号与页面状态文案的数据源后由UI状态同步负责人修正。"
+  },
+  "run_context": {
+    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 353
+  }
+}

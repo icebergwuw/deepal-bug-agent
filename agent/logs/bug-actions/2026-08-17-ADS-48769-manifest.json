@@ -1,0 +1,264 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-48769",
+  "comment_causality": "P挡打开车外喊话入口与车外扬声器状态回复冲突；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48769 Jira原票",
+      "source_location": "当前字段、完整描述、undefined条全部评论、2个附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "P挡打开车外喊话入口与车外扬声器状态回复冲突",
+      "target_behavior": "Jira记录当前实际现象：P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）",
+      "match": "exact",
+      "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-formal_definition_search-1",
+      "source": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295/本票车型",
+      "trigger": "P挡打开车外喊话入口与车外扬声器状态回复冲突",
+      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
+      "match": "partial",
+      "material": false,
+      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-17实时测试原话：打开车外喊话",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "打开车外喊话",
+      "target_behavior": "classification: taskoperations:[{\"meta_id\":1657,\"type\":\"vehicle:audio:speaker:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1657,\"type\":\"vehicle:audio:speaker:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}]}}] visible_result:\"\" llm_data_result:[]",
+      "match": "exact",
+      "reason": "证明当前在线语义路由结果，不替代实车执行和产品目标。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点·MetaId 1657",
+      "source_location": "1391打开车外扬声器语音功能 / 车控 / 声音 / 扬声器否已锁定2025-06-19 14:43:26查看说明编辑diff删除",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "打开车外喊话",
+      "target_behavior": "标准功能点名称、状态与MetaId已实时核对。",
+      "match": "exact",
+      "reason": "证明当前命中功能语义，不单独定义产品目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点·MetaId 1657",
+      "source_location": "24530打开车外扬声器语音功能 / 车控 / 声音 / 扬声器否已锁定继承未修改(1391)2025-11-18 23:02:56查看说明编辑diff删除",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "打开车外喊话",
+      "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
+      "match": "exact",
+      "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48769"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "P挡打开车外喊话入口与车外扬声器状态回复冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '车外喊话与隔窗对话'"
+        }
+      ],
+      "source_ids": [
+        "drive-formal_definition_search-1"
+      ],
+      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+            "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+            "url": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "drive-formal_definition_search-1"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48769-formal_definition_search-20260817"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话·BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "打开车外喊话"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1657"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已核对标准点名称、状态和分类。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1657"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已核对深蓝项目点来源状态；项目范围差异保留在结论缺口中。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48769-formal_definition_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T06:27:14.400761+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48769"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "P挡打开车外喊话入口与车外扬声器状态回复冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '车外喊话与隔窗对话'"
+        }
+      ],
+      "results": [
+        {
+          "id": "11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+          "url": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "打开车外喊话",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1657,\"type\":\"vehicle:audio:speaker:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1657,\"type\":\"vehicle:audio:speaker:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1657",
+    "standard_function": {
+      "status": "verified",
+      "name": "1391打开车外扬声器语音功能 / 车控 / 声音 / 扬声器否已锁定2025-06-19 14:43:26查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24530打开车外扬声器语音功能 / 车控 / 声音 / 扬声器否已锁定继承未修改(1391)2025-11-18 23:02:56查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "按车外喊话PRD确认入口打开与扬声器开关的产品边界，并在C385-5实车复测1657执行结果。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "车外喊话产品与语音配置负责人",
+    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1657；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外喊话产品与语音配置负责人按车外喊话PRD确认入口打开与扬声器开关的产品边界，并在C385-5实车复测1657执行结果。"
+  },
+  "run_context": {
+    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 336
+  }
+}

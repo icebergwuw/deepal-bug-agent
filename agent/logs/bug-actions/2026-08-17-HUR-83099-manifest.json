@@ -1,0 +1,264 @@
+{
+  "schema_version": 4,
+  "jira_key": "HUR-83099",
+  "comment_causality": "退出儿童模式TTS异常但票据未写清实际与目标原文；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-83099 Jira原票",
+      "source_location": "当前字段、完整描述、undefined条全部评论、2个附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "HUR",
+      "trigger": "退出儿童模式TTS异常但票据未写清实际与目标原文",
+      "target_behavior": "Jira记录当前实际现象：14：22+退出儿童模式时的TTS播报异常",
+      "match": "exact",
+      "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-formal_definition_search-1",
+      "source": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "J90A/HUR",
+      "trigger": "退出儿童模式TTS异常但票据未写清实际与目标原文",
+      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
+      "match": "partial",
+      "material": false,
+      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·HUR",
+      "source_location": "2026-08-17实时测试原话：退出儿童模式",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "HUR",
+      "trigger": "退出儿童模式",
+      "target_behavior": "classification: taskoperations:[{\"meta_id\":1126,\"type\":\"vehicle:scenario:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"mode\":[{\"canonical\":\"child\",\"literal\":\"儿童模式\",\"slot\":\"mode_type\"}],\"op\":[{\"canonical\":\"close\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1126,\"type\":\"vehicle:scenario:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"mode\":[{\"canonical\":\"child\",\"literal\":\"儿童模式\",\"slot\":\"mode_type\"}],\"op\":[{\"canonical\":\"close\"}]}}] visible_result:\"\" llm_data_result:[]",
+      "match": "exact",
+      "reason": "证明当前在线语义路由结果，不替代实车执行和产品目标。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点·MetaId 1126",
+      "source_location": "1365关闭特定情景模式语音功能 / 车控 / 情景模式否草稿2026-02-14 15:24:05查看说明编辑diff删除",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "退出儿童模式",
+      "target_behavior": "标准功能点名称、状态与MetaId已实时核对。",
+      "match": "exact",
+      "reason": "证明当前命中功能语义，不单独定义产品目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点·MetaId 1126",
+      "source_location": "14379关闭特定情景模式语音功能 / 车控 / 情景模式否已锁定继承未修改(1365)2026-02-14 15:24:05查看说明编辑diff删除",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "退出儿童模式",
+      "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
+      "match": "exact",
+      "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83099"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "退出儿童模式TTS异常但票据未写清实际与目标原文"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '马自达J90A_情景模式_需求文档'"
+        }
+      ],
+      "source_ids": [
+        "drive-formal_definition_search-1"
+      ],
+      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+            "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "drive-formal_definition_search-1"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "HUR-83099-formal_definition_search-20260817"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话·HUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "退出儿童模式"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1126"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已核对标准点名称、状态和分类。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1126"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目中的HUR在线模型对照；J90A专项项目点未提供"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已核对深蓝项目点来源状态；项目范围差异保留在结论缺口中。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-83099-formal_definition_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T06:27:16.479493+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83099"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "退出儿童模式TTS异常但票据未写清实际与目标原文"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '马自达J90A_情景模式_需求文档'"
+        }
+      ],
+      "results": [
+        {
+          "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+          "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+          "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "退出儿童模式",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1126,\"type\":\"vehicle:scenario:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"mode\":[{\"canonical\":\"child\",\"literal\":\"儿童模式\",\"slot\":\"mode_type\"}],\"op\":[{\"canonical\":\"close\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1126,\"type\":\"vehicle:scenario:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"mode\":[{\"canonical\":\"child\",\"literal\":\"儿童模式\",\"slot\":\"mode_type\"}],\"op\":[{\"canonical\":\"close\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1126",
+    "standard_function": {
+      "status": "verified",
+      "name": "1365关闭特定情景模式语音功能 / 车控 / 情景模式否草稿2026-02-14 15:24:05查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "14379关闭特定情景模式语音功能 / 车控 / 情景模式否已锁定继承未修改(1365)2026-02-14 15:24:05查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "由提单测试补充实际播报全文、期望播报全文、音频/视频时间点和语言环境；资料齐全后由情景模式产品负责人定责。"
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "J90A情景模式产品负责人",
+    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待确认。\n依据：Jira实际现象；Alchemy当前原话命中1126；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A情景模式产品负责人由提单测试补充实际播报全文、期望播报全文、音频/视频时间点和语言环境；资料齐全后由情景模式产品负责人定责。"
+  },
+  "run_context": {
+    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 351
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-48969",
+  "comment_causality": "一键下电二轮确认无法由语音完成；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-48964",
+        "relationship": "Jira直接关联/描述引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件元数据和全部评论；作为实现上下文，不替代正式定义。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48969 Jira原票",
+      "source_location": "当前字段、完整描述、undefined条全部评论、0个附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "一键下电二轮确认无法由语音完成",
+      "target_behavior": "Jira记录当前实际现象：17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认",
+      "match": "exact",
+      "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-formal_definition_search-1",
+      "source": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx",
+      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295/本票车型",
+      "trigger": "一键下电二轮确认无法由语音完成",
+      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
+      "match": "partial",
+      "material": false,
+      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-17实时测试原话：一键下电；确认",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "一键下电；确认",
+      "target_behavior": "classification: taskoperations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}] visible_result:\"\" llm_data_result:[]",
+      "match": "exact",
+      "reason": "证明当前在线语义路由结果，不替代实车执行和产品目标。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点·MetaId 1628",
+      "source_location": "1511一键下电语音功能 / 车控 / 能量 / 电池设置否草稿2026-05-21 20:44:12查看说明编辑diff删除",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "一键下电；确认",
+      "target_behavior": "标准功能点名称、状态与MetaId已实时核对。",
+      "match": "exact",
+      "reason": "证明当前命中功能语义，不单独定义产品目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点·MetaId 1628",
+      "source_location": "24616一键下电语音功能 / 车控 / 能量 / 电池设置否已锁定继承未修改(1511)2026-05-21 20:44:12查看说明编辑diff删除",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "一键下电；确认",
+      "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
+      "match": "exact",
+      "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48969"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "一键下电二轮确认无法由语音完成"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '车辆下电'"
+        }
+      ],
+      "source_ids": [
+        "drive-formal_definition_search-1"
+      ],
+      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW",
+            "title": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx",
+            "url": "https://docs.google.com/document/d/1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": [
+              "drive-formal_definition_search-1"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48969-formal_definition_search-20260817"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话·BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "一键下电；确认"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1628"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已核对标准点名称、状态和分类。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1628"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已核对深蓝项目点来源状态；项目范围差异保留在结论缺口中。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48969-formal_definition_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T06:26:30.958233+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48969"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "一键下电二轮确认无法由语音完成"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '车辆下电'"
+        }
+      ],
+      "results": [
+        {
+          "id": "1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW",
+          "title": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx",
+          "url": "https://docs.google.com/document/d/1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "一键下电；确认",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1628",
+    "standard_function": {
+      "status": "verified",
+      "name": "1511一键下电语音功能 / 车控 / 能量 / 电池设置否草稿2026-05-21 20:44:12查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24616一键下电语音功能 / 车控 / 能量 / 电池设置否已锁定继承未修改(1511)2026-05-21 20:44:12查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "结合车辆下电弹窗交互核对二轮确认是否允许语音消费，并在实车验证确认事件与弹窗焦点。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "一键下电交互与语音执行负责人",
+    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1628；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：一键下电交互与语音执行负责人结合车辆下电弹窗交互核对二轮确认是否允许语音消费，并在实车验证确认事件与弹窗焦点。"
+  },
+  "run_context": {
+    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 347
+  }
+}

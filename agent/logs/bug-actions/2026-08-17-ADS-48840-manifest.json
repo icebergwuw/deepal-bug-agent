@@ -1,0 +1,303 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-48840",
+  "comment_causality": "车外域打开后视镜自动折叠被过滤且静默；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48840 Jira原票",
+      "source_location": "当前字段、完整描述、undefined条全部评论、4个附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "车外域打开后视镜自动折叠被过滤且静默",
+      "target_behavior": "Jira记录当前实际现象：车外语音，车外唤醒后query：打开后视镜自动折叠，TTS无反应",
+      "match": "exact",
+      "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-formal_definition_search-1",
+      "source": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295/本票车型",
+      "trigger": "车外域打开后视镜自动折叠被过滤且静默",
+      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
+      "match": "partial",
+      "material": false,
+      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-17实时测试原话：打开后视镜自动折叠",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "打开后视镜自动折叠",
+      "target_behavior": "classification: taskoperations:[{\"meta_id\":1541,\"type\":\"vehicle:ctrl:rear_mirror:auto_fold\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\",\"literal\":\"打开\",\"slot\":\"operation\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1541,\"type\":\"vehicle:ctrl:rear_mirror:auto_fold\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\",\"literal\":\"打开\",\"slot\":\"operation\"}]}}] visible_result:\"\" llm_data_result:[]",
+      "match": "exact",
+      "reason": "证明当前在线语义路由结果，不替代实车执行和产品目标。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点·MetaId 1541",
+      "source_location": "1215打开后视镜自动折叠语音功能 / 车控 / 车辆 / 后视镜 / 车外后视镜否已锁定2025-06-17 15:03:27查看说明编辑diff删除",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "打开后视镜自动折叠",
+      "target_behavior": "标准功能点名称、状态与MetaId已实时核对。",
+      "match": "exact",
+      "reason": "证明当前命中功能语义，不单独定义产品目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点·MetaId 1541",
+      "source_location": "24416打开后视镜自动折叠语音功能 / 车控 / 车辆 / 后视镜 / 车外后视镜否已锁定继承未修改(1215)2025-11-20 12:14:04查看说明编辑diff删除",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "打开后视镜自动折叠",
+      "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
+      "match": "exact",
+      "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48840"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "车外域打开后视镜自动折叠被过滤且静默"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '车外语音'"
+        }
+      ],
+      "source_ids": [
+        "drive-formal_definition_search-1"
+      ],
+      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+            "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "drive-formal_definition_search-1"
+            ]
+          },
+          {
+            "id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+            "url": "https://drive.google.com/file/d/1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "与已读正式文件内容哈希相同，排除重复副本。"
+          },
+          {
+            "id": "1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430",
+            "title": "车外语音、创意画坊对接",
+            "url": "https://docs.google.com/spreadsheets/d/1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "协作表或目录容器不直接定义本票目标，已打开后排除。"
+          },
+          {
+            "id": "13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
+            "title": "25 车外语音",
+            "url": "https://drive.google.com/drive/folders/13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
+            "disposition": "excluded",
+            "reason": "协作表或目录容器不直接定义本票目标，已打开后排除。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48840-formal_definition_search-20260817"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话·BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "打开后视镜自动折叠"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1541"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已核对标准点名称、状态和分类。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1541"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已核对深蓝项目点来源状态；项目范围差异保留在结论缺口中。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48840-formal_definition_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T06:26:27.740363+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48840"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "车外域打开后视镜自动折叠被过滤且静默"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains '车外语音'"
+        }
+      ],
+      "results": [
+        {
+          "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430",
+          "title": "车外语音、创意画坊对接",
+          "url": "https://docs.google.com/spreadsheets/d/1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
+          "title": "25 车外语音",
+          "url": "https://drive.google.com/drive/folders/13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
+          "mime_type": "application/vnd.google-apps.folder"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "打开后视镜自动折叠",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1541,\"type\":\"vehicle:ctrl:rear_mirror:auto_fold\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\",\"literal\":\"打开\",\"slot\":\"operation\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1541,\"type\":\"vehicle:ctrl:rear_mirror:auto_fold\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\",\"literal\":\"打开\",\"slot\":\"operation\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1541",
+    "standard_function": {
+      "status": "verified",
+      "name": "1215打开后视镜自动折叠语音功能 / 车控 / 车辆 / 后视镜 / 车外后视镜否已锁定2025-06-17 15:03:27查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24416打开后视镜自动折叠语音功能 / 车控 / 车辆 / 后视镜 / 车外后视镜否已锁定继承未修改(1215)2025-11-20 12:14:04查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "核对1541的车外白名单和车辆状态边界，并补齐支持或不支持TTS。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "车外语音能力白名单负责人",
+    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1541；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1541的车外白名单和车辆状态边界，并补齐支持或不支持TTS。"
+  },
+  "run_context": {
+    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 342
+  }
+}

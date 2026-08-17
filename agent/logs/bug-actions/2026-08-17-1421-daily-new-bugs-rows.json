@@ -1,0 +1,655 @@
+[
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48571",
+    "summary": "stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍",
+    "info": "ADS-48571 Jira原票。\n现象：stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍\nJira：状态=重新打开，评论=undefined，附件=1；已完整读取。\nAlchemy：原话“今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的”，当前MetaId=1208/1026/1208/1026。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208/1026；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：深蓝语音大模型路由负责人在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48571",
+        "url": "http://jira.i-tetris.com/browse/ADS-48571"
+      },
+      {
+        "label": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
+        "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1208/1026",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48571",
+        "url": "http://jira.i-tetris.com/browse/ADS-48571"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48769",
+    "summary": "P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）",
+    "info": "ADS-48769 Jira原票。\n现象：P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）\nJira：状态=待办，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“打开车外喊话”，当前MetaId=1657/1657。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1657；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外喊话产品与语音配置负责人按车外喊话PRD确认入口打开与扬声器开关的产品边界，并在C385-5实车复测1657执行结果。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48769",
+        "url": "http://jira.i-tetris.com/browse/ADS-48769"
+      },
+      {
+        "label": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+        "url": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1657",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48769",
+        "url": "http://jira.i-tetris.com/browse/ADS-48769"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48813",
+    "summary": "Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次",
+    "info": "ADS-48813 Jira原票。\n现象：Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次\nJira：状态=重新打开，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“筛选下评分4分以上的”，当前MetaId=1455/1455。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1455；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：POI推荐服务与语音路由负责人基于同一电影院列表回归1455二次筛选，核对输入列表ID与筛选前后集合，定位POI服务是否重新检索。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48813",
+        "url": "http://jira.i-tetris.com/browse/ADS-48813"
+      },
+      {
+        "label": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1455",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48813",
+        "url": "http://jira.i-tetris.com/browse/ADS-48813"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48814",
+    "summary": "Stg环境，当前poi已经显示了周边的火锅店，query：筛选下人均价格100元以上的，落域错误到了deepal ai，且内容也不是上一次poi列表推荐中的火锅",
+    "info": "ADS-48814 Jira原票。\n现象：Stg环境，当前poi已经显示了周边的火锅店，query：筛选下人均价格100元以上的，落域错误到了deepal ai，且内容也不是上一次poi列表推荐中的火锅\nJira：状态=重新打开，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“筛选下人均价格100元以上的”，当前MetaId=1209/1209。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1209；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：POI语音NLU负责人修正人均价格筛选原话由1209导航改为上一轮POI列表筛选能力，并回归列表上下文。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48814",
+        "url": "http://jira.i-tetris.com/browse/ADS-48814"
+      },
+      {
+        "label": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1209",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48814",
+        "url": "http://jira.i-tetris.com/browse/ADS-48814"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48815",
+    "summary": "Stg环境，当前poi已经显示了周边的酒店，query：筛选下600米以外的，应该是重新按照600米以外这个条件重新推荐了酒店。第一次只有5个地点，第二次筛选则",
+    "info": "ADS-48815 Jira原票。\n现象：Stg环境，当前poi已经显示了周边的酒店，query：筛选下600米以外的，应该是重新按照600米以外这个条件重新推荐了酒店。第一次只有5个地点，第二次筛选则\nJira：状态=重新打开，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“筛选下600米以外的”，当前MetaId=1209/1209。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1209；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：POI语音NLU负责人核对PRD对距离二次筛选的边界，修正600米以外原话的列表上下文与筛选参数后回归。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48815",
+        "url": "http://jira.i-tetris.com/browse/ADS-48815"
+      },
+      {
+        "label": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1209",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48815",
+        "url": "http://jira.i-tetris.com/browse/ADS-48815"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48829",
+    "summary": "Stg环境，query：搜索爱贝尔发制品有限公司，落域到了地点搜索与推荐",
+    "info": "ADS-48829 Jira原票。\n现象：Stg环境，query：搜索爱贝尔发制品有限公司，落域到了地点搜索与推荐\nJira：状态=重新打开，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“搜索爱贝尔发制品有限公司”，当前MetaId=1208/1208。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：地图POI产品与语音路由负责人确认地点搜索与推荐模块是否即地图POI正式承载域，并在车端核对1208是否正常展示地图列表。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48829",
+        "url": "http://jira.i-tetris.com/browse/ADS-48829"
+      },
+      {
+        "label": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1208",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48829",
+        "url": "http://jira.i-tetris.com/browse/ADS-48829"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48838",
+    "summary": "车外语音，车外唤醒后query：关闭后视镜加热，执行和TTS无反应",
+    "info": "ADS-48838 Jira原票。\n现象：车外语音，车外唤醒后query：关闭后视镜加热，执行和TTS无反应\nJira：状态=待办，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“关闭后视镜加热”，当前MetaId=1361/1361。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1361；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1361是否应进入车外白名单；无论支持与否均按TTS规范返回明确结果，禁止静默。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48838",
+        "url": "http://jira.i-tetris.com/browse/ADS-48838"
+      },
+      {
+        "label": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1361",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48838",
+        "url": "http://jira.i-tetris.com/browse/ADS-48838"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48840",
+    "summary": "车外语音，车外唤醒后query：打开后视镜自动折叠，TTS无反应",
+    "info": "ADS-48840 Jira原票。\n现象：车外语音，车外唤醒后query：打开后视镜自动折叠，TTS无反应\nJira：状态=待办，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打开后视镜自动折叠”，当前MetaId=1541/1541。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1541；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1541的车外白名单和车辆状态边界，并补齐支持或不支持TTS。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48840",
+        "url": "http://jira.i-tetris.com/browse/ADS-48840"
+      },
+      {
+        "label": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1541",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48840",
+        "url": "http://jira.i-tetris.com/browse/ADS-48840"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48841",
+    "summary": "车外语音，车外唤醒后query：打开迎宾灯效，TTS无反应",
+    "info": "ADS-48841 Jira原票。\n现象：车外语音，车外唤醒后query：打开迎宾灯效，TTS无反应\nJira：状态=处理中，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打开迎宾灯效”，当前MetaId=1535/1535。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1535；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1535的车外白名单与迎宾灯配置条件，并补齐明确TTS。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48841",
+        "url": "http://jira.i-tetris.com/browse/ADS-48841"
+      },
+      {
+        "label": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1535",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48841",
+        "url": "http://jira.i-tetris.com/browse/ADS-48841"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48842",
+    "summary": "车外语音，车外唤醒后query：打开智能远光灯，执行和TTS无反应",
+    "info": "ADS-48842 Jira原票。\n现象：车外语音，车外唤醒后query：打开智能远光灯，执行和TTS无反应\nJira：状态=待办，评论=undefined，附件=5；已完整读取。\nAlchemy：原话“打开智能远光灯”，当前MetaId=1040/1040。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1040；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1040是否允许车外执行；结合安全边界给出执行或不支持TTS，禁止静默。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48842",
+        "url": "http://jira.i-tetris.com/browse/ADS-48842"
+      },
+      {
+        "label": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1040",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48842",
+        "url": "http://jira.i-tetris.com/browse/ADS-48842"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48848",
+    "summary": "车外语音，车外唤醒后query：前照灯延时设置为关闭，执行和TTS无反应",
+    "info": "ADS-48848 Jira原票。\n现象：车外语音，车外唤醒后query：前照灯延时设置为关闭，执行和TTS无反应\nJira：状态=待办，评论=undefined，附件=6；已完整读取。\nAlchemy：原话“前照灯延时设置为关闭”，当前MetaId=1322/1322。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1322；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1322的车外白名单及关闭值映射，并补齐执行或不支持TTS。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48848",
+        "url": "http://jira.i-tetris.com/browse/ADS-48848"
+      },
+      {
+        "label": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1322",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48848",
+        "url": "http://jira.i-tetris.com/browse/ADS-48848"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48852",
+    "summary": "query：明天和今天的天气怎么样，没有能查询天气，TTS回复：抱歉，我只能查询7天内的天气",
+    "info": "ADS-48852 Jira原票。\n现象：query：明天和今天的天气怎么样，没有能查询天气，TTS回复：抱歉，我只能查询7天内的天气\nJira：状态=处理中，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“明天和今天的天气怎么样”，当前MetaId=1249/1249。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1249；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：天气服务与语音参数负责人在当前分支连续回归今天+明天组合查询，核对period解析和天气服务日期边界，复现后由天气服务负责人修正。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48852",
+        "url": "http://jira.i-tetris.com/browse/ADS-48852"
+      },
+      {
+        "label": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx",
+        "url": "https://docs.google.com/document/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+      },
+      {
+        "label": "Alchemy当前·1249",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48852",
+        "url": "http://jira.i-tetris.com/browse/ADS-48852"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "ADS-48969",
+    "summary": "17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认",
+    "info": "ADS-48969 Jira原票。\n现象：17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认\nJira：状态=待办，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“一键下电；确认”，当前MetaId=1628/1628。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1628；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：一键下电交互与语音执行负责人结合车辆下电弹窗交互核对二轮确认是否允许语音消费，并在实车验证确认事件与弹窗焦点。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48969",
+        "url": "http://jira.i-tetris.com/browse/ADS-48969"
+      },
+      {
+        "label": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx",
+        "url": "https://docs.google.com/document/d/1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+      },
+      {
+        "label": "Alchemy当前·1628",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "ADS-48969",
+        "url": "http://jira.i-tetris.com/browse/ADS-48969"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "HUR-81740",
+    "summary": "语音回拨电话无法选择第几个",
+    "info": "HUR-81740 Jira原票。\n现象：语音回拨电话无法选择第几个\nJira：状态=待办，评论=undefined，附件=9；已完整读取。\nAlchemy：原话“回拨；第一个”，当前MetaId=1067/1067/1455/1455。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1067/1455；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A蓝牙电话语音负责人在HUR回拨候选页复测1067后接1455的上下文传递，定位列表焦点或执行链丢失。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-81740",
+        "url": "http://jira.i-tetris.com/browse/HUR-81740"
+      },
+      {
+        "label": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+        "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+      },
+      {
+        "label": "Alchemy当前·1067/1455",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "HUR-81740",
+        "url": "http://jira.i-tetris.com/browse/HUR-81740"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "HUR-82887",
+    "summary": "10：54  未在导航中-qurey：打电话给xx酒店  期望TTS回复：当前未在导航中，查询不到信息  实际拨打了电话",
+    "info": "HUR-82887 Jira原票。\n现象：10：54  未在导航中-qurey：打电话给xx酒店  期望TTS回复：当前未在导航中，查询不到信息  实际拨打了电话\nJira：状态=待办，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打电话给亚朵酒店”，当前MetaId=1060/1060。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1060；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A电话与导航上下文产品负责人依据电话功能定义确认组织名直接拨号与导航POI电话的优先级，补齐明确场景边界后再定责。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-82887",
+        "url": "http://jira.i-tetris.com/browse/HUR-82887"
+      },
+      {
+        "label": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+        "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+      },
+      {
+        "label": "Alchemy当前·1060",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "HUR-82887",
+        "url": "http://jira.i-tetris.com/browse/HUR-82887"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "HUR-83012",
+    "summary": "15:56 来电设置为来电播报，收到来电，语音无提示接听还是挂断",
+    "info": "HUR-83012 Jira原票。\n现象：15:56 来电设置为来电播报，收到来电，语音无提示接听还是挂断\nJira：状态=重新打开，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“接听还是挂断”，当前MetaId=1065/1065/1065/1065。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1065；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A蓝牙来电播报负责人在J90A来电被动事件中核对播报开关、TTS触发和语音球唤醒链路；在线原话测试不能替代被动事件复现。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83012",
+        "url": "http://jira.i-tetris.com/browse/HUR-83012"
+      },
+      {
+        "label": "AIS_语音蓝牙电话产品需求文档_v2.7",
+        "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1065",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "HUR-83012",
+        "url": "http://jira.i-tetris.com/browse/HUR-83012"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "HUR-83099",
+    "summary": "14：22+退出儿童模式时的TTS播报异常",
+    "info": "HUR-83099 Jira原票。\n现象：14：22+退出儿童模式时的TTS播报异常\nJira：状态=待办，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“退出儿童模式”，当前MetaId=1126/1126。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待确认。\n依据：Jira实际现象；Alchemy当前原话命中1126；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A情景模式产品负责人由提单测试补充实际播报全文、期望播报全文、音频/视频时间点和语言环境；资料齐全后由情景模式产品负责人定责。",
+    "status": "待确认",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83099",
+        "url": "http://jira.i-tetris.com/browse/HUR-83099"
+      },
+      {
+        "label": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+        "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1126",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "HUR-83099",
+        "url": "http://jira.i-tetris.com/browse/HUR-83099"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "PC-38464",
+    "summary": "14:50 互联设备页面，query：选择huawei hi-car  不执行可见",
+    "info": "PC-38464 Jira原票。\n现象：14:50 互联设备页面，query：选择huawei hi-car  不执行可见\nJira：状态=重新打开，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“选择huawei hi-car”，当前MetaId=1305/1305。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1305；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：可见即可说配置与互联设备交互负责人恢复目标MasterGo图层访问并核对HiCar节点的subject/operation/assist_name；补齐生效可见配置后再定责。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·PC-38464",
+        "url": "http://jira.i-tetris.com/browse/PC-38464"
+      },
+      {
+        "label": "Alchemy当前·1305",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "info_links": [
+      {
+        "label": "PC-38464",
+        "url": "http://jira.i-tetris.com/browse/PC-38464"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "date": "2026-08-17",
+    "key": "SD-6929",
+    "summary": "[镁佳][C673-G3/G5][0309] [22扬]15:32洗车模式开启，雨刮已关闭，洗车模式上还显示雨刮未关闭",
+    "info": "SD-6929 Jira原票。\n现象：[镁佳][C673-G3/G5][0309] [22扬]15:32洗车模式开启，雨刮已关闭，洗车模式上还显示雨刮未关闭\nJira：状态=待办，评论=undefined，附件=4；已完整读取。",
+    "judgment": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Drive全功清单/洗车模式检索及UE缺口见manifest。\n处理：洗车模式UI状态同步负责人补齐C673-G3/G5洗车模式生效UE/状态映射，核对雨刮实际信号与页面状态文案的数据源后由UI状态同步负责人修正。",
+    "status": "待复核",
+    "note": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+    "links": [
+      {
+        "label": "Jira原票·SD-6929",
+        "url": "http://jira.i-tetris.com/browse/SD-6929"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "SD-6929",
+        "url": "http://jira.i-tetris.com/browse/SD-6929"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "Drive",
+        "url": "https://drive.google.com/drive/my-drive"
+      }
+    ]
+  }
+]

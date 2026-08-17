@@ -1,0 +1,317 @@
+{
+  "schema_version": 4,
+  "jira_key": "PC-38464",
+  "comment_causality": "互联设备页选择Huawei HiCar不执行可见；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "GL-5959",
+        "relationship": "Jira直接关联/描述引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件元数据和全部评论；作为实现上下文，不替代正式定义。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-38464 Jira原票",
+      "source_location": "当前字段、完整描述、undefined条全部评论、2个附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "PC",
+      "trigger": "互联设备页选择Huawei HiCar不执行可见",
+      "target_behavior": "Jira记录当前实际现象：14:50 互联设备页面，query：选择huawei hi-car  不执行可见",
+      "match": "exact",
+      "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-17实时测试原话：选择huawei hi-car",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "classification: taskoperations:[{\"meta_id\":1305,\"type\":\"app:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}],\"target\":[{\"canonical\":\"\",\"literal\":\"huawei hi-car\",\"slot\":\"control_target_app\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1305,\"type\":\"app:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}],\"target\":[{\"canonical\":\"\",\"literal\":\"huawei hi-car\",\"slot\":\"control_target_app\"}]}}] visible_result:\"\" llm_data_result:[]",
+      "match": "exact",
+      "reason": "证明当前在线语义路由结果，不替代实车执行和产品目标。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点·MetaId 1305",
+      "source_location": "1423打开特定页面/APP语音功能 / 通用 / 通用操作否草稿2026-05-22 17:49:44查看说明编辑diff删除",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "标准功能点名称、状态与MetaId已实时核对。",
+      "match": "exact",
+      "reason": "证明当前命中功能语义，不单独定义产品目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点·MetaId 1305",
+      "source_location": "24542打开特定页面/APP语音功能 / 通用 / 通用操作否已锁定继承未修改(1423)2026-01-03 14:24:16查看说明编辑diff删除",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
+      "match": "exact",
+      "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及可见节点或页面状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页选择Huawei HiCar不执行可见"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'HiCar' and name contains '可见'"
+        }
+      ],
+      "source_ids": [],
+      "reason": "精确检索返回0项，未找到同范围生效定义。",
+      "material": true,
+      "next_action": "恢复目标MasterGo图层访问并核对HiCar节点的subject/operation/assist_name；补齐生效可见配置后再定责。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 0,
+        "candidates": []
+      },
+      "search_receipt_ids": [
+        "PC-38464-formal_definition_search-20260817"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话·BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "选择huawei hi-car"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1305"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已核对标准点名称、状态和分类。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1305"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已核对深蓝项目点来源状态；项目范围差异保留在结论缺口中。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页选择Huawei HiCar不执行可见"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'HiCar' and name contains '可见'"
+        }
+      ],
+      "source_ids": [],
+      "reason": "精确检索返回0项，未找到同范围生效定义。",
+      "material": true,
+      "next_action": "恢复目标MasterGo图层访问并核对HiCar节点的subject/operation/assist_name；补齐生效可见配置后再定责。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 0,
+        "candidates": []
+      },
+      "search_receipt_ids": [
+        "PC-38464-formal_config_search-20260817"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "unavailable",
+      "searched_at": "2026-08-17",
+      "search_location": "MasterGo目标图层回执已过期",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页选择Huawei HiCar不执行可见"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "互联设备 HiCar MasterGo UE"
+        }
+      ],
+      "source_ids": [],
+      "reason": "当前无法取得目标MasterGo图层的有效读取回执。",
+      "material": true,
+      "next_action": "恢复目标MasterGo图层访问并核对HiCar节点的subject/operation/assist_name；补齐生效可见配置后再定责。"
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "PC-38464-formal_definition_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T06:26:34.486161+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页选择Huawei HiCar不执行可见"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'HiCar' and name contains '可见'"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "PC-38464-formal_config_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-17T06:26:34.486161+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页选择Huawei HiCar不执行可见"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'HiCar' and name contains '可见'"
+        }
+      ],
+      "results": []
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "选择huawei hi-car",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1305,\"type\":\"app:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}],\"target\":[{\"canonical\":\"\",\"literal\":\"huawei hi-car\",\"slot\":\"control_target_app\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1305,\"type\":\"app:ctrl\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"open\"}],\"target\":[{\"canonical\":\"\",\"literal\":\"huawei hi-car\",\"slot\":\"control_target_app\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1305",
+    "standard_function": {
+      "status": "verified",
+      "name": "1423打开特定页面/APP语音功能 / 通用 / 通用操作否草稿2026-05-22 17:49:44查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24542打开特定页面/APP语音功能 / 通用 / 通用操作否已锁定继承未修改(1423)2026-01-03 14:24:16查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "恢复目标MasterGo图层访问并核对HiCar节点的subject/operation/assist_name；补齐生效可见配置后再定责。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "可见即可说配置与互联设备交互负责人",
+    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1305；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：可见即可说配置与互联设备交互负责人恢复目标MasterGo图层访问并核对HiCar节点的subject/operation/assist_name；补齐生效可见配置后再定责。"
+  },
+  "run_context": {
+    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 352
+  }
+}

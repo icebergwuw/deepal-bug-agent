@@ -1,0 +1,271 @@
+{
+  "schema_version": 4,
+  "jira_key": "ADS-48571",
+  "comment_causality": "复合指令 POI推荐与治愈流行音乐落域；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-48560",
+        "relationship": "Jira直接关联/描述引用",
+        "read": true,
+        "outcome": "已完整读取字段、描述、附件元数据和全部评论；作为实现上下文，不替代正式定义。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48571 Jira原票",
+      "source_location": "当前字段、完整描述、undefined条全部评论、1个附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "复合指令 POI推荐与治愈流行音乐落域",
+      "target_behavior": "Jira记录当前实际现象：stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍",
+      "match": "exact",
+      "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
+    },
+    {
+      "source_id": "drive-formal_definition_search-1",
+      "source": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
+      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295/本票车型",
+      "trigger": "复合指令 POI推荐与治愈流行音乐落域",
+      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
+      "match": "partial",
+      "material": false,
+      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-17实时测试原话：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的",
+      "target_behavior": "classification: taskoperations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}] visible_result:\"\" llm_data_result:[]",
+      "match": "exact",
+      "reason": "证明当前在线语义路由结果，不替代实车执行和产品目标。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点·MetaId 1208/1026",
+      "source_location": "1429搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定2025-10-27 14:02:16查看说明编辑diff删除；1097点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定2026-06-03 14:24:45查看说明编辑diff删除",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的",
+      "target_behavior": "标准功能点名称、状态与MetaId已实时核对。",
+      "match": "exact",
+      "reason": "证明当前命中功能语义，不单独定义产品目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点·MetaId 1208/1026",
+      "source_location": "24548搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定继承未修改(1429)2025-11-03 13:36:31查看说明编辑diff删除；24325点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定继承未修改(1097)2026-07-07 16:01:21查看说明编辑diff删除",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的",
+      "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
+      "match": "exact",
+      "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48571"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "复合指令 POI推荐与治愈流行音乐落域"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'Deepal AI APP_深蓝8295'"
+        }
+      ],
+      "source_ids": [
+        "drive-formal_definition_search-1"
+      ],
+      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
+            "title": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
+            "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "drive-formal_definition_search-1"
+            ]
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48571-formal_definition_search-20260817"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话·BIGSUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1208/1026"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已核对标准点名称、状态和分类。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能列表实时按MetaId查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1208/1026"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已核对深蓝项目点来源状态；项目范围差异保留在结论缺口中。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48571-formal_definition_search-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T06:26:26.936191+00:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48571"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "复合指令 POI推荐与治愈流行音乐落域"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "name contains 'Deepal AI APP_深蓝8295'"
+        }
+      ],
+      "results": [
+        {
+          "id": "1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
+          "title": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
+          "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1208/1026",
+    "standard_function": {
+      "status": "verified",
+      "name": "1429搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定2025-10-27 14:02:16查看说明编辑diff删除；1097点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定2026-06-03 14:24:45查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24548搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定继承未修改(1429)2025-11-03 13:36:31查看说明编辑diff删除；24325点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定继承未修改(1097)2026-07-07 16:01:21查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "深蓝语音大模型路由负责人",
+    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208/1026；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：深蓝语音大模型路由负责人在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。"
+  },
+  "run_context": {
+    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 335
+  }
+}
