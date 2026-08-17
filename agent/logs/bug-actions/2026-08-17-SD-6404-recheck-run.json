@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "run_id": "20260817T121344+0800-SD-6404-recheck",
+  "status": "complete",
+  "started_at": "2026-08-17T12:13:44+08:00",
+  "query_summary": "重检SD-6404；命中线上清单bug第167行；完成Jira视频、MasterGo/Drive UE、主PRD与功能清单核验",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-SD-6404-recheck.md",
+  "items": [{
+    "jira_key": "SD-6404",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 167,
+    "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-SD-6404-recheck-manifest.json",
+    "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-SD-6404-recheck-readback.json",
+    "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-SD-6404-recheck-validation.json",
+    "readback_sha256": "bd5d4f4e00b0db6077d91c8476b37f22e6a477611ec360f32aee91da0232b17e"
+  }],
+  "completed_at": "2026-08-17T12:18:20+08:00"
+}

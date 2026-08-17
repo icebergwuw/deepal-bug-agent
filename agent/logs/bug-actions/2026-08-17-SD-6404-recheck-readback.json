@@ -1,0 +1,14 @@
+{
+  "values": [
+    {"formattedValue":"2026-07-30","userEnteredValue":{"numberValue":46233}},
+    {"formattedValue":"SD-6404｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21 11：07导航中，导航卡片上出现重叠","userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-6404\",\"SD-6404｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21 11：07导航中，导航卡片上出现重叠\")"}},
+    {"formattedValue":"现象：[Jira视频·00:05]导航卡片内‘Shuguang Road’与‘Subsequently 94 m...’叠压，Always复现。\n正式定义：[C673地图UE V0.6·第1页/第5画板标注3-4]分别定义‘下个道路名称’和‘下下个路口信息和剩余距离’，两类信息为独立分区。\n实现事实：Jira模块为Android - Map，Root Cause登记为模块内代码实现问题。","userEnteredValue":{"stringValue":"现象：[Jira视频·00:05]导航卡片内‘Shuguang Road’与‘Subsequently 94 m...’叠压，Always复现。\n正式定义：[C673地图UE V0.6·第1页/第5画板标注3-4]分别定义‘下个道路名称’和‘下下个路口信息和剩余距离’，两类信息为独立分区。\n实现事实：Jira模块为Android - Map，Root Cause登记为模块内代码实现问题。"},"textFormatRuns":[{}, {"startIndex":4,"format":{"link":{"uri":"http://jira.i-tetris.com/browse/SD-6404"}}},{"startIndex":16},{"startIndex":79,"format":{"link":{"uri":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"}}},{"startIndex":106}]},
+    {"formattedValue":"结论：导航卡片中‘下个道路名称’与‘下下个路口信息和剩余距离’应按UE分区显示；当前英文长文本相互叠压，属于地图UI显示缺陷，可转研发。\n依据：C673地图UE V0.6·第1页/第5画板标注3-4；Jira视频·00:05。\n处理：Android - Map地图UI研发按既有分区修复英文长文本布局，保证两类导航信息不重叠并完成欧洲语言回归；程云负责处理。","userEnteredValue":{"stringValue":"结论：导航卡片中‘下个道路名称’与‘下下个路口信息和剩余距离’应按UE分区显示；当前英文长文本相互叠压，属于地图UI显示缺陷，可转研发。\n依据：C673地图UE V0.6·第1页/第5画板标注3-4；Jira视频·00:05。\n处理：Android - Map地图UI研发按既有分区修复英文长文本布局，保证两类导航信息不重叠并完成欧洲语言回归；程云负责处理。"},"textFormatRuns":[{}, {"startIndex":72,"format":{"link":{"uri":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"}}},{"startIndex":99},{"startIndex":100,"format":{"link":{"uri":"http://jira.i-tetris.com/browse/SD-6404"}}},{"startIndex":112}]},
+    {"formattedValue":"FALSE","userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+    {},
+    {"formattedValue":"可转研发","userEnteredValue":{"stringValue":"可转研发"}},
+    {},
+    {"formattedValue":"研发需覆盖欧洲长道路名及多语言长度回归，保证标注3/4分区不互相侵入。","userEnteredValue":{"stringValue":"研发需覆盖欧洲长道路名及多语言长度回归，保证标注3/4分区不互相侵入。"}},
+    {"formattedValue":"Jira原票·描述/评论/视频\nC673地图UE V0.6·第1页/第5画板\nC673地图UE V0.6·MasterGo第5画板\nC673地图主PRD·C673-6 v20250610","userEnteredValue":{"stringValue":"Jira原票·描述/评论/视频\nC673地图UE V0.6·第1页/第5画板\nC673地图UE V0.6·MasterGo第5画板\nC673地图主PRD·C673-6 v20250610"},"textFormatRuns":[{"format":{"link":{"uri":"http://jira.i-tetris.com/browse/SD-6404"}}},{"startIndex":15},{"startIndex":16,"format":{"link":{"uri":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view"}}},{"startIndex":38},{"startIndex":39,"format":{"link":{"uri":"https://mastergo.com/file/131302242181530?page_id=689%3A156261"}}},{"startIndex":65},{"startIndex":66,"format":{"link":{"uri":"https://drive.google.com/file/d/1DIt5orhq8xeV5017b8YKcWvMSou3LWmj/view"}}}]}
+  ]
+}

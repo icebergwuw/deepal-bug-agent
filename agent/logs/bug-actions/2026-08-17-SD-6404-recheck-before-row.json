@@ -1,0 +1,14 @@
+{
+  "values": [
+    {"formattedValue":"2026-07-30","userEnteredValue":{"numberValue":46233}},
+    {"formattedValue":"SD-6404｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21 11：07导航中，导航卡片上出现重叠","userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-6404\",\"SD-6404｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21 11：07导航中，导航卡片上出现重叠\")"}},
+    {"formattedValue":"现象：导航中卡片相互遮挡；Jira评论要求产品/UI定义显示边界。[Jira原票·描述/完整评论]\n证据：已查C673主清单及MasterGo地图UE，未定位该卡片的精确层级、避让优先级和尺寸边界。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]","userEnteredValue":{"stringValue":"现象：导航中卡片相互遮挡；Jira评论要求产品/UI定义显示边界。[Jira原票·描述/完整评论]\n证据：已查C673主清单及MasterGo地图UE，未定位该卡片的精确层级、避让优先级和尺寸边界。[C673功能清单·16_地图第45/85-93/298行][C673地图UE V0.6·850页面/检索图层]"},"textFormatRuns":[{}, {"startIndex":34,"format":{"link":{"uri":"http://jira.i-tetris.com/browse/SD-6404"}}},{"startIndex":48},{"startIndex":100,"format":{"link":{"uri":"https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"}}},{"startIndex":128},{"startIndex":130,"format":{"link":{"uri":"https://mastergo.com/file/131302242181530?page_id=689%3A156261"}}},{"startIndex":154}]},
+    {"formattedValue":"结论：卡片重叠现象明确，但缺生效层级、避让优先级和尺寸边界，当前不能直接定研发修改方案。\n依据：Jira原票·描述/完整评论、C673地图UE V0.6·850页面。\n处理：补齐卡片层级、互斥/避让规则和横竖屏边界后再转实现；C673地图UI产品负责人处理。","userEnteredValue":{"stringValue":"结论：卡片重叠现象明确，但缺生效层级、避让优先级和尺寸边界，当前不能直接定研发修改方案。\n依据：Jira原票·描述/完整评论、C673地图UE V0.6·850页面。\n处理：补齐卡片层级、互斥/避让规则和横竖屏边界后再转实现；C673地图UI产品负责人处理。"},"textFormatRuns":[{}, {"startIndex":48,"format":{"link":{"uri":"http://jira.i-tetris.com/browse/SD-6404"}}},{"startIndex":62},{"startIndex":63,"format":{"link":{"uri":"https://mastergo.com/file/131302242181530?page_id=689%3A156261"}}},{"startIndex":82}]},
+    {"formattedValue":"FALSE","userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+    {},
+    {"formattedValue":"待确认","userEnteredValue":{"stringValue":"待确认"}},
+    {},
+    {"formattedValue":"缺精确UE图层、遮挡优先级及尺寸边界","userEnteredValue":{"stringValue":"缺精确UE图层、遮挡优先级及尺寸边界"}},
+    {"formattedValue":"Jira原票·描述/完整评论\nC673功能清单·16_地图第45/85-93/298行\nC673地图UE V0.6·850页面/检索图层","userEnteredValue":{"stringValue":"Jira原票·描述/完整评论\nC673功能清单·16_地图第45/85-93/298行\nC673地图UE V0.6·850页面/检索图层"},"textFormatRuns":[{"format":{"link":{"uri":"http://jira.i-tetris.com/browse/SD-6404"}}},{"startIndex":14},{"startIndex":15,"format":{"link":{"uri":"https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897"}}},{"startIndex":43},{"startIndex":44,"format":{"link":{"uri":"https://mastergo.com/file/131302242181530?page_id=689%3A156261"}}}]}
+  ]
+}

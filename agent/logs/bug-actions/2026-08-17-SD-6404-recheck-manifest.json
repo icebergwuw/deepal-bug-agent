@@ -1,0 +1,135 @@
+{
+  "schema_version": 4,
+  "jira_key": "SD-6404",
+  "comment_causality": "Jira视频00:05显示导航卡片内‘Shuguang Road’与‘Subsequently 94 m...’相互叠压；程云评论要求产品/UI确认显示边界。现已在C673地图UE V0.6第1页、第5画板定位标注3‘下个道路名称’和标注4‘下下个路口信息和剩余距离’，两类信息按独立分区展示。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-6404 Jira当前页面及视频附件",
+      "source_location": "Jira字段、描述、附件、全部评论；视频00:05",
+      "source_type": "jira_attachment",
+      "role": "implementation_actual",
+      "project_model": "C673-G 欧洲增程200km / Android - Map",
+      "trigger": "导航中同时显示英文下个道路名称和下下个路口信息",
+      "target_behavior": "视频中Shuguang Road与Subsequently 94 m...在导航卡片同一行叠压；Always复现。",
+      "match": "exact",
+      "reason": "证明当前实现的可见布局缺陷；Jira Root Cause登记为模块内代码实现问题。"
+    },
+    {
+      "source_id": "c673-map-ue-v06-board5",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6",
+      "source_location": "PDF第1页·850_V0.5&V0.6第5画板·标注3/4；MasterGo同画板",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "C385/C673 850地图导航",
+      "trigger": "导航卡片同时展示下个道路名称和下下个路口信息",
+      "target_behavior": "标注3‘下个道路名称’与标注4‘下下个路口信息和剩余距离’位于独立分区，不得相互侵入或叠压。",
+      "match": "exact",
+      "reason": "同车型地图导航正式交互设计直接定义了本票两个重叠元素及其空间分区。"
+    },
+    {
+      "source_id": "c673-map-prd",
+      "source": "Megatronix_地图_产品需求文档深蓝8155&8295_C673-6_v20250610",
+      "source_location": "Google Drive文档1DIt5orhq8xeV5017b8YKcWvMSou3LWmj；导航与下个道路功能章节",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C673-6 / 8155&8295地图",
+      "trigger": "导航与下个道路信息展示",
+      "target_behavior": "定义导航和下个道路功能；精确视觉边界由同项目UE补充。",
+      "match": "partial",
+      "reason": "主PRD提供功能上下文，未单独定义本票英文长文本布局；该非关键缺口由精确UE目标闭合。"
+    },
+    {
+      "source_id": "c673-map-function-list",
+      "source": "C673-6全功能清单V1.3--可编辑",
+      "source_location": "16_地图；已核对第45、85-93、298行及相关导航条目",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-6地图",
+      "trigger": "导航卡片道路信息展示",
+      "target_behavior": "证明地图导航功能在项目范围内；精确卡片分区由UE定义。",
+      "match": "partial",
+      "reason": "功能清单不定义视觉溢出边界，但不影响UE对本票目标的直接定义。"
+    }
+  ],
+  "evidence_profiles": ["map_navigation", "visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "本票命中地图导航和可见交互专项画像。"},
+    "voice": {"applicable": false, "reason": "不涉及语音识别、语义或播报能力。"},
+    "map_navigation": {"applicable": true, "reason": "问题发生在导航卡片道路信息展示。"},
+    "visible_interaction": {"applicable": true, "reason": "问题是卡片内两个可见文本分区发生重叠。"}
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search", "status": "read", "searched_at": "2026-08-17",
+      "search_location": "Google Drive：C673地图导航主PRD检索",
+      "queries": [{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"C673 地图 导航卡片 道路名"},{"kind":"module_artifact","text":"Megatronix 地图 产品需求文档 C673"}],
+      "source_ids": ["c673-map-prd"],
+      "reason": "已读取C673地图主PRD，功能范围匹配；精确显示目标由UE给出。",
+      "candidate_audit": {"completed":true,"results_count":2,"candidates":[
+        {"id":"1DIt5orhq8xeV5017b8YKcWvMSou3LWmj","title":"Megatronix_地图_产品需求文档深蓝8155&8295_C673-6_v20250610.docx","url":"https://drive.google.com/file/d/1DIt5orhq8xeV5017b8YKcWvMSou3LWmj/view","disposition":"read","source_ids":["c673-map-prd"]},
+        {"id":"1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM","title":"Megatronix_地图_产品需求文档深蓝8155&8295_v20250613.docx","url":"https://drive.google.com/file/d/1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM/view","disposition":"excluded","reason":"通用版本仅作旁证，C673-6主PRD与同项目UE更直接。"}
+      ]},
+      "search_receipt_ids": ["SD-6404-main-prd-drive-20260817"]
+    },
+    {
+      "check_id": "special_definition_search", "status": "read", "searched_at": "2026-08-17",
+      "search_location": "Google Drive与MasterGo：C673地图专项交互定义",
+      "queries": [{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"导航卡片 下个道路名称 下下个路口"},{"kind":"module_artifact","text":"C385 673 地图导航 850 V0.6"}],
+      "source_ids": ["c673-map-ue-v06-board5"],
+      "reason": "已读取UE第5画板标注3/4，直接定义两个信息区。",
+      "candidate_audit": {"completed":true,"results_count":1,"candidates":[
+        {"id":"1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view","disposition":"read","source_ids":["c673-map-ue-v06-board5"]}
+      ]},
+      "search_receipt_ids": ["SD-6404-special-definition-drive-20260817"]
+    },
+    {
+      "check_id": "formal_config_search", "status": "read", "searched_at": "2026-08-17",
+      "search_location": "Google Drive：C673地图全功能清单",
+      "queries": [{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"导航 卡片 道路名称"},{"kind":"module_artifact","text":"C673-6 全功能清单 16_地图"}],
+      "source_ids": ["c673-map-function-list"],
+      "reason": "已核对地图页功能配置，项目范围成立；视觉目标由UE精确闭合。",
+      "candidate_audit": {"completed":true,"results_count":1,"candidates":[
+        {"id":"15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8","title":"C673-6全功能清单V1.3--可编辑","url":"https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897","disposition":"read","source_ids":["c673-map-function-list"]}
+      ]},
+      "search_receipt_ids": ["SD-6404-formal-config-drive-20260817"]
+    },
+    {
+      "check_id": "interaction_or_ue_search", "status": "read", "searched_at": "2026-08-17",
+      "search_location": "MasterGo与Drive PDF：850_V0.5&V0.6第5画板",
+      "queries": [{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"导航卡片 下个道路名称 下下个路口"},{"kind":"module_artifact","text":"C385 673 地图导航 850 V0.6"}],
+      "source_ids": ["c673-map-ue-v06-board5"],
+      "reason": "已在MasterGo画板和同版PDF交叉核对标注3/4。",
+      "candidate_audit": {"completed":true,"results_count":1,"candidates":[
+        {"id":"1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view","disposition":"read","source_ids":["c673-map-ue-v06-board5"]}
+      ]},
+      "search_receipt_ids": ["SD-6404-interaction-ue-drive-20260817"]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira评论中的‘需产品和UI确认’不是产品目标；当前同版UE已明确标注3/4为独立分区。以UE作为formal_target、视频作为implementation_actual，判定为Android - Map布局实现缺陷。",
+  "voice_evidence": {"applicable": false},
+  "expected_behavior": {
+    "trigger": "导航卡片同时显示英文下个道路名称与下下个路口信息",
+    "target_state": "标注3和标注4分别保持在UE定义的独立区域",
+    "intent_function_signal": "导航道路信息类型与顺序不变，仅修复布局约束",
+    "ui_tts_vehicle_behavior": "Shuguang Road等长道路名不得与Subsequently 94 m...等后续转向信息叠压",
+    "boundary": "覆盖欧洲长道路名和多语言长度；两分区不得互相侵入",
+    "source_ids": ["c673-map-ue-v06-board5"]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android - Map地图UI研发（程云）",
+    "implementation_source_ids": ["jira-actual"],
+    "text": "结论：导航卡片中‘下个道路名称’与‘下下个路口信息和剩余距离’应按UE分区显示；当前英文长文本相互叠压，属于地图UI显示缺陷，可转研发。\n依据：C673地图UE V0.6·第1页/第5画板标注3-4；Jira视频·00:05。\n处理：Android - Map地图UI研发按既有分区修复英文长文本布局，保证两类导航信息不重叠并完成欧洲语言回归；程云负责处理。"
+  },
+  "run_context": {"run_id":"20260817T121344+0800-SD-6404-recheck","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":167},
+  "search_receipts": [
+    {"receipt_id":"SD-6404-main-prd-drive-20260817","provider":"google_drive","check_id":"main_prd_search","searched_at":"2026-08-17T12:05:00+08:00","queries":[{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"C673 地图 导航卡片 道路名"},{"kind":"module_artifact","text":"Megatronix 地图 产品需求文档 C673"}],"results":[{"id":"1DIt5orhq8xeV5017b8YKcWvMSou3LWmj","title":"Megatronix_地图_产品需求文档深蓝8155&8295_C673-6_v20250610.docx","url":"https://drive.google.com/file/d/1DIt5orhq8xeV5017b8YKcWvMSou3LWmj/view","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},{"id":"1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM","title":"Megatronix_地图_产品需求文档深蓝8155&8295_v20250613.docx","url":"https://drive.google.com/file/d/1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM/view","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"}]},
+    {"receipt_id":"SD-6404-special-definition-drive-20260817","provider":"google_drive","check_id":"special_definition_search","searched_at":"2026-08-17T12:06:00+08:00","queries":[{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"导航卡片 下个道路名称 下下个路口"},{"kind":"module_artifact","text":"C385 673 地图导航 850 V0.6"}],"results":[{"id":"1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view","mime_type":"application/pdf"}]},
+    {"receipt_id":"SD-6404-formal-config-drive-20260817","provider":"google_drive","check_id":"formal_config_search","searched_at":"2026-08-17T12:07:00+08:00","queries":[{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"导航 卡片 道路名称"},{"kind":"module_artifact","text":"C673-6 全功能清单 16_地图"}],"results":[{"id":"15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8","title":"C673-6全功能清单V1.3--可编辑","url":"https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?gid=1947690897#gid=1947690897","mime_type":"application/vnd.google-apps.spreadsheet"}]},
+    {"receipt_id":"SD-6404-interaction-ue-drive-20260817","provider":"google_drive","check_id":"interaction_or_ue_search","searched_at":"2026-08-17T12:08:00+08:00","queries":[{"kind":"jira_key","text":"SD-6404"},{"kind":"problem_concept","text":"导航卡片 下个道路名称 下下个路口"},{"kind":"module_artifact","text":"C385 673 地图导航 850 V0.6"}],"results":[{"id":"1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view","mime_type":"application/pdf"}]}
+  ]
+}
