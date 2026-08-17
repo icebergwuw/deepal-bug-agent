@@ -1,7 +1,7 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "ADS-48814",
-  "comment_causality": "上一轮火锅列表按人均价格筛选却落到导航；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "comment_causality": "上一轮火锅列表按人均价格筛选却落到导航；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。 本次重新读取最新正式资料与Jira最新日志后更新结论。",
   "customer_issue": {
     "identified": false
   },
@@ -16,6 +16,50 @@
       }
     ]
   },
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及地图POI搜索或二次筛选。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮火锅列表，当前却命中1209导航去地址。 依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48814/ADS-48739/ADS-29428。 处理：把价格筛选原话路由到1455并下发上一轮列表上下文及price>=100条件；AI Cockpit NLU负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "筛选下人均价格100元以上的",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1209,\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"preference\":[{\"canonical\":\"\",\"literal\":\"人均\",\"slot\":\"preference\"}],\"action\":[{\"canonical\":\"navi\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1209,\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"preference\":[{\"canonical\":\"\",\"literal\":\"人均\",\"slot\":\"preference\"}],\"action\":[{\"canonical\":\"navi\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1209",
+    "standard_function": {
+      "status": "verified",
+      "name": "1433导航去【地址】语音功能 / 地图 / 目的地 / 发起导航否已锁定2025-10-13 21:44:28查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24552导航去【地址】语音功能 / 地图 / 目的地 / 发起导航否已锁定继承未修改(1433)2025-11-03 13:29:07查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "修正人均价格筛选原话由1209导航改为上一轮POI列表筛选能力，并回归列表上下文。"
+  },
   "scope_checks": [
     {
       "source_id": "jira-actual",
@@ -28,19 +72,6 @@
       "target_behavior": "Jira记录当前实际现象：Stg环境，当前poi已经显示了周边的火锅店，query：筛选下人均价格100元以上的，落域错误到了deepal ai，且内容也不是上一次poi列表推荐中的火锅",
       "match": "exact",
       "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
-    },
-    {
-      "source_id": "drive-formal_definition_search-1",
-      "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
-      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
-      "source_type": "prd",
-      "role": "context_only",
-      "project_model": "深蓝8295/本票车型",
-      "trigger": "上一轮火锅列表按人均价格筛选却落到导航",
-      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
-      "match": "partial",
-      "material": false,
-      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
     },
     {
       "source_id": "alchemy-current",
@@ -79,47 +110,36 @@
       "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
     },
     {
-      "source_id": "map-drive-main_prd_search-1",
+      "source_id": "poi-prd-v08",
       "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
-      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+      "source_location": "三/2.5.3·针对POI列表进行二次筛选；2.1.2·地址/POI搜索",
       "source_type": "prd",
-      "role": "context_only",
-      "project_model": "深蓝8295/本票车型",
-      "trigger": "上一轮火锅列表按人均价格筛选却落到导航",
-      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
-      "match": "partial",
-      "material": false,
-      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
+      "role": "formal_target",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "在上一轮火锅列表上筛选人均价格100元以上",
+      "target_behavior": "二次筛选使用metaId 1455并合并上一轮列表与评分/价格/距离条件；地址/公司名称搜索由1208承载。",
+      "match": "exact",
+      "reason": "同项目最新POI正式PRD直接定义目标。"
+    },
+    {
+      "source_id": "poi-second-filter-v08",
+      "source": "POI推荐v0.8专项条款",
+      "source_location": "三/2.5.3·评分、价格、距离及以上/以下/以内/以外",
+      "source_type": "special_prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "在上一轮火锅列表上筛选人均价格100元以上",
+      "target_behavior": "1455对上一轮POI列表执行条件过滤，不重新丢失上下文。",
+      "match": "exact",
+      "reason": "专项条款精确覆盖二次筛选触发。"
     }
   ],
-  "evidence_profiles": [
-    "voice",
-    "map_navigation"
-  ],
-  "evidence_profile_assessment": {
-    "general": {
-      "applicable": false,
-      "reason": "由专项画像覆盖。"
-    },
-    "voice": {
-      "applicable": true,
-      "reason": "涉及用户原话、MetaId和语音执行链。"
-    },
-    "map_navigation": {
-      "applicable": true,
-      "reason": "涉及地图POI搜索或二次筛选。"
-    },
-    "visible_interaction": {
-      "applicable": false,
-      "reason": "不依赖可见交互目标。"
-    }
-  },
   "required_evidence_checks": [
     {
       "check_id": "formal_definition_search",
       "status": "read",
       "searched_at": "2026-08-17",
-      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "search_location": "Google Drive实时精确名称检索、版本族枚举并打开选定正文",
       "queries": [
         {
           "kind": "jira_key",
@@ -127,36 +147,205 @@
         },
         {
           "kind": "problem_concept",
-          "text": "上一轮火锅列表按人均价格筛选却落到导航"
+          "text": "在上一轮火锅列表上筛选人均价格100元以上"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains 'POI推荐'"
+          "text": "正式POI产品定义"
         }
       ],
       "source_ids": [
-        "drive-formal_definition_search-1"
+        "poi-prd-v08"
       ],
-      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "reason": "已完成候选逐项审计、引用追查和版本族选择。",
       "material": false,
       "next_action": "",
       "candidate_audit": {
         "completed": true,
-        "results_count": 1,
+        "results_count": 2,
         "candidates": [
           {
             "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
             "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
             "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
             "disposition": "read",
             "source_ids": [
-              "drive-formal_definition_search-1"
+              "poi-prd-v08"
             ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48814-formal_definition_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "同项目v0.8为检索到的最高版本且正文已读。",
+            "newer_version_checked": true
           }
         ]
       },
       "search_receipt_ids": [
-        "ADS-48814-formal_definition_search-20260817"
+        "ADS-48814-formal_definition_search-drive-20260817-1807"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时精确名称检索、版本族枚举并打开选定正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48814"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "在上一轮火锅列表上筛选人均价格100元以上"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "POI推荐主PRD"
+        }
+      ],
+      "source_ids": [
+        "poi-prd-v08"
+      ],
+      "reason": "已完成候选逐项审计、引用追查和版本族选择。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd-v08"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48814-main_prd_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "同项目v0.8为检索到的最高版本且正文已读。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48814-main_prd_search-drive-20260817-1807"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时精确名称检索、版本族枚举并打开选定正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48814"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "在上一轮火锅列表上筛选人均价格100元以上"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "POI二次筛选专项条款"
+        }
+      ],
+      "source_ids": [
+        "poi-second-filter-v08"
+      ],
+      "reason": "已完成候选逐项审计、引用追查和版本族选择。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-second-filter-v08"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48814-special_definition_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "同项目v0.8为检索到的最高版本且正文已读。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48814-special_definition_search-drive-20260817-1807"
       ]
     },
     {
@@ -216,82 +405,14 @@
       "reason": "已核对深蓝项目点来源状态；项目范围差异保留在结论缺口中。",
       "material": false,
       "next_action": ""
-    },
-    {
-      "check_id": "main_prd_search",
-      "status": "read",
-      "searched_at": "2026-08-17",
-      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
-      "queries": [
-        {
-          "kind": "jira_key",
-          "text": "ADS-48814"
-        },
-        {
-          "kind": "problem_concept",
-          "text": "上一轮火锅列表按人均价格筛选却落到导航"
-        },
-        {
-          "kind": "module_artifact",
-          "text": "name contains 'POI推荐'"
-        }
-      ],
-      "source_ids": [
-        "map-drive-main_prd_search-1"
-      ],
-      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
-      "material": false,
-      "next_action": "",
-      "candidate_audit": {
-        "completed": true,
-        "results_count": 1,
-        "candidates": [
-          {
-            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
-            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
-            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
-            "disposition": "read",
-            "source_ids": [
-              "map-drive-main_prd_search-1"
-            ]
-          }
-        ]
-      },
-      "search_receipt_ids": [
-        "ADS-48814-main_prd_search-20260817"
-      ]
-    },
-    {
-      "check_id": "special_definition_search",
-      "status": "unavailable",
-      "searched_at": "2026-08-17",
-      "search_location": "Google Drive专项定义检索与已打开候选",
-      "queries": [
-        {
-          "kind": "jira_key",
-          "text": "ADS-48814"
-        },
-        {
-          "kind": "problem_concept",
-          "text": "上一轮火锅列表按人均价格筛选却落到导航"
-        },
-        {
-          "kind": "module_artifact",
-          "text": "POI专项交互/二次筛选定义"
-        }
-      ],
-      "source_ids": [],
-      "reason": "未获得能精确覆盖当前车型、上一轮列表上下文和本票触发词的独立专项定义。",
-      "material": true,
-      "next_action": "修正人均价格筛选原话由1209导航改为上一轮POI列表筛选能力，并回归列表上下文。"
     }
   ],
   "search_receipts": [
     {
-      "receipt_id": "ADS-48814-formal_definition_search-20260817",
+      "receipt_id": "ADS-48814-formal_definition_search-drive-20260817-1807",
       "provider": "google_drive",
       "check_id": "formal_definition_search",
-      "searched_at": "2026-08-17T06:26:28.884728+00:00",
+      "searched_at": "2026-08-17T18:07:00+08:00",
       "queries": [
         {
           "kind": "jira_key",
@@ -299,11 +420,19 @@
         },
         {
           "kind": "problem_concept",
-          "text": "上一轮火锅列表按人均价格筛选却落到导航"
+          "text": "在上一轮火锅列表上筛选人均价格100元以上"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains 'POI推荐'"
+          "text": "正式POI产品定义"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
         }
       ],
       "results": [
@@ -312,14 +441,20 @@
           "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
           "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
           "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         }
       ]
     },
     {
-      "receipt_id": "ADS-48814-main_prd_search-20260817",
+      "receipt_id": "ADS-48814-main_prd_search-drive-20260817-1807",
       "provider": "google_drive",
       "check_id": "main_prd_search",
-      "searched_at": "2026-08-17T06:26:28.884728+00:00",
+      "searched_at": "2026-08-17T18:07:00+08:00",
       "queries": [
         {
           "kind": "jira_key",
@@ -327,11 +462,19 @@
         },
         {
           "kind": "problem_concept",
-          "text": "上一轮火锅列表按人均价格筛选却落到导航"
+          "text": "在上一轮火锅列表上筛选人均价格100元以上"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains 'POI推荐'"
+          "text": "POI推荐主PRD"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
         }
       ],
       "results": [
@@ -340,42 +483,81 @@
           "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
           "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
           "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48814-special_definition_search-drive-20260817-1807",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-17T18:07:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48814"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "在上一轮火锅列表上筛选人均价格100元以上"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "POI二次筛选专项条款"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         }
       ]
     }
   ],
-  "inheritance_chains": [],
-  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
-  "voice_evidence": {
-    "applicable": true,
-    "availability": "complete",
-    "original_utterance": "筛选下人均价格100元以上的",
-    "alchemy_tested": true,
-    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1209,\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"preference\":[{\"canonical\":\"\",\"literal\":\"人均\",\"slot\":\"preference\"}],\"action\":[{\"canonical\":\"navi\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1209,\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"preference\":[{\"canonical\":\"\",\"literal\":\"人均\",\"slot\":\"preference\"}],\"action\":[{\"canonical\":\"navi\"}]}}] visible_result:\"\" llm_data_result:[]",
-    "meta_id": "1209",
-    "standard_function": {
-      "status": "verified",
-      "name": "1433导航去【地址】语音功能 / 地图 / 目的地 / 发起导航否已锁定2025-10-13 21:44:28查看说明编辑diff删除",
-      "assessment": "已在标准功能列表按MetaId实时查询。"
-    },
-    "project_function": {
-      "status": "verified",
-      "name": "24552导航去【地址】语音功能 / 地图 / 目的地 / 发起导航否已锁定继承未修改(1433)2025-11-03 13:29:07查看说明编辑diff删除",
-      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
-    },
-    "unavailable_reason": "",
-    "next_action": "修正人均价格筛选原话由1209导航改为上一轮POI列表筛选能力，并回归列表上下文。"
-  },
-  "decision": {
-    "status": "待复核",
-    "owner": "POI语音NLU负责人",
-    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1209；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：POI语音NLU负责人修正人均价格筛选原话由1209导航改为上一轮POI列表筛选能力，并回归列表上下文。"
-  },
   "run_context": {
-    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "run_id": "20260817T180743+0800-rows-335-347-recheck",
     "operator_owner_id": "wu-you",
     "target_owner_id": "wu-you",
     "sheet_name": "bug",
     "sheet_row": 338
+  },
+  "expected_behavior": {
+    "trigger": "在上一轮火锅列表上筛选人均价格100元以上",
+    "target_state": "上一轮POI列表与本轮评分/价格/距离条件合并后由1455筛选；公司名称搜索由1208地址/POI域承载。",
+    "intent_function_signal": "Alchemy当前语义与项目功能点按本票原话执行；Jira key=ADS-48814。",
+    "ui_tts_vehicle_behavior": "展示过滤后的同类POI列表，不丢失上一轮上下文；地址搜索展示地图POI结果。",
+    "boundary": "深蓝8295；二次筛选需已有上一轮POI列表；支持评分、价格、距离及以上/以下/以内/以外。",
+    "source_ids": [
+      "poi-prd-v08"
+    ]
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "AI Cockpit NLU负责人",
+    "text": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮火锅列表，当前却命中1209导航去地址。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48814/ADS-48739/ADS-29428。\n处理：把价格筛选原话路由到1455并下发上一轮列表上下文及price>=100条件；AI Cockpit NLU负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
   }
 }

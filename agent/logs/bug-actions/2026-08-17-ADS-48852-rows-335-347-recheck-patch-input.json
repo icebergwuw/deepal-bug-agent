@@ -1,0 +1,108 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        }
+      },
+      {
+        "formattedValue": "ADS-48852｜query：明天和今天的天气怎么样，没有能查询天气，TTS回复：抱歉，我只能查询7天内的天气",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48852\",\"ADS-48852｜query：明天和今天的天气怎么样，没有能查询天气，TTS回复：抱歉，我只能查询7天内的天气\")"
+        }
+      },
+      {
+        "formattedValue": "ADS-48852 Jira原票。\n现象：query：明天和今天的天气怎么样，没有能查询天气，TTS回复：抱歉，我只能查询7天内的天气\nJira：状态=处理中，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“明天和今天的天气怎么样”，当前MetaId=1249/1249。",
+        "userEnteredValue": {
+          "stringValue": "ADS-48852 Jira原票。\n现象：query：明天和今天的天气怎么样，没有能查询天气，TTS回复：抱歉，我只能查询7天内的天气\nJira：状态=处理中，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“明天和今天的天气怎么样”，当前MetaId=1249/1249。"
+        }
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1249；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：天气服务与语音参数负责人在当前分支连续回归今天+明天组合查询，核对period解析和天气服务日期边界，复现后由天气服务负责人修正。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1249；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：天气服务与语音参数负责人在当前分支连续回归今天+明天组合查询，核对period解析和天气服务日期边界，复现后由天气服务负责人修正。"
+        }
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        }
+      },
+      {},
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票·ADS-48852\nMegatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx\nAlchemy当前·1249",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·ADS-48852\nMegatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx\nAlchemy当前·1249"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象与实现：Jira日志原话为‘明天和后天天气怎么样’，NLU下发1249及+1d/+2d，但执行返回7天越界TTS。[Jira原票·ADS-48852]\n正式定义：深蓝支持7天内按天查询及时间段/未来三天查询。[天气PRD v20250901·多日/时间段]\nAlchemy：当前命中1249。[Alchemy当前结果]",
+      "links": [
+        {
+          "label": "Jira原票·ADS-48852",
+          "url": "http://jira.i-tetris.com/browse/ADS-48852"
+        },
+        {
+          "label": "天气PRD v20250901·多日/时间段",
+          "url": "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为天气执行缺陷。NLU已正确下发1249及+1d/+2d，正式PRD支持7天内天气和时间段查询，当前回复‘只能查询7天内’与输入及定义矛盾。\n依据：天气PRD v20250901·天气查询/时间段；Alchemy当前1249；ADS-48852/ADS-48784日志。\n处理：天气服务按多日时间段返回并展示明天、后天结果，修正错误越界TTS；天气卡片/服务执行负责人处理。",
+      "links": [
+        {
+          "label": "Alchemy当前",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "Jira日志原话为‘明天和后天’，不是旧表中的‘明天和今天’。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·ADS-48852",
+          "url": "http://jira.i-tetris.com/browse/ADS-48852"
+        },
+        {
+          "label": "天气PRD v20250901·多日/时间段",
+          "url": "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

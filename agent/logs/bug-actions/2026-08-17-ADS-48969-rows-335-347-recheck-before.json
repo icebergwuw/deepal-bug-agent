@@ -1,0 +1,60 @@
+{
+  "values": [
+    {
+      "formattedValue": "2026-08-17",
+      "userEnteredValue": {
+        "stringValue": "2026-08-17"
+      }
+    },
+    {
+      "formattedValue": "ADS-48969｜17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认",
+      "userEnteredValue": {
+        "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48969\",\"ADS-48969｜17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认\")"
+      }
+    },
+    {
+      "formattedValue": "ADS-48969 Jira原票。\n现象：17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认\nJira：状态=待办，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“一键下电；确认”，当前MetaId=1628/1628。",
+      "userEnteredValue": {
+        "stringValue": "ADS-48969 Jira原票。\n现象：17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认\nJira：状态=待办，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“一键下电；确认”，当前MetaId=1628/1628。"
+      }
+    },
+    {
+      "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1628；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：一键下电交互与语音执行负责人结合车辆下电弹窗交互核对二轮确认是否允许语音消费，并在实车验证确认事件与弹窗焦点。",
+      "userEnteredValue": {
+        "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1628；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：一键下电交互与语音执行负责人结合车辆下电弹窗交互核对二轮确认是否允许语音消费，并在实车验证确认事件与弹窗焦点。"
+      }
+    },
+    {
+      "formattedValue": "FALSE",
+      "userEnteredValue": {
+        "boolValue": false
+      },
+      "dataValidation": {
+        "condition": {
+          "type": "BOOLEAN"
+        },
+        "strict": true
+      }
+    },
+    {},
+    {
+      "formattedValue": "待复核",
+      "userEnteredValue": {
+        "stringValue": "待复核"
+      }
+    },
+    {},
+    {
+      "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "userEnteredValue": {
+        "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+      }
+    },
+    {
+      "formattedValue": "Jira原票·ADS-48969\n车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx\nAlchemy当前·1628",
+      "userEnteredValue": {
+        "stringValue": "Jira原票·ADS-48969\n车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx\nAlchemy当前·1628"
+      }
+    }
+  ]
+}

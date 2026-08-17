@@ -1,13 +1,56 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "ADS-48848",
-  "comment_causality": "车外域设置前照灯延时被过滤且静默；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "comment_causality": "车外域设置前照灯延时被过滤且静默；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。 本次重新读取最新正式资料与Jira最新日志后更新结论。",
   "customer_issue": {
     "identified": false
   },
   "related_issues": {
     "checked": true,
     "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：定义为车外语音过滤缺陷。NLU正确返回1322，但车外区域过滤改写为-6并静默；灯光控制在车外能力范围内，未开放时也必须返回固定拒绝TTS。 依据：车外语音PRD V1.8·三/3及五/1；车外灯光/后视镜需求V2；Jira最新链路日志。 处理：补齐1322的车外白名单或denied_replies及关闭值映射；车外语音云端白名单负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "前照灯延时设置为关闭",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1322,\"type\":\"vehicle:ctrl:headlight:follow_home_light:adjust\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"set\",\"literal\":\"设置\",\"slot\":\"operation\"},{\"canonical\":\"close\",\"literal\":\"关闭\",\"slot\":\"operation\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1322,\"type\":\"vehicle:ctrl:headlight:follow_home_light:adjust\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"set\",\"literal\":\"设置\",\"slot\":\"operation\"},{\"canonical\":\"close\",\"literal\":\"关闭\",\"slot\":\"operation\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1322",
+    "standard_function": {
+      "status": "verified",
+      "name": "1127设置伴我回家灯时长语音功能 / 车控 / 车辆 / 车外灯 / 大灯否已锁定2025-10-14 19:02:17查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "26872设置伴我回家灯时长语音功能 / 车控 / 车辆 / 车外灯 / 大灯否已锁定继承未修改(1127)2026-01-27 17:01:33查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "核对1322的车外白名单及关闭值映射，并补齐执行或不支持TTS。"
   },
   "scope_checks": [
     {
@@ -21,19 +64,6 @@
       "target_behavior": "Jira记录当前实际现象：车外语音，车外唤醒后query：前照灯延时设置为关闭，执行和TTS无反应",
       "match": "exact",
       "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
-    },
-    {
-      "source_id": "drive-formal_definition_search-1",
-      "source": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
-      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
-      "source_type": "prd",
-      "role": "context_only",
-      "project_model": "深蓝8295/本票车型",
-      "trigger": "车外域设置前照灯延时被过滤且静默",
-      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
-      "match": "partial",
-      "material": false,
-      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
     },
     {
       "source_id": "alchemy-current",
@@ -70,35 +100,62 @@
       "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
       "match": "exact",
       "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    },
+    {
+      "source_id": "carvoice-prd-v18",
+      "source": "深蓝车外语音交互产品需求文档V1.8",
+      "source_location": "三/3·功能列表；车控含窗户、后视镜、背门、灯光；五/1·清单外指令不静默",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "车外唤醒后关闭前照灯延时",
+      "target_behavior": "车外车控覆盖后视镜和灯光；清单外或白名单外也必须返回固定TTS。",
+      "match": "exact",
+      "reason": "同车型最新PRD直接定义车外能力类别和兜底反馈。"
+    },
+    {
+      "source_id": "carvoice-ue-v08",
+      "source": "长安深蓝8295平台交互设计文档_车外语音_V0.8",
+      "source_location": "车外语音设置页·支持控制车窗、后背门、灯光和后视镜",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "车外唤醒后关闭前照灯延时",
+      "target_behavior": "界面明确展示后视镜和灯光属于车外语音控制范围。",
+      "match": "exact",
+      "reason": "同平台最新UE与PRD一致。"
+    },
+    {
+      "source_id": "carvoice-light-mirror-v2",
+      "source": "ITHU语音控制车外灯光和后视镜--V2",
+      "source_location": "灯光/后视镜语控限制条款",
+      "source_type": "special_prd",
+      "role": "context_only",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "车外唤醒后关闭前照灯延时",
+      "target_behavior": "安全/车速条件决定具体动作能否执行，但不允许静默。",
+      "match": "partial",
+      "reason": "补充灯光和后视镜安全边界。"
+    },
+    {
+      "source_id": "region-filter-log",
+      "source": "Jira最新车外区域过滤链路日志",
+      "source_location": "最新研发评论·ClientSession.filterForOutsideRegionTask：业务Meta被改写为META_ID_SELF_PROCESS(-6)，action与TTS为空",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "车外唤醒后关闭前照灯延时",
+      "target_behavior": "ASR/NLU正确，车外区域过滤后无动作、无TTS、无车控下发。",
+      "match": "exact",
+      "reason": "直接定位当前实现缺陷位置。"
     }
   ],
-  "evidence_profiles": [
-    "voice"
-  ],
-  "evidence_profile_assessment": {
-    "general": {
-      "applicable": false,
-      "reason": "由专项画像覆盖。"
-    },
-    "voice": {
-      "applicable": true,
-      "reason": "涉及用户原话、MetaId和语音执行链。"
-    },
-    "map_navigation": {
-      "applicable": false,
-      "reason": "不涉及地图导航。"
-    },
-    "visible_interaction": {
-      "applicable": false,
-      "reason": "不依赖可见交互目标。"
-    }
-  },
   "required_evidence_checks": [
     {
       "check_id": "formal_definition_search",
       "status": "read",
       "searched_at": "2026-08-17",
-      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "search_location": "Google Drive实时精确名称检索、版本族枚举并打开选定正文",
       "queries": [
         {
           "kind": "jira_key",
@@ -106,57 +163,186 @@
         },
         {
           "kind": "problem_concept",
-          "text": "车外域设置前照灯延时被过滤且静默"
+          "text": "车外唤醒后关闭前照灯延时"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains '车外语音'"
+          "text": "深蓝车外语音PRD/UE/灯光后视镜专项"
         }
       ],
       "source_ids": [
-        "drive-formal_definition_search-1"
+        "carvoice-light-mirror-v2",
+        "carvoice-prd-v18",
+        "carvoice-ue-v08"
       ],
-      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "reason": "已完成候选逐项审计、引用追查和版本族选择。",
       "material": false,
       "next_action": "",
       "candidate_audit": {
         "completed": true,
-        "results_count": 4,
+        "results_count": 14,
         "candidates": [
+          {
+            "id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI",
+            "title": "深蓝车外语音交互产品需求文档V1.8.pdf",
+            "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "read",
+            "source_ids": [
+              "carvoice-prd-v18"
+            ]
+          },
+          {
+            "id": "1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD",
+            "title": "深蓝车外语音交互产品需求文档V1.7.pdf",
+            "url": "https://drive.google.com/file/d/1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1Md6zD4cyNZMe1wniA_romePJLCuo0sve",
+            "title": "深蓝车外语音交互产品需求文档V1.6 .pdf",
+            "url": "https://drive.google.com/file/d/1Md6zD4cyNZMe1wniA_romePJLCuo0sve/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn",
+            "title": "深蓝车外语音交互产品需求文档V1.4.pdf",
+            "url": "https://drive.google.com/file/d/1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo",
+            "title": "深蓝车外语音交互产品需求文档V1.2.pdf",
+            "url": "https://drive.google.com/file/d/1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp",
+            "title": "深蓝车外语音交互产品需求文档V1.1.pdf",
+            "url": "https://drive.google.com/file/d/1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
           {
             "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
             "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
             "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
             "disposition": "read",
             "source_ids": [
-              "drive-formal_definition_search-1"
+              "carvoice-ue-v08"
             ]
           },
           {
             "id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
             "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
             "url": "https://drive.google.com/file/d/1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
             "disposition": "excluded",
-            "reason": "与已读正式文件内容哈希相同，排除重复副本。"
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
           },
           {
-            "id": "1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430",
-            "title": "车外语音、创意画坊对接",
-            "url": "https://docs.google.com/spreadsheets/d/1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430/edit?usp=drivesdk",
+            "id": "1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.7.pdf",
+            "url": "https://drive.google.com/file/d/1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
             "disposition": "excluded",
-            "reason": "协作表或目录容器不直接定义本票目标，已打开后排除。"
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
           },
           {
-            "id": "13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
-            "title": "25 车外语音",
-            "url": "https://drive.google.com/drive/folders/13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
+            "id": "1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
             "disposition": "excluded",
-            "reason": "协作表或目录容器不直接定义本票目标，已打开后排除。"
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4.pdf",
+            "url": "https://drive.google.com/file/d/1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.3_20250211.pdf",
+            "url": "https://drive.google.com/file/d/1lh40kdG2kQx8XE0CvZO-QWKleh241eu8/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.1 _20251226.pdf",
+            "url": "https://drive.google.com/file/d/1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1Y6Wap1m__qSRWWb78gybRFkAGm15RAVB",
+            "title": "ITHU语音控制车外灯光和后视镜--V2.docx",
+            "url": "https://docs.google.com/document/d/1Y6Wap1m__qSRWWb78gybRFkAGm15RAVB/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "carvoice-light-mirror-v2"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝车外语音交互PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48848-formal_definition_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI",
+            "selection_reason": "V1.8为最高PRD版本。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "深蓝8295车外语音UE",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48848-formal_definition_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+            "selection_reason": "V0.8为最高UE版本并已读完整副本。",
+            "newer_version_checked": true
           }
         ]
       },
       "search_receipt_ids": [
-        "ADS-48848-formal_definition_search-20260817"
+        "ADS-48848-formal_definition_search-drive-20260817-1807"
       ]
     },
     {
@@ -220,10 +406,10 @@
   ],
   "search_receipts": [
     {
-      "receipt_id": "ADS-48848-formal_definition_search-20260817",
+      "receipt_id": "ADS-48848-formal_definition_search-drive-20260817-1807",
       "provider": "google_drive",
       "check_id": "formal_definition_search",
-      "searched_at": "2026-08-17T06:26:27.740363+00:00",
+      "searched_at": "2026-08-17T18:07:00+08:00",
       "queries": [
         {
           "kind": "jira_key",
@@ -231,14 +417,70 @@
         },
         {
           "kind": "problem_concept",
-          "text": "车外域设置前照灯延时被过滤且静默"
+          "text": "车外唤醒后关闭前照灯延时"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains '车外语音'"
+          "text": "深蓝车外语音PRD/UE/灯光后视镜专项"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "深蓝车外语音交互产品需求文档V1.8.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "ITHU语音控制车外灯光和后视镜--V2.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝车外语音交互PRD"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295车外语音UE"
         }
       ],
       "results": [
+        {
+          "id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI",
+          "title": "深蓝车外语音交互产品需求文档V1.8.pdf",
+          "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD",
+          "title": "深蓝车外语音交互产品需求文档V1.7.pdf",
+          "url": "https://drive.google.com/file/d/1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Md6zD4cyNZMe1wniA_romePJLCuo0sve",
+          "title": "深蓝车外语音交互产品需求文档V1.6 .pdf",
+          "url": "https://drive.google.com/file/d/1Md6zD4cyNZMe1wniA_romePJLCuo0sve/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn",
+          "title": "深蓝车外语音交互产品需求文档V1.4.pdf",
+          "url": "https://drive.google.com/file/d/1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo",
+          "title": "深蓝车外语音交互产品需求文档V1.2.pdf",
+          "url": "https://drive.google.com/file/d/1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp",
+          "title": "深蓝车外语音交互产品需求文档V1.1.pdf",
+          "url": "https://drive.google.com/file/d/1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
         {
           "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
           "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
@@ -252,52 +494,69 @@
           "mime_type": "application/pdf"
         },
         {
-          "id": "1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430",
-          "title": "车外语音、创意画坊对接",
-          "url": "https://docs.google.com/spreadsheets/d/1AbnyonmZYBqb-V01no674biT8T31PlUp4YL9ItJN430/edit?usp=drivesdk",
-          "mime_type": "application/vnd.google-apps.spreadsheet"
+          "id": "1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.7.pdf",
+          "url": "https://drive.google.com/file/d/1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE/view?usp=drivesdk",
+          "mime_type": "application/pdf"
         },
         {
-          "id": "13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
-          "title": "25 车外语音",
-          "url": "https://drive.google.com/drive/folders/13V-monQiRJ5-Ltdei7CgmFe5zhZwey38",
-          "mime_type": "application/vnd.google-apps.folder"
+          "id": "1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4.pdf",
+          "url": "https://drive.google.com/file/d/1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.3_20250211.pdf",
+          "url": "https://drive.google.com/file/d/1lh40kdG2kQx8XE0CvZO-QWKleh241eu8/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.1 _20251226.pdf",
+          "url": "https://drive.google.com/file/d/1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Y6Wap1m__qSRWWb78gybRFkAGm15RAVB",
+          "title": "ITHU语音控制车外灯光和后视镜--V2.docx",
+          "url": "https://docs.google.com/document/d/1Y6Wap1m__qSRWWb78gybRFkAGm15RAVB/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         }
       ]
     }
   ],
-  "inheritance_chains": [],
-  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
-  "voice_evidence": {
-    "applicable": true,
-    "availability": "complete",
-    "original_utterance": "前照灯延时设置为关闭",
-    "alchemy_tested": true,
-    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1322,\"type\":\"vehicle:ctrl:headlight:follow_home_light:adjust\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"set\",\"literal\":\"设置\",\"slot\":\"operation\"},{\"canonical\":\"close\",\"literal\":\"关闭\",\"slot\":\"operation\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1322,\"type\":\"vehicle:ctrl:headlight:follow_home_light:adjust\",\"index\":0,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"set\",\"literal\":\"设置\",\"slot\":\"operation\"},{\"canonical\":\"close\",\"literal\":\"关闭\",\"slot\":\"operation\"}]}}] visible_result:\"\" llm_data_result:[]",
-    "meta_id": "1322",
-    "standard_function": {
-      "status": "verified",
-      "name": "1127设置伴我回家灯时长语音功能 / 车控 / 车辆 / 车外灯 / 大灯否已锁定2025-10-14 19:02:17查看说明编辑diff删除",
-      "assessment": "已在标准功能列表按MetaId实时查询。"
-    },
-    "project_function": {
-      "status": "verified",
-      "name": "26872设置伴我回家灯时长语音功能 / 车控 / 车辆 / 车外灯 / 大灯否已锁定继承未修改(1127)2026-01-27 17:01:33查看说明编辑diff删除",
-      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
-    },
-    "unavailable_reason": "",
-    "next_action": "核对1322的车外白名单及关闭值映射，并补齐执行或不支持TTS。"
-  },
-  "decision": {
-    "status": "待复核",
-    "owner": "车外语音能力白名单负责人",
-    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1322；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1322的车外白名单及关闭值映射，并补齐执行或不支持TTS。"
-  },
   "run_context": {
-    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "run_id": "20260817T180743+0800-rows-335-347-recheck",
     "operator_owner_id": "wu-you",
     "target_owner_id": "wu-you",
     "sheet_name": "bug",
     "sheet_row": 345
+  },
+  "expected_behavior": {
+    "trigger": "车外唤醒后关闭前照灯延时",
+    "target_state": "后视镜/灯光车外指令在允许条件下执行；不允许或不在白名单时返回固定拒绝TTS。",
+    "intent_function_signal": "Alchemy当前语义与项目功能点按本票原话执行；Jira key=ADS-48848。",
+    "ui_tts_vehicle_behavior": "必须产生车控动作或明确TTS，禁止action与TTS同时为空。",
+    "boundary": "车外语音开启、P挡、前排无人、电源ON；具体安全与车型配置条件由执行层校验。",
+    "source_ids": [
+      "carvoice-prd-v18",
+      "carvoice-ue-v08"
+    ]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "车外语音云端白名单负责人",
+    "text": "结论：定义为车外语音过滤缺陷。NLU正确返回1322，但车外区域过滤改写为-6并静默；灯光控制在车外能力范围内，未开放时也必须返回固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外灯光/后视镜需求V2；Jira最新链路日志。\n处理：补齐1322的车外白名单或denied_replies及关闭值映射；车外语音云端白名单负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "region-filter-log"
+    ]
   }
 }

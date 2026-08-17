@@ -1,0 +1,257 @@
+{
+  "values": [
+    {
+      "formattedValue": "2026-08-17",
+      "userEnteredValue": {
+        "stringValue": "2026-08-17"
+      },
+      "effectiveValue": {
+        "stringValue": "2026-08-17"
+      }
+    },
+    {
+      "formattedValue": "ADS-48969｜17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认",
+      "userEnteredValue": {
+        "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48969\",\"ADS-48969｜17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认\")"
+      },
+      "effectiveValue": {
+        "stringValue": "ADS-48969｜17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认"
+      },
+      "hyperlink": "http://jira.i-tetris.com/browse/ADS-48969"
+    },
+    {
+      "formattedValue": "现象与实现：一键下电后‘确认’已生成confirm_yes，但链路落入llm:chat:claw，TTS要求在弹窗确认。[Jira原票·ADS-48969]\n资料结论：系统设置V9.2与IHU文档未给出弹窗接受语音二次确认的条款，且被引用的显示协调V1.7未检索到。[C673系统设置V9.2/车辆下电定义]\nAlchemy：当前1628及确认轮已核对。[Alchemy当前结果]",
+      "userEnteredValue": {
+        "stringValue": "现象与实现：一键下电后‘确认’已生成confirm_yes，但链路落入llm:chat:claw，TTS要求在弹窗确认。[Jira原票·ADS-48969]\n资料结论：系统设置V9.2与IHU文档未给出弹窗接受语音二次确认的条款，且被引用的显示协调V1.7未检索到。[C673系统设置V9.2/车辆下电定义]\nAlchemy：当前1628及确认轮已核对。[Alchemy当前结果]"
+      },
+      "effectiveValue": {
+        "stringValue": "现象与实现：一键下电后‘确认’已生成confirm_yes，但链路落入llm:chat:claw，TTS要求在弹窗确认。[Jira原票·ADS-48969]\n资料结论：系统设置V9.2与IHU文档未给出弹窗接受语音二次确认的条款，且被引用的显示协调V1.7未检索到。[C673系统设置V9.2/车辆下电定义]\nAlchemy：当前1628及确认轮已核对。[Alchemy当前结果]"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 61,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48969"
+            }
+          }
+        },
+        {
+          "startIndex": 77
+        },
+        {
+          "startIndex": 134,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+            }
+          }
+        },
+        {
+          "startIndex": 153
+        },
+        {
+          "startIndex": 178,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 189
+        }
+      ]
+    },
+    {
+      "formattedValue": "结论：当前日志已确认1628后生成confirm_yes但链路落入llm:chat:claw；然而现行系统设置只引用显示协调定义，未取得一键下电弹窗允许语音二次确认的正式条款，状态为待复核。\n依据：ADS-48969及ADS-48964完整评论/reqId；Alchemy当前1628与确认轮；系统设置V9.2及IHU_DHUPwrMgr。\n处理：补齐一键下电二次确认的输入通道定义；若允许语音确认，由对话策略负责人移除claw干扰；一键下电交互产品负责人处理。",
+      "userEnteredValue": {
+        "stringValue": "结论：当前日志已确认1628后生成confirm_yes但链路落入llm:chat:claw；然而现行系统设置只引用显示协调定义，未取得一键下电弹窗允许语音二次确认的正式条款，状态为待复核。\n依据：ADS-48969及ADS-48964完整评论/reqId；Alchemy当前1628与确认轮；系统设置V9.2及IHU_DHUPwrMgr。\n处理：补齐一键下电二次确认的输入通道定义；若允许语音确认，由对话策略负责人移除claw干扰；一键下电交互产品负责人处理。"
+      },
+      "effectiveValue": {
+        "stringValue": "结论：当前日志已确认1628后生成confirm_yes但链路落入llm:chat:claw；然而现行系统设置只引用显示协调定义，未取得一键下电弹窗允许语音二次确认的正式条款，状态为待复核。\n依据：ADS-48969及ADS-48964完整评论/reqId；Alchemy当前1628与确认轮；系统设置V9.2及IHU_DHUPwrMgr。\n处理：补齐一键下电二次确认的输入通道定义；若允许语音确认，由对话策略负责人移除claw干扰；一键下电交互产品负责人处理。"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 129,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 138
+        }
+      ]
+    },
+    {
+      "formattedValue": "FALSE",
+      "userEnteredValue": {
+        "boolValue": false
+      },
+      "effectiveValue": {
+        "boolValue": false
+      },
+      "dataValidation": {
+        "condition": {
+          "type": "BOOLEAN"
+        },
+        "strict": true
+      }
+    },
+    {},
+    {
+      "formattedValue": "待复核",
+      "userEnteredValue": {
+        "stringValue": "待复核"
+      },
+      "effectiveValue": {
+        "stringValue": "待复核"
+      }
+    },
+    {},
+    {
+      "formattedValue": "缺C673显示协调中一键下电弹窗的语音确认条款，暂不直接转语音。",
+      "userEnteredValue": {
+        "stringValue": "缺C673显示协调中一键下电弹窗的语音确认条款，暂不直接转语音。"
+      },
+      "effectiveValue": {
+        "stringValue": "缺C673显示协调中一键下电弹窗的语音确认条款，暂不直接转语音。"
+      }
+    },
+    {
+      "formattedValue": "Jira原票·ADS-48969\nC673系统设置V9.2/车辆下电定义\nAlchemy当前结果",
+      "userEnteredValue": {
+        "stringValue": "Jira原票·ADS-48969\nC673系统设置V9.2/车辆下电定义\nAlchemy当前结果"
+      },
+      "effectiveValue": {
+        "stringValue": "Jira原票·ADS-48969\nC673系统设置V9.2/车辆下电定义\nAlchemy当前结果"
+      },
+      "textFormatRuns": [
+        {
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48969"
+            }
+          }
+        },
+        {
+          "startIndex": 16
+        },
+        {
+          "startIndex": 17,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+            }
+          }
+        },
+        {
+          "startIndex": 36
+        },
+        {
+          "startIndex": 37,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

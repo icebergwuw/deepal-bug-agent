@@ -1,0 +1,281 @@
+{
+  "values": [
+    {
+      "formattedValue": "2026-08-17",
+      "userEnteredValue": {
+        "stringValue": "2026-08-17"
+      },
+      "effectiveValue": {
+        "stringValue": "2026-08-17"
+      }
+    },
+    {
+      "formattedValue": "ADS-48815｜Stg环境，当前poi已经显示了周边的酒店，query：筛选下600米以外的，应该是重新按照600米以外这个条件重新推荐了酒店。第一次只有5个地点，第二次筛选则",
+      "userEnteredValue": {
+        "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48815\",\"ADS-48815｜Stg环境，当前poi已经显示了周边的酒店，query：筛选下600米以外的，应该是重新按照600米以外这个条件重新推荐了酒店。第一次只有5个地点，第二次筛选则\")"
+      },
+      "effectiveValue": {
+        "stringValue": "ADS-48815｜Stg环境，当前poi已经显示了周边的酒店，query：筛选下600米以外的，应该是重新按照600米以外这个条件重新推荐了酒店。第一次只有5个地点，第二次筛选则"
+      },
+      "hyperlink": "http://jira.i-tetris.com/browse/ADS-48815"
+    },
+    {
+      "formattedValue": "现象与实现：在上一轮酒店列表上筛选600米以外。[Jira原票·ADS-48815]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]",
+      "userEnteredValue": {
+        "stringValue": "现象与实现：在上一轮酒店列表上筛选600米以外。[Jira原票·ADS-48815]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]"
+      },
+      "effectiveValue": {
+        "stringValue": "现象与实现：在上一轮酒店列表上筛选600米以外。[Jira原票·ADS-48815]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 25,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48815"
+            }
+          }
+        },
+        {
+          "startIndex": 41
+        },
+        {
+          "startIndex": 109,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 128
+        },
+        {
+          "startIndex": 149,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 160
+        }
+      ]
+    },
+    {
+      "formattedValue": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮酒店列表，当前却命中1209导航去地址。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48815/ADS-48739/ADS-29428。\n处理：把距离筛选原话路由到1455并下发上一轮列表上下文及distance>600m条件；AI Cockpit NLU负责人处理。",
+      "userEnteredValue": {
+        "stringValue": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮酒店列表，当前却命中1209导航去地址。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48815/ADS-48739/ADS-29428。\n处理：把距离筛选原话路由到1455并下发上一轮列表上下文及distance>600m条件；AI Cockpit NLU负责人处理。"
+      },
+      "effectiveValue": {
+        "stringValue": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮酒店列表，当前却命中1209导航去地址。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48815/ADS-48739/ADS-29428。\n处理：把距离筛选原话路由到1455并下发上一轮列表上下文及distance>600m条件；AI Cockpit NLU负责人处理。"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 60,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 79
+        },
+        {
+          "startIndex": 80,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 89
+        }
+      ]
+    },
+    {
+      "formattedValue": "FALSE",
+      "userEnteredValue": {
+        "boolValue": false
+      },
+      "effectiveValue": {
+        "boolValue": false
+      },
+      "dataValidation": {
+        "condition": {
+          "type": "BOOLEAN"
+        },
+        "strict": true
+      }
+    },
+    {},
+    {
+      "formattedValue": "可转语音",
+      "userEnteredValue": {
+        "stringValue": "可转语音"
+      },
+      "effectiveValue": {
+        "stringValue": "可转语音"
+      }
+    },
+    {},
+    {
+      "formattedValue": "PRD明确覆盖距离‘以外’，当前1209导航路由不符合目标。",
+      "userEnteredValue": {
+        "stringValue": "PRD明确覆盖距离‘以外’，当前1209导航路由不符合目标。"
+      },
+      "effectiveValue": {
+        "stringValue": "PRD明确覆盖距离‘以外’，当前1209导航路由不符合目标。"
+      }
+    },
+    {
+      "formattedValue": "Jira原票·ADS-48815\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果",
+      "userEnteredValue": {
+        "stringValue": "Jira原票·ADS-48815\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果"
+      },
+      "effectiveValue": {
+        "stringValue": "Jira原票·ADS-48815\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果"
+      },
+      "textFormatRuns": [
+        {
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48815"
+            }
+          }
+        },
+        {
+          "startIndex": 16
+        },
+        {
+          "startIndex": 17,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 36
+        },
+        {
+          "startIndex": 37,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

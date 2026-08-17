@@ -1,0 +1,340 @@
+{
+  "key": "ADS-48571",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 335,
+  "rowIndex": 334,
+  "previewFingerprint": "4742e5e1bc0f8bfe813172dc738c1f550060f7d2fbf416e805cf875a1f0940c3",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "ADS-48571 Jira原票。\n现象：stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍\nJira：状态=重新打开，评论=undefined，附件=1；已完整读取。\nAlchemy：原话“今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的”，当前MetaId=1208/1026/1208/1026。",
+      "after": "现象与实现：多意图进入规划，模糊‘治愈’触发联网搜索并拉起Deepal AI，相关弹窗会遮蔽POI内容。[Jira原票·ADS-48571]\n资料结论：PRD/UE覆盖规划、联网搜索和Deepal AI展示，但未定义与POI/点播弹窗的抢占优先级。[Deepal AI PRD v0.6/UE v1.3]\nAlchemy：当前返回1208+1026。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48571",
+        "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208/1026；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：深蓝语音大模型路由负责人在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。",
+      "after": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "待复核",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "缺多意图弹窗优先级正式定义；当前不能仅凭实现评论判定为路由缺陷。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·ADS-48571\nMegatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113\nAlchemy当前·1208/1026",
+      "after": "Jira原票·ADS-48571\nDeepal AI PRD v0.6/UE v1.3\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48571",
+        "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象与实现：多意图进入规划，模糊‘治愈’触发联网搜索并拉起Deepal AI，相关弹窗会遮蔽POI内容。[Jira原票·ADS-48571]\n资料结论：PRD/UE覆盖规划、联网搜索和Deepal AI展示，但未定义与POI/点播弹窗的抢占优先级。[Deepal AI PRD v0.6/UE v1.3]\nAlchemy：当前返回1208+1026。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48571",
+        "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "G": {
+      "visible": "待复核",
+      "links": []
+    },
+    "I": {
+      "visible": "缺多意图弹窗优先级正式定义；当前不能仅凭实现评论判定为路由缺陷。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·ADS-48571\nDeepal AI PRD v0.6/UE v1.3\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48571",
+        "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 334,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象与实现：多意图进入规划，模糊‘治愈’触发联网搜索并拉起Deepal AI，相关弹窗会遮蔽POI内容。[Jira原票·ADS-48571]\n资料结论：PRD/UE覆盖规划、联网搜索和Deepal AI展示，但未定义与POI/点播弹窗的抢占优先级。[Deepal AI PRD v0.6/UE v1.3]\nAlchemy：当前返回1208+1026。[Alchemy当前结果]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 53,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48571"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 69
+                  },
+                  {
+                    "startIndex": 125,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 151
+                  },
+                  {
+                    "startIndex": 176,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 187
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 334,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 94,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 120
+                  },
+                  {
+                    "startIndex": 145,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 154
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 334,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 334,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "缺多意图弹窗优先级正式定义；当前不能仅凭实现评论判定为路由缺陷。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 334,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48571\nDeepal AI PRD v0.6/UE v1.3\nAlchemy当前结果"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48571"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 43
+                  },
+                  {
+                    "startIndex": 44,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

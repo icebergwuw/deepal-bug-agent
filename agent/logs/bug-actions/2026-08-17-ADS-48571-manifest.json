@@ -1,7 +1,7 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "ADS-48571",
-  "comment_causality": "复合指令 POI推荐与治愈流行音乐落域；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "comment_causality": "复合指令 POI推荐与治愈流行音乐落域；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。 本次重新读取最新正式资料与Jira最新日志后更新结论。 本次重新读取最新正式资料与Jira最新日志后更新结论。",
   "customer_issue": {
     "identified": false
   },
@@ -16,6 +16,49 @@
       }
     ]
   },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。 依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。 处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1208/1026",
+    "standard_function": {
+      "status": "verified",
+      "name": "1429搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定2025-10-27 14:02:16查看说明编辑diff删除；1097点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定2026-06-03 14:24:45查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24548搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定继承未修改(1429)2025-11-03 13:36:31查看说明编辑diff删除；24325点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定继承未修改(1097)2026-07-07 16:01:21查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。"
+  },
   "scope_checks": [
     {
       "source_id": "jira-actual",
@@ -28,19 +71,6 @@
       "target_behavior": "Jira记录当前实际现象：stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍",
       "match": "exact",
       "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
-    },
-    {
-      "source_id": "drive-formal_definition_search-1",
-      "source": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
-      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
-      "source_type": "prd",
-      "role": "context_only",
-      "project_model": "深蓝8295/本票车型",
-      "trigger": "复合指令 POI推荐与治愈流行音乐落域",
-      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
-      "match": "partial",
-      "material": false,
-      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
     },
     {
       "source_id": "alchemy-current",
@@ -77,35 +107,52 @@
       "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
       "match": "exact",
       "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    },
+    {
+      "source_id": "deepal-ai-prd-v06",
+      "source": "Deepal AI APP PRD v0.6",
+      "source_location": "Deepal Agents/联网搜索/Deepal AI对话展示相关章节",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "今天心情不错给我推荐附近的美食，然后播放流行音乐要治愈的",
+      "target_behavior": "多意图可进入Agent规划，模糊条件可触发联网搜索。",
+      "match": "partial",
+      "reason": "覆盖规划和联网搜索，但未定义多弹窗抢占优先级。"
+    },
+    {
+      "source_id": "deepal-ai-ue-v13",
+      "source": "Deepal AI APP UE v1.3",
+      "source_location": "Deepal AI弹窗/对话展示页面",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "今天心情不错给我推荐附近的美食，然后播放流行音乐要治愈的",
+      "target_behavior": "联网搜索内容在Deepal AI可见界面展示。",
+      "match": "partial",
+      "reason": "覆盖展示形态，不定义与POI/点播弹窗的优先级。"
+    },
+    {
+      "source_id": "popup-priority-gap",
+      "source": "多意图弹窗优先级缺口",
+      "source_location": "PRD v0.6、UE v1.3及ADS-48570/48571均未给出Deepal AI、POI、点播三者的保留/抢占顺序",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "今天心情不错给我推荐附近的美食，然后播放流行音乐要治愈的",
+      "target_behavior": "需定义先后弹窗不应遮蔽用户仍需操作的POI内容。",
+      "match": "gap",
+      "reason": "该缺口会直接改变是否判为设计行为。",
+      "material": true,
+      "next_action": "深蓝语音大模型路由负责人补齐多意图弹窗优先级。"
     }
   ],
-  "evidence_profiles": [
-    "voice"
-  ],
-  "evidence_profile_assessment": {
-    "general": {
-      "applicable": false,
-      "reason": "由专项画像覆盖。"
-    },
-    "voice": {
-      "applicable": true,
-      "reason": "涉及用户原话、MetaId和语音执行链。"
-    },
-    "map_navigation": {
-      "applicable": false,
-      "reason": "不涉及地图导航。"
-    },
-    "visible_interaction": {
-      "applicable": false,
-      "reason": "不依赖可见交互目标。"
-    }
-  },
   "required_evidence_checks": [
     {
       "check_id": "formal_definition_search",
       "status": "read",
       "searched_at": "2026-08-17",
-      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "search_location": "Google Drive实时精确名称检索、版本族枚举并打开选定正文",
       "queries": [
         {
           "kind": "jira_key",
@@ -113,36 +160,121 @@
         },
         {
           "kind": "problem_concept",
-          "text": "复合指令 POI推荐与治愈流行音乐落域"
+          "text": "今天心情不错给我推荐附近的美食，然后播放流行音乐要治愈的"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains 'Deepal AI APP_深蓝8295'"
+          "text": "Deepal AI APP PRD与UE"
         }
       ],
       "source_ids": [
-        "drive-formal_definition_search-1"
+        "deepal-ai-prd-v06",
+        "deepal-ai-ue-v13"
       ],
-      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "reason": "已完成候选逐项审计、引用追查和版本族选择。",
       "material": false,
       "next_action": "",
       "candidate_audit": {
         "completed": true,
-        "results_count": 1,
+        "results_count": 7,
         "candidates": [
           {
             "id": "1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
             "title": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
             "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "Deepal AI APP PRD",
             "disposition": "read",
             "source_ids": [
-              "drive-formal_definition_search-1"
+              "deepal-ai-prd-v06"
             ]
+          },
+          {
+            "id": "1LfCzNysljnqHUYa1_Lc5YOmy0hA4hKWa",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_DEEPAL AI APP_V0.5.docx",
+            "url": "https://docs.google.com/document/d/1LfCzNysljnqHUYa1_Lc5YOmy0hA4hKWa/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "Deepal AI APP PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1LJjoAIehE3mtior1SfuKwZRCn9bqQXPa",
+            "title": "长安深蓝8295平台交互设计文档_Deepal AI APP_v1.3.pdf",
+            "url": "https://drive.google.com/file/d/1LJjoAIehE3mtior1SfuKwZRCn9bqQXPa/view?usp=drivesdk",
+            "references": [],
+            "version_family": "Deepal AI APP UE",
+            "disposition": "read",
+            "source_ids": [
+              "deepal-ai-ue-v13"
+            ]
+          },
+          {
+            "id": "1UGxvhzBw2RyQQAXkxy0D6KZ-2ckmkEYT",
+            "title": "长安深蓝8295平台交互设计文档_Deepal AI APP_v1.3(部分）.pdf",
+            "url": "https://drive.google.com/file/d/1UGxvhzBw2RyQQAXkxy0D6KZ-2ckmkEYT/view?usp=drivesdk",
+            "references": [],
+            "version_family": "Deepal AI APP UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1iiaM8BZzmp3i-BSdQzWUGm22jXTXu00b",
+            "title": "长安深蓝8295平台交互设计文档_Deepal AI APP_v1.3.pdf",
+            "url": "https://drive.google.com/file/d/1iiaM8BZzmp3i-BSdQzWUGm22jXTXu00b/view?usp=drivesdk",
+            "references": [],
+            "version_family": "Deepal AI APP UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1abr9VEGc2l_kGKYPbYrXyvHiPZ6rom81",
+            "title": "长安深蓝_8295平台_交互设计文档_Deepal AI APP_V1.1.pdf",
+            "url": "https://drive.google.com/file/d/1abr9VEGc2l_kGKYPbYrXyvHiPZ6rom81/view?usp=drivesdk",
+            "references": [],
+            "version_family": "Deepal AI APP UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1gdGKhZwKUN9voXA2MT8ECfyaDI6hHsRx",
+            "title": "长安深蓝_8295平台_交互设计文档_Deepal AI APP_V0.8.pdf",
+            "url": "https://drive.google.com/file/d/1gdGKhZwKUN9voXA2MT8ECfyaDI6hHsRx/view?usp=drivesdk",
+            "references": [],
+            "version_family": "Deepal AI APP UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Deepal AI APP PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48571-formal_definition_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
+            "selection_reason": "v0.6为最高PRD版本。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "Deepal AI APP UE",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48571-formal_definition_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1LJjoAIehE3mtior1SfuKwZRCn9bqQXPa",
+            "selection_reason": "v1.3为最高完整UE版本。",
+            "newer_version_checked": true
           }
         ]
       },
       "search_receipt_ids": [
-        "ADS-48571-formal_definition_search-20260817"
+        "ADS-48571-formal_definition_search-drive-20260817-1807"
       ]
     },
     {
@@ -206,10 +338,10 @@
   ],
   "search_receipts": [
     {
-      "receipt_id": "ADS-48571-formal_definition_search-20260817",
+      "receipt_id": "ADS-48571-formal_definition_search-drive-20260817-1807",
       "provider": "google_drive",
       "check_id": "formal_definition_search",
-      "searched_at": "2026-08-17T06:26:26.936191+00:00",
+      "searched_at": "2026-08-17T18:07:00+08:00",
       "queries": [
         {
           "kind": "jira_key",
@@ -217,11 +349,27 @@
         },
         {
           "kind": "problem_concept",
-          "text": "复合指令 POI推荐与治愈流行音乐落域"
+          "text": "今天心情不错给我推荐附近的美食，然后播放流行音乐要治愈的"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains 'Deepal AI APP_深蓝8295'"
+          "text": "Deepal AI APP PRD与UE"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝8295平台交互设计文档_Deepal AI APP_v1.3.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Deepal AI APP PRD"
+        },
+        {
+          "kind": "version_family",
+          "text": "Deepal AI APP UE"
         }
       ],
       "results": [
@@ -230,42 +378,56 @@
           "title": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
           "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk",
           "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1LfCzNysljnqHUYa1_Lc5YOmy0hA4hKWa",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_DEEPAL AI APP_V0.5.docx",
+          "url": "https://docs.google.com/document/d/1LfCzNysljnqHUYa1_Lc5YOmy0hA4hKWa/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1LJjoAIehE3mtior1SfuKwZRCn9bqQXPa",
+          "title": "长安深蓝8295平台交互设计文档_Deepal AI APP_v1.3.pdf",
+          "url": "https://drive.google.com/file/d/1LJjoAIehE3mtior1SfuKwZRCn9bqQXPa/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1UGxvhzBw2RyQQAXkxy0D6KZ-2ckmkEYT",
+          "title": "长安深蓝8295平台交互设计文档_Deepal AI APP_v1.3(部分）.pdf",
+          "url": "https://drive.google.com/file/d/1UGxvhzBw2RyQQAXkxy0D6KZ-2ckmkEYT/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1iiaM8BZzmp3i-BSdQzWUGm22jXTXu00b",
+          "title": "长安深蓝8295平台交互设计文档_Deepal AI APP_v1.3.pdf",
+          "url": "https://drive.google.com/file/d/1iiaM8BZzmp3i-BSdQzWUGm22jXTXu00b/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1abr9VEGc2l_kGKYPbYrXyvHiPZ6rom81",
+          "title": "长安深蓝_8295平台_交互设计文档_Deepal AI APP_V1.1.pdf",
+          "url": "https://drive.google.com/file/d/1abr9VEGc2l_kGKYPbYrXyvHiPZ6rom81/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1gdGKhZwKUN9voXA2MT8ECfyaDI6hHsRx",
+          "title": "长安深蓝_8295平台_交互设计文档_Deepal AI APP_V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1gdGKhZwKUN9voXA2MT8ECfyaDI6hHsRx/view?usp=drivesdk",
+          "mime_type": "application/pdf"
         }
       ]
     }
   ],
-  "inheritance_chains": [],
-  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
-  "voice_evidence": {
-    "applicable": true,
-    "availability": "complete",
-    "original_utterance": "今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的",
-    "alchemy_tested": true,
-    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1208,\"query\":\"今天心情不错给我推荐附近的美食\",\"type\":\"navi:dest:search\",\"index\":0,\"offline_first\":false,\"params\":{\"distance\":[{\"canonical\":\"nearby\",\"literal\":\"附近\",\"slot\":\"distance\"}],\"action\":[{\"canonical\":\"search\"}],\"poi_tag\":[{\"canonical\":\"restaurant\",\"literal\":\"美食\",\"slot\":\"tag\"}]}},{\"meta_id\":1026,\"query\":\"然后播放流行音乐要治愈的\",\"type\":\"media:music:play\",\"index\":1,\"offline_first\":false,\"params\":{\"op\":[{\"canonical\":\"play\",\"literal\":\"播放\",\"slot\":\"operation\"}],\"styles\":[{\"canonical\":\"\",\"literal\":\"流行\",\"slot\":\"media_style\"},{\"canonical\":\"podcast_emotion\",\"literal\":\"治愈\",\"slot\":\"media_style\"}],\"category\":[{\"canonical\":\"music\"}]}}] visible_result:\"\" llm_data_result:[]",
-    "meta_id": "1208/1026",
-    "standard_function": {
-      "status": "verified",
-      "name": "1429搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定2025-10-27 14:02:16查看说明编辑diff删除；1097点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定2026-06-03 14:24:45查看说明编辑diff删除",
-      "assessment": "已在标准功能列表按MetaId实时查询。"
-    },
-    "project_function": {
-      "status": "verified",
-      "name": "24548搜索/展示【地址】语音功能 / 地图 / 目的地 / 搜索地址否已锁定继承未修改(1429)2025-11-03 13:36:31查看说明编辑diff删除；24325点播【歌曲】语音功能 / 多媒体 / 在线音频 / 在线音乐 / 点播否已锁定继承未修改(1097)2026-07-07 16:01:21查看说明编辑diff删除",
-      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
-    },
-    "unavailable_reason": "",
-    "next_action": "在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。"
-  },
-  "decision": {
-    "status": "待复核",
-    "owner": "深蓝语音大模型路由负责人",
-    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208/1026；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：深蓝语音大模型路由负责人在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。"
-  },
   "run_context": {
-    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "run_id": "20260817T180743+0800-rows-335-347-recheck",
     "operator_owner_id": "wu-you",
     "target_owner_id": "wu-you",
     "sheet_name": "bug",
     "sheet_row": 335
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "深蓝语音大模型路由负责人",
+    "text": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。"
   }
 }

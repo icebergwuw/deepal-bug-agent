@@ -1,0 +1,112 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        }
+      },
+      {
+        "formattedValue": "ADS-48813｜Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48813\",\"ADS-48813｜Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次\")"
+        }
+      },
+      {
+        "formattedValue": "ADS-48813 Jira原票。\n现象：Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次\nJira：状态=重新打开，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“筛选下评分4分以上的”，当前MetaId=1455/1455。",
+        "userEnteredValue": {
+          "stringValue": "ADS-48813 Jira原票。\n现象：Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次\nJira：状态=重新打开，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“筛选下评分4分以上的”，当前MetaId=1455/1455。"
+        }
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1455；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：POI推荐服务与语音路由负责人基于同一电影院列表回归1455二次筛选，核对输入列表ID与筛选前后集合，定位POI服务是否重新检索。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1455；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：POI推荐服务与语音路由负责人基于同一电影院列表回归1455二次筛选，核对输入列表ID与筛选前后集合，定位POI服务是否重新检索。"
+        }
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        }
+      },
+      {},
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票·ADS-48813\n长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8\nAlchemy当前·1455",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·ADS-48813\n长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8\nAlchemy当前·1455"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象与实现：在上一轮电影院列表上筛选评分4分以上。[Jira原票·ADS-48813]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]",
+      "links": [
+        {
+          "label": "Jira原票·ADS-48813",
+          "url": "http://jira.i-tetris.com/browse/ADS-48813"
+        },
+        {
+          "label": "POI推荐PRD v0.8·2.5.3",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为执行缺陷。Alchemy已正确命中1455二次筛选，但车端未基于上一轮电影院列表合并评分条件，结果数量反增。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1455；ADS-48813及ADS-29428评论。\n处理：保留上一轮POI列表上下文并按评分条件过滤，禁止重新发起无上下文搜索；POI推荐/AIS上下文负责人处理。",
+      "links": [
+        {
+          "label": "POI推荐PRD v0.8·2.5.3",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "PRD明确支持评分、价格、距离的以上/以下/以内/以外二次筛选。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·ADS-48813",
+          "url": "http://jira.i-tetris.com/browse/ADS-48813"
+        },
+        {
+          "label": "POI推荐PRD v0.8·2.5.3",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        }
+      },
+      {
+        "formattedValue": "ADS-48841｜车外语音，车外唤醒后query：打开迎宾灯效，TTS无反应",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48841\",\"ADS-48841｜车外语音，车外唤醒后query：打开迎宾灯效，TTS无反应\")"
+        }
+      },
+      {
+        "formattedValue": "ADS-48841 Jira原票。\n现象：车外语音，车外唤醒后query：打开迎宾灯效，TTS无反应\nJira：状态=处理中，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打开迎宾灯效”，当前MetaId=1535/1535。",
+        "userEnteredValue": {
+          "stringValue": "ADS-48841 Jira原票。\n现象：车外语音，车外唤醒后query：打开迎宾灯效，TTS无反应\nJira：状态=处理中，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打开迎宾灯效”，当前MetaId=1535/1535。"
+        }
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1535；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1535的车外白名单与迎宾灯配置条件，并补齐明确TTS。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1535；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1535的车外白名单与迎宾灯配置条件，并补齐明确TTS。"
+        }
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        }
+      },
+      {},
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票·ADS-48841\n长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf\nAlchemy当前·1535",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·ADS-48841\n长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf\nAlchemy当前·1535"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象与实现：车外唤醒后打开迎宾灯效，NLU返回1535后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48841]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1535。[Alchemy当前结果]",
+      "links": [
+        {
+          "label": "Jira原票·ADS-48841",
+          "url": "http://jira.i-tetris.com/browse/ADS-48841"
+        },
+        {
+          "label": "车外语音PRD V1.8·功能列表/兜底回复",
+          "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为车外语音过滤缺陷。NLU正确返回1535，但车外区域过滤改写为-6并静默；灯光属于车外控制范围，至少必须返回执行或固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：补齐1535车外白名单/拒绝文言配置并按车型灯光配置回归；车外语音云端白名单负责人处理。",
+      "links": [
+        {
+          "label": "Jira最新链路日志",
+          "url": "http://jira.i-tetris.com/browse/ADS-48841"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "迎宾灯车型条件可在执行层校验，不能以空动作和空TTS结束。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·ADS-48841",
+          "url": "http://jira.i-tetris.com/browse/ADS-48841"
+        },
+        {
+          "label": "车外语音PRD V1.8·功能列表/兜底回复",
+          "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

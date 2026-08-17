@@ -1,0 +1,321 @@
+{
+  "key": "ADS-48840",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 342,
+  "rowIndex": 341,
+  "previewFingerprint": "2eb8823fc0ea877389a0e488334d2eeb83d07e816ce33389925797694ace5476",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "ADS-48840 Jira原票。\n现象：车外语音，车外唤醒后query：打开后视镜自动折叠，TTS无反应\nJira：状态=待办，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打开后视镜自动折叠”，当前MetaId=1541/1541。",
+      "after": "现象与实现：车外唤醒后打开后视镜自动折叠，NLU返回1541后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48840]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1541。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48840",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1541；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1541的车外白名单和车辆状态边界，并补齐支持或不支持TTS。",
+      "after": "结论：定义为车外语音过滤缺陷。NLU正确返回1541，但车外区域过滤改写为-6并静默；后视镜在正式车外控制范围内，至少必须返回执行或固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：补齐1541车外白名单/拒绝文言配置并回归动作下发；车外语音云端白名单负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48840"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "可转研发",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "无论最终是否允许折叠，静默均违反V1.8兜底回复要求。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·ADS-48840\n长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf\nAlchemy当前·1541",
+      "after": "Jira原票·ADS-48840\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48840",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象与实现：车外唤醒后打开后视镜自动折叠，NLU返回1541后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48840]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1541。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48840",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为车外语音过滤缺陷。NLU正确返回1541，但车外区域过滤改写为-6并静默；后视镜在正式车外控制范围内，至少必须返回执行或固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：补齐1541车外白名单/拒绝文言配置并回归动作下发；车外语音云端白名单负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48840"
+      ]
+    },
+    "G": {
+      "visible": "可转研发",
+      "links": []
+    },
+    "I": {
+      "visible": "无论最终是否允许折叠，静默均违反V1.8兜底回复要求。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·ADS-48840\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48840",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 341,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象与实现：车外唤醒后打开后视镜自动折叠，NLU返回1541后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48840]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1541。[Alchemy当前结果]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 55,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48840"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 71
+                  },
+                  {
+                    "startIndex": 117,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 139
+                  },
+                  {
+                    "startIndex": 159,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 170
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 341,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为车外语音过滤缺陷。NLU正确返回1541，但车外区域过滤改写为-6并静默；后视镜在正式车外控制范围内，至少必须返回执行或固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：补齐1541车外白名单/拒绝文言配置并回归动作下发；车外语音云端白名单负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 111,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48840"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 121
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 341,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 341,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "无论最终是否允许折叠，静默均违反V1.8兜底回复要求。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 341,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48840\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48840"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

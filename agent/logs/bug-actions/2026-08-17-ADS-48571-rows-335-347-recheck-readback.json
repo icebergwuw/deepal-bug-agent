@@ -1,0 +1,281 @@
+{
+  "values": [
+    {
+      "formattedValue": "2026-08-17",
+      "userEnteredValue": {
+        "stringValue": "2026-08-17"
+      },
+      "effectiveValue": {
+        "stringValue": "2026-08-17"
+      }
+    },
+    {
+      "formattedValue": "ADS-48571｜stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍",
+      "userEnteredValue": {
+        "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48571\",\"ADS-48571｜stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍\")"
+      },
+      "effectiveValue": {
+        "stringValue": "ADS-48571｜stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍"
+      },
+      "hyperlink": "http://jira.i-tetris.com/browse/ADS-48571"
+    },
+    {
+      "formattedValue": "现象与实现：多意图进入规划，模糊‘治愈’触发联网搜索并拉起Deepal AI，相关弹窗会遮蔽POI内容。[Jira原票·ADS-48571]\n资料结论：PRD/UE覆盖规划、联网搜索和Deepal AI展示，但未定义与POI/点播弹窗的抢占优先级。[Deepal AI PRD v0.6/UE v1.3]\nAlchemy：当前返回1208+1026。[Alchemy当前结果]",
+      "userEnteredValue": {
+        "stringValue": "现象与实现：多意图进入规划，模糊‘治愈’触发联网搜索并拉起Deepal AI，相关弹窗会遮蔽POI内容。[Jira原票·ADS-48571]\n资料结论：PRD/UE覆盖规划、联网搜索和Deepal AI展示，但未定义与POI/点播弹窗的抢占优先级。[Deepal AI PRD v0.6/UE v1.3]\nAlchemy：当前返回1208+1026。[Alchemy当前结果]"
+      },
+      "effectiveValue": {
+        "stringValue": "现象与实现：多意图进入规划，模糊‘治愈’触发联网搜索并拉起Deepal AI，相关弹窗会遮蔽POI内容。[Jira原票·ADS-48571]\n资料结论：PRD/UE覆盖规划、联网搜索和Deepal AI展示，但未定义与POI/点播弹窗的抢占优先级。[Deepal AI PRD v0.6/UE v1.3]\nAlchemy：当前返回1208+1026。[Alchemy当前结果]"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 53,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48571"
+            }
+          }
+        },
+        {
+          "startIndex": 69
+        },
+        {
+          "startIndex": 125,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 151
+        },
+        {
+          "startIndex": 176,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 187
+        }
+      ]
+    },
+    {
+      "formattedValue": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。",
+      "userEnteredValue": {
+        "stringValue": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。"
+      },
+      "effectiveValue": {
+        "stringValue": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 94,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 120
+        },
+        {
+          "startIndex": 145,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 154
+        }
+      ]
+    },
+    {
+      "formattedValue": "FALSE",
+      "userEnteredValue": {
+        "boolValue": false
+      },
+      "effectiveValue": {
+        "boolValue": false
+      },
+      "dataValidation": {
+        "condition": {
+          "type": "BOOLEAN"
+        },
+        "strict": true
+      }
+    },
+    {},
+    {
+      "formattedValue": "待复核",
+      "userEnteredValue": {
+        "stringValue": "待复核"
+      },
+      "effectiveValue": {
+        "stringValue": "待复核"
+      }
+    },
+    {},
+    {
+      "formattedValue": "缺多意图弹窗优先级正式定义；当前不能仅凭实现评论判定为路由缺陷。",
+      "userEnteredValue": {
+        "stringValue": "缺多意图弹窗优先级正式定义；当前不能仅凭实现评论判定为路由缺陷。"
+      },
+      "effectiveValue": {
+        "stringValue": "缺多意图弹窗优先级正式定义；当前不能仅凭实现评论判定为路由缺陷。"
+      }
+    },
+    {
+      "formattedValue": "Jira原票·ADS-48571\nDeepal AI PRD v0.6/UE v1.3\nAlchemy当前结果",
+      "userEnteredValue": {
+        "stringValue": "Jira原票·ADS-48571\nDeepal AI PRD v0.6/UE v1.3\nAlchemy当前结果"
+      },
+      "effectiveValue": {
+        "stringValue": "Jira原票·ADS-48571\nDeepal AI PRD v0.6/UE v1.3\nAlchemy当前结果"
+      },
+      "textFormatRuns": [
+        {
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48571"
+            }
+          }
+        },
+        {
+          "startIndex": 16
+        },
+        {
+          "startIndex": 17,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 43
+        },
+        {
+          "startIndex": 44,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

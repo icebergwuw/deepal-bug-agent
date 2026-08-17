@@ -1,0 +1,112 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        }
+      },
+      {
+        "formattedValue": "ADS-48769｜P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48769\",\"ADS-48769｜P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）\")"
+        }
+      },
+      {
+        "formattedValue": "ADS-48769 Jira原票。\n现象：P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）\nJira：状态=待办，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“打开车外喊话”，当前MetaId=1657/1657。",
+        "userEnteredValue": {
+          "stringValue": "ADS-48769 Jira原票。\n现象：P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）\nJira：状态=待办，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“打开车外喊话”，当前MetaId=1657/1657。"
+        }
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1657；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外喊话产品与语音配置负责人按车外喊话PRD确认入口打开与扬声器开关的产品边界，并在C385-5实车复测1657执行结果。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1657；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外喊话产品与语音配置负责人按车外喊话PRD确认入口打开与扬声器开关的产品边界，并在C385-5实车复测1657执行结果。"
+        }
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        }
+      },
+      {},
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票·ADS-48769\n8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf\nAlchemy当前·1657",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·ADS-48769\n8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf\nAlchemy当前·1657"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象与实现：原话‘打开车外喊话’当前命中1657车外扬声器开关。[Jira原票·ADS-48769]\n正式定义：车外喊话是独立二级入口，语音仅在页面内执行可见卡片，未定义直接语音打开页面。[车外喊话PRD V0.3·3.1]\nAlchemy：当前命中1657。[Alchemy当前结果]",
+      "links": [
+        {
+          "label": "Jira原票·ADS-48769",
+          "url": "http://jira.i-tetris.com/browse/ADS-48769"
+        },
+        {
+          "label": "车外喊话PRD V0.3·3.1",
+          "url": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。‘车外喊话’是系统设置中的独立二级入口，语音仅在车外喊话页面对可见卡片执行；现行1657按车外扬声器开关处理不承担打开页面。\n依据：车外喊话PRD V0.3·3.1；Alchemy当前1657及深蓝项目点24530；Jira完整评论。\n处理：按现行边界关闭本Bug；若需要语音打开车外喊话页面，另提页面开启需求；吴优负责处理。",
+      "links": [
+        {
+          "label": "车外喊话PRD V0.3·3.1",
+          "url": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "测试预期中的‘展示/进入车外喊话页面’未在现行语音边界中定义。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·ADS-48769",
+          "url": "http://jira.i-tetris.com/browse/ADS-48769"
+        },
+        {
+          "label": "车外喊话PRD V0.3·3.1",
+          "url": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        }
+      },
+      {
+        "formattedValue": "ADS-48829｜Stg环境，query：搜索爱贝尔发制品有限公司，落域到了地点搜索与推荐",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48829\",\"ADS-48829｜Stg环境，query：搜索爱贝尔发制品有限公司，落域到了地点搜索与推荐\")"
+        }
+      },
+      {
+        "formattedValue": "ADS-48829 Jira原票。\n现象：Stg环境，query：搜索爱贝尔发制品有限公司，落域到了地点搜索与推荐\nJira：状态=重新打开，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“搜索爱贝尔发制品有限公司”，当前MetaId=1208/1208。",
+        "userEnteredValue": {
+          "stringValue": "ADS-48829 Jira原票。\n现象：Stg环境，query：搜索爱贝尔发制品有限公司，落域到了地点搜索与推荐\nJira：状态=重新打开，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“搜索爱贝尔发制品有限公司”，当前MetaId=1208/1208。"
+        }
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：地图POI产品与语音路由负责人确认地点搜索与推荐模块是否即地图POI正式承载域，并在车端核对1208是否正常展示地图列表。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：地图POI产品与语音路由负责人确认地点搜索与推荐模块是否即地图POI正式承载域，并在车端核对1208是否正常展示地图列表。"
+        }
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        }
+      },
+      {},
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票·ADS-48829\n长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8\nAlchemy当前·1208",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·ADS-48829\n长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8\nAlchemy当前·1208"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象与实现：搜索爱贝尔发制品有限公司。[Jira原票·ADS-48829]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]",
+      "links": [
+        {
+          "label": "Jira原票·ADS-48829",
+          "url": "http://jira.i-tetris.com/browse/ADS-48829"
+        },
+        {
+          "label": "POI推荐PRD v0.8·2.5.3",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为非问题。公司名称搜索属于地址/POI搜索，落入‘地点搜索与推荐’1208是正式地图承载域；当前城市无该POI不等于落域错误。\n依据：POI推荐PRD v0.8·2.1.2；Alchemy当前1208及深蓝项目点24548；ADS-48829/ADS-48774评论。\n处理：按地点搜索域验收并关闭本Bug；若地图数据缺失，转地图数据问题；吴优负责处理。",
+      "links": [
+        {
+          "label": "Alchemy当前",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "可关闭",
+    "I": "‘地点搜索与推荐’是地图POI正式域名，不以显示名称判断落域错误。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·ADS-48829",
+          "url": "http://jira.i-tetris.com/browse/ADS-48829"
+        },
+        {
+          "label": "POI推荐PRD v0.8·2.5.3",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

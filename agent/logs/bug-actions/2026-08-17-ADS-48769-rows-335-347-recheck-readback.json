@@ -1,0 +1,281 @@
+{
+  "values": [
+    {
+      "formattedValue": "2026-08-17",
+      "userEnteredValue": {
+        "stringValue": "2026-08-17"
+      },
+      "effectiveValue": {
+        "stringValue": "2026-08-17"
+      }
+    },
+    {
+      "formattedValue": "ADS-48769｜P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）",
+      "userEnteredValue": {
+        "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48769\",\"ADS-48769｜P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）\")"
+      },
+      "effectiveValue": {
+        "stringValue": "ADS-48769｜P挡语音输入打开车外喊话，TTS回复车外扬声器已经是打开的了（预期是展示车外喊话入口界面或直接进入车外喊话界面）"
+      },
+      "hyperlink": "http://jira.i-tetris.com/browse/ADS-48769"
+    },
+    {
+      "formattedValue": "现象与实现：原话‘打开车外喊话’当前命中1657车外扬声器开关。[Jira原票·ADS-48769]\n正式定义：车外喊话是独立二级入口，语音仅在页面内执行可见卡片，未定义直接语音打开页面。[车外喊话PRD V0.3·3.1]\nAlchemy：当前命中1657。[Alchemy当前结果]",
+      "userEnteredValue": {
+        "stringValue": "现象与实现：原话‘打开车外喊话’当前命中1657车外扬声器开关。[Jira原票·ADS-48769]\n正式定义：车外喊话是独立二级入口，语音仅在页面内执行可见卡片，未定义直接语音打开页面。[车外喊话PRD V0.3·3.1]\nAlchemy：当前命中1657。[Alchemy当前结果]"
+      },
+      "effectiveValue": {
+        "stringValue": "现象与实现：原话‘打开车外喊话’当前命中1657车外扬声器开关。[Jira原票·ADS-48769]\n正式定义：车外喊话是独立二级入口，语音仅在页面内执行可见卡片，未定义直接语音打开页面。[车外喊话PRD V0.3·3.1]\nAlchemy：当前命中1657。[Alchemy当前结果]"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 33,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48769"
+            }
+          }
+        },
+        {
+          "startIndex": 49
+        },
+        {
+          "startIndex": 95,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 111
+        },
+        {
+          "startIndex": 131,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 142
+        }
+      ]
+    },
+    {
+      "formattedValue": "结论：定义为非问题。‘车外喊话’是系统设置中的独立二级入口，语音仅在车外喊话页面对可见卡片执行；现行1657按车外扬声器开关处理不承担打开页面。\n依据：车外喊话PRD V0.3·3.1；Alchemy当前1657及深蓝项目点24530；Jira完整评论。\n处理：按现行边界关闭本Bug；若需要语音打开车外喊话页面，另提页面开启需求；吴优负责处理。",
+      "userEnteredValue": {
+        "stringValue": "结论：定义为非问题。‘车外喊话’是系统设置中的独立二级入口，语音仅在车外喊话页面对可见卡片执行；现行1657按车外扬声器开关处理不承担打开页面。\n依据：车外喊话PRD V0.3·3.1；Alchemy当前1657及深蓝项目点24530；Jira完整评论。\n处理：按现行边界关闭本Bug；若需要语音打开车外喊话页面，另提页面开启需求；吴优负责处理。"
+      },
+      "effectiveValue": {
+        "stringValue": "结论：定义为非问题。‘车外喊话’是系统设置中的独立二级入口，语音仅在车外喊话页面对可见卡片执行；现行1657按车外扬声器开关处理不承担打开页面。\n依据：车外喊话PRD V0.3·3.1；Alchemy当前1657及深蓝项目点24530；Jira完整评论。\n处理：按现行边界关闭本Bug；若需要语音打开车外喊话页面，另提页面开启需求；吴优负责处理。"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 76,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 92
+        },
+        {
+          "startIndex": 93,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 102
+        }
+      ]
+    },
+    {
+      "formattedValue": "FALSE",
+      "userEnteredValue": {
+        "boolValue": false
+      },
+      "effectiveValue": {
+        "boolValue": false
+      },
+      "dataValidation": {
+        "condition": {
+          "type": "BOOLEAN"
+        },
+        "strict": true
+      }
+    },
+    {},
+    {
+      "formattedValue": "可关闭",
+      "userEnteredValue": {
+        "stringValue": "可关闭"
+      },
+      "effectiveValue": {
+        "stringValue": "可关闭"
+      }
+    },
+    {},
+    {
+      "formattedValue": "测试预期中的‘展示/进入车外喊话页面’未在现行语音边界中定义。",
+      "userEnteredValue": {
+        "stringValue": "测试预期中的‘展示/进入车外喊话页面’未在现行语音边界中定义。"
+      },
+      "effectiveValue": {
+        "stringValue": "测试预期中的‘展示/进入车外喊话页面’未在现行语音边界中定义。"
+      }
+    },
+    {
+      "formattedValue": "Jira原票·ADS-48769\n车外喊话PRD V0.3·3.1\nAlchemy当前结果",
+      "userEnteredValue": {
+        "stringValue": "Jira原票·ADS-48769\n车外喊话PRD V0.3·3.1\nAlchemy当前结果"
+      },
+      "effectiveValue": {
+        "stringValue": "Jira原票·ADS-48769\n车外喊话PRD V0.3·3.1\nAlchemy当前结果"
+      },
+      "textFormatRuns": [
+        {
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48769"
+            }
+          }
+        },
+        {
+          "startIndex": 16
+        },
+        {
+          "startIndex": 17,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 33
+        },
+        {
+          "startIndex": 34,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

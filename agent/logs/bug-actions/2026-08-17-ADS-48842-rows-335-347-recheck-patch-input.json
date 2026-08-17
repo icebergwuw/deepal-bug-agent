@@ -1,0 +1,108 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        }
+      },
+      {
+        "formattedValue": "ADS-48842｜车外语音，车外唤醒后query：打开智能远光灯，执行和TTS无反应",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48842\",\"ADS-48842｜车外语音，车外唤醒后query：打开智能远光灯，执行和TTS无反应\")"
+        }
+      },
+      {
+        "formattedValue": "ADS-48842 Jira原票。\n现象：车外语音，车外唤醒后query：打开智能远光灯，执行和TTS无反应\nJira：状态=待办，评论=undefined，附件=5；已完整读取。\nAlchemy：原话“打开智能远光灯”，当前MetaId=1040/1040。",
+        "userEnteredValue": {
+          "stringValue": "ADS-48842 Jira原票。\n现象：车外语音，车外唤醒后query：打开智能远光灯，执行和TTS无反应\nJira：状态=待办，评论=undefined，附件=5；已完整读取。\nAlchemy：原话“打开智能远光灯”，当前MetaId=1040/1040。"
+        }
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1040；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1040是否允许车外执行；结合安全边界给出执行或不支持TTS，禁止静默。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1040；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1040是否允许车外执行；结合安全边界给出执行或不支持TTS，禁止静默。"
+        }
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        }
+      },
+      {},
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票·ADS-48842\n长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf\nAlchemy当前·1040",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·ADS-48842\n长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf\nAlchemy当前·1040"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象与实现：车外唤醒后打开智能远光灯，NLU返回1040后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48842]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1040。[Alchemy当前结果]",
+      "links": [
+        {
+          "label": "Jira原票·ADS-48842",
+          "url": "http://jira.i-tetris.com/browse/ADS-48842"
+        },
+        {
+          "label": "车外语音PRD V1.8·功能列表/兜底回复",
+          "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为车外语音过滤缺陷。NLU正确返回1040，但车外区域过滤改写为-6并静默；灯光属于车外控制范围，安全条件不满足时也必须明确拒绝。\n依据：车外语音PRD V1.8·三/3及五/1；车外灯光/后视镜需求V2；Jira最新链路日志。\n处理：按灯光安全边界配置1040；允许时执行，不允许时返回固定TTS，禁止静默；车外语音云端白名单负责人处理。",
+      "links": [
+        {
+          "label": "Jira最新链路日志",
+          "url": "http://jira.i-tetris.com/browse/ADS-48842"
+        }
+      ]
+    },
+    "G": "可转研发",
+    "I": "安全限制决定执行与否，不改变必须给出明确结果的要求。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·ADS-48842",
+          "url": "http://jira.i-tetris.com/browse/ADS-48842"
+        },
+        {
+          "label": "车外语音PRD V1.8·功能列表/兜底回复",
+          "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

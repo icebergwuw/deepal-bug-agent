@@ -1,7 +1,7 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "ADS-48852",
-  "comment_causality": "七天内多日期天气查询偶发误报超范围；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "comment_causality": "七天内多日期天气查询偶发误报超范围；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。 本次重新读取最新正式资料与Jira最新日志后更新结论。",
   "customer_issue": {
     "identified": false
   },
@@ -16,6 +16,49 @@
       }
     ]
   },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：定义为天气执行缺陷。NLU已正确下发1249及+1d/+2d，正式PRD支持7天内天气和时间段查询，当前回复‘只能查询7天内’与输入及定义矛盾。 依据：天气PRD v20250901·天气查询/时间段；Alchemy当前1249；ADS-48852/ADS-48784日志。 处理：天气服务按多日时间段返回并展示明天、后天结果，修正错误越界TTS；天气卡片/服务执行负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "明天和今天的天气怎么样",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1249,\"type\":\"weather:query\",\"index\":0,\"offline_first\":false,\"params\":{\"period\":[{\"literal\":\"明天和今天\",\"slot\":\"time_period\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1249,\"type\":\"weather:query\",\"index\":0,\"offline_first\":false,\"params\":{\"period\":[{\"literal\":\"明天和今天\",\"slot\":\"time_period\"}]}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1249",
+    "standard_function": {
+      "status": "verified",
+      "name": "1401查询天气语音功能 / 天气 / 通用否已锁定2025-10-20 11:59:00查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "26751查询天气语音功能 / 天气 / 通用否已锁定继承未修改(1401)2026-01-13 16:31:44查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": "在当前分支连续回归今天+明天组合查询，核对period解析和天气服务日期边界，复现后由天气服务负责人修正。"
+  },
   "scope_checks": [
     {
       "source_id": "jira-actual",
@@ -28,19 +71,6 @@
       "target_behavior": "Jira记录当前实际现象：query：明天和今天的天气怎么样，没有能查询天气，TTS回复：抱歉，我只能查询7天内的天气",
       "match": "exact",
       "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
-    },
-    {
-      "source_id": "drive-formal_definition_search-1",
-      "source": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx",
-      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt",
-      "source_type": "prd",
-      "role": "context_only",
-      "project_model": "深蓝8295/本票车型",
-      "trigger": "七天内多日期天气查询偶发误报超范围",
-      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
-      "match": "partial",
-      "material": false,
-      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
     },
     {
       "source_id": "alchemy-current",
@@ -77,35 +107,26 @@
       "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
       "match": "exact",
       "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    },
+    {
+      "source_id": "weather-prd-20250901",
+      "source": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250901",
+      "source_location": "天气查询·时间点/时间段；深蓝支持7天内按天查询",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "明天和后天天气怎么样",
+      "target_behavior": "支持周三到周五、未来三天等时间段，以及7天内按天返回。",
+      "match": "exact",
+      "reason": "当前最新深蓝天气PRD精确覆盖多日查询。"
     }
   ],
-  "evidence_profiles": [
-    "voice"
-  ],
-  "evidence_profile_assessment": {
-    "general": {
-      "applicable": false,
-      "reason": "由专项画像覆盖。"
-    },
-    "voice": {
-      "applicable": true,
-      "reason": "涉及用户原话、MetaId和语音执行链。"
-    },
-    "map_navigation": {
-      "applicable": false,
-      "reason": "不涉及地图导航。"
-    },
-    "visible_interaction": {
-      "applicable": false,
-      "reason": "不依赖可见交互目标。"
-    }
-  },
   "required_evidence_checks": [
     {
       "check_id": "formal_definition_search",
       "status": "read",
       "searched_at": "2026-08-17",
-      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "search_location": "Google Drive实时精确名称检索、版本族枚举并打开选定正文",
       "queries": [
         {
           "kind": "jira_key",
@@ -113,36 +134,66 @@
         },
         {
           "kind": "problem_concept",
-          "text": "七天内多日期天气查询偶发误报超范围"
+          "text": "明天和后天天气怎么样"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains '天气' and name contains '产品需求文档'"
+          "text": "深蓝天气PRD"
         }
       ],
       "source_ids": [
-        "drive-formal_definition_search-1"
+        "weather-prd-20250901"
       ],
-      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "reason": "已完成候选逐项审计、引用追查和版本族选择。",
       "material": false,
       "next_action": "",
       "candidate_audit": {
         "completed": true,
-        "results_count": 1,
+        "results_count": 4,
         "candidates": [
+          {
+            "id": "1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG",
+            "title": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250901.docx",
+            "url": "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "weather-prd-20250901"
+            ]
+          },
           {
             "id": "16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt",
             "title": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx",
             "url": "https://docs.google.com/document/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
-            "disposition": "read",
-            "source_ids": [
-              "drive-formal_definition_search-1"
-            ]
+            "references": [],
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+            "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+            "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q",
+            "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250610.docx",
+            "url": "https://docs.google.com/document/d/1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
           }
         ]
       },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
       "search_receipt_ids": [
-        "ADS-48852-formal_definition_search-20260817"
+        "ADS-48852-formal_definition_search-drive-20260817-1807"
       ]
     },
     {
@@ -206,10 +257,10 @@
   ],
   "search_receipts": [
     {
-      "receipt_id": "ADS-48852-formal_definition_search-20260817",
+      "receipt_id": "ADS-48852-formal_definition_search-drive-20260817-1807",
       "provider": "google_drive",
       "check_id": "formal_definition_search",
-      "searched_at": "2026-08-17T06:26:29.906134+00:00",
+      "searched_at": "2026-08-17T18:07:00+08:00",
       "queries": [
         {
           "kind": "jira_key",
@@ -217,55 +268,68 @@
         },
         {
           "kind": "problem_concept",
-          "text": "七天内多日期天气查询偶发误报超范围"
+          "text": "明天和后天天气怎么样"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains '天气' and name contains '产品需求文档'"
+          "text": "深蓝天气PRD"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250901.docx"
         }
       ],
       "results": [
+        {
+          "id": "1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250901.docx",
+          "url": "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
         {
           "id": "16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt",
           "title": "Megatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx",
           "url": "https://docs.google.com/document/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
           "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+          "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250610.docx",
+          "url": "https://docs.google.com/document/d/1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         }
       ]
     }
   ],
-  "inheritance_chains": [],
-  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
-  "voice_evidence": {
-    "applicable": true,
-    "availability": "complete",
-    "original_utterance": "明天和今天的天气怎么样",
-    "alchemy_tested": true,
-    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1249,\"type\":\"weather:query\",\"index\":0,\"offline_first\":false,\"params\":{\"period\":[{\"literal\":\"明天和今天\",\"slot\":\"time_period\"}]}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1249,\"type\":\"weather:query\",\"index\":0,\"offline_first\":false,\"params\":{\"period\":[{\"literal\":\"明天和今天\",\"slot\":\"time_period\"}]}}] visible_result:\"\" llm_data_result:[]",
-    "meta_id": "1249",
-    "standard_function": {
-      "status": "verified",
-      "name": "1401查询天气语音功能 / 天气 / 通用否已锁定2025-10-20 11:59:00查看说明编辑diff删除",
-      "assessment": "已在标准功能列表按MetaId实时查询。"
-    },
-    "project_function": {
-      "status": "verified",
-      "name": "26751查询天气语音功能 / 天气 / 通用否已锁定继承未修改(1401)2026-01-13 16:31:44查看说明编辑diff删除",
-      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
-    },
-    "unavailable_reason": "",
-    "next_action": "在当前分支连续回归今天+明天组合查询，核对period解析和天气服务日期边界，复现后由天气服务负责人修正。"
-  },
-  "decision": {
-    "status": "待复核",
-    "owner": "天气服务与语音参数负责人",
-    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1249；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：天气服务与语音参数负责人在当前分支连续回归今天+明天组合查询，核对period解析和天气服务日期边界，复现后由天气服务负责人修正。"
-  },
   "run_context": {
-    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "run_id": "20260817T180743+0800-rows-335-347-recheck",
     "operator_owner_id": "wu-you",
     "target_owner_id": "wu-you",
     "sheet_name": "bug",
     "sheet_row": 346
+  },
+  "expected_behavior": {
+    "trigger": "明天和后天天气怎么样",
+    "target_state": "识别7天内多日/时间段并返回对应逐日天气。",
+    "intent_function_signal": "Alchemy当前语义与项目功能点按本票原话执行；Jira key=ADS-48852。",
+    "ui_tts_vehicle_behavior": "展示并播报明天、后天两天结果，不返回越界提示。",
+    "boundary": "深蓝天气；包含当天共7天内，按天查询。",
+    "source_ids": [
+      "weather-prd-20250901"
+    ]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "天气卡片/服务执行负责人",
+    "text": "结论：定义为天气执行缺陷。NLU已正确下发1249及+1d/+2d，正式PRD支持7天内天气和时间段查询，当前回复‘只能查询7天内’与输入及定义矛盾。\n依据：天气PRD v20250901·天气查询/时间段；Alchemy当前1249；ADS-48852/ADS-48784日志。\n处理：天气服务按多日时间段返回并展示明天、后天结果，修正错误越界TTS；天气卡片/服务执行负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
   }
 }

@@ -1,0 +1,281 @@
+{
+  "values": [
+    {
+      "formattedValue": "2026-08-17",
+      "userEnteredValue": {
+        "stringValue": "2026-08-17"
+      },
+      "effectiveValue": {
+        "stringValue": "2026-08-17"
+      }
+    },
+    {
+      "formattedValue": "ADS-48813｜Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次",
+      "userEnteredValue": {
+        "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48813\",\"ADS-48813｜Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次\")"
+      },
+      "effectiveValue": {
+        "stringValue": "ADS-48813｜Stg环境，当前poi已经显示了周边电影院列表，query：筛选以下评分4分以上的，应该是重新按照4分以上这个条件推荐了周边的电影院。第一次只有5个地点，第二次"
+      },
+      "hyperlink": "http://jira.i-tetris.com/browse/ADS-48813"
+    },
+    {
+      "formattedValue": "现象与实现：在上一轮电影院列表上筛选评分4分以上。[Jira原票·ADS-48813]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]",
+      "userEnteredValue": {
+        "stringValue": "现象与实现：在上一轮电影院列表上筛选评分4分以上。[Jira原票·ADS-48813]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]"
+      },
+      "effectiveValue": {
+        "stringValue": "现象与实现：在上一轮电影院列表上筛选评分4分以上。[Jira原票·ADS-48813]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 26,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48813"
+            }
+          }
+        },
+        {
+          "startIndex": 42
+        },
+        {
+          "startIndex": 110,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 129
+        },
+        {
+          "startIndex": 150,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 161
+        }
+      ]
+    },
+    {
+      "formattedValue": "结论：定义为执行缺陷。Alchemy已正确命中1455二次筛选，但车端未基于上一轮电影院列表合并评分条件，结果数量反增。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1455；ADS-48813及ADS-29428评论。\n处理：保留上一轮POI列表上下文并按评分条件过滤，禁止重新发起无上下文搜索；POI推荐/AIS上下文负责人处理。",
+      "userEnteredValue": {
+        "stringValue": "结论：定义为执行缺陷。Alchemy已正确命中1455二次筛选，但车端未基于上一轮电影院列表合并评分条件，结果数量反增。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1455；ADS-48813及ADS-29428评论。\n处理：保留上一轮POI列表上下文并按评分条件过滤，禁止重新发起无上下文搜索；POI推荐/AIS上下文负责人处理。"
+      },
+      "effectiveValue": {
+        "stringValue": "结论：定义为执行缺陷。Alchemy已正确命中1455二次筛选，但车端未基于上一轮电影院列表合并评分条件，结果数量反增。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1455；ADS-48813及ADS-29428评论。\n处理：保留上一轮POI列表上下文并按评分条件过滤，禁止重新发起无上下文搜索；POI推荐/AIS上下文负责人处理。"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 64,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 83
+        },
+        {
+          "startIndex": 84,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 93
+        }
+      ]
+    },
+    {
+      "formattedValue": "FALSE",
+      "userEnteredValue": {
+        "boolValue": false
+      },
+      "effectiveValue": {
+        "boolValue": false
+      },
+      "dataValidation": {
+        "condition": {
+          "type": "BOOLEAN"
+        },
+        "strict": true
+      }
+    },
+    {},
+    {
+      "formattedValue": "可转研发",
+      "userEnteredValue": {
+        "stringValue": "可转研发"
+      },
+      "effectiveValue": {
+        "stringValue": "可转研发"
+      }
+    },
+    {},
+    {
+      "formattedValue": "PRD明确支持评分、价格、距离的以上/以下/以内/以外二次筛选。",
+      "userEnteredValue": {
+        "stringValue": "PRD明确支持评分、价格、距离的以上/以下/以内/以外二次筛选。"
+      },
+      "effectiveValue": {
+        "stringValue": "PRD明确支持评分、价格、距离的以上/以下/以内/以外二次筛选。"
+      }
+    },
+    {
+      "formattedValue": "Jira原票·ADS-48813\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果",
+      "userEnteredValue": {
+        "stringValue": "Jira原票·ADS-48813\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果"
+      },
+      "effectiveValue": {
+        "stringValue": "Jira原票·ADS-48813\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果"
+      },
+      "textFormatRuns": [
+        {
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48813"
+            }
+          }
+        },
+        {
+          "startIndex": 16
+        },
+        {
+          "startIndex": 17,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 36
+        },
+        {
+          "startIndex": 37,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

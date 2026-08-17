@@ -1,0 +1,340 @@
+{
+  "key": "ADS-48814",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 338,
+  "rowIndex": 337,
+  "previewFingerprint": "ca671a70a47f8a6292d2688b2ef89ab70510f5a3194dbe015afa6344fbe82416",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "ADS-48814 Jira原票。\n现象：Stg环境，当前poi已经显示了周边的火锅店，query：筛选下人均价格100元以上的，落域错误到了deepal ai，且内容也不是上一次poi列表推荐中的火锅\nJira：状态=重新打开，评论=undefined，附件=0；已完整读取。\nAlchemy：原话“筛选下人均价格100元以上的”，当前MetaId=1209/1209。",
+      "after": "现象与实现：在上一轮火锅列表上筛选人均价格100元以上。[Jira原票·ADS-48814]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48814",
+        "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1209；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：POI语音NLU负责人修正人均价格筛选原话由1209导航改为上一轮POI列表筛选能力，并回归列表上下文。",
+      "after": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮火锅列表，当前却命中1209导航去地址。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48814/ADS-48739/ADS-29428。\n处理：把价格筛选原话路由到1455并下发上一轮列表上下文及price>=100条件；AI Cockpit NLU负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "可转语音",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "当前1209属于导航发起，与PRD规定的1455二次筛选不一致。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·ADS-48814\n长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8\nAlchemy当前·1209",
+      "after": "Jira原票·ADS-48814\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48814",
+        "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象与实现：在上一轮火锅列表上筛选人均价格100元以上。[Jira原票·ADS-48814]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48814",
+        "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮火锅列表，当前却命中1209导航去地址。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48814/ADS-48739/ADS-29428。\n处理：把价格筛选原话路由到1455并下发上一轮列表上下文及price>=100条件；AI Cockpit NLU负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "G": {
+      "visible": "可转语音",
+      "links": []
+    },
+    "I": {
+      "visible": "当前1209属于导航发起，与PRD规定的1455二次筛选不一致。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·ADS-48814\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48814",
+        "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 337,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象与实现：在上一轮火锅列表上筛选人均价格100元以上。[Jira原票·ADS-48814]\n正式定义：POI v0.8要求1455合并上一轮列表与评分/价格/距离条件执行二次筛选；公司名称搜索由1208地址/POI域承载。[POI推荐PRD v0.8·2.5.3]\nAlchemy：当前结果见本票判断。[Alchemy当前结果]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 29,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48814"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 45
+                  },
+                  {
+                    "startIndex": 113,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 132
+                  },
+                  {
+                    "startIndex": 153,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 164
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 337,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为语义路由缺陷。原话应命中1455 POI二次筛选并继承上一轮火锅列表，当前却命中1209导航去地址。\n依据：POI推荐PRD v0.8·2.5.3；Alchemy当前1209；ADS-48814/ADS-48739/ADS-29428。\n处理：把价格筛选原话路由到1455并下发上一轮列表上下文及price>=100条件；AI Cockpit NLU负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 60,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 79
+                  },
+                  {
+                    "startIndex": 80,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 337,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转语音"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 337,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "当前1209属于导航发起，与PRD规定的1455二次筛选不一致。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 337,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48814\nPOI推荐PRD v0.8·2.5.3\nAlchemy当前结果"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48814"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 36
+                  },
+                  {
+                    "startIndex": 37,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

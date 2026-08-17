@@ -1,0 +1,112 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        }
+      },
+      {
+        "formattedValue": "ADS-48571｜stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48571\",\"ADS-48571｜stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍\")"
+        }
+      },
+      {
+        "formattedValue": "ADS-48571 Jira原票。\n现象：stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍\nJira：状态=重新打开，评论=undefined，附件=1；已完整读取。\nAlchemy：原话“今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的”，当前MetaId=1208/1026/1208/1026。",
+        "userEnteredValue": {
+          "stringValue": "ADS-48571 Jira原票。\n现象：stg环境，query：今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的，播放歌曲落域到了deepal ai显示了弹窗进行介绍\nJira：状态=重新打开，评论=undefined，附件=1；已完整读取。\nAlchemy：原话“今天心情不错给我推荐附近的美食 然后播放流行音乐要治愈的”，当前MetaId=1208/1026/1208/1026。"
+        }
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208/1026；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：深蓝语音大模型路由负责人在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1208/1026；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：深蓝语音大模型路由负责人在当前SWC分支实车复测双operation是否仍被Deepal AI弹窗抢占；若仍复现，由语音大模型路由负责人修正域路由。"
+        }
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        }
+      },
+      {},
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票·ADS-48571\nMegatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113\nAlchemy当前·1208/1026",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·ADS-48571\nMegatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113\nAlchemy当前·1208/1026"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象与实现：多意图进入规划，模糊‘治愈’触发联网搜索并拉起Deepal AI，相关弹窗会遮蔽POI内容。[Jira原票·ADS-48571]\n资料结论：PRD/UE覆盖规划、联网搜索和Deepal AI展示，但未定义与POI/点播弹窗的抢占优先级。[Deepal AI PRD v0.6/UE v1.3]\nAlchemy：当前返回1208+1026。[Alchemy当前结果]",
+      "links": [
+        {
+          "label": "Jira原票·ADS-48571",
+          "url": "http://jira.i-tetris.com/browse/ADS-48571"
+        },
+        {
+          "label": "Deepal AI PRD v0.6/UE v1.3",
+          "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：当前多意图进入规划、模糊‘治愈’触发联网搜索并拉起Deepal AI符合现行实现说明，但正式PRD/UE未定义Deepal AI、POI和点播弹窗的抢占优先级，状态为待复核。\n依据：Deepal AI PRD v0.6/UE v1.3；ADS-48571及ADS-48570完整评论；Alchemy当前1208+1026。\n处理：补齐多意图下Deepal AI、POI、点播弹窗的优先级与保留规则后再定责；深蓝语音大模型路由负责人处理。",
+      "links": [
+        {
+          "label": "Deepal AI PRD v0.6/UE v1.3",
+          "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "缺多意图弹窗优先级正式定义；当前不能仅凭实现评论判定为路由缺陷。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·ADS-48571",
+          "url": "http://jira.i-tetris.com/browse/ADS-48571"
+        },
+        {
+          "label": "Deepal AI PRD v0.6/UE v1.3",
+          "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前结果",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "key": "ADS-48841",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 343,
+  "rowIndex": 342,
+  "previewFingerprint": "fad6297c28f854c7a3989454c6ecfb78dd34eb1728e07c2cf4f5dc0d9609025a",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "ADS-48841 Jira原票。\n现象：车外语音，车外唤醒后query：打开迎宾灯效，TTS无反应\nJira：状态=处理中，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打开迎宾灯效”，当前MetaId=1535/1535。",
+      "after": "现象与实现：车外唤醒后打开迎宾灯效，NLU返回1535后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48841]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1535。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48841",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1535；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：车外语音能力白名单负责人核对1535的车外白名单与迎宾灯配置条件，并补齐明确TTS。",
+      "after": "结论：定义为车外语音过滤缺陷。NLU正确返回1535，但车外区域过滤改写为-6并静默；灯光属于车外控制范围，至少必须返回执行或固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：补齐1535车外白名单/拒绝文言配置并按车型灯光配置回归；车外语音云端白名单负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48841"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "可转研发",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "迎宾灯车型条件可在执行层校验，不能以空动作和空TTS结束。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·ADS-48841\n长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf\nAlchemy当前·1535",
+      "after": "Jira原票·ADS-48841\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48841",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象与实现：车外唤醒后打开迎宾灯效，NLU返回1535后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48841]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1535。[Alchemy当前结果]",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48841",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为车外语音过滤缺陷。NLU正确返回1535，但车外区域过滤改写为-6并静默；灯光属于车外控制范围，至少必须返回执行或固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：补齐1535车外白名单/拒绝文言配置并按车型灯光配置回归；车外语音云端白名单负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48841"
+      ]
+    },
+    "G": {
+      "visible": "可转研发",
+      "links": []
+    },
+    "I": {
+      "visible": "迎宾灯车型条件可在执行层校验，不能以空动作和空TTS结束。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·ADS-48841\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果",
+      "links": [
+        "http://jira.i-tetris.com/browse/ADS-48841",
+        "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 342,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象与实现：车外唤醒后打开迎宾灯效，NLU返回1535后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48841]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1535。[Alchemy当前结果]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 52,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48841"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 68
+                  },
+                  {
+                    "startIndex": 114,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 136
+                  },
+                  {
+                    "startIndex": 156,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 167
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 342,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为车外语音过滤缺陷。NLU正确返回1535，但车外区域过滤改写为-6并静默；灯光属于车外控制范围，至少必须返回执行或固定拒绝TTS。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：补齐1535车外白名单/拒绝文言配置并按车型灯光配置回归；车外语音云端白名单负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 108,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48841"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 118
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 342,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 342,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "迎宾灯车型条件可在执行层校验，不能以空动作和空TTS结束。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 342,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48841\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48841"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

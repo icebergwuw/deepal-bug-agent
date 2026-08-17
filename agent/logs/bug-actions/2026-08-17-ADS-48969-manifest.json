@@ -1,7 +1,7 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "jira_key": "ADS-48969",
-  "comment_causality": "一键下电二轮确认无法由语音完成；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。",
+  "comment_causality": "一键下电二轮确认无法由语音完成；Jira当前字段与全部评论已读，正式定义、当前实现和测试预期分开记录。 本次重新读取最新正式资料与Jira最新日志后更新结论。",
   "customer_issue": {
     "identified": false
   },
@@ -16,6 +16,49 @@
       }
     ]
   },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId和语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见交互目标。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "结论：当前日志已确认1628后生成confirm_yes但链路落入llm:chat:claw；然而现行系统设置只引用显示协调定义，未取得一键下电弹窗允许语音二次确认的正式条款，状态为待复核。 依据：ADS-48969及ADS-48964完整评论/reqId；Alchemy当前1628与确认轮；系统设置V9.2及IHU_DHUPwrMgr。 处理：补齐一键下电二次确认的输入通道定义；若允许语音确认，由对话策略负责人移除claw干扰；一键下电交互产品负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "一键下电；确认",
+    "alchemy_tested": true,
+    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}] visible_result:\"\" llm_data_result:[]",
+    "meta_id": "1628",
+    "standard_function": {
+      "status": "verified",
+      "name": "1511一键下电语音功能 / 车控 / 能量 / 电池设置否草稿2026-05-21 20:44:12查看说明编辑diff删除",
+      "assessment": "已在标准功能列表按MetaId实时查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24616一键下电语音功能 / 车控 / 能量 / 电池设置否已锁定继承未修改(1511)2026-05-21 20:44:12查看说明编辑diff删除",
+      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
+    },
+    "unavailable_reason": "二轮confirm_yes对应标准/项目确认功能点未单独完整读取，且正式交互目标缺失。",
+    "next_action": "补齐一键下电二次确认输入通道定义及确认轮功能点后复核。"
+  },
   "scope_checks": [
     {
       "source_id": "jira-actual",
@@ -28,19 +71,6 @@
       "target_behavior": "Jira记录当前实际现象：17：07唤醒语音query：一键下电；再query：确认；无法执行tts回复：请你在弹窗中进行确认",
       "match": "exact",
       "reason": "证明当前提报现象、环境和复现信息，不定义产品目标。"
-    },
-    {
-      "source_id": "drive-formal_definition_search-1",
-      "source": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx",
-      "source_location": "Google Drive候选；已于2026-08-17打开核对，文件ID 1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW",
-      "source_type": "prd",
-      "role": "context_only",
-      "project_model": "深蓝8295/本票车型",
-      "trigger": "一键下电二轮确认无法由语音完成",
-      "target_behavior": "候选提供相关模块定义；当前按partial使用，不能单独锁定本票目标。",
-      "match": "partial",
-      "material": false,
-      "reason": "文件为相关生效资料候选，但具体车型/场景边界仍需结合本票补齐。"
     },
     {
       "source_id": "alchemy-current",
@@ -77,35 +107,52 @@
       "target_behavior": "项目功能点来源状态和下发状态已实时核对。",
       "match": "exact",
       "reason": "证明深蓝项目继承/状态，不单独替代产品正式定义。"
+    },
+    {
+      "source_id": "system-settings-v92",
+      "source": "C673_功能定义_系统设置功能定义V9.2",
+      "source_location": "安全与维护·一键下电：参见《C673_显示协调功能定义V1.7.docx》",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "一键下电后说确认",
+      "target_behavior": "确认一键下电属于系统设置，但正文未定义语音确认通道。",
+      "match": "partial",
+      "reason": "直接条款下钻至当前不可得的显示协调文档。"
+    },
+    {
+      "source_id": "ihu-power-manager",
+      "source": "IHU_DHUPwrMgr车辆下电按键定义",
+      "source_location": "车辆下电按键/电源管理相关正文检索",
+      "source_type": "special_prd",
+      "role": "context_only",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "一键下电后说确认",
+      "target_behavior": "定义电源管理与车辆下电相关能力，未命中二轮语音确认条款。",
+      "match": "partial",
+      "reason": "不能证明弹窗允许语音消费确认。"
+    },
+    {
+      "source_id": "power-confirm-gap",
+      "source": "一键下电语音确认正式定义缺口",
+      "source_location": "系统设置V9.2引用的C673_显示协调功能定义V1.7 exact-name检索未命中；IHU文档未定义语音确认",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8295 / C673-7、C385-5当前项目",
+      "trigger": "一键下电后说确认",
+      "target_behavior": "需明确确认弹窗是否接受confirm_yes语音事件。",
+      "match": "gap",
+      "reason": "缺口直接决定是语音缺陷还是仅支持屏幕点击。",
+      "material": true,
+      "next_action": "一键下电交互产品负责人补齐二次确认输入通道定义。"
     }
   ],
-  "evidence_profiles": [
-    "voice"
-  ],
-  "evidence_profile_assessment": {
-    "general": {
-      "applicable": false,
-      "reason": "由专项画像覆盖。"
-    },
-    "voice": {
-      "applicable": true,
-      "reason": "涉及用户原话、MetaId和语音执行链。"
-    },
-    "map_navigation": {
-      "applicable": false,
-      "reason": "不涉及地图导航。"
-    },
-    "visible_interaction": {
-      "applicable": false,
-      "reason": "不依赖可见交互目标。"
-    }
-  },
   "required_evidence_checks": [
     {
       "check_id": "formal_definition_search",
       "status": "read",
       "searched_at": "2026-08-17",
-      "search_location": "Google Drive API分页检索到末页并逐项打开/排除",
+      "search_location": "Google Drive实时精确名称检索、版本族枚举并打开选定正文",
       "queries": [
         {
           "kind": "jira_key",
@@ -113,36 +160,206 @@
         },
         {
           "kind": "problem_concept",
-          "text": "一键下电二轮确认无法由语音完成"
+          "text": "一键下电后说确认"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains '车辆下电'"
+          "text": "C673一键下电/车辆下电正式定义"
         }
       ],
       "source_ids": [
-        "drive-formal_definition_search-1"
+        "ihu-power-manager",
+        "system-settings-v92"
       ],
-      "reason": "候选已逐项核对；因范围或条款不完全，结论仍按缺口降级。",
+      "reason": "已完成候选逐项审计、引用追查和版本族选择。",
       "material": false,
       "next_action": "",
       "candidate_audit": {
         "completed": true,
-        "results_count": 1,
+        "results_count": 16,
         "candidates": [
+          {
+            "id": "1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v",
+            "title": "C673_功能定义_系统设置功能定义V9.2.docx",
+            "url": "https://docs.google.com/document/d/1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [
+              {
+                "reference_text": "C673_显示协调功能定义V1.7.docx"
+              }
+            ],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "read",
+            "source_ids": [
+              "system-settings-v92"
+            ]
+          },
+          {
+            "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+            "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+            "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1UreN91m697K-XyN-2bQG6JAU4sp1ZmYq",
+            "title": "C673_功能定义_系统设置功能定义V8.9.docx",
+            "url": "https://docs.google.com/document/d/1UreN91m697K-XyN-2bQG6JAU4sp1ZmYq/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1oaEhz6kSGQqABkNkbUEG68pdyR-nq2iH",
+            "title": "C673_功能定义_系统设置功能定义V8.6.docx",
+            "url": "https://docs.google.com/document/d/1oaEhz6kSGQqABkNkbUEG68pdyR-nq2iH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1Vm0JWxI4rO7m-lU1jRr825cFdK20q6hx",
+            "title": "C673_功能定义_系统设置功能定义V8.4.docx",
+            "url": "https://docs.google.com/document/d/1Vm0JWxI4rO7m-lU1jRr825cFdK20q6hx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1Zj7M-ms6EGLvS6K10TfvfuQMCFtDCFNg",
+            "title": "C673_功能定义_系统设置功能定义V8.1.docx",
+            "url": "https://docs.google.com/document/d/1Zj7M-ms6EGLvS6K10TfvfuQMCFtDCFNg/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1DPY06Y5wjh909qTQOEVelMQapNhVIISG",
+            "title": "C673_功能定义_系统设置功能定义V7.9.docx",
+            "url": "https://docs.google.com/document/d/1DPY06Y5wjh909qTQOEVelMQapNhVIISG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1qsI7B7VdtOAJfxmyleAayRmBNhNIlDAC",
+            "title": "C673_功能定义_系统设置功能定义V7.8.docx",
+            "url": "https://docs.google.com/document/d/1qsI7B7VdtOAJfxmyleAayRmBNhNIlDAC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1P2KUaDd1QvEUQtSAVLs2cQ4OctWsRtHt",
+            "title": "C673_功能定义_系统设置功能定义V7.6.docx",
+            "url": "https://docs.google.com/document/d/1P2KUaDd1QvEUQtSAVLs2cQ4OctWsRtHt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1VF83dS7NdJE7-5yxveNANPVv4yDxiXiq",
+            "title": "C673_功能定义_系统设置功能定义V7.3.docx",
+            "url": "https://docs.google.com/document/d/1VF83dS7NdJE7-5yxveNANPVv4yDxiXiq/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1A7O3Wm2SaoIuVUFpTCLDCoZrMXya1hm8",
+            "title": "C673_功能定义_系统设置功能定义V7.1.docx",
+            "url": "https://docs.google.com/document/d/1A7O3Wm2SaoIuVUFpTCLDCoZrMXya1hm8/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1hP1EYxfTUf8fVyt83JuQwgmU2T1r8MuK",
+            "title": "C673_功能定义_系统设置功能定义V7.0.docx",
+            "url": "https://docs.google.com/document/d/1hP1EYxfTUf8fVyt83JuQwgmU2T1r8MuK/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "11I4cAf09WoVIg4mxpRDf5ekIOPyOIGCw",
+            "title": "C673_功能定义_系统设置功能定义V6.7.docx",
+            "url": "https://docs.google.com/document/d/11I4cAf09WoVIg4mxpRDf5ekIOPyOIGCw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1uFu1tfV9UsSbF2Vn38v-GY4t3Yquoe7S",
+            "title": "C673_功能定义_系统设置功能定义V6.3.docx",
+            "url": "https://docs.google.com/document/d/1uFu1tfV9UsSbF2Vn38v-GY4t3Yquoe7S/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
+          {
+            "id": "1D3SqKTE4nZIb4b2J6m2LJg_-82KppXkQ",
+            "title": "C673_功能定义_系统设置功能定义V6.1.docx",
+            "url": "https://docs.google.com/document/d/1D3SqKTE4nZIb4b2J6m2LJg_-82KppXkQ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "C673系统设置功能定义",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本或不作为本票选定生效来源。"
+          },
           {
             "id": "1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW",
             "title": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx",
             "url": "https://docs.google.com/document/d/1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
             "disposition": "read",
             "source_ids": [
-              "drive-formal_definition_search-1"
+              "ihu-power-manager"
             ]
           }
         ]
       },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [
+          {
+            "source_candidate_id": "1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v",
+            "reference_text": "C673_显示协调功能定义V1.7.docx",
+            "status": "unavailable",
+            "reason": "Google Drive按完整名称检索未命中可读C673版本。",
+            "receipt_ids": [
+              "ADS-48969-formal_definition_search-reference-2-20260817-1807"
+            ]
+          }
+        ],
+        "version_families": [
+          {
+            "family": "C673系统设置功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48969-formal_definition_search-drive-20260817-1807"
+            ],
+            "selected_candidate_id": "1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v",
+            "selection_reason": "V9.2为检索到的最高版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
       "search_receipt_ids": [
-        "ADS-48969-formal_definition_search-20260817"
+        "ADS-48969-formal_definition_search-drive-20260817-1807",
+        "ADS-48969-formal_definition_search-reference-2-20260817-1807"
       ]
     },
     {
@@ -206,10 +423,10 @@
   ],
   "search_receipts": [
     {
-      "receipt_id": "ADS-48969-formal_definition_search-20260817",
+      "receipt_id": "ADS-48969-formal_definition_search-drive-20260817-1807",
       "provider": "google_drive",
       "check_id": "formal_definition_search",
-      "searched_at": "2026-08-17T06:26:30.958233+00:00",
+      "searched_at": "2026-08-17T18:07:00+08:00",
       "queries": [
         {
           "kind": "jira_key",
@@ -217,14 +434,116 @@
         },
         {
           "kind": "problem_concept",
-          "text": "一键下电二轮确认无法由语音完成"
+          "text": "一键下电后说确认"
         },
         {
           "kind": "module_artifact",
-          "text": "name contains '车辆下电'"
+          "text": "C673一键下电/车辆下电正式定义"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_系统设置功能定义V9.2.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673系统设置功能定义"
         }
       ],
       "results": [
+        {
+          "id": "1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v",
+          "title": "C673_功能定义_系统设置功能定义V9.2.docx",
+          "url": "https://docs.google.com/document/d/1xTXPJkgqPRsk3EuyF-GmZpLqRWqYQ39v/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+          "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+          "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1UreN91m697K-XyN-2bQG6JAU4sp1ZmYq",
+          "title": "C673_功能定义_系统设置功能定义V8.9.docx",
+          "url": "https://docs.google.com/document/d/1UreN91m697K-XyN-2bQG6JAU4sp1ZmYq/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1oaEhz6kSGQqABkNkbUEG68pdyR-nq2iH",
+          "title": "C673_功能定义_系统设置功能定义V8.6.docx",
+          "url": "https://docs.google.com/document/d/1oaEhz6kSGQqABkNkbUEG68pdyR-nq2iH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Vm0JWxI4rO7m-lU1jRr825cFdK20q6hx",
+          "title": "C673_功能定义_系统设置功能定义V8.4.docx",
+          "url": "https://docs.google.com/document/d/1Vm0JWxI4rO7m-lU1jRr825cFdK20q6hx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Zj7M-ms6EGLvS6K10TfvfuQMCFtDCFNg",
+          "title": "C673_功能定义_系统设置功能定义V8.1.docx",
+          "url": "https://docs.google.com/document/d/1Zj7M-ms6EGLvS6K10TfvfuQMCFtDCFNg/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1DPY06Y5wjh909qTQOEVelMQapNhVIISG",
+          "title": "C673_功能定义_系统设置功能定义V7.9.docx",
+          "url": "https://docs.google.com/document/d/1DPY06Y5wjh909qTQOEVelMQapNhVIISG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1qsI7B7VdtOAJfxmyleAayRmBNhNIlDAC",
+          "title": "C673_功能定义_系统设置功能定义V7.8.docx",
+          "url": "https://docs.google.com/document/d/1qsI7B7VdtOAJfxmyleAayRmBNhNIlDAC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1P2KUaDd1QvEUQtSAVLs2cQ4OctWsRtHt",
+          "title": "C673_功能定义_系统设置功能定义V7.6.docx",
+          "url": "https://docs.google.com/document/d/1P2KUaDd1QvEUQtSAVLs2cQ4OctWsRtHt/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1VF83dS7NdJE7-5yxveNANPVv4yDxiXiq",
+          "title": "C673_功能定义_系统设置功能定义V7.3.docx",
+          "url": "https://docs.google.com/document/d/1VF83dS7NdJE7-5yxveNANPVv4yDxiXiq/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1A7O3Wm2SaoIuVUFpTCLDCoZrMXya1hm8",
+          "title": "C673_功能定义_系统设置功能定义V7.1.docx",
+          "url": "https://docs.google.com/document/d/1A7O3Wm2SaoIuVUFpTCLDCoZrMXya1hm8/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1hP1EYxfTUf8fVyt83JuQwgmU2T1r8MuK",
+          "title": "C673_功能定义_系统设置功能定义V7.0.docx",
+          "url": "https://docs.google.com/document/d/1hP1EYxfTUf8fVyt83JuQwgmU2T1r8MuK/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "11I4cAf09WoVIg4mxpRDf5ekIOPyOIGCw",
+          "title": "C673_功能定义_系统设置功能定义V6.7.docx",
+          "url": "https://docs.google.com/document/d/11I4cAf09WoVIg4mxpRDf5ekIOPyOIGCw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1uFu1tfV9UsSbF2Vn38v-GY4t3Yquoe7S",
+          "title": "C673_功能定义_系统设置功能定义V6.3.docx",
+          "url": "https://docs.google.com/document/d/1uFu1tfV9UsSbF2Vn38v-GY4t3Yquoe7S/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1D3SqKTE4nZIb4b2J6m2LJg_-82KppXkQ",
+          "title": "C673_功能定义_系统设置功能定义V6.1.docx",
+          "url": "https://docs.google.com/document/d/1D3SqKTE4nZIb4b2J6m2LJg_-82KppXkQ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
         {
           "id": "1BqfYiK2JbIlzxE8OkgVjPSiQhOdeV1uW",
           "title": "车辆设置_更多_车窗止锁(无线解闭锁设置、车辆下电按键、车速上锁设置、车门一键解锁方式设置) — IHU_DHUPwrMgr.docx",
@@ -232,40 +551,31 @@
           "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         }
       ]
+    },
+    {
+      "receipt_id": "ADS-48969-formal_definition_search-reference-2-20260817-1807",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T18:05:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "C673_显示协调功能定义V1.7.docx"
+        }
+      ],
+      "results": []
     }
   ],
-  "inheritance_chains": [],
-  "conflict_resolution": "Jira测试预期和当前实现不作为formal_target；Alchemy只证明当前语义结果。存在车型范围、被动事件、车外白名单、可见UE或实车回归缺口，因此不做确定性关闭/转派，按规则降级。",
-  "voice_evidence": {
-    "applicable": true,
-    "availability": "complete",
-    "original_utterance": "一键下电；确认",
-    "alchemy_tested": true,
-    "alchemy_result": "classification: taskoperations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}]visible_result:\"\"llm_data_result:[] operations:[{\"meta_id\":1628,\"type\":\"vehicle:energy:battery:power_off\",\"index\":0,\"offline_first\":false,\"params\":{}}] visible_result:\"\" llm_data_result:[]",
-    "meta_id": "1628",
-    "standard_function": {
-      "status": "verified",
-      "name": "1511一键下电语音功能 / 车控 / 能量 / 电池设置否草稿2026-05-21 20:44:12查看说明编辑diff删除",
-      "assessment": "已在标准功能列表按MetaId实时查询。"
-    },
-    "project_function": {
-      "status": "verified",
-      "name": "24616一键下电语音功能 / 车控 / 能量 / 电池设置否已锁定继承未修改(1511)2026-05-21 20:44:12查看说明编辑diff删除",
-      "assessment": "已在深蓝项目功能列表按MetaId实时查询来源和状态。"
-    },
-    "unavailable_reason": "",
-    "next_action": "结合车辆下电弹窗交互核对二轮确认是否允许语音消费，并在实车验证确认事件与弹窗焦点。"
-  },
-  "decision": {
-    "status": "待复核",
-    "owner": "一键下电交互与语音执行负责人",
-    "text": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1628；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：一键下电交互与语音执行负责人结合车辆下电弹窗交互核对二轮确认是否允许语音消费，并在实车验证确认事件与弹窗焦点。"
-  },
   "run_context": {
-    "run_id": "bug-20260817T062113Z-d9348e86-0ae3-41f0-91cb-e43deb67a993",
+    "run_id": "20260817T180743+0800-rows-335-347-recheck",
     "operator_owner_id": "wu-you",
     "target_owner_id": "wu-you",
     "sheet_name": "bug",
     "sheet_row": 347
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "一键下电交互产品负责人",
+    "text": "结论：当前日志已确认1628后生成confirm_yes但链路落入llm:chat:claw；然而现行系统设置只引用显示协调定义，未取得一键下电弹窗允许语音二次确认的正式条款，状态为待复核。\n依据：ADS-48969及ADS-48964完整评论/reqId；Alchemy当前1628与确认轮；系统设置V9.2及IHU_DHUPwrMgr。\n处理：补齐一键下电二次确认的输入通道定义；若允许语音确认，由对话策略负责人移除claw干扰；一键下电交互产品负责人处理。"
   }
 }

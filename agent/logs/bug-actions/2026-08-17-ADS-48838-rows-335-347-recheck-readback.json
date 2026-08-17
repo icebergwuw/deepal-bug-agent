@@ -1,0 +1,257 @@
+{
+  "values": [
+    {
+      "formattedValue": "2026-08-17",
+      "userEnteredValue": {
+        "stringValue": "2026-08-17"
+      },
+      "effectiveValue": {
+        "stringValue": "2026-08-17"
+      }
+    },
+    {
+      "formattedValue": "ADS-48838｜车外语音，车外唤醒后query：关闭后视镜加热，执行和TTS无反应",
+      "userEnteredValue": {
+        "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48838\",\"ADS-48838｜车外语音，车外唤醒后query：关闭后视镜加热，执行和TTS无反应\")"
+      },
+      "effectiveValue": {
+        "stringValue": "ADS-48838｜车外语音，车外唤醒后query：关闭后视镜加热，执行和TTS无反应"
+      },
+      "hyperlink": "http://jira.i-tetris.com/browse/ADS-48838"
+    },
+    {
+      "formattedValue": "现象与实现：车外唤醒后关闭后视镜加热，NLU返回1361后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48838]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1361。[Alchemy当前结果]",
+      "userEnteredValue": {
+        "stringValue": "现象与实现：车外唤醒后关闭后视镜加热，NLU返回1361后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48838]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1361。[Alchemy当前结果]"
+      },
+      "effectiveValue": {
+        "stringValue": "现象与实现：车外唤醒后关闭后视镜加热，NLU返回1361后被车外区域过滤改写为-6，动作与TTS均为空。[Jira原票·ADS-48838]\n正式定义：后视镜、灯光属于车外车控范围；即使不在白名单也必须返回固定TTS，禁止静默。[车外语音PRD V1.8·功能列表/兜底回复]\nAlchemy：当前命中1361。[Alchemy当前结果]"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 53,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48838"
+            }
+          }
+        },
+        {
+          "startIndex": 69
+        },
+        {
+          "startIndex": 115,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 137
+        },
+        {
+          "startIndex": 157,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        },
+        {
+          "startIndex": 168
+        }
+      ]
+    },
+    {
+      "formattedValue": "结论：定义为车外语音过滤缺陷。NLU正确返回1361，但车外区域过滤改写为-6并清空动作/TTS；后视镜属于车外控制范围，且白名单外也必须固定回复，当前静默不符合定义。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：配置1361的车外执行边界；允许时下发动作，不允许时返回固定TTS，禁止静默；车外语音云端白名单负责人处理。",
+      "userEnteredValue": {
+        "stringValue": "结论：定义为车外语音过滤缺陷。NLU正确返回1361，但车外区域过滤改写为-6并清空动作/TTS；后视镜属于车外控制范围，且白名单外也必须固定回复，当前静默不符合定义。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：配置1361的车外执行边界；允许时下发动作，不允许时返回固定TTS，禁止静默；车外语音云端白名单负责人处理。"
+      },
+      "effectiveValue": {
+        "stringValue": "结论：定义为车外语音过滤缺陷。NLU正确返回1361，但车外区域过滤改写为-6并清空动作/TTS；后视镜属于车外控制范围，且白名单外也必须固定回复，当前静默不符合定义。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira最新链路日志。\n处理：配置1361的车外执行边界；允许时下发动作，不允许时返回固定TTS，禁止静默；车外语音云端白名单负责人处理。"
+      },
+      "textFormatRuns": [
+        {},
+        {
+          "startIndex": 121,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48838"
+            }
+          }
+        },
+        {
+          "startIndex": 131
+        }
+      ]
+    },
+    {
+      "formattedValue": "FALSE",
+      "userEnteredValue": {
+        "boolValue": false
+      },
+      "effectiveValue": {
+        "boolValue": false
+      },
+      "dataValidation": {
+        "condition": {
+          "type": "BOOLEAN"
+        },
+        "strict": true
+      }
+    },
+    {},
+    {
+      "formattedValue": "可转研发",
+      "userEnteredValue": {
+        "stringValue": "可转研发"
+      },
+      "effectiveValue": {
+        "stringValue": "可转研发"
+      }
+    },
+    {},
+    {
+      "formattedValue": "日志已定位ClientSession.filterForOutsideRegionTask把业务Meta改为-6。",
+      "userEnteredValue": {
+        "stringValue": "日志已定位ClientSession.filterForOutsideRegionTask把业务Meta改为-6。"
+      },
+      "effectiveValue": {
+        "stringValue": "日志已定位ClientSession.filterForOutsideRegionTask把业务Meta改为-6。"
+      }
+    },
+    {
+      "formattedValue": "Jira原票·ADS-48838\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果",
+      "userEnteredValue": {
+        "stringValue": "Jira原票·ADS-48838\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果"
+      },
+      "effectiveValue": {
+        "stringValue": "Jira原票·ADS-48838\n车外语音PRD V1.8·功能列表/兜底回复\nAlchemy当前结果"
+      },
+      "textFormatRuns": [
+        {
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/ADS-48838"
+            }
+          }
+        },
+        {
+          "startIndex": 16
+        },
+        {
+          "startIndex": 17,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+            }
+          }
+        },
+        {
+          "startIndex": 39
+        },
+        {
+          "startIndex": 40,
+          "format": {
+            "foregroundColor": {
+              "red": 0.06666667,
+              "green": 0.32941177,
+              "blue": 0.8
+            },
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              }
+            },
+            "link": {
+              "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
