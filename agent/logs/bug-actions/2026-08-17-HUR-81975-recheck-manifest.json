@@ -1,0 +1,53 @@
+{
+  "schema_version": 4,
+  "jira_key": "HUR-81975",
+  "comment_causality": "Jira描述及视频显示FM暂停时打开车外扬声器会恢复播放、关闭后再次暂停；张齐财、徐刚要求确认，易昕称‘需求如此’，冯智秀要求核查关闭车外扬声器是否有暂停媒体逻辑。评论没有给出可追溯的J90A-ER生效规则，不能替代正式定义。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "scope_checks": [
+    {
+      "source_id":"jira-actual","source":"HUR-81975 Jira当前页面及视频附件","source_location":"Jira字段、描述、全部评论；视频00:00-00:11","source_type":"jira_attachment","role":"implementation_actual","project_model":"J90A-ER / Android - SystemSettings","trigger":"FM暂停时切换车外扬声器开关","target_behavior":"打开开关时FM恢复播放，关闭开关时FM再次暂停。","match":"exact","reason":"证明当前实现事实，但不定义目标行为。"
+    },
+    {
+      "source_id":"j90a-current-function-list","source":"J90A-G -EL座舱功能清单V1.6 20260605","source_location":"车辆中心-系统设置·序号441/442（表内功能序号555/556）","source_type":"formal_config","role":"context_only","project_model":"J90A-G/ER与EL各配置车型","trigger":"系统设置中的车外扬声器开关","target_behavior":"配置车外扬声器及开关功能，引用J90A&J90AEU_功能定义_系统设置功能定义V2.1；不定义切换时FM状态。","match":"partial","material":true,"next_action":"补齐系统设置功能定义V2.1中车外扬声器与FM播放状态的项目规则；吴优处理。","reason":"证明功能在目标项目范围内，但不足以确定本票联动目标。"
+    },
+    {
+      "source_id":"j90a-old-function-list","source":"座舱项目功能清单-长马J90A-勾选V1.1.9(0920）","source_location":"系统设置·车外扬声器·开关，第436/437行","source_type":"formal_config","role":"context_only","project_model":"长马J90A历史功能清单","trigger":"系统设置中的车外扬声器开关","target_behavior":"仅列出开关功能并引用系统设置功能定义V1.9。","match":"partial","material":false,"reason":"历史版本仅佐证功能存在，不覆盖当前目标行为。"
+    }
+  ],
+  "evidence_profiles": ["visible_interaction"],
+  "evidence_profile_assessment": {
+    "general":{"applicable":false,"reason":"本票按可见交互/UI状态专项画像核验。"},
+    "voice":{"applicable":false,"reason":"不涉及语音识别、语义或播报能力。"},
+    "map_navigation":{"applicable":false,"reason":"不涉及地图导航。"},
+    "visible_interaction":{"applicable":true,"reason":"问题由系统设置开关操作触发并改变FM播放状态。"}
+  },
+  "required_evidence_checks": [
+    {
+      "check_id":"formal_config_search","status":"read","searched_at":"2026-08-17","search_location":"Google Drive：J90A当前及历史座舱功能清单","queries":[{"kind":"jira_key","text":"HUR-81975"},{"kind":"problem_concept","text":"J90A 车外扬声器 FM 播放状态"},{"kind":"module_artifact","text":"J90A 系统设置 功能定义 车外扬声器"}],"source_ids":["j90a-current-function-list","j90a-old-function-list"],"reason":"已读取当前V1.6及历史V1.1.9功能清单，确认车外扬声器开关在项目范围内，但清单不定义FM状态联动。","material":true,"next_action":"补齐系统设置功能定义V2.1中车外扬声器与FM播放状态的项目规则","candidate_audit":{"completed":true,"results_count":3,"candidates":[
+        {"id":"1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp","title":"J90A-G -EL座舱功能清单V1.6 20260605.xlsx","url":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit","disposition":"read","source_ids":["j90a-current-function-list"]},
+        {"id":"1d8n4yUmmZSp9vKNYYfBgMukKSy-yp2Nl","title":"座舱项目功能清单-长马J90A-勾选V1.1.9(0920）.xlsx","url":"https://drive.google.com/file/d/1d8n4yUmmZSp9vKNYYfBgMukKSy-yp2Nl/view","disposition":"read","source_ids":["j90a-old-function-list"]},
+        {"id":"11BVE5LWuc16yfMct6i9epUMeYJjnGqvx","title":"8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf","url":"https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view","disposition":"excluded","reason":"8295平台其他项目，未证明对J90A-ER的继承关系。"}
+      ]},"search_receipt_ids":["HUR-81975-formal-config-drive-20260817"]
+    },
+    {
+      "check_id":"interaction_or_ue_search","status":"not_found","searched_at":"2026-08-17","search_location":"Google Drive：J90A系统设置功能定义与交互/UE","queries":[{"kind":"jira_key","text":"HUR-81975"},{"kind":"problem_concept","text":"J90A 车外扬声器 FM 播放状态"},{"kind":"module_artifact","text":"J90A 系统设置功能定义 V2.1"}],"source_ids":[],"reason":"功能清单引用J90A&J90AEU_功能定义_系统设置功能定义V2.1，但当前Drive检索未找到可读正文；其余命中资料均为其他项目，不能定义本票目标。","material":true,"next_action":"补齐并核实J90A-ER生效系统设置定义中的FM状态联动规则；吴优处理。","candidate_audit":{"completed":true,"results_count":2,"candidates":[
+        {"id":"1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp","title":"J90A-G -EL座舱功能清单V1.6 20260605.xlsx","url":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit","disposition":"excluded","reason":"正式配置清单不是交互/UE正文，且未定义FM联动。"},
+        {"id":"11BVE5LWuc16yfMct6i9epUMeYJjnGqvx","title":"8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf","url":"https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view","disposition":"excluded","reason":"项目不匹配。"}
+      ]},"search_receipt_ids":["HUR-81975-interaction-ue-drive-20260817"]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira预期要求FM保持暂停，易昕评论称‘需求如此’，但均未给出可追溯的J90A-ER生效定义。当前功能清单只定义开关存在，无法确认FM状态应保持还是联动；因此保留待确认，不转研发。",
+  "voice_evidence": {"applicable": false},
+  "expected_behavior": {"status":"unresolved","reason":"缺少J90A-ER生效系统设置定义中车外扬声器开关与FM播放状态的联动条款。"},
+  "decision": {
+    "status":"待确认","owner":"吴优 / 系统设置产品负责人","implementation_source_ids":["jira-actual"],
+    "text":"结论：J90A-ER车外扬声器开关已纳入项目功能，但当前有效资料未定义切换开关时FM播放状态应保持还是联动，暂不转研发。\n依据：Jira视频·00:00-00:11；J90A-G/EL座舱功能清单V1.6·序号441/442。\n处理：补齐并核实车外扬声器开关与FM播放状态的项目规则后再定责；吴优负责处理。"
+  },
+  "run_context":{"run_id":"20260817T142703+0800-HUR-81975-recheck","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":186},
+  "search_receipts":[
+    {"receipt_id":"HUR-81975-formal-config-drive-20260817","provider":"google_drive","check_id":"formal_config_search","searched_at":"2026-08-17T14:10:00+08:00","queries":[{"kind":"jira_key","text":"HUR-81975"},{"kind":"problem_concept","text":"J90A 车外扬声器 FM 播放状态"},{"kind":"module_artifact","text":"J90A 系统设置 功能定义 车外扬声器"}],"results":[{"id":"1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp","title":"J90A-G -EL座舱功能清单V1.6 20260605.xlsx","url":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"id":"1d8n4yUmmZSp9vKNYYfBgMukKSy-yp2Nl","title":"座舱项目功能清单-长马J90A-勾选V1.1.9(0920）.xlsx","url":"https://drive.google.com/file/d/1d8n4yUmmZSp9vKNYYfBgMukKSy-yp2Nl/view","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"id":"11BVE5LWuc16yfMct6i9epUMeYJjnGqvx","title":"8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf","url":"https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view","mime_type":"application/pdf"}]},
+    {"receipt_id":"HUR-81975-interaction-ue-drive-20260817","provider":"google_drive","check_id":"interaction_or_ue_search","searched_at":"2026-08-17T14:15:00+08:00","queries":[{"kind":"jira_key","text":"HUR-81975"},{"kind":"problem_concept","text":"J90A 车外扬声器 FM 播放状态"},{"kind":"module_artifact","text":"J90A 系统设置功能定义 V2.1"}],"results":[{"id":"1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp","title":"J90A-G -EL座舱功能清单V1.6 20260605.xlsx","url":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"id":"11BVE5LWuc16yfMct6i9epUMeYJjnGqvx","title":"8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf","url":"https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view","mime_type":"application/pdf"}]}
+  ]
+}

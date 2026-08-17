@@ -1,0 +1,16 @@
+{
+  "schema_version":1,
+  "run_id":"20260817T142703+0800-HUR-81975-recheck",
+  "status":"complete",
+  "started_at":"2026-08-17T14:27:03+08:00",
+  "query_summary":"重检HUR-81975；命中吴优线上清单bug第186行；完成Jira字段、评论、视频附件及J90A当前/历史功能清单和交互定义检索",
+  "action_log":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-recheck.md",
+  "items":[{
+    "jira_key":"HUR-81975","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":186,
+    "manifest_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-recheck-manifest.json",
+    "readback_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-recheck-readback.json",
+    "validation_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-recheck-validation.json",
+    "readback_sha256":"05a8e4ccd9b69a4960849f2b4135bfdf54bfd870ae9e3dc020d55d2153b78504"
+  }],
+  "completed_at":"2026-08-17T14:34:32+08:00"
+}

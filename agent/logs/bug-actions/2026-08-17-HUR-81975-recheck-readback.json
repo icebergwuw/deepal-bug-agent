@@ -1,0 +1,14 @@
+{
+  "values": [
+    {"formattedValue":"2026-07-30","userEnteredValue":{"numberValue":46233}},
+    {"formattedValue":"HUR-81975｜【ER】【OTA1】【0408分支】【user】【系统设置】16:23 FM暂停中，打开车外扬声器会播放FM，关闭车外扬声器会暂停FM","userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81975\",\"HUR-81975｜【ER】【OTA1】【0408分支】【user】【系统设置】16:23 FM暂停中，打开车外扬声器会播放FM，关闭车外扬声器会暂停FM\")"}},
+    {"formattedValue":"现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira原票·描述/完整评论][Jira视频·00:00-00:11]\n证据：J90A-G/EL座舱功能清单V1.6序号441/442仅配置“车外扬声器/开关”，未定义切换时FM状态保持或联动规则；其引用的系统设置功能定义V2.1正文当前未读到。[J90A-G/EL座舱功能清单V1.6·序号441/442]","userEnteredValue":{"stringValue":"现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira原票·描述/完整评论][Jira视频·00:00-00:11]\n证据：J90A-G/EL座舱功能清单V1.6序号441/442仅配置“车外扬声器/开关”，未定义切换时FM状态保持或联动规则；其引用的系统设置功能定义V2.1正文当前未读到。[J90A-G/EL座舱功能清单V1.6·序号441/442]"},"textFormatRuns":[{}, {"startIndex":30,"format":{"link":{"uri":"http://jira.i-tetris.com/browse/HUR-81975"}}},{"startIndex":44},{"startIndex":46,"format":{"link":{"uri":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"}}},{"startIndex":64},{"startIndex":154,"format":{"link":{"uri":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"}}},{"startIndex":183}]},
+    {"formattedValue":"结论：J90A-ER车外扬声器开关已纳入项目功能，但当前有效资料未定义切换开关时FM播放状态应保持还是联动，暂不转研发。\n依据：Jira视频·00:00-00:11；J90A-G/EL座舱功能清单V1.6·序号441/442。\n处理：补齐并核实车外扬声器开关与FM播放状态的项目规则后再定责；吴优负责处理。","userEnteredValue":{"stringValue":"结论：J90A-ER车外扬声器开关已纳入项目功能，但当前有效资料未定义切换开关时FM播放状态应保持还是联动，暂不转研发。\n依据：Jira视频·00:00-00:11；J90A-G/EL座舱功能清单V1.6·序号441/442。\n处理：补齐并核实车外扬声器开关与FM播放状态的项目规则后再定责；吴优负责处理。"},"textFormatRuns":[{}, {"startIndex":64,"format":{"link":{"uri":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"}}},{"startIndex":82},{"startIndex":83,"format":{"link":{"uri":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"}}},{"startIndex":112}]},
+    {"formattedValue":"FALSE","userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+    {},
+    {"formattedValue":"待确认","userEnteredValue":{"stringValue":"待确认"}},
+    {},
+    {"formattedValue":"缺J90A-ER生效系统设置定义中车外扬声器开关与FM播放状态的联动规则；吴优补齐后复核。","userEnteredValue":{"stringValue":"缺J90A-ER生效系统设置定义中车外扬声器开关与FM播放状态的联动规则；吴优补齐后复核。"}},
+    {"formattedValue":"Jira原票·描述/完整评论\nJira视频·00:00-00:11\nJ90A-G/EL座舱功能清单V1.6·序号441/442","userEnteredValue":{"stringValue":"Jira原票·描述/完整评论\nJira视频·00:00-00:11\nJ90A-G/EL座舱功能清单V1.6·序号441/442"},"textFormatRuns":[{"format":{"link":{"uri":"http://jira.i-tetris.com/browse/HUR-81975"}}},{"startIndex":14},{"startIndex":15,"format":{"link":{"uri":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"}}},{"startIndex":33},{"startIndex":34,"format":{"link":{"uri":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"}}}]}
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "key": "HUR-81975",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 186,
+  "rowIndex": 185,
+  "previewFingerprint": "38c4a07b006b3f567e9f00f801bc346580f01169163aeaaa6c0d8254d46b20c2",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "事实：Jira要求外放喇叭与媒体音量联动；可读资料未找到音量通道、静音继承和记忆规则。",
+      "after": "现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira原票·描述/完整评论][Jira视频·00:00-00:11]\n证据：J90A-G/EL座舱功能清单V1.6序号441/442仅配置“车外扬声器/开关”，未定义切换时FM状态保持或联动规则；其引用的系统设置功能定义V2.1正文当前未读到。[J90A-G/EL座舱功能清单V1.6·序号441/442]",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81975",
+        "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4",
+        "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：音频产品负责人明确音源、通道、静音和上下电记忆规则后再转音频研发。",
+      "after": "结论：J90A-ER车外扬声器开关已纳入项目功能，但当前有效资料未定义切换开关时FM播放状态应保持还是联动，暂不转研发。\n依据：Jira视频·00:00-00:11；J90A-G/EL座舱功能清单V1.6·序号441/442。\n处理：补齐并核实车外扬声器开关与FM播放状态的项目规则后再定责；吴优负责处理。",
+      "links": [
+        "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4",
+        "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待确认",
+      "after": "待确认",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "缺音频通道、联动、静音和记忆规则",
+      "after": "缺J90A-ER生效系统设置定义中车外扬声器开关与FM播放状态的联动规则；吴优补齐后复核。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票\n工作说明资料路由",
+      "after": "Jira原票·描述/完整评论\nJira视频·00:00-00:11\nJ90A-G/EL座舱功能清单V1.6·序号441/442",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81975",
+        "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4",
+        "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira原票·描述/完整评论][Jira视频·00:00-00:11]\n证据：J90A-G/EL座舱功能清单V1.6序号441/442仅配置“车外扬声器/开关”，未定义切换时FM状态保持或联动规则；其引用的系统设置功能定义V2.1正文当前未读到。[J90A-G/EL座舱功能清单V1.6·序号441/442]",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81975",
+        "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4",
+        "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+      ]
+    },
+    "D": {
+      "visible": "结论：J90A-ER车外扬声器开关已纳入项目功能，但当前有效资料未定义切换开关时FM播放状态应保持还是联动，暂不转研发。\n依据：Jira视频·00:00-00:11；J90A-G/EL座舱功能清单V1.6·序号441/442。\n处理：补齐并核实车外扬声器开关与FM播放状态的项目规则后再定责；吴优负责处理。",
+      "links": [
+        "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4",
+        "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+      ]
+    },
+    "G": {
+      "visible": "待确认",
+      "links": []
+    },
+    "I": {
+      "visible": "缺J90A-ER生效系统设置定义中车外扬声器开关与FM播放状态的联动规则；吴优补齐后复核。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·描述/完整评论\nJira视频·00:00-00:11\nJ90A-G/EL座舱功能清单V1.6·序号441/442",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81975",
+        "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4",
+        "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 185,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira原票·描述/完整评论][Jira视频·00:00-00:11]\n证据：J90A-G/EL座舱功能清单V1.6序号441/442仅配置“车外扬声器/开关”，未定义切换时FM状态保持或联动规则；其引用的系统设置功能定义V2.1正文当前未读到。[J90A-G/EL座舱功能清单V1.6·序号441/442]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 30,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-81975"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 44
+                  },
+                  {
+                    "startIndex": 46,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 64
+                  },
+                  {
+                    "startIndex": 154,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 183
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 185,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：J90A-ER车外扬声器开关已纳入项目功能，但当前有效资料未定义切换开关时FM播放状态应保持还是联动，暂不转研发。\n依据：Jira视频·00:00-00:11；J90A-G/EL座舱功能清单V1.6·序号441/442。\n处理：补齐并核实车外扬声器开关与FM播放状态的项目规则后再定责；吴优负责处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 64,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 82
+                  },
+                  {
+                    "startIndex": 83,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 112
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 185,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待确认"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 185,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "缺J90A-ER生效系统设置定义中车外扬声器开关与FM播放状态的联动规则；吴优补齐后复核。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 185,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/完整评论\nJira视频·00:00-00:11\nJ90A-G/EL座舱功能清单V1.6·序号441/442"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-81975"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 33
+                  },
+                  {
+                    "startIndex": 34,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

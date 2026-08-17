@@ -1,0 +1,24 @@
+{
+  "C": {
+    "text": "现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira原票·描述/完整评论][Jira视频·00:00-00:11]\n证据：J90A-G/EL座舱功能清单V1.6序号441/442仅配置“车外扬声器/开关”，未定义切换时FM状态保持或联动规则；其引用的系统设置功能定义V2.1正文当前未读到。[J90A-G/EL座舱功能清单V1.6·序号441/442]",
+    "links": [
+      {"label":"Jira原票·描述/完整评论","url":"http://jira.i-tetris.com/browse/HUR-81975"},
+      {"label":"Jira视频·00:00-00:11","url":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"},
+      {"label":"J90A-G/EL座舱功能清单V1.6·序号441/442","url":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"}
+    ]
+  },
+  "D": {
+    "text": "结论：J90A-ER车外扬声器开关已纳入项目功能，但当前有效资料未定义切换开关时FM播放状态应保持还是联动，暂不转研发。\n依据：Jira视频·00:00-00:11；J90A-G/EL座舱功能清单V1.6·序号441/442。\n处理：补齐并核实车外扬声器开关与FM播放状态的项目规则后再定责；吴优负责处理。",
+    "links": [
+      {"label":"Jira视频·00:00-00:11","url":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"},
+      {"label":"J90A-G/EL座舱功能清单V1.6·序号441/442","url":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"}
+    ]
+  },
+  "G": "待确认",
+  "I": "缺J90A-ER生效系统设置定义中车外扬声器开关与FM播放状态的联动规则；吴优补齐后复核。",
+  "J": {"links":[
+    {"label":"Jira原票·描述/完整评论","url":"http://jira.i-tetris.com/browse/HUR-81975"},
+    {"label":"Jira视频·00:00-00:11","url":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"},
+    {"label":"J90A-G/EL座舱功能清单V1.6·序号441/442","url":"https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit"}
+  ]}
+}
