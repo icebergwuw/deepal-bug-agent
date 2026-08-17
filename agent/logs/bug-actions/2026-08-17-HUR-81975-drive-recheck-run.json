@@ -1,0 +1,16 @@
+{
+  "schema_version":1,
+  "run_id":"20260817T145602+0800-HUR-81975-drive-recheck",
+  "status":"complete",
+  "started_at":"2026-08-17T14:56:02+08:00",
+  "query_summary":"重新处理HUR-81975；深挖Drive并命中J90A EU&ER系统设置交互V2.3/V2.2/V2.1及J90A音频策略V0.5；拟修正bug第186行判断",
+  "action_log":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-drive-recheck.md",
+  "items":[{
+    "jira_key":"HUR-81975","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":186,
+    "manifest_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-drive-recheck-manifest.json",
+    "readback_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-drive-recheck-readback.json",
+    "validation_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-17-HUR-81975-drive-recheck-validation.json",
+    "readback_sha256":"7041469d19d4652e68c56d6b0f75cea8ecff0a4ff706ff04456e320d9477a687"
+  }],
+  "completed_at":"2026-08-17T15:04:07+08:00"
+}

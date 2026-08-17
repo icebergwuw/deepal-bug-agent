@@ -1,0 +1,24 @@
+{
+  "C": {
+    "text": "现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira视频·00:00-00:11]\n正式定义：P挡且有多媒体运行时，车外扬声器应后台播放该播放器声音；无多媒体运行时默认打开在线音乐并播放。[J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器]",
+    "links": [
+      {"label":"Jira视频·00:00-00:11","url":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"},
+      {"label":"J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器","url":"https://drive.google.com/file/d/1U47me5yfzhKXIFra2OLB7eXFcTwmsLvG/view"}
+    ]
+  },
+  "D": {
+    "text": "结论：定义为非问题。P挡打开车外扬声器时，应播放当前运行中的多媒体；FM由暂停恢复播放符合J90A EU&ER系统设置定义。\n依据：J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器；Jira视频·00:00-00:11。\n处理：按现行设计关闭本Bug；吴优负责处理。",
+    "links": [
+      {"label":"J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器","url":"https://drive.google.com/file/d/1U47me5yfzhKXIFra2OLB7eXFcTwmsLvG/view"},
+      {"label":"Jira视频·00:00-00:11","url":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"}
+    ]
+  },
+  "G": "可关闭",
+  "I": "关闭开关后的暂停行为不影响本票判断；本票“打开后仍保持暂停”的预期不成立。",
+  "J": {"links":[
+    {"label":"Jira原票·描述/完整评论","url":"http://jira.i-tetris.com/browse/HUR-81975"},
+    {"label":"Jira视频·00:00-00:11","url":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"},
+    {"label":"J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器","url":"https://drive.google.com/file/d/1U47me5yfzhKXIFra2OLB7eXFcTwmsLvG/view"},
+    {"label":"J90A音频策略V0.5·车外声道","url":"https://docs.google.com/document/d/1f535quySba6Z_VfL5NtdXVNuljT3dtsY/edit"}
+  ]}
+}

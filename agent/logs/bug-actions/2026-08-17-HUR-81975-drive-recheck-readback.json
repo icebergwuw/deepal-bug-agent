@@ -1,0 +1,14 @@
+{
+  "values":[
+    {"formattedValue":"2026-07-30","userEnteredValue":{"numberValue":46233}},
+    {"formattedValue":"HUR-81975｜【ER】【OTA1】【0408分支】【user】【系统设置】16:23 FM暂停中，打开车外扬声器会播放FM，关闭车外扬声器会暂停FM","userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81975\",\"HUR-81975｜【ER】【OTA1】【0408分支】【user】【系统设置】16:23 FM暂停中，打开车外扬声器会播放FM，关闭车外扬声器会暂停FM\")"}},
+    {"formattedValue":"现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira视频·00:00-00:11]\n正式定义：P挡且有多媒体运行时，车外扬声器应后台播放该播放器声音；无多媒体运行时默认打开在线音乐并播放。[J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器]","userEnteredValue":{"stringValue":"现象：FM暂停时打开车外扬声器会恢复播放，关闭后再次暂停。[Jira视频·00:00-00:11]\n正式定义：P挡且有多媒体运行时，车外扬声器应后台播放该播放器声音；无多媒体运行时默认打开在线音乐并播放。[J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器]"},"textFormatRuns":[{}, {"startIndex":30,"format":{"link":{"uri":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"}}},{"startIndex":48},{"startIndex":103,"format":{"link":{"uri":"https://drive.google.com/file/d/1U47me5yfzhKXIFra2OLB7eXFcTwmsLvG/view"}}},{"startIndex":134}]},
+    {"formattedValue":"结论：定义为非问题。P挡打开车外扬声器时，应播放当前运行中的多媒体；FM由暂停恢复播放符合J90A EU&ER系统设置定义。\n依据：J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器；Jira视频·00:00-00:11。\n处理：按现行设计关闭本Bug；吴优负责处理。","userEnteredValue":{"stringValue":"结论：定义为非问题。P挡打开车外扬声器时，应播放当前运行中的多媒体；FM由暂停恢复播放符合J90A EU&ER系统设置定义。\n依据：J90A EU&ER系统设置交互V2.3·4 声音/车外扬声器；Jira视频·00:00-00:11。\n处理：按现行设计关闭本Bug；吴优负责处理。"},"textFormatRuns":[{}, {"startIndex":66,"format":{"link":{"uri":"https://drive.google.com/file/d/1U47me5yfzhKXIFra2OLB7eXFcTwmsLvG/view"}}},{"startIndex":97},{"startIndex":98,"format":{"link":{"uri":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"}}},{"startIndex":116}]},
+    {"formattedValue":"FALSE","userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+    {},
+    {"formattedValue":"可关闭","userEnteredValue":{"stringValue":"可关闭"}},
+    {},
+    {"formattedValue":"关闭开关后的暂停行为不影响本票判断；本票“打开后仍保持暂停”的预期不成立。","userEnteredValue":{"stringValue":"关闭开关后的暂停行为不影响本票判断；本票“打开后仍保持暂停”的预期不成立。"}},
+    {"formattedValue":"Jira原票·描述/完整评论\nJira视频·00:00-00:11\nJ90A EU&ER系统设置交互V2.3·4 声音/车外扬声器\nJ90A音频策略V0.5·车外声道","userEnteredValue":{"stringValue":"Jira原票·描述/完整评论\nJira视频·00:00-00:11\nJ90A EU&ER系统设置交互V2.3·4 声音/车外扬声器\nJ90A音频策略V0.5·车外声道"},"textFormatRuns":[{"format":{"link":{"uri":"http://jira.i-tetris.com/browse/HUR-81975"}}},{"startIndex":14},{"startIndex":15,"format":{"link":{"uri":"http://jira.i-tetris.com/secure/attachment/4099157/video_1784017428.mp4"}}},{"startIndex":33},{"startIndex":34,"format":{"link":{"uri":"https://drive.google.com/file/d/1U47me5yfzhKXIFra2OLB7eXFcTwmsLvG/view"}}},{"startIndex":65},{"startIndex":66,"format":{"link":{"uri":"https://docs.google.com/document/d/1f535quySba6Z_VfL5NtdXVNuljT3dtsY/edit"}}}]}
+  ]
+}
