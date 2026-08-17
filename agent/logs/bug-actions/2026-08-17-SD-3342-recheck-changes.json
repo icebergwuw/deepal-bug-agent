@@ -1,0 +1,29 @@
+{
+  "C": {
+    "text": "现象：[Jira·描述及5条评论]记录BcuChrgMod=0x1-0x5变化时充电电流限值不刷新；监听修复已合入，但2026-05-27实车复测仍失败。\n正式定义：[C673车辆设置PRD V6.1·4.14.4/修订记录]只明确直流充电时充电电流选项整体置灰；[C673-G3/G5全功清单·第654/1609行]确认车型配置包含该能力。\n规则空白：[深蓝8295可见配置V4.9·第325-328/445-448行]只确认8A/10A/16A/32A四档，未定义BcuChrgMod=0x1-0x5与逐档置灰映射。",
+    "links": [
+      {"label": "Jira·描述及5条评论", "url": "http://jira.i-tetris.com/browse/SD-3342"},
+      {"label": "C673车辆设置PRD V6.1·4.14.4/修订记录", "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk"},
+      {"label": "C673-G3/G5全功清单·第654/1609行", "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"},
+      {"label": "深蓝8295可见配置V4.9·第325-328/445-448行", "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?usp=drivesdk"}
+    ]
+  },
+  "D": {
+    "text": "结论：当前资料只确认直流充电时充电电流选项整体置灰，以及页面存在8A/10A/16A/32A四档；未定义BcuChrgMod=0x1-0x5与逐档置灰的映射，当前不能直接转研发，状态为待复核。\n依据：C673车辆设置PRD V6.1·4.14.4/修订记录；C673-G3/G5全功清单·第654/1609行；Jira·描述及5条评论。\n处理：补齐BcuChrgMod=0x1-0x5与8A/10A/16A/32A的正式映射和动态置灰规则后再定责；车辆设置系统需求负责人处理。",
+    "links": [
+      {"label": "C673车辆设置PRD V6.1·4.14.4/修订记录", "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk"},
+      {"label": "C673-G3/G5全功清单·第654/1609行", "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"},
+      {"label": "Jira·描述及5条评论", "url": "http://jira.i-tetris.com/browse/SD-3342"}
+    ]
+  },
+  "G": "待复核",
+  "I": "唯一门槛：缺BcuChrgMod=0x1-0x5与四档电流的正式映射及动态置灰规则。",
+  "J": {
+    "links": [
+      {"label": "Jira原票·描述/5条评论/附件", "url": "http://jira.i-tetris.com/browse/SD-3342"},
+      {"label": "C673车辆设置PRD V6.1·4.14.4/修订记录", "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk"},
+      {"label": "C673-G3/G5全功清单·第654/1609行", "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"},
+      {"label": "深蓝8295可见配置V4.9·第325-328/445-448行", "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?usp=drivesdk"}
+    ]
+  }
+}

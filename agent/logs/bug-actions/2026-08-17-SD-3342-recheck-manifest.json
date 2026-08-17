@@ -1,0 +1,264 @@
+{
+  "schema_version": 4,
+  "jira_key": "SD-3342",
+  "comment_causality": "Jira描述要求发送BcuChrgMod=0x1-0x5后充电电流限值按信号置灰；姜秋月于2026-05-25说明弹窗未监听充电枪类型或限流值变化并提交修复，两个Gerrit变更已合入；张吉于2026-05-27在新版本实车复测仍失败，姜秋月随后要求确认是否应按充电状态反馈动态置灰超过限值的开关。正式C673车辆设置PRD只明确直流充电时充电电流选项整体置灰，项目清单与可见配置只确认8A、10A、16A、32A四档存在，未定义BcuChrgMod=0x1-0x5与逐档置灰的映射。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-3342 Jira原票",
+      "source_location": "描述·预置/步骤/预期/实际；姜秋月评论·2026-05-25 11:35；张吉评论·2026-05-27 17:58；姜秋月评论·2026-05-27 18:39；共5条评论、4个附件、2个已合入Gerrit变更",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 0309；C673-G3东南亚右舵500km Ultra泰国；Android - CarSettings",
+      "trigger": "弹窗显示期间发送BcuChrgMod=0x1-0x5并观察充电电流限值",
+      "target_behavior": "当前实现未随充电枪类型或限流值信号刷新弹窗；监听修复合入后，2026-05-27实车版本仍复测失败。",
+      "match": "exact",
+      "reason": "证明当前现象、修复尝试和复测结果，不单独定义BcuChrgMod映射。"
+    },
+    {
+      "source_id": "c673-vehicle-settings-prd-v61",
+      "source": "C673_功能定义_车辆设置功能定义V6.1",
+      "source_location": "修订记录·完全借用C385充放电能量管理并补充充电电流设置；目录/正文定位4.14.4·充电电流设置（逻辑页300）；修订记录条款‘在直流充电时，预约充电、充电时间、充电电流选项置灰显示’",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673车辆设置V6.1",
+      "trigger": "进入充放电设置并处于直流充电状态",
+      "target_behavior": "直流充电时充电电流选项应整体置灰。",
+      "match": "partial",
+      "reason": "同车型正式PRD定义了直流充电整体置灰，但没有定义BcuChrgMod=0x1-0x5与各电流档位的逐项映射。"
+    },
+    {
+      "source_id": "c673-g3g5-function-list-v17",
+      "source": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+      "source_location": "座舱全功清单·第654行‘充电电流限值’；第1609行‘（交流）充电电流设置’；G3/G5各配置列均标配",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-G3/G5",
+      "trigger": "车辆设置/充放电中的充电电流设置",
+      "target_behavior": "确认本票车型配置包含充电电流限值与交流充电电流设置能力。",
+      "match": "exact",
+      "reason": "证明功能配置范围，不定义信号值到UI置灰状态的映射。"
+    },
+    {
+      "source_id": "deepal-visible-controls-v49",
+      "source": "深蓝8295可见新表—给3D_V4.9",
+      "source_location": "车辆设置（座椅、充放电）·第325-328行、445-448行",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "深蓝8295车辆设置与充放电弹窗",
+      "trigger": "车辆设置能量页或充放电弹窗展示充电电流限值",
+      "target_behavior": "页面与弹窗存在8A、10A、16A、32A四个可见按钮。",
+      "match": "exact",
+      "reason": "证明当前可见控件集合，不定义BcuChrgMod驱动的置灰条件。"
+    },
+    {
+      "source_id": "bcuchrgmod-mapping-gap",
+      "source": "BcuChrgMod映射规则缺口",
+      "source_location": "2026-08-17已查Google Drive：C673车辆设置PRD V6.1、C673-G3/G5全功清单V1.7、深蓝8295可见配置V4.9；另以SD-3342和BcuChrgMod检索，仅命中负责人清单与质量审查记录",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 0309",
+      "trigger": "BcuChrgMod=0x1-0x5变化",
+      "target_behavior": "需要正式定义每个信号值对应的充电模式/最大允许电流，以及8A、10A、16A、32A哪些档位应可用或置灰。",
+      "match": "gap",
+      "material": true,
+      "reason": "缺口会直接改变测试预期、具体修复规则和最终责任方。",
+      "next_action": "车辆设置系统需求负责人补齐BcuChrgMod=0x1-0x5与8A/10A/16A/32A的正式映射及动态置灰规则。"
+    }
+  ],
+  "evidence_profiles": [
+    "general",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "需要核对同车型车辆设置与充放电正式产品定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不涉及ASR、NLU、VUI或语音执行。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图、POI、路线或导航。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题直接涉及充电电流限值按钮的显示与置灰状态。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive·同车型车辆设置正式定义精确检索并打开正文",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-3342"},
+        {"kind": "problem_concept", "text": "BcuChrgMod 充电电流限值 动态置灰"},
+        {"kind": "module_artifact", "text": "C673_功能定义_车辆设置功能定义V6.1"}
+      ],
+      "source_ids": ["c673-vehicle-settings-prd-v61"],
+      "reason": "已读同车型正式PRD；只命中直流充电整体置灰，未命中本票信号逐档映射。",
+      "material": true,
+      "next_action": "补齐BcuChrgMod正式映射后复核。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM",
+            "title": "C673_功能定义_车辆设置功能定义V6.1",
+            "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": ["c673-vehicle-settings-prd-v61"]
+          }
+        ]
+      },
+      "search_receipt_ids": ["SD-3342-formal-definition-drive-20260817"]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive·C673-G3/G5座舱全功清单精确检索并逐行核对",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-3342"},
+        {"kind": "problem_concept", "text": "充电电流限值 交流充电电流设置"},
+        {"kind": "module_artifact", "text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"}
+      ],
+      "source_ids": ["c673-g3g5-function-list-v17"],
+      "reason": "已确认G3/G5配置包含充电电流限值与交流充电电流设置。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "source_ids": ["c673-g3g5-function-list-v17"]
+          }
+        ]
+      },
+      "search_receipt_ids": ["SD-3342-formal-config-drive-20260817"]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive/Google Sheets·深蓝8295可见配置精确检索并读取控件行",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-3342"},
+        {"kind": "problem_concept", "text": "充电电流限值按钮 8A 10A 16A 32A"},
+        {"kind": "module_artifact", "text": "深蓝8295可见新表—给3D_V4.9"}
+      ],
+      "source_ids": ["deepal-visible-controls-v49"],
+      "reason": "已确认页面与弹窗的四个可见电流档位；资料未定义动态置灰条件，该缺口单独登记为material gap。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+            "title": "深蓝8295可见新表—给3D_V4.9",
+            "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": ["deepal-visible-controls-v49"]
+          }
+        ]
+      },
+      "search_receipt_ids": ["SD-3342-interaction-drive-20260817"]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "SD-3342-formal-definition-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T14:49:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-3342"},
+        {"kind": "problem_concept", "text": "BcuChrgMod 充电电流限值 动态置灰"},
+        {"kind": "module_artifact", "text": "C673_功能定义_车辆设置功能定义V6.1"}
+      ],
+      "results": [
+        {
+          "id": "1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM",
+          "title": "C673_功能定义_车辆设置功能定义V6.1",
+          "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-3342-formal-config-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-17T14:49:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-3342"},
+        {"kind": "problem_concept", "text": "充电电流限值 交流充电电流设置"},
+        {"kind": "module_artifact", "text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"}
+      ],
+      "results": [
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-3342-interaction-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-17T14:57:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-3342"},
+        {"kind": "problem_concept", "text": "充电电流限值按钮 8A 10A 16A 32A"},
+        {"kind": "module_artifact", "text": "深蓝8295可见新表—给3D_V4.9"}
+      ],
+      "results": [
+        {
+          "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+          "title": "深蓝8295可见新表—给3D_V4.9",
+          "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期和研发已合入监听修复证明团队按动态刷新方向实现，但二者不能替代正式信号映射。C673正式PRD的直流充电整体置灰与Jira提出的BcuChrgMod=0x1-0x5逐档置灰不是同一精度的目标；在映射缺口补齐前，不沿用原行‘可转研发’，降级为待复核。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "车辆设置系统需求负责人",
+    "implementation_source_ids": ["jira-actual"],
+    "text": "结论：当前资料只确认直流充电时充电电流选项整体置灰，以及页面存在8A/10A/16A/32A四档；未定义BcuChrgMod=0x1-0x5与逐档置灰的映射，当前不能直接转研发，状态为待复核。\n依据：C673车辆设置PRD V6.1·4.14.4/修订记录；C673-G3/G5全功清单·第654/1609行；Jira·描述及5条评论。\n处理：补齐BcuChrgMod=0x1-0x5与8A/10A/16A/32A的正式映射和动态置灰规则后再定责；车辆设置系统需求负责人处理。"
+  },
+  "run_context": {
+    "run_id": "20260817T150613+0800-SD-3342-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 67
+  }
+}

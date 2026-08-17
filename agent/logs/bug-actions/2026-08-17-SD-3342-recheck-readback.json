@@ -1,0 +1,61 @@
+{
+  "values": [
+    {"formattedValue": "2026-07-13", "userEnteredValue": {"stringValue": "2026-07-13"}},
+    {"formattedValue": "SD-3342｜发送BcuChrgMod=0x1-0x5充电app界面充电电流限值无变化", "userEnteredValue": {"formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-3342\",\"SD-3342｜发送BcuChrgMod=0x1-0x5充电app界面充电电流限值无变化\")"}},
+    {
+      "formattedValue": "现象：[Jira·描述及5条评论]记录BcuChrgMod=0x1-0x5变化时充电电流限值不刷新；监听修复已合入，但2026-05-27实车复测仍失败。\n正式定义：[C673车辆设置PRD V6.1·4.14.4/修订记录]只明确直流充电时充电电流选项整体置灰；[C673-G3/G5全功清单·第654/1609行]确认车型配置包含该能力。\n规则空白：[深蓝8295可见配置V4.9·第325-328/445-448行]只确认8A/10A/16A/32A四档，未定义BcuChrgMod=0x1-0x5与逐档置灰映射。",
+      "userEnteredValue": {"stringValue": "现象：[Jira·描述及5条评论]记录BcuChrgMod=0x1-0x5变化时充电电流限值不刷新；监听修复已合入，但2026-05-27实车复测仍失败。\n正式定义：[C673车辆设置PRD V6.1·4.14.4/修订记录]只明确直流充电时充电电流选项整体置灰；[C673-G3/G5全功清单·第654/1609行]确认车型配置包含该能力。\n规则空白：[深蓝8295可见配置V4.9·第325-328/445-448行]只确认8A/10A/16A/32A四档，未定义BcuChrgMod=0x1-0x5与逐档置灰映射。"},
+      "textFormatRuns": [
+        {},
+        {"startIndex": 4, "format": {"link": {"uri": "http://jira.i-tetris.com/browse/SD-3342"}}},
+        {"startIndex": 16},
+        {"startIndex": 84, "format": {"link": {"uri": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk"}}},
+        {"startIndex": 112},
+        {"startIndex": 133, "format": {"link": {"uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"}}},
+        {"startIndex": 158},
+        {"startIndex": 178, "format": {"link": {"uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?usp=drivesdk"}}},
+        {"startIndex": 210}
+      ]
+    },
+    {
+      "formattedValue": "结论：当前资料只确认直流充电时充电电流选项整体置灰，以及页面存在8A/10A/16A/32A四档；未定义BcuChrgMod=0x1-0x5与逐档置灰的映射，当前不能直接转研发，状态为待复核。\n依据：C673车辆设置PRD V6.1·4.14.4/修订记录；C673-G3/G5全功清单·第654/1609行；Jira·描述及5条评论。\n处理：补齐BcuChrgMod=0x1-0x5与8A/10A/16A/32A的正式映射和动态置灰规则后再定责；车辆设置系统需求负责人处理。",
+      "userEnteredValue": {"stringValue": "结论：当前资料只确认直流充电时充电电流选项整体置灰，以及页面存在8A/10A/16A/32A四档；未定义BcuChrgMod=0x1-0x5与逐档置灰的映射，当前不能直接转研发，状态为待复核。\n依据：C673车辆设置PRD V6.1·4.14.4/修订记录；C673-G3/G5全功清单·第654/1609行；Jira·描述及5条评论。\n处理：补齐BcuChrgMod=0x1-0x5与8A/10A/16A/32A的正式映射和动态置灰规则后再定责；车辆设置系统需求负责人处理。"},
+      "textFormatRuns": [
+        {},
+        {"startIndex": 100, "format": {"link": {"uri": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk"}}},
+        {"startIndex": 128},
+        {"startIndex": 129, "format": {"link": {"uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"}}},
+        {"startIndex": 154},
+        {"startIndex": 155, "format": {"link": {"uri": "http://jira.i-tetris.com/browse/SD-3342"}}},
+        {"startIndex": 167}
+      ]
+    },
+    {"formattedValue": "FALSE", "userEnteredValue": {"boolValue": false}, "dataValidation": {"condition": {"type": "BOOLEAN"}, "strict": true}},
+    {},
+    {"formattedValue": "待复核", "userEnteredValue": {"stringValue": "待复核"}},
+    {},
+    {"formattedValue": "唯一门槛：缺BcuChrgMod=0x1-0x5与四档电流的正式映射及动态置灰规则。", "userEnteredValue": {"stringValue": "唯一门槛：缺BcuChrgMod=0x1-0x5与四档电流的正式映射及动态置灰规则。"}},
+    {
+      "formattedValue": "Jira原票·描述/5条评论/附件\nC673车辆设置PRD V6.1·4.14.4/修订记录\nC673-G3/G5全功清单·第654/1609行\n深蓝8295可见配置V4.9·第325-328/445-448行",
+      "userEnteredValue": {"stringValue": "Jira原票·描述/5条评论/附件\nC673车辆设置PRD V6.1·4.14.4/修订记录\nC673-G3/G5全功清单·第654/1609行\n深蓝8295可见配置V4.9·第325-328/445-448行"},
+      "textFormatRuns": [
+        {"format": {"link": {"uri": "http://jira.i-tetris.com/browse/SD-3342"}}},
+        {"startIndex": 17},
+        {"startIndex": 18, "format": {"link": {"uri": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit?usp=drivesdk"}}},
+        {"startIndex": 46},
+        {"startIndex": 47, "format": {"link": {"uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"}}},
+        {"startIndex": 72},
+        {"startIndex": 73, "format": {"link": {"uri": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?usp=drivesdk"}}}
+      ]
+    }
+  ],
+  "sheet_metadata": {
+    "sheet_id": 2135747181,
+    "sheet_name": "bug",
+    "row_number": 67,
+    "row_pixel_size": 21,
+    "reference_row_146_pixel_size": 21,
+    "basic_filter_end_row": 353,
+    "auto_resize_request_applied": true
+  }
+}
