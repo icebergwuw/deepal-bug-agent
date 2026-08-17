@@ -1,0 +1,235 @@
+{
+  "key": "SD-5786",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 169,
+  "rowIndex": 168,
+  "previewFingerprint": "6555604d5142fc0bd54b918120b39a0353681845cfffb2dcf78c7444651b78ee",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "历史：命中1563后副驾仍执行。；当前：两个C673在线车型均误命中1026音乐；项目点26663缺位置前提。",
+      "links": []
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：可转语音；该原话当前误落音乐，且1563项目点缺少副驾位置前提，语音配置未满足正式执行策略。 依据：语音执行策略、Jira历史日志、Alchemy当前原话与1563项目功能点。 处理：C673语音配置负责人修正原话映射并为关闭开门预警补“仅主驾”前提，随后车端回归。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "可转语音",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "右舵主驾为右前，手动唤醒按项目规则处理；副驾不得执行。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·SD-5786",
+      "after": "Jira原票·SD-5786\n[产品文档] 语音功能执行策略 & TTS规范_20260302\nAlchemy当前原话与功能点",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5786",
+        "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "历史：命中1563后副驾仍执行。；当前：两个C673在线车型均误命中1026音乐；项目点26663缺位置前提。",
+      "links": []
+    },
+    "D": {
+      "visible": "结论：可转语音；该原话当前误落音乐，且1563项目点缺少副驾位置前提，语音配置未满足正式执行策略。 依据：语音执行策略、Jira历史日志、Alchemy当前原话与1563项目功能点。 处理：C673语音配置负责人修正原话映射并为关闭开门预警补“仅主驾”前提，随后车端回归。",
+      "links": []
+    },
+    "G": {
+      "visible": "可转语音",
+      "links": []
+    },
+    "I": {
+      "visible": "右舵主驾为右前，手动唤醒按项目规则处理；副驾不得执行。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·SD-5786\n[产品文档] 语音功能执行策略 & TTS规范_20260302\nAlchemy当前原话与功能点",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5786",
+        "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 168,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "历史：命中1563后副驾仍执行。；当前：两个C673在线车型均误命中1026音乐；项目点26663缺位置前提。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 168,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：可转语音；该原话当前误落音乐，且1563项目点缺少副驾位置前提，语音配置未满足正式执行策略。 依据：语音执行策略、Jira历史日志、Alchemy当前原话与1563项目功能点。 处理：C673语音配置负责人修正原话映射并为关闭开门预警补“仅主驾”前提，随后车端回归。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 168,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转语音"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 168,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "右舵主驾为右前，手动唤醒按项目规则处理；副驾不得执行。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 168,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·SD-5786\n[产品文档] 语音功能执行策略 & TTS规范_20260302\nAlchemy当前原话与功能点"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-5786"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 47
+                  },
+                  {
+                    "startIndex": 48,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

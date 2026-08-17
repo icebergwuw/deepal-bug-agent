@@ -1,0 +1,165 @@
+{
+  "schema_version": 4,
+  "jira_key": "SD-6012",
+  "comment_causality": "翻译表确认两个Key重复冲突；SD-6806完成删除需求，Gerrit已合入，当前Jira已关闭。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-6012 Jira原票",
+      "source_location": "当前字段、完整描述、附件元数据、全部评论和当前经办人",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-G",
+      "trigger": "翻译表确认两个Key重复冲突；SD-6806完成删除需求，Gerrit已合入，当前Jira已关闭。",
+      "target_behavior": "现象：search_keyword_no_result与search_result_null重复冲突。；证据：生效翻译表已登记删除，SD-6806与Gerrit合入完成。",
+      "match": "exact",
+      "reason": "证明当前问题事实，不单独定义产品目标。"
+    },
+    {
+      "source_id": "formal-target",
+      "source": "C673-G海外多语言翻译表",
+      "source_location": "变更记录·日期序号46241·删除search_keyword_no_result与search_result_null并关联SD-6012",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G高德地图",
+      "trigger": "重复Key冲突",
+      "target_behavior": "删除两个冲突Key并由唯一文案承接。",
+      "match": "exact",
+      "reason": "生效翻译表变更记录直接定义处理目标。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6012"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "ParkcityAmap重复Key删除"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G海外多语言翻译表"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "SD-6012-formal_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+            "title": "C673-G海外多语言翻译表",
+            "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-target"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "当前Jira、正式定义、关联票和当前平台结果分开记录；同范围正式目标优先。存在关键规则空白或当前结果冲突的票降级处理。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "吴优（多语言产品）",
+    "text": "结论：可关闭；冲突Key已按生效翻译表删除，关联需求与代码合入均完成。 依据：C673-G翻译表变更记录、SD-6806和Jira合入记录。 处理：吴优维持关闭，无需继续转研发。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 168
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-6012-formal_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6012"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "ParkcityAmap重复Key删除"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G海外多语言翻译表"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+          "title": "C673-G海外多语言翻译表",
+          "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "构建ParkcityAmap多语言资源",
+    "target_state": "仅保留唯一有效Key",
+    "intent_function_signal": "删除两个冲突Key",
+    "ui_tts_vehicle_behavior": "APK不再出现重复文案",
+    "boundary": "适用于C673-G当前翻译版本",
+    "source_ids": [
+      "formal-target"
+    ]
+  }
+}

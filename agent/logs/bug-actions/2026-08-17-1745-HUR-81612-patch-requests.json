@@ -1,0 +1,216 @@
+{
+  "key": "HUR-81612",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 79,
+  "rowIndex": 78,
+  "previewFingerprint": "5157ed753d1d46ec702729a8b8bd38f9965aa52d82c8a0f97735e34fa2f51c4f",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "现象：洗车模式英文显示为全部单词首字母大写。；证据：现行翻译一致，客户关联票最终确认“设计如此”。",
+      "links": []
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：设计如此；洗车模式当前英文Title Case与客户最终口径一致。 依据：客户HUR-49552最终结论、现行翻译资源与Jira时间线。 处理：吴优维持关闭，不要求情景模式研发改文案。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "设计如此",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "仅限当前客户确认的洗车模式文案；其他模式仍按各自生效翻译核对。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·HUR-81612",
+      "after": "Jira原票·HUR-81612\n马自达J90A_情景模式_需求文档_V2.4.pdf",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81612",
+        "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：洗车模式英文显示为全部单词首字母大写。；证据：现行翻译一致，客户关联票最终确认“设计如此”。",
+      "links": []
+    },
+    "D": {
+      "visible": "结论：设计如此；洗车模式当前英文Title Case与客户最终口径一致。 依据：客户HUR-49552最终结论、现行翻译资源与Jira时间线。 处理：吴优维持关闭，不要求情景模式研发改文案。",
+      "links": []
+    },
+    "G": {
+      "visible": "设计如此",
+      "links": []
+    },
+    "I": {
+      "visible": "仅限当前客户确认的洗车模式文案；其他模式仍按各自生效翻译核对。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·HUR-81612\n马自达J90A_情景模式_需求文档_V2.4.pdf",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81612",
+        "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 78,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：洗车模式英文显示为全部单词首字母大写。；证据：现行翻译一致，客户关联票最终确认“设计如此”。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 78,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：设计如此；洗车模式当前英文Title Case与客户最终口径一致。 依据：客户HUR-49552最终结论、现行翻译资源与Jira时间线。 处理：吴优维持关闭，不要求情景模式研发改文案。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 78,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "设计如此"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 78,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "仅限当前客户确认的洗车模式文案；其他模式仍按各自生效翻译核对。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 78,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-81612\n马自达J90A_情景模式_需求文档_V2.4.pdf"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-81612"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

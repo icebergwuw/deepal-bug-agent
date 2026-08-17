@@ -1,0 +1,165 @@
+{
+  "schema_version": 4,
+  "jira_key": "HUR-81612",
+  "comment_causality": "本票质疑洗车模式英文全部单词首字母大写；翻译与现行资源一致，客户关联票最终回复“设计如此”，Jira已关闭。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-81612 Jira原票",
+      "source_location": "当前字段、完整描述、附件元数据、全部评论和当前经办人",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "HUR/J90A",
+      "trigger": "本票质疑洗车模式英文全部单词首字母大写；翻译与现行资源一致，客户关联票最终回复“设计如此”，Jira已关闭。",
+      "target_behavior": "现象：洗车模式英文显示为全部单词首字母大写。；证据：现行翻译一致，客户关联票最终确认“设计如此”。",
+      "match": "exact",
+      "reason": "证明当前问题事实，不单独定义产品目标。"
+    },
+    {
+      "source_id": "customer-final",
+      "source": "客户HUR-49552最终结论",
+      "source_location": "关联客户票最终回复“设计如此”及当前翻译目标",
+      "source_type": "customer_final_decision",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "洗车模式英文标题显示",
+      "target_behavior": "保持当前Title Case文案。",
+      "match": "exact",
+      "reason": "客户最终结论直接定义本票目标。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81612"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "洗车模式英文标题大小写"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"
+        }
+      ],
+      "source_ids": [
+        "customer-final"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "HUR-81612-formal_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+            "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "customer-final"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "当前Jira、正式定义、关联票和当前平台结果分开记录；同范围正式目标优先。存在关键规则空白或当前结果冲突的票降级处理。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "设计如此",
+    "owner": "吴优（J90A产品）",
+    "text": "结论：设计如此；洗车模式当前英文Title Case与客户最终口径一致。 依据：客户HUR-49552最终结论、现行翻译资源与Jira时间线。 处理：吴优维持关闭，不要求情景模式研发改文案。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 79
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-81612-formal_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81612"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "洗车模式英文标题大小写"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+          "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+          "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "进入洗车模式相关页面",
+    "target_state": "显示现行英文标题",
+    "intent_function_signal": "使用客户确认的Title Case资源",
+    "ui_tts_vehicle_behavior": "不额外改写大小写",
+    "boundary": "仅限当前资源版本",
+    "source_ids": [
+      "customer-final"
+    ]
+  }
+}

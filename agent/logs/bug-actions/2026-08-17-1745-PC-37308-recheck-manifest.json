@@ -1,0 +1,236 @@
+{
+  "schema_version": 4,
+  "jira_key": "PC-37308",
+  "comment_causality": "日志证明续导恢复了原终点但未恢复途经点，后续新导航又替换路线；正式地图PRD只定义24小时内继续上次导航，未定义途经点持久化。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-37308 Jira原票",
+      "source_location": "当前字段、完整描述、附件元数据、全部评论和当前经办人",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "PC/C673地图",
+      "trigger": "日志证明续导恢复了原终点但未恢复途经点，后续新导航又替换路线；正式地图PRD只定义24小时内继续上次导航，未定义途经点持久化。",
+      "target_behavior": "现象：续导恢复原终点但未恢复途经点；之后新发起的人和导航替换了路线。；证据：地图PRD仅定义24小时续导提示，未定义途经点持久化。",
+      "match": "exact",
+      "reason": "证明当前问题事实，不单独定义产品目标。"
+    },
+    {
+      "source_id": "formal-context",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_location": "8.2续导提示·24小时内可继续上次导航，但未定义途经点持久化",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C385/C673地图",
+      "trigger": "含途经点路线下电后续导",
+      "target_behavior": "资料只定义继续上次导航，未定义途经点是否恢复。",
+      "match": "exact",
+      "reason": "已读正式主PRD并识别关键规则空白。"
+    },
+    {
+      "source_id": "map-special",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "source_location": "地图导航交互·与本票功能相关页面",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "PC/C673地图",
+      "trigger": "续导途经点持久化",
+      "target_behavior": "补充交互范围。",
+      "match": "exact",
+      "reason": "专项交互资料用于边界核对。"
+    }
+  ],
+  "evidence_profiles": [
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37308"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "续导途经点持久化"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "source_ids": [
+        "formal-context"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-37308-main_prd_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-context"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37308"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "续导途经点持久化"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "source_ids": [
+        "map-special"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-37308-special_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "map-special"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "当前Jira、正式定义、关联票和当前平台结果分开记录；同范围正式目标优先。存在关键规则空白或当前结果冲突的票降级处理。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优（地图产品）",
+    "text": "结论：待确认；现行续导定义未覆盖途经点持久化，不能按旧口径判符合预期。 依据：地图导航PRD 8.2与Jira完整日志。 处理：吴优补充“续导是否恢复途经点及顺序”的产品定义，随后由地图研发评估实现。"
+  },
+  "run_context": {
+    "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 72
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-37308-main_prd_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37308"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "续导途经点持久化"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-37308-special_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37308"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "续导途经点持久化"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ]
+}

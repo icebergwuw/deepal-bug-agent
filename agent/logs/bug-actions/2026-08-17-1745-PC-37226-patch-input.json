@@ -1,0 +1,60 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-37226\",\"PC-37226｜【主线】【User】15：31 query：把地图设置为全屏，tts回复暂不支持这样的说法\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-37226\",\"Jira原票·PC-37226\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：原8155版本回复不支持；当前PCBIGSUR在线已命中meta_id=3147。；证据：地图PRD定义全屏切换，关联Story PC-39291跟踪项目补齐。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待回归；全屏目标已明确且当前平台可命中3147，但原票8155项目需以PC-39291交付版本验证。 依据：地图PRD 1.2.4、Alchemy当前原话结果、关联Story PC-39291。 处理：PC语音配置与地图研发完成PC-39291后，在目标8155版本回归“导航全屏”。",
+      "links": []
+    },
+    "G": "待回归",
+    "I": "回归必须使用PC-39291目标8155版本，不能用8295结果替代。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·PC-37226",
+          "url": "http://jira.i-tetris.com/browse/PC-37226"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  }
+}

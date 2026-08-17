@@ -1,0 +1,216 @@
+{
+  "key": "PC-37308",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 72,
+  "rowIndex": 71,
+  "previewFingerprint": "72464491d491b5ded1d5cbd0c2bc71fe2c07d83c27dd47b4c18d902ca044ab81",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "现象：续导恢复原终点但未恢复途经点；之后新发起的人和导航替换了路线。；证据：地图PRD仅定义24小时续导提示，未定义途经点持久化。",
+      "links": []
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：待确认；现行续导定义未覆盖途经点持久化，不能按旧口径判符合预期。 依据：地图导航PRD 8.2与Jira完整日志。 处理：吴优补充“续导是否恢复途经点及顺序”的产品定义，随后由地图研发评估实现。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "待确认",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "定义需覆盖途经点数量、顺序、失效条件和新导航覆盖规则。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·PC-37308",
+      "after": "Jira原票·PC-37308\nMegatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-37308",
+        "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：续导恢复原终点但未恢复途经点；之后新发起的人和导航替换了路线。；证据：地图PRD仅定义24小时续导提示，未定义途经点持久化。",
+      "links": []
+    },
+    "D": {
+      "visible": "结论：待确认；现行续导定义未覆盖途经点持久化，不能按旧口径判符合预期。 依据：地图导航PRD 8.2与Jira完整日志。 处理：吴优补充“续导是否恢复途经点及顺序”的产品定义，随后由地图研发评估实现。",
+      "links": []
+    },
+    "G": {
+      "visible": "待确认",
+      "links": []
+    },
+    "I": {
+      "visible": "定义需覆盖途经点数量、顺序、失效条件和新导航覆盖规则。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·PC-37308\nMegatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-37308",
+        "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 71,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：续导恢复原终点但未恢复途经点；之后新发起的人和导航替换了路线。；证据：地图PRD仅定义24小时续导提示，未定义途经点持久化。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 71,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：待确认；现行续导定义未覆盖途经点持久化，不能按旧口径判符合预期。 依据：地图导航PRD 8.2与Jira完整日志。 处理：吴优补充“续导是否恢复途经点及顺序”的产品定义，随后由地图研发评估实现。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 71,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待确认"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 71,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "定义需覆盖途经点数量、顺序、失效条件和新导航覆盖规则。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 71,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·PC-37308\nMegatronix_地图导航产品需求文档_C385&C673_V6.1"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-37308"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 15
+                  },
+                  {
+                    "startIndex": 16,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

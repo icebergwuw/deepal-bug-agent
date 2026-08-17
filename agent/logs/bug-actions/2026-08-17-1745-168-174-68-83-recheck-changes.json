@@ -1,0 +1,290 @@
+{
+  "PC-37759": {
+    "C": {
+      "text": "现象：蓝牙已连接、通讯录未授权，语音仍能拨打10086。；证据：AIS电话PRD明确数字号码直拨不依赖联系人同步；Alchemy当前先命中1059再命中1061。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：非 Bug；蓝牙已连接时可直接拨打明确数字号码，通讯录未授权只限制联系人检索。 依据：AIS电话PRD直接号码条款、Jira当前现象、Alchemy原话测试与1061标准/项目功能点。 处理：吴优按非问题关闭本票，BTPhone无需改动。",
+      "links": []
+    },
+    "G": "非 Bug",
+    "I": "仅适用于已连接蓝牙且说出明确号码；联系人姓名拨打仍受通讯录授权约束。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·PC-37759",
+          "url": "http://jira.i-tetris.com/browse/PC-37759"
+        },
+        {
+          "label": "AIS_语音蓝牙电话产品需求文档_v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  },
+  "PC-37308": {
+    "C": {
+      "text": "现象：续导恢复原终点但未恢复途经点；之后新发起的人和导航替换了路线。；证据：地图PRD仅定义24小时续导提示，未定义途经点持久化。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待确认；现行续导定义未覆盖途经点持久化，不能按旧口径判符合预期。 依据：地图导航PRD 8.2与Jira完整日志。 处理：吴优补充“续导是否恢复途经点及顺序”的产品定义，随后由地图研发评估实现。",
+      "links": []
+    },
+    "G": "待确认",
+    "I": "定义需覆盖途经点数量、顺序、失效条件和新导航覆盖规则。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·PC-37308",
+          "url": "http://jira.i-tetris.com/browse/PC-37308"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        }
+      ]
+    }
+  },
+  "PC-37226": {
+    "C": {
+      "text": "现象：原8155版本回复不支持；当前PCBIGSUR在线已命中meta_id=3147。；证据：地图PRD定义全屏切换，关联Story PC-39291跟踪项目补齐。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待回归；全屏目标已明确且当前平台可命中3147，但原票8155项目需以PC-39291交付版本验证。 依据：地图PRD 1.2.4、Alchemy当前原话结果、关联Story PC-39291。 处理：PC语音配置与地图研发完成PC-39291后，在目标8155版本回归“导航全屏”。",
+      "links": []
+    },
+    "G": "待回归",
+    "I": "回归必须使用PC-39291目标8155版本，不能用8295结果替代。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·PC-37226",
+          "url": "http://jira.i-tetris.com/browse/PC-37226"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  },
+  "HUR-81733": {
+    "C": {
+      "text": "现象：历史车端命中1209但literal为中文；关联票曾20次通过。；当前：HUR在线“I’m hungry”返回1919不支持，结果再次异常。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待复核；关联票虽已完成，但HUR当前原话仍返回1919不支持，不能关闭。 依据：HUR-80390回归记录、Jira完整时间线、Alchemy当前原话结果。 处理：HUR语音配置负责人核对meta_id=1209项目继承与英语语料，下发后复测弹窗文言。",
+      "links": []
+    },
+    "G": "待复核",
+    "I": "需同时验证意图命中、餐厅literal语言和弹窗展示语言。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·HUR-81733",
+          "url": "http://jira.i-tetris.com/browse/HUR-81733"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  },
+  "HUR-81612": {
+    "C": {
+      "text": "现象：洗车模式英文显示为全部单词首字母大写。；证据：现行翻译一致，客户关联票最终确认“设计如此”。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：设计如此；洗车模式当前英文Title Case与客户最终口径一致。 依据：客户HUR-49552最终结论、现行翻译资源与Jira时间线。 处理：吴优维持关闭，不要求情景模式研发改文案。",
+      "links": []
+    },
+    "G": "设计如此",
+    "I": "仅限当前客户确认的洗车模式文案；其他模式仍按各自生效翻译核对。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·HUR-81612",
+          "url": "http://jira.i-tetris.com/browse/HUR-81612"
+        },
+        {
+          "label": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+          "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+        }
+      ]
+    }
+  },
+  "HUR-81081": {
+    "C": {
+      "text": "现象：通讯录未授权后，切换语言或回主页都会再次弹同步失败。；证据：J90A电话定义只规定首次未授权提示3秒，未覆盖页面/语言切换重触发。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待确认；未授权失败提示有定义，但切换语言/回主页是否重触发同步未定义。 依据：J90A蓝牙电话V0.5数据同步章节与Jira复现。 处理：吴优补充“仅用户主动同步或蓝牙重连可重触发”的边界，BTPhone研发按新定义修复并回归。",
+      "links": []
+    },
+    "G": "待确认",
+    "I": "需定义主动同步、蓝牙重连、语言切换、应用前后台四类触发。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·HUR-81081",
+          "url": "http://jira.i-tetris.com/browse/HUR-81081"
+        },
+        {
+          "label": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+        }
+      ]
+    }
+  },
+  "SD-6012": {
+    "C": {
+      "text": "现象：search_keyword_no_result与search_result_null重复冲突。；证据：生效翻译表已登记删除，SD-6806与Gerrit合入完成。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：可关闭；冲突Key已按生效翻译表删除，关联需求与代码合入均完成。 依据：C673-G翻译表变更记录、SD-6806和Jira合入记录。 处理：吴优维持关闭，无需继续转研发。",
+      "links": []
+    },
+    "G": "可关闭",
+    "I": "后续回归确认APK不再引用已删除Key。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·SD-6012",
+          "url": "http://jira.i-tetris.com/browse/SD-6012"
+        },
+        {
+          "label": "C673-G海外多语言翻译表",
+          "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit?usp=drivesdk"
+        }
+      ]
+    }
+  },
+  "SD-5786": {
+    "C": {
+      "text": "历史：命中1563后副驾仍执行。；当前：两个C673在线车型均误命中1026音乐；项目点26663缺位置前提。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：可转语音；该原话当前误落音乐，且1563项目点缺少副驾位置前提，语音配置未满足正式执行策略。 依据：语音执行策略、Jira历史日志、Alchemy当前原话与1563项目功能点。 处理：C673语音配置负责人修正原话映射并为关闭开门预警补“仅主驾”前提，随后车端回归。",
+      "links": []
+    },
+    "G": "可转语音",
+    "I": "右舵主驾为右前，手动唤醒按项目规则处理；副驾不得执行。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·SD-5786",
+          "url": "http://jira.i-tetris.com/browse/SD-5786"
+        },
+        {
+          "label": "[产品文档] 语音功能执行策略 & TTS规范_20260302",
+          "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  },
+  "SD-5517": {
+    "C": {
+      "text": "历史：命中1007后返回“页面已打开”通用话术。；当前：两个C673在线车型均误命中1026音乐；1007项目点支持company。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：可转语音；公司位置能力已存在，但马来语原话当前误落音乐，项目语料与目标TTS未闭环。 依据：地图个人收藏定义、Jira历史1007日志、Alchemy当前原话与1007项目功能点。 处理：C673海外语音配置负责人将原话映射至1007并补马来语公司位置TTS，地图侧按company返回收藏地址。",
+      "links": []
+    },
+    "G": "可转语音",
+    "I": "公司地址未设置时应返回未设置提示，不得进入音乐或手动操作兜底。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·SD-5517",
+          "url": "http://jira.i-tetris.com/browse/SD-5517"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  },
+  "SD-5515": {
+    "C": {
+      "text": "历史：命中1006但返回中文地址，最终只播OK。；当前：两个C673在线车型均误命中1026音乐；1006项目点存在。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：可转语音；当前位置能力已存在，但马来语原话当前误落音乐，项目映射和马来语地址TTS均需补齐。 依据：地图当前位置定义、Jira历史1006日志、Alchemy当前原话与1006项目功能点。 处理：C673海外语音配置负责人恢复1006映射并补马来语目标TTS；地图侧返回可本地化地址字段后回归。",
+      "links": []
+    },
+    "G": "可转语音",
+    "I": "地址数据需可本地化；定位失败时使用马来语失败提示。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·SD-5515",
+          "url": "http://jira.i-tetris.com/browse/SD-5515"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  },
+  "PC-38360": {
+    "C": {
+      "text": "附件对比：实际图仅详细/简洁/静音，目标图增加智能播报。；证据：当前地图交互V0.6已包含四项；原票缺修复版本回归记录。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待回归；当前交互V0.6已明确四项播报模式，Jira附件实际界面缺“智能播报”。 依据：Jira两张附件对比、地图交互V0.6与PC-36946。 处理：地图UI研发按四段控件实现DP4.0目标版本，测试回归选项、选中态和切换结果。",
+      "links": []
+    },
+    "G": "待回归",
+    "I": "回归需验证四项文案、布局、选中态及模式切换，不只检查静态截图。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·PC-38360",
+          "url": "http://jira.i-tetris.com/browse/PC-38360"
+        },
+        {
+          "label": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+        }
+      ]
+    }
+  }
+}

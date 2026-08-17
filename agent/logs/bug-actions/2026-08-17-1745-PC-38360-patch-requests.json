@@ -1,0 +1,216 @@
+{
+  "key": "PC-38360",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 174,
+  "rowIndex": 173,
+  "previewFingerprint": "a87ef2c735900313ffa5617103cc93fffbe570efacbb370085423878d188f79d",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "附件对比：实际图仅详细/简洁/静音，目标图增加智能播报。；证据：当前地图交互V0.6已包含四项；原票缺修复版本回归记录。",
+      "links": []
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：待回归；当前交互V0.6已明确四项播报模式，Jira附件实际界面缺“智能播报”。 依据：Jira两张附件对比、地图交互V0.6与PC-36946。 处理：地图UI研发按四段控件实现DP4.0目标版本，测试回归选项、选中态和切换结果。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "待回归",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "回归需验证四项文案、布局、选中态及模式切换，不只检查静态截图。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·PC-38360",
+      "after": "Jira原票·PC-38360\nC385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38360",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "附件对比：实际图仅详细/简洁/静音，目标图增加智能播报。；证据：当前地图交互V0.6已包含四项；原票缺修复版本回归记录。",
+      "links": []
+    },
+    "D": {
+      "visible": "结论：待回归；当前交互V0.6已明确四项播报模式，Jira附件实际界面缺“智能播报”。 依据：Jira两张附件对比、地图交互V0.6与PC-36946。 处理：地图UI研发按四段控件实现DP4.0目标版本，测试回归选项、选中态和切换结果。",
+      "links": []
+    },
+    "G": {
+      "visible": "待回归",
+      "links": []
+    },
+    "I": {
+      "visible": "回归需验证四项文案、布局、选中态及模式切换，不只检查静态截图。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·PC-38360\nC385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38360",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 173,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "附件对比：实际图仅详细/简洁/静音，目标图增加智能播报。；证据：当前地图交互V0.6已包含四项；原票缺修复版本回归记录。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 173,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：待回归；当前交互V0.6已明确四项播报模式，Jira附件实际界面缺“智能播报”。 依据：Jira两张附件对比、地图交互V0.6与PC-36946。 处理：地图UI研发按四段控件实现DP4.0目标版本，测试回归选项、选中态和切换结果。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 173,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待回归"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 173,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "回归需验证四项文案、布局、选中态及模式切换，不只检查静态截图。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 173,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·PC-38360\nC385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38360"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 15
+                  },
+                  {
+                    "startIndex": 16,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

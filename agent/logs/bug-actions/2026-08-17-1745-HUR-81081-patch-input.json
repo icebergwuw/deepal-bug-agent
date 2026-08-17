@@ -1,0 +1,56 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81081\",\"HUR-81081｜【ER】【OTA1】【0408分支】【user】【蓝牙电话】14:38 蓝牙连接，通讯录未同步，切换语言回到主页，都会弹窗提示同步失败\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81081\",\"Jira原票·HUR-81081\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：通讯录未授权后，切换语言或回主页都会再次弹同步失败。；证据：J90A电话定义只规定首次未授权提示3秒，未覆盖页面/语言切换重触发。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待确认；未授权失败提示有定义，但切换语言/回主页是否重触发同步未定义。 依据：J90A蓝牙电话V0.5数据同步章节与Jira复现。 处理：吴优补充“仅用户主动同步或蓝牙重连可重触发”的边界，BTPhone研发按新定义修复并回归。",
+      "links": []
+    },
+    "G": "待确认",
+    "I": "需定义主动同步、蓝牙重连、语言切换、应用前后台四类触发。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·HUR-81081",
+          "url": "http://jira.i-tetris.com/browse/HUR-81081"
+        },
+        {
+          "label": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+        }
+      ]
+    }
+  }
+}

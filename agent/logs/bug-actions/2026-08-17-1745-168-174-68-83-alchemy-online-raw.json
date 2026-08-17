@@ -1,0 +1,22 @@
+{
+  "tested_at": "2026-08-17T17:20:00+08:00",
+  "platform": "Alchemy在线对话",
+  "operator": "you.wu",
+  "tests": [
+    {"jira_key": "PC-37226", "model": "PCBIGSUR", "utterance": "导航全屏", "classification": "task", "meta_id": 3147, "type": "navi:ctrl:overview", "result": "命中导航全屏控制"},
+    {"jira_key": "PC-37759", "model": "PCBIGSUR", "utterance": "我要打电话", "classification": "task", "meta_id": 1059, "type": "phone:call", "result": "进入拨号多轮"},
+    {"jira_key": "PC-37759", "model": "PCBIGSUR", "utterance": "10086", "classification": "task", "meta_id": 1061, "type": "phone:call", "params": {"with_number": "10086"}, "result": "命中数字号码拨打"},
+    {"jira_key": "HUR-81733", "model": "HUR", "utterance": "I'm hungry", "classification": "task", "meta_id": 1919, "type": "common:func:not:supported", "result": "当前返回不支持"},
+    {"jira_key": "SD-5786", "models": ["C673DA", "C673-ICA-ED29"], "utterance": "Close the door opening warning", "classification": "task", "meta_id": 1026, "type": "media:music:play", "result": "两个可选C673车型均误落音乐"},
+    {"jira_key": "SD-5517", "models": ["C673DA", "C673-ICA-ED29"], "utterance": "Di manakah lokasi syarikat saya", "classification": "task", "meta_id": 1026, "type": "media:music:play", "result": "两个可选C673车型均误落音乐"},
+    {"jira_key": "SD-5515", "models": ["C673DA", "C673-ICA-ED29"], "utterance": "Di manakah saya sekarang", "classification": "task", "meta_id": 1026, "type": "media:music:play", "result": "两个可选C673车型均误落音乐"}
+  ],
+  "project_function_checks": [
+    {"meta_id": 1061, "standard_id": 1341, "project_id": 24489, "name": "打电话给【号码】", "project_status": "已下发"},
+    {"meta_id": 3147, "project_id": 27186, "name": "应用全屏", "project_status": "已锁定"},
+    {"meta_id": 1563, "project_id": 26663, "name": "关闭开门预警", "finding": "项目点缺少特定位置不支持条件"},
+    {"meta_id": 1007, "project_id": 24316, "name": "查询个人收藏"},
+    {"meta_id": 1006, "project_id": 24317, "name": "查询当前位置"},
+    {"meta_id": 1209, "finding": "仅读取到深蓝项目点，未取得HUR项目点正文"}
+  ]
+}

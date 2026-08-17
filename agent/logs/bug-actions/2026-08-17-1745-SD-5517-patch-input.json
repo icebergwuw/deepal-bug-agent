@@ -1,0 +1,60 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-30"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-5517\",\"SD-5517｜[内测问题][镁佳]【SWA.2.94】[C673-G3/G5][0309][C673-G3 东南亚-右 500km Ultra 港澳][14扬]【语音-马来语】【高德地图】【STG】query：Di manakah lokasi syarikat saya，回复页面已打开。您现在可以进行手动操作。\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-5517\",\"Jira原票·SD-5517\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "历史：命中1007后返回“页面已打开”通用话术。；当前：两个C673在线车型均误命中1026音乐；1007项目点支持company。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：可转语音；公司位置能力已存在，但马来语原话当前误落音乐，项目语料与目标TTS未闭环。 依据：地图个人收藏定义、Jira历史1007日志、Alchemy当前原话与1007项目功能点。 处理：C673海外语音配置负责人将原话映射至1007并补马来语公司位置TTS，地图侧按company返回收藏地址。",
+      "links": []
+    },
+    "G": "可转语音",
+    "I": "公司地址未设置时应返回未设置提示，不得进入音乐或手动操作兜底。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·SD-5517",
+          "url": "http://jira.i-tetris.com/browse/SD-5517"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  }
+}

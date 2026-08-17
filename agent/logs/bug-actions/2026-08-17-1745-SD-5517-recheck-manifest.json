@@ -1,0 +1,434 @@
+{
+  "schema_version": 4,
+  "jira_key": "SD-5517",
+  "comment_causality": "历史车端命中1007后返回手动操作通用话术；当前两个C673在线车型进一步误落1026音乐，1007项目点虽存在但马来语映射/TTS未闭环。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-5517 Jira原票",
+      "source_location": "当前字段、完整描述、附件元数据、全部评论和当前经办人",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-G",
+      "trigger": "历史车端命中1007后返回手动操作通用话术；当前两个C673在线车型进一步误落1026音乐，1007项目点虽存在但马来语映射/TTS未闭环。",
+      "target_behavior": "历史：命中1007后返回“页面已打开”通用话术。；当前：两个C673在线车型均误命中1026音乐；1007项目点支持company。",
+      "match": "exact",
+      "reason": "证明当前问题事实，不单独定义产品目标。"
+    },
+    {
+      "source_id": "formal-target",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_location": "个人收藏/公司地址查询能力·按company收藏返回位置",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673-G地图",
+      "trigger": "Di manakah lokasi syarikat saya",
+      "target_behavior": "查询公司收藏地址并返回位置结果。",
+      "match": "exact",
+      "reason": "正式地图能力定义目标功能。"
+    },
+    {
+      "source_id": "map-special",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "source_location": "地图导航交互·与本票功能相关页面",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "C673-G",
+      "trigger": "马来语查询公司位置",
+      "target_behavior": "补充交互范围。",
+      "match": "exact",
+      "reason": "专项交互资料用于边界核对。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "在线对话·C673-G·原话“Di manakah lokasi syarikat saya”·当前C673DA与C673-ICA-ED29当前均误命中meta_id 1026音乐播放",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "C673-G",
+      "trigger": "Di manakah lokasi syarikat saya",
+      "target_behavior": "C673DA与C673-ICA-ED29当前均误命中meta_id 1026音乐播放",
+      "match": "exact",
+      "reason": "证明本轮当前语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能·查询个人收藏",
+      "source_location": "标准功能·查询个人收藏·meta_id 1007",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "C673-G",
+      "trigger": "Di manakah lokasi syarikat saya",
+      "target_behavior": "查询个人收藏",
+      "match": "exact",
+      "reason": "核对标准语义功能点。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy项目功能·查询个人收藏",
+      "source_location": "深蓝项目功能·查询个人收藏·meta_id 1007",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "C673-G",
+      "trigger": "Di manakah lokasi syarikat saya",
+      "target_behavior": "查询个人收藏",
+      "match": "exact",
+      "reason": "核对项目继承和下发状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5517"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "马来语查询公司位置"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "SD-5517-formal_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-target"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5517"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "马来语查询公司位置"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "SD-5517-main_prd_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-target"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5517"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "马来语查询公司位置"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "source_ids": [
+        "map-special"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "SD-5517-special_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "map-special"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "Di manakah lokasi syarikat saya"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1007 查询个人收藏"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1007 查询个人收藏"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-G"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "当前Jira、正式定义、关联票和当前平台结果分开记录；同范围正式目标优先。存在关键规则空白或当前结果冲突的票降级处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "Di manakah lokasi syarikat saya",
+    "alchemy_result": "C673DA与C673-ICA-ED29当前均误命中meta_id 1026音乐播放",
+    "meta_id": "1007",
+    "standard_function": {
+      "status": "verified",
+      "name": "查询个人收藏",
+      "source": "Alchemy标准功能",
+      "assessment": "已核对标准功能名称、meta_id与所属功能分类。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "查询个人收藏",
+      "source": "Alchemy深蓝项目功能",
+      "assessment": "已核对项目功能名称、meta_id、继承状态和当前下发状态。"
+    }
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "C673海外语音配置负责人",
+    "text": "结论：可转语音；公司位置能力已存在，但马来语原话当前误落音乐，项目语料与目标TTS未闭环。 依据：地图个人收藏定义、Jira历史1007日志、Alchemy当前原话与1007项目功能点。 处理：C673海外语音配置负责人将原话映射至1007并补马来语公司位置TTS，地图侧按company返回收藏地址。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 170
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-5517-formal_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5517"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "马来语查询公司位置"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-5517-main_prd_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5517"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "马来语查询公司位置"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-5517-special_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5517"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "马来语查询公司位置"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "马来语询问公司位置",
+    "target_state": "返回公司收藏位置或未设置提示",
+    "intent_function_signal": "命中1007并携带poi_ref=company",
+    "ui_tts_vehicle_behavior": "使用马来语目标TTS",
+    "boundary": "不进入页面已打开或音乐兜底",
+    "source_ids": [
+      "formal-target"
+    ]
+  }
+}

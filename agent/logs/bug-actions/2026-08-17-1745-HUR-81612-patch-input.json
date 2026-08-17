@@ -1,0 +1,56 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81612\",\"HUR-81612｜【CMA】新鲜空气模式的文言改好了，但是之前和别的模式一致的洗车模式的文言又变成全部单词首字母大写了\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81612\",\"Jira原票·HUR-81612\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：洗车模式英文显示为全部单词首字母大写。；证据：现行翻译一致，客户关联票最终确认“设计如此”。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：设计如此；洗车模式当前英文Title Case与客户最终口径一致。 依据：客户HUR-49552最终结论、现行翻译资源与Jira时间线。 处理：吴优维持关闭，不要求情景模式研发改文案。",
+      "links": []
+    },
+    "G": "设计如此",
+    "I": "仅限当前客户确认的洗车模式文案；其他模式仍按各自生效翻译核对。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·HUR-81612",
+          "url": "http://jira.i-tetris.com/browse/HUR-81612"
+        },
+        {
+          "label": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+          "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+        }
+      ]
+    }
+  }
+}

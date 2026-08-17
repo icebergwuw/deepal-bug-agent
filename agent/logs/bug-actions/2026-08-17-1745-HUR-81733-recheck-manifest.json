@@ -1,0 +1,406 @@
+{
+  "schema_version": 4,
+  "jira_key": "HUR-81733",
+  "comment_causality": "关联HUR-80390曾以配置缺失修复并20次通过，本票据此解决；但2026-08-17 HUR在线原话当前返回1919不支持，与完成结论冲突。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-81733 Jira原票",
+      "source_location": "当前字段、完整描述、附件元数据、全部评论和当前经办人",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "HUR/J90A-ER",
+      "trigger": "关联HUR-80390曾以配置缺失修复并20次通过，本票据此解决；但2026-08-17 HUR在线原话当前返回1919不支持，与完成结论冲突。",
+      "target_behavior": "现象：历史车端命中1209但literal为中文；关联票曾20次通过。；当前：HUR在线“I’m hungry”返回1919不支持，结果再次异常。",
+      "match": "exact",
+      "reason": "证明当前问题事实，不单独定义产品目标。"
+    },
+    {
+      "source_id": "formal-context",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_location": "POI搜索与导航章节·餐厅类别搜索能力；不直接定义J90A英语literal语言",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "J90A-ER",
+      "trigger": "I'm hungry",
+      "target_behavior": "应进入餐厅搜索且界面语言匹配系统语言。",
+      "match": "partial",
+      "reason": "异项目资料仅作能力上下文。"
+    },
+    {
+      "source_id": "map-special",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "source_location": "地图导航交互·与本票功能相关页面",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "HUR/J90A-ER",
+      "trigger": "英语饥饿意图搜索餐厅",
+      "target_behavior": "补充交互范围。",
+      "match": "exact",
+      "reason": "专项交互资料用于边界核对。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "在线对话·HUR/J90A-ER·原话“I'm hungry”·当前HUR当前返回meta_id 1919 common:func:not:supported",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "HUR/J90A-ER",
+      "trigger": "I'm hungry",
+      "target_behavior": "HUR当前返回meta_id 1919 common:func:not:supported",
+      "match": "exact",
+      "reason": "证明本轮当前语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能·导航去【地址】",
+      "source_location": "标准功能·导航去【地址】·meta_id 1209",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "HUR/J90A-ER",
+      "trigger": "I'm hungry",
+      "target_behavior": "导航去【地址】",
+      "match": "exact",
+      "reason": "核对标准语义功能点。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81733"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "英语饥饿意图搜索餐厅"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "source_ids": [
+        "formal-context"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "HUR-81733-formal_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-context"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81733"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "英语饥饿意图搜索餐厅"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "source_ids": [
+        "formal-context"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "HUR-81733-main_prd_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-context"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81733"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "英语饥饿意图搜索餐厅"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "source_ids": [
+        "map-special"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "HUR-81733-special_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "map-special"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "I'm hungry"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1209 导航去【地址】"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1209 导航去【地址】"
+        },
+        {
+          "kind": "project_scope",
+          "text": "HUR/J90A-ER"
+        }
+      ],
+      "source_ids": [],
+      "reason": "当前只读到深蓝项目点，未取得HUR项目点正文。",
+      "material": true,
+      "next_action": "HUR语音配置负责人补齐目标项目功能点并复测。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "当前Jira、正式定义、关联票和当前平台结果分开记录；同范围正式目标优先。存在关键规则空白或当前结果冲突的票降级处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "alchemy_tested": true,
+    "original_utterance": "I'm hungry",
+    "alchemy_result": "HUR当前返回meta_id 1919 common:func:not:supported",
+    "meta_id": "1209",
+    "standard_function": {
+      "status": "verified",
+      "name": "导航去【地址】",
+      "source": "Alchemy标准功能",
+      "assessment": "已核对标准功能名称、meta_id与所属功能分类。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "HUR项目功能点正文未取得。"
+    },
+    "unavailable_reason": "HUR项目功能点正文未取得，当前在线结果与关联票完成结论冲突。",
+    "next_action": "HUR语音配置负责人核对meta_id 1209项目继承后复测。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "HUR语音配置负责人",
+    "text": "结论：待复核；关联票虽已完成，但HUR当前原话仍返回1919不支持，不能关闭。 依据：HUR-80390回归记录、Jira完整时间线、Alchemy当前原话结果。 处理：HUR语音配置负责人核对meta_id=1209项目继承与英语语料，下发后复测弹窗文言。"
+  },
+  "run_context": {
+    "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 78
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-81733-formal_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81733"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "英语饥饿意图搜索餐厅"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-81733-main_prd_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81733"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "英语饥饿意图搜索餐厅"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-81733-special_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81733"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "英语饥饿意图搜索餐厅"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81733\",\"HUR-81733｜【J90-ER】【OTA1】【0408分支】【User】【澳洲配置】【VAVE】16：42 query\"\"I'm hungry\"\",导航弹窗中显示中文“餐厅\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81733\",\"Jira原票·HUR-81733\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：历史车端命中1209但literal为中文；关联票曾20次通过。；当前：HUR在线“I’m hungry”返回1919不支持，结果再次异常。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待复核；关联票虽已完成，但HUR当前原话仍返回1919不支持，不能关闭。 依据：HUR-80390回归记录、Jira完整时间线、Alchemy当前原话结果。 处理：HUR语音配置负责人核对meta_id=1209项目继承与英语语料，下发后复测弹窗文言。",
+      "links": []
+    },
+    "G": "待复核",
+    "I": "需同时验证意图命中、餐厅literal语言和弹窗展示语言。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·HUR-81733",
+          "url": "http://jira.i-tetris.com/browse/HUR-81733"
+        },
+        {
+          "label": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  }
+}

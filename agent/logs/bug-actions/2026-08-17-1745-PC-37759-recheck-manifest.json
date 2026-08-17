@@ -1,0 +1,277 @@
+{
+  "schema_version": 4,
+  "jira_key": "PC-37759",
+  "comment_causality": "蓝牙已连接但通讯录未授权时，Jira以仍可拨打10086为异常；当前Alchemy先命中1059再命中1061，正式电话PRD明确直接号码拨打不依赖联系人同步。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-37759 Jira原票",
+      "source_location": "当前字段、完整描述、附件元数据、全部评论和当前经办人",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "PC/BIGSUR",
+      "trigger": "蓝牙已连接但通讯录未授权时，Jira以仍可拨打10086为异常；当前Alchemy先命中1059再命中1061，正式电话PRD明确直接号码拨打不依赖联系人同步。",
+      "target_behavior": "现象：蓝牙已连接、通讯录未授权，语音仍能拨打10086。；证据：AIS电话PRD明确数字号码直拨不依赖联系人同步；Alchemy当前先命中1059再命中1061。",
+      "match": "exact",
+      "reason": "证明当前问题事实，不单独定义产品目标。"
+    },
+    {
+      "source_id": "formal-target",
+      "source": "AIS_语音蓝牙电话产品需求文档_v2.7",
+      "source_location": "语音直接拨号章节·用户说出明确数字号码进入预拨号；通讯录同步仅约束联系人检索",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝蓝牙电话",
+      "trigger": "蓝牙已连接且说出10086",
+      "target_behavior": "直接按号码进入预拨号，不依赖通讯录授权。",
+      "match": "exact",
+      "reason": "当前正式电话PRD直接定义数字号码拨打边界。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "在线对话·PC/BIGSUR·原话“我要打电话→10086”·当前meta_id 1059后命中1061，with_number=10086",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "PC/BIGSUR",
+      "trigger": "我要打电话→10086",
+      "target_behavior": "meta_id 1059后命中1061，with_number=10086",
+      "match": "exact",
+      "reason": "证明本轮当前语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能·打电话给【号码】",
+      "source_location": "标准功能·打电话给【号码】·meta_id 1061",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "PC/BIGSUR",
+      "trigger": "我要打电话→10086",
+      "target_behavior": "打电话给【号码】",
+      "match": "exact",
+      "reason": "核对标准语义功能点。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy项目功能·打电话给【号码】",
+      "source_location": "深蓝项目功能·打电话给【号码】·meta_id 1061",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "PC/BIGSUR",
+      "trigger": "我要打电话→10086",
+      "target_behavior": "打电话给【号码】",
+      "match": "exact",
+      "reason": "核对项目继承和下发状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37759"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "蓝牙连接后直接拨打明确号码"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "AIS_语音蓝牙电话产品需求文档_v2.7"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-37759-formal_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+            "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+            "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-target"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "我要打电话→10086"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1061 打电话给【号码】"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1061 打电话给【号码】"
+        },
+        {
+          "kind": "project_scope",
+          "text": "PC/BIGSUR"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "当前Jira、正式定义、关联票和当前平台结果分开记录；同范围正式目标优先。存在关键规则空白或当前结果冲突的票降级处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "我要打电话→10086",
+    "alchemy_result": "meta_id 1059后命中1061，with_number=10086",
+    "meta_id": "1061",
+    "standard_function": {
+      "status": "verified",
+      "name": "打电话给【号码】",
+      "source": "Alchemy标准功能",
+      "assessment": "已核对标准功能名称、meta_id与所属功能分类。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "打电话给【号码】",
+      "source": "Alchemy深蓝项目功能",
+      "assessment": "已核对项目功能名称、meta_id、继承状态和当前下发状态。"
+    }
+  },
+  "decision": {
+    "status": "非 Bug",
+    "owner": "吴优（电话产品）",
+    "text": "结论：非 Bug；蓝牙已连接时可直接拨打明确数字号码，通讯录未授权只限制联系人检索。 依据：AIS电话PRD直接号码条款、Jira当前现象、Alchemy原话测试与1061标准/项目功能点。 处理：吴优按非问题关闭本票，BTPhone无需改动。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 71
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-37759-formal_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37759"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "蓝牙连接后直接拨打明确号码"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "AIS_语音蓝牙电话产品需求文档_v2.7"
+        }
+      ],
+      "results": [
+        {
+          "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+          "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "蓝牙已连接后说出明确数字号码",
+    "target_state": "进入预拨号状态",
+    "intent_function_signal": "meta_id=1061且携带号码槽位",
+    "ui_tts_vehicle_behavior": "允许拨打该号码",
+    "boundary": "联系人姓名检索仍需通讯录授权",
+    "source_ids": [
+      "formal-target"
+    ]
+  }
+}

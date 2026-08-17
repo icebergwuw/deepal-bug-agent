@@ -1,0 +1,56 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-30"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-6012\",\"SD-6012｜[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km][中文]ParkcityAmap.APK校核问题汇总0708\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-6012\",\"Jira原票·SD-6012\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：search_keyword_no_result与search_result_null重复冲突。；证据：生效翻译表已登记删除，SD-6806与Gerrit合入完成。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：可关闭；冲突Key已按生效翻译表删除，关联需求与代码合入均完成。 依据：C673-G翻译表变更记录、SD-6806和Jira合入记录。 处理：吴优维持关闭，无需继续转研发。",
+      "links": []
+    },
+    "G": "可关闭",
+    "I": "后续回归确认APK不再引用已删除Key。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·SD-6012",
+          "url": "http://jira.i-tetris.com/browse/SD-6012"
+        },
+        {
+          "label": "C673-G海外多语言翻译表",
+          "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit?usp=drivesdk"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-30"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-38360\",\"PC-38360｜【UI设计走查】导航-nan-样式调整\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-38360\",\"Jira原票·PC-38360\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "附件对比：实际图仅详细/简洁/静音，目标图增加智能播报。；证据：当前地图交互V0.6已包含四项；原票缺修复版本回归记录。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：待回归；当前交互V0.6已明确四项播报模式，Jira附件实际界面缺“智能播报”。 依据：Jira两张附件对比、地图交互V0.6与PC-36946。 处理：地图UI研发按四段控件实现DP4.0目标版本，测试回归选项、选中态和切换结果。",
+      "links": []
+    },
+    "G": "待回归",
+    "I": "回归需验证四项文案、布局、选中态及模式切换，不只检查静态截图。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·PC-38360",
+          "url": "http://jira.i-tetris.com/browse/PC-38360"
+        },
+        {
+          "label": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+        }
+      ]
+    }
+  }
+}

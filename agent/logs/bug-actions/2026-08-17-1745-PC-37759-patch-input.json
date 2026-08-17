@@ -1,0 +1,60 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-37759\",\"PC-37759｜【主线】【User】16：08 蓝牙电话未授权，连接蓝牙后，query：拨打电话依然能够打出电话\")"
+        }
+      },
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        }
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-37759\",\"Jira原票·PC-37759\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：蓝牙已连接、通讯录未授权，语音仍能拨打10086。；证据：AIS电话PRD明确数字号码直拨不依赖联系人同步；Alchemy当前先命中1059再命中1061。",
+      "links": []
+    },
+    "D": {
+      "text": "结论：非 Bug；蓝牙已连接时可直接拨打明确数字号码，通讯录未授权只限制联系人检索。 依据：AIS电话PRD直接号码条款、Jira当前现象、Alchemy原话测试与1061标准/项目功能点。 处理：吴优按非问题关闭本票，BTPhone无需改动。",
+      "links": []
+    },
+    "G": "非 Bug",
+    "I": "仅适用于已连接蓝牙且说出明确号码；联系人姓名拨打仍受通讯录授权约束。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票·PC-37759",
+          "url": "http://jira.i-tetris.com/browse/PC-37759"
+        },
+        {
+          "label": "AIS_语音蓝牙电话产品需求文档_v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy当前原话与功能点",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing"
+        }
+      ]
+    }
+  }
+}

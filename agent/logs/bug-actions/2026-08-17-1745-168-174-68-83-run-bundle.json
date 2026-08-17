@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+  "status": "complete",
+  "started_at": "2026-08-17T17:45:00+08:00",
+  "query_summary": "重处理bug表68-83与168-174，且当前Jira经办人仍为吴优的票",
+  "action_log": "agent/logs/bug-actions/2026-08-17-1745-168-174-68-83-recheck.md",
+  "items": [
+    {
+      "jira_key": "PC-37759",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 71,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37759-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37759-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37759-validation.json",
+      "readback_sha256": "104d8b0a36c045a2a121ed1a55ce50e90cc792bede92ac21ee45951524e7cb30"
+    },
+    {
+      "jira_key": "PC-37308",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 72,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37308-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37308-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37308-validation.json",
+      "readback_sha256": "d34d312bcb5d0feafb0f5a1f7e7cd4e151a08cc548fb172c212a4717deed5f26"
+    },
+    {
+      "jira_key": "PC-37226",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 73,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37226-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37226-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-PC-37226-validation.json",
+      "readback_sha256": "918ae4dd46a88ea2203b200123145cc1612e83fa75cc08f3a07cfcaed2886196"
+    },
+    {
+      "jira_key": "HUR-81733",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 78,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81733-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81733-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81733-validation.json",
+      "readback_sha256": "36f11e6dea5325bbb41307a0918a199b78f95d3ec9c273386b20398ba83c0057"
+    },
+    {
+      "jira_key": "HUR-81612",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 79,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81612-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81612-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81612-validation.json",
+      "readback_sha256": "792fd20eb0cc95c7534f8faea1648d06424e08f0e07ff451963a81824ef4358d"
+    },
+    {
+      "jira_key": "HUR-81081",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 83,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81081-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81081-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-HUR-81081-validation.json",
+      "readback_sha256": "d536727bfc385bc64e7495bdcfedb0c4666a7d2b296fd6329d2009349096c457"
+    },
+    {
+      "jira_key": "SD-6012",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 168,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-SD-6012-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-SD-6012-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-SD-6012-validation.json",
+      "readback_sha256": "72b9b120a6ff309912e03ef2b776a318f0a28c885f9ab36ae106edb147772be8"
+    },
+    {
+      "jira_key": "SD-5786",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 169,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5786-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5786-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5786-validation.json",
+      "readback_sha256": "f5ad96f02ef8b006482d0856264da2a4ce44ce0af49e2fed3b7ba83324280aa2"
+    },
+    {
+      "jira_key": "SD-5517",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 170,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5517-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5517-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5517-validation.json",
+      "readback_sha256": "b4d14709ffd6052ae7a797c83c3e230dd7f292d75bd7c6d79d163f57316c0b21"
+    },
+    {
+      "jira_key": "SD-5515",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 171,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5515-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5515-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-SD-5515-validation.json",
+      "readback_sha256": "8c1f85076949ff024bf8401630c50ee273ed6304959c89c1f091eea879f16b85"
+    },
+    {
+      "jira_key": "PC-38360",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 174,
+      "manifest_path": "agent/logs/bug-actions/2026-08-17-1745-PC-38360-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-17-1745-PC-38360-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-17-1745-PC-38360-validation.json",
+      "readback_sha256": "e27945b9275306f7abe24993e0bba583ce5e05168fc432680aa381be6910dcb0"
+    }
+  ],
+  "completed_at": "2026-08-17T18:10:00+08:00"
+}

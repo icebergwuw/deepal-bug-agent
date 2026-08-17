@@ -1,0 +1,235 @@
+{
+  "key": "SD-5515",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 171,
+  "rowIndex": 170,
+  "previewFingerprint": "6e2a5f28f8bbe97510bde64f12e03805e0b886d50ddeb7c945e4f7948428abf3",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "历史：命中1006但返回中文地址，最终只播OK。；当前：两个C673在线车型均误命中1026音乐；1006项目点存在。",
+      "links": []
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：可转语音；当前位置能力已存在，但马来语原话当前误落音乐，项目映射和马来语地址TTS均需补齐。 依据：地图当前位置定义、Jira历史1006日志、Alchemy当前原话与1006项目功能点。 处理：C673海外语音配置负责人恢复1006映射并补马来语目标TTS；地图侧返回可本地化地址字段后回归。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "可转语音",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "地址数据需可本地化；定位失败时使用马来语失败提示。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·SD-5515",
+      "after": "Jira原票·SD-5515\nMegatronix_地图导航产品需求文档_C385&C673_V6.1\nAlchemy当前原话与功能点",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5515",
+        "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "历史：命中1006但返回中文地址，最终只播OK。；当前：两个C673在线车型均误命中1026音乐；1006项目点存在。",
+      "links": []
+    },
+    "D": {
+      "visible": "结论：可转语音；当前位置能力已存在，但马来语原话当前误落音乐，项目映射和马来语地址TTS均需补齐。 依据：地图当前位置定义、Jira历史1006日志、Alchemy当前原话与1006项目功能点。 处理：C673海外语音配置负责人恢复1006映射并补马来语目标TTS；地图侧返回可本地化地址字段后回归。",
+      "links": []
+    },
+    "G": {
+      "visible": "可转语音",
+      "links": []
+    },
+    "I": {
+      "visible": "地址数据需可本地化；定位失败时使用马来语失败提示。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·SD-5515\nMegatronix_地图导航产品需求文档_C385&C673_V6.1\nAlchemy当前原话与功能点",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5515",
+        "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 170,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "历史：命中1006但返回中文地址，最终只播OK。；当前：两个C673在线车型均误命中1026音乐；1006项目点存在。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 170,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：可转语音；当前位置能力已存在，但马来语原话当前误落音乐，项目映射和马来语地址TTS均需补齐。 依据：地图当前位置定义、Jira历史1006日志、Alchemy当前原话与1006项目功能点。 处理：C673海外语音配置负责人恢复1006映射并补马来语目标TTS；地图侧返回可本地化地址字段后回归。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 170,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转语音"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 170,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "地址数据需可本地化；定位失败时使用马来语失败提示。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 170,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·SD-5515\nMegatronix_地图导航产品需求文档_C385&C673_V6.1\nAlchemy当前原话与功能点"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-5515"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 51
+                  },
+                  {
+                    "startIndex": 52,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

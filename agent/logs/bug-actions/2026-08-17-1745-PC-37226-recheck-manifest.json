@@ -1,0 +1,434 @@
+{
+  "schema_version": 4,
+  "jira_key": "PC-37226",
+  "comment_causality": "原票因8155未下发语音全屏需求而回复不支持，关联Story PC-39291已建立；当前PCBIGSUR在线原话已正确命中3147。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-37226 Jira原票",
+      "source_location": "当前字段、完整描述、附件元数据、全部评论和当前经办人",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "PC/BIGSUR",
+      "trigger": "原票因8155未下发语音全屏需求而回复不支持，关联Story PC-39291已建立；当前PCBIGSUR在线原话已正确命中3147。",
+      "target_behavior": "现象：原8155版本回复不支持；当前PCBIGSUR在线已命中meta_id=3147。；证据：地图PRD定义全屏切换，关联Story PC-39291跟踪项目补齐。",
+      "match": "exact",
+      "reason": "证明当前问题事实，不单独定义产品目标。"
+    },
+    {
+      "source_id": "formal-target",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_location": "1.2.4地图全屏/半屏切换·展开进入全屏、收起进入半屏",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385/C673地图",
+      "trigger": "用户要求导航全屏",
+      "target_behavior": "地图进入全屏展示。",
+      "match": "exact",
+      "reason": "正式地图PRD定义全屏目标。"
+    },
+    {
+      "source_id": "map-special",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "source_location": "地图导航交互·与本票功能相关页面",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "PC/BIGSUR",
+      "trigger": "导航地图全屏",
+      "target_behavior": "补充交互范围。",
+      "match": "exact",
+      "reason": "专项交互资料用于边界核对。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "在线对话·PC/BIGSUR·原话“导航全屏”·当前meta_id 3147 navi:ctrl:overview，当前命中正常",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "PC/BIGSUR",
+      "trigger": "导航全屏",
+      "target_behavior": "meta_id 3147 navi:ctrl:overview，当前命中正常",
+      "match": "exact",
+      "reason": "证明本轮当前语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能·应用全屏",
+      "source_location": "标准功能·应用全屏·meta_id 3147",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "PC/BIGSUR",
+      "trigger": "导航全屏",
+      "target_behavior": "应用全屏",
+      "match": "exact",
+      "reason": "核对标准语义功能点。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy项目功能·应用全屏",
+      "source_location": "深蓝项目功能·应用全屏·meta_id 3147",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "PC/BIGSUR",
+      "trigger": "导航全屏",
+      "target_behavior": "应用全屏",
+      "match": "exact",
+      "reason": "核对项目继承和下发状态。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "本票命中该证据画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该证据画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37226"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航地图全屏"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-37226-formal_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-target"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37226"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航地图全屏"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-37226-main_prd_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "formal-target"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Google Drive实时搜索（you.wu@megatronix.co）并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37226"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航地图全屏"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "source_ids": [
+        "map-special"
+      ],
+      "reason": "已核对实时检索候选、正文和项目适用范围。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-37226-special_definition_search-drive-20260817"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "map-special"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "导航全屏"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3147 应用全屏"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy语音运营平台",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3147 应用全屏"
+        },
+        {
+          "kind": "project_scope",
+          "text": "PC/BIGSUR"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取当前平台。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "当前Jira、正式定义、关联票和当前平台结果分开记录；同范围正式目标优先。存在关键规则空白或当前结果冲突的票降级处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "导航全屏",
+    "alchemy_result": "meta_id 3147 navi:ctrl:overview，当前命中正常",
+    "meta_id": "3147",
+    "standard_function": {
+      "status": "verified",
+      "name": "应用全屏",
+      "source": "Alchemy标准功能",
+      "assessment": "已核对标准功能名称、meta_id与所属功能分类。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "应用全屏",
+      "source": "Alchemy深蓝项目功能",
+      "assessment": "已核对项目功能名称、meta_id、继承状态和当前下发状态。"
+    }
+  },
+  "decision": {
+    "status": "待回归",
+    "owner": "PC语音配置与地图研发",
+    "text": "结论：待回归；全屏目标已明确且当前平台可命中3147，但原票8155项目需以PC-39291交付版本验证。 依据：地图PRD 1.2.4、Alchemy当前原话结果、关联Story PC-39291。 处理：PC语音配置与地图研发完成PC-39291后，在目标8155版本回归“导航全屏”。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-recheck-20260817T174500+0800-168-174-68-83",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 73
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-37226-formal_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37226"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航地图全屏"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-37226-main_prd_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37226"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航地图全屏"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-37226-special_definition_search-drive-20260817",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-17T17:45:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-37226"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航地图全屏"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "在目标8155版本说导航全屏",
+    "target_state": "地图切换为全屏",
+    "intent_function_signal": "命中3147并下发导航全屏控制",
+    "ui_tts_vehicle_behavior": "界面进入全屏且不播不支持",
+    "boundary": "仅以PC-39291目标版本回归",
+    "source_ids": [
+      "formal-target"
+    ]
+  }
+}

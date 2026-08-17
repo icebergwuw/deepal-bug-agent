@@ -1,0 +1,216 @@
+{
+  "key": "HUR-81081",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 83,
+  "rowIndex": 82,
+  "previewFingerprint": "3f7f8aad25418d4472b913041480abd79fa52086ef987a212f1618c4d67c3430",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "",
+      "after": "现象：通讯录未授权后，切换语言或回主页都会再次弹同步失败。；证据：J90A电话定义只规定首次未授权提示3秒，未覆盖页面/语言切换重触发。",
+      "links": []
+    },
+    {
+      "column": "D",
+      "before": "",
+      "after": "结论：待确认；未授权失败提示有定义，但切换语言/回主页是否重触发同步未定义。 依据：J90A蓝牙电话V0.5数据同步章节与Jira复现。 处理：吴优补充“仅用户主动同步或蓝牙重连可重触发”的边界，BTPhone研发按新定义修复并回归。",
+      "links": []
+    },
+    {
+      "column": "G",
+      "before": "",
+      "after": "待确认",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "",
+      "after": "需定义主动同步、蓝牙重连、语言切换、应用前后台四类触发。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·HUR-81081",
+      "after": "Jira原票·HUR-81081\nJ90A_功能定义_蓝牙电话功能定义V0.5.docx",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81081",
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：通讯录未授权后，切换语言或回主页都会再次弹同步失败。；证据：J90A电话定义只规定首次未授权提示3秒，未覆盖页面/语言切换重触发。",
+      "links": []
+    },
+    "D": {
+      "visible": "结论：待确认；未授权失败提示有定义，但切换语言/回主页是否重触发同步未定义。 依据：J90A蓝牙电话V0.5数据同步章节与Jira复现。 处理：吴优补充“仅用户主动同步或蓝牙重连可重触发”的边界，BTPhone研发按新定义修复并回归。",
+      "links": []
+    },
+    "G": {
+      "visible": "待确认",
+      "links": []
+    },
+    "I": {
+      "visible": "需定义主动同步、蓝牙重连、语言切换、应用前后台四类触发。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·HUR-81081\nJ90A_功能定义_蓝牙电话功能定义V0.5.docx",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-81081",
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 82,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：通讯录未授权后，切换语言或回主页都会再次弹同步失败。；证据：J90A电话定义只规定首次未授权提示3秒，未覆盖页面/语言切换重触发。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 82,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：待确认；未授权失败提示有定义，但切换语言/回主页是否重触发同步未定义。 依据：J90A蓝牙电话V0.5数据同步章节与Jira复现。 处理：吴优补充“仅用户主动同步或蓝牙重连可重触发”的边界，BTPhone研发按新定义修复并回归。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 82,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待确认"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 82,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "需定义主动同步、蓝牙重连、语言切换、应用前后台四类触发。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 82,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-81081\nJ90A_功能定义_蓝牙电话功能定义V0.5.docx"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-81081"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}
