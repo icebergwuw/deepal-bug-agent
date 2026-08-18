@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260818T010508Z-3613f6b1-439e-46c6-b63f-c1de83fe8502",
+  "generated_at": "2026-08-18T09:05:08+08:00",
+  "jira": {
+    "query": "assignee = \"you.wu\" AND project in (SD,HUR,ADS,BGS,BEO,PC,SM,SLV) AND issuetype = Bug AND status in (\"To Do\",Reopened,\"In Progress\",Pending) ORDER BY key ASC",
+    "total_unique_keys": 107,
+    "registered_index_unique_keys": 351,
+    "new_unregistered_keys": ["ADS-47844", "ADS-48790", "ADS-48837", "ADS-48847", "HUR-83121", "HUR-83232", "HUR-83268", "HUR-83269", "HUR-83271", "HUR-83275", "SM-17768"]
+  },
+  "issue_read_receipts": [
+    {"key":"ADS-47844","summary":"【ID20260726185935293】【AI大模型】【C673-7(舱外激光)】LS6C3E2TXTF811970】 【DEEPALAI导航Agent】-落域错误-今天下午3点前到江北机场 (2026-07-25 15.50)","status":"处理中","comments":20,"attachments":4,"linked_keys":["ST-65888"],"updated":"2026-08-17T09:54:32.000+0000","sha256":"54497c815811c9024bf138c7072d1db59ca79ad932c6a76c8ca1b606304786dc","bytes":157897},
+    {"key":"ADS-48790","summary":"【C673-7】【大激光】【镁佳】【hqx.4.5.5_20260715】【user】【SWC.3.29】Stg环境，新闻列表弹窗展示并播报中，query：导航到解放碑；再query：第一个，执行错误，点击了新闻列表弹窗第一个新闻，没有发起导航","status":"重新打开","comments":4,"attachments":0,"linked_keys":["ADS-48683"],"updated":"2026-08-17T10:48:40.000+0000","sha256":"8d6e30d23bff5eb89954a1b0a4efc6321ea6a238c9137d9132325001e10c33cb","bytes":82247},
+    {"key":"ADS-48837","summary":"【C385-5大激光】【镁佳】【hqx.4.5.5_20260715】【user】【SWC.3.30】车外语音，车外唤醒后query：打开离车自动锁窗，TTS无反应","status":"处理中","comments":8,"attachments":5,"linked_keys":[],"updated":"2026-08-17T09:50:43.000+0000","sha256":"8b3af440fda073fe3072e1d592c4ef48e1e944e8af15991e39ca6dba5843b98","bytes":125824},
+    {"key":"ADS-48847","summary":"【c385_5大激光】【镁佳】【hqx.4.5.5_20260715】【user】【SWC.3.30】车外语音，车外唤醒后query：关闭后雾灯，执行和TTS无反应","status":"待办","comments":6,"attachments":5,"linked_keys":[],"updated":"2026-08-17T09:55:56.000+0000","sha256":"8da97af1c6e88bfb5c72fa89f783cc42dd3e99345f2569c7342de5e6fabfe66b","bytes":110568},
+    {"key":"HUR-83121","summary":"【EL】【0904】【LS】【user-debug】【以色列】【文言走查】阿拉伯语“播放全部”文言表中缺失","status":"待办","comments":2,"attachments":3,"linked_keys":[],"updated":"2026-08-17T11:36:14.000+0000","sha256":"e01b84bca16830e0acd0730fb75615c27734ad829eb128e7e20e9e7c90067ecb","bytes":102297},
+    {"key":"HUR-83232","summary":"【J90A】【0526】【user】【预生产】【英语】 14：50  车辆设置-网络与连接页面  剩余流量显示重叠","status":"待办","comments":1,"attachments":1,"linked_keys":["HUR-83328"],"updated":"2026-08-17T08:33:42.000+0000","sha256":"c1ad6e6e563e94767554d89f7627fa72cde21e557db7c3f22dc966d02712e080","bytes":97919},
+    {"key":"HUR-83268","summary":"【EL】【0904】【debug】 【英语】【文言走查】未在文言表格找到对应key值与文言(已通过手势播放歌曲）","status":"待办","comments":2,"attachments":2,"linked_keys":[],"updated":"2026-08-17T11:00:33.000+0000","sha256":"c0ded1eba65bbea90bc8020498bde6229b3ebd8a3f31e0c356748ed357aa8d08","bytes":100346},
+    {"key":"HUR-83269","summary":"【EL】【0904】【debug】 【英语】【文言走查】未在文言表格找到对应key值与文言(已通过手势暂停歌曲）","status":"待办","comments":2,"attachments":2,"linked_keys":[],"updated":"2026-08-17T11:00:20.000+0000","sha256":"9254387869146fa9d7dcd1c8c7d60c53830c4b85133ea9051e388f2a8cada92a","bytes":100345},
+    {"key":"HUR-83271","summary":"【EL】【0904】【debug】 【英语】【文言走查】未在文言表格找到对应key值与文言(已通过手势挂断电话）","status":"待办","comments":2,"attachments":2,"linked_keys":[],"updated":"2026-08-17T11:00:15.000+0000","sha256":"209edbd51d8c53b6245f2cc837c581d289cb79e07585dfc84ede7d8c85ddab37","bytes":100343},
+    {"key":"HUR-83275","summary":"【EL】【0904】【debug】 【英语】【文言走查】未在文言表格找到对应key值与文言(已通过手势接听电话）","status":"待办","comments":2,"attachments":2,"linked_keys":[],"updated":"2026-08-17T11:00:08.000+0000","sha256":"810b1a10578b2358708db7662dfc15f739f9c0f53b9afc788442e16e4757f275","bytes":100347},
+    {"key":"SM-17768","summary":"【ID20260618182942474】 【C673-G】【CDC】【SWD.1.76】【整车功能测试】【LS6CЗE2RXRF830291】【2026.06.18】【14:47】【必现】场景重构卡片处于展开状态，短按中控屏卡片切换，不收起场景重构卡片","status":"重新打开","comments":4,"attachments":4,"linked_keys":["SM-17699"],"updated":"2026-08-17T08:30:44.000+0000","sha256":"1cd80adf86e8a7d0475f263fbe87da5087d6d8e2c4d7f9cf3e0d1e814989f4c7","bytes":116861}
+  ],
+  "platform_access": {"jira":"fresh_read_ok","google_drive":"preflight_fresh_but_no_structured_search_receipt_in_tool_surface","google_sheets":"no_structured_grid_readback_in_tool_surface","alchemy":"not_retested_per_issue","mastergo":"stale"}
+}

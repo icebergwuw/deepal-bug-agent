@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260818T010508Z-3613f6b1-439e-46c6-b63f-c1de83fe8502",
+  "automation_id": "bug",
+  "status": "planned",
+  "started_at": "2026-08-18T09:05:08+08:00",
+  "query_summary": "Jira实时查询107个唯一Key；吴优索引351个唯一Key；11个未登记Key",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-18-daily-new-bugs.md",
+  "evidence_receipts": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-18-daily-new-bugs-evidence-receipts.json",
+  "items": [],
+  "new_jira_keys": ["ADS-47844", "ADS-48790", "ADS-48837", "ADS-48847", "HUR-83121", "HUR-83232", "HUR-83268", "HUR-83269", "HUR-83271", "HUR-83275", "SM-17768"],
+  "jira_count": 107,
+  "sheet_registered_nonempty": 351,
+  "sheet_unique_keys": 351,
+  "blockers": [
+    "当前工具面没有可绑定schema v5 search_completion的Google Drive结构化检索回执，不能逐项打开或排除全部正式资料候选",
+    "当前工具面没有Google Sheets结构化写入与原始A:J元数据回读，不能验证公式、富文本链接、BOOLEAN、保护列、格式和readback_sha256",
+    "Alchemy未按11票逐票重测当前原话、标准功能点和深蓝项目功能点",
+    "MasterGo访问回执已过期，涉及可见交互的票据必须降级",
+    "11票schema v5 manifest与决策核验卡未生成，因此禁止写表"
+  ],
+  "completion": {
+    "jira_query": "complete",
+    "jira_current_read": "complete_for_11_unregistered_keys",
+    "sheet_dedup_read": "local_index_only; online_raw_sheet_unavailable",
+    "drive_search_receipts": "blocked_no_structured_connector",
+    "alchemy_access": "not_retested_per_issue",
+    "evidence_gate": "not_run",
+    "prewrite_validation": "not_run_items_empty",
+    "sheet_write": "not_run",
+    "readback_validation": "not_run",
+    "final_validation": "not_run"
+  }
+}
