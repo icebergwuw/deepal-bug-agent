@@ -1,0 +1,598 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-49095",
+  "comment_causality": "Jira/VOS显示‘恢复刚才的导航’当前未执行；BIGSUR现测命中1305但未下发必需页面/目标。测试建议改1032，但1032正式定义是在导航历史中按地址搜索，不是恢复被中断路线。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId与语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图检索或导航上下文。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira建议的1032与Alchemy正式定义冲突：1032仅搜索导航历史；1305又缺必需页面目标。地图PRD只定义开机续导弹窗，未定义语音恢复，因此不把任一现有功能点硬套为目标，按新增语音场景处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "恢复刚才的导航",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR当前classification=task，命中meta_id=1305 / app:ctrl，仅下发op=open，未下发必需page/target；Jira实车旧记录为1919不支持。",
+    "meta_id": "1305（对照测试建议1032）",
+    "standard_function": {
+      "status": "verified",
+      "name": "1305打开特定页面/APP；1032导航到【历史记录】",
+      "assessment": "1305要求页面/目标参数；1032是在历史记录中按地址/条件检索，二者都不等于恢复被中断路线。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝24542（1305）与27035（1032）",
+      "assessment": "两个项目点均已锁定、继承未修改，未提供恢复上次路线专用执行定义。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-49095 Jira原票与VOS日志",
+      "source_location": "Jira字段/描述；VOS mark 68932事件序列",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "恢复刚才的导航",
+      "target_behavior": "当前实车返回不支持；测试询问是否改用1032",
+      "match": "exact",
+      "reason": "证明当前实现与提问，非目标定义。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "Alchemy BIGSUR在线对话·恢复刚才的导航",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝项目",
+      "trigger": "恢复刚才的导航",
+      "target_behavior": "meta_id=1305 / app:ctrl / op=open，无page/target",
+      "match": "exact",
+      "reason": "证明当前在线语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准1305/ID1423与1032/ID1418",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "恢复刚才的导航",
+      "target_behavior": "1305打开页面要求目标参数；1032按历史地址搜索，不承担路线恢复",
+      "match": "exact",
+      "reason": "证明现有标准点边界。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝项目24542与27035·均继承未修改",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "深蓝项目恢复导航语义",
+      "target_behavior": "无专用恢复路线定义",
+      "match": "exact",
+      "reason": "证明项目点边界与状态。"
+    },
+    {
+      "source_id": "poi-prd",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_location": "8.1 Tips弹条汇总·开机续导提示：是否继续上次导航/继续导航/取消",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385/C673",
+      "trigger": "存在可续导的上次路线",
+      "target_behavior": "产品已有继续上次导航能力，但现行正式资料仅定义开机弹条入口",
+      "match": "exact",
+      "reason": "同项目当前地图主PRD。"
+    },
+    {
+      "source_id": "scene-interaction",
+      "source": "C385&C673地图导航交互设计V0.6",
+      "source_location": "开机继续上次导航及地图导航流程",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "C385/C673",
+      "trigger": "开机续导",
+      "target_behavior": "在可续导条件下继续上次路线",
+      "match": "partial",
+      "reason": "证明底层产品能力，未定义语音入口。"
+    },
+    {
+      "source_id": "alchemy-standard-1032",
+      "source": "Alchemy标准功能1032",
+      "source_location": "标准ID1418·导航到【历史记录】",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "测试建议改用1032",
+      "target_behavior": "按地址/周边条件在历史记录中搜索并规划；空地址时展示历史记录",
+      "match": "mismatch",
+      "reason": "该功能点不是恢复被中断路线。"
+    },
+    {
+      "source_id": "alchemy-project-1032",
+      "source": "Alchemy深蓝项目功能27035",
+      "source_location": "MetaId1032·继承未修改·已锁定",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝",
+      "trigger": "测试建议改用1032",
+      "target_behavior": "继承标准历史记录搜索",
+      "match": "mismatch",
+      "reason": "证明深蓝项目未改写为路线恢复。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线对话实时测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "恢复刚才的导航"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已实时测试当前原话。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy标准功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1305打开页面；1032导航到历史记录"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard",
+        "alchemy-standard-1032"
+      ],
+      "reason": "已读取1305和测试建议1032的标准定义。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy深蓝项目功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1305打开页面；1032导航到历史记录"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝24542与27035"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project",
+        "alchemy-project-1032"
+      ],
+      "reason": "已读取深蓝24542和27035项目点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49095"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复/继续上次导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航PRD"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取C385/C673地图主PRD中的续导提示并核对版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "Megatronix C385&C673地图导航PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s",
+            "title": "Megatronix_地图导航产品需求文档_C673_v0.5.pdf",
+            "url": "https://drive.google.com/file/d/1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s/view?usp=drivesdk",
+            "references": [],
+            "version_family": "Megatronix C385&C673地图导航PRD",
+            "disposition": "excluded",
+            "reason": "旧C673单项目版本，已合并到V6.1。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix C385&C673地图导航PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-49095-formal_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "读取合并主文档V6.1并审计旧C673版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-49095-formal_definition_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49095"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复/继续上次导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航PRD"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取C385/C673地图主PRD中的续导提示并核对版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "Megatronix C385&C673地图导航PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s",
+            "title": "Megatronix_地图导航产品需求文档_C673_v0.5.pdf",
+            "url": "https://drive.google.com/file/d/1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s/view?usp=drivesdk",
+            "references": [],
+            "version_family": "Megatronix C385&C673地图导航PRD",
+            "disposition": "excluded",
+            "reason": "旧C673单项目版本，已合并到V6.1。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix C385&C673地图导航PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-49095-main_prd_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "读取合并主文档V6.1并审计旧C673版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-49095-main_prd_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49095"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复/继续上次导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航交互设计"
+        }
+      ],
+      "source_ids": [
+        "scene-interaction"
+      ],
+      "reason": "已读取当前地图交互V0.6并核对V0.5。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C385&C673地图导航交互设计",
+            "disposition": "read",
+            "source_ids": [
+              "scene-interaction"
+            ]
+          },
+          {
+            "id": "1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C385&C673地图导航交互设计",
+            "disposition": "excluded",
+            "reason": "较旧版本。"
+          },
+          {
+            "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C385&C673地图导航交互设计",
+            "disposition": "excluded",
+            "reason": "重复副本。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385&C673地图导航交互设计",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-49095-special_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "selection_reason": "已枚举V0.5/V0.6并选择V0.6。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-49095-special_definition_search-drive-20260818-1"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-49095-formal_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T12:10:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49095"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复/继续上次导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航PRD"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix C385&C673地图导航PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s",
+          "title": "Megatronix_地图导航产品需求文档_C673_v0.5.pdf",
+          "url": "https://drive.google.com/file/d/1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-49095-main_prd_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-18T12:10:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49095"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复/继续上次导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航PRD"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix C385&C673地图导航PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s",
+          "title": "Megatronix_地图导航产品需求文档_C673_v0.5.pdf",
+          "url": "https://drive.google.com/file/d/1wOS8yVyTxqmJekBdaYgk6HovP03a3x4s/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-49095-special_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-18T12:10:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49095"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复/继续上次导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航交互设计"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&C673地图导航交互设计"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+          "url": "https://drive.google.com/file/d/1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+          "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "转需求",
+    "owner": "深蓝语音导航产品配置负责人",
+    "text": "结论：不改用1032。1032定义为在导航历史中搜索目的地，不是恢复被中断路线；当前1305又缺必需页面/目标。现有正式PRD仅定义开机续导弹窗，语音恢复需新增场景。\n依据：地图导航PRD V6.1·8.1续导提示；Alchemy标准1305/1032；深蓝项目24542/27035。\n处理：新增‘继续/恢复上次导航’语音需求，定义有/无可续导路线分支后下发；深蓝语音导航产品配置负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T070500Z-ads-49095-49096",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 372
+  },
+  "expected_behavior": {
+    "trigger": "存在可续导的上次路线时说‘恢复/继续刚才的导航’",
+    "target_state": "恢复上次未完成路线；无可续导路线时明确告知",
+    "intent_function_signal": "需要独立的续导语义和可续导状态判断；不得使用1032历史地址搜索，也不得下发无目标1305",
+    "ui_tts_vehicle_behavior": "有路线时恢复导航并反馈；无路线时说明暂无可恢复路线",
+    "boundary": "必须区分开机续导、导航历史地址搜索和无可续导路线三类场景",
+    "source_ids": [
+      "poi-prd"
+    ]
+  }
+}

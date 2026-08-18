@@ -1,0 +1,543 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-49096",
+  "comment_causality": "VOS日志显示搜索万科松湖天地后已选择第四个POI，随后说‘开始导航’却再次落入无目的地1209并询问搜索哪里；正式地图交互与1209二次交互要求使用已选POI进入规划。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId与语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图检索或导航上下文。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票核心是语音导航上下文，不单独启用可见交互画像。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira/VOS日志证明当前实现；地图PRD与交互V0.6定义目标；Alchemy标准/项目1209核对二次交互。当前丢失已选POI，与正式定义冲突，按语音导航二次交互缺陷处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "导航到万科松湖天地；选择第四个；开始导航",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR当前‘开始导航’命中classification=task / meta_id=1209 / navi:dest:search，只有action=navi，无目的地参数。",
+    "meta_id": "1209",
+    "standard_function": {
+      "status": "verified",
+      "name": "导航去【地址】·MetaId 1209·标准ID 1433",
+      "assessment": "已锁定；定义上轮POI列表单一命中后使用该POI进入规划；无地址的一般导航才询问目的地。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目24552·导航去【地址】",
+      "assessment": "已锁定且继承未修改。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-49096 Jira原票与VOS日志",
+      "source_location": "Jira字段/描述；VOS mark 68542事件序列",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "选择第四个POI后说开始导航",
+      "target_behavior": "当前返回无目的地1209并询问搜索哪里",
+      "match": "exact",
+      "reason": "证明当前实现，非目标定义。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "Alchemy BIGSUR在线对话·开始导航",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝项目",
+      "trigger": "开始导航",
+      "target_behavior": "meta_id=1209，action=navi，无目的地参数",
+      "match": "exact",
+      "reason": "证明当前在线语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准功能1433·MetaId1209·导航去【地址】",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "上轮已选POI后继续导航",
+      "target_behavior": "使用上轮POI执行规划；无地址一般导航才询问目的地",
+      "match": "exact",
+      "reason": "证明标准功能点状态。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝项目24552·继承未修改·已锁定",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "深蓝项目导航二次交互",
+      "target_behavior": "继承标准1209规则",
+      "match": "exact",
+      "reason": "证明项目继承与状态。"
+    },
+    {
+      "source_id": "poi-prd",
+      "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+      "source_location": "正文行224-256·行程/POI推荐范围；行288-292·选择第N项并导航；行303-313·列表上下文二次筛选",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295",
+      "trigger": "新闻列表可见时先说‘导航到解放碑’，再说‘第一个’，实车点击新闻第一项；Alchemy当前1209保持导航列表上下文，POI PRD定义列表内选择第N项应发起导航，但未找到可见优先级覆盖对话上下文的生效规则。",
+      "target_behavior": "定义POI推荐、列表选择和导航上下文范围。",
+      "match": "exact",
+      "reason": "同项目当前POI主PRD。"
+    },
+    {
+      "source_id": "nav-interaction",
+      "source": "C385&C673地图导航交互设计V0.6",
+      "source_location": "POI选择、路线规划与开始导航流程",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "C385/C673",
+      "trigger": "选择POI后开始导航",
+      "target_behavior": "使用已选POI进入路线规划/导航",
+      "match": "exact",
+      "reason": "同项目当前交互定义。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线对话实时测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "导航到解放碑；第一个"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy标准功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1209"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy深蓝项目功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1209"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取项目功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49096"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "选择POI后开始导航丢失目的地"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "选择POI后开始导航丢失目的地"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-49096-formal_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-49096-formal_definition_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49096"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "选择POI后开始导航丢失目的地"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "选择POI后开始导航丢失目的地"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-49096-main_prd_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-49096-main_prd_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49096"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "选择POI后开始导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航交互"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&C673地图交互"
+        }
+      ],
+      "source_ids": [
+        "nav-interaction"
+      ],
+      "reason": "已读取C385/C673地图交互V0.6。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C385&C673地图交互",
+            "disposition": "read",
+            "source_ids": [
+              "nav-interaction"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385&C673地图交互",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-49096-special_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "selection_reason": "已核对V0.6为当前较新版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-49096-special_definition_search-drive-20260818-1"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-49096-formal_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49096"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "选择POI后开始导航丢失目的地"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "选择POI后开始导航丢失目的地"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-49096-main_prd_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49096"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "选择POI后开始导航丢失目的地"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "选择POI后开始导航丢失目的地"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-49096-special_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-18T12:10:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49096"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "选择POI后开始导航"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385 C673 地图导航交互"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&C673地图交互"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "可转语音",
+    "owner": "深蓝语音导航二次交互负责人",
+    "text": "结论：定义为导航二次交互缺陷。已选择第四个POI后，‘开始导航’应沿用该POI进入算路；当前丢失已选目标并回到无目的地1209分支。\n依据：C385/C673地图导航PRD；Alchemy标准1209/深蓝项目24552；VOS日志。\n处理：修复POI选择后的上下文保留与开始导航分支并回归；深蓝语音导航二次交互负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T070500Z-ads-49095-49096",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 371
+  },
+  "expected_behavior": {
+    "trigger": "已从POI搜索结果中选择目标后说开始导航",
+    "target_state": "保留已选POI并进入路线规划/导航",
+    "intent_function_signal": "1209二次交互使用上轮选定POI，不走无地址一般导航分支",
+    "ui_tts_vehicle_behavior": "展示所选目的地路线并开始导航，不得回复请问您要搜索哪里呢",
+    "boundary": "仅在已建立且仍有效的POI选择上下文内",
+    "source_ids": [
+      "poi-prd",
+      "nav-interaction"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260818T070500Z-ads-49095-49096",
+  "status": "complete",
+  "started_at": "2026-08-18T15:05:00+08:00",
+  "completed_at": "2026-08-18T15:15:08+08:00",
+  "query_summary": "Jira 2 条，新增 2 条；目标 bug!A371:J372",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-ADS-49095-49096.md",
+  "items": [
+    {
+      "jira_key": "ADS-49096",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 371,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-ADS-49096-manifest.json",
+      "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-ADS-49095-49096-readback.json",
+      "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-ADS-49095-49096-validation.json",
+      "readback_sha256": "5e64a0fccaf6f6b11511c5efeffa08ec883e4467379701001198ad7f5d9255a3"
+    },
+    {
+      "jira_key": "ADS-49095",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 372,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-ADS-49095-manifest.json",
+      "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-ADS-49095-49096-readback.json",
+      "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-ADS-49095-49096-validation.json",
+      "readback_sha256": "5e64a0fccaf6f6b11511c5efeffa08ec883e4467379701001198ad7f5d9255a3"
+    }
+  ]
+}

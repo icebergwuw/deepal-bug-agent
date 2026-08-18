@@ -1,0 +1,58 @@
+[
+  {
+    "key": "ADS-49096",
+    "summary": "选择POI后开始导航丢失目的地",
+    "date": "2026-08-18",
+    "info": "现象：已选择第四个POI后说‘开始导航’，系统丢失目标并重新询问搜索哪里。\n证据：VOS日志；地图导航PRD V6.1；地图交互V0.6；Alchemy当前1209。",
+    "info_links": [
+      {"label": "VOS日志", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68542"},
+      {"label": "地图导航PRD V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "地图交互V0.6", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"},
+      {"label": "Alchemy当前1209", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ],
+    "judgment": "结论：定义为导航二次交互缺陷。已选择第四个POI后，‘开始导航’应沿用该POI进入算路；当前丢失已选目标并回到无目的地1209分支。\n依据：地图导航PRD V6.1；地图交互V0.6；Alchemy标准1209/深蓝项目24552。\n处理：修复POI选择后的上下文保留与开始导航分支并回归；深蓝语音导航二次交互负责人处理。",
+    "judgment_links": [
+      {"label": "地图导航PRD V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "地图交互V0.6", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"},
+      {"label": "Alchemy标准1209", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+      {"label": "深蓝项目24552", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24552"}
+    ],
+    "status": "可转语音",
+    "note": "回归选择POI后的上下文保留、算路和开始导航。",
+    "links": [
+      {"label": "Jira原票·ADS-49096", "url": "http://jira.i-tetris.com/browse/ADS-49096"},
+      {"label": "VOS日志·68542", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68542"},
+      {"label": "地图导航PRD V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "地图交互V0.6", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"},
+      {"label": "Alchemy当前·1209", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ]
+  },
+  {
+    "key": "ADS-49095",
+    "summary": "恢复刚才的导航无专用语音能力",
+    "date": "2026-08-18",
+    "info": "现象：‘恢复刚才的导航’未执行；当前Alchemy命中1305但缺页面目标。\n证据：VOS日志；地图导航PRD V6.1；Alchemy标准1305；Alchemy标准1032；深蓝项目点。",
+    "info_links": [
+      {"label": "VOS日志", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68932"},
+      {"label": "地图导航PRD V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "Alchemy标准1305", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1423"},
+      {"label": "Alchemy标准1032", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1418"}
+    ],
+    "judgment": "结论：不改用1032。1032是在导航历史中搜索目的地，不是恢复被中断路线；当前1305又缺必需页面/目标。现有PRD仅定义开机续导弹窗，语音恢复需新增场景。\n依据：地图导航PRD V6.1·8.1；Alchemy标准1305；Alchemy标准1032；深蓝项目27035继承未修改。\n处理：新增‘继续/恢复上次导航’语音需求，定义有/无可续导路线分支后下发；深蓝语音导航产品配置负责人处理。",
+    "judgment_links": [
+      {"label": "地图导航PRD V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "Alchemy标准1305", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1423"},
+      {"label": "Alchemy标准1032", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1418"},
+      {"label": "深蓝项目27035", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/27035"}
+    ],
+    "status": "转需求",
+    "note": "定义有可续导路线、无可续导路线及开机续导的语音分支。",
+    "links": [
+      {"label": "Jira原票·ADS-49095", "url": "http://jira.i-tetris.com/browse/ADS-49095"},
+      {"label": "VOS日志·68932", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68932"},
+      {"label": "地图导航PRD V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "Alchemy当前·1305", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "Alchemy标准1032", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1418"}
+    ]
+  }
+]
