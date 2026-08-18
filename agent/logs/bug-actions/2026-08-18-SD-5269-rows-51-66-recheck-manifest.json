@@ -1,0 +1,310 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-5269",
+  "comment_causality": "重新打开；离线翻译已正确得到“把音量调到50%”，历史下发1184，当前BIGSUR却误落1146情景模式时长。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SD-5268",
+        "relationship": "Jira直接链接或日志引用",
+        "read": true,
+        "outcome": "已读取当前字段、描述、附件元数据、全部评论及问题链接；只用于因果和范围，不替代正式目标。"
+      },
+      {
+        "key": "SD-5309",
+        "relationship": "Jira直接链接或日志引用",
+        "read": true,
+        "outcome": "已读取当前字段、描述、附件元数据、全部评论及问题链接；只用于因果和范围，不替代正式目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-5269 Jira原票",
+      "source_location": "当前字段、完整描述、附件、全部评论及直接关联票",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "重新打开；离线翻译已正确得到“把音量调到50%”，历史下发1184，当前BIGSUR却误落1146情景模式时长。",
+      "match": "exact",
+      "reason": "证明提报现象和历史链路。"
+    },
+    {
+      "source_id": "drive-voice-list",
+      "source": "海外语音功能清单C673-G3G5.xlsx",
+      "source_location": "对应语义及多语言语料行；正文已读",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "泰语无指定通道的50%音量指令按正式清单执行全局/默认音量50%，不得解释为小憩模式时长。",
+      "match": "exact",
+      "reason": "当前适用正式语音能力清单。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-18原话实测：meta_id=1146，vehicle:scenario:ctrl:time:adjust，mode=rest；与原话音量目标完全不符。",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "meta_id=1146，vehicle:scenario:ctrl:time:adjust，mode=rest；与原话音量目标完全不符。",
+      "match": "exact",
+      "reason": "证明当前平台真实路由。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准1369（已锁定）指定通道/全局音量指定调节；1146对应草稿态情景时长",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "标准1369（已锁定）指定通道/全局音量指定调节；1146对应草稿态情景时长",
+      "match": "exact",
+      "reason": "标准详情已逐项打开核验。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝24514（已锁定、继承未修改）；误落深蓝26861/1146",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "深蓝24514（已锁定、继承未修改）；误落深蓝26861/1146",
+      "match": "exact",
+      "reason": "深蓝项目继承状态已逐项核验。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、NLU、功能点或TTS。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本次只判断语音意图、槽位或TTS，不评估地图搜索结果、路线规划或导航执行。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不以可见控件状态为主要矛盾。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "drive-voice-list"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索；已打开候选正文并核对同系列版本",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5269"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "泰语音量50%误落小憩时长"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "泰语音量50%误落小憩时长"
+        }
+      ],
+      "search_receipt_ids": [
+        "SD-5269-formal_definition_search-drive-20260818"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+            "title": "海外语音功能清单C673-G3G5.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-voice-list"
+            ],
+            "references": []
+          },
+          {
+            "id": "1yFuQlecstSMg3taKeYBhY0dSWR7GthHx",
+            "title": "海外语音功能清单C673-G3G5&D587-G_PT-PT.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1yFuQlecstSMg3taKeYBhY0dSWR7GthHx/edit",
+            "disposition": "excluded",
+            "reason": "葡萄牙专项版本，不覆盖本票语种或目标。",
+            "references": []
+          },
+          {
+            "id": "1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5",
+            "title": "C673_G3G5语音测试语料-修订0805.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5/edit",
+            "disposition": "excluded",
+            "reason": "测试语料清单只作回归上下文，不替代正式功能清单。",
+            "references": []
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "ตั้งระดับเสียง 50 เปอร์เซ็นต์"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1184（当前误落1146）"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1184（当前误落1146）"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-G3/G5 / BIGSUR"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+    "target_state": "泰语无指定通道的50%音量指令按正式清单执行全局/默认音量50%，不得解释为小憩模式时长。",
+    "intent_function_signal": "1184（当前误落1146）",
+    "ui_tts_vehicle_behavior": "泰语无指定通道的50%音量指令按正式清单执行全局/默认音量50%，不得解释为小憩模式时长。",
+    "boundary": "C673-G3/G5，BIGSUR及对应海外语种",
+    "source_ids": [
+      "drive-voice-list"
+    ]
+  },
+  "conflict_resolution": "结论：属于泰语NLU映射缺陷，不是新增需求。正式清单逐字列出该泰语并定义为无指定通道音量50%，当前却误落小憩时长1146。\n依据：Jira离线翻译与日志；海外语音功能清单；Alchemy当前实测；标准1369/深蓝24514。\n处理：把该泰语恢复到1184音量百分比调节并清除1146错误竞争；语音NLU/泰语算法负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+    "alchemy_tested": true,
+    "alchemy_result": "meta_id=1146，vehicle:scenario:ctrl:time:adjust，mode=rest；与原话音量目标完全不符。",
+    "meta_id": "1184（当前误落1146）",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1369（已锁定）指定通道/全局音量指定调节；1146对应草稿态情景时长",
+      "assessment": "已打开标准详情核验名称和状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝24514（已锁定、继承未修改）；误落深蓝26861/1146",
+      "assessment": "已打开深蓝项目详情核验继承状态。"
+    }
+  },
+  "decision": {
+    "status": "转语音",
+    "owner": "语音NLU/泰语算法负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：属于泰语NLU映射缺陷，不是新增需求。正式清单逐字列出该泰语并定义为无指定通道音量50%，当前却误落小憩时长1146。\n依据：Jira离线翻译与日志；海外语音功能清单；Alchemy当前实测；标准1369/深蓝24514。\n处理：把该泰语恢复到1184音量百分比调节并清除1146错误竞争；语音NLU/泰语算法负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T190000+0800-rows-51-66-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 61
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-5269-formal_definition_search-drive-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T19:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5269"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "泰语音量50%误落小憩时长"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "泰语音量50%误落小憩时长"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+          "title": "海外语音功能清单C673-G3G5.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1yFuQlecstSMg3taKeYBhY0dSWR7GthHx",
+          "title": "海外语音功能清单C673-G3G5&D587-G_PT-PT.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1yFuQlecstSMg3taKeYBhY0dSWR7GthHx/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5",
+          "title": "C673_G3G5语音测试语料-修订0805.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-5269\",\"SD-5269｜query：ตั้งระดับเสียง 50 เปอร์เซ็นต์，回复“我不明白，请尝试用另一种方式说。\")"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "Jira当前经办人吴优；重新打开；离线翻译已正确得到“把音量调到50%”，历史下发1184，当前BIGSUR却误落1146情景模式时长。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "当前无生效定义，转语音需求评审，补齐目标行为与适用车型后再排期。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "转需求"
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；已按时间线读取 5 条评论；需求缺口"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892\",\"吴优工作说明\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "Jira：当前经办人吴优；重新打开；离线翻译已正确得到“把音量调到50%”，历史下发1184，当前BIGSUR却误落1146情景模式时长。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：meta_id=1146，vehicle:scenario:ctrl:time:adjust，mode=rest；与原话音量目标完全不符。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5269"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：属于泰语NLU映射缺陷，不是新增需求。正式清单逐字列出该泰语并定义为无指定通道音量50%，当前却误落小憩时长1146。\n依据：Jira离线翻译与日志；海外语音功能清单；Alchemy当前实测；标准1369/深蓝24514。\n处理：把该泰语恢复到1184音量百分比调节并清除1146错误竞争；语音NLU/泰语算法负责人处理。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5269"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    },
+    "G": "转语音",
+    "I": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/泰语算法负责人；未评论/转派/关闭Jira。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5269"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    }
+  }
+}

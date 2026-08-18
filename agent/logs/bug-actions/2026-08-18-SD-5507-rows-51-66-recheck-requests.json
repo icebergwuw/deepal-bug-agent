@@ -1,0 +1,296 @@
+{
+  "key": "SD-5507",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 59,
+  "rowIndex": 58,
+  "previewFingerprint": "55c751a2a3165f40d6fa688603603cdf55c7c825c4975a405282eba5ff6b37f3",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Jira当前经办人吴优；重新打开；历史日志曾下发1209/restaurant但缺literal，车端回问目的地；当前BIGSUR已退化为chat，无导航操作。",
+      "after": "Jira：当前经办人吴优；重新打开；历史日志曾下发1209/restaurant但缺literal，车端回问目的地；当前BIGSUR已退化为chat，无导航操作。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：classification=chat，Doubao回复建议使用地图搜索附近餐厅，无operations。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5507",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "语音ASR/算法处理：修正识别结果并补充该语种样本。",
+      "after": "结论：属于语音NLU多语言回归。正式清单支持“我饿了”导航餐饮POI，当前BIGSUR却转chat；历史1209链路还暴露poi_tag缺literal的车端兼容问题。\n依据：Jira完整日志；海外语音功能清单；Alchemy当前实测；标准1433/深蓝24552。\n处理：先恢复马来语到1209/restaurant的任务映射，并明确canonical为主、literal为展示补充的执行契约；语音NLU/多语言算法负责人处理，地图执行侧联调。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5507",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "转语音",
+      "after": "转语音",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "经办人：吴优；已按时间线读取 5 条评论；语音链路",
+      "after": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/多语言算法负责人；未评论/转派/关闭Jira。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "吴优工作说明",
+      "after": "Jira原票\n海外语音功能清单",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5507",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "Jira：当前经办人吴优；重新打开；历史日志曾下发1209/restaurant但缺literal，车端回问目的地；当前BIGSUR已退化为chat，无导航操作。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：classification=chat，Doubao回复建议使用地图搜索附近餐厅，无operations。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5507",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+      ]
+    },
+    "D": {
+      "visible": "结论：属于语音NLU多语言回归。正式清单支持“我饿了”导航餐饮POI，当前BIGSUR却转chat；历史1209链路还暴露poi_tag缺literal的车端兼容问题。\n依据：Jira完整日志；海外语音功能清单；Alchemy当前实测；标准1433/深蓝24552。\n处理：先恢复马来语到1209/restaurant的任务映射，并明确canonical为主、literal为展示补充的执行契约；语音NLU/多语言算法负责人处理，地图执行侧联调。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5507",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+      ]
+    },
+    "G": {
+      "visible": "转语音",
+      "links": []
+    },
+    "I": {
+      "visible": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/多语言算法负责人；未评论/转派/关闭Jira。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n海外语音功能清单",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-5507",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 58,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira：当前经办人吴优；重新打开；历史日志曾下发1209/restaurant但缺literal，车端回问目的地；当前BIGSUR已退化为chat，无导航操作。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：classification=chat，Doubao回复建议使用地图搜索附近餐厅，无operations。\n资料：Jira原票 / 海外语音功能清单"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 181,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-5507"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 187
+                  },
+                  {
+                    "startIndex": 190,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 58,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：属于语音NLU多语言回归。正式清单支持“我饿了”导航餐饮POI，当前BIGSUR却转chat；历史1209链路还暴露poi_tag缺literal的车端兼容问题。\n依据：Jira完整日志；海外语音功能清单；Alchemy当前实测；标准1433/深蓝24552。\n处理：先恢复马来语到1209/restaurant的任务映射，并明确canonical为主、literal为展示补充的执行契约；语音NLU/多语言算法负责人处理，地图执行侧联调。\n资料：Jira原票 / 海外语音功能清单"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 227,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-5507"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 233
+                  },
+                  {
+                    "startIndex": 236,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 58,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "转语音"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 58,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/多语言算法负责人；未评论/转派/关闭Jira。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 58,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n海外语音功能清单"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-5507"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260818T190000+0800-rows-51-66-recheck",
+  "status": "complete",
+  "started_at": "2026-08-18T19:00:00+08:00",
+  "query_summary": "复查bug表51-66行，只处理当前仍由吴优经办的8票。",
+  "completed_at": "2026-08-18T19:30:00+08:00",
+  "action_log": "agent/logs/bug-actions/2026-08-18-rows-51-66-recheck.md",
+  "items": [
+    {
+      "jira_key": "SLV-43979",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 53,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SLV-43979-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SLV-43979-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SLV-43979-rows-51-66-recheck-validation.json",
+      "readback_sha256": "98658df32b9cbada22221b4fb27ff6e89aac0976a413c04fe2a7946fd320b9e5"
+    },
+    {
+      "jira_key": "SD-5715",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 58,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-5715-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SD-5715-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SD-5715-rows-51-66-recheck-validation.json",
+      "readback_sha256": "45d550aa18720abf7df0e8cb8a4b0c99a6ac0c917902d3812f6e244eb6cdb01d"
+    },
+    {
+      "jira_key": "SD-5507",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 59,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-5507-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SD-5507-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SD-5507-rows-51-66-recheck-validation.json",
+      "readback_sha256": "704b344af4468f118ec7c3bbdc6c4efbd996dd6632d34ff999fa76c933027247"
+    },
+    {
+      "jira_key": "SD-5373",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 60,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-5373-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SD-5373-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SD-5373-rows-51-66-recheck-validation.json",
+      "readback_sha256": "b3710529ef9f28c117797635dcf2f034fa161aa34cb3562e2613ad5794848ad9"
+    },
+    {
+      "jira_key": "SD-5269",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 61,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-5269-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SD-5269-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SD-5269-rows-51-66-recheck-validation.json",
+      "readback_sha256": "45a29eb0a93127880127512837093e0e9caadda66d92a1e6f578c3abe436e3a7"
+    },
+    {
+      "jira_key": "SD-4327",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 64,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-4327-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SD-4327-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SD-4327-rows-51-66-recheck-validation.json",
+      "readback_sha256": "e2fe82ac0aa347447abde7f2787f9e9baede7de5af04fd550e66d6ce8548c4e1"
+    },
+    {
+      "jira_key": "SD-4260",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 65,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-4260-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SD-4260-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SD-4260-rows-51-66-recheck-validation.json",
+      "readback_sha256": "e00999ba48a69fd43ff7d9be92aee47b9c29de037cba8358657038290a22ff02"
+    },
+    {
+      "jira_key": "SD-3956",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 66,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-3956-rows-51-66-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-SD-3956-rows-51-66-recheck-validate-patch-input.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-SD-3956-rows-51-66-recheck-validation.json",
+      "readback_sha256": "0f675d7e3fd2a2d8722243937bc009801ded38786be0158c1dd423b42fc1937d"
+    }
+  ]
+}

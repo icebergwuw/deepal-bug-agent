@@ -1,0 +1,96 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-43979\",\"SLV-43979｜语音：从重庆中央公园到乐山和宜宾哪个开车更近，TTS两个回复，且地图卡片展示文言不对\")"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "Jira当前经办人吴优；待办；历史日志把同一句拆成两个1209操作，当前BIGSUR实测为单个1209，但把乐山写成dest_poi、宜宾写成dest_city，仍不能形成两目的地比较。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "当前需求未定义该能力，本 bug 按非问题关闭；如需改变现状另建需求。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "可关闭"
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；已按时间线读取 1 条评论；无现行需求"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892\",\"吴优工作说明\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "Jira：当前经办人吴优；待办；历史日志把同一句拆成两个1209操作，当前BIGSUR实测为单个1209，但把乐山写成dest_poi、宜宾写成dest_city，仍不能形成两目的地比较。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：meta_id=1209，navi:dest:search；from_poi=重庆中央公园、dest_poi=乐山、dest_city=宜宾、preference=nearest，无法表达乐山与宜宾两目的地比较。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SLV-43979"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为转需求。现行功能只定义单目的地导航/搜索，未定义从同一起点比较两个目的地驾驶距离；当前把第二目的地误装进dest_city，结果不可接受。\n依据：Jira完整时间线；海外语音功能清单的单目的地导航范围；Alchemy BIGSUR当前1209；标准1433/深蓝24552。\n处理：新增双目的地距离比较的意图、参数结构和地图卡片/TTS规则；语音导航产品/DS负责人处理。\n资料：Jira原票 / 海外语音功能清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SLV-43979"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    },
+    "G": "转需求",
+    "I": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音导航产品/DS负责人；未评论/转派/关闭Jira。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SLV-43979"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-5715",
+  "comment_causality": "待办；研发已定位MegaSegmentPreference点击音与CHIME_PREVIEW并发，并给出递归关闭预览控件soundEffectsEnabled的修复方案。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-5715 Jira原票",
+      "source_location": "字段、描述、附件、全部评论及源码根因",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "点击报警音分段控件",
+      "target_behavior": "待办；研发已定位MegaSegmentPreference点击音与CHIME_PREVIEW并发，并给出递归关闭预览控件soundEffectsEnabled的修复方案。",
+      "match": "exact",
+      "reason": "证明复现、并发根因和可执行修复。"
+    },
+    {
+      "source_id": "jira-target",
+      "source": "Jira预期与研发修复方案",
+      "source_location": "预期结果及研发修复方案",
+      "source_type": "jira",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "点击报警音分段控件",
+      "target_behavior": "报警音预览控件只播放报警预览音，不叠加系统触屏点击音；其他普通控件的触屏音设置不受影响。",
+      "match": "exact",
+      "reason": "只能作为待确认目标和实现方案，不能替代生效产品定义。"
+    },
+    {
+      "source_id": "drive-quality",
+      "source": "SD质量审查_20260812",
+      "source_location": "SD-5715行：核心缺陷、停滞33天",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "点击报警音分段控件",
+      "target_behavior": "报警音预览控件只播放报警预览音，不叠加系统触屏点击音；其他普通控件的触屏音设置不受影响。",
+      "match": "exact",
+      "reason": "证明当前质量审查仍把本票作为核心缺陷跟踪。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "涉及声音设置控件交互与实现边界。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不涉及语音链路。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "结论基于声音播放链路，不涉及可见状态定义。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "drive-quality"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索；已打开候选正文并核对同系列版本",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5715"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "报警音预览与触屏音效重叠"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "报警音预览与触屏音效重叠"
+        }
+      ],
+      "search_receipt_ids": [
+        "SD-5715-formal_definition_search-drive-20260818"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1l_dpAL_gtmmjF0at8weY4KDFtw_Byud3",
+            "title": "SD质量审查_20260812",
+            "url": "https://docs.google.com/spreadsheets/d/1l_dpAL_gtmmjF0at8weY4KDFtw_Byud3/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-quality"
+            ],
+            "references": []
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit",
+            "disposition": "excluded",
+            "reason": "工作说明只提供模块入口，不定义报警音预览与触屏音的叠加关系。",
+            "references": []
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "status": "unresolved",
+    "reason": "已读Drive质量审查和Jira实现分析，但未取得定义报警音预览与触屏音叠加关系的生效产品条款。"
+  },
+  "conflict_resolution": "结论：暂不按非问题关闭，也不直接定为实现缺陷；当前缺少生效产品资料定义报警音预览与触屏音的叠加关系。\n依据：Jira已证明MegaSegmentPreference点击音与CHIME_PREVIEW并发；Drive质量审查仍列为核心缺陷，但未提供目标交互条款。\n处理：CarSettings声音设置产品负责人补齐预览控件的声音优先级口径；确认仅保留预览音后，再由CarSettings研发按现有方案禁用该控件触屏音并回归。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "CarSettings声音设置产品负责人",
+    "implementation_source_ids": [
+      "jira-actual"
+    ],
+    "text": "结论：暂不按非问题关闭，也不直接定为实现缺陷；当前缺少生效产品资料定义报警音预览与触屏音的叠加关系。\n依据：Jira已证明MegaSegmentPreference点击音与CHIME_PREVIEW并发；Drive质量审查仍列为核心缺陷，但未提供目标交互条款。\n处理：CarSettings声音设置产品负责人补齐预览控件的声音优先级口径；确认仅保留预览音后，再由CarSettings研发按现有方案禁用该控件触屏音并回归。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T190000+0800-rows-51-66-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 58
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-5715-formal_definition_search-drive-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T19:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5715"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "报警音预览与触屏音效重叠"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "报警音预览与触屏音效重叠"
+        }
+      ],
+      "results": [
+        {
+          "id": "1l_dpAL_gtmmjF0at8weY4KDFtw_Byud3",
+          "title": "SD质量审查_20260812",
+          "url": "https://docs.google.com/spreadsheets/d/1l_dpAL_gtmmjF0at8weY4KDFtw_Byud3/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ]
+}

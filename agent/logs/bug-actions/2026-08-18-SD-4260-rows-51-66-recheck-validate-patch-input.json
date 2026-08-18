@@ -1,0 +1,406 @@
+{
+  "before_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-4260\",\"SD-4260｜语音唤醒query：Wo bin ich gerade（我现在在哪里）tts打印存在有中文\")"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "Jira当前经办人吴优；待办；历史日志命中1006但缺德语override、播报含中文；当前BIGSUR进一步退化为2820上下文拒绝。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "语音NLU/标注处理：修正query落域、槽位或泛化并校验标准与项目功能点。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "转语音"
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；已按时间线读取 3 条评论；语音链路"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892\",\"吴优工作说明\")"
+        }
+      }
+    ]
+  },
+  "after_row": {
+    "values": [
+      {
+        "formattedValue": "2026-07-13",
+        "effectiveValue": {
+          "stringValue": "2026-07-13"
+        },
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "formattedValue": "SD-4260｜语音唤醒query：Wo bin ich gerade（我现在在哪里）tts打印存在有中文",
+        "effectiveValue": {
+          "stringValue": "SD-4260｜语音唤醒query：Wo bin ich gerade（我现在在哪里）tts打印存在有中文"
+        },
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-4260\",\"SD-4260｜语音唤醒query：Wo bin ich gerade（我现在在哪里）tts打印存在有中文\")"
+        }
+      },
+      {
+        "formattedValue": "Jira：当前经办人吴优；待办；历史日志命中1006但缺德语override、播报含中文；当前BIGSUR进一步退化为2820上下文拒绝。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：classification=chat，meta_id=2820 dialogue:method:reject；未命中1006。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单",
+        "effectiveValue": {
+          "stringValue": "Jira：当前经办人吴优；待办；历史日志命中1006但缺德语override、播报含中文；当前BIGSUR进一步退化为2820上下文拒绝。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：classification=chat，meta_id=2820 dialogue:method:reject；未命中1006。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单"
+        },
+        "userEnteredValue": {
+          "stringValue": "Jira：当前经办人吴优；待办；历史日志命中1006但缺德语override、播报含中文；当前BIGSUR进一步退化为2820上下文拒绝。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：classification=chat，meta_id=2820 dialogue:method:reject；未命中1006。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单"
+        },
+        "textFormatRuns": [
+          {},
+          {
+            "startIndex": 180,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/SD-4260"
+              }
+            }
+          },
+          {
+            "startIndex": 186
+          },
+          {
+            "startIndex": 189,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+              }
+            }
+          },
+          {
+            "startIndex": 197
+          },
+          {
+            "startIndex": 200,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "formattedValue": "结论：属于语音NLU与TTS配置缺陷。正式清单支持该德语，历史1006缺德语override；当前BIGSUR又误落2820，关联BEO-6169的1007“我的家”不是同一功能点。\n依据：Jira完整时间线；海外语音功能清单；Alchemy当前实测；标准1089/深蓝24317；现行多语言资源清单。\n处理：恢复德语1006路由并补齐德语当前位置TTS，取消与1007家庭地址票的错误合并；语音NLU/TTS配置负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单",
+        "effectiveValue": {
+          "stringValue": "结论：属于语音NLU与TTS配置缺陷。正式清单支持该德语，历史1006缺德语override；当前BIGSUR又误落2820，关联BEO-6169的1007“我的家”不是同一功能点。\n依据：Jira完整时间线；海外语音功能清单；Alchemy当前实测；标准1089/深蓝24317；现行多语言资源清单。\n处理：恢复德语1006路由并补齐德语当前位置TTS，取消与1007家庭地址票的错误合并；语音NLU/TTS配置负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单"
+        },
+        "userEnteredValue": {
+          "stringValue": "结论：属于语音NLU与TTS配置缺陷。正式清单支持该德语，历史1006缺德语override；当前BIGSUR又误落2820，关联BEO-6169的1007“我的家”不是同一功能点。\n依据：Jira完整时间线；海外语音功能清单；Alchemy当前实测；标准1089/深蓝24317；现行多语言资源清单。\n处理：恢复德语1006路由并补齐德语当前位置TTS，取消与1007家庭地址票的错误合并；语音NLU/TTS配置负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单"
+        },
+        "textFormatRuns": [
+          {},
+          {
+            "startIndex": 217,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/SD-4260"
+              }
+            }
+          },
+          {
+            "startIndex": 223
+          },
+          {
+            "startIndex": 226,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+              }
+            }
+          },
+          {
+            "startIndex": 234
+          },
+          {
+            "startIndex": 237,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "formattedValue": "FALSE",
+        "effectiveValue": {
+          "boolValue": false
+        },
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "转语音",
+        "effectiveValue": {
+          "stringValue": "转语音"
+        },
+        "userEnteredValue": {
+          "stringValue": "转语音"
+        }
+      },
+      {},
+      {
+        "formattedValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/TTS配置负责人；未评论/转派/关闭Jira。",
+        "effectiveValue": {
+          "stringValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/TTS配置负责人；未评论/转派/关闭Jira。"
+        },
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/TTS配置负责人；未评论/转派/关闭Jira。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票\n海外语音功能清单\n多语言资源清单",
+        "effectiveValue": {
+          "stringValue": "Jira原票\n海外语音功能清单\n多语言资源清单"
+        },
+        "userEnteredValue": {
+          "stringValue": "Jira原票\n海外语音功能清单\n多语言资源清单"
+        },
+        "textFormatRuns": [
+          {
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/SD-4260"
+              }
+            }
+          },
+          {
+            "startIndex": 6
+          },
+          {
+            "startIndex": 7,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+              }
+            }
+          },
+          {
+            "startIndex": 15
+          },
+          {
+            "startIndex": 16,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "Jira：当前经办人吴优；待办；历史日志命中1006但缺德语override、播报含中文；当前BIGSUR进一步退化为2820上下文拒绝。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：classification=chat，meta_id=2820 dialogue:method:reject；未命中1006。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-4260"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        },
+        {
+          "label": "多语言资源清单",
+          "url": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：属于语音NLU与TTS配置缺陷。正式清单支持该德语，历史1006缺德语override；当前BIGSUR又误落2820，关联BEO-6169的1007“我的家”不是同一功能点。\n依据：Jira完整时间线；海外语音功能清单；Alchemy当前实测；标准1089/深蓝24317；现行多语言资源清单。\n处理：恢复德语1006路由并补齐德语当前位置TTS，取消与1007家庭地址票的错误合并；语音NLU/TTS配置负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-4260"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        },
+        {
+          "label": "多语言资源清单",
+          "url": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+        }
+      ]
+    },
+    "G": "转语音",
+    "I": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/TTS配置负责人；未评论/转派/关闭Jira。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-4260"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        },
+        {
+          "label": "多语言资源清单",
+          "url": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+        }
+      ]
+    }
+  }
+}

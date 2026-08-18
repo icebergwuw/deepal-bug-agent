@@ -1,0 +1,410 @@
+{
+  "key": "SD-3956",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 66,
+  "rowIndex": 65,
+  "previewFingerprint": "47f6f29672aac3d3944d79634196c288edef7c54a9c405f50b0617bf512dcd45",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Jira当前经办人吴优；待办；历史分别命中1135/2843，但英文TTS资源和负值处理有问题；关联BEO-5997/5998的Bigsur修复Change 1027014已合入。",
+      "after": "Jira：当前经办人吴优；待办；历史分别命中1135/2843，但英文TTS资源和负值处理有问题；关联BEO-5997/5998的Bigsur修复Change 1027014已合入。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：当前BIGSUR：时间句误落1919不支持；距离句误落1026点播歌曲，均未命中1135/2843。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-3956",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+        "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit",
+        "http://jira.i-tetris.com/browse/SD-4307"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "地图研发（程云）按 Jira 预期结果修复当前差异并提供目标版本，测试回归。",
+      "after": "结论：当前剩余问题是语音NLU回归，不是地图缺陷。正式清单支持两句英文，CarSettings多语言TTS/负值修复已合入Bigsur；当前BIGSUR却分别落1919和1026。\n依据：Jira及SD-4307；海外语音功能清单；多语言资源清单；BEO-5997/5998与Change 1027014；Alchemy当前实测；标准/深蓝功能点。\n处理：恢复英文到1135/2843并在含已合入CarSettings修复的目标分支回归；语音NLU/模型负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-3956",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+        "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit",
+        "http://jira.i-tetris.com/browse/SD-4307"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "可转研发",
+      "after": "转语音",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "经办人：吴优；已按时间线读取 9 条评论；按现象分流",
+      "after": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/模型负责人；未评论/转派/关闭Jira。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "吴优工作说明",
+      "after": "Jira原票\n海外语音功能清单\n多语言资源清单\nSD-4307",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-3956",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+        "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit",
+        "http://jira.i-tetris.com/browse/SD-4307"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "Jira：当前经办人吴优；待办；历史分别命中1135/2843，但英文TTS资源和负值处理有问题；关联BEO-5997/5998的Bigsur修复Change 1027014已合入。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：当前BIGSUR：时间句误落1919不支持；距离句误落1026点播歌曲，均未命中1135/2843。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-3956",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+        "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit",
+        "http://jira.i-tetris.com/browse/SD-4307"
+      ]
+    },
+    "D": {
+      "visible": "结论：当前剩余问题是语音NLU回归，不是地图缺陷。正式清单支持两句英文，CarSettings多语言TTS/负值修复已合入Bigsur；当前BIGSUR却分别落1919和1026。\n依据：Jira及SD-4307；海外语音功能清单；多语言资源清单；BEO-5997/5998与Change 1027014；Alchemy当前实测；标准/深蓝功能点。\n处理：恢复英文到1135/2843并在含已合入CarSettings修复的目标分支回归；语音NLU/模型负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-3956",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+        "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit",
+        "http://jira.i-tetris.com/browse/SD-4307"
+      ]
+    },
+    "G": {
+      "visible": "转语音",
+      "links": []
+    },
+    "I": {
+      "visible": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/模型负责人；未评论/转派/关闭Jira。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n海外语音功能清单\n多语言资源清单\nSD-4307",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-3956",
+        "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+        "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit",
+        "http://jira.i-tetris.com/browse/SD-4307"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 65,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira：当前经办人吴优；待办；历史分别命中1135/2843，但英文TTS资源和负值处理有问题；关联BEO-5997/5998的Bigsur修复Change 1027014已合入。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：当前BIGSUR：时间句误落1919不支持；距离句误落1026点播歌曲，均未命中1135/2843。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 188,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-3956"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 194
+                  },
+                  {
+                    "startIndex": 197,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 205
+                  },
+                  {
+                    "startIndex": 208,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 215
+                  },
+                  {
+                    "startIndex": 218,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-4307"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 65,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：当前剩余问题是语音NLU回归，不是地图缺陷。正式清单支持两句英文，CarSettings多语言TTS/负值修复已合入Bigsur；当前BIGSUR却分别落1919和1026。\n依据：Jira及SD-4307；海外语音功能清单；多语言资源清单；BEO-5997/5998与Change 1027014；Alchemy当前实测；标准/深蓝功能点。\n处理：恢复英文到1135/2843并在含已合入CarSettings修复的目标分支回归；语音NLU/模型负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 237,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-3956"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 243
+                  },
+                  {
+                    "startIndex": 246,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 254
+                  },
+                  {
+                    "startIndex": 257,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 264
+                  },
+                  {
+                    "startIndex": 267,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-4307"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 65,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "转语音"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 65,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/模型负责人；未评论/转派/关闭Jira。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 65,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n海外语音功能清单\n多语言资源清单\nSD-4307"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-3956"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 15
+                  },
+                  {
+                    "startIndex": 16,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 23
+                  },
+                  {
+                    "startIndex": 24,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-4307"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

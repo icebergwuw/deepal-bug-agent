@@ -1,0 +1,406 @@
+{
+  "before_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-5373\",\"SD-5373｜query小憩模式音量调低2，将小憩模式时间调到最低了\")"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "Jira当前经办人吴优；待办；车端旧日志同时下发1186音量和1147情景时长，导致执行错误。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "语音ASR/算法处理：修正识别结果并补充该语种样本。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "转语音"
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；已按时间线读取 1 条评论；语音链路"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892\",\"吴优工作说明\")"
+        }
+      }
+    ]
+  },
+  "after_row": {
+    "values": [
+      {
+        "formattedValue": "2026-07-13",
+        "effectiveValue": {
+          "stringValue": "2026-07-13"
+        },
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "formattedValue": "SD-5373｜query小憩模式音量调低2，将小憩模式时间调到最低了",
+        "effectiveValue": {
+          "stringValue": "SD-5373｜query小憩模式音量调低2，将小憩模式时间调到最低了"
+        },
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-5373\",\"SD-5373｜query小憩模式音量调低2，将小憩模式时间调到最低了\")"
+        }
+      },
+      {
+        "formattedValue": "Jira：当前经办人吴优；待办；车端旧日志同时下发1186音量和1147情景时长，导致执行错误。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：meta_id=1186，vehicle:audio:volume:adjust，channel=nap_mode、scale_offset=lower、scale_to=2；当前平台已不再下发时长操作。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单",
+        "effectiveValue": {
+          "stringValue": "Jira：当前经办人吴优；待办；车端旧日志同时下发1186音量和1147情景时长，导致执行错误。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：meta_id=1186，vehicle:audio:volume:adjust，channel=nap_mode、scale_offset=lower、scale_to=2；当前平台已不再下发时长操作。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单"
+        },
+        "userEnteredValue": {
+          "stringValue": "Jira：当前经办人吴优；待办；车端旧日志同时下发1186音量和1147情景时长，导致执行错误。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：meta_id=1186，vehicle:audio:volume:adjust，channel=nap_mode、scale_offset=lower、scale_to=2；当前平台已不再下发时长操作。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单"
+        },
+        "textFormatRuns": [
+          {},
+          {
+            "startIndex": 197,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/SD-5373"
+              }
+            }
+          },
+          {
+            "startIndex": 203
+          },
+          {
+            "startIndex": 206,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+              }
+            }
+          },
+          {
+            "startIndex": 216
+          },
+          {
+            "startIndex": 219,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "formattedValue": "结论：当前平台路由已修正，转目标分支回归。正式定义支持小憩模式调节音量，当前BIGSUR只下发1186/nap_mode，不再误下发时长操作。\n依据：Jira旧日志；智能情景模式V4.9；Alchemy当前实测；标准1368/深蓝24513。\n处理：确认规则已下发C673-G3/G5目标release并用原话回归；语音平台发布负责人处理，测试验证只改变音量。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单",
+        "effectiveValue": {
+          "stringValue": "结论：当前平台路由已修正，转目标分支回归。正式定义支持小憩模式调节音量，当前BIGSUR只下发1186/nap_mode，不再误下发时长操作。\n依据：Jira旧日志；智能情景模式V4.9；Alchemy当前实测；标准1368/深蓝24513。\n处理：确认规则已下发C673-G3/G5目标release并用原话回归；语音平台发布负责人处理，测试验证只改变音量。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单"
+        },
+        "userEnteredValue": {
+          "stringValue": "结论：当前平台路由已修正，转目标分支回归。正式定义支持小憩模式调节音量，当前BIGSUR只下发1186/nap_mode，不再误下发时长操作。\n依据：Jira旧日志；智能情景模式V4.9；Alchemy当前实测；标准1368/深蓝24513。\n处理：确认规则已下发C673-G3/G5目标release并用原话回归；语音平台发布负责人处理，测试验证只改变音量。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单"
+        },
+        "textFormatRuns": [
+          {},
+          {
+            "startIndex": 184,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/SD-5373"
+              }
+            }
+          },
+          {
+            "startIndex": 190
+          },
+          {
+            "startIndex": 193,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+              }
+            }
+          },
+          {
+            "startIndex": 203
+          },
+          {
+            "startIndex": 206,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "formattedValue": "FALSE",
+        "effectiveValue": {
+          "boolValue": false
+        },
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "formattedValue": "待回归",
+        "effectiveValue": {
+          "stringValue": "待回归"
+        },
+        "userEnteredValue": {
+          "stringValue": "待回归"
+        }
+      },
+      {},
+      {
+        "formattedValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音平台发布负责人；未评论/转派/关闭Jira。",
+        "effectiveValue": {
+          "stringValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音平台发布负责人；未评论/转派/关闭Jira。"
+        },
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音平台发布负责人；未评论/转派/关闭Jira。"
+        }
+      },
+      {
+        "formattedValue": "Jira原票\n智能情景模式V4.9\n海外语音功能清单",
+        "effectiveValue": {
+          "stringValue": "Jira原票\n智能情景模式V4.9\n海外语音功能清单"
+        },
+        "userEnteredValue": {
+          "stringValue": "Jira原票\n智能情景模式V4.9\n海外语音功能清单"
+        },
+        "textFormatRuns": [
+          {
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/SD-5373"
+              }
+            }
+          },
+          {
+            "startIndex": 6
+          },
+          {
+            "startIndex": 7,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+              }
+            }
+          },
+          {
+            "startIndex": 17
+          },
+          {
+            "startIndex": 18,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "Jira：当前经办人吴优；待办；车端旧日志同时下发1186音量和1147情景时长，导致执行错误。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：meta_id=1186，vehicle:audio:volume:adjust，channel=nap_mode、scale_offset=lower、scale_to=2；当前平台已不再下发时长操作。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5373"
+        },
+        {
+          "label": "智能情景模式V4.9",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：当前平台路由已修正，转目标分支回归。正式定义支持小憩模式调节音量，当前BIGSUR只下发1186/nap_mode，不再误下发时长操作。\n依据：Jira旧日志；智能情景模式V4.9；Alchemy当前实测；标准1368/深蓝24513。\n处理：确认规则已下发C673-G3/G5目标release并用原话回归；语音平台发布负责人处理，测试验证只改变音量。\n资料：Jira原票 / 智能情景模式V4.9 / 海外语音功能清单",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5373"
+        },
+        {
+          "label": "智能情景模式V4.9",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    },
+    "G": "待回归",
+    "I": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音平台发布负责人；未评论/转派/关闭Jira。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5373"
+        },
+        {
+          "label": "智能情景模式V4.9",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        }
+      ]
+    }
+  }
+}

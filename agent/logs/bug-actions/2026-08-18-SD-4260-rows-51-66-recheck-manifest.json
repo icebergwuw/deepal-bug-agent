@@ -1,0 +1,310 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-4260",
+  "comment_causality": "待办；历史日志命中1006但缺德语override、播报含中文；当前BIGSUR进一步退化为2820上下文拒绝。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "BEO-6169",
+        "relationship": "Jira直接链接或日志引用",
+        "read": true,
+        "outcome": "已读取当前字段、描述、附件元数据、全部评论及问题链接；只用于因果和范围，不替代正式目标。"
+      },
+      {
+        "key": "BEO-7243",
+        "relationship": "Jira直接链接或日志引用",
+        "read": true,
+        "outcome": "已读取当前字段、描述、附件元数据、全部评论及问题链接；只用于因果和范围，不替代正式目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-4260 Jira原票",
+      "source_location": "当前字段、完整描述、附件、全部评论及直接关联票",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "Wo bin ich gerade",
+      "target_behavior": "待办；历史日志命中1006但缺德语override、播报含中文；当前BIGSUR进一步退化为2820上下文拒绝。",
+      "match": "exact",
+      "reason": "证明提报现象和历史链路。"
+    },
+    {
+      "source_id": "drive-voice-list",
+      "source": "海外语音功能清单C673-G3G5.xlsx",
+      "source_location": "对应语义及多语言语料行；正文已读",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "Wo bin ich gerade",
+      "target_behavior": "德语查询当前位置命中1006，并使用德语当前位置TTS资源播报，不出现中文。",
+      "match": "exact",
+      "reason": "当前适用正式语音能力清单。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-18原话实测：classification=chat，meta_id=2820 dialogue:method:reject；未命中1006。",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "Wo bin ich gerade",
+      "target_behavior": "classification=chat，meta_id=2820 dialogue:method:reject；未命中1006。",
+      "match": "exact",
+      "reason": "证明当前平台真实路由。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准1089（已锁定）查询当前位置",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "Wo bin ich gerade",
+      "target_behavior": "标准1089（已锁定）查询当前位置",
+      "match": "exact",
+      "reason": "标准详情已逐项打开核验。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝24317（已锁定、继承未修改）",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "Wo bin ich gerade",
+      "target_behavior": "深蓝24317（已锁定、继承未修改）",
+      "match": "exact",
+      "reason": "深蓝项目继承状态已逐项核验。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、NLU、功能点或TTS。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本次只判断语音意图、槽位或TTS，不评估地图搜索结果、路线规划或导航执行。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不以可见控件状态为主要矛盾。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "drive-voice-list"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索；已打开候选正文并核对同系列版本",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-4260"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "德语查询当前位置TTS含中文"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "德语查询当前位置TTS含中文"
+        }
+      ],
+      "search_receipt_ids": [
+        "SD-4260-formal_definition_search-drive-20260818"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+            "title": "海外语音功能清单C673-G3G5.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-voice-list"
+            ],
+            "references": []
+          },
+          {
+            "id": "1yFuQlecstSMg3taKeYBhY0dSWR7GthHx",
+            "title": "海外语音功能清单C673-G3G5&D587-G_PT-PT.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1yFuQlecstSMg3taKeYBhY0dSWR7GthHx/edit",
+            "disposition": "excluded",
+            "reason": "葡萄牙专项版本，不覆盖本票语种或目标。",
+            "references": []
+          },
+          {
+            "id": "1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5",
+            "title": "C673_G3G5语音测试语料-修订0805.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5/edit",
+            "disposition": "excluded",
+            "reason": "测试语料清单只作回归上下文，不替代正式功能清单。",
+            "references": []
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "Wo bin ich gerade"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1006（当前误落2820）"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1006（当前误落2820）"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-G3/G5 / BIGSUR"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "trigger": "Wo bin ich gerade",
+    "target_state": "德语查询当前位置命中1006，并使用德语当前位置TTS资源播报，不出现中文。",
+    "intent_function_signal": "1006（当前误落2820）",
+    "ui_tts_vehicle_behavior": "德语查询当前位置命中1006，并使用德语当前位置TTS资源播报，不出现中文。",
+    "boundary": "C673-G3/G5，BIGSUR及对应海外语种",
+    "source_ids": [
+      "drive-voice-list"
+    ]
+  },
+  "conflict_resolution": "结论：属于语音NLU与TTS配置缺陷。正式清单支持该德语，历史1006缺德语override；当前BIGSUR又误落2820，关联BEO-6169的1007“我的家”不是同一功能点。\n依据：Jira完整时间线；海外语音功能清单；Alchemy当前实测；标准1089/深蓝24317；现行多语言资源清单。\n处理：恢复德语1006路由并补齐德语当前位置TTS，取消与1007家庭地址票的错误合并；语音NLU/TTS配置负责人处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "Wo bin ich gerade",
+    "alchemy_tested": true,
+    "alchemy_result": "classification=chat，meta_id=2820 dialogue:method:reject；未命中1006。",
+    "meta_id": "1006（当前误落2820）",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1089（已锁定）查询当前位置",
+      "assessment": "已打开标准详情核验名称和状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝24317（已锁定、继承未修改）",
+      "assessment": "已打开深蓝项目详情核验继承状态。"
+    }
+  },
+  "decision": {
+    "status": "转语音",
+    "owner": "语音NLU/TTS配置负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：属于语音NLU与TTS配置缺陷。正式清单支持该德语，历史1006缺德语override；当前BIGSUR又误落2820，关联BEO-6169的1007“我的家”不是同一功能点。\n依据：Jira完整时间线；海外语音功能清单；Alchemy当前实测；标准1089/深蓝24317；现行多语言资源清单。\n处理：恢复德语1006路由并补齐德语当前位置TTS，取消与1007家庭地址票的错误合并；语音NLU/TTS配置负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T190000+0800-rows-51-66-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 65
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-4260-formal_definition_search-drive-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T19:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-4260"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "德语查询当前位置TTS含中文"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "德语查询当前位置TTS含中文"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+          "title": "海外语音功能清单C673-G3G5.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1yFuQlecstSMg3taKeYBhY0dSWR7GthHx",
+          "title": "海外语音功能清单C673-G3G5&D587-G_PT-PT.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1yFuQlecstSMg3taKeYBhY0dSWR7GthHx/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5",
+          "title": "C673_G3G5语音测试语料-修订0805.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}

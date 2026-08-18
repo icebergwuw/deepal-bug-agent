@@ -1,0 +1,96 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-5715\",\"SD-5715｜点击报警音，触屏音效和预览音同时播放\")"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "Jira当前经办人吴优；待办；研发已定位MegaSegmentPreference点击音与CHIME_PREVIEW并发，并给出递归关闭预览控件soundEffectsEnabled的修复方案。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "按当前生效定义处理，作为非问题关闭；测试同步修正用例或预期。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "可关闭"
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；已按时间线读取 2 条评论；现状符合定义"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892\",\"吴优工作说明\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "Jira：当前经办人吴优；待办；研发已定位MegaSegmentPreference点击音与CHIME_PREVIEW并发，并给出递归关闭预览控件soundEffectsEnabled的修复方案。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：不适用\n资料：Jira原票 / 质量审查表",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5715"
+        },
+        {
+          "label": "质量审查表",
+          "url": "https://docs.google.com/spreadsheets/d/1l_dpAL_gtmmjF0at8weY4KDFtw_Byud3/edit"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：暂不按非问题关闭，也不直接定为实现缺陷；当前缺少生效产品资料定义报警音预览与触屏音的叠加关系。\n依据：Jira已证明MegaSegmentPreference点击音与CHIME_PREVIEW并发；Drive质量审查仍列为核心缺陷，但未提供目标交互条款。\n处理：CarSettings声音设置产品负责人补齐预览控件的声音优先级口径；确认仅保留预览音后，再由CarSettings研发按现有方案禁用该控件触屏音并回归。\n资料：Jira原票 / 质量审查表",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5715"
+        },
+        {
+          "label": "质量审查表",
+          "url": "https://docs.google.com/spreadsheets/d/1l_dpAL_gtmmjF0at8weY4KDFtw_Byud3/edit"
+        }
+      ]
+    },
+    "G": "待复核",
+    "I": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：CarSettings声音设置产品负责人；未评论/转派/关闭Jira。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-5715"
+        },
+        {
+          "label": "质量审查表",
+          "url": "https://docs.google.com/spreadsheets/d/1l_dpAL_gtmmjF0at8weY4KDFtw_Byud3/edit"
+        }
+      ]
+    }
+  }
+}

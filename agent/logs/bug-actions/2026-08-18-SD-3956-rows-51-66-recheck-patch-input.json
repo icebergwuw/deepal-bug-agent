@@ -1,0 +1,120 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "userEnteredValue": {
+          "stringValue": "2026-07-13"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-3956\",\"SD-3956｜AGV过程中,trip查询类指令均无法正常响应.\")"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "Jira当前经办人吴优；待办；历史分别命中1135/2843，但英文TTS资源和负值处理有问题；关联BEO-5997/5998的Bigsur修复Change 1027014已合入。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "stringValue": "地图研发（程云）按 Jira 预期结果修复当前差异并提供目标版本，测试回归。"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "可转研发"
+        }
+      },
+      {},
+      {
+        "userEnteredValue": {
+          "stringValue": "经办人：吴优；已按时间线读取 9 条评论；按现象分流"
+        }
+      },
+      {
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?gid=717876892#gid=717876892\",\"吴优工作说明\")"
+        }
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "Jira：当前经办人吴优；待办；历史分别命中1135/2843，但英文TTS资源和负值处理有问题；关联BEO-5997/5998的Bigsur修复Change 1027014已合入。 Drive：已按Jira key、问题概念和模块资料检索并打开正文。Alchemy：当前BIGSUR：时间句误落1919不支持；距离句误落1026点播歌曲，均未命中1135/2843。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-3956"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        },
+        {
+          "label": "多语言资源清单",
+          "url": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+        },
+        {
+          "label": "SD-4307",
+          "url": "http://jira.i-tetris.com/browse/SD-4307"
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：当前剩余问题是语音NLU回归，不是地图缺陷。正式清单支持两句英文，CarSettings多语言TTS/负值修复已合入Bigsur；当前BIGSUR却分别落1919和1026。\n依据：Jira及SD-4307；海外语音功能清单；多语言资源清单；BEO-5997/5998与Change 1027014；Alchemy当前实测；标准/深蓝功能点。\n处理：恢复英文到1135/2843并在含已合入CarSettings修复的目标分支回归；语音NLU/模型负责人处理。\n资料：Jira原票 / 海外语音功能清单 / 多语言资源清单 / SD-4307",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-3956"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        },
+        {
+          "label": "多语言资源清单",
+          "url": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+        },
+        {
+          "label": "SD-4307",
+          "url": "http://jira.i-tetris.com/browse/SD-4307"
+        }
+      ]
+    },
+    "G": "转语音",
+    "I": "经办人：吴优；2026-08-18普通复查；Drive正文、版本族、关联票和Alchemy已核验；责任方：语音NLU/模型负责人；未评论/转派/关闭Jira。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/SD-3956"
+        },
+        {
+          "label": "海外语音功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit"
+        },
+        {
+          "label": "多语言资源清单",
+          "url": "https://docs.google.com/spreadsheets/d/1NKT3M2VhsjW_QGALcIFeBua-wlXfALuq/edit"
+        },
+        {
+          "label": "SD-4307",
+          "url": "http://jira.i-tetris.com/browse/SD-4307"
+        }
+      ]
+    }
+  }
+}

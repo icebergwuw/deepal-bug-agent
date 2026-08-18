@@ -1,0 +1,309 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-5373",
+  "comment_causality": "待办；车端旧日志同时下发1186音量和1147情景时长，导致执行错误。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-5373 Jira原票",
+      "source_location": "当前字段、完整描述、附件、全部评论及直接关联票",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "小憩模式音量调低2",
+      "target_behavior": "待办；车端旧日志同时下发1186音量和1147情景时长，导致执行错误。",
+      "match": "exact",
+      "reason": "证明提报现象和历史链路。"
+    },
+    {
+      "source_id": "drive-voice-list",
+      "source": "海外语音功能清单C673-G3G5.xlsx",
+      "source_location": "对应语义及多语言语料行；正文已读",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "小憩模式音量调低2",
+      "target_behavior": "小憩模式运行时只调节小憩音乐音量，不改变小憩结束时间。",
+      "match": "exact",
+      "reason": "当前适用正式语音能力清单。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-18原话实测：meta_id=1186，vehicle:audio:volume:adjust，channel=nap_mode、scale_offset=lower、scale_to=2；当前平台已不再下发时长操作。",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "小憩模式音量调低2",
+      "target_behavior": "meta_id=1186，vehicle:audio:volume:adjust，channel=nap_mode、scale_offset=lower、scale_to=2；当前平台已不再下发时长操作。",
+      "match": "exact",
+      "reason": "证明当前平台真实路由。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准1368（已锁定）指定通道/全局音量增量调节",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "小憩模式音量调低2",
+      "target_behavior": "标准1368（已锁定）指定通道/全局音量增量调节",
+      "match": "exact",
+      "reason": "标准详情已逐项打开核验。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝24513（已锁定、继承未修改）",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "小憩模式音量调低2",
+      "target_behavior": "深蓝24513（已锁定、继承未修改）",
+      "match": "exact",
+      "reason": "深蓝项目继承状态已逐项核验。"
+    },
+    {
+      "source_id": "drive-scenario",
+      "source": "智能情景模式功能定义V4.9",
+      "source_location": "语音控制方式及小憩模式音量调节条款",
+      "source_type": "special_prd",
+      "role": "formal_target",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "小憩模式音量调低2",
+      "target_behavior": "小憩模式运行时只调节小憩音乐音量，不改变小憩结束时间。",
+      "match": "exact",
+      "reason": "明确小憩模式调高/调低音量。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、NLU、功能点或TTS。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本次只判断语音意图、槽位或TTS，不评估地图搜索结果、路线规划或导航执行。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不以可见控件状态为主要矛盾。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "drive-voice-list"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索；已打开候选正文并核对同系列版本",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5373"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "小憩模式音量调低误调时长"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "小憩模式音量调低误调时长"
+        }
+      ],
+      "search_receipt_ids": [
+        "SD-5373-formal_definition_search-drive-20260818"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+            "title": "海外语音功能清单C673-G3G5.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-voice-list"
+            ],
+            "references": []
+          },
+          {
+            "id": "1yFuQlecstSMg3taKeYBhY0dSWR7GthHx",
+            "title": "海外语音功能清单C673-G3G5&D587-G_PT-PT.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1yFuQlecstSMg3taKeYBhY0dSWR7GthHx/edit",
+            "disposition": "excluded",
+            "reason": "葡萄牙专项版本，不覆盖本票语种或目标。",
+            "references": []
+          },
+          {
+            "id": "1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5",
+            "title": "C673_G3G5语音测试语料-修订0805.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5/edit",
+            "disposition": "excluded",
+            "reason": "测试语料清单只作回归上下文，不替代正式功能清单。",
+            "references": []
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "小憩模式音量调低2"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1186"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1186"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-G3/G5 / BIGSUR"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "trigger": "小憩模式音量调低2",
+    "target_state": "小憩模式运行时只调节小憩音乐音量，不改变小憩结束时间。",
+    "intent_function_signal": "1186",
+    "ui_tts_vehicle_behavior": "小憩模式运行时只调节小憩音乐音量，不改变小憩结束时间。",
+    "boundary": "C673-G3/G5，BIGSUR及对应海外语种",
+    "source_ids": [
+      "drive-scenario"
+    ]
+  },
+  "conflict_resolution": "结论：当前平台路由已修正，转目标分支回归。正式定义支持小憩模式调节音量，当前BIGSUR只下发1186/nap_mode，不再误下发时长操作。\n依据：Jira旧日志；智能情景模式V4.9；Alchemy当前实测；标准1368/深蓝24513。\n处理：确认规则已下发C673-G3/G5目标release并用原话回归；语音平台发布负责人处理，测试验证只改变音量。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "小憩模式音量调低2",
+    "alchemy_tested": true,
+    "alchemy_result": "meta_id=1186，vehicle:audio:volume:adjust，channel=nap_mode、scale_offset=lower、scale_to=2；当前平台已不再下发时长操作。",
+    "meta_id": "1186",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1368（已锁定）指定通道/全局音量增量调节",
+      "assessment": "已打开标准详情核验名称和状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝24513（已锁定、继承未修改）",
+      "assessment": "已打开深蓝项目详情核验继承状态。"
+    }
+  },
+  "decision": {
+    "status": "待回归",
+    "owner": "语音平台发布负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：当前平台路由已修正，转目标分支回归。正式定义支持小憩模式调节音量，当前BIGSUR只下发1186/nap_mode，不再误下发时长操作。\n依据：Jira旧日志；智能情景模式V4.9；Alchemy当前实测；标准1368/深蓝24513。\n处理：确认规则已下发C673-G3/G5目标release并用原话回归；语音平台发布负责人处理，测试验证只改变音量。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T190000+0800-rows-51-66-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 60
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-5373-formal_definition_search-drive-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T19:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5373"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "小憩模式音量调低误调时长"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "小憩模式音量调低误调时长"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+          "title": "海外语音功能清单C673-G3G5.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1yFuQlecstSMg3taKeYBhY0dSWR7GthHx",
+          "title": "海外语音功能清单C673-G3G5&D587-G_PT-PT.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1yFuQlecstSMg3taKeYBhY0dSWR7GthHx/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5",
+          "title": "C673_G3G5语音测试语料-修订0805.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}
