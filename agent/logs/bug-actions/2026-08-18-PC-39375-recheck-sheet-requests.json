@@ -1,0 +1,568 @@
+{
+  "key": "PC-39375",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 373,
+  "rowIndex": 372,
+  "previewFingerprint": "39eca6f018256d09299129703664b2bc6762e6ebc50b637e33e9260ebce1e8d7",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "现象：‘几点退潮’当前误入音乐1026；‘几点钟退潮’同时命中天气1249和音乐1026；补充‘今天’后进入天气现象1975。\n证据：VOS日志；Alchemy当前测试；Alchemy标准1400；深蓝项目26750。",
+      "after": "现象：‘几点退潮’误入音乐1026；‘几点钟退潮’同时命中天气1249和音乐1026；‘今天几点退潮’进入天气现象1975。\n复核：Alchemy当前测试；Alchemy标准1400；深蓝项目26750；心知天气API第26行明确‘潮汐预报/付费’；深蓝2025变更表、深蓝2026变更表及8295功能List检索‘潮’无命中。",
+      "links": [
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1400",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750",
+        "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1djiAz2wZYYnkgTlHbMpP3-3ufhUj5VMFD0tTGXsQPOE/edit?usp=drivesdk"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：定义为语音分类缺陷。‘几点退潮’带明确时间询问，应稳定进入天气现象查询1975；当前误入音乐1026或与天气1249并行，执行结果不一致。\n依据：Alchemy标准1400；深蓝项目26750；Alchemy当前测试。\n处理：修复‘退潮/涨潮+时间询问’到天气1975的分类与冲突消歧；若项目未开通潮汐数据则统一回复暂不支持，不得落入音乐或闲聊；深蓝语音天气意图配置负责人处理。",
+      "after": "结论：定义为语音分类缺陷。‘几点退潮’带明确时间询问，应稳定进入天气现象查询1975；当前误入音乐1026或与天气1249并行，执行结果不一致。\n依据：Alchemy标准1400；深蓝项目26750；心知天气API第26行；Alchemy当前测试。\n处理：修复‘退潮/涨潮+时间询问’到天气1975的分类与冲突消歧；潮汐预报为付费能力，深蓝未查到开通记录时统一回复暂不支持；深蓝语音天气意图配置负责人处理。",
+      "links": [
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1400",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750",
+        "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "G",
+      "before": "可转语音",
+      "after": "可转语音",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "分类修复与潮汐数据能力分开处理；深蓝潮汐数据开通范围未证实。",
+      "after": "分类应归天气1975；潮汐预报是付费能力，当前未找到深蓝采购或交付记录。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·PC-39375\nVOS日志·68900\nAlchemy当前·退潮测试\nAlchemy标准1400\n深蓝项目26750\nCX835潮汐能力清单",
+      "after": "Jira原票·PC-39375\nVOS日志·68900\nAlchemy当前·退潮测试\nAlchemy标准1400\n深蓝项目26750\n心知天气API·第26行\n深蓝变更表·2025\n深蓝变更表·2026\n深蓝8295功能List",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-39375",
+        "https://vos-debug.i-tetris.com/#/mark/log/detail/68900",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1400",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750",
+        "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1djiAz2wZYYnkgTlHbMpP3-3ufhUj5VMFD0tTGXsQPOE/edit?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：‘几点退潮’误入音乐1026；‘几点钟退潮’同时命中天气1249和音乐1026；‘今天几点退潮’进入天气现象1975。\n复核：Alchemy当前测试；Alchemy标准1400；深蓝项目26750；心知天气API第26行明确‘潮汐预报/付费’；深蓝2025变更表、深蓝2026变更表及8295功能List检索‘潮’无命中。",
+      "links": [
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1400",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750",
+        "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1djiAz2wZYYnkgTlHbMpP3-3ufhUj5VMFD0tTGXsQPOE/edit?usp=drivesdk"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为语音分类缺陷。‘几点退潮’带明确时间询问，应稳定进入天气现象查询1975；当前误入音乐1026或与天气1249并行，执行结果不一致。\n依据：Alchemy标准1400；深蓝项目26750；心知天气API第26行；Alchemy当前测试。\n处理：修复‘退潮/涨潮+时间询问’到天气1975的分类与冲突消歧；潮汐预报为付费能力，深蓝未查到开通记录时统一回复暂不支持；深蓝语音天气意图配置负责人处理。",
+      "links": [
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1400",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750",
+        "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "G": {
+      "visible": "可转语音",
+      "links": []
+    },
+    "I": {
+      "visible": "分类应归天气1975；潮汐预报是付费能力，当前未找到深蓝采购或交付记录。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·PC-39375\nVOS日志·68900\nAlchemy当前·退潮测试\nAlchemy标准1400\n深蓝项目26750\n心知天气API·第26行\n深蓝变更表·2025\n深蓝变更表·2026\n深蓝8295功能List",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-39375",
+        "https://vos-debug.i-tetris.com/#/mark/log/detail/68900",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1400",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750",
+        "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1djiAz2wZYYnkgTlHbMpP3-3ufhUj5VMFD0tTGXsQPOE/edit?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 372,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：‘几点退潮’误入音乐1026；‘几点钟退潮’同时命中天气1249和音乐1026；‘今天几点退潮’进入天气现象1975。\n复核：Alchemy当前测试；Alchemy标准1400；深蓝项目26750；心知天气API第26行明确‘潮汐预报/付费’；深蓝2025变更表、深蓝2026变更表及8295功能List检索‘潮’无命中。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 77
+                  },
+                  {
+                    "startIndex": 78,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 91
+                  },
+                  {
+                    "startIndex": 92,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 101
+                  },
+                  {
+                    "startIndex": 102,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 113
+                  },
+                  {
+                    "startIndex": 125,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 134
+                  },
+                  {
+                    "startIndex": 135,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 144
+                  },
+                  {
+                    "startIndex": 145,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1djiAz2wZYYnkgTlHbMpP3-3ufhUj5VMFD0tTGXsQPOE/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 155
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 372,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为语音分类缺陷。‘几点退潮’带明确时间询问，应稳定进入天气现象查询1975；当前误入音乐1026或与天气1249并行，执行结果不一致。\n依据：Alchemy标准1400；深蓝项目26750；心知天气API第26行；Alchemy当前测试。\n处理：修复‘退潮/涨潮+时间询问’到天气1975的分类与冲突消歧；潮汐预报为付费能力，深蓝未查到开通记录时统一回复暂不支持；深蓝语音天气意图配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 76,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  },
+                  {
+                    "startIndex": 90,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 99
+                  },
+                  {
+                    "startIndex": 100,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 111
+                  },
+                  {
+                    "startIndex": 112,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 123
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 372,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转语音"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 372,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "分类应归天气1975；潮汐预报是付费能力，当前未找到深蓝采购或交付记录。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 372,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·PC-39375\nVOS日志·68900\nAlchemy当前·退潮测试\nAlchemy标准1400\n深蓝项目26750\n心知天气API·第26行\n深蓝变更表·2025\n深蓝变更表·2026\n深蓝8295功能List"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-39375"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 15
+                  },
+                  {
+                    "startIndex": 16,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://vos-debug.i-tetris.com/#/mark/log/detail/68900"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 27
+                  },
+                  {
+                    "startIndex": 28,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 42
+                  },
+                  {
+                    "startIndex": 43,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 56
+                  },
+                  {
+                    "startIndex": 57,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 66
+                  },
+                  {
+                    "startIndex": 67,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 79
+                  },
+                  {
+                    "startIndex": 80,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 90
+                  },
+                  {
+                    "startIndex": 91,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 101
+                  },
+                  {
+                    "startIndex": 102,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1djiAz2wZYYnkgTlHbMpP3-3ufhUj5VMFD0tTGXsQPOE/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

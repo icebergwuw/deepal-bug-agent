@@ -1,0 +1,386 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-39375",
+  "comment_causality": "Jira要求确认‘几点退潮’执行预期；Alchemy实时测试显示原话误入音乐1026或与天气1249并行。Drive实时复查进一步确认通用心知天气API在心知天气API页第26行将潮汐预报标为付费能力，而深蓝2025/2026项目变更表及8295功能List检索‘潮’均无命中，因此分类归属与项目数据开通必须分开判断。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票属于语音天气意图分类，不启用通用画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId、语音分类和项目功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航或POI上下文。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不涉及前台可见控件的语音优先级。"
+    }
+  },
+  "inheritance_chains": [
+    {
+      "id": "deepal-weather-phenomenon-1975",
+      "project_model": "深蓝项目",
+      "function": "查询天气现象·MetaId1975",
+      "project_source_id": "alchemy-project",
+      "definition_source_id": "weather-formal-config",
+      "verified": true,
+      "reason": "深蓝项目功能26750显示继承未修改标准功能1400。"
+    }
+  ],
+  "conflict_resolution": "Alchemy标准1400和深蓝项目26750定义天气现象查询；当前原话误入音乐1026或与天气1249并行，属于分类与消歧缺陷。Drive《天气现象 & 心知天气API & 空气质量定义》心知天气API第26行明确潮汐预报为付费能力；深蓝2025/2026项目变更表和8295功能List未检出潮汐交付记录，因此不承诺具体退潮时刻，数据未开通时统一回复暂不支持。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "几点退潮",
+    "alchemy_tested": true,
+    "alchemy_result": "‘几点退潮’命中classification=task / meta_id=1026 / media:music:play；‘几点钟退潮’同时命中meta_id=1249天气查询和1026音乐；‘今天几点退潮’命中meta_id=1975 / weather:query:check，condition=退潮，time=今天。",
+    "meta_id": "1026,1249,1975",
+    "standard_function": {
+      "status": "verified",
+      "name": "查询天气现象·MetaId 1975·标准功能1400",
+      "assessment": "已锁定；支持指定或不指定时间、地点的天气现象查询。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目26750·查询天气现象",
+      "assessment": "已锁定，继承未修改标准功能1400。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-39375 Jira原票与VOS日志",
+      "source_location": "Jira描述·query几点退潮；VOS mark 68900",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "深蓝",
+      "trigger": "几点退潮",
+      "target_behavior": "当前有时进入闲聊、有时进入天气查询",
+      "match": "exact",
+      "reason": "证明测试现场和当前不一致现象。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "BIGSUR在线对话·几点退潮/几点钟退潮/今天几点退潮",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝项目",
+      "trigger": "退潮+时间询问",
+      "target_behavior": "1026音乐误命中、1249并行冲突，补充今天后进入1975",
+      "match": "exact",
+      "reason": "证明当前在线语义分类和冲突。"
+    },
+    {
+      "source_id": "weather-formal-config",
+      "source": "Alchemy标准功能1400·查询天气现象",
+      "source_location": "标准功能1400·MetaId1975·入参说明",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "inheritance_chain_id": "deepal-weather-phenomenon-1975",
+      "project_model": "标准能力",
+      "trigger": "天气现象及时间点询问",
+      "target_behavior": "进入天气现象查询1975，支持指定或不指定时间和地点",
+      "match": "partial",
+      "reason": "标准正式配置定义语义归属，并由深蓝项目26750的继承未修改声明完成项目适用性核验。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "查询天气现象·标准功能1400·MetaId1975·已锁定",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "退潮+时间询问",
+      "target_behavior": "天气现象查询1975",
+      "match": "exact",
+      "reason": "证明标准功能点状态、语义与槽位范围。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝项目26750·查询天气现象·继承未修改·已锁定",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "深蓝项目天气现象查询",
+      "target_behavior": "继承标准1975规则",
+      "match": "exact",
+      "reason": "证明深蓝项目已继承该语义功能。"
+    },
+    {
+      "source_id": "cx835-tide-list",
+      "source": "CX835_天气_功能清单_v0.5",
+      "source_location": "功能清单·地理/潮汐预报/付费",
+      "source_type": "historical",
+      "role": "context_only",
+      "project_model": "CX835",
+      "trigger": "潮汐预报数据能力",
+      "target_behavior": "其他项目将潮汐预报列为付费能力",
+      "match": "partial",
+      "reason": "仅用于识别数据能力边界，不证明深蓝已采购或开通。"
+    },
+    {
+      "source_id": "weather-api-catalog",
+      "source": "天气现象 & 心知天气API & 空气质量定义",
+      "source_location": "心知天气API!A26:E26·地理/潮汐预报/付费",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "通用心知天气API能力目录",
+      "trigger": "查询退潮/涨潮时刻",
+      "target_behavior": "潮汐预报属于付费数据能力，是否可返回取决于项目是否开通",
+      "match": "partial",
+      "reason": "证明潮汐数据能力是独立付费项；不证明深蓝已采购或交付。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索及Alchemy正式功能配置",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-39375"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "几点退潮"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "退潮"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "潮汐预报"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 天气 功能清单"
+        },
+        {
+          "kind": "version_family",
+          "text": "天气潮汐功能清单"
+        }
+      ],
+      "source_ids": [
+        "weather-formal-config",
+        "weather-api-catalog"
+      ],
+      "reason": "已读取Alchemy正式天气现象定义；Drive逐表核对通用心知天气API第26行（潮汐预报/付费）、CX835/EC1c天气资料、深蓝8295功能List及深蓝2025/2026项目变更表。当前未找到深蓝潮汐采购或交付记录。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1No34yuXH0WP2TchYAVx6P91-hV6Hi94KXoBJWdCyQcU",
+            "title": "CX835_天气_功能清单_v0.5",
+            "url": "https://docs.google.com/spreadsheets/d/1No34yuXH0WP2TchYAVx6P91-hV6Hi94KXoBJWdCyQcU/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "天气潮汐功能清单",
+            "disposition": "read",
+            "source_ids": [
+              "cx835-tide-list"
+            ],
+            "reason": "已读但项目不匹配，仅作边界证据。"
+          },
+          {
+            "id": "1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q",
+            "title": "天气现象 & 心知天气API & 空气质量定义",
+            "url": "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "weather-api-catalog"
+            ],
+            "reason": "已读心知天气API第26行，潮汐预报标为付费能力。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "天气潮汐功能清单",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-39375-formal-definition-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1No34yuXH0WP2TchYAVx6P91-hV6Hi94KXoBJWdCyQcU",
+            "selection_reason": "唯一明确命中潮汐预报的功能清单；因属于CX835，不作为深蓝正式目标。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "PC-39375-formal-definition-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy BIGSUR在线对话实时测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "几点退潮"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "几点钟退潮"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "今天几点退潮"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存三组当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy标准功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1975"
+        },
+        {
+          "kind": "meta_or_function",
+          "text": "查询天气现象"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能1400及MetaId1975定义。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy深蓝项目功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1975"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取深蓝项目26750，确认已锁定且继承未修改。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "PC-39375-formal-definition-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T17:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-39375"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "几点退潮"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "退潮"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "潮汐预报"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝 天气 功能清单"
+        },
+        {
+          "kind": "version_family",
+          "text": "天气潮汐功能清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "1No34yuXH0WP2TchYAVx6P91-hV6Hi94KXoBJWdCyQcU",
+          "title": "CX835_天气_功能清单_v0.5",
+          "url": "https://docs.google.com/spreadsheets/d/1No34yuXH0WP2TchYAVx6P91-hV6Hi94KXoBJWdCyQcU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q",
+          "title": "天气现象 & 心知天气API & 空气质量定义",
+          "url": "https://docs.google.com/spreadsheets/d/1mzjLSGgFMVHJthiQkYB6CQL7VOMcsVgwHO5eFAbrb7Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ],
+      "limitations": "已逐表检索深蓝2025/2026项目变更表、深蓝8295功能List、CX835/EC1c天气资料；未找到深蓝潮汐采购或交付记录。通用心知天气API第26行仅证明潮汐预报为付费能力。"
+    }
+  ],
+  "decision": {
+    "status": "可转语音",
+    "owner": "深蓝语音天气意图配置负责人",
+    "text": "结论：定义为语音分类缺陷。‘几点退潮’带明确时间询问，应稳定进入天气现象查询1975；当前误入音乐1026或与天气1249并行，执行结果不一致。\n依据：Alchemy标准1400；深蓝项目26750；心知天气API第26行；Alchemy当前测试。\n处理：修复‘退潮/涨潮+时间询问’到天气1975的分类与冲突消歧；潮汐预报为付费能力，深蓝未查到开通记录时统一回复暂不支持；深蓝语音天气意图配置负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T102000Z-pc-39375-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 373
+  },
+  "expected_behavior": {
+    "trigger": "用户询问‘几点退潮’或同类‘退潮/涨潮+时间’表达",
+    "target_state": "稳定进入天气现象查询1975；数据未开通时统一回复暂不支持",
+    "intent_function_signal": "weather:query:check / meta_id=1975，不得命中media:music:play 1026或并行冲突",
+    "ui_tts_vehicle_behavior": "有潮汐数据时返回对应天气现象信息；无数据时明确暂不支持，不进入音乐或闲聊",
+    "boundary": "语义分类应进入天气1975；通用心知天气API第26行显示潮汐预报为付费项，深蓝是否开通未找到采购或交付记录",
+    "source_ids": [
+      "weather-formal-config"
+    ]
+  }
+}
