@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260818T083000Z-rows-348-353-recheck",
+  "status": "complete",
+  "started_at": "2026-08-18T08:30:00+08:00",
+  "query_summary": "重新处理吴优bug页第348-353行，共6个既有Jira Key。",
+  "action_log": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck.md",
+  "items": [
+    {
+      "jira_key": "HUR-81740",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 348,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-HUR-81740-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-validation.json",
+      "readback_sha256": "5f2078aa6cd41ddff323369d2dd2b7f653e8f531826a0e9e7e5187a197d56b00"
+    },
+    {
+      "jira_key": "HUR-82887",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 349,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-HUR-82887-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-validation.json",
+      "readback_sha256": "5f2078aa6cd41ddff323369d2dd2b7f653e8f531826a0e9e7e5187a197d56b00"
+    },
+    {
+      "jira_key": "HUR-83012",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 350,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-HUR-83012-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-validation.json",
+      "readback_sha256": "5f2078aa6cd41ddff323369d2dd2b7f653e8f531826a0e9e7e5187a197d56b00"
+    },
+    {
+      "jira_key": "HUR-83099",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 351,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-HUR-83099-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-validation.json",
+      "readback_sha256": "5f2078aa6cd41ddff323369d2dd2b7f653e8f531826a0e9e7e5187a197d56b00"
+    },
+    {
+      "jira_key": "PC-38464",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 352,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-PC-38464-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-validation.json",
+      "readback_sha256": "5f2078aa6cd41ddff323369d2dd2b7f653e8f531826a0e9e7e5187a197d56b00"
+    },
+    {
+      "jira_key": "SD-6929",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 353,
+      "manifest_path": "agent/logs/bug-actions/2026-08-18-SD-6929-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-18-rows-348-353-recheck-validation.json",
+      "readback_sha256": "5f2078aa6cd41ddff323369d2dd2b7f653e8f531826a0e9e7e5187a197d56b00"
+    }
+  ],
+  "completed_at": "2026-08-18T08:55:00+08:00"
+}

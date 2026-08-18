@@ -1,0 +1,397 @@
+{
+  "key": "SD-6929",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 353,
+  "rowIndex": 352,
+  "previewFingerprint": "29b1f9808ed79d284c65fbfe3ce3341dff97d46a6a6ddff51de50613a8ff735a",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "SD-6929 Jira原票。\n现象：[镁佳][C673-G3/G5][0309] [22扬]15:32洗车模式开启，雨刮已关闭，洗车模式上还显示雨刮未关闭\nJira：状态=待办，评论=undefined，附件=4；已完整读取。",
+      "after": "现象：[Jira原票]雨刮已关闭但洗车模式仍显示“未关闭”。\n复核：[SLV-44634]确认SD项目没有电子雨刮信号，原判定不成立；[G3/G5全功清单V1.7]登记手动雨刮车型能力；[系统设置V9.1]要求无效/不支持信号按车型配置处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-6929",
+        "http://jira.i-tetris.com/browse/SLV-44634",
+        "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Drive全功清单/洗车模式检索及UE缺口见manifest。\n处理：洗车模式UI状态同步负责人补齐C673-G3/G5洗车模式生效UE/状态映射，核对雨刮实际信号与页面状态文案的数据源后由UI状态同步负责人修正。",
+      "after": "结论：定义为转需求。C673-G3/G5为手动雨刮车型，不提供电子雨刮信号，现有洗车模式继续检查该信号会稳定误报“未关闭”，原检查条件不成立。\n依据：[G3/G5全功清单V1.7]·车型雨刮能力；[系统设置V9.1]·无效/不支持信号配置规则；[SLV-44634]·无电子雨刮信号评论。\n处理：删除手动雨刮车型的电子雨刮检查项及失败状态展示，按车型能力配置；SceneMode/车型配置负责人处理。",
+      "links": [
+        "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/SLV-44634"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "转需求",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "仅删除无电子雨刮信号车型的检查项；其他车型仍按实际信号配置验收。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·SD-6929",
+      "after": "Jira原票\nSLV-44634\nG3/G5全功清单V1.7\n系统设置V9.1",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-6929",
+        "http://jira.i-tetris.com/browse/SLV-44634",
+        "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：[Jira原票]雨刮已关闭但洗车模式仍显示“未关闭”。\n复核：[SLV-44634]确认SD项目没有电子雨刮信号，原判定不成立；[G3/G5全功清单V1.7]登记手动雨刮车型能力；[系统设置V9.1]要求无效/不支持信号按车型配置处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-6929",
+        "http://jira.i-tetris.com/browse/SLV-44634",
+        "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为转需求。C673-G3/G5为手动雨刮车型，不提供电子雨刮信号，现有洗车模式继续检查该信号会稳定误报“未关闭”，原检查条件不成立。\n依据：[G3/G5全功清单V1.7]·车型雨刮能力；[系统设置V9.1]·无效/不支持信号配置规则；[SLV-44634]·无电子雨刮信号评论。\n处理：删除手动雨刮车型的电子雨刮检查项及失败状态展示，按车型能力配置；SceneMode/车型配置负责人处理。",
+      "links": [
+        "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/SLV-44634"
+      ]
+    },
+    "G": {
+      "visible": "转需求",
+      "links": []
+    },
+    "I": {
+      "visible": "仅删除无电子雨刮信号车型的检查项；其他车型仍按实际信号配置验收。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\nSLV-44634\nG3/G5全功清单V1.7\n系统设置V9.1",
+      "links": [
+        "http://jira.i-tetris.com/browse/SD-6929",
+        "http://jira.i-tetris.com/browse/SLV-44634",
+        "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 352,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票]雨刮已关闭但洗车模式仍显示“未关闭”。\n复核：[SLV-44634]确认SD项目没有电子雨刮信号，原判定不成立；[G3/G5全功清单V1.7]登记手动雨刮车型能力；[系统设置V9.1]要求无效/不支持信号按车型配置处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 4,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-6929"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 35,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44634"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 44
+                  },
+                  {
+                    "startIndex": 68,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 81
+                  },
+                  {
+                    "startIndex": 94,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 102
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 352,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为转需求。C673-G3/G5为手动雨刮车型，不提供电子雨刮信号，现有洗车模式继续检查该信号会稳定误报“未关闭”，原检查条件不成立。\n依据：[G3/G5全功清单V1.7]·车型雨刮能力；[系统设置V9.1]·无效/不支持信号配置规则；[SLV-44634]·无电子雨刮信号评论。\n处理：删除手动雨刮车型的电子雨刮检查项及失败状态展示，按车型能力配置；SceneMode/车型配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 76,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  },
+                  {
+                    "startIndex": 99,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 107
+                  },
+                  {
+                    "startIndex": 123,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44634"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 132
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 352,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "转需求"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 352,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "仅删除无电子雨刮信号车型的检查项；其他车型仍按实际信号配置验收。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 352,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\nSLV-44634\nG3/G5全功清单V1.7\n系统设置V9.1"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-6929"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44634"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

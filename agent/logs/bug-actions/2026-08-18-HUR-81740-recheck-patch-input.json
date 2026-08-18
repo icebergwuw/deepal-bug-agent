@@ -1,0 +1,2401 @@
+{
+  "current_row": {
+    "values": [
+      {
+        "formattedValue": "2026-08-17",
+        "userEnteredValue": {
+          "stringValue": "2026-08-17"
+        },
+        "effectiveValue": {
+          "stringValue": "2026-08-17"
+        },
+        "userEnteredFormat": {
+          "numberFormat": {
+            "type": "DATE",
+            "pattern": "yyyy-mm-dd"
+          },
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.05882353,
+              "green": 0.24705882,
+              "blue": 0.6
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.05882353,
+                "green": 0.24705882,
+                "blue": 0.6
+              }
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "numberFormat": {
+            "type": "DATE",
+            "pattern": "yyyy-mm-dd"
+          },
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.05882353,
+              "green": 0.24705882,
+              "blue": 0.6
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.05882353,
+                "green": 0.24705882,
+                "blue": 0.6
+              }
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        }
+      },
+      {
+        "formattedValue": "HUR-81740｜语音回拨电话无法选择第几个",
+        "userEnteredValue": {
+          "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81740\",\"HUR-81740｜语音回拨电话无法选择第几个\")"
+        },
+        "effectiveValue": {
+          "stringValue": "HUR-81740｜语音回拨电话无法选择第几个"
+        },
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.05882353,
+              "green": 0.24705882,
+              "blue": 0.6
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.05882353,
+                "green": 0.24705882,
+                "blue": 0.6
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/HUR-81740"
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.05882353,
+              "green": 0.24705882,
+              "blue": 0.6
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": true,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.05882353,
+                "green": 0.24705882,
+                "blue": 0.6
+              }
+            },
+            "link": {
+              "uri": "http://jira.i-tetris.com/browse/HUR-81740"
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "hyperlink": "http://jira.i-tetris.com/browse/HUR-81740"
+      },
+      {
+        "formattedValue": "HUR-81740 Jira原票。\n现象：语音回拨电话无法选择第几个\nJira：状态=待办，评论=undefined，附件=9；已完整读取。\nAlchemy：原话“回拨；第一个”，当前MetaId=1067/1067/1455/1455。",
+        "userEnteredValue": {
+          "stringValue": "HUR-81740 Jira原票。\n现象：语音回拨电话无法选择第几个\nJira：状态=待办，评论=undefined，附件=9；已完整读取。\nAlchemy：原话“回拨；第一个”，当前MetaId=1067/1067/1455/1455。"
+        },
+        "effectiveValue": {
+          "stringValue": "HUR-81740 Jira原票。\n现象：语音回拨电话无法选择第几个\nJira：状态=待办，评论=undefined，附件=9；已完整读取。\nAlchemy：原话“回拨；第一个”，当前MetaId=1067/1067/1455/1455。"
+        },
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "LEFT",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "LEFT",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "PLAIN_TEXT",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "textFormatRuns": [
+          {
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/HUR-81740"
+              }
+            }
+          },
+          {
+            "startIndex": 9
+          }
+        ]
+      },
+      {
+        "formattedValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1067/1455；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A蓝牙电话语音负责人在HUR回拨候选页复测1067后接1455的上下文传递，定位列表焦点或执行链丢失。",
+        "userEnteredValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1067/1455；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A蓝牙电话语音负责人在HUR回拨候选页复测1067后接1455的上下文传递，定位列表焦点或执行链丢失。"
+        },
+        "effectiveValue": {
+          "stringValue": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1067/1455；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A蓝牙电话语音负责人在HUR回拨候选页复测1067后接1455的上下文传递，定位列表焦点或执行链丢失。"
+        },
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "LEFT",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "LEFT",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "PLAIN_TEXT",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "textFormatRuns": [
+          {},
+          {
+            "startIndex": 55,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+              }
+            }
+          },
+          {
+            "startIndex": 64
+          }
+        ]
+      },
+      {
+        "formattedValue": "FALSE",
+        "userEnteredValue": {
+          "boolValue": false
+        },
+        "effectiveValue": {
+          "boolValue": false
+        },
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "PLAIN_TEXT",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "dataValidation": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true
+        }
+      },
+      {
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        }
+      },
+      {
+        "formattedValue": "待复核",
+        "userEnteredValue": {
+          "stringValue": "待复核"
+        },
+        "effectiveValue": {
+          "stringValue": "待复核"
+        },
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": true
+          },
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "CENTER",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false
+          },
+          "hyperlinkDisplayType": "PLAIN_TEXT",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        }
+      },
+      {
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        }
+      },
+      {
+        "formattedValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+        "userEnteredValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        },
+        "effectiveValue": {
+          "stringValue": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。"
+        },
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "LEFT",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "PLAIN_TEXT",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        }
+      },
+      {
+        "formattedValue": "Jira原票·HUR-81740\nJ90A_功能定义_蓝牙电话功能定义V0.5.docx\nAlchemy当前·1067/1455",
+        "userEnteredValue": {
+          "stringValue": "Jira原票·HUR-81740\nJ90A_功能定义_蓝牙电话功能定义V0.5.docx\nAlchemy当前·1067/1455"
+        },
+        "effectiveValue": {
+          "stringValue": "Jira原票·HUR-81740\nJ90A_功能定义_蓝牙电话功能定义V0.5.docx\nAlchemy当前·1067/1455"
+        },
+        "userEnteredFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "effectiveFormat": {
+          "backgroundColor": {
+            "red": 1,
+            "green": 1,
+            "blue": 1
+          },
+          "borders": {
+            "top": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "bottom": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8784314,
+                "green": 0.8980392,
+                "blue": 0.92941177
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8784314,
+                  "green": 0.8980392,
+                  "blue": 0.92941177
+                }
+              }
+            },
+            "left": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            },
+            "right": {
+              "style": "SOLID",
+              "width": 1,
+              "color": {
+                "red": 0.8980392,
+                "green": 0.91764706,
+                "blue": 0.9490196
+              },
+              "colorStyle": {
+                "rgbColor": {
+                  "red": 0.8980392,
+                  "green": 0.91764706,
+                  "blue": 0.9490196
+                }
+              }
+            }
+          },
+          "padding": {
+            "top": 6,
+            "right": 8,
+            "bottom": 6,
+            "left": 8
+          },
+          "horizontalAlignment": "LEFT",
+          "verticalAlignment": "MIDDLE",
+          "wrapStrategy": "WRAP",
+          "textFormat": {
+            "foregroundColor": {
+              "red": 0.11764706,
+              "green": 0.14901961,
+              "blue": 0.2
+            },
+            "fontFamily": "Arial",
+            "fontSize": 10,
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "foregroundColorStyle": {
+              "rgbColor": {
+                "red": 0.11764706,
+                "green": 0.14901961,
+                "blue": 0.2
+              }
+            }
+          },
+          "hyperlinkDisplayType": "LINKED",
+          "backgroundColorStyle": {
+            "rgbColor": {
+              "red": 1,
+              "green": 1,
+              "blue": 1
+            }
+          }
+        },
+        "textFormatRuns": [
+          {
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "http://jira.i-tetris.com/browse/HUR-81740"
+              }
+            }
+          },
+          {
+            "startIndex": 16
+          },
+          {
+            "startIndex": 17,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+              }
+            }
+          },
+          {
+            "startIndex": 44
+          },
+          {
+            "startIndex": 45,
+            "format": {
+              "foregroundColor": {
+                "red": 0.06666667,
+                "green": 0.32941177,
+                "blue": 0.8
+              },
+              "underline": true,
+              "foregroundColorStyle": {
+                "rgbColor": {
+                  "red": 0.06666667,
+                  "green": 0.32941177,
+                  "blue": 0.8
+                }
+              },
+              "link": {
+                "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：[Jira原票]回拨历史列表中说“第一个”无法完成选择；可见侧确认命中可见节点。\n复核：[J90A蓝牙电话V0.5]仅定义回拨默认第一条后说“对/确认”；[Alchemy在线对话]2026-08-17依次命中1067/1455，说明语义存在但电话上下文未定义任意序号能力。",
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-81740"
+        },
+        {
+          "label": "J90A蓝牙电话V0.5",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy在线对话",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    },
+    "D": {
+      "text": "结论：定义为转需求评估。现行J90A电话定义只覆盖回拨默认第一条后说“对/确认”，未覆盖在回拨历史列表中语音选择任意第N项。\n依据：[J90A蓝牙电话V0.5]·回拨列表/确认章节；[Jira原票]·可见侧仲裁评论；Alchemy HUR实测·1067→1455（2026-08-17）。\n处理：评估新增回拨历史列表任意第N项选择及上下文衔接；J90A电话产品/语音DS负责人处理。",
+      "links": [
+        {
+          "label": "J90A蓝牙电话V0.5",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+        },
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-81740"
+        }
+      ]
+    },
+    "G": "转需求评估",
+    "I": "当前能力边界已明确；需评估列表序号范围、焦点保持及确认/直拨策略。",
+    "J": {
+      "links": [
+        {
+          "label": "Jira原票",
+          "url": "http://jira.i-tetris.com/browse/HUR-81740"
+        },
+        {
+          "label": "J90A蓝牙电话V0.5",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+        },
+        {
+          "label": "Alchemy在线对话",
+          "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+        }
+      ]
+    }
+  }
+}

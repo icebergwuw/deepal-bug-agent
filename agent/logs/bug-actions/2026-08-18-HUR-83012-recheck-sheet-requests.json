@@ -1,0 +1,340 @@
+{
+  "key": "HUR-83012",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 350,
+  "rowIndex": 349,
+  "previewFingerprint": "1372427143ea08a2ae7034abd3a80772924db80f4aafc30eacbd56a8fca5128b",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "HUR-83012 Jira原票。\n现象：15:56 来电设置为来电播报，收到来电，语音无提示接听还是挂断\nJira：状态=重新打开，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“接听还是挂断”，当前MetaId=1065/1065/1065/1065。",
+      "after": "现象：[Jira原票]0616分支语音播报模式来电5/5未播“接听还是挂断”，也未拉起语音助手；研发称该分支不处理。\n复核：[AIS电话PRD v2.7]3.1明确来电必须播报提示并拉起语音助手；[Alchemy在线对话]2026-08-17命中1065，但文本测试不替代被动来电。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-83012",
+        "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1065；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A蓝牙来电播报负责人在J90A来电被动事件中核对播报开关、TTS触发和语音球唤醒链路；在线原话测试不能替代被动事件复现。",
+      "after": "结论：定义为待回归。语音播报模式收到来电时必须播报“接听还是挂断”并拉起语音助手；0616分支当前5/5不播报，但研发明确该分支不处理。\n依据：[AIS电话PRD v2.7]·3.1；[Jira原票]·0616分支5/5及研发评论；Alchemy HUR·1065（2026-08-17）。\n处理：在当前支持的J90A-ER/VAVE分支复现并回归，若仍不播报则修复来电TTS与语音助手拉起链路；BTPhone/MegaAssistant负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/HUR-83012"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "待回归",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "先在当前支持的J90A-ER/VAVE分支复现；复现后直接进入BTPhone/MegaAssistant修复。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·HUR-83012\nAIS_语音蓝牙电话产品需求文档_v2.7\nAlchemy当前·1065",
+      "after": "Jira原票\nAIS电话PRD v2.7\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-83012",
+        "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：[Jira原票]0616分支语音播报模式来电5/5未播“接听还是挂断”，也未拉起语音助手；研发称该分支不处理。\n复核：[AIS电话PRD v2.7]3.1明确来电必须播报提示并拉起语音助手；[Alchemy在线对话]2026-08-17命中1065，但文本测试不替代被动来电。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-83012",
+        "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为待回归。语音播报模式收到来电时必须播报“接听还是挂断”并拉起语音助手；0616分支当前5/5不播报，但研发明确该分支不处理。\n依据：[AIS电话PRD v2.7]·3.1；[Jira原票]·0616分支5/5及研发评论；Alchemy HUR·1065（2026-08-17）。\n处理：在当前支持的J90A-ER/VAVE分支复现并回归，若仍不播报则修复来电TTS与语音助手拉起链路；BTPhone/MegaAssistant负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/HUR-83012"
+      ]
+    },
+    "G": {
+      "visible": "待回归",
+      "links": []
+    },
+    "I": {
+      "visible": "先在当前支持的J90A-ER/VAVE分支复现；复现后直接进入BTPhone/MegaAssistant修复。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\nAIS电话PRD v2.7\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-83012",
+        "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 349,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票]0616分支语音播报模式来电5/5未播“接听还是挂断”，也未拉起语音助手；研发称该分支不处理。\n复核：[AIS电话PRD v2.7]3.1明确来电必须播报提示并拉起语音助手；[Alchemy在线对话]2026-08-17命中1065，但文本测试不替代被动来电。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 4,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83012"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 63,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 76
+                  },
+                  {
+                    "startIndex": 99,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 110
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 349,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为待回归。语音播报模式收到来电时必须播报“接听还是挂断”并拉起语音助手；0616分支当前5/5不播报，但研发明确该分支不处理。\n依据：[AIS电话PRD v2.7]·3.1；[Jira原票]·0616分支5/5及研发评论；Alchemy HUR·1065（2026-08-17）。\n处理：在当前支持的J90A-ER/VAVE分支复现并回归，若仍不播报则修复来电TTS与语音助手拉起链路；BTPhone/MegaAssistant负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 73,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 86
+                  },
+                  {
+                    "startIndex": 93,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83012"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 99
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 349,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待回归"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 349,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "先在当前支持的J90A-ER/VAVE分支复现；复现后直接进入BTPhone/MegaAssistant修复。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 349,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\nAIS电话PRD v2.7\nAlchemy在线对话"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83012"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 20
+                  },
+                  {
+                    "startIndex": 21,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

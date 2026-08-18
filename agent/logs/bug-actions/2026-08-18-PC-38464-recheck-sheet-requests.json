@@ -1,0 +1,359 @@
+{
+  "key": "PC-38464",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 352,
+  "rowIndex": 351,
+  "previewFingerprint": "a87111d8ce6880f52f797dd56f308f0a8533862a3ce5e6d894043d4d0c04af18",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "PC-38464 Jira原票。\n现象：14:50 互联设备页面，query：选择huawei hi-car  不执行可见\nJira：状态=重新打开，评论=undefined，附件=2；已完整读取。\nAlchemy：原话“选择huawei hi-car”，当前MetaId=1305/1305。",
+      "after": "现象：[Jira原票]Gerrit 1092722/1097927合入后仍失败，HiCar图标与展开/收起箭头在不同状态下抢占；8月15日评论明确“产品完善一下可见表”。\n复核：[深蓝8155可见表v1.7]互联carlink页未将节点和四类操作按状态完整拆分；[Alchemy在线对话]2026-08-17命中1305。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38464",
+        "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1305；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：可见即可说配置与互联设备交互负责人恢复目标MasterGo图层访问并核对HiCar节点的subject/operation/assist_name；补齐生效可见配置后再定责。",
+      "after": "结论：定义为转需求。互联设备页当前可见表未把HiCar图标与展开/收起箭头拆成状态化节点，“选择/打开/展开/收起”会互相抢占，继续改执行代码不能补齐产品配置。\n依据：[深蓝8155可见表v1.7]·互联carlink页；[Jira原票]·Gerrit 1092722/1097927及8月15日评论；Alchemy BIGSUR·1305（2026-08-17）。\n处理：补齐状态化节点、互斥条件和四类操作定义后重新接入；可见即可说产品配置负责人处理。",
+      "links": [
+        "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/PC-38464"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "转需求",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "需定义展开/收起两种状态下的唯一可见节点和互斥条件，避免继续以代码补丁叠加。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·PC-38464\nAlchemy当前·1305",
+      "after": "Jira原票\n深蓝8155可见表v1.7\nGL-5959\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38464",
+        "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/GL-5959",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：[Jira原票]Gerrit 1092722/1097927合入后仍失败，HiCar图标与展开/收起箭头在不同状态下抢占；8月15日评论明确“产品完善一下可见表”。\n复核：[深蓝8155可见表v1.7]互联carlink页未将节点和四类操作按状态完整拆分；[Alchemy在线对话]2026-08-17命中1305。",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38464",
+        "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为转需求。互联设备页当前可见表未把HiCar图标与展开/收起箭头拆成状态化节点，“选择/打开/展开/收起”会互相抢占，继续改执行代码不能补齐产品配置。\n依据：[深蓝8155可见表v1.7]·互联carlink页；[Jira原票]·Gerrit 1092722/1097927及8月15日评论；Alchemy BIGSUR·1305（2026-08-17）。\n处理：补齐状态化节点、互斥条件和四类操作定义后重新接入；可见即可说产品配置负责人处理。",
+      "links": [
+        "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/PC-38464"
+      ]
+    },
+    "G": {
+      "visible": "转需求",
+      "links": []
+    },
+    "I": {
+      "visible": "需定义展开/收起两种状态下的唯一可见节点和互斥条件，避免继续以代码补丁叠加。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\n深蓝8155可见表v1.7\nGL-5959\nAlchemy在线对话",
+      "links": [
+        "http://jira.i-tetris.com/browse/PC-38464",
+        "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/GL-5959",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 351,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票]Gerrit 1092722/1097927合入后仍失败，HiCar图标与展开/收起箭头在不同状态下抢占；8月15日评论明确“产品完善一下可见表”。\n复核：[深蓝8155可见表v1.7]互联carlink页未将节点和四类操作按状态完整拆分；[Alchemy在线对话]2026-08-17命中1305。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 4,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38464"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 90,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 103
+                  },
+                  {
+                    "startIndex": 132,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 143
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 351,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为转需求。互联设备页当前可见表未把HiCar图标与展开/收起箭头拆成状态化节点，“选择/打开/展开/收起”会互相抢占，继续改执行代码不能补齐产品配置。\n依据：[深蓝8155可见表v1.7]·互联carlink页；[Jira原票]·Gerrit 1092722/1097927及8月15日评论；Alchemy BIGSUR·1305（2026-08-17）。\n处理：补齐状态化节点、互斥条件和四类操作定义后重新接入；可见即可说产品配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 85,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 98
+                  },
+                  {
+                    "startIndex": 112,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38464"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 118
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 351,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "转需求"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 351,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "需定义展开/收起两种状态下的唯一可见节点和互斥条件，避免继续以代码补丁叠加。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 351,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\n深蓝8155可见表v1.7\nGL-5959\nAlchemy在线对话"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-38464"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 20
+                  },
+                  {
+                    "startIndex": 21,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/GL-5959"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 28
+                  },
+                  {
+                    "startIndex": 29,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

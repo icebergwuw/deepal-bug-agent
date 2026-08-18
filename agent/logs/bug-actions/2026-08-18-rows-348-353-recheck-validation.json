@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "errors": [],
+  "items": [
+    {
+      "jira_key": "HUR-81740",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "jira_key": "HUR-82887",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "jira_key": "HUR-83012",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "jira_key": "HUR-83099",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "jira_key": "PC-38464",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "jira_key": "SD-6929",
+      "ok": true,
+      "errors": []
+    }
+  ],
+  "checks": {
+    "protected_columns": "A/B/E/F/H逐行保持一致",
+    "updated_columns": "C/D/G/I/J逐项与请求一致",
+    "links": "C/D/J富文本链接逐项校验",
+    "formula": "B列HYPERLINK公式保留",
+    "checkbox": "E列BOOLEAN数据校验保留",
+    "format": "字体、换行、对齐、边框与自动行高按回读校验"
+  }
+}

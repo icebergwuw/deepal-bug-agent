@@ -1,0 +1,460 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-6929",
+  "comment_causality": "关联票确认G3/G5无电子雨刮信号，原检查条件不成立；正式车型清单与系统设置配置规则支持按车型删除无效检查。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SLV-44634",
+        "relationship": "同因关联票",
+        "read": true,
+        "outcome": "已读，确认SD项目无电子雨刮信号，原信号判定不成立。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "general",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "涉及通用正式定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及当前页面节点、控件或状态。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "原票实际现象与关联票根因一致；车型清单和系统设置规则优先于页面现有失败展示，按不支持信号配置删除检查项。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-6929 Jira原票",
+      "source_location": "描述；全部评论；雨刮已关闭但洗车模式显示未关闭",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "进入洗车模式",
+      "target_behavior": "页面对手动雨刮车型仍执行电子雨刮信号检查",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "related-actual",
+      "source": "SLV-44634 Jira关联票",
+      "source_location": "评论：SD项目无电子雨刮信号，原信号判定不成立，追踪SD-6929",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "G3/G5洗车模式雨刮检查",
+      "target_behavior": "确认车型没有电子雨刮信号",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "formal-target-config",
+      "source": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+      "source_location": "G3/G5车型能力清单·雨刮/洗车模式配置",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "当前项目",
+      "trigger": "G3/G5进入洗车模式",
+      "target_behavior": "车型为手动雨刮，不提供电子雨刮状态信号",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "formal-target-interaction",
+      "source": "C673_功能定义_系统设置功能定义V9.1.pdf",
+      "source_location": "洗车模式/信号配置规则：无效或不支持信号按车型配置处理",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "当前项目",
+      "trigger": "进入洗车模式并执行状态检查",
+      "target_behavior": "不支持的信号不得继续作为失败判定项",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "G3/G5手动雨刮车型洗车模式仍检查电子雨刮信号"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673系统设置功能定义"
+        }
+      ],
+      "source_ids": [
+        "formal-target-interaction"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "SD-6929-formal_definition_search-20260818",
+        "SD-6929-formal_definition_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+            "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+            "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target-interaction"
+            ],
+            "version_family": "C673系统设置功能定义系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673系统设置功能定义系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-6929-formal_definition_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "G3/G5手动雨刮车型洗车模式仍检查电子雨刮信号"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G3/G5座舱全功清单"
+        }
+      ],
+      "source_ids": [
+        "formal-target-config"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "SD-6929-formal_config_search-20260818",
+        "SD-6929-formal_config_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target-config"
+            ],
+            "version_family": "C673-G3、G5座舱全功清单系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673-G3、G5座舱全功清单系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-6929-formal_config_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "G3/G5手动雨刮车型洗车模式仍检查电子雨刮信号"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "洗车模式无效信号配置规则"
+        }
+      ],
+      "source_ids": [
+        "formal-target-interaction"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "SD-6929-interaction_or_ue_search-20260818",
+        "SD-6929-interaction_or_ue_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+            "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+            "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target-interaction"
+            ],
+            "version_family": "C673系统设置功能定义系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673系统设置功能定义系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-6929-interaction_or_ue_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "SD-6929-formal_definition_search-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "G3/G5手动雨刮车型洗车模式仍检查电子雨刮信号"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673系统设置功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+          "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+          "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-6929-formal_definition_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C673系统设置功能定义系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+          "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+          "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-6929-formal_config_search-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "G3/G5手动雨刮车型洗车模式仍检查电子雨刮信号"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G3/G5座舱全功清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-6929-formal_config_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C673-G3、G5座舱全功清单系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-6929-interaction_or_ue_search-20260818",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6929"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "G3/G5手动雨刮车型洗车模式仍检查电子雨刮信号"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "洗车模式无效信号配置规则"
+        }
+      ],
+      "results": [
+        {
+          "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+          "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+          "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-6929-interaction_or_ue_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C673系统设置功能定义系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "137zs2bgkympwmBjSSXxLfwoOGmfRubGk",
+          "title": "C673_功能定义_系统设置功能定义V9.1.pdf",
+          "url": "https://drive.google.com/file/d/137zs2bgkympwmBjSSXxLfwoOGmfRubGk/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "转需求",
+    "owner": "SceneMode/车型配置负责人",
+    "text": "结论：定义为转需求。C673-G3/G5为手动雨刮车型，不提供电子雨刮信号，现有洗车模式继续检查该信号会稳定误报“未关闭”，原检查条件不成立。\n依据：[G3/G5全功清单V1.7]·车型雨刮能力；[系统设置V9.1]·无效/不支持信号配置规则；[SLV-44634]·无电子雨刮信号评论。\n处理：删除手动雨刮车型的电子雨刮检查项及失败状态展示，按车型能力配置；SceneMode/车型配置负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "related-actual"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T083000Z-rows-348-353-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 353
+  },
+  "expected_behavior": {
+    "trigger": "C673-G3/G5进入洗车模式",
+    "target_state": "仅检查该车型实际可用的洗车准备项",
+    "intent_function_signal": "不读取不存在的电子雨刮状态信号",
+    "ui_tts_vehicle_behavior": "不显示雨刮未关闭失败状态；其他有效检查项保持正常",
+    "boundary": "仅适用于手动雨刮且无电子雨刮信号的车型配置",
+    "source_ids": [
+      "formal-target-config",
+      "formal-target-interaction"
+    ]
+  }
+}

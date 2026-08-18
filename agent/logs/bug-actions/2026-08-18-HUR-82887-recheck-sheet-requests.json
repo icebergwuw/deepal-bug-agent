@@ -1,0 +1,378 @@
+{
+  "key": "HUR-82887",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 349,
+  "rowIndex": 348,
+  "previewFingerprint": "fa1b55a0c3aaa9e51d9c6357688c5fcc763e85c6b6ee2d11ce2400b98207feaf",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "HUR-82887 Jira原票。\n现象：10：54  未在导航中-qurey：打电话给xx酒店  期望TTS回复：当前未在导航中，查询不到信息  实际拨打了电话\nJira：状态=待办，评论=undefined，附件=4；已完整读取。\nAlchemy：原话“打电话给亚朵酒店”，当前MetaId=1060/1060。",
+      "after": "现象：[Jira原票]未导航时说“打电话给亚朵酒店”直接进入预拨号。\n复核：[J90A蓝牙电话V0.5]2.3/2.4明确黄页或指定POI可直接预拨号，2.6仅“目的地电话”要求地址卡片或导航；[Alchemy在线对话]2026-08-17命中1060。HUR-82884为描述中的错误日志链接，与本票无关。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82887",
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "http://jira.i-tetris.com/browse/HUR-82884"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前证据能确认问题现象，但同车型生效目标或关键场景边界尚不完整，状态为待复核。\n依据：Jira实际现象；Alchemy当前原话命中1060；标准/项目功能点已核对；Drive候选及缺口见manifest。\n处理：J90A电话与导航上下文产品负责人依据电话功能定义确认组织名直接拨号与导航POI电话的优先级，补齐明确场景边界后再定责。",
+      "after": "结论：定义为可关闭。未导航时说“打电话给亚朵酒店”属于指定POI/黄页商家电话，可直接进入预拨号；只有“拨打目的地电话”依赖地址卡片或导航状态。\n依据：[J90A蓝牙电话V0.5]·2.3/2.4/2.6；[Jira原票]·未导航实测；Alchemy HUR实测·1060（2026-08-17）。\n处理：按指定POI电话直接预拨号验收并关闭本票；J90A电话测试负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/HUR-82887"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "可关闭",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "未执行Jira评论、转派、关闭或状态变更；关键资料缺口及下一步见manifest。",
+      "after": "回归需区分“指定POI电话”和“目的地电话”，不得以未导航一概判失败。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·HUR-82887\nJ90A_功能定义_蓝牙电话功能定义V0.5.docx\nAlchemy当前·1060",
+      "after": "Jira原票\nJ90A蓝牙电话V0.5\nAlchemy在线对话\nHUR-82884",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82887",
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "http://jira.i-tetris.com/browse/HUR-82884"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：[Jira原票]未导航时说“打电话给亚朵酒店”直接进入预拨号。\n复核：[J90A蓝牙电话V0.5]2.3/2.4明确黄页或指定POI可直接预拨号，2.6仅“目的地电话”要求地址卡片或导航；[Alchemy在线对话]2026-08-17命中1060。HUR-82884为描述中的错误日志链接，与本票无关。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82887",
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "http://jira.i-tetris.com/browse/HUR-82884"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为可关闭。未导航时说“打电话给亚朵酒店”属于指定POI/黄页商家电话，可直接进入预拨号；只有“拨打目的地电话”依赖地址卡片或导航状态。\n依据：[J90A蓝牙电话V0.5]·2.3/2.4/2.6；[Jira原票]·未导航实测；Alchemy HUR实测·1060（2026-08-17）。\n处理：按指定POI电话直接预拨号验收并关闭本票；J90A电话测试负责人处理。",
+      "links": [
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/HUR-82887"
+      ]
+    },
+    "G": {
+      "visible": "可关闭",
+      "links": []
+    },
+    "I": {
+      "visible": "回归需区分“指定POI电话”和“目的地电话”，不得以未导航一概判失败。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票\nJ90A蓝牙电话V0.5\nAlchemy在线对话\nHUR-82884",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82887",
+        "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "http://jira.i-tetris.com/browse/HUR-82884"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 348,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票]未导航时说“打电话给亚朵酒店”直接进入预拨号。\n复核：[J90A蓝牙电话V0.5]2.3/2.4明确黄页或指定POI可直接预拨号，2.6仅“目的地电话”要求地址卡片或导航；[Alchemy在线对话]2026-08-17命中1060。HUR-82884为描述中的错误日志链接，与本票无关。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 4,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82887"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 39,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 51
+                  },
+                  {
+                    "startIndex": 98,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 109
+                  },
+                  {
+                    "startIndex": 127,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82884"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 136
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 348,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为可关闭。未导航时说“打电话给亚朵酒店”属于指定POI/黄页商家电话，可直接进入预拨号；只有“拨打目的地电话”依赖地址卡片或导航状态。\n依据：[J90A蓝牙电话V0.5]·2.3/2.4/2.6；[Jira原票]·未导航实测；Alchemy HUR实测·1060（2026-08-17）。\n处理：按指定POI电话直接预拨号验收并关闭本票；J90A电话测试负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 77,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  },
+                  {
+                    "startIndex": 104,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82887"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 110
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 348,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 348,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "回归需区分“指定POI电话”和“目的地电话”，不得以未导航一概判失败。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 348,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票\nJ90A蓝牙电话V0.5\nAlchemy在线对话\nHUR-82884"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82887"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 6
+                  },
+                  {
+                    "startIndex": 7,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 19
+                  },
+                  {
+                    "startIndex": 20,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 31
+                  },
+                  {
+                    "startIndex": 32,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82884"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

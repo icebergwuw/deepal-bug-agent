@@ -1,0 +1,558 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-38464",
+  "comment_causality": "两笔Gerrit修复均已合入但问题仍在，最新评论明确要求完善可见表；根因落在状态化节点与操作定义缺失。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "GL-5959",
+        "relationship": "语音问题总票",
+        "read": true,
+        "outcome": "已读，仅作范围上下文，不替代本票可见配置。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "voice",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、功能点或执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及当前页面节点、控件或状态。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Alchemy证明通用页面开启语义；Jira实现链证明代码修复无效；当前可见表证明节点/操作范围未定义完整，因此转产品配置需求。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "选择huawei hi-car",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR命中MetaId 1305",
+    "meta_id": "1305",
+    "standard_function": {
+      "status": "verified",
+      "name": "打开特定页面/APP",
+      "assessment": "2026-08-17已读取标准功能点。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目继承1305",
+      "assessment": "2026-08-17已读取深蓝项目功能点。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-38464 Jira原票",
+      "source_location": "描述；9条评论；Gerrit 1092722/1097927；2026-08-15评论“产品完善一下可见表”",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "两次修复合入后仍失败，展开/收起状态与HiCar节点冲突",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "formal-target-visible",
+      "source": "深蓝8155可见新表_v1.7",
+      "source_location": "互联carlink页·HiCar图标及展开/收起节点",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "当前项目",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "现有配置未把HiCar图标与展开/收起箭头按状态拆分，能力范围不完整",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "formal-target-interaction",
+      "source": "深蓝8155可见新表_v1.7",
+      "source_location": "互联carlink页·可见节点层级、操作及状态关系",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "当前项目",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "当前交互节点缺少按展开状态区分的唯一目标和互斥关系",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy BIGSUR在线对话",
+      "source_location": "2026-08-17原话“选择huawei hi-car”",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "命中1305页面/APP开启",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "MetaId 1305",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "当前项目",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "打开特定页面/APP",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "MetaId 1305项目继承",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "当前项目",
+      "trigger": "选择huawei hi-car",
+      "target_behavior": "项目继承1305",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页HiCar图标与展开收起节点状态冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "正式可见配置"
+        }
+      ],
+      "source_ids": [
+        "formal-target-visible"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-38464-formal_definition_search-20260818",
+        "PC-38464-formal_definition_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "title": "深蓝8155可见新表_v1.7",
+            "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target-visible"
+            ],
+            "version_family": "深蓝8155可见新表系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝8155可见新表系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-38464-formal_definition_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页HiCar图标与展开收起节点状态冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "互联carlink页状态节点配置"
+        }
+      ],
+      "source_ids": [
+        "formal-target-visible"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-38464-formal_config_search-20260818",
+        "PC-38464-formal_config_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "title": "深蓝8155可见新表_v1.7",
+            "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target-visible"
+            ],
+            "version_family": "深蓝8155可见新表系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝8155可见新表系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-38464-formal_config_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页HiCar图标与展开收起节点状态冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "互联carlink页可见节点与操作"
+        }
+      ],
+      "source_ids": [
+        "formal-target-interaction"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-38464-interaction_or_ue_search-20260818",
+        "PC-38464-interaction_or_ue_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "title": "深蓝8155可见新表_v1.7",
+            "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target-interaction"
+            ],
+            "version_family": "深蓝8155可见新表系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝8155可见新表系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-38464-interaction_or_ue_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "选择huawei hi-car"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "保留2026-08-17在线测试原始时间。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1305"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1305"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取项目继承功能点。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "PC-38464-formal_definition_search-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页HiCar图标与展开收起节点状态冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "正式可见配置"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v1.7",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38464-formal_definition_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "深蓝8155可见新表系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v1.7",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38464-formal_config_search-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页HiCar图标与展开收起节点状态冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "互联carlink页状态节点配置"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v1.7",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38464-formal_config_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "深蓝8155可见新表系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v1.7",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38464-interaction_or_ue_search-20260818",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-38464"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "互联设备页HiCar图标与展开收起节点状态冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "互联carlink页可见节点与操作"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v1.7",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-38464-interaction_or_ue_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "深蓝8155可见新表系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v1.7",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "转需求",
+    "owner": "可见即可说产品配置负责人",
+    "text": "结论：定义为转需求。互联设备页当前可见表未把HiCar图标与展开/收起箭头拆成状态化节点，“选择/打开/展开/收起”会互相抢占，继续改执行代码不能补齐产品配置。\n依据：[深蓝8155可见表v1.7]·互联carlink页；[Jira原票]·Gerrit 1092722/1097927及8月15日评论；Alchemy BIGSUR·1305（2026-08-17）。\n处理：补齐状态化节点、互斥条件和四类操作定义后重新接入；可见即可说产品配置负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T083000Z-rows-348-353-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 352
+  },
+  "expected_behavior": {
+    "trigger": "互联设备页说“选择huawei hi-car”或对箭头说展开/收起",
+    "target_state": "根据页面展开状态命中唯一正确节点",
+    "intent_function_signal": "HiCar图标与展开/收起分别配置subject/operation/assist_name和互斥条件",
+    "ui_tts_vehicle_behavior": "选择/打开HiCar不误触箭头，展开/收起只改变列表状态",
+    "boundary": "互联carlink页不同展开状态分别生效",
+    "source_ids": [
+      "formal-target-visible"
+    ]
+  }
+}

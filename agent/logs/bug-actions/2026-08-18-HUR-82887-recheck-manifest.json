@@ -1,0 +1,323 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-82887",
+  "comment_causality": "未导航状态拨打酒店电话直接预拨号与测试预期冲突；正式电话定义区分指定POI和目的地电话。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-82884",
+        "relationship": "描述中的错误日志链接",
+        "read": true,
+        "outcome": "已读，内容与本票无关，不作为结论依据。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、功能点或执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "测试把指定POI电话误等同于目的地电话；采用同项目电话定义2.3/2.4/2.6的明确场景区分。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "打电话给亚朵酒店",
+    "alchemy_tested": true,
+    "alchemy_result": "HUR命中MetaId 1060",
+    "meta_id": "1060",
+    "standard_function": {
+      "status": "verified",
+      "name": "打电话给联系人/机构",
+      "assessment": "2026-08-17已读取标准功能点。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目继承1060",
+      "assessment": "2026-08-17已读取深蓝项目功能点。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-82887 Jira原票",
+      "source_location": "描述；全部评论；未导航状态直接进入预拨号",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "打电话给亚朵酒店",
+      "target_behavior": "当前直接进入指定POI预拨号",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "formal-target",
+      "source": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+      "source_location": "电话定义2.3黄页、2.4指定POI、2.6目的地电话",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "当前项目",
+      "trigger": "打电话给亚朵酒店",
+      "target_behavior": "黄页/指定POI可直接预拨号；只有“目的地电话”依赖地址卡片或导航",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy HUR在线对话",
+      "source_location": "2026-08-17原话“打电话给亚朵酒店”",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "打电话给亚朵酒店",
+      "target_behavior": "命中MetaId 1060",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "MetaId 1060",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "当前项目",
+      "trigger": "打电话给亚朵酒店",
+      "target_behavior": "联系人/机构拨号语义",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "MetaId 1060项目继承",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "当前项目",
+      "trigger": "打电话给亚朵酒店",
+      "target_behavior": "项目继承1060",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-82887"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "未导航时拨打指定酒店电话"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A蓝牙电话功能定义"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "HUR-82887-formal_definition_search-20260818",
+        "HUR-82887-formal_definition_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+            "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+            "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target"
+            ],
+            "version_family": "J90A蓝牙电话功能定义系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A蓝牙电话功能定义系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-82887-formal_definition_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "打电话给亚朵酒店"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "保留2026-08-17在线测试原始时间。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1060"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1060"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取项目继承功能点。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-82887-formal_definition_search-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-82887"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "未导航时拨打指定酒店电话"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A蓝牙电话功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-82887-formal_definition_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "J90A蓝牙电话功能定义系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "可关闭",
+    "owner": "J90A电话测试负责人",
+    "text": "结论：定义为可关闭。未导航时说“打电话给亚朵酒店”属于指定POI/黄页商家电话，可直接进入预拨号；只有“拨打目的地电话”依赖地址卡片或导航状态。\n依据：[J90A蓝牙电话V0.5]·2.3/2.4/2.6；[Jira原票]·未导航实测；Alchemy HUR实测·1060（2026-08-17）。\n处理：按指定POI电话直接预拨号验收并关闭本票；J90A电话测试负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T083000Z-rows-348-353-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 349
+  },
+  "expected_behavior": {
+    "trigger": "未导航时说“打电话给亚朵酒店”",
+    "target_state": "进入指定POI/黄页商家预拨号",
+    "intent_function_signal": "MetaId 1060并携带机构/POI名称",
+    "ui_tts_vehicle_behavior": "展示或播报匹配结果后进入预拨号",
+    "boundary": "仅“目的地电话”依赖地址卡片或导航状态",
+    "source_ids": [
+      "formal-target"
+    ]
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-83012",
+  "comment_causality": "正式PRD明确来电播报目标；当前0616分支5/5失败，但研发说明该分支不处理，需要转到支持分支验证。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、功能点或执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "PRD目标明确；0616分支结果证明当前现象，但分支不在处理范围，因此先在支持分支复现，复现后按缺陷修复。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "接听还是挂断",
+    "alchemy_tested": true,
+    "alchemy_result": "HUR文本命中MetaId 1065；被动来电仍以Jira实车结果为准",
+    "meta_id": "1065",
+    "standard_function": {
+      "status": "verified",
+      "name": "通话控制-接听/挂断",
+      "assessment": "2026-08-17已读取标准功能点。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目1065已下发",
+      "assessment": "2026-08-17已读取深蓝项目功能点。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-83012 Jira原票",
+      "source_location": "描述；全部评论；0616分支实车5/5未播报且未拉起语音助手",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "来电被动事件",
+      "target_behavior": "当前0616分支5/5不播“接听还是挂断”且不拉起语音助手",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "formal-target",
+      "source": "AIS_语音蓝牙电话产品需求文档_v2.7",
+      "source_location": "3.1来电播报模式",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "当前项目",
+      "trigger": "语音播报模式收到来电",
+      "target_behavior": "必须播报“接听还是挂断”并拉起语音助手",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy HUR在线对话",
+      "source_location": "2026-08-17文本“接听还是挂断”",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "接听还是挂断",
+      "target_behavior": "命中1065；仅证明控制语义，不替代来电被动事件",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "MetaId 1065",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "当前项目",
+      "trigger": "接听还是挂断",
+      "target_behavior": "通话接听/挂断控制",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "MetaId 1065项目已下发",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "当前项目",
+      "trigger": "接听还是挂断",
+      "target_behavior": "项目继承1065",
+      "match": "exact",
+      "reason": "本轮已按当前范围核验。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive精确名称检索、版本族核验并打开正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83012"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "语音播报模式来电未播报操作提示且未拉起语音助手"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "AIS语音蓝牙电话产品需求文档"
+        }
+      ],
+      "source_ids": [
+        "formal-target"
+      ],
+      "reason": "候选、正文和适用范围均已核验。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "HUR-83012-formal_definition_search-20260818",
+        "HUR-83012-formal_definition_search-20260818-version-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+            "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+            "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "formal-target"
+            ],
+            "version_family": "AIS语音蓝牙电话产品需求文档系列"
+          },
+          {
+            "id": "11_Q2Jox6l3sTbKIUuNXDB7gZTfKls_I9",
+            "title": "AIS_语音蓝牙电话产品需求文档_v2.1.pdf",
+            "url": "https://drive.google.com/file/d/11_Q2Jox6l3sTbKIUuNXDB7gZTfKls_I9/view?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "较旧版本，保留为版本族枚举结果。",
+            "version_family": "AIS语音蓝牙电话产品需求文档系列"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "AIS语音蓝牙电话产品需求文档系列",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-83012-formal_definition_search-20260818-version-family"
+            ],
+            "selected_candidate_id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+            "selection_reason": "已枚举同系列版本，选择本轮已读且适用范围匹配的最高适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy在线对话测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "接听还是挂断"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "保留2026-08-17在线测试原始时间。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1065"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-17",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1065"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取项目继承功能点。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-83012-formal_definition_search-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83012"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "语音播报模式来电未播报操作提示且未拉起语音助手"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "AIS语音蓝牙电话产品需求文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+          "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "11_Q2Jox6l3sTbKIUuNXDB7gZTfKls_I9",
+          "title": "AIS_语音蓝牙电话产品需求文档_v2.1.pdf",
+          "url": "https://drive.google.com/file/d/11_Q2Jox6l3sTbKIUuNXDB7gZTfKls_I9/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-83012-formal_definition_search-20260818-version-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T08:20:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "AIS语音蓝牙电话产品需求文档系列"
+        }
+      ],
+      "results": [
+        {
+          "id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc",
+          "title": "AIS_语音蓝牙电话产品需求文档_v2.7",
+          "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "11_Q2Jox6l3sTbKIUuNXDB7gZTfKls_I9",
+          "title": "AIS_语音蓝牙电话产品需求文档_v2.1.pdf",
+          "url": "https://drive.google.com/file/d/11_Q2Jox6l3sTbKIUuNXDB7gZTfKls_I9/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "待回归",
+    "owner": "BTPhone/MegaAssistant负责人",
+    "text": "结论：定义为待回归。语音播报模式收到来电时必须播报“接听还是挂断”并拉起语音助手；0616分支当前5/5不播报，但研发明确该分支不处理。\n依据：[AIS电话PRD v2.7]·3.1；[Jira原票]·0616分支5/5及研发评论；Alchemy HUR·1065（2026-08-17）。\n处理：在当前支持的J90A-ER/VAVE分支复现并回归，若仍不播报则修复来电TTS与语音助手拉起链路；BTPhone/MegaAssistant负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T083000Z-rows-348-353-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 350
+  },
+  "expected_behavior": {
+    "trigger": "语音播报模式收到来电",
+    "target_state": "进入来电语音交互状态",
+    "intent_function_signal": "拉起通话控制上下文，允许接听/挂断1065",
+    "ui_tts_vehicle_behavior": "播报“接听还是挂断”并拉起语音助手",
+    "boundary": "先在当前支持的J90A-ER/VAVE分支验证；0616分支不作为最终修复分支",
+    "source_ids": [
+      "formal-target"
+    ]
+  }
+}
