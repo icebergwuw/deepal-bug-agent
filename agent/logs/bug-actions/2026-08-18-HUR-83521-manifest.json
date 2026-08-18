@@ -1,0 +1,382 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-83521",
+  "comment_causality": "Jira视频确认退出Rest Mode后出现‘Rest Mode Exited’，退出Relax Mode后无同类toast；研发评论‘需求如此’。J90A-EL功能清单确认小憩与露营均搭载，正式PRD/交互仅在露营结束流程明确返回主页出现退出toast，小憩退出流程未定义同类toast。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "general",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "需要核对J90A-EL情景模式正式产品定义与车型搭载范围。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不涉及语音识别、MetaId或Alchemy配置。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图、导航或POI上下文。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及退出确认弹窗、返回主页和toast反馈差异。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira提出各模式退出反馈应一致，研发评论称需求如此；以J90A同项目正式PRD/交互为目标定义。正式资料明确露营结束后显示退出toast，而小憩退出未定义同类toast，因此测试的一致性预期不成立。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-83521 Jira原票",
+      "source_location": "当前字段、描述、复现步骤、全部评论与附件元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A-EL",
+      "trigger": "退出Rest Mode后再进入并退出Relax Mode",
+      "target_behavior": "Rest Mode退出后出现退出toast，Relax Mode退出后无同类toast",
+      "match": "exact",
+      "reason": "证明当前提报现象、版本、复现率和评论因果，不单独定义目标行为。"
+    },
+    {
+      "source_id": "jira-video",
+      "source": "HUR-83521 Jira视频",
+      "source_location": "video(74).mp4·00:11-00:14、00:29-00:33",
+      "source_type": "jira_attachment",
+      "role": "implementation_actual",
+      "project_model": "J90A-EL",
+      "trigger": "先退出Rest Mode，再退出Relax Mode",
+      "target_behavior": "前者显示Rest Mode Exited，后者没有同类toast",
+      "match": "exact",
+      "reason": "视频逐帧确认Jira描述的退出反馈差异。"
+    },
+    {
+      "source_id": "j90a-el-function-list",
+      "source": "J90A_EL_LS座舱功能清单.xlsx",
+      "source_location": "情景模式序号733、734、737",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "J90A-EL",
+      "trigger": "情景模式、小憩模式、露营模式搭载范围",
+      "target_behavior": "J90A-EL搭载情景模式、小憩模式和露营模式",
+      "match": "exact",
+      "reason": "当前J90A-EL LS功能清单直接确认本票车型适用范围。"
+    },
+    {
+      "source_id": "j90a-scenario-prd-v24",
+      "source": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+      "source_location": "情景模式-露营模式、情景模式-小憩模式章节",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "用户结束露营模式或小憩模式",
+      "target_behavior": "露营结束后返回主页出现‘露营模式已退出’toast；小憩退出回到情景模式主页，未定义同类退出toast",
+      "match": "exact",
+      "reason": "同项目正式PRD直接定义两种模式各自退出反馈。"
+    },
+    {
+      "source_id": "j90a-scenario-interaction-v26",
+      "source": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf",
+      "source_location": "情景模式-露营模式、情景模式-小憩模式章节",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "用户结束露营模式或小憩模式",
+      "target_behavior": "露营流程包含退出toast，小憩退出流程无同类toast",
+      "match": "exact",
+      "reason": "同项目交互文档与PRD一致，证明差异是设计定义而非漏实现。"
+    },
+    {
+      "source_id": "scenario-vehicle-config",
+      "source": "长马情景模式车型配置_20251119",
+      "source_location": "情景模式Sheet·小憩模式行14-22、露营模式行29-34",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "J90A/J90AEU/J90AER",
+      "trigger": "打开或退出小憩模式、露营模式",
+      "target_behavior": "两种模式均在J90A系列车型配置中启用",
+      "match": "exact",
+      "reason": "补充核验车型配置和两种模式的启用范围，不替代PRD交互目标。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive实时检索并读取J90A-EL功能清单及J90A情景模式PRD",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83521"},
+        {"kind": "problem_concept", "text": "退出露营模式 弹窗 小憩模式"},
+        {"kind": "module_artifact", "text": "J90A 情景模式"},
+        {"kind": "exact_document_name", "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"},
+        {"kind": "version_family", "text": "马自达J90A_情景模式_需求文档"}
+      ],
+      "source_ids": ["j90a-el-function-list", "j90a-scenario-prd-v24"],
+      "reason": "已读取本票车型功能清单和J90A情景模式正式PRD，并完成PRD版本族枚举。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84",
+            "title": "J90A_EL_LS座舱功能清单.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "read",
+            "source_ids": ["j90a-el-function-list"],
+            "reason": "2026-08-17更新的J90A-EL LS当前清单，直接匹配本票车型。"
+          },
+          {
+            "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+            "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_情景模式_需求文档",
+            "disposition": "read",
+            "source_ids": ["j90a-scenario-prd-v24"],
+            "reason": "同系列完整枚举中最高正式版本，正文覆盖露营和小憩退出流程。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "马自达J90A_情景模式_需求文档",
+            "status": "enumerated",
+            "receipt_ids": ["HUR-83521-formal-definition-drive-20260818-1"],
+            "selected_candidate_id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "selection_reason": "已枚举V0.1至V2.4及废弃副本，V2.4为该系列最高正式版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": ["HUR-83521-formal-definition-drive-20260818-1"]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive实时检索并读取J90A-EL功能清单和长马情景模式车型配置",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83521"},
+        {"kind": "problem_concept", "text": "退出露营模式 弹窗 小憩模式"},
+        {"kind": "module_artifact", "text": "J90A EU&EU PI座舱功能清单"},
+        {"kind": "exact_document_name", "text": "J90A EU&EU PI座舱功能清单V3.1 20251211.xlsx"},
+        {"kind": "exact_document_name", "text": "长马情景模式车型配置_20251119"},
+        {"kind": "version_family", "text": "J90A座舱功能清单"}
+      ],
+      "source_ids": ["j90a-el-function-list", "scenario-vehicle-config"],
+      "reason": "已读取当前J90A-EL清单情景模式序号733/734/737及车型配置中小憩、露营启用行。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84",
+            "title": "J90A_EL_LS座舱功能清单.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A座舱功能清单",
+            "disposition": "read",
+            "source_ids": ["j90a-el-function-list"]
+          },
+          {
+            "id": "1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK",
+            "title": "J90A EU&EU PI座舱功能清单V3.1 20251211.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A座舱功能清单",
+            "disposition": "read",
+            "source_ids": ["j90a-el-function-list"],
+            "reason": "已读序号938、939、943；用于核对版本族和国内一致性，直接车型范围以EL LS清单为准。"
+          },
+          {
+            "id": "15Adqk_LYhXxO5-AV37bPJ6CmFSpIhv_wz8TzGMuG61Y",
+            "title": "长马情景模式车型配置_20251119",
+            "url": "https://docs.google.com/spreadsheets/d/15Adqk_LYhXxO5-AV37bPJ6CmFSpIhv_wz8TzGMuG61Y/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "read",
+            "source_ids": ["scenario-vehicle-config"]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A座舱功能清单",
+            "status": "enumerated",
+            "receipt_ids": ["HUR-83521-formal-config-drive-20260818-1"],
+            "selected_candidate_id": "1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84",
+            "selection_reason": "J90A_EL_LS清单直接匹配本票车型，且2026-08-17更新；V3.1用于核对EU/PI历史系列。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": ["HUR-83521-formal-config-drive-20260818-1"]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive实时检索并读取J90A情景模式交互文档",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83521"},
+        {"kind": "problem_concept", "text": "退出露营模式 弹窗 小憩模式"},
+        {"kind": "module_artifact", "text": "J90A情景模式交互"},
+        {"kind": "exact_document_name", "text": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf"},
+        {"kind": "version_family", "text": "马自达J90A交互设计文档_情景模式"}
+      ],
+      "source_ids": ["j90a-scenario-interaction-v26"],
+      "reason": "已读取V2.6露营与小憩退出章节并完成交互版本族枚举。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL",
+            "title": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf",
+            "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_情景模式",
+            "disposition": "read",
+            "source_ids": ["j90a-scenario-interaction-v26"],
+            "reason": "最高正式交互版本，覆盖露营与小憩退出反馈。"
+          },
+          {
+            "id": "1lyKmnRF58R1L_lbPinzNVeqWT5yUtWeX",
+            "title": "马自达J90A交互设计文档_情景模式_V2.6 (4).pdf",
+            "url": "https://drive.google.com/file/d/1lyKmnRF58R1L_lbPinzNVeqWT5yUtWeX/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_情景模式",
+            "disposition": "excluded",
+            "reason": "同版本重复副本；选用已读取的V2.6 (2)。"
+          },
+          {
+            "id": "1wAD0vxtHEdKHFRpk7fw3fOvxXVsqq4ed",
+            "title": "马自达J90A交互设计文档_情景模式_V2.5 .pdf",
+            "url": "https://drive.google.com/file/d/1wAD0vxtHEdKHFRpk7fw3fOvxXVsqq4ed/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_情景模式",
+            "disposition": "excluded",
+            "reason": "低于已读取的V2.6。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "马自达J90A交互设计文档_情景模式",
+            "status": "enumerated",
+            "receipt_ids": ["HUR-83521-interaction-drive-20260818-1"],
+            "selected_candidate_id": "1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL",
+            "selection_reason": "已枚举V2.5和V2.6副本，选择已完整读取的V2.6 (2)。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": ["HUR-83521-interaction-drive-20260818-1"]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-83521-formal-definition-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T19:20:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83521"},
+        {"kind": "problem_concept", "text": "退出露营模式 弹窗 小憩模式"},
+        {"kind": "module_artifact", "text": "J90A 情景模式"},
+        {"kind": "exact_document_name", "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"},
+        {"kind": "version_family", "text": "马自达J90A_情景模式_需求文档"}
+      ],
+      "results": [
+        {"id": "1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84", "title": "J90A_EL_LS座舱功能清单.xlsx", "url": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "mime_type": "application/pdf"}
+      ],
+      "limitations": "Drive中无HUR-83521同名资料；正式目标由J90A-EL功能清单与J90A情景模式PRD建立。"
+    },
+    {
+      "receipt_id": "HUR-83521-formal-config-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T19:25:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83521"},
+        {"kind": "problem_concept", "text": "退出露营模式 弹窗 小憩模式"},
+        {"kind": "module_artifact", "text": "J90A EU&EU PI座舱功能清单"},
+        {"kind": "exact_document_name", "text": "J90A EU&EU PI座舱功能清单V3.1 20251211.xlsx"},
+        {"kind": "exact_document_name", "text": "长马情景模式车型配置_20251119"},
+        {"kind": "version_family", "text": "J90A座舱功能清单"}
+      ],
+      "results": [
+        {"id": "1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84", "title": "J90A_EL_LS座舱功能清单.xlsx", "url": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK", "title": "J90A EU&EU PI座舱功能清单V3.1 20251211.xlsx", "url": "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "15Adqk_LYhXxO5-AV37bPJ6CmFSpIhv_wz8TzGMuG61Y", "title": "长马情景模式车型配置_20251119", "url": "https://docs.google.com/spreadsheets/d/15Adqk_LYhXxO5-AV37bPJ6CmFSpIhv_wz8TzGMuG61Y/edit?usp=drivesdk", "mime_type": "application/vnd.google-apps.spreadsheet"}
+      ]
+    },
+    {
+      "receipt_id": "HUR-83521-interaction-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T19:30:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83521"},
+        {"kind": "problem_concept", "text": "退出露营模式 弹窗 小憩模式"},
+        {"kind": "module_artifact", "text": "J90A情景模式交互"},
+        {"kind": "exact_document_name", "text": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf"},
+        {"kind": "version_family", "text": "马自达J90A交互设计文档_情景模式"}
+      ],
+      "results": [
+        {"id": "1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL", "title": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk", "mime_type": "application/pdf"},
+        {"id": "1lyKmnRF58R1L_lbPinzNVeqWT5yUtWeX", "title": "马自达J90A交互设计文档_情景模式_V2.6 (4).pdf", "url": "https://drive.google.com/file/d/1lyKmnRF58R1L_lbPinzNVeqWT5yUtWeX/view?usp=drivesdk", "mime_type": "application/pdf"},
+        {"id": "1wAD0vxtHEdKHFRpk7fw3fOvxXVsqq4ed", "title": "马自达J90A交互设计文档_情景模式_V2.5 .pdf", "url": "https://drive.google.com/file/d/1wAD0vxtHEdKHFRpk7fw3fOvxXVsqq4ed/view?usp=drivesdk", "mime_type": "application/pdf"}
+      ]
+    }
+  ],
+  "decision": {
+    "status": "可关闭",
+    "owner": "吴优",
+    "text": "结论：定义为需求如此，测试预期不成立。露营模式退出后按正式设计返回主页并显示‘露营模式已退出’toast；小憩/Relax Mode退出流程未定义同类toast，不要求各模式一致。\n依据：J90A情景模式PRD V2.4·露营/小憩章节；J90A情景模式交互V2.6·露营/小憩章节；Jira视频·00:11-00:33。\n处理：按当前设计关闭本Bug，不改动各模式退出反馈；吴优处理。",
+    "implementation_source_ids": ["jira-actual", "jira-video"]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T113500Z-hur-83521",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 374
+  },
+  "expected_behavior": {
+    "trigger": "用户分别结束露营模式和小憩/Relax Mode",
+    "target_state": "各模式按自身正式退出流程返回情景模式主页",
+    "intent_function_signal": "露营结束流程包含退出toast；小憩退出流程不包含同类toast",
+    "ui_tts_vehicle_behavior": "露营退出显示‘露营模式已退出’toast；小憩/Relax Mode退出不要求显示同类toast",
+    "boundary": "不将不同情景模式的退出反馈强制统一；若后续要求统一，另转需求评审。",
+    "source_ids": ["j90a-scenario-prd-v24", "j90a-scenario-interaction-v26"]
+  }
+}

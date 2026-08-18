@@ -1,0 +1,32 @@
+[
+  {
+    "key": "HUR-83521",
+    "summary": "露营与Relax Mode退出反馈不一致",
+    "date": "2026-08-18",
+    "info": "现象：Jira视频00:11-00:14退出Rest Mode后显示‘Rest Mode Exited’，00:29-00:33退出Relax Mode后无同类toast。\n依据：J90A-EL功能清单序号733/734/737确认情景模式、小憩与露营搭载；J90A情景模式PRD V2.4和交互V2.6在露营章节明确结束后返回主页出现‘露营模式已退出’toast，小憩章节仅定义退出回主页，未定义同类toast；当前评论‘需求如此’与正式设计一致。",
+    "info_links": [
+      {"label": "Jira视频00:11-00:14", "url": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"},
+      {"label": "00:29-00:33", "url": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"},
+      {"label": "J90A-EL功能清单序号733/734/737", "url": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk"},
+      {"label": "J90A情景模式PRD V2.4", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"},
+      {"label": "交互V2.6", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk"},
+      {"label": "当前评论", "url": "http://jira.i-tetris.com/browse/HUR-83521"}
+    ],
+    "judgment": "结论：定义为需求如此，测试预期不成立。露营模式退出后按正式设计返回主页并显示‘露营模式已退出’toast；小憩/Relax Mode退出流程未定义同类toast，不要求各模式一致。\n依据：J90A情景模式PRD V2.4·露营/小憩章节；J90A情景模式交互V2.6·露营/小憩章节；Jira视频·00:11-00:33。\n处理：按当前设计关闭本Bug，不改动各模式退出反馈；吴优处理。",
+    "judgment_links": [
+      {"label": "J90A情景模式PRD V2.4·露营/小憩章节", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"},
+      {"label": "J90A情景模式交互V2.6·露营/小憩章节", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk"},
+      {"label": "Jira视频·00:11-00:33", "url": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"}
+    ],
+    "status": "可关闭",
+    "note": "若后续要求统一各模式退出反馈，另建需求评审。",
+    "links": [
+      {"label": "Jira原票·HUR-83521", "url": "http://jira.i-tetris.com/browse/HUR-83521"},
+      {"label": "Jira视频·00:11-00:33", "url": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"},
+      {"label": "J90A-EL功能清单·733/734/737", "url": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk"},
+      {"label": "J90A情景模式PRD V2.4·露营/小憩", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"},
+      {"label": "J90A情景模式交互V2.6·露营/小憩", "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk"},
+      {"label": "长马情景模式车型配置·小憩/露营", "url": "https://docs.google.com/spreadsheets/d/15Adqk_LYhXxO5-AV37bPJ6CmFSpIhv_wz8TzGMuG61Y/edit?usp=drivesdk"}
+    ]
+  }
+]

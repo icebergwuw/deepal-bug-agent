@@ -1,0 +1,376 @@
+{
+  "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit",
+  "properties": {
+    "title": "吴优工作说明",
+    "locale": "en_US",
+    "timeZone": "Asia/Shanghai"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 2135747181,
+        "title": "bug",
+        "index": 3,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1012,
+          "columnCount": 10,
+          "frozenRowCount": 1,
+          "hideGridlines": true
+        }
+      },
+      "data": [
+        {
+          "startRow": 373,
+          "rowData": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "stringValue": "2026-08-18"
+                  },
+                  "formattedValue": "2026-08-18",
+                  "effectiveValue": {
+                    "stringValue": "2026-08-18"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83521\",\"HUR-83521｜露营与Relax Mode退出反馈不一致\")"
+                  },
+                  "formattedValue": "HUR-83521｜露营与Relax Mode退出反馈不一致",
+                  "effectiveValue": {
+                    "stringValue": "HUR-83521｜露营与Relax Mode退出反馈不一致"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "现象：Jira视频00:11-00:14退出Rest Mode后显示‘Rest Mode Exited’，00:29-00:33退出Relax Mode后无同类toast。\n依据：J90A-EL功能清单序号733/734/737确认情景模式、小憩与露营搭载；J90A情景模式PRD V2.4和交互V2.6在露营章节明确结束后返回主页出现‘露营模式已退出’toast，小憩章节仅定义退出回主页，未定义同类toast；当前评论‘需求如此’与正式设计一致。"
+                  },
+                  "textFormatRuns": [
+                    {},
+                    {
+                      "startIndex": 3,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 20
+                    },
+                    {
+                      "startIndex": 53,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 64
+                    },
+                    {
+                      "startIndex": 90,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 114
+                    },
+                    {
+                      "startIndex": 129,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 145
+                    },
+                    {
+                      "startIndex": 146,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 152
+                    },
+                    {
+                      "startIndex": 207,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/HUR-83521"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 211
+                    }
+                  ],
+                  "formattedValue": "现象：Jira视频00:11-00:14退出Rest Mode后显示‘Rest Mode Exited’，00:29-00:33退出Relax Mode后无同类toast。\n依据：J90A-EL功能清单序号733/734/737确认情景模式、小憩与露营搭载；J90A情景模式PRD V2.4和交互V2.6在露营章节明确结束后返回主页出现‘露营模式已退出’toast，小憩章节仅定义退出回主页，未定义同类toast；当前评论‘需求如此’与正式设计一致。",
+                  "effectiveValue": {
+                    "stringValue": "现象：Jira视频00:11-00:14退出Rest Mode后显示‘Rest Mode Exited’，00:29-00:33退出Relax Mode后无同类toast。\n依据：J90A-EL功能清单序号733/734/737确认情景模式、小憩与露营搭载；J90A情景模式PRD V2.4和交互V2.6在露营章节明确结束后返回主页出现‘露营模式已退出’toast，小憩章节仅定义退出回主页，未定义同类toast；当前评论‘需求如此’与正式设计一致。"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "结论：定义为需求如此，测试预期不成立。露营模式退出后按正式设计返回主页并显示‘露营模式已退出’toast；小憩/Relax Mode退出流程未定义同类toast，不要求各模式一致。\n依据：J90A情景模式PRD V2.4·露营/小憩章节；J90A情景模式交互V2.6·露营/小憩章节；Jira视频·00:11-00:33。\n处理：按当前设计关闭本Bug，不改动各模式退出反馈；吴优处理。"
+                  },
+                  "textFormatRuns": [
+                    {},
+                    {
+                      "startIndex": 94,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 118
+                    },
+                    {
+                      "startIndex": 119,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 141
+                    },
+                    {
+                      "startIndex": 142,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 160
+                    }
+                  ],
+                  "formattedValue": "结论：定义为需求如此，测试预期不成立。露营模式退出后按正式设计返回主页并显示‘露营模式已退出’toast；小憩/Relax Mode退出流程未定义同类toast，不要求各模式一致。\n依据：J90A情景模式PRD V2.4·露营/小憩章节；J90A情景模式交互V2.6·露营/小憩章节；Jira视频·00:11-00:33。\n处理：按当前设计关闭本Bug，不改动各模式退出反馈；吴优处理。",
+                  "effectiveValue": {
+                    "stringValue": "结论：定义为需求如此，测试预期不成立。露营模式退出后按正式设计返回主页并显示‘露营模式已退出’toast；小憩/Relax Mode退出流程未定义同类toast，不要求各模式一致。\n依据：J90A情景模式PRD V2.4·露营/小憩章节；J90A情景模式交互V2.6·露营/小憩章节；Jira视频·00:11-00:33。\n处理：按当前设计关闭本Bug，不改动各模式退出反馈；吴优处理。"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "boolValue": false
+                  },
+                  "formattedValue": "FALSE",
+                  "effectiveValue": {
+                    "boolValue": false
+                  },
+                  "dataValidation": {
+                    "condition": {
+                      "type": "BOOLEAN"
+                    },
+                    "strict": true
+                  }
+                },
+                {},
+                {
+                  "userEnteredValue": {
+                    "stringValue": "可关闭"
+                  },
+                  "formattedValue": "可关闭",
+                  "effectiveValue": {
+                    "stringValue": "可关闭"
+                  }
+                },
+                {},
+                {
+                  "userEnteredValue": {
+                    "stringValue": "若后续要求统一各模式退出反馈，另建需求评审。"
+                  },
+                  "formattedValue": "若后续要求统一各模式退出反馈，另建需求评审。",
+                  "effectiveValue": {
+                    "stringValue": "若后续要求统一各模式退出反馈，另建需求评审。"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Jira原票·HUR-83521\nJira视频·00:11-00:33\nJ90A-EL功能清单·733/734/737\nJ90A情景模式PRD V2.4·露营/小憩\nJ90A情景模式交互V2.6·露营/小憩\n长马情景模式车型配置·小憩/露营"
+                  },
+                  "textFormatRuns": [
+                    {
+                      "startIndex": 0,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/HUR-83521"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 16
+                    },
+                    {
+                      "startIndex": 17,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/secure/attachment/4273553/video%2874%29.mp4"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 35
+                    },
+                    {
+                      "startIndex": 36,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://docs.google.com/spreadsheets/d/1MDEnc-_uDT4QaU1HdTzwwy87GIydbq84/edit?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 59
+                    },
+                    {
+                      "startIndex": 60,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 82
+                    },
+                    {
+                      "startIndex": 83,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 103
+                    },
+                    {
+                      "startIndex": 104,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://docs.google.com/spreadsheets/d/15Adqk_LYhXxO5-AV37bPJ6CmFSpIhv_wz8TzGMuG61Y/edit?usp=drivesdk"
+                        }
+                      }
+                    }
+                  ],
+                  "formattedValue": "Jira原票·HUR-83521\nJira视频·00:11-00:33\nJ90A-EL功能清单·733/734/737\nJ90A情景模式PRD V2.4·露营/小憩\nJ90A情景模式交互V2.6·露营/小憩\n长马情景模式车型配置·小憩/露营",
+                  "effectiveValue": {
+                    "stringValue": "Jira原票·HUR-83521\nJira视频·00:11-00:33\nJ90A-EL功能清单·733/734/737\nJ90A情景模式PRD V2.4·露营/小憩\nJ90A情景模式交互V2.6·露营/小憩\n长马情景模式车型配置·小憩/露营"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
