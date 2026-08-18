@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.14.0-trial.1`
+- 当前版本：`v1.15.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-08-17`
+- 生效日期：`2026-08-18`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -14,6 +14,35 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.15.0-trial.1 — 2026-08-18
+
+### 试行内容
+
+- 新增“可见交互优先级”规则：当前最上层可见页面、弹窗、卡片或控件命中时，优先于脱离当前页面的通用语义、后台上下文或不可见目标。
+- 多个可见节点同时命中时，必须继续核验层级、互斥关系、序号范围和正式优先级/消歧定义；缺少定义时不得直接确定性定责。
+- 预期行为卡必须记录可见节点、任务上下文及二者优先级关系，违反顺序时继续定位可见交互执行链责任，不直接归因于通用 NLU。
+
+### 修改原因
+
+- ADS-43148、ADS-47165 及近期可见交互 Bug 中，现象反复涉及可见节点与通用语义或既有任务上下文抢占；原规则要求核对可见资料，但没有明确目标选择优先级，容易把实现冲突误判为通用 NLU 问题或直接关闭。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-18-visible-interaction-priority-rule-v1.15.0-trial.1.md`
+
+### 验证案例
+
+- 当前页面存在唯一可见目标、通用语义命中其他目标时，按可见目标作为预期行为继续定位。
+- 同一页面存在多个可见命中节点但没有正式优先级定义时，结论降为 `待复核 / 待确认 / 待会诊`。
+- 已建立特定任务上下文与可见节点冲突且无更具体正式定义时，默认当前最上层可见交互优先，并记录上下文仲裁规则缺口。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.14.0-trial.1`，不使用 `git reset --hard`。
+- 回滚只撤销本条判定规则，不删除已形成的 Bug 日志、表格结论或历史证据。
 
 ## v1.14.0-trial.1 — 2026-08-17
 
