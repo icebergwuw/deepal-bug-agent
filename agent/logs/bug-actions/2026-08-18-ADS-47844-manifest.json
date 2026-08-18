@@ -1,0 +1,559 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-47844",
+  "comment_causality": "客户完整用例显示‘今天下午3点前到江北机场’历史进入主动记忆，当前Alchemy落到3189场景积木；3189项目点仍为草稿，导航与定时任务边界未形成生效正式口径。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260726185935293",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述已包含车型/项目、版本、前置、完整步骤、输入、预期、实际及附件/日志入口。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ST-65888",
+        "relationship": "Jira直接关联、共享日志或同根因线索",
+        "read": true,
+        "outcome": "客户问题关联票，已读全部字段、描述、附件与评论。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId与语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图检索或导航上下文。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、研发评论、正式目标与当前实现分别记录；同项目生效正式资料优先。存在配置冲突、专项定义缺口或语音链不完整的票保持待定状态。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "今天下午3点前到江北机场，帮我规划路线",
+    "alchemy_tested": true,
+    "alchemy_result": "classification=chat，命中llm:scenario_block / meta_id 3189。",
+    "meta_id": "3189",
+    "standard_function": {
+      "status": "verified",
+      "name": "一句话生成场景积木·MetaId 3189",
+      "assessment": "已实时读取标准功能点名称与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能点3189·草稿",
+      "assessment": "已实时读取深蓝项目功能点来源、继承与状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-47844 Jira原票",
+      "source_location": "当前字段、完整描述、全部评论、附件元数据与直接问题链接",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "客户完整用例显示‘今天下午3点前到江北机场’历史进入主动记忆，当前Alchemy落到3189场景积木；3189项目点仍为草稿，导航与定时任务边界未形成生效正式口径。",
+      "target_behavior": "带截止时间的机场导航落到场景积木",
+      "match": "exact",
+      "reason": "证明当前提报现象、版本、复现与实现事实，不定义目标行为。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "在线对话·原话‘今天下午3点前到江北机场，帮我规划路线’·3189",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝项目",
+      "trigger": "今天下午3点前到江北机场，帮我规划路线",
+      "target_behavior": "classification=chat，命中llm:scenario_block / meta_id 3189。",
+      "match": "exact",
+      "reason": "证明当前在线语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准功能点·一句话生成场景积木·MetaId 3189",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "今天下午3点前到江北机场，帮我规划路线",
+      "target_behavior": "一句话生成场景积木·MetaId 3189",
+      "match": "exact",
+      "reason": "证明标准功能点状态。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "项目功能点·深蓝项目功能点3189·草稿",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "今天下午3点前到江北机场，帮我规划路线",
+      "target_behavior": "深蓝项目功能点3189·草稿",
+      "match": "exact",
+      "reason": "证明项目继承与状态。"
+    },
+    {
+      "source_id": "poi-prd",
+      "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+      "source_location": "正文行224-256·行程/POI推荐范围；行288-292·选择第N项并导航；行303-313·列表上下文二次筛选",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295",
+      "trigger": "客户完整用例显示‘今天下午3点前到江北机场’历史进入主动记忆，当前Alchemy落到3189场景积木；3189项目点仍为草稿，导航与定时任务边界未形成生效正式口径。",
+      "target_behavior": "定义POI推荐、列表选择和导航上下文范围。",
+      "match": "exact",
+      "reason": "同项目当前POI主PRD。"
+    },
+    {
+      "source_id": "scene-interaction",
+      "source": "长安深蓝_8295平台_交互设计文档_场景积木_V0.8_20251127.pdf",
+      "source_location": "场景积木交互V0.8·定时/场景配置范围",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "深蓝8295",
+      "trigger": "客户完整用例显示‘今天下午3点前到江北机场’历史进入主动记忆，当前Alchemy落到3189场景积木；3189项目点仍为草稿，导航与定时任务边界未形成生效正式口径。",
+      "target_behavior": "用于核对场景积木候选，不证明本票时间导航目标。",
+      "match": "partial",
+      "reason": "与当前3189落域相关但缺生效边界。"
+    },
+    {
+      "source_id": "material-gap",
+      "source": "正式定义缺口",
+      "source_location": "已查POI PRD、场景积木交互与Alchemy项目点",
+      "source_type": "special_prd",
+      "role": "context_only",
+      "project_model": "深蓝8295",
+      "trigger": "客户完整用例显示‘今天下午3点前到江北机场’历史进入主动记忆，当前Alchemy落到3189场景积木；3189项目点仍为草稿，导航与定时任务边界未形成生效正式口径。",
+      "target_behavior": "当前无生效资料定义带截止时间导航应进入即时导航还是场景积木。",
+      "match": "gap",
+      "reason": "缺口会改变落域边界和责任。",
+      "material": true,
+      "next_action": "待补生效的时间导航/定时任务边界与3189发布状态。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线对话实时测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "今天下午3点前到江北机场，帮我规划路线"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy标准功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3189"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy深蓝项目功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3189"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取项目功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47844"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "带截止时间的机场导航落到场景积木"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-47844-formal_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-47844-formal_definition_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47844"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "带截止时间的机场导航落到场景积木"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-47844-main_prd_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-47844-main_prd_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47844"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "带截止时间的机场导航落到场景积木"
+        }
+      ],
+      "source_ids": [
+        "scene-interaction"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1YtVqaOPEx-Ffsdrbb9WNxO-AeBT7xr1Y",
+            "title": "长安深蓝_8295平台_交互设计文档_场景积木_V0.8_20251127.pdf",
+            "url": "https://drive.google.com/file/d/1YtVqaOPEx-Ffsdrbb9WNxO-AeBT7xr1Y/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295场景积木交互",
+            "disposition": "read",
+            "source_ids": [
+              "scene-interaction"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝8295场景积木交互",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-47844-special_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1YtVqaOPEx-Ffsdrbb9WNxO-AeBT7xr1Y",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-47844-special_definition_search-drive-20260818-1"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-47844-formal_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47844"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-47844-main_prd_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47844"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-47844-special_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47844"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "带截止时间的机场导航落到场景积木"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_交互设计文档_场景积木_V0.8_20251127.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295场景积木交互"
+        }
+      ],
+      "results": [
+        {
+          "id": "1YtVqaOPEx-Ffsdrbb9WNxO-AeBT7xr1Y",
+          "title": "长安深蓝_8295平台_交互设计文档_场景积木_V0.8_20251127.pdf",
+          "url": "https://drive.google.com/file/d/1YtVqaOPEx-Ffsdrbb9WNxO-AeBT7xr1Y/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "待会诊",
+    "owner": "Deepal AI路由产品负责人",
+    "text": "结论：带截止时间的即时导航当前被3189场景积木接管，但该项目功能点仍为草稿，不能据此定义客户导航预期无效，暂不关闭。\n依据：POI推荐PRD v0.8·行224-256；Alchemy当前·3189；Jira客户回归链路。\n处理：明确‘时间表达+导航目的地’在即时导航与定时任务间的生效边界，并按结论回归发布配置；Deepal AI路由产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T032052Z-7ef573b6-4c87-449e-8af3-522f9bf87997",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 354
+  },
+  "expected_behavior": {
+    "status": "unresolved",
+    "reason": "当前无生效资料定义带截止时间导航应进入即时导航还是场景积木。"
+  }
+}

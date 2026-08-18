@@ -1,0 +1,1466 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-83275",
+  "comment_causality": "车辆设置交互v4.5要求成功toast；LanguageList模块页将answer_with_gesture标记删除，但All Key行3530仍保留。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及页面、卡片、弹窗或控件状态。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、研发评论、正式目标与当前实现分别记录；同项目生效正式资料优先。存在配置冲突、专项定义缺口或语音链不完整的票保持待定状态。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-83275 Jira原票",
+      "source_location": "当前字段、完整描述、全部评论、附件元数据与直接问题链接",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "HUR",
+      "trigger": "车辆设置交互v4.5要求成功toast；LanguageList模块页将answer_with_gesture标记删除，但All Key行3530仍保留。",
+      "target_behavior": "手势接听成功反馈配置冲突",
+      "match": "exact",
+      "reason": "证明当前提报现象、版本、复现与实现事实，不定义目标行为。"
+    },
+    {
+      "source_id": "language-list",
+      "source": "J90A_海外LanguageList_V1.2_260813.xlsx",
+      "source_location": "模块行1868/All Key行3530·answer_with_gesture",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "J90A",
+      "trigger": "车辆设置交互v4.5要求成功toast；LanguageList模块页将answer_with_gesture标记删除，但All Key行3530仍保留。",
+      "target_behavior": "最新正式文言/Key状态。",
+      "match": "exact",
+      "reason": "已枚举版本族并选定V1.2_260813。"
+    },
+    {
+      "source_id": "vehicle-interaction",
+      "source": "马自达J90A交互设计文档_车辆设置_v4.5",
+      "source_location": "行1941-1948·手势识别成功反馈toast",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "车辆设置交互v4.5要求成功toast；LanguageList模块页将answer_with_gesture标记删除，但All Key行3530仍保留。",
+      "target_behavior": "定义车辆设置页面及交互范围。",
+      "match": "exact",
+      "reason": "当前最高适用J90A车辆设置交互。"
+    },
+    {
+      "source_id": "material-gap",
+      "source": "正式配置冲突/交互空白",
+      "source_location": "LanguageList对应行与交互对应行已交叉核对",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "J90A",
+      "trigger": "车辆设置交互v4.5要求成功toast；LanguageList模块页将answer_with_gesture标记删除，但All Key行3530仍保留。",
+      "target_behavior": "模块页删除与All Key保留冲突，会改变配置责任与接入动作。",
+      "match": "gap",
+      "reason": "冲突会改变责任和处理动作。",
+      "material": true,
+      "next_action": "先消除模块页与All Key冲突，再验证仪表toast。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83275"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "手势接听成功反馈配置冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "手势接听成功反馈配置冲突"
+        }
+      ],
+      "source_ids": [
+        "language-list"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 23,
+        "candidates": [
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.2_260813.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "read",
+            "source_ids": [
+              "language-list"
+            ]
+          },
+          {
+            "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+            "title": "J90A_海外LanguageList内部版V1.0_260806",
+            "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+            "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA",
+            "title": "J90A_海外LanguageList_V1.2_260810.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+            "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+            "title": "J90A_海外LanguageList_V1.1_260807",
+            "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1vgjICSB5ikiep_aHH6NTGgPM15feV3QV",
+            "title": "J90A_海外LanguageList_V1.1_260807.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1vgjICSB5ikiep_aHH6NTGgPM15feV3QV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+            "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+            "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+            "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+            "url": "https://docs.google.com/spreadsheets/d/1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+            "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+            "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+            "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+            "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+            "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+            "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+            "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+            "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+            "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+            "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+            "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+            "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+            "title": "J90A_海外LanguageList_V0.5.8_0722",
+            "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI",
+            "title": "J90A_海外LanguageList外发版V0.5.8_0715",
+            "url": "https://docs.google.com/spreadsheets/d/1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_海外LanguageList",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-83275-formal_config_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "HUR-83275-formal_config_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83275"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "手势接听成功反馈配置冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "手势接听成功反馈配置冲突"
+        }
+      ],
+      "source_ids": [
+        "vehicle-interaction"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 55,
+        "candidates": [
+          {
+            "id": "1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.5",
+            "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "read",
+            "source_ids": [
+              "vehicle-interaction"
+            ]
+          },
+          {
+            "id": "19K1TwhiD1MX6KpN8mZwJ0wSFUhrbpZAv",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.5.pdf",
+            "url": "https://drive.google.com/file/d/19K1TwhiD1MX6KpN8mZwJ0wSFUhrbpZAv/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1CbibKGcayGoQKAHk06W-FfCVMbK7qOtnCKnBuBj_8B4",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.5",
+            "url": "https://docs.google.com/document/d/1CbibKGcayGoQKAHk06W-FfCVMbK7qOtnCKnBuBj_8B4/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1LkUY0b7D8qjHN55kGl0BA4FPuIRJ5_tx",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.4 .pdf",
+            "url": "https://drive.google.com/file/d/1LkUY0b7D8qjHN55kGl0BA4FPuIRJ5_tx/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1nZux-gNFW_4mO_Nt4hD1NPnsi4q2q5-8",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.4.pdf",
+            "url": "https://drive.google.com/file/d/1nZux-gNFW_4mO_Nt4hD1NPnsi4q2q5-8/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "18oYMWicDhRVnWHabiC9she7V2wfasAbEpgp_htEFkXo",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v1.1",
+            "url": "https://docs.google.com/document/d/18oYMWicDhRVnWHabiC9she7V2wfasAbEpgp_htEFkXo/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1zCd78MrQ63PgH-S51RGBdcYJkUDEk0iG",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v1.2.pdf",
+            "url": "https://drive.google.com/file/d/1zCd78MrQ63PgH-S51RGBdcYJkUDEk0iG/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1JlkArzml9ZYbLIx86rBWbc8-AY8spQ1m",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v1.1.pdf",
+            "url": "https://drive.google.com/file/d/1JlkArzml9ZYbLIx86rBWbc8-AY8spQ1m/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1QFBg5Zuk0DbqRPKatiEkAETopTHCZRvP",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v1.0.pdf",
+            "url": "https://drive.google.com/file/d/1QFBg5Zuk0DbqRPKatiEkAETopTHCZRvP/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Hb46qlhGQyzJrHE1DqSRY60xb8IcgM4z",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v3.3.pdf",
+            "url": "https://drive.google.com/file/d/1Hb46qlhGQyzJrHE1DqSRY60xb8IcgM4z/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1sOFN81nsuPEPFT20UmvzBTWG7FWEnu8KeHusnP_W75A",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v3.2",
+            "url": "https://docs.google.com/document/d/1sOFN81nsuPEPFT20UmvzBTWG7FWEnu8KeHusnP_W75A/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "18ialZyRnvOF3VMa3gWGd2dZrLx5B2Mrg",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v3.2.pdf",
+            "url": "https://drive.google.com/file/d/18ialZyRnvOF3VMa3gWGd2dZrLx5B2Mrg/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "10Kqb0D23iFbDhsZItSOuQr73pakQEcKC",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v3.1.pdf",
+            "url": "https://drive.google.com/file/d/10Kqb0D23iFbDhsZItSOuQr73pakQEcKC/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1N1koO5rloJ1dOoHcn3OckRyfR56CLl85",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.8.pdf",
+            "url": "https://drive.google.com/file/d/1N1koO5rloJ1dOoHcn3OckRyfR56CLl85/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1wSU4HOmpbgLTfrm9b2s8SDtPaWcKwE7I",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1wSU4HOmpbgLTfrm9b2s8SDtPaWcKwE7I/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1tePx0px_S47zND3W_qyQDzPCHHjA0kzvaU3PQH6gYuE",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v3.0",
+            "url": "https://docs.google.com/document/d/1tePx0px_S47zND3W_qyQDzPCHHjA0kzvaU3PQH6gYuE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1ECHV3FwNXWpzWWGWL5dX-bY-O0oTCjjl",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v3.0.pdf",
+            "url": "https://drive.google.com/file/d/1ECHV3FwNXWpzWWGWL5dX-bY-O0oTCjjl/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1z2zY7hIfFI-k6ltiOnwUrLqwMSp3bn7v",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.9.pdf",
+            "url": "https://drive.google.com/file/d/1z2zY7hIfFI-k6ltiOnwUrLqwMSp3bn7v/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "11hdmDfkwqC-yVdFeUWH9txk3rHVRNXWj",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.2.pdf",
+            "url": "https://drive.google.com/file/d/11hdmDfkwqC-yVdFeUWH9txk3rHVRNXWj/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1GqvMfwKBwe3fa7Bk8sofPugFnanr9wMi",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.8.pdf",
+            "url": "https://drive.google.com/file/d/1GqvMfwKBwe3fa7Bk8sofPugFnanr9wMi/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1fLM_D122Kbk6zWyLbUC1G7vo8plIcGF5",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.5英.pdf",
+            "url": "https://drive.google.com/file/d/1fLM_D122Kbk6zWyLbUC1G7vo8plIcGF5/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1wKarbHFU6d6w1cNuPhRLcieCVhQkpmEO",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.5.pdf",
+            "url": "https://drive.google.com/file/d/1wKarbHFU6d6w1cNuPhRLcieCVhQkpmEO/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1vTYlUu3IKrfY2yTGPjXKeKaM_CtE3IUG",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.4英.pdf",
+            "url": "https://drive.google.com/file/d/1vTYlUu3IKrfY2yTGPjXKeKaM_CtE3IUG/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1UcbCFMDJnVlUAr9iJpk3lZOYDrFKbjAK",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.3_0509.pdf",
+            "url": "https://drive.google.com/file/d/1UcbCFMDJnVlUAr9iJpk3lZOYDrFKbjAK/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "15zi5HnRd66tZkEHC7Q10RgDMyD1qz60q",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.1.pdf",
+            "url": "https://drive.google.com/file/d/15zi5HnRd66tZkEHC7Q10RgDMyD1qz60q/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1mGzrUemgWH2T5buHKNn4QTwb7m8OGuKq",
+            "title": "马自达J90A_ER交互设计文档_车辆设置智能驾驶_v0.1.pdf",
+            "url": "https://drive.google.com/file/d/1mGzrUemgWH2T5buHKNn4QTwb7m8OGuKq/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置智能驾驶",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1GEoaeNeLH6FhipslFxYXjWQysUbf_NTa",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.3.pdf",
+            "url": "https://drive.google.com/file/d/1GEoaeNeLH6FhipslFxYXjWQysUbf_NTa/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1wRk4jl-K7KnzTdZVbbiRNqnUTXaBvEns",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.7.pdf",
+            "url": "https://drive.google.com/file/d/1wRk4jl-K7KnzTdZVbbiRNqnUTXaBvEns/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "16tYoBgn9slI4sMzeYEh3BiU_KIUx8L5O",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.6.pdf",
+            "url": "https://drive.google.com/file/d/16tYoBgn9slI4sMzeYEh3BiU_KIUx8L5O/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1SVNpm4flUiEU6XH4wUEUAcLp6h3FlH5U",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.1英.pdf",
+            "url": "https://drive.google.com/file/d/1SVNpm4flUiEU6XH4wUEUAcLp6h3FlH5U/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1y7xMEPvbL9YwUBc1mS99Oxpzm8aDEvlP",
+            "title": "马自达J90A_ER交互设计文档_车辆设置_v0.1.pdf",
+            "url": "https://drive.google.com/file/d/1y7xMEPvbL9YwUBc1mS99Oxpzm8aDEvlP/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_ER交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1TOZbnVpcxg42Pcv-4PRm7tWSeCFbmExB",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.5(1).pdf",
+            "url": "https://drive.google.com/file/d/1TOZbnVpcxg42Pcv-4PRm7tWSeCFbmExB/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Iu86x7jn9KHvI0Rj3TqvorZsJPKASeQX",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.5.pdf",
+            "url": "https://drive.google.com/file/d/1Iu86x7jn9KHvI0Rj3TqvorZsJPKASeQX/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1tinwj-9bDESbitG1yzXDb_jSI8VODHdf",
+            "title": "马自达J90A交互设计文档_车辆设置_v4.0.pdf",
+            "url": "https://drive.google.com/file/d/1tinwj-9bDESbitG1yzXDb_jSI8VODHdf/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1xZo9gCxa13y2QzNUqxfmZwRnzVRvY1ry",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_V2.4.pdf",
+            "url": "https://drive.google.com/file/d/1xZo9gCxa13y2QzNUqxfmZwRnzVRvY1ry/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1APJlRHWYswX4ez5JxK6qevju_xJd-6xa",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.3.pdf",
+            "url": "https://drive.google.com/file/d/1APJlRHWYswX4ez5JxK6qevju_xJd-6xa/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1GNs6JNAbOWzZ73SjK3lTZRhtlayUfQ9e",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.2.pdf",
+            "url": "https://drive.google.com/file/d/1GNs6JNAbOWzZ73SjK3lTZRhtlayUfQ9e/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1VwQltPuee7zBREpTjUZy5KICr9Af8VBQ",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.1.pdf",
+            "url": "https://drive.google.com/file/d/1VwQltPuee7zBREpTjUZy5KICr9Af8VBQ/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "17pfJvT8wpHnsxAYVV1VGN9gbBQL9aeew",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v2.0.pdf",
+            "url": "https://drive.google.com/file/d/17pfJvT8wpHnsxAYVV1VGN9gbBQL9aeew/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1VnKKms1fmUxBfvfb7Bc-jKFsgj9_pwnV",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.9.pdf",
+            "url": "https://drive.google.com/file/d/1VnKKms1fmUxBfvfb7Bc-jKFsgj9_pwnV/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1KPc8kVTLZR6T1HUksI-Z6P-piAuM6e43mHGLbJT8Ai4",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.8",
+            "url": "https://docs.google.com/document/d/1KPc8kVTLZR6T1HUksI-Z6P-piAuM6e43mHGLbJT8Ai4/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "12nCDhaT8f6QX99-kwW8swyelj2mxRIlc",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.8.pdf",
+            "url": "https://drive.google.com/file/d/12nCDhaT8f6QX99-kwW8swyelj2mxRIlc/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1yRqbOUUskpikbx5tJGdW5Aam6nkfSyWd",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.7.pdf",
+            "url": "https://drive.google.com/file/d/1yRqbOUUskpikbx5tJGdW5Aam6nkfSyWd/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1vr1pmuqC14XcJrbBXTys7ADjOQshjL-Y",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.6.pdf",
+            "url": "https://drive.google.com/file/d/1vr1pmuqC14XcJrbBXTys7ADjOQshjL-Y/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "13BQOGA19QJBXQj_QQCZhGcixBQQAjNzv",
+            "title": "马自达J90A交互设计文档_车辆设置_v3.9.pdf",
+            "url": "https://drive.google.com/file/d/13BQOGA19QJBXQj_QQCZhGcixBQQAjNzv/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1V8qqvGDrdofBqhuZgV8xwW5Yw0mUlz0o",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.5.pdf",
+            "url": "https://drive.google.com/file/d/1V8qqvGDrdofBqhuZgV8xwW5Yw0mUlz0o/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1WOuvterFd5YlGuc5jxl2dlC-b_qmuRHb",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.4.pdf",
+            "url": "https://drive.google.com/file/d/1WOuvterFd5YlGuc5jxl2dlC-b_qmuRHb/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1e6VY4INHSNUlLS27Sjivfwbhzp7bNhPiRvI6S2iDXmQ",
+            "title": "马自达J90A交互设计文档_车辆设置_v3.5",
+            "url": "https://docs.google.com/document/d/1e6VY4INHSNUlLS27Sjivfwbhzp7bNhPiRvI6S2iDXmQ/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1ggrqxAqVC-370aM8lfLgcm8yo9gkwzCi",
+            "title": "马自达J90A交互设计文档_车辆设置_v3.8.pdf",
+            "url": "https://drive.google.com/file/d/1ggrqxAqVC-370aM8lfLgcm8yo9gkwzCi/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1aGEqMaaFCqB0kTcW53uIEMBB0hos6HSq",
+            "title": "马自达J90A交互设计文档_车辆设置_v3.7.pdf",
+            "url": "https://drive.google.com/file/d/1aGEqMaaFCqB0kTcW53uIEMBB0hos6HSq/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1l-n_sPlJDua3UHfZjJXakUOZSsj6BtWK",
+            "title": "马自达J90A交互设计文档_车辆设置_v3.6.pdf",
+            "url": "https://drive.google.com/file/d/1l-n_sPlJDua3UHfZjJXakUOZSsj6BtWK/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "140VAUXV0T2l2DD63z-7QKlgMI0TfjoqD",
+            "title": "马自达J90A_EU交互设计文档_车辆设置_v1.1.pdf",
+            "url": "https://drive.google.com/file/d/140VAUXV0T2l2DD63z-7QKlgMI0TfjoqD/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "19KXI2Zzh81qzouL3gtA0POOBcM2l1LCm",
+            "title": "马自达J90A交互设计文档_车辆设置_v3.5.pdf",
+            "url": "https://drive.google.com/file/d/19KXI2Zzh81qzouL3gtA0POOBcM2l1LCm/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1g0x5PSbGyxjnu9-JHZhfty7I0F_B2zXV",
+            "title": "马自达J90A_EU_交互设计文档_车辆设置_v1.3.pdf",
+            "url": "https://drive.google.com/file/d/1g0x5PSbGyxjnu9-JHZhfty7I0F_B2zXV/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A_EU_交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1GfItykso4wk8wiVWiu7QzKDMh4w-ARiP",
+            "title": "马自达J90A交互设计文档_车辆设置_v3.4.pdf",
+            "url": "https://drive.google.com/file/d/1GfItykso4wk8wiVWiu7QzKDMh4w-ARiP/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_车辆设置",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "马自达J90A_ER交互设计文档_车辆设置",
+            "status": "not_applicable",
+            "reason": "该版本族为不同项目、历史副本或不适用于本票。"
+          },
+          {
+            "family": "马自达J90A_ER交互设计文档_车辆设置智能驾驶",
+            "status": "not_applicable",
+            "reason": "该版本族为不同项目、历史副本或不适用于本票。"
+          },
+          {
+            "family": "马自达J90A_EU_交互设计文档_车辆设置",
+            "status": "not_applicable",
+            "reason": "该版本族为不同项目、历史副本或不适用于本票。"
+          },
+          {
+            "family": "马自达J90A_EU交互设计文档_车辆设置",
+            "status": "not_applicable",
+            "reason": "该版本族为不同项目、历史副本或不适用于本票。"
+          },
+          {
+            "family": "马自达J90A交互设计文档_车辆设置",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-83275-interaction_or_ue_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "HUR-83275-interaction_or_ue_search-drive-20260818-1"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-83275-formal_config_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83275"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "手势接听成功反馈配置冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "手势接听成功反馈配置冲突"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.2_260813.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.2_260813.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+          "title": "J90A_海外LanguageList内部版V1.0_260806",
+          "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+          "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA",
+          "title": "J90A_海外LanguageList_V1.2_260810.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+          "title": "J90A_海外LanguageList_V1.1_260807",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1vgjICSB5ikiep_aHH6NTGgPM15feV3QV",
+          "title": "J90A_海外LanguageList_V1.1_260807.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1vgjICSB5ikiep_aHH6NTGgPM15feV3QV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+          "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+          "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+          "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+          "url": "https://docs.google.com/spreadsheets/d/1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+          "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+          "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+          "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+          "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+          "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+          "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+          "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+          "title": "J90A_海外LanguageList_V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0715",
+          "url": "https://docs.google.com/spreadsheets/d/1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-83275-interaction_or_ue_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83275"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "手势接听成功反馈配置冲突"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "手势接听成功反馈配置冲突"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "马自达J90A交互设计文档_车辆设置_v4.5"
+        },
+        {
+          "kind": "version_family",
+          "text": "马自达J90A交互设计文档_车辆设置"
+        }
+      ],
+      "results": [
+        {
+          "id": "1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.5",
+          "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "19K1TwhiD1MX6KpN8mZwJ0wSFUhrbpZAv",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.5.pdf",
+          "url": "https://drive.google.com/file/d/19K1TwhiD1MX6KpN8mZwJ0wSFUhrbpZAv/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1CbibKGcayGoQKAHk06W-FfCVMbK7qOtnCKnBuBj_8B4",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.5",
+          "url": "https://docs.google.com/document/d/1CbibKGcayGoQKAHk06W-FfCVMbK7qOtnCKnBuBj_8B4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1LkUY0b7D8qjHN55kGl0BA4FPuIRJ5_tx",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.4 .pdf",
+          "url": "https://drive.google.com/file/d/1LkUY0b7D8qjHN55kGl0BA4FPuIRJ5_tx/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1nZux-gNFW_4mO_Nt4hD1NPnsi4q2q5-8",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.4.pdf",
+          "url": "https://drive.google.com/file/d/1nZux-gNFW_4mO_Nt4hD1NPnsi4q2q5-8/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "18oYMWicDhRVnWHabiC9she7V2wfasAbEpgp_htEFkXo",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v1.1",
+          "url": "https://docs.google.com/document/d/18oYMWicDhRVnWHabiC9she7V2wfasAbEpgp_htEFkXo/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1zCd78MrQ63PgH-S51RGBdcYJkUDEk0iG",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v1.2.pdf",
+          "url": "https://drive.google.com/file/d/1zCd78MrQ63PgH-S51RGBdcYJkUDEk0iG/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1JlkArzml9ZYbLIx86rBWbc8-AY8spQ1m",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v1.1.pdf",
+          "url": "https://drive.google.com/file/d/1JlkArzml9ZYbLIx86rBWbc8-AY8spQ1m/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1QFBg5Zuk0DbqRPKatiEkAETopTHCZRvP",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v1.0.pdf",
+          "url": "https://drive.google.com/file/d/1QFBg5Zuk0DbqRPKatiEkAETopTHCZRvP/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Hb46qlhGQyzJrHE1DqSRY60xb8IcgM4z",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v3.3.pdf",
+          "url": "https://drive.google.com/file/d/1Hb46qlhGQyzJrHE1DqSRY60xb8IcgM4z/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1sOFN81nsuPEPFT20UmvzBTWG7FWEnu8KeHusnP_W75A",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v3.2",
+          "url": "https://docs.google.com/document/d/1sOFN81nsuPEPFT20UmvzBTWG7FWEnu8KeHusnP_W75A/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "18ialZyRnvOF3VMa3gWGd2dZrLx5B2Mrg",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v3.2.pdf",
+          "url": "https://drive.google.com/file/d/18ialZyRnvOF3VMa3gWGd2dZrLx5B2Mrg/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "10Kqb0D23iFbDhsZItSOuQr73pakQEcKC",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v3.1.pdf",
+          "url": "https://drive.google.com/file/d/10Kqb0D23iFbDhsZItSOuQr73pakQEcKC/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1N1koO5rloJ1dOoHcn3OckRyfR56CLl85",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.8.pdf",
+          "url": "https://drive.google.com/file/d/1N1koO5rloJ1dOoHcn3OckRyfR56CLl85/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1wSU4HOmpbgLTfrm9b2s8SDtPaWcKwE7I",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1wSU4HOmpbgLTfrm9b2s8SDtPaWcKwE7I/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1tePx0px_S47zND3W_qyQDzPCHHjA0kzvaU3PQH6gYuE",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v3.0",
+          "url": "https://docs.google.com/document/d/1tePx0px_S47zND3W_qyQDzPCHHjA0kzvaU3PQH6gYuE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1ECHV3FwNXWpzWWGWL5dX-bY-O0oTCjjl",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v3.0.pdf",
+          "url": "https://drive.google.com/file/d/1ECHV3FwNXWpzWWGWL5dX-bY-O0oTCjjl/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1z2zY7hIfFI-k6ltiOnwUrLqwMSp3bn7v",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.9.pdf",
+          "url": "https://drive.google.com/file/d/1z2zY7hIfFI-k6ltiOnwUrLqwMSp3bn7v/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "11hdmDfkwqC-yVdFeUWH9txk3rHVRNXWj",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.2.pdf",
+          "url": "https://drive.google.com/file/d/11hdmDfkwqC-yVdFeUWH9txk3rHVRNXWj/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1GqvMfwKBwe3fa7Bk8sofPugFnanr9wMi",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.8.pdf",
+          "url": "https://drive.google.com/file/d/1GqvMfwKBwe3fa7Bk8sofPugFnanr9wMi/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1fLM_D122Kbk6zWyLbUC1G7vo8plIcGF5",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.5英.pdf",
+          "url": "https://drive.google.com/file/d/1fLM_D122Kbk6zWyLbUC1G7vo8plIcGF5/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1wKarbHFU6d6w1cNuPhRLcieCVhQkpmEO",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.5.pdf",
+          "url": "https://drive.google.com/file/d/1wKarbHFU6d6w1cNuPhRLcieCVhQkpmEO/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1vTYlUu3IKrfY2yTGPjXKeKaM_CtE3IUG",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.4英.pdf",
+          "url": "https://drive.google.com/file/d/1vTYlUu3IKrfY2yTGPjXKeKaM_CtE3IUG/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1UcbCFMDJnVlUAr9iJpk3lZOYDrFKbjAK",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.3_0509.pdf",
+          "url": "https://drive.google.com/file/d/1UcbCFMDJnVlUAr9iJpk3lZOYDrFKbjAK/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "15zi5HnRd66tZkEHC7Q10RgDMyD1qz60q",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.1.pdf",
+          "url": "https://drive.google.com/file/d/15zi5HnRd66tZkEHC7Q10RgDMyD1qz60q/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1mGzrUemgWH2T5buHKNn4QTwb7m8OGuKq",
+          "title": "马自达J90A_ER交互设计文档_车辆设置智能驾驶_v0.1.pdf",
+          "url": "https://drive.google.com/file/d/1mGzrUemgWH2T5buHKNn4QTwb7m8OGuKq/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1GEoaeNeLH6FhipslFxYXjWQysUbf_NTa",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.3.pdf",
+          "url": "https://drive.google.com/file/d/1GEoaeNeLH6FhipslFxYXjWQysUbf_NTa/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1wRk4jl-K7KnzTdZVbbiRNqnUTXaBvEns",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.7.pdf",
+          "url": "https://drive.google.com/file/d/1wRk4jl-K7KnzTdZVbbiRNqnUTXaBvEns/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "16tYoBgn9slI4sMzeYEh3BiU_KIUx8L5O",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.6.pdf",
+          "url": "https://drive.google.com/file/d/16tYoBgn9slI4sMzeYEh3BiU_KIUx8L5O/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1SVNpm4flUiEU6XH4wUEUAcLp6h3FlH5U",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.1英.pdf",
+          "url": "https://drive.google.com/file/d/1SVNpm4flUiEU6XH4wUEUAcLp6h3FlH5U/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1y7xMEPvbL9YwUBc1mS99Oxpzm8aDEvlP",
+          "title": "马自达J90A_ER交互设计文档_车辆设置_v0.1.pdf",
+          "url": "https://drive.google.com/file/d/1y7xMEPvbL9YwUBc1mS99Oxpzm8aDEvlP/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1TOZbnVpcxg42Pcv-4PRm7tWSeCFbmExB",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.5(1).pdf",
+          "url": "https://drive.google.com/file/d/1TOZbnVpcxg42Pcv-4PRm7tWSeCFbmExB/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Iu86x7jn9KHvI0Rj3TqvorZsJPKASeQX",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.5.pdf",
+          "url": "https://drive.google.com/file/d/1Iu86x7jn9KHvI0Rj3TqvorZsJPKASeQX/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1tinwj-9bDESbitG1yzXDb_jSI8VODHdf",
+          "title": "马自达J90A交互设计文档_车辆设置_v4.0.pdf",
+          "url": "https://drive.google.com/file/d/1tinwj-9bDESbitG1yzXDb_jSI8VODHdf/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1xZo9gCxa13y2QzNUqxfmZwRnzVRvY1ry",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_V2.4.pdf",
+          "url": "https://drive.google.com/file/d/1xZo9gCxa13y2QzNUqxfmZwRnzVRvY1ry/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1APJlRHWYswX4ez5JxK6qevju_xJd-6xa",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.3.pdf",
+          "url": "https://drive.google.com/file/d/1APJlRHWYswX4ez5JxK6qevju_xJd-6xa/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1GNs6JNAbOWzZ73SjK3lTZRhtlayUfQ9e",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.2.pdf",
+          "url": "https://drive.google.com/file/d/1GNs6JNAbOWzZ73SjK3lTZRhtlayUfQ9e/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1VwQltPuee7zBREpTjUZy5KICr9Af8VBQ",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.1.pdf",
+          "url": "https://drive.google.com/file/d/1VwQltPuee7zBREpTjUZy5KICr9Af8VBQ/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "17pfJvT8wpHnsxAYVV1VGN9gbBQL9aeew",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v2.0.pdf",
+          "url": "https://drive.google.com/file/d/17pfJvT8wpHnsxAYVV1VGN9gbBQL9aeew/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1VnKKms1fmUxBfvfb7Bc-jKFsgj9_pwnV",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.9.pdf",
+          "url": "https://drive.google.com/file/d/1VnKKms1fmUxBfvfb7Bc-jKFsgj9_pwnV/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1KPc8kVTLZR6T1HUksI-Z6P-piAuM6e43mHGLbJT8Ai4",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.8",
+          "url": "https://docs.google.com/document/d/1KPc8kVTLZR6T1HUksI-Z6P-piAuM6e43mHGLbJT8Ai4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "12nCDhaT8f6QX99-kwW8swyelj2mxRIlc",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.8.pdf",
+          "url": "https://drive.google.com/file/d/12nCDhaT8f6QX99-kwW8swyelj2mxRIlc/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1yRqbOUUskpikbx5tJGdW5Aam6nkfSyWd",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.7.pdf",
+          "url": "https://drive.google.com/file/d/1yRqbOUUskpikbx5tJGdW5Aam6nkfSyWd/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1vr1pmuqC14XcJrbBXTys7ADjOQshjL-Y",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.6.pdf",
+          "url": "https://drive.google.com/file/d/1vr1pmuqC14XcJrbBXTys7ADjOQshjL-Y/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "13BQOGA19QJBXQj_QQCZhGcixBQQAjNzv",
+          "title": "马自达J90A交互设计文档_车辆设置_v3.9.pdf",
+          "url": "https://drive.google.com/file/d/13BQOGA19QJBXQj_QQCZhGcixBQQAjNzv/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1V8qqvGDrdofBqhuZgV8xwW5Yw0mUlz0o",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.5.pdf",
+          "url": "https://drive.google.com/file/d/1V8qqvGDrdofBqhuZgV8xwW5Yw0mUlz0o/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1WOuvterFd5YlGuc5jxl2dlC-b_qmuRHb",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.4.pdf",
+          "url": "https://drive.google.com/file/d/1WOuvterFd5YlGuc5jxl2dlC-b_qmuRHb/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1e6VY4INHSNUlLS27Sjivfwbhzp7bNhPiRvI6S2iDXmQ",
+          "title": "马自达J90A交互设计文档_车辆设置_v3.5",
+          "url": "https://docs.google.com/document/d/1e6VY4INHSNUlLS27Sjivfwbhzp7bNhPiRvI6S2iDXmQ/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1ggrqxAqVC-370aM8lfLgcm8yo9gkwzCi",
+          "title": "马自达J90A交互设计文档_车辆设置_v3.8.pdf",
+          "url": "https://drive.google.com/file/d/1ggrqxAqVC-370aM8lfLgcm8yo9gkwzCi/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1aGEqMaaFCqB0kTcW53uIEMBB0hos6HSq",
+          "title": "马自达J90A交互设计文档_车辆设置_v3.7.pdf",
+          "url": "https://drive.google.com/file/d/1aGEqMaaFCqB0kTcW53uIEMBB0hos6HSq/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1l-n_sPlJDua3UHfZjJXakUOZSsj6BtWK",
+          "title": "马自达J90A交互设计文档_车辆设置_v3.6.pdf",
+          "url": "https://drive.google.com/file/d/1l-n_sPlJDua3UHfZjJXakUOZSsj6BtWK/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "140VAUXV0T2l2DD63z-7QKlgMI0TfjoqD",
+          "title": "马自达J90A_EU交互设计文档_车辆设置_v1.1.pdf",
+          "url": "https://drive.google.com/file/d/140VAUXV0T2l2DD63z-7QKlgMI0TfjoqD/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "19KXI2Zzh81qzouL3gtA0POOBcM2l1LCm",
+          "title": "马自达J90A交互设计文档_车辆设置_v3.5.pdf",
+          "url": "https://drive.google.com/file/d/19KXI2Zzh81qzouL3gtA0POOBcM2l1LCm/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1g0x5PSbGyxjnu9-JHZhfty7I0F_B2zXV",
+          "title": "马自达J90A_EU_交互设计文档_车辆设置_v1.3.pdf",
+          "url": "https://drive.google.com/file/d/1g0x5PSbGyxjnu9-JHZhfty7I0F_B2zXV/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1GfItykso4wk8wiVWiu7QzKDMh4w-ARiP",
+          "title": "马自达J90A交互设计文档_车辆设置_v3.4.pdf",
+          "url": "https://drive.google.com/file/d/1GfItykso4wk8wiVWiu7QzKDMh4w-ARiP/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "待会诊",
+    "owner": "J90A本地化配置负责人",
+    "text": "结论：手势接听成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1868/All Key行3530；Jira研发补Key。\n处理：统一answer_with_gesture的生效状态和唯一来源后再由QNX IC Apps接入；J90A本地化配置负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T032052Z-7ef573b6-4c87-449e-8af3-522f9bf87997",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 367
+  },
+  "expected_behavior": {
+    "status": "unresolved",
+    "reason": "模块页删除与All Key保留冲突，会改变配置责任与接入动作。"
+  }
+}

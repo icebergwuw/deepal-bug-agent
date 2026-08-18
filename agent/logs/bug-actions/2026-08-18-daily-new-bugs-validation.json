@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "errors": [],
+  "run_id": "bug-20260818T032052Z-7ef573b6-4c87-449e-8af3-522f9bf87997",
+  "range": "bug!A354:J370",
+  "row_count": 17,
+  "readback_sha256": "61baf3cd11548de237105fa1fddcce2c24a5866a4122560e5fa72fc1189876b2",
+  "checks": {
+    "visible_values_match": true,
+    "jira_hyperlink_formulas_match": true,
+    "rich_text_link_targets_match": true,
+    "checkbox_boolean_e_match": true,
+    "protected_columns_f_h_untouched": true,
+    "cell_formats_match_append_contract": true,
+    "row_heights_match": true,
+    "filter_range": "bug!A1:J370",
+    "conditional_format_rule_count": 0,
+    "google_protected_range_count": 0,
+    "live_registered_key_count": 369,
+    "live_unique_key_count": 368,
+    "historical_duplicates": {
+      "SLV-44272": [
+        155,
+        285
+      ]
+    },
+    "target_key_counts": {
+      "ADS-47844": 1,
+      "ADS-48790": 1,
+      "ADS-48797": 1,
+      "ADS-48837": 1,
+      "ADS-48847": 1,
+      "HUR-82771": 1,
+      "HUR-83121": 1,
+      "HUR-83231": 1,
+      "HUR-83232": 1,
+      "HUR-83253": 1,
+      "HUR-83268": 1,
+      "HUR-83269": 1,
+      "HUR-83271": 1,
+      "HUR-83275": 1,
+      "HUR-83330": 1,
+      "HUR-83331": 1,
+      "SM-17768": 1
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "schema_version": 5,
+  "jira_key": "SM-17768",
+  "comment_causality": "客户用例完整，当前实现无方控收起逻辑；评论称客户方案已下发，但Drive未找到C673-G/SWD.1.76中‘中控屏卡片切换’应收起场景重构卡片的正式定义，关联票也记录未收到需求。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260618182942474",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述已包含车型/项目、版本、前置、完整步骤、输入、预期、实际及附件/日志入口。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SM-17699",
+        "relationship": "Jira直接关联、共享日志或同根因线索",
+        "read": true,
+        "outcome": "需求关联票，记录未收到需求。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及页面、卡片、弹窗或控件状态。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、研发评论、正式目标与当前实现分别记录；同项目生效正式资料优先。存在配置冲突、专项定义缺口或语音链不完整的票保持待定状态。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SM-17768 Jira原票",
+      "source_location": "当前字段、完整描述、全部评论、附件元数据与直接问题链接",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "SM",
+      "trigger": "客户用例完整，当前实现无方控收起逻辑；评论称客户方案已下发，但Drive未找到C673-G/SWD.1.76中‘中控屏卡片切换’应收起场景重构卡片的正式定义，关联票也记录未收到需求。",
+      "target_behavior": "方控切换未收起场景重构卡片",
+      "match": "exact",
+      "reason": "证明当前提报现象、版本、复现与实现事实，不定义目标行为。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-17768"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "方控切换未收起场景重构卡片"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "方控切换未收起场景重构卡片"
+        }
+      ],
+      "source_ids": [],
+      "reason": "命中候选均非C673-G/SWD.1.76本票场景，未找到客户已下发方案原文。",
+      "material": true,
+      "next_action": "待补客户已下发方案的正式需求编号、版本和交互位置。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1nKVLEUdOt0ofDKf8VywOdxOUP-aPRuhx",
+            "title": "596 中控屏返回首页后左上角导航卡片卡死。GT-55190/GT-55192.pptx",
+            "url": "https://docs.google.com/presentation/d/1nKVLEUdOt0ofDKf8VywOdxOUP-aPRuhx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "15tyMx0LI9r54Zk2tmsq1BLuAelIbFQcF",
+            "title": "J90A雨刮中控屏弹窗需求卡片_20240802171604A873_20240828091923A141.pdf",
+            "url": "https://drive.google.com/file/d/15tyMx0LI9r54Zk2tmsq1BLuAelIbFQcF/view?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "search_receipt_ids": [
+        "SM-17768-formal_config_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-17768"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "方控切换未收起场景重构卡片"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "方控切换未收起场景重构卡片"
+        }
+      ],
+      "source_ids": [],
+      "reason": "命中候选均非C673-G/SWD.1.76本票场景，未找到客户已下发方案原文。",
+      "material": true,
+      "next_action": "待补客户已下发方案的正式需求编号、版本和交互位置。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1eHDUr11C_mrY6zkTJJ6dfrSQLP8Sg8Li",
+            "title": "CMA-OTA-0305-02 J90A 方向盘开关增加加热功能调整需求卡片.docx",
+            "url": "https://docs.google.com/document/d/1eHDUr11C_mrY6zkTJJ6dfrSQLP8Sg8Li/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "search_receipt_ids": [
+        "SM-17768-interaction_or_ue_search-drive-20260818-1"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "SM-17768-formal_config_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-17768"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "方控切换未收起场景重构卡片"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "方控切换未收起场景重构卡片"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "中控屏卡片"
+        }
+      ],
+      "results": [
+        {
+          "id": "1nKVLEUdOt0ofDKf8VywOdxOUP-aPRuhx",
+          "title": "596 中控屏返回首页后左上角导航卡片卡死。GT-55190/GT-55192.pptx",
+          "url": "https://docs.google.com/presentation/d/1nKVLEUdOt0ofDKf8VywOdxOUP-aPRuhx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        },
+        {
+          "id": "15tyMx0LI9r54Zk2tmsq1BLuAelIbFQcF",
+          "title": "J90A雨刮中控屏弹窗需求卡片_20240802171604A873_20240828091923A141.pdf",
+          "url": "https://drive.google.com/file/d/15tyMx0LI9r54Zk2tmsq1BLuAelIbFQcF/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SM-17768-interaction_or_ue_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-17768"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "方控切换未收起场景重构卡片"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "方控切换未收起场景重构卡片"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "方向盘卡片"
+        }
+      ],
+      "results": [
+        {
+          "id": "1eHDUr11C_mrY6zkTJJ6dfrSQLP8Sg8Li",
+          "title": "CMA-OTA-0305-02 J90A 方向盘开关增加加热功能调整需求卡片.docx",
+          "url": "https://docs.google.com/document/d/1eHDUr11C_mrY6zkTJJ6dfrSQLP8Sg8Li/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优",
+    "text": "结论：客户完整用例已确认当前方控不收起场景重构卡片，但‘方案已下发’缺少可复查的C673-G正式定义，暂不关闭也不转研发。\n依据：Jira客户用例；关联票SM-17699；Drive方控/中控屏卡片检索结果。\n处理：取得客户已下发方案的正式需求编号和交互条款后再定责；吴优处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T032052Z-7ef573b6-4c87-449e-8af3-522f9bf87997",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 370
+  },
+  "expected_behavior": {
+    "status": "unresolved",
+    "reason": "待补客户已下发方案的正式需求编号、版本和交互位置。"
+  }
+}

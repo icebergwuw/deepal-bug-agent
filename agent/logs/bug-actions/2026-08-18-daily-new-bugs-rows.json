@@ -1,0 +1,764 @@
+[
+  {
+    "key": "ADS-47844",
+    "summary": "带截止时间的机场导航落到场景积木",
+    "date": "2026-08-18",
+    "info": "现象：带截止时间的机场导航落到场景积木。\n证据：POI推荐PRD v0.8；Alchemy当前·3189；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·3189",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/ADS-47844"
+      }
+    ],
+    "judgment": "结论：带截止时间的即时导航当前被3189场景积木接管，但该项目功能点仍为草稿，不能据此定义客户导航预期无效，暂不关闭。\n依据：POI推荐PRD v0.8·行224-256；Alchemy当前·3189；Jira客户回归链路。\n处理：明确‘时间表达+导航目的地’在即时导航与定时任务间的生效边界，并按结论回归发布配置；Deepal AI路由产品负责人处理。",
+    "judgment_links": [
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·3189",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "status": "待会诊",
+    "note": "待补生效的时间导航/定时任务边界与3189发布状态。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-47844",
+        "url": "http://jira.i-tetris.com/browse/ADS-47844"
+      },
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·3189",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "key": "ADS-48790",
+    "summary": "导航上下文被可见新闻列表抢占",
+    "date": "2026-08-18",
+    "info": "现象：导航上下文被可见新闻列表抢占。\n证据：POI推荐PRD v0.8；Alchemy当前·1209；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1209",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/ADS-48790"
+      }
+    ],
+    "judgment": "结论：‘第一个’仍处于导航候选上下文，当前实车被可见新闻列表抢占；现有资料未定义可见优先级可覆盖已建立的导航对话，需会诊后定责。\n依据：POI推荐PRD v0.8·行288-292；Alchemy当前·1209；Jira实车现象。\n处理：补齐可见执行与导航上下文的优先级规则，并以导航候选优先方案回归；可见执行与上下文仲裁负责人处理。",
+    "judgment_links": [
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1209",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "status": "待会诊",
+    "note": "缺少可见卡片与导航对话上下文的生效优先级定义。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48790",
+        "url": "http://jira.i-tetris.com/browse/ADS-48790"
+      },
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1209",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "key": "ADS-48797",
+    "summary": "去张家界吃什么进入普通闲聊",
+    "date": "2026-08-18",
+    "info": "现象：去张家界吃什么进入普通闲聊。\n证据：POI推荐PRD v0.8；Alchemy当前·无任务MetaId；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·无任务MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/ADS-48797"
+      }
+    ],
+    "judgment": "结论：‘去张家界吃什么’不在POI推荐PRD已明确的触发范围内，当前普通闲聊语义合理；但因无MetaId且缺专项落域边界，本次不直接关闭。\n依据：POI推荐PRD v0.8·行224-256；Alchemy当前·普通闲聊；Jira当前评论。\n处理：补齐此类目的地美食泛问句的正式落域样例并复测；Deepal AI路由产品负责人处理。",
+    "judgment_links": [
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待复核",
+    "note": "待补目的地美食泛问句落域样例及对应标准/项目功能点。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48797",
+        "url": "http://jira.i-tetris.com/browse/ADS-48797"
+      },
+      {
+        "label": "POI推荐PRD v0.8",
+        "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·无任务MetaId",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "key": "ADS-48837",
+    "summary": "车外打开离车自动锁窗无执行反馈",
+    "date": "2026-08-18",
+    "info": "现象：车外打开离车自动锁窗无执行反馈。\n证据：车外语音PRD V1.8；车外语音UE V0.8；TTS规范；Alchemy当前·1490；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "车外语音PRD V1.8",
+        "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+      },
+      {
+        "label": "车外语音UE V0.8",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "TTS规范",
+        "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1490",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/ADS-48837"
+      }
+    ],
+    "judgment": "结论：定义为车外语音过滤与反馈缺陷。1490正确命中，但车外链路清空动作和TTS；车窗属于正式车外控制范围，已打开状态也必须明确反馈。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8·第3-6页；TTS规范·执行策略行3-10；Jira链路日志。\n处理：放开1490车外执行并补齐已打开状态TTS后回归；车外语音白名单与执行反馈负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车外语音PRD V1.8",
+        "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+      },
+      {
+        "label": "车外语音UE V0.8",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "TTS规范",
+        "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+      }
+    ],
+    "status": "可转语音",
+    "note": "回归车外允许执行、已打开状态TTS及车型配置。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48837",
+        "url": "http://jira.i-tetris.com/browse/ADS-48837"
+      },
+      {
+        "label": "车外语音PRD V1.8",
+        "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+      },
+      {
+        "label": "车外语音UE V0.8",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "TTS规范",
+        "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1490",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "key": "ADS-48847",
+    "summary": "车外关闭后雾灯无执行反馈",
+    "date": "2026-08-18",
+    "info": "现象：车外关闭后雾灯无执行反馈。\n证据：车外语音PRD V1.8；车外语音UE V0.8；TTS规范；Alchemy当前·1048；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "车外语音PRD V1.8",
+        "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+      },
+      {
+        "label": "车外语音UE V0.8",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "TTS规范",
+        "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1048",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/ADS-48847"
+      }
+    ],
+    "judgment": "结论：定义为车外语音过滤与反馈缺陷。1048正确命中，但车外链路未执行且无TTS；灯光属于正式车外控制范围，禁止静默。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8·第3-6页；TTS规范·执行策略行3-10；Jira链路日志。\n处理：补齐1048车外白名单、车型灯光条件及成功/拒绝TTS后回归；车外语音白名单与执行反馈负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车外语音PRD V1.8",
+        "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+      },
+      {
+        "label": "车外语音UE V0.8",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "TTS规范",
+        "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+      }
+    ],
+    "status": "可转语音",
+    "note": "回归车外音区、后雾灯车型条件、动作及TTS。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-48847",
+        "url": "http://jira.i-tetris.com/browse/ADS-48847"
+      },
+      {
+        "label": "车外语音PRD V1.8",
+        "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+      },
+      {
+        "label": "车外语音UE V0.8",
+        "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+      },
+      {
+        "label": "TTS规范",
+        "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+      },
+      {
+        "label": "Alchemy当前·1048",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ]
+  },
+  {
+    "key": "HUR-82771",
+    "summary": "IDM英文等级导致滑动条闪现",
+    "date": "2026-08-18",
+    "info": "现象：IDM英文等级导致滑动条闪现。\n证据：J90A LanguageList V1.2；IDM交互V1.3；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "IDM交互V1.3",
+        "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-82771"
+      }
+    ],
+    "judgment": "结论：定义为IDM英文布局适配缺陷。正式文言为Bronze Knight，固定宽高造成换行裁切和滑动条闪现，不通过临时缩短翻译规避。\n依据：J90A LanguageList V1.2·03_Vehicle Settings行1255；IDM交互V1.3·第3页；Jira布局分析。\n处理：按正式长文言完成单行自适应或徽标扩宽，并覆盖IDM 1-5级回归；CarSettings IDM界面负责人处理。",
+    "judgment_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "IDM交互V1.3",
+        "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+      }
+    ],
+    "status": "可转研发",
+    "note": "与HUR-83253合并根因，覆盖1-5级和日夜主题回归。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-82771",
+        "url": "http://jira.i-tetris.com/browse/HUR-82771"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "IDM交互V1.3",
+        "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83121",
+    "summary": "阿拉伯语播放全部被误报缺失",
+    "date": "2026-08-18",
+    "info": "现象：阿拉伯语播放全部被误报缺失。\n证据：J90A LanguageList V1.2；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83121"
+      }
+    ],
+    "judgment": "结论：定义为旧文言表导致的误报。最新正式LanguageList已包含play_all_music及阿拉伯语‘شغل الكل’，不存在当前配置缺失。\n依据：J90A LanguageList V1.2·05_Media行8·play_all_music；Jira研发补Key评论。\n处理：按V1.2重新走查并关闭本票；吴优处理。",
+    "judgment_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      }
+    ],
+    "status": "可关闭",
+    "note": "测试改用V1.2_260813，不再依据旧V0.5.8表验收。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83121",
+        "url": "http://jira.i-tetris.com/browse/HUR-83121"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83231",
+    "summary": "壁纸添加图片英文切图未生效",
+    "date": "2026-08-18",
+    "info": "现象：壁纸添加图片英文切图未生效。\n证据：车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83231"
+      }
+    ],
+    "judgment": "结论：0526分支已有同问题修复记录，当前预生产包仍复现，优先按版本/资源集成回归；因英文切图生效清单未读到，暂不重复定责。\n依据：关联票HUR-83255·0526分支修复；车辆设置交互v4.5·壁纸桌面区域；Jira当前包信息。\n处理：用包含修复的新包核对英文切图资源版本并回归；CarSettings发布集成负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待复核",
+    "note": "待提供英文切图生效资产清单与新包回归结果。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83231",
+        "url": "http://jira.i-tetris.com/browse/HUR-83231"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83232",
+    "summary": "剩余流量英文文言与动态值重叠",
+    "date": "2026-08-18",
+    "info": "现象：剩余流量英文文言与动态值重叠。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83232"
+      }
+    ],
+    "judgment": "结论：定义为网络与连接页面布局适配缺陷。当前英文是正式文言，静态标签与动态剩余值重叠，应调整布局而非临时缩短翻译。\n依据：J90A LanguageList V1.2·03_Vehicle Settings行670；车辆设置交互v4.5·网络与连接区域；Jira截图。\n处理：拆分标签与动态值布局并覆盖长文本语言回归；CarSettings网络与连接界面负责人处理。",
+    "judgment_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "可转研发",
+    "note": "覆盖动态天数、长文本语言和不同分辨率回归。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83232",
+        "url": "http://jira.i-tetris.com/browse/HUR-83232"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83253",
+    "summary": "IDM青铜骑士英文显示不全",
+    "date": "2026-08-18",
+    "info": "现象：IDM青铜骑士英文显示不全。\n证据：J90A LanguageList V1.2；IDM交互V1.3；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "IDM交互V1.3",
+        "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83253"
+      }
+    ],
+    "judgment": "结论：定义为HUR-82771同根因重复票。正式Bronze Knight在固定等级徽标内被裁切，统一由HUR-82771完成布局适配。\n依据：J90A LanguageList V1.2·03_Vehicle Settings行1255；IDM交互V1.3·第3页；关联票HUR-82771。\n处理：关联HUR-82771后关闭重复票，并在主票覆盖IDM 1-5级回归；吴优处理。",
+    "judgment_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "IDM交互V1.3",
+        "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+      }
+    ],
+    "status": "可关闭",
+    "note": "主票HUR-82771修复前不得把重复关闭等同问题已解决。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83253",
+        "url": "http://jira.i-tetris.com/browse/HUR-83253"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "IDM交互V1.3",
+        "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83268",
+    "summary": "手势播放成功反馈配置冲突",
+    "date": "2026-08-18",
+    "info": "现象：手势播放成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83268"
+      }
+    ],
+    "judgment": "结论：手势播放成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1870/All Key行3532；Jira研发补Key。\n处理：统一play_with_gesture的生效状态和唯一来源后再由CarSettings接入；J90A本地化配置负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待会诊",
+    "note": "先消除模块页与All Key冲突，再验证实车toast。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83268",
+        "url": "http://jira.i-tetris.com/browse/HUR-83268"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83269",
+    "summary": "手势暂停成功反馈配置冲突",
+    "date": "2026-08-18",
+    "info": "现象：手势暂停成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83269"
+      }
+    ],
+    "judgment": "结论：手势暂停成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1871/All Key行3533；Jira研发补Key。\n处理：统一pause_with_gesture的生效状态和唯一来源后再由QNX IC Apps接入；J90A本地化配置负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待会诊",
+    "note": "先消除模块页与All Key冲突，再验证仪表toast。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83269",
+        "url": "http://jira.i-tetris.com/browse/HUR-83269"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83271",
+    "summary": "手势挂断成功反馈配置冲突",
+    "date": "2026-08-18",
+    "info": "现象：手势挂断成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83271"
+      }
+    ],
+    "judgment": "结论：手势挂断成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1867/All Key行3529；Jira研发补Key。\n处理：统一hang_up_with_gesture的生效状态和唯一来源后再由QNX IC Apps接入；J90A本地化配置负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待会诊",
+    "note": "先消除模块页与All Key冲突，再验证仪表toast。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83271",
+        "url": "http://jira.i-tetris.com/browse/HUR-83271"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83275",
+    "summary": "手势接听成功反馈配置冲突",
+    "date": "2026-08-18",
+    "info": "现象：手势接听成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83275"
+      }
+    ],
+    "judgment": "结论：手势接听成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1868/All Key行3530；Jira研发补Key。\n处理：统一answer_with_gesture的生效状态和唯一来源后再由QNX IC Apps接入；J90A本地化配置负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待会诊",
+    "note": "先消除模块页与All Key冲突，再验证仪表toast。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83275",
+        "url": "http://jira.i-tetris.com/browse/HUR-83275"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83330",
+    "summary": "位置授权英文弹窗出现无效滚动条",
+    "date": "2026-08-18",
+    "info": "现象：位置授权英文弹窗出现无效滚动条。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83330"
+      }
+    ],
+    "judgment": "结论：位置授权弹窗当前出现无效滚动条，但对应Key带删除标记且交互未明确长文案滚动边界，不能直接要求缩短翻译。\n依据：LanguageList V1.2·03_Vehicle Settings行1550；车辆设置交互v4.5·车辆设置范围；Jira截图。\n处理：确认该Key生效状态并补齐弹窗滚动/自适应规则后修正布局；CarSettings隐私弹窗负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待会诊",
+    "note": "待统一Key生效状态及弹窗滚动边界。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83330",
+        "url": "http://jira.i-tetris.com/browse/HUR-83330"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "HUR-83331",
+    "summary": "摄像头授权英文弹窗出现无效滚动条",
+    "date": "2026-08-18",
+    "info": "现象：摄像头授权英文弹窗出现无效滚动条。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      },
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/HUR-83331"
+      }
+    ],
+    "judgment": "结论：摄像头授权弹窗当前出现无效滚动条，但对应Key带删除标记且交互未明确长文案滚动边界，不能直接要求缩短翻译。\n依据：LanguageList V1.2·03_Vehicle Settings行239；车辆设置交互v4.5·车内监控行1856-1893；Jira截图。\n处理：确认该Key生效状态并补齐弹窗滚动/自适应规则后修正布局；CarSettings隐私弹窗负责人处理。",
+    "judgment_links": [
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ],
+    "status": "待会诊",
+    "note": "待统一Key生效状态及弹窗滚动边界。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-83331",
+        "url": "http://jira.i-tetris.com/browse/HUR-83331"
+      },
+      {
+        "label": "J90A LanguageList V1.2",
+        "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+      },
+      {
+        "label": "车辆设置交互v4.5",
+        "url": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+      }
+    ]
+  },
+  {
+    "key": "SM-17768",
+    "summary": "方控切换未收起场景重构卡片",
+    "date": "2026-08-18",
+    "info": "现象：方控切换未收起场景重构卡片。\n证据：；Jira描述、全部评论、附件和关联票已读。",
+    "info_links": [
+      {
+        "label": "Jira",
+        "url": "http://jira.i-tetris.com/browse/SM-17768"
+      }
+    ],
+    "judgment": "结论：客户完整用例已确认当前方控不收起场景重构卡片，但‘方案已下发’缺少可复查的C673-G正式定义，暂不关闭也不转研发。\n依据：Jira客户用例；关联票SM-17699；Drive方控/中控屏卡片检索结果。\n处理：取得客户已下发方案的正式需求编号和交互条款后再定责；吴优处理。",
+    "judgment_links": [],
+    "status": "待确认",
+    "note": "待补客户已下发方案的正式需求编号、版本和交互位置。",
+    "links": [
+      {
+        "label": "Jira原票·SM-17768",
+        "url": "http://jira.i-tetris.com/browse/SM-17768"
+      }
+    ]
+  }
+]

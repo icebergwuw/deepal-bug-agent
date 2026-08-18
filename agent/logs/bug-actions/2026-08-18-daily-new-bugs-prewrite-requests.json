@@ -1,0 +1,3083 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 353,
+          "endRowIndex": 370,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 353,
+          "endRowIndex": 370,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 353,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47844\",\"ADS-47844｜带截止时间的机场导航落到场景积木\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：带截止时间的机场导航落到场景积木。\n证据：POI推荐PRD v0.8；Alchemy当前·3189；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 24,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 37
+                  },
+                  {
+                    "startIndex": 38,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 52
+                  },
+                  {
+                    "startIndex": 53,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47844"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 57
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：带截止时间的即时导航当前被3189场景积木接管，但该项目功能点仍为草稿，不能据此定义客户导航预期无效，暂不关闭。\n依据：POI推荐PRD v0.8·行224-256；Alchemy当前·3189；Jira客户回归链路。\n处理：明确‘时间表达+导航目的地’在即时导航与定时任务间的生效边界，并按结论回归发布配置；Deepal AI路由产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 63,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 76
+                  },
+                  {
+                    "startIndex": 86,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 100
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待补生效的时间导航/定时任务边界与3189发布状态。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-47844\nPOI推荐PRD v0.8\nAlchemy当前·3189"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47844"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48790\",\"ADS-48790｜导航上下文被可见新闻列表抢占\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：导航上下文被可见新闻列表抢占。\n证据：POI推荐PRD v0.8；Alchemy当前·1209；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 22,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 35
+                  },
+                  {
+                    "startIndex": 36,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 50
+                  },
+                  {
+                    "startIndex": 51,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48790"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 55
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：‘第一个’仍处于导航候选上下文，当前实车被可见新闻列表抢占；现有资料未定义可见优先级可覆盖已建立的导航对话，需会诊后定责。\n依据：POI推荐PRD v0.8·行288-292；Alchemy当前·1209；Jira实车现象。\n处理：补齐可见执行与导航上下文的优先级规则，并以导航候选优先方案回归；可见执行与上下文仲裁负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 68,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 81
+                  },
+                  {
+                    "startIndex": 91,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 105
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "缺少可见卡片与导航对话上下文的生效优先级定义。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48790\nPOI推荐PRD v0.8\nAlchemy当前·1209"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48790"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48797\",\"ADS-48797｜去张家界吃什么进入普通闲聊\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：去张家界吃什么进入普通闲聊。\n证据：POI推荐PRD v0.8；Alchemy当前·无任务MetaId；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 21,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 34
+                  },
+                  {
+                    "startIndex": 35,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 54
+                  },
+                  {
+                    "startIndex": 55,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48797"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 59
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：‘去张家界吃什么’不在POI推荐PRD已明确的触发范围内，当前普通闲聊语义合理；但因无MetaId且缺专项落域边界，本次不直接关闭。\n依据：POI推荐PRD v0.8·行224-256；Alchemy当前·普通闲聊；Jira当前评论。\n处理：补齐此类目的地美食泛问句的正式落域样例并复测；Deepal AI路由产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 73,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 86
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待补目的地美食泛问句落域样例及对应标准/项目功能点。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48797\nPOI推荐PRD v0.8\nAlchemy当前·无任务MetaId"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48797"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48837\",\"ADS-48837｜车外打开离车自动锁窗无执行反馈\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：车外打开离车自动锁窗无执行反馈。\n证据：车外语音PRD V1.8；车外语音UE V0.8；TTS规范；Alchemy当前·1490；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 23,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 35
+                  },
+                  {
+                    "startIndex": 36,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 47
+                  },
+                  {
+                    "startIndex": 48,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 53
+                  },
+                  {
+                    "startIndex": 54,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 68
+                  },
+                  {
+                    "startIndex": 69,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48837"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 73
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为车外语音过滤与反馈缺陷。1490正确命中，但车外链路清空动作和TTS；车窗属于正式车外控制范围，已打开状态也必须明确反馈。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8·第3-6页；TTS规范·执行策略行3-10；Jira链路日志。\n处理：放开1490车外执行并补齐已打开状态TTS后回归；车外语音白名单与执行反馈负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 71,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 83
+                  },
+                  {
+                    "startIndex": 92,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 103
+                  },
+                  {
+                    "startIndex": 110,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 115
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转语音"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "回归车外允许执行、已打开状态TTS及车型配置。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48837\n车外语音PRD V1.8\n车外语音UE V0.8\nTTS规范\nAlchemy当前·1490"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48837"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 29
+                  },
+                  {
+                    "startIndex": 30,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 41
+                  },
+                  {
+                    "startIndex": 42,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 47
+                  },
+                  {
+                    "startIndex": 48,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48847\",\"ADS-48847｜车外关闭后雾灯无执行反馈\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：车外关闭后雾灯无执行反馈。\n证据：车外语音PRD V1.8；车外语音UE V0.8；TTS规范；Alchemy当前·1048；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 20,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 32
+                  },
+                  {
+                    "startIndex": 33,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 44
+                  },
+                  {
+                    "startIndex": 45,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 50
+                  },
+                  {
+                    "startIndex": 51,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 65
+                  },
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48847"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 70
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为车外语音过滤与反馈缺陷。1048正确命中，但车外链路未执行且无TTS；灯光属于正式车外控制范围，禁止静默。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8·第3-6页；TTS规范·执行策略行3-10；Jira链路日志。\n处理：补齐1048车外白名单、车型灯光条件及成功/拒绝TTS后回归；车外语音白名单与执行反馈负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 63,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 75
+                  },
+                  {
+                    "startIndex": 84,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 95
+                  },
+                  {
+                    "startIndex": 102,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 107
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转语音"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "回归车外音区、后雾灯车型条件、动作及TTS。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48847\n车外语音PRD V1.8\n车外语音UE V0.8\nTTS规范\nAlchemy当前·1048"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48847"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 29
+                  },
+                  {
+                    "startIndex": 30,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 41
+                  },
+                  {
+                    "startIndex": 42,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 47
+                  },
+                  {
+                    "startIndex": 48,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82771\",\"HUR-82771｜IDM英文等级导致滑动条闪现\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：IDM英文等级导致滑动条闪现。\n证据：J90A LanguageList V1.2；IDM交互V1.3；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 22,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 44
+                  },
+                  {
+                    "startIndex": 45,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 54
+                  },
+                  {
+                    "startIndex": 55,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82771"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 59
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为IDM英文布局适配缺陷。正式文言为Bronze Knight，固定宽高造成换行裁切和滑动条闪现，不通过临时缩短翻译规避。\n依据：J90A LanguageList V1.2·03_Vehicle Settings行1255；IDM交互V1.3·第3页；Jira布局分析。\n处理：按正式长文言完成单行自适应或徽标扩宽，并覆盖IDM 1-5级回归；CarSettings IDM界面负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 70,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 92
+                  },
+                  {
+                    "startIndex": 118,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 127
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "与HUR-83253合并根因，覆盖1-5级和日夜主题回归。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-82771\nJ90A LanguageList V1.2\nIDM交互V1.3"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82771"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83121\",\"HUR-83121｜阿拉伯语播放全部被误报缺失\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：阿拉伯语播放全部被误报缺失。\n证据：J90A LanguageList V1.2；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 21,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 43
+                  },
+                  {
+                    "startIndex": 44,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83121"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 48
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为旧文言表导致的误报。最新正式LanguageList已包含play_all_music及阿拉伯语‘شغل الكل’，不存在当前配置缺失。\n依据：J90A LanguageList V1.2·05_Media行8·play_all_music；Jira研发补Key评论。\n处理：按V1.2重新走查并关闭本票；吴优处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 79,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 101
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "测试改用V1.2_260813，不再依据旧V0.5.8表验收。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83121\nJ90A LanguageList V1.2"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83121"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83231\",\"HUR-83231｜壁纸添加图片英文切图未生效\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：壁纸添加图片英文切图未生效。\n证据：车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 21,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 31
+                  },
+                  {
+                    "startIndex": 32,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83231"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 36
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：0526分支已有同问题修复记录，当前预生产包仍复现，优先按版本/资源集成回归；因英文切图生效清单未读到，暂不重复定责。\n依据：关联票HUR-83255·0526分支修复；车辆设置交互v4.5·壁纸桌面区域；Jira当前包信息。\n处理：用包含修复的新包核对英文切图资源版本并回归；CarSettings发布集成负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 88,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 98
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待提供英文切图生效资产清单与新包回归结果。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83231\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83231"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83232\",\"HUR-83232｜剩余流量英文文言与动态值重叠\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：剩余流量英文文言与动态值重叠。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 22,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 44
+                  },
+                  {
+                    "startIndex": 45,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 55
+                  },
+                  {
+                    "startIndex": 56,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83232"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 60
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为网络与连接页面布局适配缺陷。当前英文是正式文言，静态标签与动态剩余值重叠，应调整布局而非临时缩短翻译。\n依据：J90A LanguageList V1.2·03_Vehicle Settings行670；车辆设置交互v4.5·网络与连接区域；Jira截图。\n处理：拆分标签与动态值布局并覆盖长文本语言回归；CarSettings网络与连接界面负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 61,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 83
+                  },
+                  {
+                    "startIndex": 108,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 118
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "覆盖动态天数、长文本语言和不同分辨率回归。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83232\nJ90A LanguageList V1.2\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83232"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83253\",\"HUR-83253｜IDM青铜骑士英文显示不全\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：IDM青铜骑士英文显示不全。\n证据：J90A LanguageList V1.2；IDM交互V1.3；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 21,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 43
+                  },
+                  {
+                    "startIndex": 44,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 53
+                  },
+                  {
+                    "startIndex": 54,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83253"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 58
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为HUR-82771同根因重复票。正式Bronze Knight在固定等级徽标内被裁切，统一由HUR-82771完成布局适配。\n依据：J90A LanguageList V1.2·03_Vehicle Settings行1255；IDM交互V1.3·第3页；关联票HUR-82771。\n处理：关联HUR-82771后关闭重复票，并在主票覆盖IDM 1-5级回归；吴优处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 72,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 94
+                  },
+                  {
+                    "startIndex": 120,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 129
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "主票HUR-82771修复前不得把重复关闭等同问题已解决。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83253\nJ90A LanguageList V1.2\nIDM交互V1.3"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83253"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83268\",\"HUR-83268｜手势播放成功反馈配置冲突\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：手势播放成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 20,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 42
+                  },
+                  {
+                    "startIndex": 43,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 53
+                  },
+                  {
+                    "startIndex": 54,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83268"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 58
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：手势播放成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1870/All Key行3532；Jira研发补Key。\n处理：统一play_with_gesture的生效状态和唯一来源后再由CarSettings接入；J90A本地化配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 70,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "先消除模块页与All Key冲突，再验证实车toast。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83268\nJ90A LanguageList V1.2\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83268"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83269\",\"HUR-83269｜手势暂停成功反馈配置冲突\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：手势暂停成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 20,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 42
+                  },
+                  {
+                    "startIndex": 43,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 53
+                  },
+                  {
+                    "startIndex": 54,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83269"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 58
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：手势暂停成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1871/All Key行3533；Jira研发补Key。\n处理：统一pause_with_gesture的生效状态和唯一来源后再由QNX IC Apps接入；J90A本地化配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 70,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "先消除模块页与All Key冲突，再验证仪表toast。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83269\nJ90A LanguageList V1.2\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83269"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83271\",\"HUR-83271｜手势挂断成功反馈配置冲突\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：手势挂断成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 20,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 42
+                  },
+                  {
+                    "startIndex": 43,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 53
+                  },
+                  {
+                    "startIndex": 54,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83271"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 58
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：手势挂断成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1867/All Key行3529；Jira研发补Key。\n处理：统一hang_up_with_gesture的生效状态和唯一来源后再由QNX IC Apps接入；J90A本地化配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 70,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "先消除模块页与All Key冲突，再验证仪表toast。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83271\nJ90A LanguageList V1.2\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83271"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83275\",\"HUR-83275｜手势接听成功反馈配置冲突\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：手势接听成功反馈配置冲突。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 20,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 42
+                  },
+                  {
+                    "startIndex": 43,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 53
+                  },
+                  {
+                    "startIndex": 54,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83275"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 58
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：手势接听成功反馈有正式交互目标，但LanguageList模块页标记删除、All Key仍保留，当前不能按‘无Key’转需求。\n依据：车辆设置交互v4.5·行1941-1948；LanguageList V1.2·模块行1868/All Key行3530；Jira研发补Key。\n处理：统一answer_with_gesture的生效状态和唯一来源后再由QNX IC Apps接入；J90A本地化配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 70,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "先消除模块页与All Key冲突，再验证仪表toast。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83275\nJ90A LanguageList V1.2\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83275"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83330\",\"HUR-83330｜位置授权英文弹窗出现无效滚动条\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：位置授权英文弹窗出现无效滚动条。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 23,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 45
+                  },
+                  {
+                    "startIndex": 46,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 56
+                  },
+                  {
+                    "startIndex": 57,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83330"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 61
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：位置授权弹窗当前出现无效滚动条，但对应Key带删除标记且交互未明确长文案滚动边界，不能直接要求缩短翻译。\n依据：LanguageList V1.2·03_Vehicle Settings行1550；车辆设置交互v4.5·车辆设置范围；Jira截图。\n处理：确认该Key生效状态并补齐弹窗滚动/自适应规则后修正布局；CarSettings隐私弹窗负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 102,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 112
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待统一Key生效状态及弹窗滚动边界。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83330\nJ90A LanguageList V1.2\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83330"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83331\",\"HUR-83331｜摄像头授权英文弹窗出现无效滚动条\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：摄像头授权英文弹窗出现无效滚动条。\n证据：J90A LanguageList V1.2；车辆设置交互v4.5；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 24,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 46
+                  },
+                  {
+                    "startIndex": 47,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 57
+                  },
+                  {
+                    "startIndex": 58,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83331"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 62
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：摄像头授权弹窗当前出现无效滚动条，但对应Key带删除标记且交互未明确长文案滚动边界，不能直接要求缩短翻译。\n依据：LanguageList V1.2·03_Vehicle Settings行239；车辆设置交互v4.5·车内监控行1856-1893；Jira截图。\n处理：确认该Key生效状态并补齐弹窗滚动/自适应规则后修正布局；CarSettings隐私弹窗负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 102,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 112
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待统一Key生效状态及弹窗滚动边界。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83331\nJ90A LanguageList V1.2\n车辆设置交互v4.5"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83331"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 39
+                  },
+                  {
+                    "startIndex": 40,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1HIx3cQOaxtX7Z3x9e4Yx6u5_Pe2MaWdu4JIeIzVNaEs/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SM-17768\",\"SM-17768｜方控切换未收起场景重构卡片\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：方控切换未收起场景重构卡片。\n证据：；Jira描述、全部评论、附件和关联票已读。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 22,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SM-17768"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 26
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：客户完整用例已确认当前方控不收起场景重构卡片，但‘方案已下发’缺少可复查的C673-G正式定义，暂不关闭也不转研发。\n依据：Jira客户用例；关联票SM-17699；Drive方控/中控屏卡片检索结果。\n处理：取得客户已下发方案的正式需求编号和交互条款后再定责；吴优处理。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待确认"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待补客户已下发方案的正式需求编号、版本和交互位置。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SM-17768\",\"Jira原票·SM-17768\")"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 353,
+          "endIndex": 370
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 370,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

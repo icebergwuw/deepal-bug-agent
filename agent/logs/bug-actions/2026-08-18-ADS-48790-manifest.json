@@ -1,0 +1,652 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-48790",
+  "comment_causality": "新闻列表可见时先说‘导航到解放碑’，再说‘第一个’，实车点击新闻第一项；Alchemy当前1209保持导航列表上下文，POI PRD定义列表内选择第N项应发起导航，但未找到可见优先级覆盖对话上下文的生效规则。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-48683",
+        "relationship": "Jira直接关联、共享日志或同根因线索",
+        "read": true,
+        "outcome": "共享日志/视频关联票，已读全部内容。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "voice",
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId与语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "涉及POI、地图检索或导航上下文。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及页面、卡片、弹窗或控件状态。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、研发评论、正式目标与当前实现分别记录；同项目生效正式资料优先。存在配置冲突、专项定义缺口或语音链不完整的票保持待定状态。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "导航到解放碑；第一个",
+    "alchemy_tested": true,
+    "alchemy_result": "连续对话保持导航上下文，1209返回第1个POI导航操作。",
+    "meta_id": "1209",
+    "standard_function": {
+      "status": "verified",
+      "name": "选择第N个搜索结果并导航·MetaId 1209",
+      "assessment": "已实时读取标准功能点名称与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目1209·已锁定继承",
+      "assessment": "已实时读取深蓝项目功能点来源、继承与状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48790 Jira原票",
+      "source_location": "当前字段、完整描述、全部评论、附件元数据与直接问题链接",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "新闻列表可见时先说‘导航到解放碑’，再说‘第一个’，实车点击新闻第一项；Alchemy当前1209保持导航列表上下文，POI PRD定义列表内选择第N项应发起导航，但未找到可见优先级覆盖对话上下文的生效规则。",
+      "target_behavior": "导航上下文被可见新闻列表抢占",
+      "match": "exact",
+      "reason": "证明当前提报现象、版本、复现与实现事实，不定义目标行为。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "在线对话·原话‘导航到解放碑；第一个’·1209",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝项目",
+      "trigger": "导航到解放碑；第一个",
+      "target_behavior": "连续对话保持导航上下文，1209返回第1个POI导航操作。",
+      "match": "exact",
+      "reason": "证明当前在线语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准功能点·选择第N个搜索结果并导航·MetaId 1209",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "导航到解放碑；第一个",
+      "target_behavior": "选择第N个搜索结果并导航·MetaId 1209",
+      "match": "exact",
+      "reason": "证明标准功能点状态。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "项目功能点·深蓝项目1209·已锁定继承",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "导航到解放碑；第一个",
+      "target_behavior": "深蓝项目1209·已锁定继承",
+      "match": "exact",
+      "reason": "证明项目继承与状态。"
+    },
+    {
+      "source_id": "poi-prd",
+      "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+      "source_location": "正文行224-256·行程/POI推荐范围；行288-292·选择第N项并导航；行303-313·列表上下文二次筛选",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295",
+      "trigger": "新闻列表可见时先说‘导航到解放碑’，再说‘第一个’，实车点击新闻第一项；Alchemy当前1209保持导航列表上下文，POI PRD定义列表内选择第N项应发起导航，但未找到可见优先级覆盖对话上下文的生效规则。",
+      "target_behavior": "定义POI推荐、列表选择和导航上下文范围。",
+      "match": "exact",
+      "reason": "同项目当前POI主PRD。"
+    },
+    {
+      "source_id": "visible-config",
+      "source": "深蓝8295可见新表—非3DV1.0",
+      "source_location": "当前非3D可见配置表·新闻列表/导航候选上下文未形成优先级条款",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "深蓝8295",
+      "trigger": "新闻列表可见时先说‘导航到解放碑’，再说‘第一个’，实车点击新闻第一项；Alchemy当前1209保持导航列表上下文，POI PRD定义列表内选择第N项应发起导航，但未找到可见优先级覆盖对话上下文的生效规则。",
+      "target_behavior": "用于核对当前可见执行配置，不能单独定义上下文优先级。",
+      "match": "partial",
+      "reason": "已打开当前配置候选。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线对话实时测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "导航到解放碑；第一个"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy标准功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1209"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy深蓝项目功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1209"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取项目功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48790-formal_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48790-formal_definition_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        }
+      ],
+      "source_ids": [
+        "poi-prd"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+            "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "read",
+            "source_ids": [
+              "poi-prd"
+            ]
+          },
+          {
+            "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+            "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+            "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "长安深蓝8295 POI推荐PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295 POI推荐PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48790-main_prd_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48790-main_prd_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        }
+      ],
+      "source_ids": [],
+      "reason": "未找到定义本票落域/可见优先级的同项目专项资料。",
+      "material": true,
+      "next_action": "缺少可见卡片与导航对话上下文的生效优先级定义。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 0,
+        "candidates": []
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "search_receipt_ids": [
+        "ADS-48790-special_definition_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        }
+      ],
+      "source_ids": [
+        "visible-config"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+            "title": "深蓝8295可见新表—非3DV1.0",
+            "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?usp=drivesdk",
+            "references": [],
+          "disposition": "read",
+            "source_ids": [
+              "visible-config"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "search_receipt_ids": [
+        "ADS-48790-formal_config_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        }
+      ],
+      "source_ids": [],
+      "reason": "未找到定义新闻可见列表与导航对话上下文优先级的交互条款。",
+      "material": true,
+      "next_action": "缺少可见卡片与导航对话上下文的生效优先级定义。",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 0,
+        "candidates": []
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "search_receipt_ids": [
+        "ADS-48790-interaction_or_ue_search-drive-20260818-1"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48790-formal_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48790-main_prd_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295 POI推荐PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8",
+          "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0",
+          "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx",
+          "url": "https://docs.google.com/document/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48790-special_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝8295 地图导航 专项定义"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "ADS-48790-formal_config_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "深蓝8295可见新表—非3DV1.0"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295非3D可见配置"
+        }
+      ],
+      "results": [
+        {
+          "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+          "title": "深蓝8295可见新表—非3DV1.0",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48790-interaction_or_ue_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48790"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "导航上下文被可见新闻列表抢占"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝8295 可见即可说 交互"
+        }
+      ],
+      "results": []
+    }
+  ],
+  "decision": {
+    "status": "待会诊",
+    "owner": "可见执行与上下文仲裁负责人",
+    "text": "结论：‘第一个’仍处于导航候选上下文，当前实车被可见新闻列表抢占；现有资料未定义可见优先级可覆盖已建立的导航对话，需会诊后定责。\n依据：POI推荐PRD v0.8·行288-292；Alchemy当前·1209；Jira实车现象。\n处理：补齐可见执行与导航上下文的优先级规则，并以导航候选优先方案回归；可见执行与上下文仲裁负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260818T032052Z-7ef573b6-4c87-449e-8af3-522f9bf87997",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 355
+  },
+  "expected_behavior": {
+    "status": "unresolved",
+    "reason": "缺少可见卡片与导航对话上下文的生效优先级定义。"
+  }
+}

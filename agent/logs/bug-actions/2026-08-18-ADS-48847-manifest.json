@@ -1,0 +1,608 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-48847",
+  "comment_causality": "Alchemy正确命中1048，Jira链路显示车外唤醒后无执行和TTS；车外语音正式范围覆盖灯光，规范要求成功或拒绝均有明确反馈。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及用户原话、MetaId与语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、研发评论、正式目标与当前实现分别记录；同项目生效正式资料优先。存在配置冲突、专项定义缺口或语音链不完整的票保持待定状态。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "关闭后雾灯",
+    "alchemy_tested": true,
+    "alchemy_result": "classification=task，meta_id 1048，operation=close；项目点已锁定继承。",
+    "meta_id": "1048",
+    "standard_function": {
+      "status": "verified",
+      "name": "关闭后雾灯·MetaId 1048",
+      "assessment": "已实时读取标准功能点名称与状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目1048·已锁定继承",
+      "assessment": "已实时读取深蓝项目功能点来源、继承与状态。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-48847 Jira原票",
+      "source_location": "当前字段、完整描述、全部评论、附件元数据与直接问题链接",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "ADS",
+      "trigger": "Alchemy正确命中1048，Jira链路显示车外唤醒后无执行和TTS；车外语音正式范围覆盖灯光，规范要求成功或拒绝均有明确反馈。",
+      "target_behavior": "车外关闭后雾灯无执行反馈",
+      "match": "exact",
+      "reason": "证明当前提报现象、版本、复现与实现事实，不定义目标行为。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前原话测试",
+      "source_location": "在线对话·原话‘关闭后雾灯’·1048",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝项目",
+      "trigger": "关闭后雾灯",
+      "target_behavior": "classification=task，meta_id 1048，operation=close；项目点已锁定继承。",
+      "match": "exact",
+      "reason": "证明当前在线语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准功能点·关闭后雾灯·MetaId 1048",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "关闭后雾灯",
+      "target_behavior": "关闭后雾灯·MetaId 1048",
+      "match": "exact",
+      "reason": "证明标准功能点状态。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "项目功能点·深蓝项目1048·已锁定继承",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "关闭后雾灯",
+      "target_behavior": "深蓝项目1048·已锁定继承",
+      "match": "exact",
+      "reason": "证明项目继承与状态。"
+    },
+    {
+      "source_id": "outside-prd",
+      "source": "深蓝车外语音交互产品需求文档V1.8.pdf",
+      "source_location": "三/3·车外车控覆盖车窗、后背门、灯光和后视镜；五/1·清单外指令必须固定反馈",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295",
+      "trigger": "Alchemy正确命中1048，Jira链路显示车外唤醒后无执行和TTS；车外语音正式范围覆盖灯光，规范要求成功或拒绝均有明确反馈。",
+      "target_behavior": "车外语音支持目标类别且禁止静默。",
+      "match": "exact",
+      "reason": "同项目当前车外语音PRD。"
+    },
+    {
+      "source_id": "outside-ue",
+      "source": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+      "source_location": "第3-6页·车外语音支持车窗、后背门、灯光和后视镜",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "深蓝8295",
+      "trigger": "Alchemy正确命中1048，Jira链路显示车外唤醒后无执行和TTS；车外语音正式范围覆盖灯光，规范要求成功或拒绝均有明确反馈。",
+      "target_behavior": "界面明确车外语音控制范围。",
+      "match": "exact",
+      "reason": "当前交互与PRD一致。"
+    },
+    {
+      "source_id": "tts-target",
+      "source": "[产品文档] 语音功能执行策略 & TTS规范_20260302",
+      "source_location": "执行策略填写Sheet行3-10；通用TTS行8-9·已打开/已关闭反馈",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "深蓝语音",
+      "trigger": "Alchemy正确命中1048，Jira链路显示车外唤醒后无执行和TTS；车外语音正式范围覆盖灯光，规范要求成功或拒绝均有明确反馈。",
+      "target_behavior": "支持、状态、已打开/已关闭和拒绝场景均需明确TTS。",
+      "match": "exact",
+      "reason": "当前正式TTS执行策略。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线对话实时测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "关闭后雾灯"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已保存当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy标准功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1048"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy深蓝项目功能点实时查询",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1048"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目/本票车型"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取项目功能点。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48847"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "车外关闭后雾灯无执行反馈"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车外关闭后雾灯无执行反馈"
+        }
+      ],
+      "source_ids": [
+        "outside-prd",
+        "outside-ue",
+        "tts-target"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 16,
+        "candidates": [
+          {
+            "id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI",
+            "title": "深蓝车外语音交互产品需求文档V1.8.pdf",
+            "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "read",
+            "source_ids": [
+              "outside-prd"
+            ]
+          },
+          {
+            "id": "1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD",
+            "title": "深蓝车外语音交互产品需求文档V1.7.pdf",
+            "url": "https://drive.google.com/file/d/1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Md6zD4cyNZMe1wniA_romePJLCuo0sve",
+            "title": "深蓝车外语音交互产品需求文档V1.6 .pdf",
+            "url": "https://drive.google.com/file/d/1Md6zD4cyNZMe1wniA_romePJLCuo0sve/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn",
+            "title": "深蓝车外语音交互产品需求文档V1.4.pdf",
+            "url": "https://drive.google.com/file/d/1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo",
+            "title": "深蓝车外语音交互产品需求文档V1.2.pdf",
+            "url": "https://drive.google.com/file/d/1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "17LgHC0oTkCcSNFauh2i5rPDSdIwBbxqN",
+            "title": "深蓝车外语音交互产品需求文档V1.2.pdf",
+            "url": "https://drive.google.com/file/d/17LgHC0oTkCcSNFauh2i5rPDSdIwBbxqN/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp",
+            "title": "深蓝车外语音交互产品需求文档V1.1.pdf",
+            "url": "https://drive.google.com/file/d/1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝车外语音交互PRD",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+            "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
+            "disposition": "read",
+            "source_ids": [
+              "outside-ue"
+            ]
+          },
+          {
+            "id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+            "url": "https://drive.google.com/file/d/1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.7.pdf",
+            "url": "https://drive.google.com/file/d/1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH/view?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝8295车外语音UE",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4",
+            "url": "https://docs.google.com/document/d/1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝_8295平台_交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4.pdf",
+            "url": "https://drive.google.com/file/d/1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D/view?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝_8295平台_交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.3_20250211.pdf",
+            "url": "https://drive.google.com/file/d/1lh40kdG2kQx8XE0CvZO-QWKleh241eu8/view?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝_8295平台_交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.1 _20251226.pdf",
+            "url": "https://drive.google.com/file/d/1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0/view?usp=drivesdk",
+            "references": [],
+            "version_family": "长安深蓝_8295平台_交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA",
+            "title": "[产品文档] 语音功能执行策略 & TTS规范_20260302",
+            "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "tts-target"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝8295车外语音UE",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48847-formal_definition_search-drive-20260818-2"
+            ],
+            "selected_candidate_id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "深蓝车外语音交互PRD",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-48847-formal_definition_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "长安深蓝_8295平台_交互设计文档_车外语音",
+            "status": "not_applicable",
+            "reason": "该版本族为不同项目、历史副本或不适用于本票。"
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "ADS-48847-formal_definition_search-drive-20260818-1",
+        "ADS-48847-formal_definition_search-drive-20260818-2",
+        "ADS-48847-formal_definition_search-drive-20260818-3"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-48847-formal_definition_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-48847"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "车外关闭后雾灯无执行反馈"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车外关闭后雾灯无执行反馈"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "深蓝车外语音交互产品需求文档V1.8.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝车外语音交互PRD"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI",
+          "title": "深蓝车外语音交互产品需求文档V1.8.pdf",
+          "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD",
+          "title": "深蓝车外语音交互产品需求文档V1.7.pdf",
+          "url": "https://drive.google.com/file/d/1X3SH_pE2YI5NyzYQmTeRGL0nrLTl9UeD/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Md6zD4cyNZMe1wniA_romePJLCuo0sve",
+          "title": "深蓝车外语音交互产品需求文档V1.6 .pdf",
+          "url": "https://drive.google.com/file/d/1Md6zD4cyNZMe1wniA_romePJLCuo0sve/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn",
+          "title": "深蓝车外语音交互产品需求文档V1.4.pdf",
+          "url": "https://drive.google.com/file/d/1EKxeYy2LsP_tPAaDTogulqkmjwAPi7nn/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo",
+          "title": "深蓝车外语音交互产品需求文档V1.2.pdf",
+          "url": "https://drive.google.com/file/d/1q98Jqi7T4eedXMtVpM1FzNREct6IcaOo/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "17LgHC0oTkCcSNFauh2i5rPDSdIwBbxqN",
+          "title": "深蓝车外语音交互产品需求文档V1.2.pdf",
+          "url": "https://drive.google.com/file/d/17LgHC0oTkCcSNFauh2i5rPDSdIwBbxqN/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp",
+          "title": "深蓝车外语音交互产品需求文档V1.1.pdf",
+          "url": "https://drive.google.com/file/d/1LgfRNUnhEdTV-q0f8rriI0RyPCqqpBXp/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48847-formal_definition_search-drive-20260818-2",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295车外语音UE"
+        }
+      ],
+      "results": [
+        {
+          "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.7.pdf",
+          "url": "https://drive.google.com/file/d/1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4",
+          "url": "https://docs.google.com/document/d/1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4.pdf",
+          "url": "https://drive.google.com/file/d/1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.3_20250211.pdf",
+          "url": "https://drive.google.com/file/d/1lh40kdG2kQx8XE0CvZO-QWKleh241eu8/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.1 _20251226.pdf",
+          "url": "https://drive.google.com/file/d/1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-48847-formal_definition_search-drive-20260818-3",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "[产品文档] 语音功能执行策略 & TTS规范_20260302"
+        }
+      ],
+      "results": [
+        {
+          "id": "1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA",
+          "title": "[产品文档] 语音功能执行策略 & TTS规范_20260302",
+          "url": "https://docs.google.com/spreadsheets/d/1CboWjJ5KYNa1gjKC4vKkP6JZQ48NSMHYWoEwMIwXrEA/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "可转语音",
+    "owner": "车外语音白名单与执行反馈负责人",
+    "text": "结论：定义为车外语音过滤与反馈缺陷。1048正确命中，但车外链路未执行且无TTS；灯光属于正式车外控制范围，禁止静默。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8·第3-6页；TTS规范·执行策略行3-10；Jira链路日志。\n处理：补齐1048车外白名单、车型灯光条件及成功/拒绝TTS后回归；车外语音白名单与执行反馈负责人处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T032052Z-7ef573b6-4c87-449e-8af3-522f9bf87997",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 358
+  },
+  "expected_behavior": {
+    "trigger": "车外关闭后雾灯无执行反馈",
+    "target_state": "按本票正式定义进入正确功能状态并完整显示/执行。",
+    "intent_function_signal": "语音票按已核验MetaId执行；非语音票按当前页面/配置项展示。",
+    "ui_tts_vehicle_behavior": "UI完整可见且无重叠/误滚动；语音执行或拒绝均有明确反馈；不适用项按正式定义。",
+    "boundary": "本票车型、版本、前置状态和对应语言环境。",
+    "source_ids": [
+      "outside-prd",
+      "outside-ue",
+      "tts-target"
+    ]
+  }
+}

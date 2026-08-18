@@ -1,0 +1,645 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-83253",
+  "comment_causality": "本票与HUR-82771为同一固定宽高根因；正式文言Bronze Knight，IDM交互第3页要求展示驾驶等级，根因由HUR-82771统一修复。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-82771",
+        "relationship": "Jira直接关联、共享日志或同根因线索",
+        "read": true,
+        "outcome": "同根因主票，已读全部内容。"
+      },
+      {
+        "key": "HUR-83313",
+        "relationship": "Jira直接关联、共享日志或同根因线索",
+        "read": true,
+        "outcome": "IDM关联票，已读全部内容。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项范围。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "涉及页面、卡片、弹窗或控件状态。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、研发评论、正式目标与当前实现分别记录；同项目生效正式资料优先。存在配置冲突、专项定义缺口或语音链不完整的票保持待定状态。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-83253 Jira原票",
+      "source_location": "当前字段、完整描述、全部评论、附件元数据与直接问题链接",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "HUR",
+      "trigger": "本票与HUR-82771为同一固定宽高根因；正式文言Bronze Knight，IDM交互第3页要求展示驾驶等级，根因由HUR-82771统一修复。",
+      "target_behavior": "IDM青铜骑士英文显示不全",
+      "match": "exact",
+      "reason": "证明当前提报现象、版本、复现与实现事实，不定义目标行为。"
+    },
+    {
+      "source_id": "language-list",
+      "source": "J90A_海外LanguageList_V1.2_260813.xlsx",
+      "source_location": "03_Vehicle Settings行1255·idm_level_1=Bronze Knight",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "本票与HUR-82771为同一固定宽高根因；正式文言Bronze Knight，IDM交互第3页要求展示驾驶等级，根因由HUR-82771统一修复。",
+      "target_behavior": "最新正式文言/Key状态。",
+      "match": "exact",
+      "reason": "已枚举版本族并选定V1.2_260813。"
+    },
+    {
+      "source_id": "idm-interaction",
+      "source": "马自达J90A交互设计文档_IDM_V1.3.pdf",
+      "source_location": "第3页·驾驶员/驾驶等级展示与Sds_SD_Stage_D_Actl2等级映射",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "本票与HUR-82771为同一固定宽高根因；正式文言Bronze Knight，IDM交互第3页要求展示驾驶等级，根因由HUR-82771统一修复。",
+      "target_behavior": "IDM页面必须显示驾驶等级及对应文案。",
+      "match": "exact",
+      "reason": "同项目IDM交互。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83253"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "IDM青铜骑士英文显示不全"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "IDM青铜骑士英文显示不全"
+        }
+      ],
+      "source_ids": [
+        "language-list"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 23,
+        "candidates": [
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.2_260813.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "read",
+            "source_ids": [
+              "language-list"
+            ]
+          },
+          {
+            "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+            "title": "J90A_海外LanguageList内部版V1.0_260806",
+            "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+            "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA",
+            "title": "J90A_海外LanguageList_V1.2_260810.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+            "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+            "title": "J90A_海外LanguageList_V1.1_260807",
+            "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1vgjICSB5ikiep_aHH6NTGgPM15feV3QV",
+            "title": "J90A_海外LanguageList_V1.1_260807.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1vgjICSB5ikiep_aHH6NTGgPM15feV3QV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+            "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+            "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+            "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+            "url": "https://docs.google.com/spreadsheets/d/1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+            "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+            "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+            "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+            "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+            "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+            "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+            "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+            "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+            "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+            "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+            "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+            "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+            "title": "J90A_海外LanguageList_V0.5.8_0722",
+            "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          },
+          {
+            "id": "1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI",
+            "title": "J90A_海外LanguageList外发版V0.5.8_0715",
+            "url": "https://docs.google.com/spreadsheets/d/1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "较旧版本、重复副本、项目不匹配或未覆盖本票目标条款。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_海外LanguageList",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-83253-formal_config_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "HUR-83253-formal_config_search-drive-20260818-1"
+      ]
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive API实时检索、逐项候选审计并完成版本族核对",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83253"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "IDM青铜骑士英文显示不全"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "IDM青铜骑士英文显示不全"
+        }
+      ],
+      "source_ids": [
+        "idm-interaction"
+      ],
+      "reason": "已读取全部命中候选并核对正文、适用范围和版本。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ",
+            "title": "马自达J90A交互设计文档_IDM_V1.3.pdf",
+            "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk",
+            "references": [],
+            "version_family": "马自达J90A交互设计文档_IDM",
+            "disposition": "read",
+            "source_ids": [
+              "idm-interaction"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "马自达J90A交互设计文档_IDM",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-83253-interaction_or_ue_search-drive-20260818-1"
+            ],
+            "selected_candidate_id": "1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ",
+            "selection_reason": "已枚举同系列并选择当前最高适用且正文已读的版本。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": [
+        "HUR-83253-interaction_or_ue_search-drive-20260818-1"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-83253-formal_config_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83253"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "IDM青铜骑士英文显示不全"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "IDM青铜骑士英文显示不全"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.2_260813.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.2_260813.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+          "title": "J90A_海外LanguageList内部版V1.0_260806",
+          "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+          "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA",
+          "title": "J90A_海外LanguageList_V1.2_260810.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+          "title": "J90A_海外LanguageList_V1.1_260807",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1vgjICSB5ikiep_aHH6NTGgPM15feV3QV",
+          "title": "J90A_海外LanguageList_V1.1_260807.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1vgjICSB5ikiep_aHH6NTGgPM15feV3QV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+          "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+          "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+          "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+          "url": "https://docs.google.com/spreadsheets/d/1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+          "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+          "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+          "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+          "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+          "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+          "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+          "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+          "title": "J90A_海外LanguageList_V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0715",
+          "url": "https://docs.google.com/spreadsheets/d/1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-83253-interaction_or_ue_search-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-18T11:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-83253"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "IDM青铜骑士英文显示不全"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "IDM青铜骑士英文显示不全"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "马自达J90A交互设计文档_IDM_V1.3.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "马自达J90A交互设计文档_IDM"
+        }
+      ],
+      "results": [
+        {
+          "id": "1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ",
+          "title": "马自达J90A交互设计文档_IDM_V1.3.pdf",
+          "url": "https://drive.google.com/file/d/1LGu8f4Mz9NpzYRTmsf4LUhz97-2H_MKZ/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "可关闭",
+    "owner": "吴优",
+    "text": "结论：定义为HUR-82771同根因重复票。正式Bronze Knight在固定等级徽标内被裁切，统一由HUR-82771完成布局适配。\n依据：J90A LanguageList V1.2·03_Vehicle Settings行1255；IDM交互V1.3·第3页；关联票HUR-82771。\n处理：关联HUR-82771后关闭重复票，并在主票覆盖IDM 1-5级回归；吴优处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T032052Z-7ef573b6-4c87-449e-8af3-522f9bf87997",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 363
+  },
+  "expected_behavior": {
+    "trigger": "IDM青铜骑士英文显示不全",
+    "target_state": "按本票正式定义进入正确功能状态并完整显示/执行。",
+    "intent_function_signal": "语音票按已核验MetaId执行；非语音票按当前页面/配置项展示。",
+    "ui_tts_vehicle_behavior": "UI完整可见且无重叠/误滚动；语音执行或拒绝均有明确反馈；不适用项按正式定义。",
+    "boundary": "本票车型、版本、前置状态和对应语言环境。",
+    "source_ids": [
+      "language-list",
+      "idm-interaction"
+    ]
+  }
+}
