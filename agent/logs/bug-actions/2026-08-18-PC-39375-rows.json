@@ -1,0 +1,30 @@
+[
+  {
+    "key": "PC-39375",
+    "summary": "几点退潮误入音乐或天气并行",
+    "date": "2026-08-18",
+    "info": "现象：‘几点退潮’当前误入音乐1026；‘几点钟退潮’同时命中天气1249和音乐1026；补充‘今天’后进入天气现象1975。\n证据：VOS日志；Alchemy当前测试；Alchemy标准1400；深蓝项目26750。",
+    "info_links": [
+      {"label": "VOS日志", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68900"},
+      {"label": "Alchemy当前测试", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "Alchemy标准1400", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"},
+      {"label": "深蓝项目26750", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"}
+    ],
+    "judgment": "结论：定义为语音分类缺陷。‘几点退潮’带明确时间询问，应稳定进入天气现象查询1975；当前误入音乐1026或与天气1249并行，执行结果不一致。\n依据：Alchemy标准1400；深蓝项目26750；Alchemy当前测试。\n处理：修复‘退潮/涨潮+时间询问’到天气1975的分类与冲突消歧；若项目未开通潮汐数据则统一回复暂不支持，不得落入音乐或闲聊；深蓝语音天气意图配置负责人处理。",
+    "judgment_links": [
+      {"label": "Alchemy标准1400", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"},
+      {"label": "深蓝项目26750", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"},
+      {"label": "Alchemy当前测试", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ],
+    "status": "可转语音",
+    "note": "分类修复与潮汐数据能力分开处理；深蓝潮汐数据开通范围未证实。",
+    "links": [
+      {"label": "Jira原票·PC-39375", "url": "http://jira.i-tetris.com/browse/PC-39375"},
+      {"label": "VOS日志·68900", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68900"},
+      {"label": "Alchemy当前·退潮测试", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "Alchemy标准1400", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1400"},
+      {"label": "深蓝项目26750", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26750"},
+      {"label": "CX835潮汐能力清单", "url": "https://docs.google.com/spreadsheets/d/1No34yuXH0WP2TchYAVx6P91-hV6Hi94KXoBJWdCyQcU/edit?usp=drivesdk"}
+    ]
+  }
+]
