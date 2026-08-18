@@ -1,0 +1,50 @@
+{
+  "schema_version": 5,
+  "jira_key": "SLV-44256",
+  "comment_causality": "Jira历史链路显示上一轮位置地址被rewrite_model拼入“目前的海拔高度”，导致天气卡片与导航刷新；本次在SLV环境复现同一两轮输入后，当前结果已变为不支持兜底，未再继承位置或触发天气/导航。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "已由语音专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "涉及用户原话、NLU、多轮上下文、MetaId与TTS/卡片执行链。"},
+    "map_navigation": {"applicable": false, "reason": "导航刷新是历史错误副作用，本票目标不是导航功能或路线规划。"},
+    "visible_interaction": {"applicable": false, "reason": "本票不依赖页面、卡片或可见控件作为目标选择。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira历史现象证明曾发生错误继承，但不定义当前目标；生效二轮配置明确“查询当前位置”不支持二轮继承，当前Alchemy两轮实测第二轮命中不支持兜底且无天气/导航动作，因此按当前实现已符合目标处理。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "我现在在哪儿；目前的海拔高度",
+    "alchemy_tested": true,
+    "alchemy_result": "SLV两轮实时测试：第一轮 meta_id=1006/type=navi:query:locate；第二轮 meta_id=1919/type=common:func:not:supported，未继承上一轮地址。",
+    "meta_id": "1006 -> 1919",
+    "standard_function": {"status": "verified", "name": "查询当前位置·标准MetaId 1006；车型无此功能兜底·标准MetaId 1919", "assessment": "已读取二轮白名单正文行32与标准兜底行17。"},
+    "project_function": {"status": "verified", "name": "深蓝项目查询当前位置·MetaId 1006；车型无此功能兜底·MetaId 1919", "assessment": "已读取深蓝8155&8295项目功能点走查正文行26、44，确认项目映射与锁定状态。"},
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {"source_id":"jira-actual","source":"SLV-44256 Jira原票","source_location":"描述；2026-07-24常荣评论 reqId/rewrite链；2026-07-28杨皓翔诊断；2026-08-06杨皓翔评论","source_type":"jira","role":"implementation_actual","project_model":"C673","trigger":"上一轮查询位置后输入“目前的海拔高度”被拼接重庆地址并触发天气/导航卡片","target_behavior":"证明历史提报现象与当时实现事实，不单独定义产品目标","match":"exact","reason":"Jira当前页面完整字段、描述、附件元数据和全部评论已读取。"},
+    {"source_id":"alchemy-current","source":"Alchemy在线对话·SLV两轮实时测试","source_location":"2026-08-18在线对话原话“我现在在哪儿”与“目前的海拔高度”","source_type":"alchemy_current","role":"implementation_actual","project_model":"SLV/C673","trigger":"同一会话先查询当前位置，再查询目前的海拔高度","target_behavior":"第一轮命中1006；第二轮命中1919不支持兜底，未继承地址、未产生天气或导航动作","match":"exact","reason":"直接证明当前在线语义与执行路由已不再复现历史错误。"},
+    {"source_id":"alchemy-standard","source":"Alchemy标准功能点·二轮白名单与标准兜底","source_location":"语音功能功能点-二轮白名单（短期）.xlsx：正文行17、32","source_type":"alchemy_standard","role":"context_only","project_model":"标准语音能力","trigger":"查询当前位置后继续输入目前的海拔高度","target_behavior":"查询当前位置为MetaId 1006；不支持兜底为MetaId 1919；二轮白名单列均为否","match":"exact","reason":"证明标准功能与二轮策略，不单独替代产品正式目标。"},
+    {"source_id":"alchemy-project","source":"Alchemy深蓝项目功能点·产品走查","source_location":"深蓝8155&8295项目功能点-产品走查.xlsx：正文行26、44","source_type":"alchemy_project","role":"context_only","project_model":"深蓝8155/8295项目","trigger":"查询当前位置与不支持兜底","target_behavior":"项目MetaId 1006查询当前位置；项目MetaId 1919车型无此功能兜底","match":"exact","reason":"证明深蓝项目映射与当前项目状态。"},
+    {"source_id":"formal-whitelist","source":"语音功能功能点-二轮白名单（短期）.xlsx","source_location":"Sheet正文行32：查询当前位置，MetaId 1006，导航二轮白名单=否；正文行17：车型无此功能兜底，MetaId 1919","source_type":"formal_config","role":"formal_target","project_model":"通用语音/导航二轮策略","trigger":"上一轮查询当前位置后再输入目前的海拔高度","target_behavior":"查询当前位置不进入二轮继承白名单；后续不支持输入走固定不支持兜底","match":"exact","reason":"正式配置直接定义本票相关功能的二轮继承边界与兜底。"},
+    {"source_id":"formal-project","source":"语音功能功能点-二轮需求梳理.xlsx","source_location":"Sheet正文行30：查询当前位置，车型含C673，是否支持二轮=否","source_type":"formal_config","role":"formal_target","project_model":"C673及深蓝车型","trigger":"上一轮查询当前位置后再输入目前的海拔高度","target_behavior":"C673查询当前位置不支持二轮继承；无当前明确能力时返回不支持，而不是沿用位置上下文","match":"exact","reason":"同项目车型配置明确否定二轮支持。"}
+  ],
+  "required_evidence_checks": [
+    {"check_id":"formal_definition_search","status":"read","searched_at":"2026-08-18","search_location":"Google Drive精确文档名检索并读取正文","queries":[{"kind":"jira_key","text":"语音功能功能点-二轮白名单（短期）.xlsx"},{"kind":"problem_concept","text":"语音功能功能点-二轮白名单（短期）.xlsx"},{"kind":"module_artifact","text":"语音功能功能点-二轮需求梳理.xlsx"}],"source_ids":["formal-whitelist","formal-project"],"reason":"已读取二轮白名单和同项目二轮需求梳理正文，直接定位行号与C673范围。","material":false,"next_action":"","candidate_audit":{"completed":true,"results_count":3,"candidates":[{"id":"1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs","title":"吴优工作说明","url":"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk","references":[],"disposition":"excluded","reason":"仅用于负责人清单，不是本票正式定义。"},{"id":"1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T","title":"语音功能功能点-二轮白名单（短期）.xlsx","url":"https://docs.google.com/spreadsheets/d/1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T/edit?usp=drivesdk","references":[],"disposition":"read","source_ids":["formal-whitelist"]},{"id":"1OO5TBUwpPz_kS37LttI0hxbDFKG9zgEI","title":"语音功能功能点-二轮需求梳理.xlsx","url":"https://docs.google.com/spreadsheets/d/1OO5TBUwpPz_kS37LttI0hxbDFKG9zgEI/edit?usp=drivesdk","references":[],"disposition":"read","source_ids":["formal-project"]}]},"search_completion":{"completed":true,"referenced_sources":[],"version_families":[]},"search_receipt_ids":["SLV-44256-formal-jira-20260818-1645","SLV-44256-formal-whitelist-20260818-1645","SLV-44256-formal-project-20260818-1645"]},
+    {"check_id":"alchemy_current","status":"read","searched_at":"2026-08-18","search_location":"Alchemy在线对话实时测试·SLV","queries":[{"kind":"exact_trigger","text":"我现在在哪儿 -> 目前的海拔高度"}],"source_ids":["alchemy-current"],"reason":"已保存同一会话两轮原话与MetaId结果。","material":false,"next_action":""},
+    {"check_id":"alchemy_standard","status":"read","searched_at":"2026-08-18","search_location":"Alchemy标准功能点/标准配置正文","queries":[{"kind":"meta_or_function","text":"1006 查询当前位置；1919 车型无此功能兜底"}],"source_ids":["alchemy-standard"],"reason":"已核对标准功能点与二轮白名单字段。","material":false,"next_action":""},
+    {"check_id":"alchemy_project","status":"read","searched_at":"2026-08-18","search_location":"Alchemy深蓝项目功能点/深蓝8155&8295项目功能点走查","queries":[{"kind":"meta_or_function","text":"1006；1919"},{"kind":"project_scope","text":"C673/深蓝8155&8295"}],"source_ids":["alchemy-project"],"reason":"已核对项目功能点映射与项目范围。","material":false,"next_action":""}
+  ],
+  "search_receipts": [
+    {"receipt_id":"SLV-44256-formal-jira-20260818-1645","provider":"google_drive","check_id":"formal_definition_search","searched_at":"2026-08-18T16:45:00+08:00","queries":[{"kind":"jira_key","text":"语音功能功能点-二轮白名单（短期）.xlsx"}],"results":[{"id":"1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs","title":"吴优工作说明","url":"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk","mime_type":"application/vnd.google-apps.spreadsheet"}]},
+    {"receipt_id":"SLV-44256-formal-whitelist-20260818-1645","provider":"google_drive","check_id":"formal_definition_search","searched_at":"2026-08-18T16:45:00+08:00","queries":[{"kind":"problem_concept","text":"语音功能功能点-二轮白名单（短期）.xlsx"}],"results":[{"id":"1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T","title":"语音功能功能点-二轮白名单（短期）.xlsx","url":"https://docs.google.com/spreadsheets/d/1b3ULKv-_KMA6m5vOkHXXMn1DB__1Tv3T/edit?usp=drivesdk","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}]},
+    {"receipt_id":"SLV-44256-formal-project-20260818-1645","provider":"google_drive","check_id":"formal_definition_search","searched_at":"2026-08-18T16:45:00+08:00","queries":[{"kind":"module_artifact","text":"语音功能功能点-二轮需求梳理.xlsx"}],"results":[{"id":"1OO5TBUwpPz_kS37LttI0hxbDFKG9zgEI","title":"语音功能功能点-二轮需求梳理.xlsx","url":"https://docs.google.com/spreadsheets/d/1OO5TBUwpPz_kS37LttI0hxbDFKG9zgEI/edit?usp=drivesdk","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}]}
+  ],
+  "run_context":{"run_id":"20260818T164534+0800-SLV-44256-recheck","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":286},
+  "expected_behavior":{"trigger":"上一轮查询当前位置后输入目前的海拔高度","target_state":"查询当前位置不支持二轮继承；当前无明确海拔能力时返回固定不支持兜底，不得继承位置地址、触发天气或刷新导航。","intent_function_signal":"第一轮MetaId 1006；第二轮MetaId 1919；Jira key=SLV-44256。","ui_tts_vehicle_behavior":"第二轮至少返回不支持类TTS/兜底，不能产生天气或导航卡片刷新。","boundary":"本结论针对SLV/C673、同一会话的两轮输入；若后续实车仍出现天气/导航动作，需以最新reqId重新核验。","source_ids":["formal-whitelist","formal-project"]},
+  "decision":{"status":"可关闭","owner":"C673语音云端对话管理负责人","text":"结论：定义为当前实现已符合预期，可关闭本票。SLV同一会话先查询当前位置、再询问“目前的海拔高度”时，当前结果按不支持兜底返回，未继承上一轮地址，也未触发天气或刷新导航。\n依据：二轮白名单·查询当前位置行32；C673二轮需求梳理·查询当前位置行30；Alchemy SLV两轮实测·1006→1919。\n处理：按当前不支持兜底结果关闭本票并保留同场景回归；C673语音云端对话管理负责人处理。","implementation_source_ids":["jira-actual","alchemy-current"]}
+}

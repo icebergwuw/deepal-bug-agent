@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "errors": [],
+  "checks": {
+    "range": "bug!A286:J286",
+    "row_count": 1,
+    "status": "可关闭",
+    "patch_contract": "passed",
+    "full_row_contract": "passed",
+    "protected_columns_unchanged": true,
+    "changed_columns": [
+      "C",
+      "D",
+      "G",
+      "I",
+      "J"
+    ],
+    "rich_text_links": "validated",
+    "checkbox_boolean": "validated",
+    "wrap_format": "validated",
+    "filter_range": "bug!A1:J372",
+    "target_key_count": 1
+  }
+}

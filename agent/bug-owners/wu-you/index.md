@@ -292,7 +292,7 @@
 | HUR-82618 | 282 | 3D车控HUD雪地模式未同步 | 待复核 |
 | SM-17714 | 283 | C673俄语头枕扬声器关闭项缺句号 | 可转研发 |
 | SLV-44342 | 284 | C673ICA非华为导航分屏圆角样式 | 待确认 |
-| SLV-44256 | 286 | 12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了导航 | 待复核 |
+| SLV-44256 | 286 | 12：40[673][DA]语音：当前的海拔高度。 TTS发起了天气预报与刷新了导航 | 可关闭 |
 | HUR-82954 | 287 | 【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notic… | 待处理 |
 | HUR-82953 | 288 | 【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notic… | 待处理 |
 | HUR-82952 | 289 | 【EL】【VAVE】【0904支】【userdebug】【文言走查】仪表topic_value：TipInfo/APA_Condition_Notic… | 待处理 |
