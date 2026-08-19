@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260818T193433Z-hur-82718-comment-recheck",
+  "status": "complete",
+  "started_at": "2026-08-18T19:34:33+08:00",
+  "query_summary": "重新核对HUR-82718评论三问、Jira完整字段与评论、地图导航PRD和低续航专项定义；命中吴优bug页第281行并计划按recheck更新C/D/G/I/J",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-HUR-82718-comment-recheck.md",
+  "items": [
+    {
+      "jira_key": "HUR-82718",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 281,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-HUR-82718-comment-recheck-manifest.json",
+      "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-HUR-82718-comment-recheck-readback.json",
+      "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-18-HUR-82718-comment-recheck-validation.json",
+      "readback_sha256": "93b461ba9c9cc2f1cf5d4d198cfb8243d9b48f33d0042dd559443f70beaf2b9b"
+    }
+  ],
+  "completed_at": "2026-08-18T19:45:00+08:00"
+}

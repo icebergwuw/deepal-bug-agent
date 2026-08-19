@@ -1,0 +1,259 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-82718",
+  "comment_causality": "黄文在2026-08-05评论中明确询问三个产品规则：同一次上电是否仅提示一次、语言切换/返回桌面/地图重建是否不算新触发、下一次点火仍低续航是否可再次提示。当前实现把语言切换引发的地图模块初始化和缓存重读当成新事件，导致同一低续航状态重复弹窗。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票属于地图低续航主动提醒，使用地图导航专项画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不是ASR、NLU、VUI或语音执行问题。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "问题发生在地图低续航提醒及加油/充电推送链路。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "弹窗样式、控件和页面交互本身无争议，本票只核对提醒事件的触发与上电周期边界。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期、评论中的实现原因与正式目标分开记录。地图导航PRD V6.1第7.1节明确低续航提醒由车辆原始低油量/低电量报警信号触发；语言切换或地图模块重建不是新的车辆报警事件。专项低续航推送定义进一步规定同一上电周期内推送一次，作为上电周期边界的补充依据。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-82718 Jira原票",
+      "source_location": "描述；黄文评论/2026-08-05 18:47；附件android.zip与d8c6167c74d3b540a5727582defaf574.mp4元数据",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A-All；j90a-cdc-release_huron_hqx.1.2.1_20250526-ota_full-user-secure-2.0ota-SWD.05.0-20260804232942",
+      "trigger": "车辆电量4%，切换系统语言后返回桌面",
+      "target_behavior": "当前每次语言切换后均重复展示续航里程过低提示",
+      "match": "exact",
+      "reason": "证明本票复现条件、当前行为和地图模块重建后重读缓存的实现因果链。"
+    },
+    {
+      "source_id": "map-prd-v6-1",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_location": "第7.1节·低续航提醒及加油/充电推送；正文索引31515-31615",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝C385&C673地图导航通用定义，J90A地图低续航提醒沿用同一地图业务能力",
+      "trigger": "车辆原始低油量提示报警或动力电池低电量报警信号触发",
+      "target_behavior": "触发低续航提醒并播报推荐附近加油站或充电桩",
+      "match": "exact",
+      "reason": "直接定义本票地图低续航提醒的有效触发事件；语言切换和模块重建不在触发条件内。"
+    },
+    {
+      "source_id": "range-control-v1-1",
+      "source": "【超级续航以该文档为准】超级续航控制功能定义V1.1.docx",
+      "source_location": "第5.1.5节·功能开启逻辑；‘同一上电周期内推送一次’条款",
+      "source_type": "special_prd",
+      "role": "context_only",
+      "project_model": "长安平台低续航主动推送通用边界",
+      "trigger": "ON档且低续航条件持续满足",
+      "target_behavior": "同一上电周期内主动推送一次；重新上电后重新按条件判断",
+      "match": "partial",
+      "reason": "该文档定义超级续航推送而非地图推荐弹窗，只用于补充上电周期的通用提醒边界，不替代地图PRD。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive实时检索并打开Google Docs正文",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-82718"},
+        {"kind": "problem_concept", "text": "低续航提醒切换语言后重复弹窗"},
+        {"kind": "module_artifact", "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"}
+      ],
+      "source_ids": ["map-prd-v6-1"],
+      "reason": "已读取第7.1节目标条款并核对版本族。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": ["HUR-82718-main-prd-20260818", "HUR-82718-main-prd-version-family-20260818"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1kDdzxSzwkEepPGa_pAOzz7cpVRAfY2EK",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V4.6 (1).pdf",
+            "url": "https://drive.google.com/file/d/1kDdzxSzwkEepPGa_pAOzz7cpVRAfY2EK/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "低于当前已读V6.1版本。",
+            "references": [],
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "工作说明是资料入口，不是正式地图目标定义。",
+            "references": []
+          },
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "references": [],
+            "source_ids": ["map-prd-v6-1"],
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": ["HUR-82718-main-prd-20260818", "HUR-82718-main-prd-version-family-20260818"],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "检索命中V4.6和V6.1，选择已打开正文且版本更高的V6.1。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive实时检索并读取文档正文",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-82718"},
+        {"kind": "problem_concept", "text": "同一上电周期低续航主动推送一次"},
+        {"kind": "module_artifact", "text": "【超级续航以该文档为准】超级续航控制功能定义V1.1.docx"}
+      ],
+      "source_ids": ["range-control-v1-1"],
+      "reason": "已读取功能开启逻辑中的同一上电周期推送边界，并限定为补充依据。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": ["HUR-82718-special-prd-20260818", "HUR-82718-special-prd-version-family-20260818"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW",
+            "title": "【超级续航以该文档为准】超级续航控制功能定义V1.1.docx",
+            "url": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "references": [],
+            "source_ids": ["range-control-v1-1"],
+            "version_family": "超级续航控制功能定义"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "超级续航控制功能定义",
+            "status": "enumerated",
+            "receipt_ids": ["HUR-82718-special-prd-20260818", "HUR-82718-special-prd-version-family-20260818"],
+            "selected_candidate_id": "1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW",
+            "selection_reason": "标题明确标注‘以该文档为准’，当前命中版本为V1.1。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-82718-main-prd-20260818",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-18T19:27:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-82718"},
+        {"kind": "problem_concept", "text": "低续航提醒切换语言后重复弹窗"},
+        {"kind": "module_artifact", "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"}
+      ],
+      "results": [
+        {"id": "1kDdzxSzwkEepPGa_pAOzz7cpVRAfY2EK", "title": "Megatronix_地图导航产品需求文档_C385&C673_V4.6 (1).pdf", "url": "https://drive.google.com/file/d/1kDdzxSzwkEepPGa_pAOzz7cpVRAfY2EK/view?usp=drivesdk", "mime_type": "application/pdf"},
+        {"id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs", "title": "吴优工作说明", "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk", "mime_type": "application/vnd.google-apps.spreadsheet"},
+        {"id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y", "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk", "mime_type": "application/vnd.google-apps.document"}
+      ]
+    },
+    {
+      "receipt_id": "HUR-82718-special-prd-20260818",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-18T19:28:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-82718"},
+        {"kind": "problem_concept", "text": "同一上电周期低续航主动推送一次"},
+        {"kind": "module_artifact", "text": "【超级续航以该文档为准】超级续航控制功能定义V1.1.docx"}
+      ],
+      "results": [
+        {"id": "1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW", "title": "【超级续航以该文档为准】超级续航控制功能定义V1.1.docx", "url": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+      ]
+    },
+    {
+      "receipt_id": "HUR-82718-main-prd-version-family-20260818",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-18T19:27:30+08:00",
+      "queries": [{"kind": "version_family", "text": "Megatronix_地图导航产品需求文档_C385&C673"}],
+      "results": [
+        {"id": "1kDdzxSzwkEepPGa_pAOzz7cpVRAfY2EK", "title": "Megatronix_地图导航产品需求文档_C385&C673_V4.6 (1).pdf", "url": "https://drive.google.com/file/d/1kDdzxSzwkEepPGa_pAOzz7cpVRAfY2EK/view?usp=drivesdk", "mime_type": "application/pdf"},
+        {"id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y", "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk", "mime_type": "application/vnd.google-apps.document"}
+      ]
+    },
+    {
+      "receipt_id": "HUR-82718-special-prd-version-family-20260818",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-18T19:28:30+08:00",
+      "queries": [{"kind": "version_family", "text": "超级续航控制功能定义"}],
+      "results": [
+        {"id": "1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW", "title": "【超级续航以该文档为准】超级续航控制功能定义V1.1.docx", "url": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+      ]
+    }
+  ],
+  "decision": {
+    "status": "可转研发",
+    "owner": "J90A地图研发负责人",
+    "text": "结论：产品规则明确为：1）同一次上电周期内，低续航提示仅展示一次；2）语言切换、返回桌面和地图模块重建均不属于新的提醒触发条件；3）下一次点火上电后若仍处于低续航状态，允许再次提示。当前重复弹窗定义为地图缺陷。\n依据：地图导航PRD V6.1·7.1；超级续航控制功能定义V1.1·功能开启逻辑；Jira评论·2026-08-05。\n处理：以“上电周期+低续航信号”为去重边界，修复语言切换/模块重建重复消费缓存并回归；J90A地图研发负责人处理。",
+    "implementation_source_ids": ["jira-actual"]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T193433Z-hur-82718-comment-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 281
+  },
+  "expected_behavior": {
+    "trigger": "同一上电周期内车辆低油量/低电量报警信号首次触发",
+    "target_state": "地图展示一次低续航提醒；本周期内保持已提示状态",
+    "intent_function_signal": "仅车辆原始低油量/低电量报警事件可触发，语言切换、返回桌面和模块重建不生成新提醒事件",
+    "ui_tts_vehicle_behavior": "同一上电周期只展示并播报一次；下一次点火上电后仍低续航时可重新展示并播报",
+    "boundary": "适用于同一上电周期内低续航状态持续存在的场景；重新点火上电形成新的提醒周期",
+    "source_ids": ["map-prd-v6-1"]
+  }
+}

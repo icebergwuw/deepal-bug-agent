@@ -1,0 +1,336 @@
+{
+  "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+  "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?ouid=109136590267032001782",
+  "properties": {
+    "title": "吴优工作说明",
+    "locale": "en_US",
+    "timeZone": "Asia/Shanghai"
+  },
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 2135747181,
+        "title": "bug",
+        "index": 3,
+        "sheetType": "GRID",
+        "gridProperties": {
+          "rowCount": 1012,
+          "columnCount": 10,
+          "frozenRowCount": 1,
+          "hideGridlines": true
+        }
+      },
+      "data": [
+        {
+          "startRow": 280,
+          "rowData": [
+            {
+              "values": [
+                {
+                  "formattedValue": "2026-08-07",
+                  "userEnteredValue": {
+                    "numberValue": 46241
+                  },
+                  "effectiveValue": {
+                    "numberValue": 46241
+                  }
+                },
+                {
+                  "formattedValue": "HUR-82718｜切换语言后重复弹出低续航提示",
+                  "userEnteredValue": {
+                    "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82718\",\"HUR-82718｜切换语言后重复弹出低续航提示\")"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "HUR-82718｜切换语言后重复弹出低续航提示"
+                  }
+                },
+                {
+                  "formattedValue": "现象：车辆电量4%，切换系统语言后返回桌面，每次都会重复展示低续航提示；评论确认原因是语言切换触发地图模块重新初始化并重读低续航缓存。[Jira原票·描述/评论]\n证据：地图导航PRD规定提醒由车辆原始低油量/低电量报警信号触发；专项低续航推送定义同一上电周期仅推送一次。[地图导航PRD V6.1·7.1][超级续航控制功能定义V1.1·功能开启逻辑]",
+                  "userEnteredValue": {
+                    "stringValue": "现象：车辆电量4%，切换系统语言后返回桌面，每次都会重复展示低续航提示；评论确认原因是语言切换触发地图模块重新初始化并重读低续航缓存。[Jira原票·描述/评论]\n证据：地图导航PRD规定提醒由车辆原始低油量/低电量报警信号触发；专项低续航推送定义同一上电周期仅推送一次。[地图导航PRD V6.1·7.1][超级续航控制功能定义V1.1·功能开启逻辑]"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "现象：车辆电量4%，切换系统语言后返回桌面，每次都会重复展示低续航提示；评论确认原因是语言切换触发地图模块重新初始化并重读低续航缓存。[Jira原票·描述/评论]\n证据：地图导航PRD规定提醒由车辆原始低油量/低电量报警信号触发；专项低续航推送定义同一上电周期仅推送一次。[地图导航PRD V6.1·7.1][超级续航控制功能定义V1.1·功能开启逻辑]"
+                  },
+                  "textFormatRuns": [
+                    {},
+                    {
+                      "startIndex": 68,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/HUR-82718"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 80
+                    },
+                    {
+                      "startIndex": 137,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 153
+                    },
+                    {
+                      "startIndex": 155,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 176
+                    }
+                  ]
+                },
+                {
+                  "formattedValue": "结论：产品规则明确为：1）同一次上电周期内，低续航提示仅展示一次；2）语言切换、返回桌面和地图模块重建均不属于新的提醒触发条件；3）下一次点火上电后若仍处于低续航状态，允许再次提示。当前重复弹窗定义为地图缺陷。\n依据：地图导航PRD V6.1·7.1；超级续航控制功能定义V1.1·功能开启逻辑；Jira评论·2026-08-05。\n处理：以“上电周期+低续航信号”为去重边界，修复语言切换/模块重建重复消费缓存并回归；J90A地图研发负责人处理。",
+                  "userEnteredValue": {
+                    "stringValue": "结论：产品规则明确为：1）同一次上电周期内，低续航提示仅展示一次；2）语言切换、返回桌面和地图模块重建均不属于新的提醒触发条件；3）下一次点火上电后若仍处于低续航状态，允许再次提示。当前重复弹窗定义为地图缺陷。\n依据：地图导航PRD V6.1·7.1；超级续航控制功能定义V1.1·功能开启逻辑；Jira评论·2026-08-05。\n处理：以“上电周期+低续航信号”为去重边界，修复语言切换/模块重建重复消费缓存并回归；J90A地图研发负责人处理。"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "结论：产品规则明确为：1）同一次上电周期内，低续航提示仅展示一次；2）语言切换、返回桌面和地图模块重建均不属于新的提醒触发条件；3）下一次点火上电后若仍处于低续航状态，允许再次提示。当前重复弹窗定义为地图缺陷。\n依据：地图导航PRD V6.1·7.1；超级续航控制功能定义V1.1·功能开启逻辑；Jira评论·2026-08-05。\n处理：以“上电周期+低续航信号”为去重边界，修复语言切换/模块重建重复消费缓存并回归；J90A地图研发负责人处理。"
+                  },
+                  "textFormatRuns": [
+                    {},
+                    {
+                      "startIndex": 109,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 125
+                    },
+                    {
+                      "startIndex": 126,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 147
+                    },
+                    {
+                      "startIndex": 148,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/HUR-82718?focusedCommentId=8160960&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8160960"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 165
+                    }
+                  ]
+                },
+                {
+                  "formattedValue": "FALSE",
+                  "userEnteredValue": {
+                    "boolValue": false
+                  },
+                  "effectiveValue": {
+                    "boolValue": false
+                  },
+                  "dataValidation": {
+                    "condition": {
+                      "type": "BOOLEAN"
+                    },
+                    "strict": true
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "可转研发",
+                  "userEnteredValue": {
+                    "stringValue": "可转研发"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "可转研发"
+                  }
+                },
+                {},
+                {
+                  "formattedValue": "同一上电周期仅提示一次；语言切换/返回桌面/地图重建不重置去重；下一次点火上电仍低续航可再次提示",
+                  "userEnteredValue": {
+                    "stringValue": "同一上电周期仅提示一次；语言切换/返回桌面/地图重建不重置去重；下一次点火上电仍低续航可再次提示"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "同一上电周期仅提示一次；语言切换/返回桌面/地图重建不重置去重；下一次点火上电仍低续航可再次提示"
+                  }
+                },
+                {
+                  "formattedValue": "Jira原票·完整评论\n地图导航PRD V6.1·7.1\n超级续航控制功能定义V1.1·功能开启逻辑",
+                  "userEnteredValue": {
+                    "stringValue": "Jira原票·完整评论\n地图导航PRD V6.1·7.1\n超级续航控制功能定义V1.1·功能开启逻辑"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Jira原票·完整评论\n地图导航PRD V6.1·7.1\n超级续航控制功能定义V1.1·功能开启逻辑"
+                  },
+                  "textFormatRuns": [
+                    {
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/HUR-82718"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 11
+                    },
+                    {
+                      "startIndex": 12,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 28
+                    },
+                    {
+                      "startIndex": 29,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

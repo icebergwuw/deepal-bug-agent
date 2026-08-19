@@ -1,0 +1,29 @@
+{
+  "changes": {
+    "C": {
+      "text": "现象：车辆电量4%，切换系统语言后返回桌面，每次都会重复展示低续航提示；评论确认原因是语言切换触发地图模块重新初始化并重读低续航缓存。[Jira原票·描述/评论]\n证据：地图导航PRD规定提醒由车辆原始低油量/低电量报警信号触发；专项低续航推送定义同一上电周期仅推送一次。[地图导航PRD V6.1·7.1][超级续航控制功能定义V1.1·功能开启逻辑]",
+      "links": [
+        {"label": "Jira原票·描述/评论", "url": "http://jira.i-tetris.com/browse/HUR-82718"},
+        {"label": "地图导航PRD V6.1·7.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+        {"label": "超级续航控制功能定义V1.1·功能开启逻辑", "url": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"}
+      ]
+    },
+    "D": {
+      "text": "结论：产品规则明确为：1）同一次上电周期内，低续航提示仅展示一次；2）语言切换、返回桌面和地图模块重建均不属于新的提醒触发条件；3）下一次点火上电后若仍处于低续航状态，允许再次提示。当前重复弹窗定义为地图缺陷。\n依据：地图导航PRD V6.1·7.1；超级续航控制功能定义V1.1·功能开启逻辑；Jira评论·2026-08-05。\n处理：以“上电周期+低续航信号”为去重边界，修复语言切换/模块重建重复消费缓存并回归；J90A地图研发负责人处理。",
+      "links": [
+        {"label": "地图导航PRD V6.1·7.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+        {"label": "超级续航控制功能定义V1.1·功能开启逻辑", "url": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"},
+        {"label": "Jira评论·2026-08-05", "url": "http://jira.i-tetris.com/browse/HUR-82718?focusedCommentId=8160960&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-8160960"}
+      ]
+    },
+    "G": "可转研发",
+    "I": "同一上电周期仅提示一次；语言切换/返回桌面/地图重建不重置去重；下一次点火上电仍低续航可再次提示",
+    "J": {
+      "links": [
+        {"label": "Jira原票·完整评论", "url": "http://jira.i-tetris.com/browse/HUR-82718"},
+        {"label": "地图导航PRD V6.1·7.1", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+        {"label": "超级续航控制功能定义V1.1·功能开启逻辑", "url": "https://docs.google.com/document/d/1utnXGMkGW6GBmqZKc_PUtvSx-KNxn9uW/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true"}
+      ]
+    }
+  }
+}
