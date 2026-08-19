@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260819T-SD-5269-drive-deep-recheck",
+  "started_at": "2026-08-19T16:00:00+08:00",
+  "completed_at": "2026-08-19T16:20:00+08:00",
+  "status": "complete",
+  "query_summary": "补查Drive完整定义并纠正SD-5269第61行无主体音量对象。",
+  "action_log": "agent/logs/bug-actions/2026-08-19-SD-5269-drive-deep-recheck.md",
+  "items": [
+    {
+      "jira_key": "SD-5269",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 61,
+      "manifest_path": "agent/logs/bug-actions/2026-08-19-SD-5269-drive-deep-recheck-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-19-SD-5269-drive-deep-recheck-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-19-SD-5269-drive-deep-recheck-validation.json",
+      "readback_sha256": "90e901ab6b1a80faadbc87dc983a5e26a634296c1aec70011dabdca2dd90a797"
+    }
+  ]
+}

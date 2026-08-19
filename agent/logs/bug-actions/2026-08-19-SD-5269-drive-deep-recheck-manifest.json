@@ -1,0 +1,480 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-5269",
+  "comment_causality": "聂汉维评论询问无主体指令‘把音量调到50%’究竟调哪个音量；本次补读Drive最新正式语料清单和系统设置V5.1后，纠正此前‘全局/默认音量’的过度解释。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SD-5268",
+        "relationship": "Jira直接链接或日志引用",
+        "read": true,
+        "outcome": "已读取当前字段、描述、附件元数据、全部评论及问题链接；只用于因果和范围，不替代正式目标。"
+      },
+      {
+        "key": "SD-5309",
+        "relationship": "Jira直接链接或日志引用",
+        "read": true,
+        "outcome": "已读取当前字段、描述、附件元数据、全部评论及问题链接；只用于因果和范围，不替代正式目标。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-5269 Jira原票",
+      "source_location": "当前字段、完整描述、附件、全部评论及直接关联票",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "重新打开；离线翻译已正确得到“把音量调到50%”，历史下发1184，当前BIGSUR却误落1146情景模式时长。",
+      "match": "exact",
+      "reason": "证明提报现象和历史链路。"
+    },
+    {
+      "source_id": "drive-latest-voice-list",
+      "source": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.11",
+      "source_location": "深蓝-删减版，表格行605/序号439；正文已读",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "原话归类为系统设置/声音/无指定通道百分比调节；C673-G、D587-G均支持。",
+      "match": "exact",
+      "reason": "当前检索到的最新正式海外语音能力清单。"
+    },
+    {
+      "source_id": "drive-system-settings-v5.1",
+      "source": "C673_功能定义_系统设置功能定义V5.1.pdf",
+      "source_location": "3.3语音及4.7.8-4.7.11音量调节正文；正文已读",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673",
+      "trigger": "无主体音量调节",
+      "target_behavior": "音量调节按当前音源焦点；可调通道分别为媒体、通话、导航、智能语音。",
+      "match": "exact",
+      "reason": "定义无主体音量调节的通道选择规则；未定义全局/默认音量。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话·BIGSUR",
+      "source_location": "2026-08-18原话实测：meta_id=1146，vehicle:scenario:ctrl:time:adjust，mode=rest；与原话音量目标完全不符。",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "meta_id=1146，vehicle:scenario:ctrl:time:adjust，mode=rest；与原话音量目标完全不符。",
+      "match": "exact",
+      "reason": "证明当前平台真实路由。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准1369（已锁定）指定通道/全局音量指定调节；1146对应草稿态情景时长",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "标准1369（已锁定）指定通道/全局音量指定调节；1146对应草稿态情景时长",
+      "match": "exact",
+      "reason": "标准详情已逐项打开核验。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝24514（已锁定、继承未修改）；误落深蓝26861/1146",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "C673-G3/G5 / BIGSUR",
+      "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+      "target_behavior": "深蓝24514（已锁定、继承未修改）；误落深蓝26861/1146",
+      "match": "exact",
+      "reason": "深蓝项目继承状态已逐项核验。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "已由专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、NLU、功能点或TTS。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本次只判断语音意图、槽位或TTS，不评估地图搜索结果、路线规划或导航执行。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不以可见控件状态为主要矛盾。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "drive-latest-voice-list",
+        "drive-system-settings-v5.1"
+      ],
+      "searched_at": "2026-08-19",
+      "search_location": "Google Drive实时检索；逐字原话、完整文档名和版本族均已追查并读取最新适用正文",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5269"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "无指定通道 音量 当前音源焦点"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 系统设置 声音 语音"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_系统设置功能定义V5.1.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_系统设置功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_音频策略功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "【正式版】长安系_海外各国语料清单汇总"
+        }
+      ],
+      "search_receipt_ids": [
+        "SD-5269-drive-deep-recheck-20260819"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+            "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.11",
+            "url": "https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-latest-voice-list"
+            ],
+            "references": [],
+            "version_family": "【正式版】长安系_海外各国语料清单汇总"
+          },
+          {
+            "id": "1HnHnqbq5CV5I0LqB9ShbP9hve7J_mPO3",
+            "title": "C673_功能定义_系统设置功能定义V5.1.pdf",
+            "url": "https://drive.google.com/file/d/1HnHnqbq5CV5I0LqB9ShbP9hve7J_mPO3/view",
+            "disposition": "read",
+            "source_ids": [
+              "drive-system-settings-v5.1"
+            ],
+            "references": [],
+            "version_family": "C673_功能定义_系统设置功能定义"
+          },
+          {
+            "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+            "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+            "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit",
+            "disposition": "read",
+            "source_ids": [
+              "drive-system-settings-v5.1"
+            ],
+            "references": [],
+            "reason": "已读音源/通道定义；未发现把无主体指令定义为全局/默认音量。",
+            "version_family": "C673_功能定义_音频策略功能定义"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673_功能定义_系统设置功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-5269-drive-deep-recheck-20260819"
+            ],
+            "selected_candidate_id": "1HnHnqbq5CV5I0LqB9ShbP9hve7J_mPO3",
+            "selection_reason": "已枚举V0.1至V5.1并读取最新可见适用版本V5.1。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "【正式版】长安系_海外各国语料清单汇总",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-5269-drive-deep-recheck-20260819"
+            ],
+            "selected_candidate_id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+            "selection_reason": "已比较0723、0803、0805及0807正式版，选择最新正式版。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "C673_功能定义_音频策略功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-5269-drive-deep-recheck-20260819"
+            ],
+            "selected_candidate_id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+            "selection_reason": "已枚举V0.1至V0.6并读取最新可见适用版本V0.6。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "ตั้งระดับเสียง 50 เปอร์เซ็นต์"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1184（当前误落1146）"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy在线页面实时核验",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1184（当前误落1146）"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-G3/G5 / BIGSUR"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "trigger": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+    "target_state": "按当前音源焦点对应的媒体、通话、导航或智能语音通道调到50%。",
+    "intent_function_signal": "音量百分比调节；1146为错误的小憩模式时长竞争",
+    "ui_tts_vehicle_behavior": "只调整当前音源焦点对应通道，不做全局多通道同时调整，也不使用固定默认通道。",
+    "boundary": "C673-G3/G5，BIGSUR及对应海外语种",
+    "source_ids": [
+      "drive-latest-voice-list",
+      "drive-system-settings-v5.1"
+    ],
+    "comment_answer": "无主体时按当前音源焦点：媒体、通话、导航或智能语音当前谁持有焦点，就把对应通道调到50%。"
+  },
+  "conflict_resolution": "最新正式语料清单证明该原话属于无指定通道百分比调节；系统设置V5.1进一步规定无主体音量调节按当前音源焦点。因此纠正此前‘全局/默认音量’表述；当前误命中1146仍为泰语NLU映射缺陷。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+    "alchemy_tested": true,
+    "alchemy_result": "meta_id=1146，vehicle:scenario:ctrl:time:adjust，mode=rest；与原话音量目标完全不符。",
+    "meta_id": "1184（当前误落1146）",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准1369（已锁定）指定通道/全局音量指定调节；1146对应草稿态情景时长",
+      "assessment": "已打开标准详情核验名称和状态。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝24514（已锁定、继承未修改）；误落深蓝26861/1146",
+      "assessment": "已打开深蓝项目详情核验继承状态。"
+    }
+  },
+  "decision": {
+    "status": "转语音",
+    "owner": "语音NLU/泰语算法负责人",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ],
+    "text": "结论：无主体的百分比音量指令按当前音源焦点对应通道执行；当前焦点为媒体、通话、导航或智能语音时，将对应通道调到50%。不是全局同时调多个通道，也不是固定的‘默认音量’。当前BIGSUR误映射到1146小憩模式时长，属于泰语NLU映射缺陷。\n依据：最新正式语料清单将原话归为‘无指定通道百分比调节’；系统设置V5.1规定无主体音量调节按当前音源焦点，并逐项定义四类可调通道。\n处理：恢复到音量百分比调节意图，并按当前音源焦点落对应通道；清除1146错误竞争。语音NLU/泰语算法负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260819T-SD-5269-drive-deep-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 61,
+    "mode": "recheck",
+    "allowed_columns": [
+      "C",
+      "D",
+      "G",
+      "I",
+      "J"
+    ],
+    "protected_columns": [
+      "A",
+      "B",
+      "E",
+      "F",
+      "H"
+    ],
+    "jira_external_actions": [],
+    "jira_timeline_read_at": "2026-08-19",
+    "jira_comment_answered": true
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-5269-formal_definition_search-drive-20260818",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T19:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5269"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "泰语音量50%误落小憩时长"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "泰语音量50%误落小憩时长"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+          "title": "海外语音功能清单C673-G3G5.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1yFuQlecstSMg3taKeYBhY0dSWR7GthHx",
+          "title": "海外语音功能清单C673-G3G5&D587-G_PT-PT.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1yFuQlecstSMg3taKeYBhY0dSWR7GthHx/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5",
+          "title": "C673_G3G5语音测试语料-修订0805.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1WmORZ7D2fKxow410FRkm_h-rTUNSTYD5/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-5269-comment-recheck-drive-20260819",
+      "provider": "google_drive",
+      "check_id": "comment_boundary_confirmation",
+      "searched_at": "2026-08-19",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "ตั้งระดับเสียง 50 เปอร์เซ็นต์"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "把音量调到50％没有主体语义，究竟调哪个音量"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq",
+          "title": "海外语音功能清单C673-G3G5.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1dOYIGWFAuiJhSLfdB1VQchcazvz81jKq/edit",
+          "disposition": "read",
+          "exact_match": "系统设置/声音/无指定通道百分比调节/ตั้งระดับเสียง 50 เปอร์เซ็นต์",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SD-5269-drive-deep-recheck-20260819",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-19T16:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-5269"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "无指定通道 音量 当前音源焦点"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 系统设置 声音 语音"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_系统设置功能定义V5.1.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_系统设置功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_音频策略功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "【正式版】长安系_海外各国语料清单汇总"
+        }
+      ],
+      "results": [
+        {
+          "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+          "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.11",
+          "url": "https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1HnHnqbq5CV5I0LqB9ShbP9hve7J_mPO3",
+          "title": "C673_功能定义_系统设置功能定义V5.1.pdf",
+          "url": "https://drive.google.com/file/d/1HnHnqbq5CV5I0LqB9ShbP9hve7J_mPO3/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+          "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+          "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ]
+}
