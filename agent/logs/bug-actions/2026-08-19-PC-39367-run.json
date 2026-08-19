@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260819T075733Z-pc-39367",
+  "status": "complete",
+  "started_at": "2026-08-19T15:57:33+08:00",
+  "query_summary": "PC-39367完整Bug流程；当前负责人bug页查重0行，写前发现第376行已被ADS-48799占用，计划安全新增至bug!A377:J377。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-PC-39367.md",
+  "items": [
+    {
+      "jira_key": "PC-39367",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 377,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-PC-39367-manifest.json",
+      "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-PC-39367-append-readback.json",
+      "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-PC-39367-validation.json",
+      "readback_sha256": "ecb42f1f375841b08eeed9ce5603a5b192c126d0c4af910bd156849dbc7ec1cd"
+    }
+  ],
+  "completed_at": "2026-08-19T16:06:54+08:00"
+}

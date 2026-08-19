@@ -1,0 +1,417 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-39367",
+  "run_context": {
+    "run_id": "bug-20260819T075733Z-pc-39367",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 377
+  },
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票由语音与地图导航专项画像共同覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及原话‘闭嘴’、MetaId 1664和语音服务多轮执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "缺陷发生在导航目的地询问二轮上下文。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "没有确认可见页面目标与通用语义竞争，本票核心为后端导航多轮上下文抢占。"
+    }
+  },
+  "evidence_profiles": [
+    "voice",
+    "map_navigation"
+  ],
+  "comment_causality": "VOS日志68881显示前两轮为关闭空调、发起导航并询问目的地，第三轮‘闭嘴’的在线/离线ASR一致且NLU正确下发暂停播报1664，但语音服务在导航二轮中改写为POI选择回复；评论确认应拒绝导航搜索并退出当前询问session。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-vos-actual",
+      "source": "PC-39367 Jira原票与VOS日志68881",
+      "source_location": "Jira描述及舒万里/汪雯菁评论时间线；VOS 68881第1-3轮事件序列",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "深蓝 OTA_DP4.0",
+      "trigger": "导航询问目的地后说‘闭嘴’",
+      "target_behavior": "当前ASR/NLU命中1664，但语音服务改写为‘收到。有多个地址，选第几个呢’",
+      "match": "exact",
+      "reason": "证明本票当前实现与错误回复位置。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy PCSLV当前原话测试",
+      "source_location": "Alchemy在线对话·闭嘴·classification=task·meta_id=1664",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "深蓝PCSLV",
+      "trigger": "闭嘴",
+      "target_behavior": "operations下发vehicle:cabin:assistant:announce:stop，参数为空",
+      "match": "exact",
+      "reason": "证明当前独立语义和功能点下发正确，缺陷不在ASR/NLU。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点",
+      "source_location": "标准ID1251·暂停播报·MetaId1664·已锁定",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准能力",
+      "trigger": "闭嘴/停止播报/暂停播报",
+      "target_behavior": "打断语音播报并结束当前对话session，但不退出语音助手",
+      "match": "exact",
+      "reason": "证明标准1664的语义和执行策略。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点",
+      "source_location": "深蓝项目ID24436·暂停播报·MetaId1664·继承未修改·已锁定",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目",
+      "trigger": "深蓝项目内说闭嘴",
+      "target_behavior": "继承标准1664并执行暂停播报与当前session清理",
+      "match": "exact",
+      "reason": "证明深蓝项目继承链未修改。"
+    },
+    {
+      "source_id": "voice-project-config",
+      "source": "深蓝项目语音功能点 260731.xlsx",
+      "source_location": "功能点清单第14项·项目ID24436·暂停播报·MetaId1664·LOCKED/INHERIT·标准ID1251",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "深蓝8155/8295",
+      "trigger": "闭嘴命中暂停播报1664",
+      "target_behavior": "执行暂停播报并按继承策略结束当前对话session",
+      "match": "exact",
+      "reason": "当前深蓝项目配置与Alchemy详情一致，直接定义本票功能目标。"
+    },
+    {
+      "source_id": "map-prd",
+      "source": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+      "source_location": "导航目的地搜索二轮及POI列表匹配回复规则",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8155/8295",
+      "trigger": "导航询问目的地后的第二轮输入；仅真实POI列表匹配时进入序号选择",
+      "target_behavior": "目的地询问二轮只处理目的地或列表选择；暂停播报指令不得被改写为POI序号选择回复",
+      "match": "exact",
+      "reason": "当前较新同项目地图主PRD，定义导航二轮与POI选择回复边界。"
+    },
+    {
+      "source_id": "map-interaction",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+      "source_location": "导航目的地搜索、POI选择与路线规划交互区域",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "C385/C673 850",
+      "trigger": "导航目的地询问及POI结果列表交互",
+      "target_behavior": "POI序号选择回复仅属于有效结果列表上下文，不覆盖暂停播报功能点",
+      "match": "exact",
+      "reason": "当前V0.6地图交互用于补充确认导航二轮边界。"
+    }
+  ],
+  "inheritance_chains": [],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-19",
+      "search_location": "Google Drive连接器实时检索并读取深蓝项目功能点清单",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-39367"},
+        {"kind": "exact_trigger", "text": "闭嘴"},
+        {"kind": "problem_concept", "text": "暂停播报 1664"},
+        {"kind": "module_artifact", "text": "深蓝项目语音功能点"},
+        {"kind": "version_family", "text": "深蓝语音项目功能点"}
+      ],
+      "source_ids": ["voice-project-config"],
+      "reason": "已读取当前260731清单并核对历史产品走查版本；当前清单中的24436/1664为适用配置。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa",
+            "title": "深蓝项目语音功能点 260731.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝语音项目功能点",
+            "disposition": "read",
+            "source_ids": ["voice-project-config"],
+            "reason": "当前较新清单，已读24436/1664。"
+          },
+          {
+            "id": "1X2ESkegjC4OflJtDv1goZL-idVNGqAda",
+            "title": "深蓝8155&8295项目功能点-产品走查.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1X2ESkegjC4OflJtDv1goZL-idVNGqAda/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "深蓝语音项目功能点",
+            "disposition": "excluded",
+            "reason": "历史产品走查版本，已有更新的260731项目功能点清单。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "search_receipt_ids": ["PC-39367-formal-definition-drive-20260819-1"]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-19",
+      "search_location": "Alchemy PCSLV在线对话实时测试",
+      "queries": [{"kind": "exact_trigger", "text": "闭嘴"}],
+      "source_ids": ["alchemy-current"],
+      "reason": "当前命中task/1664/vehicle:cabin:assistant:announce:stop。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-19",
+      "search_location": "Alchemy标准功能点详情实时读取",
+      "queries": [
+        {"kind": "meta_or_function", "text": "1664"},
+        {"kind": "meta_or_function", "text": "暂停播报"}
+      ],
+      "source_ids": ["alchemy-standard"],
+      "reason": "已读取标准ID1251、MetaId1664和执行策略。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-19",
+      "search_location": "Alchemy深蓝项目功能点详情实时读取",
+      "queries": [
+        {"kind": "meta_or_function", "text": "1664"},
+        {"kind": "project_scope", "text": "深蓝项目"}
+      ],
+      "source_ids": ["alchemy-project"],
+      "reason": "已读取项目ID24436，确认锁定且继承未修改。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-19",
+      "search_location": "Google Drive连接器实时检索并读取地图主PRD版本族",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-39367"},
+        {"kind": "problem_concept", "text": "导航二轮 暂停播报"},
+        {"kind": "module_artifact", "text": "Megatronix 地图 产品需求文档 深蓝8155 8295"},
+        {"kind": "version_family", "text": "Megatronix深蓝8155&8295地图PRD"}
+      ],
+      "source_ids": ["map-prd"],
+      "reason": "已枚举v20250613和v20250901，读取较新v20250901的目的地搜索二轮与POI列表回复规则。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC",
+            "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx",
+            "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "Megatronix深蓝8155&8295地图PRD",
+            "disposition": "read",
+            "source_ids": ["map-prd"],
+            "reason": "同项目较新版本且正文已读。"
+          },
+          {
+            "id": "1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM",
+            "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250613.docx",
+            "url": "https://docs.google.com/document/d/1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM/edit?usp=drivesdk",
+            "references": [],
+            "version_family": "Megatronix深蓝8155&8295地图PRD",
+            "disposition": "excluded",
+            "reason": "同系列较旧版本，选择更新的v20250901。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "search_receipt_ids": ["PC-39367-main-prd-drive-20260819-1"]
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-19",
+      "search_location": "Google Drive连接器实时检索并读取地图交互版本族",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-39367"},
+        {"kind": "problem_concept", "text": "导航目的地询问 POI选择 暂停播报"},
+        {"kind": "module_artifact", "text": "C385 673 地图导航 高德 850"},
+        {"kind": "version_family", "text": "C385&C673地图导航交互850"}
+      ],
+      "source_ids": ["map-interaction"],
+      "reason": "已枚举V0.5和V0.6，读取V0.6的目的地搜索与POI选择交互。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C385&C673地图导航交互850",
+            "disposition": "read",
+            "source_ids": ["map-interaction"],
+            "reason": "当前较新V0.6且正文已读。"
+          },
+          {
+            "id": "1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C385&C673地图导航交互850",
+            "disposition": "excluded",
+            "reason": "较旧V0.5版本。"
+          },
+          {
+            "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view?usp=drivesdk",
+            "references": [],
+            "version_family": "C385&C673地图导航交互850",
+            "disposition": "excluded",
+            "reason": "V0.5重复副本且版本较旧。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385&C673地图导航交互850",
+            "status": "enumerated",
+            "receipt_ids": ["PC-39367-special-definition-drive-20260819-1"],
+            "selected_candidate_id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "selection_reason": "V0.6晚于两个V0.5副本且已读目标交互区域。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": ["PC-39367-special-definition-drive-20260819-1"]
+    }
+  ],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "导航；闭嘴",
+    "alchemy_tested": true,
+    "alchemy_result": "PCSLV当前‘闭嘴’命中classification=task，operations下发meta_id=1664 / vehicle:cabin:assistant:announce:stop / params={}。",
+    "meta_id": "1664",
+    "standard_function": {
+      "status": "verified",
+      "name": "标准ID1251·暂停播报·MetaId1664",
+      "assessment": "已锁定；示例包含‘闭嘴’，执行策略为打断播报并结束当前对话session。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目ID24436·暂停播报·MetaId1664",
+      "assessment": "已锁定且继承未修改。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "expected_behavior": {
+    "trigger": "导航助手询问目的地的第二轮中说‘闭嘴’",
+    "target_state": "暂停当前TTS并结束本次导航询问session，保持语音助手可继续唤醒使用",
+    "intent_function_signal": "执行MetaId1664 / vehicle:cabin:assistant:announce:stop，且其抢占导航目的地搜索上下文",
+    "ui_tts_vehicle_behavior": "立即停止当前播报，不生成‘有多个地址，选第几个’等POI列表回复",
+    "boundary": "深蓝OTA_DP4.0；覆盖导航目的地询问、POI列表及其他有效多轮上下文中的1664抢占与session清理",
+    "source_ids": ["voice-project-config", "map-prd", "map-interaction"]
+  },
+  "conflict_resolution": "Jira/VOS证明当前语音服务把正确的1664改写为导航POI回复；Alchemy与项目功能点证明ASR/NLU和功能点配置正确；地图PRD/交互限定POI序号回复范围。实现与正式目标冲突，定位为语音服务多轮上下文执行缺陷。",
+  "decision": {
+    "status": "可转语音",
+    "owner": "深蓝语音服务多轮上下文执行负责人",
+    "text": "结论：定义为语音服务多轮上下文执行缺陷。导航目的地询问二轮中说“闭嘴”已正确命中暂停播报1664，应立即打断播报并结束当前对话session；当前却改写为导航POI选择回复。\n依据：深蓝暂停播报24436/1664；VOS日志68881；地图导航PRD v20250901。\n处理：修复1664在导航二轮中的上下文抢占与回复改写，确保执行暂停播报并清理当前导航询问session；深蓝语音服务多轮上下文执行负责人处理。",
+    "implementation_source_ids": ["jira-vos-actual", "alchemy-current"]
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-39367-formal-definition-drive-20260819-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-19T15:35:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-39367"},
+        {"kind": "exact_trigger", "text": "闭嘴"},
+        {"kind": "problem_concept", "text": "暂停播报 1664"},
+        {"kind": "module_artifact", "text": "深蓝项目语音功能点"},
+        {"kind": "exact_document_name", "text": "深蓝项目语音功能点 260731.xlsx"},
+        {"kind": "version_family", "text": "深蓝语音项目功能点"}
+      ],
+      "results": [
+        {"id": "1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa", "title": "深蓝项目语音功能点 260731.xlsx", "url": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1X2ESkegjC4OflJtDv1goZL-idVNGqAda", "title": "深蓝8155&8295项目功能点-产品走查.xlsx", "url": "https://docs.google.com/spreadsheets/d/1X2ESkegjC4OflJtDv1goZL-idVNGqAda/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}
+      ]
+    },
+    {
+      "receipt_id": "PC-39367-main-prd-drive-20260819-1",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-19T15:35:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-39367"},
+        {"kind": "problem_concept", "text": "导航二轮 暂停播报"},
+        {"kind": "module_artifact", "text": "Megatronix 地图 产品需求文档 深蓝8155 8295"},
+        {"kind": "version_family", "text": "Megatronix深蓝8155&8295地图PRD"}
+      ],
+      "results": [
+        {"id": "1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC", "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250901.docx", "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id": "1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM", "title": "Megatronix_地图_产品需求文档深蓝8155&8295_v20250613.docx", "url": "https://docs.google.com/document/d/1PbtnPKoMHlXInRLjwRdrTJWW71HyBQgM/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+      ]
+    },
+    {
+      "receipt_id": "PC-39367-special-definition-drive-20260819-1",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-19T15:35:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-39367"},
+        {"kind": "problem_concept", "text": "导航目的地询问 POI选择 暂停播报"},
+        {"kind": "module_artifact", "text": "C385 673 地图导航 高德 850"},
+        {"kind": "version_family", "text": "C385&C673地图导航交互850"}
+      ],
+      "results": [
+        {"id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl", "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk", "mime_type": "application/pdf"},
+        {"id": "1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl", "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf", "url": "https://drive.google.com/file/d/1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl/view?usp=drivesdk", "mime_type": "application/pdf"},
+        {"id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM", "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf", "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view?usp=drivesdk", "mime_type": "application/pdf"}
+      ]
+    }
+  ]
+}

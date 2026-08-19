@@ -1,0 +1,31 @@
+[
+  {
+    "key": "PC-39367",
+    "summary": "导航二轮“闭嘴”被改写为POI选择回复",
+    "date": "2026-08-19",
+    "info": "现象：导航询问目的地后说“闭嘴”，ASR/NLU正确命中暂停播报1664，语音服务却回复“收到。有多个地址，选第几个呢”。\n依据：VOS日志68881确认错误发生在导航多轮执行改写；深蓝项目24436/1664继承未修改；地图PRD v20250901限定POI选择回复仅用于有效列表上下文。",
+    "info_links": [
+      {"label": "VOS日志68881", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68881"},
+      {"label": "深蓝项目24436/1664", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24436"},
+      {"label": "地图PRD v20250901", "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk"}
+    ],
+    "judgment": "结论：定义为语音服务多轮上下文执行缺陷。导航目的地询问二轮中说“闭嘴”已正确命中暂停播报1664，应立即打断播报并结束当前对话session；当前却改写为导航POI选择回复。\n依据：深蓝暂停播报24436/1664；VOS日志68881；地图导航PRD v20250901。\n处理：修复1664在导航二轮中的上下文抢占与回复改写，确保执行暂停播报并清理当前导航询问session；深蓝语音服务多轮上下文执行负责人处理。",
+    "judgment_links": [
+      {"label": "深蓝暂停播报24436/1664", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24436"},
+      {"label": "VOS日志68881", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68881"},
+      {"label": "地图导航PRD v20250901", "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk"}
+    ],
+    "status": "可转语音",
+    "note": "需覆盖导航目的地询问、POI列表和其他多轮场景回归1664抢占与session清理。",
+    "links": [
+      {"label": "Jira原票·PC-39367", "url": "http://jira.i-tetris.com/browse/PC-39367"},
+      {"label": "VOS日志·68881", "url": "https://vos-debug.i-tetris.com/#/mark/log/detail/68881"},
+      {"label": "深蓝功能点清单·24436/1664", "url": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk"},
+      {"label": "Alchemy当前·1664", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "Alchemy标准·1251/1664", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1251"},
+      {"label": "Alchemy深蓝项目·24436", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24436"},
+      {"label": "地图PRD·v20250901", "url": "https://docs.google.com/document/d/1jHjYvs3dHW8cGHJaNHOEWr5I-TCP_iDC/edit?usp=drivesdk"},
+      {"label": "地图交互·V0.6", "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"}
+    ]
+  }
+]
