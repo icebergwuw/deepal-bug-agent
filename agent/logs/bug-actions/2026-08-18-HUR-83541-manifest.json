@@ -1,0 +1,314 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-83541",
+  "comment_causality": "J90A-EL阿拉伯语指令要求切换导航播报模式为详细播报，实车未执行；Jira附件所示标准语料将NAVI_12_01标记为‘无此需求’，Alchemy HUR当前又误命中音乐播放1026。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票已由语音专项画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及阿拉伯语NLU、Alchemy功能点与项目语料范围。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票只判断阿拉伯语语料覆盖和功能点映射，不涉及地图搜索、算路、导航执行或路线偏好。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不涉及可见页面、卡片、弹窗或控件仲裁。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira测试预期要求执行，但当前J90A阿拉伯语标准语料在NAVI_12_01明确标注‘无此需求’；Alchemy标准1450和马自达项目26011只证明底层1023能力存在，不能覆盖当前阿拉伯语项目范围，因此按新增语料需求处理，不按既有执行缺陷转语音。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-83541 Jira原票",
+      "source_location": "描述、朱雪豪评论、附件image-2026-08-18-18-18-53-505.png及复现信息",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A-EL",
+      "version": "J90A-EL_LS_20261012",
+      "trigger": "اضبط وضع صوت الملاحة على مفصل",
+      "target_behavior": "测试预期切换导航播报模式为详细播报，当前车机未执行。",
+      "match": "exact",
+      "reason": "证明当前提报、复现与测试预期，不单独定义产品范围。"
+    },
+    {
+      "source_id": "corpus-formal",
+      "source": "OTA节点_J90A-标准语料_V0.5.xlsx",
+      "source_location": "阿拉伯语Sheet·序号408·NAVI_12_01·末列‘无此需求’",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "J90A-EL",
+      "version": "V0.5，Drive修改时间2026-08-11",
+      "trigger": "اضبط وضع صوت الملاحة على مفصل",
+      "target_behavior": "当前阿拉伯语项目范围不包含NAVI_12_01导航详细播报切换。",
+      "match": "exact",
+      "reason": "同车型、同语言、同Key和同原话的当前正式语料范围定义。"
+    },
+    {
+      "source_id": "nav-scope",
+      "source": "长安马自达J90A-EL导航功能清单支持反馈 V1.0_251104.xlsx",
+      "source_location": "导航语音功能清单及J90A-EL阿拉伯语能力范围",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "J90A-EL",
+      "version": "V1.0_251104",
+      "trigger": "导航播报模式设置",
+      "target_behavior": "证明J90A-EL具备导航语音接入背景，但不覆盖本条阿拉伯语语料范围。",
+      "match": "partial",
+      "reason": "只作项目和模块范围桥接，不能覆盖标准语料对本Key的明确排除。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy HUR当前原话测试",
+      "source_location": "在线对话·阿拉伯语原话·classification=task·meta_id=1026",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "HUR",
+      "trigger": "اضبط وضع صوت الملاحة على مفصل",
+      "target_behavior": "当前误命中media:music:play 1026，未命中导航设置1023。",
+      "match": "exact",
+      "reason": "证明当前线上语义结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能1450",
+      "source_location": "设置地图偏好项·meta_id=1023·导航播报模式示例",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "导航播报模式设置为详细播报",
+      "target_behavior": "1023 navi:setting，value=exhaustive，target=map_broadcast_mode。",
+      "match": "exact",
+      "reason": "证明新增需求可复用的标准语义和槽位，不证明阿拉伯语当前已交付。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy马自达项目功能26011",
+      "source_location": "设置地图偏好项·继承未修改1450·meta_id=1023",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "马自达",
+      "trigger": "导航播报模式设置为详细播报",
+      "target_behavior": "项目已继承标准1023能力且支持阿拉伯语语言。",
+      "match": "exact",
+      "reason": "证明项目功能点可承接新增阿拉伯语语料，不覆盖当前正式语料范围。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Google Drive实时检索并读取J90A正式语料、导航功能清单及阿拉伯语测试报告",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83541"},
+        {"kind": "exact_trigger", "text": "اضبط وضع صوت الملاحة على مفصل"},
+        {"kind": "problem_concept", "text": "导航播报模式 详细播报 阿拉伯语"},
+        {"kind": "module_artifact", "text": "NAVI_12_01 1023 J90A EL 阿拉伯语"},
+        {"kind": "version_family", "text": "OTA节点_J90A-标准语料"},
+        {"kind": "version_family", "text": "长安马自达J90A-EL导航功能清单支持反馈"}
+      ],
+      "source_ids": [
+        "corpus-formal",
+        "nav-scope"
+      ],
+      "reason": "已在当前J90A阿拉伯语正式语料精确定位同Key、同原话和‘无此需求’标记，并用导航清单及Alchemy功能点交叉核验能力边界。",
+      "material": false,
+      "next_action": "",
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 5,
+        "candidates": [
+          {
+            "id": "1Qg46LqDTYHBUNJenWje_EudEjFwVC1xC",
+            "title": "J90AEL_LS节点_阿拉伯&英语测试报告.xlsx",
+            "url": "https://drive.google.com/file/d/1Qg46LqDTYHBUNJenWje_EudEjFwVC1xC/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已审计并精确命中原话，但属于测试结果，不作为正式目标。"
+          },
+          {
+            "id": "1x6KDYsYJa0kN3k3lJ90N6xrxdzwPMcLR",
+            "title": "Mazda_GU_NON_1023.xlsx",
+            "url": "https://drive.google.com/file/d/1x6KDYsYJa0kN3k3lJ90N6xrxdzwPMcLR/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已审计NAVI_12_01及1023相关功能映射，但属于功能映射底稿，不作为本票正式目标。"
+          },
+          {
+            "id": "1muA4N8BgBZxXAfc0KYM6Sm1MQfzZxYcR",
+            "title": "FunctionList_Official.xlsx",
+            "url": "https://drive.google.com/file/d/1muA4N8BgBZxXAfc0KYM6Sm1MQfzZxYcR/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已审计NAVI_12通用功能定义，但不包含本项目阿拉伯语交付范围。"
+          },
+          {
+            "id": "1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--",
+            "title": "OTA节点_J90A-标准语料_V0.5.xlsx",
+            "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view",
+            "references": [],
+            "version_family": "OTA节点_J90A-标准语料",
+            "disposition": "read",
+            "source_ids": ["corpus-formal"],
+            "reason": "当前适用正式语料；阿拉伯语Sheet精确命中NAVI_12_01并标记无此需求。"
+          },
+          {
+            "id": "1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k",
+            "title": "长安马自达J90A-EL导航功能清单支持反馈 V1.0_251104.xlsx",
+            "url": "https://drive.google.com/file/d/1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k/view",
+            "references": [],
+            "version_family": "长安马自达J90A-EL导航功能清单支持反馈",
+            "disposition": "read",
+            "source_ids": ["nav-scope"],
+            "reason": "已读J90A-EL导航语音和阿拉伯语范围，仅作项目背景。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "OTA节点_J90A-标准语料",
+            "status": "enumerated",
+            "receipt_ids": ["HUR-83541-formal-definition-drive-20260818-1"],
+            "selected_candidate_id": "1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--",
+            "selection_reason": "Drive当前命中的J90A标准语料，修改时间为2026-08-11且正文已读。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "长安马自达J90A-EL导航功能清单支持反馈",
+            "status": "enumerated",
+            "receipt_ids": ["HUR-83541-formal-definition-drive-20260818-1"],
+            "selected_candidate_id": "1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k",
+            "selection_reason": "Drive当前命中的J90A-EL导航支持反馈版本且正文已读。",
+            "newer_version_checked": true
+          }
+        ]
+      },
+      "search_receipt_ids": ["HUR-83541-formal-definition-drive-20260818-1"]
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy HUR在线对话实时测试",
+      "queries": [
+        {"kind": "exact_trigger", "text": "اضبط وضع صوت الملاحة على مفصل"}
+      ],
+      "source_ids": ["alchemy-current"],
+      "reason": "原话当前误命中音乐播放1026。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy标准功能点实时查询",
+      "queries": [
+        {"kind": "meta_or_function", "text": "1023"},
+        {"kind": "meta_or_function", "text": "设置地图偏好项"}
+      ],
+      "source_ids": ["alchemy-standard"],
+      "reason": "已读取标准功能1450及详细播报槽位。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-18",
+      "search_location": "Alchemy马自达项目功能点实时查询",
+      "queries": [
+        {"kind": "meta_or_function", "text": "1023"},
+        {"kind": "project_scope", "text": "马自达 J90A-EL 阿拉伯语"}
+      ],
+      "source_ids": ["alchemy-project"],
+      "reason": "已读取马自达项目26011，确认继承未修改1450且项目支持阿拉伯语。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-83541-formal-definition-drive-20260818-1",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-18T19:03:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83541"},
+        {"kind": "exact_trigger", "text": "اضبط وضع صوت الملاحة على مفصل"},
+        {"kind": "problem_concept", "text": "导航播报模式 详细播报 阿拉伯语"},
+        {"kind": "module_artifact", "text": "NAVI_12_01 1023 J90A EL 阿拉伯语"},
+        {"kind": "version_family", "text": "OTA节点_J90A-标准语料"},
+        {"kind": "version_family", "text": "长安马自达J90A-EL导航功能清单支持反馈"}
+      ],
+      "results": [
+        {"id": "1Qg46LqDTYHBUNJenWje_EudEjFwVC1xC", "title": "J90AEL_LS节点_阿拉伯&英语测试报告.xlsx", "url": "https://drive.google.com/file/d/1Qg46LqDTYHBUNJenWje_EudEjFwVC1xC/view", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1x6KDYsYJa0kN3k3lJ90N6xrxdzwPMcLR", "title": "Mazda_GU_NON_1023.xlsx", "url": "https://drive.google.com/file/d/1x6KDYsYJa0kN3k3lJ90N6xrxdzwPMcLR/view", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1muA4N8BgBZxXAfc0KYM6Sm1MQfzZxYcR", "title": "FunctionList_Official.xlsx", "url": "https://drive.google.com/file/d/1muA4N8BgBZxXAfc0KYM6Sm1MQfzZxYcR/view", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--", "title": "OTA节点_J90A-标准语料_V0.5.xlsx", "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k", "title": "长安马自达J90A-EL导航功能清单支持反馈 V1.0_251104.xlsx", "url": "https://drive.google.com/file/d/1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k/view", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}
+      ],
+      "limitations": "Drive未找到HUR-83541同名资料；结论由同车型、同语言、同Key的正式标准语料及Alchemy当前功能链建立。"
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "J90A-EL阿拉伯语用户说‘اضبط وضع صوت الملاحة على مفصل’",
+    "target_state": "当前已交付范围不包含NAVI_12_01；若要执行详细播报切换，必须先新增阿拉伯语语料需求。",
+    "intent_function_signal": "当前范围不要求下发；新增需求生效后应命中meta_id=1023，value=exhaustive，target=map_broadcast_mode。",
+    "ui_tts_vehicle_behavior": "当前版本不按已支持能力验收；新增需求交付后应切换到详细播报并按项目定义反馈。",
+    "boundary": "仅限J90A-EL阿拉伯语；不影响已存在的中文及其他语言NAVI_12能力，也不把标准/项目功能点存在外推为阿拉伯语已交付。",
+    "source_ids": ["corpus-formal"]
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "J90A-EL阿拉伯语语音需求配置负责人",
+    "text": "结论：定义为阿拉伯语语音新增需求，不按执行缺陷处理。J90A当前标准语料中NAVI_12_01明确标注‘无此需求’；底层1023导航播报模式能力虽已存在，但不能据此外推阿拉伯语已交付。\n依据：OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01；Alchemy标准1450/马自达项目26011；Alchemy HUR原话测试。\n处理：新增J90A-EL阿拉伯语‘切换导航播报模式’语料范围，完成1023映射及详细/简洁/静音三模式回归；J90A-EL阿拉伯语语音需求配置负责人处理。",
+    "implementation_source_ids": ["jira-actual", "alchemy-current"]
+  },
+  "run_context": {
+    "run_id": "bug-20260818T193036Z-hur-83541",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 375
+  },
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "اضبط وضع صوت الملاحة على مفصل",
+    "alchemy_tested": true,
+    "alchemy_result": "HUR当前classification=task，命中meta_id=1026 / media:music:play；中文目标表达命中meta_id=1023 / navi:setting，value=exhaustive，target=map_broadcast_mode。",
+    "meta_id": "1026,1023",
+    "standard_function": {
+      "status": "verified",
+      "name": "设置地图偏好项·标准功能1450·MetaId 1023",
+      "assessment": "支持导航播报模式详细播报，目标槽位为value=exhaustive、target=map_broadcast_mode。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "马自达项目26011·设置地图偏好项",
+      "assessment": "继承未修改标准功能1450；项目支持阿拉伯语，但当前正式阿拉伯语标准语料排除NAVI_12_01。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  }
+}

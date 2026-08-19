@@ -1,0 +1,57 @@
+{
+  "items": [
+    {
+      "key": "HUR-83541",
+      "summary": "阿语切换导航详细播报未执行",
+      "date": "2026-08-18",
+      "info": "现象：阿拉伯语‘اضبط وضع صوت الملاحة على مفصل’要求切换详细播报，车机未执行；Alchemy HUR当前误命中音乐播放1026。\n依据：OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01明确标注‘无此需求’；Alchemy标准1450和马自达项目26011确认底层1023导航播报模式能力存在。",
+      "info_links": [
+        {"label": "Alchemy HUR当前", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+        {"label": "OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01", "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"},
+        {"label": "Alchemy标准1450", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1450"},
+        {"label": "马自达项目26011", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"}
+      ],
+      "judgment": "结论：定义为阿拉伯语语音新增需求，不按执行缺陷处理。J90A当前标准语料中NAVI_12_01明确标注‘无此需求’；底层1023导航播报模式能力虽已存在，但不能据此外推阿拉伯语已交付。\n依据：OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01；Alchemy标准1450/马自达项目26011；Alchemy HUR原话测试。\n处理：新增J90A-EL阿拉伯语‘切换导航播报模式’语料范围，完成1023映射及详细/简洁/静音三模式回归；J90A-EL阿拉伯语语音需求配置负责人处理。",
+      "judgment_links": [
+        {"label": "OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01", "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"},
+        {"label": "Alchemy标准1450/马自达项目26011", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"},
+        {"label": "Alchemy HUR原话测试", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+      ],
+      "status": "转需求",
+      "note": "新增需求需覆盖详细、简洁、静音三模式并回归阿拉伯语1023映射。",
+      "links": [
+        {"label": "Jira原票·HUR-83541", "url": "http://jira.i-tetris.com/browse/HUR-83541"},
+        {"label": "Jira截图·NAVI_12_01", "url": "http://jira.i-tetris.com/browse/HUR-83541"},
+        {"label": "J90A标准语料·阿拉伯语408", "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"},
+        {"label": "J90A-EL导航功能清单", "url": "https://drive.google.com/file/d/1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k/view"},
+        {"label": "Alchemy当前·1026", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+        {"label": "Alchemy标准1450·1023", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1450"},
+        {"label": "马自达项目26011", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"}
+      ]
+    }
+  ],
+  "readback": {
+    "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit",
+    "sheets": [{
+      "properties": {"sheetId": 2135747181, "title": "bug"},
+      "data": [{
+        "startRow": 374,
+        "rowData": [{
+          "values": [
+            {"userEnteredValue":{"stringValue":"2026-08-18"},"effectiveValue":{"stringValue":"2026-08-18"},"formattedValue":"2026-08-18"},
+            {"userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83541\",\"HUR-83541｜阿语切换导航详细播报未执行\")"},"effectiveValue":{"stringValue":"HUR-83541｜阿语切换导航详细播报未执行"},"formattedValue":"HUR-83541｜阿语切换导航详细播报未执行","hyperlink":"http://jira.i-tetris.com/browse/HUR-83541"},
+            {"userEnteredValue":{"stringValue":"现象：阿拉伯语‘اضبط وضع صوت الملاحة على مفصل’要求切换详细播报，车机未执行；Alchemy HUR当前误命中音乐播放1026。\n依据：OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01明确标注‘无此需求’；Alchemy标准1450和马自达项目26011确认底层1023导航播报模式能力存在。"},"effectiveValue":{"stringValue":"现象：阿拉伯语‘اضبط وضع صوت الملاحة على مفصل’要求切换详细播报，车机未执行；Alchemy HUR当前误命中音乐播放1026。\n依据：OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01明确标注‘无此需求’；Alchemy标准1450和马自达项目26011确认底层1023导航播报模式能力存在。"},"formattedValue":"现象：阿拉伯语‘اضبط وضع صوت الملاحة على مفصل’要求切换详细播报，车机未执行；Alchemy HUR当前误命中音乐播放1026。\n依据：OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01明确标注‘无此需求’；Alchemy标准1450和马自达项目26011确认底层1023导航播报模式能力存在。","textFormatRuns":[{}, {"startIndex":53,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}}},{"startIndex":66},{"startIndex":82,"format":{"link":{"uri":"https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"}}},{"startIndex":127},{"startIndex":138,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/functional/points/detail/1450"}}},{"startIndex":151},{"startIndex":152,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"}}},{"startIndex":162}]},
+            {"userEnteredValue":{"stringValue":"结论：定义为阿拉伯语语音新增需求，不按执行缺陷处理。J90A当前标准语料中NAVI_12_01明确标注‘无此需求’；底层1023导航播报模式能力虽已存在，但不能据此外推阿拉伯语已交付。\n依据：OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01；Alchemy标准1450/马自达项目26011；Alchemy HUR原话测试。\n处理：新增J90A-EL阿拉伯语‘切换导航播报模式’语料范围，完成1023映射及详细/简洁/静音三模式回归；J90A-EL阿拉伯语语音需求配置负责人处理。"},"effectiveValue":{"stringValue":"结论：定义为阿拉伯语语音新增需求，不按执行缺陷处理。J90A当前标准语料中NAVI_12_01明确标注‘无此需求’；底层1023导航播报模式能力虽已存在，但不能据此外推阿拉伯语已交付。\n依据：OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01；Alchemy标准1450/马自达项目26011；Alchemy HUR原话测试。\n处理：新增J90A-EL阿拉伯语‘切换导航播报模式’语料范围，完成1023映射及详细/简洁/静音三模式回归；J90A-EL阿拉伯语语音需求配置负责人处理。"},"formattedValue":"结论：定义为阿拉伯语语音新增需求，不按执行缺陷处理。J90A当前标准语料中NAVI_12_01明确标注‘无此需求’；底层1023导航播报模式能力虽已存在，但不能据此外推阿拉伯语已交付。\n依据：OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01；Alchemy标准1450/马自达项目26011；Alchemy HUR原话测试。\n处理：新增J90A-EL阿拉伯语‘切换导航播报模式’语料范围，完成1023映射及详细/简洁/静音三模式回归；J90A-EL阿拉伯语语音需求配置负责人处理。","textFormatRuns":[{}, {"startIndex":96,"format":{"link":{"uri":"https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"}}},{"startIndex":142},{"startIndex":143,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"}}},{"startIndex":167},{"startIndex":168,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}}},{"startIndex":183}]},
+            {"userEnteredValue":{"boolValue":false},"effectiveValue":{"boolValue":false},"formattedValue":"FALSE","dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true,"showCustomUi":true}},
+            {},
+            {"userEnteredValue":{"stringValue":"转需求"},"effectiveValue":{"stringValue":"转需求"},"formattedValue":"转需求"},
+            {},
+            {"userEnteredValue":{"stringValue":"新增需求需覆盖详细、简洁、静音三模式并回归阿拉伯语1023映射。"},"effectiveValue":{"stringValue":"新增需求需覆盖详细、简洁、静音三模式并回归阿拉伯语1023映射。"},"formattedValue":"新增需求需覆盖详细、简洁、静音三模式并回归阿拉伯语1023映射。"},
+            {"userEnteredValue":{"stringValue":"Jira原票·HUR-83541\nJira截图·NAVI_12_01\nJ90A标准语料·阿拉伯语408\nJ90A-EL导航功能清单\nAlchemy当前·1026\nAlchemy标准1450·1023\n马自达项目26011"},"effectiveValue":{"stringValue":"Jira原票·HUR-83541\nJira截图·NAVI_12_01\nJ90A标准语料·阿拉伯语408\nJ90A-EL导航功能清单\nAlchemy当前·1026\nAlchemy标准1450·1023\n马自达项目26011"},"formattedValue":"Jira原票·HUR-83541\nJira截图·NAVI_12_01\nJ90A标准语料·阿拉伯语408\nJ90A-EL导航功能清单\nAlchemy当前·1026\nAlchemy标准1450·1023\n马自达项目26011","textFormatRuns":[{"startIndex":0,"format":{"link":{"uri":"http://jira.i-tetris.com/browse/HUR-83541"}}},{"startIndex":16},{"startIndex":17,"format":{"link":{"uri":"http://jira.i-tetris.com/browse/HUR-83541"}}},{"startIndex":34},{"startIndex":35,"format":{"link":{"uri":"https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"}}},{"startIndex":51},{"startIndex":52,"format":{"link":{"uri":"https://drive.google.com/file/d/1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k/view"}}},{"startIndex":65},{"startIndex":66,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}}},{"startIndex":80},{"startIndex":81,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/functional/points/detail/1450"}}},{"startIndex":99},{"startIndex":100,"format":{"link":{"uri":"https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"}}}]}
+          ]
+        }]
+      }]
+    }]
+  }
+}

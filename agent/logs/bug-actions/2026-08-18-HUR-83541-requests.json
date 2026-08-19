@@ -1,0 +1,365 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 373,
+          "endRowIndex": 374,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 374,
+          "endRowIndex": 375,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 374,
+          "endRowIndex": 375,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 374,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-18"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83541\",\"HUR-83541｜阿语切换导航详细播报未执行\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：阿拉伯语‘اضبط وضع صوت الملاحة على مفصل’要求切换详细播报，车机未执行；Alchemy HUR当前误命中音乐播放1026。\n依据：OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01明确标注‘无此需求’；Alchemy标准1450和马自达项目26011确认底层1023导航播报模式能力存在。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 53,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 66
+                  },
+                  {
+                    "startIndex": 82,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 127
+                  },
+                  {
+                    "startIndex": 138,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1450"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 151
+                  },
+                  {
+                    "startIndex": 152,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 162
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为阿拉伯语语音新增需求，不按执行缺陷处理。J90A当前标准语料中NAVI_12_01明确标注‘无此需求’；底层1023导航播报模式能力虽已存在，但不能据此外推阿拉伯语已交付。\n依据：OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01；Alchemy标准1450/马自达项目26011；Alchemy HUR原话测试。\n处理：新增J90A-EL阿拉伯语‘切换导航播报模式’语料范围，完成1023映射及详细/简洁/静音三模式回归；J90A-EL阿拉伯语语音需求配置负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 96,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 142
+                  },
+                  {
+                    "startIndex": 143,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 167
+                  },
+                  {
+                    "startIndex": 168,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 183
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "转需求"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "新增需求需覆盖详细、简洁、静音三模式并回归阿拉伯语1023映射。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83541\nJira截图·NAVI_12_01\nJ90A标准语料·阿拉伯语408\nJ90A-EL导航功能清单\nAlchemy当前·1026\nAlchemy标准1450·1023\n马自达项目26011"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83541"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83541"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 34
+                  },
+                  {
+                    "startIndex": 35,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 51
+                  },
+                  {
+                    "startIndex": 52,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 65
+                  },
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  },
+                  {
+                    "startIndex": 81,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1450"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 99
+                  },
+                  {
+                    "startIndex": 100,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 374,
+          "endIndex": 375
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 375,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

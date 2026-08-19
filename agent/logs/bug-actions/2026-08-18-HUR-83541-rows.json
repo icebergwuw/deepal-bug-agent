@@ -1,0 +1,31 @@
+[
+  {
+    "key": "HUR-83541",
+    "summary": "阿语切换导航详细播报未执行",
+    "date": "2026-08-18",
+    "info": "现象：阿拉伯语‘اضبط وضع صوت الملاحة على مفصل’要求切换详细播报，车机未执行；Alchemy HUR当前误命中音乐播放1026。\n依据：OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01明确标注‘无此需求’；Alchemy标准1450和马自达项目26011确认底层1023导航播报模式能力存在。",
+    "info_links": [
+      {"label": "Alchemy HUR当前", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "OTA节点_J90A-标准语料_V0.5阿拉伯语Sheet序号408/NAVI_12_01", "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"},
+      {"label": "Alchemy标准1450", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1450"},
+      {"label": "马自达项目26011", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"}
+    ],
+    "judgment": "结论：定义为阿拉伯语语音新增需求，不按执行缺陷处理。J90A当前标准语料中NAVI_12_01明确标注‘无此需求’；底层1023导航播报模式能力虽已存在，但不能据此外推阿拉伯语已交付。\n依据：OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01；Alchemy标准1450/马自达项目26011；Alchemy HUR原话测试。\n处理：新增J90A-EL阿拉伯语‘切换导航播报模式’语料范围，完成1023映射及详细/简洁/静音三模式回归；J90A-EL阿拉伯语语音需求配置负责人处理。",
+    "judgment_links": [
+      {"label": "OTA节点_J90A-标准语料_V0.5·阿拉伯语Sheet序号408/NAVI_12_01", "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"},
+      {"label": "Alchemy标准1450/马自达项目26011", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"},
+      {"label": "Alchemy HUR原话测试", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="}
+    ],
+    "status": "转需求",
+    "note": "新增需求需覆盖详细、简洁、静音三模式并回归阿拉伯语1023映射。",
+    "links": [
+      {"label": "Jira原票·HUR-83541", "url": "http://jira.i-tetris.com/browse/HUR-83541"},
+      {"label": "Jira截图·NAVI_12_01", "url": "http://jira.i-tetris.com/browse/HUR-83541"},
+      {"label": "J90A标准语料·阿拉伯语408", "url": "https://drive.google.com/file/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/view"},
+      {"label": "J90A-EL导航功能清单", "url": "https://drive.google.com/file/d/1qMucwB6AZ8GWcs1cMAu8dvpa8udPAn6k/view"},
+      {"label": "Alchemy当前·1026", "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},
+      {"label": "Alchemy标准1450·1023", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1450"},
+      {"label": "马自达项目26011", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26011"}
+    ]
+  }
+]
