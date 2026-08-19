@@ -1,8 +1,8 @@
 # 吴优 Bug Index
 
 - source_sheet: `bug`
-- last_synced: `2026-08-18`
-- row_count: `372`
+- last_synced: `2026-08-19`
+- row_count: `374`
 - purpose: 本地查重和线上行号定位；线上负责人页是主数据源。
 
 负责人路由和重复规则统一见 `agent/bug-owners/README.md`；本文件只保存当前页索引。
@@ -382,3 +382,4 @@
 | PC-39375 | 373 | 几点退潮误入音乐或天气并行 | 可转语音 |
 | HUR-83521 | 374 | 露营与Relax Mode退出反馈不一致 | 可关闭 |
 | HUR-83541 | 375 | 阿语切换导航详细播报未执行 | 转需求 |
+| ADS-48799 | 376 | POI推荐后说介绍一下第一个落入Deepal AI | 可转研发 |

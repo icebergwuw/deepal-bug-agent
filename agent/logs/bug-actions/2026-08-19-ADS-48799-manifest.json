@@ -1,0 +1,108 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-48799",
+  "comment_causality": "第一轮已建立附近景点POI推荐列表，第二轮“介绍一下第一个”应承接当前列表；现实现丢失列表上下文并落入Deepal AI。朱宏博关于开放问答的评论与正式POI定义、可见配置及市场版本行为冲突。",
+  "customer_issue": {"identified": false},
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {"key": "ADS-48683", "relationship": "Jira直接关联且共用日志", "read": true, "outcome": "已读完整票面与评论；原分析同样指出未承接景点推荐上下文，归责DS。"},
+      {"key": "ST-65889", "relationship": "Jira评论引用的归类票", "read": true, "outcome": "已读完整票面；仅定义AIS快速车控/外部无法标记的归类方式，不定义本票POI二轮目标。"}
+    ]
+  },
+  "evidence_profiles": ["voice", "map_navigation", "visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "由voice、map_navigation和visible_interaction专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "涉及连续两轮原话、Alchemy落域、MetaId及项目功能点。"},
+    "map_navigation": {"applicable": true, "reason": "涉及POI推荐列表、序号选择和指定POI介绍。"},
+    "visible_interaction": {"applicable": true, "reason": "第二轮明确指向当前可见POI列表中的第一个节点。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "朱宏博称第二轮属于开放问答并应进入Chat；但POI推荐PRD v0.8第2.5.2节明确支持按当前语音“详细介绍一下第x个”，可见配置也把“第1个|第2个”与“介绍/详细介绍”绑定到POI列表点击介绍详情。罗理一重开并指出市场版本保持POI推荐，与两份正式资料一致，因此以同项目正式定义和配置为准，认定当前落入通用闲聊是实现缺陷。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "第一轮：推荐几个附近好玩儿的景点；第二轮：介绍一下第一个",
+    "alchemy_tested": true,
+    "alchemy_result": "C673DA连续两轮实时测试均classification=chat，operations仅为meta_id 1031、type llm:chat:llm_chat；第二轮无POI序号槽位和列表上下文。",
+    "meta_id": "1031",
+    "standard_function": {"status": "verified", "name": "标准ID 1419·大模型闲聊", "assessment": "已读取标准功能点；用于教育、生活、百科等开放问答，不是POI列表序号介绍。"},
+    "project_function": {"status": "verified", "name": "深蓝项目功能ID 26072·大模型闲聊", "assessment": "已读取项目点；状态已锁定，继承未修改(1419)，车型包含C673_7和C673DA。"},
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {"source_id": "jira-actual", "source": "ADS-48799 Jira原票", "source_location": "当前字段、完整描述、全部评论及req_id d327f75a-25a4-4386-b457-2ea03a57e378", "source_type": "jira", "role": "implementation_actual", "project_model": "C673-7 大激光", "trigger": "POI列表后说“介绍一下第一个”", "target_behavior": "实车10/10落入Deepal AI；状态为重新打开。", "match": "exact", "reason": "证明当前实车现象、环境、复现概率和评论冲突，不单独定义产品目标。"},
+    {"source_id": "alchemy-current", "source": "Alchemy C673DA在线连续对话", "source_location": "2026-08-19实时两轮测试", "source_type": "alchemy_current", "role": "implementation_actual", "project_model": "C673DA/C673-7同项目车型范围", "trigger": "推荐几个附近好玩儿的景点 → 介绍一下第一个", "target_behavior": "两轮均落入1031大模型闲聊，第二轮未携带POI列表上下文或序号槽位。", "match": "exact", "reason": "证明当前云端落域结果和上下文缺失。"},
+    {"source_id": "alchemy-standard", "source": "Alchemy标准功能点", "source_location": "标准ID 1419；MetaId 1031；大模型闲聊", "source_type": "alchemy_standard", "role": "context_only", "project_model": "通用标准", "trigger": "介绍一下第一个", "target_behavior": "当前命中开放问答闲聊功能点。", "match": "exact", "reason": "说明当前错误落域功能，不替代POI产品目标。"},
+    {"source_id": "alchemy-project", "source": "Alchemy深蓝项目功能点", "source_location": "项目功能ID 26072；继承未修改(1419)；车型C673_7/C673DA", "source_type": "alchemy_project", "role": "context_only", "project_model": "深蓝项目", "trigger": "介绍一下第一个", "target_behavior": "深蓝项目当前继承大模型闲聊1031。", "match": "exact", "reason": "证明项目继承、状态和车型范围。"},
+    {"source_id": "poi-prd", "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "source_location": "2.5.2 针对某POI详细介绍", "source_type": "prd", "role": "formal_target", "project_model": "深蓝8295/C673-7", "trigger": "POI推荐列表后说“详细介绍一下第x个”", "target_behavior": "承接当前列表，对用户指定POI发起详细介绍。", "match": "exact", "reason": "同平台POI推荐主PRD直接定义本票二轮行为。"},
+    {"source_id": "poi-interaction", "source": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "source_location": "2.5.2 当前语音交互示例：详细介绍一下第x个/详细介绍一下xxx", "source_type": "interaction", "role": "formal_target", "project_model": "深蓝8295/C673-7", "trigger": "当前POI列表可见时说“介绍一下第一个”", "target_behavior": "语音指定列表序号后进入该POI详情介绍。", "match": "exact", "reason": "正文中的交互样例与本票原话同义且序号范围精确匹配。"},
+    {"source_id": "visible-config", "source": "深蓝8295可见新表—非3DV1.0", "source_location": "语音卡片VUI第2行·POI推荐/POI列表", "source_type": "formal_config", "role": "formal_target", "project_model": "深蓝8295", "trigger": "subject=第1个|第2个；operation=介绍/详细介绍/详细介绍一下", "target_behavior": "执行列表点击并介绍指定序号POI详情。", "match": "exact", "reason": "生效可见配置明确绑定列表序号、介绍操作和assist_name largemodel_card_poi_sheet。"},
+    {"source_id": "ads-48683-log", "source": "ADS-48683关联票日志", "source_location": "共享日志及原分析", "source_type": "implementation_log", "role": "implementation_actual", "project_model": "深蓝C673-7", "trigger": "POI推荐后的二轮指代", "target_behavior": "日志分析为未承接景点推荐上下文，归责DS。", "match": "exact", "reason": "补充当前实现链路的同根因定位。"}
+  ],
+  "required_evidence_checks": [
+    {"check_id": "alchemy_current", "status": "read", "searched_at": "2026-08-19", "search_location": "Alchemy C673DA在线连续对话", "queries": [{"kind": "exact_trigger", "text": "推荐几个附近好玩儿的景点 → 介绍一下第一个"}], "source_ids": ["alchemy-current"], "reason": "已保存两轮当前原话输出。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_standard", "status": "read", "searched_at": "2026-08-19", "search_location": "Alchemy标准功能点详情", "queries": [{"kind": "meta_or_function", "text": "MetaId 1031 / 标准ID 1419"}], "source_ids": ["alchemy-standard"], "reason": "已读取标准功能点名称、分类和说明。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_project", "status": "read", "searched_at": "2026-08-19", "search_location": "Alchemy深蓝项目功能点详情", "queries": [{"kind": "meta_or_function", "text": "MetaId 1031 / 项目功能ID 26072"}, {"kind": "project_scope", "text": "深蓝项目/C673_7/C673DA"}], "source_ids": ["alchemy-project"], "reason": "已读取项目点状态、继承来源和车型范围。", "material": false, "next_action": ""},
+    {
+      "check_id": "formal_definition_search", "status": "read", "searched_at": "2026-08-19", "search_location": "Google Drive精确检索、正文读取及版本族枚举", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "POI推荐后介绍一下第一个"}, {"kind": "module_artifact", "text": "长安深蓝8295 POI推荐产品需求文档"}], "source_ids": ["poi-prd"], "reason": "已读取原生v0.8正文并枚举标题族。", "material": false, "next_action": "", "search_receipt_ids": ["ADS-48799-formal-definition-20260819"],
+      "candidate_audit": {"completed": true, "results_count": 2, "candidates": [
+        {"id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit", "references": [], "version_family": "长安深蓝8295 POI推荐PRD", "disposition": "read", "source_ids": ["poi-prd"]},
+        {"id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx", "url": "https://drive.google.com/file/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/view", "references": [], "version_family": "长安深蓝8295 POI推荐PRD", "disposition": "excluded", "reason": "同版本DOCX副本；原生文档更新时间更新且正文已完整读取。"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [{"family": "长安深蓝8295 POI推荐PRD", "status": "enumerated", "receipt_ids": ["ADS-48799-formal-definition-20260819"], "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "selection_reason": "选择更新时间更新且正文已完整读取的原生v0.8文档。", "newer_version_checked": true}]}
+    },
+    {
+      "check_id": "main_prd_search", "status": "read", "searched_at": "2026-08-19", "search_location": "Google Drive精确检索、正文读取及版本族枚举", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "POI推荐后介绍一下第一个"}, {"kind": "module_artifact", "text": "长安深蓝8295 POI推荐主PRD"}], "source_ids": ["poi-prd"], "reason": "主PRD第2.5.2节直接命中。", "material": false, "next_action": "", "search_receipt_ids": ["ADS-48799-main-prd-20260819"],
+      "candidate_audit": {"completed": true, "results_count": 2, "candidates": [
+        {"id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit", "references": [], "version_family": "长安深蓝8295 POI推荐PRD", "disposition": "read", "source_ids": ["poi-prd"]},
+        {"id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx", "url": "https://drive.google.com/file/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/view", "references": [], "version_family": "长安深蓝8295 POI推荐PRD", "disposition": "excluded", "reason": "同版本DOCX副本。"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [{"family": "长安深蓝8295 POI推荐PRD", "status": "enumerated", "receipt_ids": ["ADS-48799-main-prd-20260819"], "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "selection_reason": "选择更新时间更新且正文已完整读取的原生v0.8文档。", "newer_version_checked": true}]}
+    },
+    {
+      "check_id": "special_definition_search", "status": "read", "searched_at": "2026-08-19", "search_location": "Google Drive专项配置检索并读取目标行", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "POI列表第一个介绍详情"}, {"kind": "module_artifact", "text": "深蓝8295可见新表 POI推荐"}], "source_ids": ["visible-config"], "reason": "专项可见配置精确命中POI列表序号介绍。", "material": false, "next_action": "", "search_receipt_ids": ["ADS-48799-special-definition-20260819"],
+      "candidate_audit": {"completed": true, "results_count": 1, "candidates": [{"id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q", "title": "深蓝8295可见新表—非3DV1.0", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908", "references": [], "version_family": "深蓝8295可见新表—非3D", "disposition": "read", "source_ids": ["visible-config"]}]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": []}
+    },
+    {
+      "check_id": "formal_config_search", "status": "read", "searched_at": "2026-08-19", "search_location": "Google Drive正式可见配置检索并读取语音卡片VUI第2行", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "第1个 介绍 详细介绍 POI列表"}, {"kind": "module_artifact", "text": "深蓝8295可见新表—非3DV1.0"}], "source_ids": ["visible-config"], "reason": "生效配置明确支持第x个/第x条执行列表点击介绍详情。", "material": false, "next_action": "", "search_receipt_ids": ["ADS-48799-formal-config-20260819"],
+      "candidate_audit": {"completed": true, "results_count": 1, "candidates": [{"id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q", "title": "深蓝8295可见新表—非3DV1.0", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908", "references": [], "version_family": "深蓝8295可见新表—非3D", "disposition": "read", "source_ids": ["visible-config"]}]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": []}
+    },
+    {
+      "check_id": "interaction_or_ue_search", "status": "read", "searched_at": "2026-08-19", "search_location": "Google Drive交互定义检索、正文读取及版本族枚举", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "当前语音指定POI详细介绍第x个"}, {"kind": "module_artifact", "text": "长安深蓝8295 POI推荐交互"}], "source_ids": ["poi-interaction"], "reason": "第2.5.2节给出本票同义语音交互样例。", "material": false, "next_action": "", "search_receipt_ids": ["ADS-48799-interaction-20260819"],
+      "candidate_audit": {"completed": true, "results_count": 2, "candidates": [
+        {"id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit", "references": [], "version_family": "长安深蓝8295 POI推荐PRD", "disposition": "read", "source_ids": ["poi-interaction"]},
+        {"id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx", "url": "https://drive.google.com/file/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/view", "references": [], "version_family": "长安深蓝8295 POI推荐PRD", "disposition": "excluded", "reason": "同版本DOCX副本。"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [{"family": "长安深蓝8295 POI推荐PRD", "status": "enumerated", "receipt_ids": ["ADS-48799-interaction-20260819"], "selected_candidate_id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "selection_reason": "选择更新时间更新且正文已完整读取的原生v0.8文档。", "newer_version_checked": true}]}
+    }
+  ],
+  "search_receipts": [
+    {"receipt_id": "ADS-48799-formal-definition-20260819", "provider": "google_drive", "check_id": "formal_definition_search", "searched_at": "2026-08-19T15:20:00+08:00", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "POI推荐后介绍一下第一个"}, {"kind": "module_artifact", "text": "长安深蓝8295 POI推荐产品需求文档"}, {"kind": "version_family", "text": "长安深蓝8295 POI推荐PRD"}], "results": [{"id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit", "mime_type": "application/vnd.google-apps.document"}, {"id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx", "url": "https://drive.google.com/file/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/view", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}]},
+    {"receipt_id": "ADS-48799-main-prd-20260819", "provider": "google_drive", "check_id": "main_prd_search", "searched_at": "2026-08-19T15:20:00+08:00", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "POI推荐后介绍一下第一个"}, {"kind": "module_artifact", "text": "长安深蓝8295 POI推荐主PRD"}, {"kind": "version_family", "text": "长安深蓝8295 POI推荐PRD"}], "results": [{"id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit", "mime_type": "application/vnd.google-apps.document"}, {"id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx", "url": "https://drive.google.com/file/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/view", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}]},
+    {"receipt_id": "ADS-48799-special-definition-20260819", "provider": "google_drive", "check_id": "special_definition_search", "searched_at": "2026-08-19T15:25:00+08:00", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "POI列表第一个介绍详情"}, {"kind": "module_artifact", "text": "深蓝8295可见新表 POI推荐"}, {"kind": "version_family", "text": "深蓝8295可见新表—非3D"}], "results": [{"id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q", "title": "深蓝8295可见新表—非3DV1.0", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908", "mime_type": "application/vnd.google-apps.spreadsheet"}]},
+    {"receipt_id": "ADS-48799-formal-config-20260819", "provider": "google_drive", "check_id": "formal_config_search", "searched_at": "2026-08-19T15:25:00+08:00", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "第1个 介绍 详细介绍 POI列表"}, {"kind": "module_artifact", "text": "深蓝8295可见新表—非3DV1.0"}, {"kind": "version_family", "text": "深蓝8295可见新表—非3D"}], "results": [{"id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q", "title": "深蓝8295可见新表—非3DV1.0", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908", "mime_type": "application/vnd.google-apps.spreadsheet"}]},
+    {"receipt_id": "ADS-48799-interaction-20260819", "provider": "google_drive", "check_id": "interaction_or_ue_search", "searched_at": "2026-08-19T15:20:00+08:00", "queries": [{"kind": "jira_key", "text": "ADS-48799"}, {"kind": "problem_concept", "text": "当前语音指定POI详细介绍第x个"}, {"kind": "module_artifact", "text": "长安深蓝8295 POI推荐交互"}, {"kind": "version_family", "text": "长安深蓝8295 POI推荐PRD"}], "results": [{"id": "1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit", "mime_type": "application/vnd.google-apps.document"}, {"id": "168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0", "title": "长安深蓝_8295平台_大模型产品需求文档_POI推荐_v0.8.docx", "url": "https://drive.google.com/file/d/168VQZ2A9-vK2csA40c5D0LHHUen-Q_i0/view", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}]}
+  ],
+  "expected_behavior": {
+    "trigger": "当前POI推荐列表展示后，用户说“介绍一下第一个”或同义的“详细介绍一下第x个”。",
+    "target_state": "保持第一轮建立的POI推荐任务上下文，并定位当前列表中对应序号的POI。",
+    "intent_function_signal": "识别列表序号和介绍操作，进入POI指定项详情介绍链路，不落入1031通用闲聊。",
+    "ui_tts_vehicle_behavior": "调用并展示/播报指定POI的详细介绍，列表点击效果与语音序号选择一致。",
+    "boundary": "当前页面只有一个生效POI推荐列表；序号需在列表范围内；覆盖“第x个/第x条”和“介绍/详细介绍/详细介绍一下”同义表达。",
+    "visible_node": "当前POI推荐列表及其第一个POI项",
+    "current_task_context": "第一轮“推荐几个附近好玩儿的景点”已建立的POI推荐上下文",
+    "priority_relation": "当前可见POI列表和已建立的POI任务上下文优先于脱离页面的通用闲聊语义。",
+    "source_ids": ["poi-prd", "poi-interaction", "visible-config"]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "AI Cockpit - Voice/执行（POI推荐二轮上下文链路）",
+    "text": "结论：当前POI推荐列表中说“介绍一下第一个”，应承接当前列表并介绍第一个POI；现实现丢失二轮上下文并落入Deepal AI，属于POI推荐二轮落域缺陷，可转研发。\n依据：POI推荐PRD v0.8·2.5.2；深蓝可见配置·语音卡片VUI第2行；Jira原票·req_id d327f75a。\n处理：修复POI推荐列表“介绍第x个”的上下文承接和落域，按当前列表序号调用指定POI介绍并完成同类序号回归；AI Cockpit - Voice/执行负责处理。",
+    "implementation_source_ids": ["jira-actual", "alchemy-current", "ads-48683-log"]
+  },
+  "run_context": {"run_id": "bug-20260819T160000Z-ads-48799", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 376}
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260819T160000Z-ads-48799",
+  "status": "complete",
+  "started_at": "2026-08-19T16:00:00+08:00",
+  "query_summary": "ADS-48799 Jira、关联票、POI正式定义、可见配置和Alchemy连续两轮均已实时读取；吴优bug页查重0行，计划新增第376行。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-ADS-48799.md",
+  "items": [
+    {
+      "jira_key": "ADS-48799",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 376,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-ADS-48799-manifest.json",
+      "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-ADS-48799-append-readback.json",
+      "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-19-ADS-48799-validation.json",
+      "readback_sha256": "5f18e56bd8d4cae31a3930ab241d2437005edde59961f080c6d8b9263105ddd6"
+    }
+  ],
+  "completed_at": "2026-08-19T15:50:19+08:00"
+}

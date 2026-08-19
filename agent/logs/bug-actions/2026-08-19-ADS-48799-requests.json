@@ -1,0 +1,348 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 375,
+          "endRowIndex": 376,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 375,
+          "endRowIndex": 376,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 375,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-19"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48799\",\"ADS-48799｜POI推荐后说介绍一下第一个落入Deepal AI\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：第一轮“推荐几个附近好玩儿的景点”已展示POI列表，第二轮“介绍一下第一个”10/10落入Deepal AI。\n依据：POI推荐PRD v0.8·2.5.2支持按当前列表“详细介绍一下第x个”；深蓝可见配置·语音卡片VUI第2行把第1个/第2个与介绍操作绑定到POI详情；Jira原票·req_id d327f75a记录当前实车链路；Alchemy C673DA两轮均命中1031大模型闲聊。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 62,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 81
+                  },
+                  {
+                    "startIndex": 100,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 117
+                  },
+                  {
+                    "startIndex": 139,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48799"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 161
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：当前POI推荐列表中说“介绍一下第一个”，应承接当前列表并介绍第一个POI；现实现丢失二轮上下文并落入Deepal AI，属于POI推荐二轮落域缺陷，可转研发。\n依据：POI推荐PRD v0.8·2.5.2；深蓝可见配置·语音卡片VUI第2行；Jira原票·req_id d327f75a。\n处理：修复POI推荐列表“介绍第x个”的上下文承接和落域，按当前列表序号调用指定POI介绍并完成同类序号回归；AI Cockpit - Voice/执行负责处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 87,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 106
+                  },
+                  {
+                    "startIndex": 107,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 124
+                  },
+                  {
+                    "startIndex": 125,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48799"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 147
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "回归第x个/第x条及介绍/详细介绍同义表达，确认连续二轮上下文不再落入1031通用闲聊。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-48799\n关联票·ADS-48683\n归类票·ST-65889\nPOI推荐PRD v0.8\nPOI可见配置\nAlchemy标准·1419\nAlchemy深蓝项目·26072"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48799"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-48683"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ST-65889"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 43
+                  },
+                  {
+                    "startIndex": 44,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 57
+                  },
+                  {
+                    "startIndex": 58,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 65
+                  },
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1419"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  },
+                  {
+                    "startIndex": 81,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26072"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 375,
+          "endIndex": 376
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 376,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

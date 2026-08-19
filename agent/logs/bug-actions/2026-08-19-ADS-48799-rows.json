@@ -1,0 +1,30 @@
+[
+  {
+    "key": "ADS-48799",
+    "summary": "POI推荐后说介绍一下第一个落入Deepal AI",
+    "date": "2026-08-19",
+    "info": "现象：第一轮“推荐几个附近好玩儿的景点”已展示POI列表，第二轮“介绍一下第一个”10/10落入Deepal AI。\n依据：POI推荐PRD v0.8·2.5.2支持按当前列表“详细介绍一下第x个”；深蓝可见配置·语音卡片VUI第2行把第1个/第2个与介绍操作绑定到POI详情；Jira原票·req_id d327f75a记录当前实车链路；Alchemy C673DA两轮均命中1031大模型闲聊。",
+    "info_links": [
+      {"label": "POI推荐PRD v0.8·2.5.2", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"},
+      {"label": "深蓝可见配置·语音卡片VUI第2行", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"},
+      {"label": "Jira原票·req_id d327f75a", "url": "http://jira.i-tetris.com/browse/ADS-48799"}
+    ],
+    "judgment": "结论：当前POI推荐列表中说“介绍一下第一个”，应承接当前列表并介绍第一个POI；现实现丢失二轮上下文并落入Deepal AI，属于POI推荐二轮落域缺陷，可转研发。\n依据：POI推荐PRD v0.8·2.5.2；深蓝可见配置·语音卡片VUI第2行；Jira原票·req_id d327f75a。\n处理：修复POI推荐列表“介绍第x个”的上下文承接和落域，按当前列表序号调用指定POI介绍并完成同类序号回归；AI Cockpit - Voice/执行负责处理。",
+    "judgment_links": [
+      {"label": "POI推荐PRD v0.8·2.5.2", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"},
+      {"label": "深蓝可见配置·语音卡片VUI第2行", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"},
+      {"label": "Jira原票·req_id d327f75a", "url": "http://jira.i-tetris.com/browse/ADS-48799"}
+    ],
+    "status": "可转研发",
+    "note": "回归第x个/第x条及介绍/详细介绍同义表达，确认连续二轮上下文不再落入1031通用闲聊。",
+    "links": [
+      {"label": "Jira原票·ADS-48799", "url": "http://jira.i-tetris.com/browse/ADS-48799"},
+      {"label": "关联票·ADS-48683", "url": "http://jira.i-tetris.com/browse/ADS-48683"},
+      {"label": "归类票·ST-65889", "url": "http://jira.i-tetris.com/browse/ST-65889"},
+      {"label": "POI推荐PRD v0.8", "url": "https://docs.google.com/document/d/1JajU_yrr2lTthOThyHuqexPP4PO5MOGmVNVMHNsxjmc/edit"},
+      {"label": "POI可见配置", "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit?gid=526650908#gid=526650908"},
+      {"label": "Alchemy标准·1419", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1419"},
+      {"label": "Alchemy深蓝项目·26072", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26072"}
+    ]
+  }
+]
