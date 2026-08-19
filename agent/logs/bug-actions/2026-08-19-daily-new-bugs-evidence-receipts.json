@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260819T010804Z-79f21185-006b-4040-9231-ac361400a29b",
+  "captured_at": "2026-08-19T09:23:34+08:00",
+  "jira_query": {
+    "total": 80,
+    "unique_keys": 80,
+    "sha256": "76b104f544984ba8190a67f08412bfbdd47a2d8c027777423e8539ac507dcaf0"
+  },
+  "online_sheet_dedup": {
+    "source": "Google Sheets gviz live read, sheet=bug, column=B",
+    "rows": 375,
+    "key_rows": 374,
+    "unique_keys": 373,
+    "duplicates": {"SLV-44272": [155, 285]},
+    "new_keys": ["HUR-83302", "HUR-83304", "HUR-83347", "HUR-83350", "HUR-83461", "SD-6428"]
+  },
+  "jira_items": {
+    "HUR-83302": {"issue_sha256": "9b61cee9f9fe2c7f0ec897d8fa4486d353e6ef1d444ba0058b3fd13f25900227", "comments_sha256": "03fd479eea8e695817bf44c72228115a1445ee503d8c071c8d93ff5b565e10f6", "comments_total": 2, "comments_read": 2, "attachments": 3, "linked_issues": []},
+    "HUR-83304": {"issue_sha256": "391fbef1318db438dbf46e1aae738403a502a48e2244340fd9d3907a0f2c1da2", "comments_sha256": "924f687e5a685f133b08c05e44b82804d457bf64fbaa983f970f8f42b5247655", "comments_total": 2, "comments_read": 2, "attachments": 3, "linked_issues": []},
+    "HUR-83347": {"issue_sha256": "32c5249ab50ea3a096be1b03608271d8eb2c22e5f5d4f528f798e9003d8c2d37", "comments_sha256": "67c159b043b6de5aaf073d259f3efdbd45de07f6763c8aee9bca5e37fe9882d6", "comments_total": 1, "comments_read": 1, "attachments": 2, "linked_issues": []},
+    "HUR-83350": {"issue_sha256": "3996fd777c8c0bcbd56e571ad4404d5aebf19fd7adad8765012cf4b0d2f0f74e", "comments_sha256": "66b0e34537d4bd07cc88a52427db7bf0fb751cdd3bd2ee42fc253632ba8f8416", "comments_total": 2, "comments_read": 2, "attachments": 3, "linked_issues": []},
+    "HUR-83461": {"issue_sha256": "8d9298afd78c23a32f3a04c86cf97f1d204624fb7a145af36994f0a43d56f7c3", "comments_sha256": "89d3d55e5a2f50f3340b44f941a16feffde58c981500a29ff762ef5e61772f05", "comments_total": 2, "comments_read": 2, "attachments": 3, "comment_references": ["SJ-49690"], "reference_access": "403/unavailable"},
+    "SD-6428": {"issue_sha256": "b6c366066897beaca45a09d396531c8b0bf28be89d5b3f1adce4c8de809603eb", "comments_sha256": "70c2176a630b8294b72d5444576336ab083bcdb22efa8c3fcfb18ad65fd7b3a4", "comments_total": 1, "comments_read": 1, "attachments": 4, "linked_issues": []}
+  },
+  "media_sha256": {
+    "HUR-83302-screenshot": "8b2bae2c4909ed456b2c1b4bde5afa882080fd083c56058a1b211682a9d6f6b2",
+    "HUR-83302-video": "8cb16586bd18dcb3e89419b93cffc2ae4d654c42f580e4cde964814d802e2fea",
+    "HUR-83304-screenshot-1": "1bfde617b255af4c8d8d0fbcf0686af3b8301cb28ab17b1dec574c8cc5a223e1",
+    "HUR-83304-screenshot-2": "2d79dafeac5766c1bf245c95cd07e53e72fd7ef3605db631e9e491578e949afd",
+    "HUR-83347-screenshot": "caf49797f445a241bdf08449cb231420fc1925e532c3f12139fbae704bc63984",
+    "HUR-83350-video": "8b4e288e91fedf160abb819fbcb523322f92ba2a28fce243ed9ed39a70dd216f",
+    "HUR-83350-screenshot": "1d3d18caafd214f0bfbbef48accd0bbc5580e5cbb45a26060110e618a0e6a876",
+    "HUR-83461-video": "e7750afc9a322ed6037e5a0a8bcb0f10ecf4975ae8a1c10ef0ded814c05e944e",
+    "SD-6428-screenshot": "3c410ceb15bb064742899c68174895bab53edaf3a8df554a28f45f0a2226fda5",
+    "SD-6428-video": "c20bb7f75348f45e1a4e158fef624afa20628fbf3cb4edd34eb2f2bd6f10f5c0"
+  },
+  "drive_searches": [
+    {"query": "天气详情 J90A", "results_count": 20, "reviewed_strong_candidates": ["J90A_海外LanguageList内部版V1.0_260806", "J90A_海外LanguageList_V1.1_260807"], "unreviewed_or_title_excluded_count": 18, "completed": false},
+    {"query": "途径点 终点 气泡 J90A", "results_count": 10, "reviewed_strong_candidates": ["马自达J90A_地图导航需求文档_V0.7"], "version_family": ["V0.3", "V0.6", "V0.7"], "unreviewed_or_title_excluded_count": 7, "completed": false},
+    {"query": "Restore Default J90A", "results_count": 20, "reviewed_strong_candidates": ["J90A_海外LanguageList内部版V1.0_260806·All Key第1627行"], "exact_match": "settings_zero_reset / 恢复默认 / Restore Default", "unreviewed_or_title_excluded_count": 19, "completed": false},
+    {"query": "起点与终点不能相同 J90A", "results_count": 20, "reviewed_strong_candidates": ["J90A项目文言", "J90A_海外LanguageList内部版V1.0_260806"], "exact_text_matches_in_all_key": 0, "unreviewed_or_title_excluded_count": 18, "completed": false},
+    {"query": "虚拟号码 蓝牙电话 J90A", "results_count": 16, "reviewed_strong_candidates": ["J90A_功能定义_蓝牙电话功能定义V0.5.docx"], "unreviewed_or_title_excluded_count": 15, "completed": false},
+    {"query": "充电大约多久 C673", "results_count": 12, "reviewed_strong_candidates": ["Megatronix_地图_产品需求文档深蓝8155&8295_v20250613", "Megatronix_地图_产品需求文档深蓝8155&8295_C673-6_v20250610·作废"], "unreviewed_or_title_excluded_count": 10, "completed": false},
+    {"query": "J90A 地图 功能定义", "results_count": 20, "reviewed_strong_candidates": ["J90A-G&EU PI功能定义清单梳理", "马自达J90A_地图导航需求文档_V0.7"], "unreviewed_or_title_excluded_count": 18, "completed": false},
+    {"query": "C673 地图 功能定义", "results_count": 20, "reviewed_strong_candidates": ["C673_功能定义_地图定位导航功能定义V1.2.pdf", "Megatronix_地图导航产品需求文档_C385&C673_V6.1"], "version_family": ["V0.2", "V0.4", "V0.5", "V0.6", "V0.7", "V0.8", "V0.9", "V1.0", "V1.2", "V6.1"], "unreviewed_or_title_excluded_count": 10, "completed": false}
+  ],
+  "formal_source_locations": [
+    "马自达J90A_地图导航需求文档_V0.7·目录：3.3第23页、3.4沿途天气第24页、3.5第25页",
+    "J90A_海外LanguageList内部版V1.0_260806·All Key第1627行：settings_zero_reset / 恢复默认 / Restore Default",
+    "SD-6428 Jira附件翻译检查表·高德地图第667行：Charge_detail_charge_time_desc / 充电约 / Charging approx. / fail"
+  ]
+}

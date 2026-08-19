@@ -1,0 +1,8 @@
+{
+  "phase": "prewrite",
+  "ok": false,
+  "errors": [
+    "有写入计划的 run 必须包含 items"
+  ],
+  "reason": "6票均未完成schema v5证据闭环，不能生成合法写入项；未绕过门禁。"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260819T010804Z-79f21185-006b-4040-9231-ac361400a29b",
+  "automation_id": "bug",
+  "status": "planned",
+  "started_at": "2026-08-19T09:08:04+08:00",
+  "query_summary": "Jira实时命中80个唯一Key；线上bug页374条登记、373个唯一Key；逐Key对比后6个新增，但证据与Sheets门禁阻塞，未写入",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-19-daily-new-bugs.md",
+  "evidence_receipts": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-19-daily-new-bugs-evidence-receipts.json",
+  "prewrite_validation": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-19-daily-new-bugs-run-validation.json",
+  "items": [],
+  "new_jira_keys": ["HUR-83302", "HUR-83304", "HUR-83347", "HUR-83350", "HUR-83461", "SD-6428"],
+  "jira_count": 80,
+  "sheet_registered_nonempty": 374,
+  "sheet_unique_keys": 373,
+  "sheet_duplicates": {"SLV-44272": [155, 285]},
+  "blockers": [
+    "J90A地图/蓝牙电话与C673地图强候选正文未完成读取，search_completion未闭环",
+    "SJ-49690无查看权限，不能核验16位虚拟号码正式边界",
+    "MasterGo回执过期，HUR-83347与SD-6428的生效UE边界不可验证",
+    "无Google Sheets结构化写入与原始A:J元数据回读接口"
+  ],
+  "completion": {
+    "jira_query": "complete",
+    "jira_current_read": "complete_for_6_unregistered_keys",
+    "sheet_dedup_read": "complete_online_gviz",
+    "drive_search_receipts": "partial_real_results; strong_candidates_not_fully_read",
+    "evidence_gate": "not_run_manifests_not_generated",
+    "prewrite_validation": "failed_no_items",
+    "sheet_write": "not_run",
+    "readback_validation": "not_run",
+    "final_validation": "not_run"
+  }
+}
