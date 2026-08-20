@@ -1,0 +1,23 @@
+{
+  "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+  "sheet": "bug",
+  "range": "A378:J378",
+  "row": 378,
+  "values": {
+    "A": "2026-08-20",
+    "B": "ADS-48705｜车外query难识别且不支持指令静默",
+    "B_formula": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-48705\",\"ADS-48705｜车外query难识别且不支持指令静默\")",
+    "E": false,
+    "G": "可转语音",
+    "I": "回归支持指令的识别/执行成功率，以及1101等车外不支持意图的固定拒绝TTS；禁止直接扩充执行白名单。",
+    "J_links": ["ADS-48705", "ADS-48703", "车外语音PRD V1.8", "车外语音UE V0.8", "Alchemy标准·1122", "Alchemy深蓝项目·24341"]
+  },
+  "checks": {
+    "duplicate_count": 0,
+    "B_formula": true,
+    "E_boolean_validation": true,
+    "rich_text_links": true,
+    "filter_end_row": 378,
+    "visual_review": "Google原生页面回读；A:J内容、自动换行和链接结构正常"
+  }
+}

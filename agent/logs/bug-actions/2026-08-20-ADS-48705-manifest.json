@@ -1,0 +1,79 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-48705",
+  "comment_causality": "原票9/10出现车外唤醒后query难识别或无响应；同批日志同时存在空ASR、短语误识别、噪声/回声自识别，指向车外麦克风AEC/VAD/波束形成。成功识别样本中，1101已由NLU正确产出，但被OutsideVosConfig.allowedIds改写为-6后静默；正式车外车控清单不含行车自动落锁，但清单外车内能力必须返回固定拒绝TTS。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": [{"key": "ADS-48703", "relationship": "Jira直接关联且同车型同批次车外声学问题", "read": true, "outcome": "已完整读取；该票确认同批次存在声纹、AEC和VAD问题，后续模型更新并关闭，只作为本票声学实现与复测背景。"}]},
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "由voice专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "涉及车外唤醒、VAD/ASR、MetaId、项目功能点和车外语音白名单。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图或导航。"},
+    "visible_interaction": {"applicable": false, "reason": "核心是车外音频识别和TTS反馈，不依赖可见页面状态。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira中一条链路定位AEC/VAD/波束形成，另一条链路定位1101被车外allowedIds过滤，两者对应不同失败阶段并不互斥。正式PRD/UE明确车外车控仅覆盖车窗、后视镜、背门和灯光，因此不将行车自动落锁加入可执行白名单；但PRD V1.8又明确车内支持、车外不支持的意图必须固定回复，故识别稳定性和静默反馈均需修复。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "关闭行车自动落锁",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-08-20 BIGSUR实时测试classification=task，operations命中meta_id 1101、vehicle:ctrl:door_lock:auto_lock_driving、canonical close。",
+    "meta_id": "1101",
+    "standard_function": {"status": "verified", "name": "标准功能ID 1122·关闭行车自动落锁", "assessment": "已锁定；证明车内标准语义存在，不定义车外支持范围。"},
+    "project_function": {"status": "verified", "name": "深蓝项目功能ID 24341·关闭行车自动落锁", "assessment": "已锁定，继承未修改(1122)；证明深蓝项目车内能力存在。"},
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {"source_id": "jira-actual", "source": "ADS-48705 Jira原票", "source_location": "完整字段、描述、附件及全部评论；req_id e443c402-1d6c-44e1-90a3-2ab49c9ca4e4", "source_type": "jira", "role": "implementation_actual", "project_model": "C385-5 / hqx.4.5.5_20260715 / SWC.3.30", "trigger": "车外唤醒后说关闭行车自动落锁", "target_behavior": "9/10难识别或无响应；成功样本1101被allowedIds过滤为-6，未下发且无TTS。", "match": "exact", "reason": "证明当前实车复现、声学日志和执行过滤链路。"},
+    {"source_id": "related-actual", "source": "ADS-48703关联票", "source_location": "同批次完整票面及评论", "source_type": "jira", "role": "context_only", "project_model": "C385-5 / 同版本", "trigger": "车外唤醒后空噪声、回声和非唤醒人声", "target_behavior": "同批次确认声纹、AEC和VAD问题并要求新模型复测。", "match": "exact", "reason": "补充声学实现背景，不替代本票目标。"},
+    {"source_id": "alchemy-current", "source": "Alchemy BIGSUR在线对话", "source_location": "2026-08-20实时原话测试", "source_type": "alchemy_current", "role": "implementation_actual", "project_model": "BIGSUR/深蓝", "trigger": "关闭行车自动落锁", "target_behavior": "当前精确命中1101和close操作。", "match": "exact", "reason": "证明当前语义和MetaId正常。"},
+    {"source_id": "alchemy-standard", "source": "Alchemy标准功能点", "source_location": "标准功能ID 1122；MetaId 1101；关闭行车自动落锁", "source_type": "alchemy_standard", "role": "context_only", "project_model": "通用标准", "trigger": "关闭行车自动落锁", "target_behavior": "标准车内车控能力存在且已锁定。", "match": "exact", "reason": "说明标准能力，不外推车外范围。"},
+    {"source_id": "alchemy-project", "source": "Alchemy深蓝项目功能点", "source_location": "项目功能ID 24341；继承未修改(1122)；MetaId 1101", "source_type": "alchemy_project", "role": "context_only", "project_model": "深蓝项目", "trigger": "关闭行车自动落锁", "target_behavior": "深蓝项目车内能力存在且已锁定。", "match": "exact", "reason": "证明项目继承状态，不外推车外范围。"},
+    {"source_id": "carvoice-prd-v18", "source": "深蓝车外语音交互产品需求文档V1.8", "source_location": "三/3·功能列表；五/1·车外不支持功能固定回复", "source_type": "prd", "role": "formal_target", "project_model": "深蓝8295 / C385-5", "trigger": "车外唤醒后发出车控指令", "target_behavior": "车外车控仅覆盖车窗、后视镜、背门和灯光；车内支持但不在车外白名单的意图必须随机返回固定TTS，禁止静默。", "match": "exact", "reason": "同平台同车型最新PRD直接定义能力范围与兜底反馈。"},
+    {"source_id": "carvoice-ue-v08", "source": "长安深蓝8295平台交互设计文档_车外语音_V0.8", "source_location": "车外语音设置页与注意事项", "source_type": "ue", "role": "formal_target", "project_model": "深蓝8295 / C385-5", "trigger": "开启并使用车外语音", "target_behavior": "页面明确车外语音支持车窗、后背门、灯光和后视镜，并提示环境和动力/空调噪声会影响体验。", "match": "exact", "reason": "最新非废弃UE与PRD能力边界一致，并补充声学使用条件。"}
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search", "status": "read", "searched_at": "2026-08-20", "search_location": "Google Drive精确检索、正文读取及标题族枚举", "queries": [{"kind": "jira_key", "text": "ADS-48705"}, {"kind": "problem_concept", "text": "车外关闭行车自动落锁无响应"}, {"kind": "module_artifact", "text": "深蓝车外语音PRD与UE"}, {"kind": "exact_document_name", "text": "深蓝车外语音交互产品需求文档V1.8.pdf"}, {"kind": "exact_document_name", "text": "长安深蓝8295平台交互设计文档_车外语音_V0.8 (1).pdf"}, {"kind": "version_family", "text": "深蓝车外语音交互PRD"}, {"kind": "version_family", "text": "长安深蓝8295车外语音UE"}], "source_ids": ["carvoice-prd-v18", "carvoice-ue-v08"], "reason": "PRD和最新非废弃UE正文均已完整读取。", "material": false, "next_action": "", "search_receipt_ids": ["ADS-48705-formal-definition-20260820"],
+      "candidate_audit": {"completed": true, "results_count": 4, "candidates": [
+        {"id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI", "title": "深蓝车外语音交互产品需求文档V1.8.pdf", "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view", "references": [], "version_family": "深蓝车外语音交互PRD", "disposition": "read", "source_ids": ["carvoice-prd-v18"]},
+        {"id": "1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f", "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8 (1).pdf", "url": "https://drive.google.com/file/d/1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f/view", "references": [], "version_family": "长安深蓝8295车外语音UE", "disposition": "read", "source_ids": ["carvoice-ue-v08"]},
+        {"id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL", "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf", "url": "https://drive.google.com/file/d/1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL/view", "references": [], "version_family": "长安深蓝8295车外语音UE", "disposition": "excluded", "reason": "同版本较早副本，修改时间早于选中文档。"},
+        {"id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI", "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8-废弃.pdf", "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view", "references": [], "version_family": "长安深蓝8295车外语音UE", "disposition": "excluded", "reason": "标题明确标记废弃。"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [
+        {"family": "深蓝车外语音交互PRD", "status": "enumerated", "receipt_ids": ["ADS-48705-formal-definition-20260820"], "selected_candidate_id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI", "selection_reason": "选择已完整读取且当前已知最新的V1.8正式PRD。", "newer_version_checked": true},
+        {"family": "长安深蓝8295车外语音UE", "status": "enumerated", "receipt_ids": ["ADS-48705-formal-definition-20260820"], "selected_candidate_id": "1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f", "selection_reason": "选择2026-08-18更新的非废弃V0.8副本，排除较早副本和明确废弃文件。", "newer_version_checked": true}
+      ]}
+    },
+    {"check_id": "alchemy_current", "status": "read", "searched_at": "2026-08-20", "search_location": "Alchemy BIGSUR在线对话", "queries": [{"kind": "exact_trigger", "text": "关闭行车自动落锁"}], "source_ids": ["alchemy-current"], "reason": "已保存当前原话输出。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_standard", "status": "read", "searched_at": "2026-08-20", "search_location": "Alchemy标准功能点详情", "queries": [{"kind": "meta_or_function", "text": "MetaId 1101 / 标准功能ID 1122"}], "source_ids": ["alchemy-standard"], "reason": "已读取标准功能点名称、分类和状态。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_project", "status": "read", "searched_at": "2026-08-20", "search_location": "Alchemy深蓝项目功能点详情", "queries": [{"kind": "meta_or_function", "text": "MetaId 1101 / 项目功能ID 24341"}, {"kind": "project_scope", "text": "深蓝项目/BIGSUR/C385-5"}], "source_ids": ["alchemy-project"], "reason": "已读取项目点状态和继承来源。", "material": false, "next_action": ""}
+  ],
+  "search_receipts": [{
+    "receipt_id": "ADS-48705-formal-definition-20260820", "provider": "google_drive", "check_id": "formal_definition_search", "searched_at": "2026-08-20T17:18:00+08:00", "queries": [{"kind": "jira_key", "text": "ADS-48705"}, {"kind": "problem_concept", "text": "车外关闭行车自动落锁无响应"}, {"kind": "module_artifact", "text": "深蓝车外语音PRD与UE"}, {"kind": "exact_document_name", "text": "深蓝车外语音交互产品需求文档V1.8.pdf"}, {"kind": "exact_document_name", "text": "长安深蓝8295平台交互设计文档_车外语音_V0.8 (1).pdf"}, {"kind": "version_family", "text": "深蓝车外语音交互PRD"}, {"kind": "version_family", "text": "长安深蓝8295车外语音UE"}],
+    "results": [
+      {"id": "1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI", "title": "深蓝车外语音交互产品需求文档V1.8.pdf", "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view", "mime_type": "application/pdf"},
+      {"id": "1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f", "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8 (1).pdf", "url": "https://drive.google.com/file/d/1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f/view", "mime_type": "application/pdf"},
+      {"id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL", "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf", "url": "https://drive.google.com/file/d/1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL/view", "mime_type": "application/pdf"},
+      {"id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI", "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8-废弃.pdf", "url": "https://drive.google.com/file/d/1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI/view", "mime_type": "application/pdf"}
+    ]
+  }],
+  "expected_behavior": {
+    "trigger": "车外语音唤醒后，用户在车外说支持或不支持的车控query，包括‘关闭行车自动落锁’。",
+    "target_state": "外麦声学前端稳定采集用户语音；支持清单内意图进入执行链路，清单外车内能力进入明确拒绝链路。",
+    "intent_function_signal": "准确识别时保留原始1101语义；车外能力过滤只决定执行或拒绝，不得把结果清空后静默。",
+    "ui_tts_vehicle_behavior": "车窗、后视镜、背门和灯光等支持项按条件执行并反馈；行车自动落锁不执行，随机播报PRD规定的固定车内使用提示。",
+    "boundary": "车外车控正式范围仅含车窗、后视镜、背门和灯光；行车自动落锁不加入可执行白名单。环境噪声可影响体验，但9/10无响应仍需声学链路治理。",
+    "source_ids": ["carvoice-prd-v18", "carvoice-ue-v08"]
+  },
+  "decision": {
+    "status": "可转语音",
+    "owner": "AI Cockpit - Voice/识别（车外麦克风声学前端）与 AI Cockpit - Voice/执行（车外拒绝反馈配置）",
+    "text": "结论：定义为车外语音识别稳定性与拒绝反馈双缺陷。9/10难识别需治理外麦AEC/VAD/波束形成；‘关闭行车自动落锁’不在车外车控清单，不加入执行白名单，但1101被改写为-6后静默不符合固定拒绝TTS定义，可转语音。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira原票及关联票ADS-48703；Alchemy当前1101。\n处理：修复车外raw/aec/ref音频、后右通道VAD阈值、AEC和波束形成，并为1101等车外不支持意图补齐固定拒绝TTS后回归；Voice/识别负责声学链路，Voice/执行负责拒绝反馈配置。",
+    "implementation_source_ids": ["jira-actual", "alchemy-current"]
+  },
+  "run_context": {"run_id": "bug-20260820T174500Z-ads-48705", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 378}
+}

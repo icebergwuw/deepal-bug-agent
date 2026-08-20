@@ -1,0 +1,29 @@
+[
+  {
+    "key": "ADS-48705",
+    "summary": "车外query难识别且不支持指令静默",
+    "date": "2026-08-20",
+    "info": "现象：车外唤醒后query难识别或无响应，复现9/10；成功识别‘关闭行车自动落锁’时，NLU正确返回1101，但被车外allowedIds过滤为-6后未下发且无TTS。\n依据：Jira原票及关联票ADS-48703记录空ASR、短语误识别、噪声/回声自识别和AEC/VAD问题；车外语音PRD V1.8明确支持车窗、后视镜、背门、灯光，清单外车内能力必须固定回复；Alchemy BIGSUR当前仍精确命中1101。",
+    "info_links": [
+      {"label": "Jira原票", "url": "http://jira.i-tetris.com/browse/ADS-48705"},
+      {"label": "关联票ADS-48703", "url": "http://jira.i-tetris.com/browse/ADS-48703"},
+      {"label": "车外语音PRD V1.8", "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view"}
+    ],
+    "judgment": "结论：定义为车外语音识别稳定性与拒绝反馈双缺陷。9/10难识别需治理外麦AEC/VAD/波束形成；‘关闭行车自动落锁’不在车外车控清单，不加入执行白名单，但1101被改写为-6后静默不符合固定拒绝TTS定义，可转语音。\n依据：车外语音PRD V1.8·三/3及五/1；车外语音UE V0.8；Jira原票及关联票ADS-48703；Alchemy当前1101。\n处理：修复车外raw/aec/ref音频、后右通道VAD阈值、AEC和波束形成，并为1101等车外不支持意图补齐固定拒绝TTS后回归；Voice/识别负责声学链路，Voice/执行负责拒绝反馈配置。",
+    "judgment_links": [
+      {"label": "车外语音PRD V1.8·三/3及五/1", "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view"},
+      {"label": "车外语音UE V0.8", "url": "https://drive.google.com/file/d/1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f/view"},
+      {"label": "Jira原票及关联票ADS-48703", "url": "http://jira.i-tetris.com/browse/ADS-48705"}
+    ],
+    "status": "可转语音",
+    "note": "回归支持指令的识别/执行成功率，以及1101等车外不支持意图的固定拒绝TTS；禁止直接扩充执行白名单。",
+    "links": [
+      {"label": "Jira原票·ADS-48705", "url": "http://jira.i-tetris.com/browse/ADS-48705"},
+      {"label": "关联票·ADS-48703", "url": "http://jira.i-tetris.com/browse/ADS-48703"},
+      {"label": "车外语音PRD V1.8", "url": "https://drive.google.com/file/d/1gOJnunMmzYiv3RO3Lfs5IdtnnQ3K0bKI/view"},
+      {"label": "车外语音UE V0.8", "url": "https://drive.google.com/file/d/1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f/view"},
+      {"label": "Alchemy标准·1122", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1122"},
+      {"label": "Alchemy深蓝项目·24341", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24341"}
+    ]
+  }
+]
