@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260820T180000+0800-HUR-82516-recheck",
+  "status": "complete",
+  "started_at": "2026-08-20T18:00:00+08:00",
+  "query_summary": "HUR-82516单票普通二次复查；Jira完整读取；Drive J90A功能清单/LanguageList/C385 BCall候选；线上bug行275；无Jira外部动作",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82516-recheck.md",
+  "completed_at": "2026-08-20T19:52:39+08:00",
+  "items": [{
+    "jira_key": "HUR-82516",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 275,
+    "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82516-recheck-manifest.json",
+    "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82516-readback.json",
+    "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82516-validation.json",
+    "readback_sha256": "5ca6caa9972d68fb91744d181082cebf1895542d10f0003fd8ca2720e44fd7d3"
+  }]
+}

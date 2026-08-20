@@ -1,0 +1,397 @@
+{
+  "key": "HUR-82516",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 275,
+  "rowIndex": 274,
+  "previewFingerprint": "6360eaad29f46da2f3cfa0fb756cac28d3a4daa7a67a897d24834ee64c62cf22",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "现象与实现：已完整读取HUR-82516描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]",
+      "after": "[HUR-82516 Jira·描述/评论/附件]：待办/P2，J90A-All，Android-BCall&ECall；描述记录BCall拨号中下电闭锁后播报‘对不起你不能呼叫此号码’，解锁上车后自动挂断，复现11/10；两条评论仅询问需求，无根因或修复结论。附件为android.zip、video(71).mp4。[J90A LanguageList V1.1·20_TTS检索]中‘不能呼叫此号码’及英文对应句均为0条。[J90A项目功能清单V3.1·BCall检索]未给出本场景状态机。[C385 BCall V0.4·跨项目候选]未证明被J90A继承。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82516",
+        "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：BCall闭锁后播报错误并自动挂断的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为非用户NLU原话，Alchemy在线对话不适用；Jira记录错误TTS和自动挂断；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。",
+      "after": "结论：定义为J90A BCall闭锁场景规则待复核。当前实车在BCall拨号中下电闭锁后播报“对不起你不能呼叫此号码”，解锁上车后自动挂断；现有Jira仅给出测试预期，Drive未读到J90A同场景的生效状态机和TTS条款，C385 BCall资料也未证明被J90A继承。\n依据：[HUR-82516 Jira·描述/评论/附件]；[J90A功能清单·BCall检索]；[C385 BCall V0.4·跨项目候选]。\n处理：补齐J90A BCall在拨号中下电、闭锁及解锁恢复后的通话保持/挂断状态机，并定义失败场景中英文TTS触发条件，再据此判断研发修复或接受现状；J90A BCall产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82516",
+        "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "待复核",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。",
+      "after": "唯一缺口：J90A未定义拨号中下电闭锁、解锁恢复后的通话状态和中英文TTS条件。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·描述/完整评论\nAlchemy当前结果/功能点\n工作说明·正式资料入口",
+      "after": "HUR-82516 Jira·描述/评论/附件\nJ90A LanguageList V1.1·20_TTS检索\nJ90A项目功能清单V3.1·BCall检索\nC385 BCall V0.4·跨项目候选",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82516",
+        "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "[HUR-82516 Jira·描述/评论/附件]：待办/P2，J90A-All，Android-BCall&ECall；描述记录BCall拨号中下电闭锁后播报‘对不起你不能呼叫此号码’，解锁上车后自动挂断，复现11/10；两条评论仅询问需求，无根因或修复结论。附件为android.zip、video(71).mp4。[J90A LanguageList V1.1·20_TTS检索]中‘不能呼叫此号码’及英文对应句均为0条。[J90A项目功能清单V3.1·BCall检索]未给出本场景状态机。[C385 BCall V0.4·跨项目候选]未证明被J90A继承。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82516",
+        "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为J90A BCall闭锁场景规则待复核。当前实车在BCall拨号中下电闭锁后播报“对不起你不能呼叫此号码”，解锁上车后自动挂断；现有Jira仅给出测试预期，Drive未读到J90A同场景的生效状态机和TTS条款，C385 BCall资料也未证明被J90A继承。\n依据：[HUR-82516 Jira·描述/评论/附件]；[J90A功能清单·BCall检索]；[C385 BCall V0.4·跨项目候选]。\n处理：补齐J90A BCall在拨号中下电、闭锁及解锁恢复后的通话保持/挂断状态机，并定义失败场景中英文TTS触发条件，再据此判断研发修复或接受现状；J90A BCall产品负责人处理。",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82516",
+        "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+      ]
+    },
+    "G": {
+      "visible": "待复核",
+      "links": []
+    },
+    "I": {
+      "visible": "唯一缺口：J90A未定义拨号中下电闭锁、解锁恢复后的通话状态和中英文TTS条件。",
+      "links": []
+    },
+    "J": {
+      "visible": "HUR-82516 Jira·描述/评论/附件\nJ90A LanguageList V1.1·20_TTS检索\nJ90A项目功能清单V3.1·BCall检索\nC385 BCall V0.4·跨项目候选",
+      "links": [
+        "http://jira.i-tetris.com/browse/HUR-82516",
+        "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk",
+        "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 274,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "[HUR-82516 Jira·描述/评论/附件]：待办/P2，J90A-All，Android-BCall&ECall；描述记录BCall拨号中下电闭锁后播报‘对不起你不能呼叫此号码’，解锁上车后自动挂断，复现11/10；两条评论仅询问需求，无根因或修复结论。附件为android.zip、video(71).mp4。[J90A LanguageList V1.1·20_TTS检索]中‘不能呼叫此号码’及英文对应句均为0条。[J90A项目功能清单V3.1·BCall检索]未给出本场景状态机。[C385 BCall V0.4·跨项目候选]未证明被J90A继承。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 1,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82516"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 24
+                  },
+                  {
+                    "startIndex": 161,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 192
+                  },
+                  {
+                    "startIndex": 215,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 237
+                  },
+                  {
+                    "startIndex": 249,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 270
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 274,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为J90A BCall闭锁场景规则待复核。当前实车在BCall拨号中下电闭锁后播报“对不起你不能呼叫此号码”，解锁上车后自动挂断；现有Jira仅给出测试预期，Drive未读到J90A同场景的生效状态机和TTS条款，C385 BCall资料也未证明被J90A继承。\n依据：[HUR-82516 Jira·描述/评论/附件]；[J90A功能清单·BCall检索]；[C385 BCall V0.4·跨项目候选]。\n处理：补齐J90A BCall在拨号中下电、闭锁及解锁恢复后的通话保持/挂断状态机，并定义失败场景中英文TTS触发条件，再据此判断研发修复或接受现状；J90A BCall产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 141,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82516"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 164
+                  },
+                  {
+                    "startIndex": 167,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 183
+                  },
+                  {
+                    "startIndex": 186,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 207
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 274,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 274,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "唯一缺口：J90A未定义拨号中下电闭锁、解锁恢复后的通话状态和中英文TTS条件。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 274,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "HUR-82516 Jira·描述/评论/附件\nJ90A LanguageList V1.1·20_TTS检索\nJ90A项目功能清单V3.1·BCall检索\nC385 BCall V0.4·跨项目候选"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-82516"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 23
+                  },
+                  {
+                    "startIndex": 24,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 55
+                  },
+                  {
+                    "startIndex": 56,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 78
+                  },
+                  {
+                    "startIndex": 79,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

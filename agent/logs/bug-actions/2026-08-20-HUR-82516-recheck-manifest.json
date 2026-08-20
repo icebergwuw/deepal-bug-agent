@@ -1,0 +1,155 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-82516",
+  "comment_causality": "Jira当前字段、描述、两条评论和附件证明：J90A在BCall拨号中下电闭锁后播报‘对不起你不能呼叫此号码’，解锁上车后自动挂断；研发评论仅询问是否存在需求，没有根因、修复或生效规则输入。Jira测试预期仅作为待核对主张，不替代正式产品目标。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["general"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "本票核心是BCall系统状态机在下电、闭锁和解锁恢复后的通话保持/挂断边界，以及系统触发TTS条件。"},
+    "voice": {"applicable": false, "reason": "该TTS由BCall状态机触发，不是用户ASR/NLU原话、语义映射或Alchemy功能点问题。"},
+    "map_navigation": {"applicable": false, "reason": "本票不涉及地图、POI、路线规划或导航状态。"},
+    "visible_interaction": {"applicable": false, "reason": "本票没有需要核验层级、控件或页面状态的可见交互目标；关键边界是后台通话状态机。"}
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "HUR-82516 Jira原票",
+      "source_type": "jira",
+      "source_location": "当前字段、描述、两条评论、android.zip、video(71).mp4",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "J90A-All / Android-BCall&ECall",
+      "trigger": "BCall拨号中下电并闭锁，随后解锁上车",
+      "target_behavior": "当前实现播报‘对不起你不能呼叫此号码’，解锁恢复后自动挂断；测试主张应继续呼叫且上车后恢复通话界面。",
+      "reason": "当前Jira直接证明实现现象和测试主张，但不单独定义产品目标。"
+    },
+    {
+      "source_id": "j90a_function_list",
+      "source": "J90A EU&EU PI座舱功能清单V3.1 20251211",
+      "source_type": "formal_config",
+      "source_location": "J90A座舱功能清单；BCall/道路救援检索",
+      "role": "context_only",
+      "match": "partial",
+      "project_model": "J90A EU&EU PI",
+      "trigger": "BCall/道路救援功能检索",
+      "target_behavior": "可确认J90A功能清单范围，但未给出拨号中下电、闭锁和解锁恢复后的通话状态机或TTS触发条件。",
+      "reason": "同项目最新功能清单只提供功能范围，缺少本票场景的行为条款。"
+    },
+    {
+      "source_id": "j90a_language_v11",
+      "source": "J90A_海外LanguageList_V1.1_260807",
+      "source_type": "formal_config",
+      "source_location": "20_TTS!A1:AQ890；精确检索‘不能呼叫此号码’和‘you cannot call this number’",
+      "role": "context_only",
+      "match": "partial",
+      "project_model": "J90A海外",
+      "trigger": "错误播报文案核对",
+      "target_behavior": "两个精确查询均0条；表内有其他‘对不起’通用文案，但没有本票错误播报及其BCall触发条件。",
+      "reason": "同项目最新版LanguageList证明未找到对应文案，但不能单独定义通话状态机。"
+    },
+    {
+      "source_id": "c385_bcall_v04",
+      "source": "C385_功能定义_道路救援Bcall功能定义V0.4",
+      "source_type": "prd",
+      "source_location": "BCall道路救援功能定义V0.4；Drive候选",
+      "role": "context_only",
+      "match": "mismatch",
+      "project_model": "C385",
+      "trigger": "道路救援BCall状态与通话交互",
+      "target_behavior": "提供C385 BCall功能定义候选，但没有证据证明被J90A继承，不能作为J90A正式目标。",
+      "reason": "跨项目资料，继承链未成立。"
+    },
+    {
+      "source_id": "j90a_bcall_rule_gap",
+      "source": "J90A BCall闭锁状态机与TTS正式定义缺口",
+      "source_type": "formal_config",
+      "source_location": "Drive检索闭环：J90A功能清单、LanguageList、C385 BCall候选",
+      "role": "context_only",
+      "match": "gap",
+      "material": true,
+      "project_model": "J90A-All",
+      "trigger": "BCall拨号中下电、闭锁、解锁恢复",
+      "target_behavior": "未找到同项目生效条款定义继续呼叫或挂断、恢复界面，以及失败TTS的中英文触发条件。",
+      "reason": "该规则会直接改变测试预期是否成立及研发责任，缺失时不能确定性定责。",
+      "next_action": "由J90A BCall产品负责人补齐通话状态机和失败TTS触发条件，再据此决定研发修复或接受现状。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-20",
+      "search_location": "Google Drive；J90A BCall、功能清单、LanguageList及跨项目BCall定义检索",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-82516"},
+        {"kind": "problem_concept", "text": "J90A BCall 下电 闭锁 挂断 TTS"},
+        {"kind": "module_artifact", "text": "J90A BCall 产品需求 功能清单 LanguageList"}
+      ],
+      "source_ids": ["j90a_function_list", "j90a_language_v11", "c385_bcall_v04"],
+      "search_receipt_ids": ["r-formal-family"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {"id": "1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK", "title": "J90A EU&EU PI座舱功能清单V3.1 20251211.xlsx", "url": "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk", "disposition": "read", "source_ids": ["j90a_function_list"], "version_family": "J90A EU&EU PI座舱功能清单", "references": []},
+          {"id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0", "title": "J90A_海外LanguageList_V1.1_260807", "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk", "disposition": "read", "source_ids": ["j90a_language_v11"], "version_family": "J90A_海外LanguageList", "references": []},
+          {"id": "1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV", "title": "C385_功能定义_道路救援Bcall功能定义V0.4.pdf", "url": "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk", "disposition": "read", "source_ids": ["c385_bcall_v04"], "version_family": "C385_功能定义_道路救援Bcall功能定义", "references": []},
+          {"id": "12A-Po2rMXtaKRR4UO2GM9frQ9ZOUNeQG", "title": "C385_功能定义_道路救援Bcall功能定义V0.3（作废）.pdf", "url": "https://drive.google.com/file/d/12A-Po2rMXtaKRR4UO2GM9frQ9ZOUNeQG/view?usp=drivesdk", "disposition": "excluded", "reason": "旧版且明确作废，未选用。", "version_family": "C385_功能定义_道路救援Bcall功能定义", "references": []}
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {"family": "J90A EU&EU PI座舱功能清单", "status": "enumerated", "receipt_ids": ["r-formal-family"], "selected_candidate_id": "1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK", "selection_reason": "V3.1是检索到的最新J90A EU&EU PI座舱功能清单，已读取功能范围。", "newer_version_checked": true},
+          {"family": "J90A_海外LanguageList", "status": "enumerated", "receipt_ids": ["r-formal-family"], "selected_candidate_id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0", "selection_reason": "V1.1为检索到的最新版本，已在20_TTS页执行精确文案检索。", "newer_version_checked": true},
+          {"family": "C385_功能定义_道路救援Bcall功能定义", "status": "enumerated", "receipt_ids": ["r-formal-family"], "selected_candidate_id": "1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV", "selection_reason": "V0.4为最新有效候选，V0.3明确作废；仅作跨项目参考。", "newer_version_checked": true}
+        ]
+      }
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "r-formal-family",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-20",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-82516"},
+        {"kind": "problem_concept", "text": "J90A BCall 下电 闭锁 挂断 TTS"},
+        {"kind": "module_artifact", "text": "J90A BCall 产品需求 功能清单 LanguageList"},
+        {"kind": "version_family", "text": "J90A EU&EU PI座舱功能清单"},
+        {"kind": "version_family", "text": "J90A_海外LanguageList"},
+        {"kind": "version_family", "text": "C385_功能定义_道路救援Bcall功能定义"}
+      ],
+      "results": [
+        {"id": "1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK", "title": "J90A EU&EU PI座舱功能清单V3.1 20251211.xlsx", "url": "https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0", "title": "J90A_海外LanguageList_V1.1_260807", "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk", "mime_type": "application/vnd.google-apps.spreadsheet"},
+        {"id": "1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV", "title": "C385_功能定义_道路救援Bcall功能定义V0.4.pdf", "url": "https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk", "mime_type": "application/pdf"},
+        {"id": "12A-Po2rMXtaKRR4UO2GM9frQ9ZOUNeQG", "title": "C385_功能定义_道路救援Bcall功能定义V0.3（作废）.pdf", "url": "https://drive.google.com/file/d/12A-Po2rMXtaKRR4UO2GM9frQ9ZOUNeQG/view?usp=drivesdk", "mime_type": "application/pdf"}
+      ]
+    }
+  ],
+  "conflict_resolution": "Jira测试预期与当前实现分开记录；J90A功能清单和LanguageList没有给出本场景状态机，C385 V0.4也未证明被J90A继承。缺失规则会改变继续呼叫、自动挂断和TTS是否正确，因此结论保持待复核。",
+  "voice_evidence": {
+    "applicable": false,
+    "availability": "unavailable",
+    "alchemy_tested": false,
+    "standard_function": {"status": "not_applicable", "reason": "本票不是用户语音原话或NLU功能点。"},
+    "project_function": {"status": "not_applicable", "reason": "本票不是项目语音功能点配置问题。"}
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A BCall产品负责人",
+    "text": "结论：定义为J90A BCall闭锁场景规则待复核。当前实车在BCall拨号中下电闭锁后播报“对不起你不能呼叫此号码”，解锁上车后自动挂断；现有Jira仅给出测试预期，Drive未读到J90A同场景的生效状态机和TTS条款，C385 BCall资料也未证明被J90A继承。\n依据：[HUR-82516 Jira·描述/评论/附件]；[J90A功能清单·BCall检索]；[C385 BCall V0.4·跨项目候选]。\n处理：补齐J90A BCall在拨号中下电、闭锁及解锁恢复后的通话保持/挂断状态机，并定义失败场景中英文TTS触发条件，再据此判断研发修复或接受现状；J90A BCall产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260820T180000+0800-HUR-82516-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 275
+  }
+}

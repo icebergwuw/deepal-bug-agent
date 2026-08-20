@@ -1,0 +1,45 @@
+{
+  "current_row": {
+    "values": [
+      {"userEnteredValue":{"numberValue":46241}},
+      {"userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82516\",\"HUR-82516｜BCall闭锁后播报错误并自动挂断\")"}},
+      {"userEnteredValue":{"stringValue":"现象与实现：已完整读取HUR-82516描述、附件、关联票和评论时间线。[Jira原票·描述/完整评论]\n证据：已按本票画像核对当前平台结果及正式资料；结论中的已命中条款与精确缺口分别保留。[Alchemy当前结果/功能点][工作说明·正式资料入口]"}},
+      {"userEnteredValue":{"stringValue":"结论：BCall闭锁后播报错误并自动挂断的当前平台行为已核验，但缺少同项目正式产品目标，暂不作确定性定责。\n依据：Jira当前描述/评论；Alchemy实测为非用户NLU原话，Alchemy在线对话不适用；Jira记录错误TTS和自动挂断；Drive按原话和功能检索未读到可直接定义本场景的生效条款。\n处理：补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。"}},
+      {"userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+      {},
+      {"userEnteredValue":{"stringValue":"待复核"}},
+      {},
+      {"userEnteredValue":{"stringValue":"补齐BCall闭锁状态机与TTS定义，并提供通信链路日志后判断挂断责任；J90A BCall产品负责人处理。"}},
+      {"userEnteredValue":{"stringValue":"Jira原票·描述/完整评论\nAlchemy当前结果/功能点\n工作说明·正式资料入口"}}
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "[HUR-82516 Jira·描述/评论/附件]：待办/P2，J90A-All，Android-BCall&ECall；描述记录BCall拨号中下电闭锁后播报‘对不起你不能呼叫此号码’，解锁上车后自动挂断，复现11/10；两条评论仅询问需求，无根因或修复结论。附件为android.zip、video(71).mp4。[J90A LanguageList V1.1·20_TTS检索]中‘不能呼叫此号码’及英文对应句均为0条。[J90A项目功能清单V3.1·BCall检索]未给出本场景状态机。[C385 BCall V0.4·跨项目候选]未证明被J90A继承。",
+      "links": [
+        {"label":"HUR-82516 Jira·描述/评论/附件","url":"http://jira.i-tetris.com/browse/HUR-82516"},
+        {"label":"J90A LanguageList V1.1·20_TTS检索","url":"https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk"},
+        {"label":"J90A项目功能清单V3.1·BCall检索","url":"https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk"},
+        {"label":"C385 BCall V0.4·跨项目候选","url":"https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"}
+      ]
+    },
+    "D": {
+      "text": "结论：定义为J90A BCall闭锁场景规则待复核。当前实车在BCall拨号中下电闭锁后播报“对不起你不能呼叫此号码”，解锁上车后自动挂断；现有Jira仅给出测试预期，Drive未读到J90A同场景的生效状态机和TTS条款，C385 BCall资料也未证明被J90A继承。\n依据：[HUR-82516 Jira·描述/评论/附件]；[J90A功能清单·BCall检索]；[C385 BCall V0.4·跨项目候选]。\n处理：补齐J90A BCall在拨号中下电、闭锁及解锁恢复后的通话保持/挂断状态机，并定义失败场景中英文TTS触发条件，再据此判断研发修复或接受现状；J90A BCall产品负责人处理。",
+      "links": [
+        {"label":"HUR-82516 Jira·描述/评论/附件","url":"http://jira.i-tetris.com/browse/HUR-82516"},
+        {"label":"J90A功能清单·BCall检索","url":"https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk"},
+        {"label":"C385 BCall V0.4·跨项目候选","url":"https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"}
+      ]
+    },
+    "G": "待复核",
+    "I": "唯一缺口：J90A未定义拨号中下电闭锁、解锁恢复后的通话状态和中英文TTS条件。",
+    "J": {
+      "links": [
+        {"label":"HUR-82516 Jira·描述/评论/附件","url":"http://jira.i-tetris.com/browse/HUR-82516"},
+        {"label":"J90A LanguageList V1.1·20_TTS检索","url":"https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk"},
+        {"label":"J90A项目功能清单V3.1·BCall检索","url":"https://docs.google.com/spreadsheets/d/1t-A3jeXPJOwuR4-CUZBuGdOBsNWoJ6uK/edit?usp=drivesdk"},
+        {"label":"C385 BCall V0.4·跨项目候选","url":"https://drive.google.com/file/d/1jXqjjF4NVDg7uzmxDYi3RPInn-4LZHVV/view?usp=drivesdk"}
+      ]
+    }
+  }
+}
