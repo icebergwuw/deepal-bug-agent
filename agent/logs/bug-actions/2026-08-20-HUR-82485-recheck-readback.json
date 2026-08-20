@@ -1,0 +1,20 @@
+{
+  "spreadsheet_id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+  "sheet": "bug",
+  "range": "A183:J183",
+  "values": [
+    {"column": "A", "formattedValue": "2026-07-30", "userEnteredValue": {"numberValue": 46233}, "wrapStrategy": "WRAP"},
+    {"column": "B", "formattedValue": "HUR-82485｜【J90A】【0526】【情景模式-观影模式】多个视频app存在时，未出现弹窗选择，默认进入bilibili", "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-82485\",\"HUR-82485｜【J90A】【0526】【情景模式-观影模式】多个视频app存在时，未出现弹窗选择，默认进入bilibili\")", "hyperlink": "http://jira.i-tetris.com/browse/HUR-82485", "wrapStrategy": "WRAP"},
+    {"column": "C", "formattedValue": "现象：J90A SWD.05.0上安装多个视频App后进入观影模式，未出现选择页，固定打开Bilibili；情景模式研发评论称当前只注册支持Bilibili，其他App需项目确认并下发Task。[Jira原票·描述/全部评论]\n正式定义：J90A情景模式V2.4“观影模式”明确：1个视频App直接打开，多个视频App弹出选择界面，0个时引导应用商店；V1.8到V2.4均保留该规则。[J90A情景模式V2.4·观影模式]", "links": ["http://jira.i-tetris.com/browse/HUR-82485", "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"], "wrapStrategy": "WRAP"},
+    {"column": "D", "formattedValue": "结论：定义为情景模式实现缺陷。当前“仅注册Bilibili并固定打开”不符合J90A V2.4的多视频App选择规则，不按新增能力转需求。\n依据：[Jira原票·描述/全部评论]；[J90A情景模式V2.4·观影模式]。\n处理：补齐J90A支持的视频App识别/注册清单，并在识别到2个及以上已支持视频App时弹出选择页；情景模式研发（丁黎）处理，测试按0/1/多App三种场景回归。", "links": ["http://jira.i-tetris.com/browse/HUR-82485", "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"], "wrapStrategy": "WRAP"},
+    {"column": "E", "formattedValue": "FALSE", "userEnteredValue": {"boolValue": false}, "dataValidation": {"condition": {"type": "BOOLEAN"}, "strict": true}, "wrapStrategy": "WRAP"},
+    {"column": "F", "formattedValue": "", "wrapStrategy": "WRAP"},
+    {"column": "G", "formattedValue": "可转研发", "wrapStrategy": "WRAP"},
+    {"column": "H", "formattedValue": "", "wrapStrategy": "WRAP"},
+    {"column": "I", "formattedValue": "需补齐J90A视频App识别/注册清单，并按0/1/多App规则回归；情景模式研发（丁黎）处理。", "wrapStrategy": "WRAP"},
+    {"column": "J", "formattedValue": "Jira原票·HUR-82485\nJira视频·复现\nJ90A情景模式V2.4·观影模式\nJ90A情景模式V1.8·观影模式", "links": ["http://jira.i-tetris.com/browse/HUR-82485", "http://jira.i-tetris.com/secure/attachment/4172102/video_1785229719.mp4", "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk"], "wrapStrategy": "WRAP"}
+  ],
+  "basic_filter": "bug!A1:J378",
+  "row_auto_resize_request_confirmed": true,
+  "protected_columns_unchanged": ["A", "B", "E", "F", "H"]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260820T194317+0800-HUR-82485-recheck",
+  "status": "complete",
+  "started_at": "2026-08-20T19:43:17+08:00",
+  "query_summary": "HUR-82485普通二次复查；完整读取Jira和评论，读取J90A情景模式V2.4/V1.8及平台PRD，命中吴优bug第183行，计划按recheck更新C/D/G/I/J。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82485-recheck.md",
+  "items": [
+    {
+      "jira_key": "HUR-82485",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 183,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82485-recheck-manifest.json",
+      "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82485-recheck-readback.json",
+      "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-HUR-82485-recheck-validation.json",
+      "readback_sha256": "978646305b2e86725c957d4b1eed39c64a32b4fe5a4c064ce668069d69e8278e"
+    }
+  ],
+  "jira_keys": ["HUR-82485"],
+  "blockers": [],
+  "completed_at": "2026-08-20T19:57:13+08:00",
+  "completion": {
+    "jira_read": "complete",
+    "formal_definition_search": "complete",
+    "formal_config_search": "complete",
+    "interaction_or_ue_search": "complete",
+    "evidence_gate": "passed",
+    "sheet_prewrite_readback": "complete",
+    "sheet_write": "complete",
+    "final_validation": "passed"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "key": "HUR-82485",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 183,
+  "rowIndex": 182,
+  "previewFingerprint": "27fcf88afc1bb3c1b0c10ec52426d38a67b08b4d8ddfa285cb3c1759fb5cd816",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": ["C", "D", "G", "I", "J"],
+  "manifest": [
+    {"column": "C", "before": "事实：J90A场景UE仅写前往应用商店安装视频APP，未定义多视频App选择器和默认应用；当前仅B站。", "after": "现象：J90A SWD.05.0上安装多个视频App后进入观影模式，未出现选择页，固定打开Bilibili；情景模式研发评论称当前只注册支持Bilibili，其他App需项目确认并下发Task。[Jira原票·描述/全部评论]\n正式定义：J90A情景模式V2.4“观影模式”明确：1个视频App直接打开，多个视频App弹出选择界面，0个时引导应用商店；V1.8到V2.4均保留该规则。[J90A情景模式V2.4·观影模式]"},
+    {"column": "D", "before": "结论：定义为新增能力。场景产品负责人补多应用选择PRD/UE和应用注册清单后转需求。", "after": "结论：定义为情景模式实现缺陷。当前“仅注册Bilibili并固定打开”不符合J90A V2.4的多视频App选择规则，不按新增能力转需求。\n依据：[Jira原票·描述/全部评论]；[J90A情景模式V2.4·观影模式]。\n处理：补齐J90A支持的视频App识别/注册清单，并在识别到2个及以上已支持视频App时弹出选择页；情景模式研发（丁黎）处理，测试按0/1/多App三种场景回归。"},
+    {"column": "G", "before": "转需求", "after": "可转研发"},
+    {"column": "I", "before": "缺多应用选择规则、默认项和注册清单", "after": "需补齐J90A视频App识别/注册清单，并按0/1/多App规则回归；情景模式研发（丁黎）处理。"},
+    {"column": "J", "before": "Jira原票\nJ90A场景UE\nJ90A场景PRD", "after": "Jira原票·HUR-82485\nJira视频·复现\nJ90A情景模式V2.4·观影模式\nJ90A情景模式V1.8·观影模式"}
+  ],
+  "expectedAfter": {
+    "C": {"visible": "现象：J90A SWD.05.0上安装多个视频App后进入观影模式，未出现选择页，固定打开Bilibili；情景模式研发评论称当前只注册支持Bilibili，其他App需项目确认并下发Task。[Jira原票·描述/全部评论]\n正式定义：J90A情景模式V2.4“观影模式”明确：1个视频App直接打开，多个视频App弹出选择界面，0个时引导应用商店；V1.8到V2.4均保留该规则。[J90A情景模式V2.4·观影模式]", "links": ["http://jira.i-tetris.com/browse/HUR-82485", "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"]},
+    "D": {"visible": "结论：定义为情景模式实现缺陷。当前“仅注册Bilibili并固定打开”不符合J90A V2.4的多视频App选择规则，不按新增能力转需求。\n依据：[Jira原票·描述/全部评论]；[J90A情景模式V2.4·观影模式]。\n处理：补齐J90A支持的视频App识别/注册清单，并在识别到2个及以上已支持视频App时弹出选择页；情景模式研发（丁黎）处理，测试按0/1/多App三种场景回归。", "links": ["http://jira.i-tetris.com/browse/HUR-82485", "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"]},
+    "G": {"visible": "可转研发", "links": []},
+    "I": {"visible": "需补齐J90A视频App识别/注册清单，并按0/1/多App规则回归；情景模式研发（丁黎）处理。", "links": []},
+    "J": {"visible": "Jira原票·HUR-82485\nJira视频·复现\nJ90A情景模式V2.4·观影模式\nJ90A情景模式V1.8·观影模式", "links": ["http://jira.i-tetris.com/browse/HUR-82485", "http://jira.i-tetris.com/secure/attachment/4172102/video_1785229719.mp4", "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk"]}
+  },
+  "requests": [
+    {"updateCells": {"start": {"sheetId": 2135747181, "rowIndex": 182, "columnIndex": 2}, "rows": [{"values": [{"userEnteredValue": {"stringValue": "现象：J90A SWD.05.0上安装多个视频App后进入观影模式，未出现选择页，固定打开Bilibili；情景模式研发评论称当前只注册支持Bilibili，其他App需项目确认并下发Task。[Jira原票·描述/全部评论]\n正式定义：J90A情景模式V2.4“观影模式”明确：1个视频App直接打开，多个视频App弹出选择界面，0个时引导应用商店；V1.8到V2.4均保留该规则。[J90A情景模式V2.4·观影模式]"}, "textFormatRuns": [{}, {"startIndex": 98, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "http://jira.i-tetris.com/browse/HUR-82485"}}}, {"startIndex": 112}, {"startIndex": 193, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"}}}, {"startIndex": 210}]}]}], "fields": "userEnteredValue,textFormatRuns"}},
+    {"updateCells": {"start": {"sheetId": 2135747181, "rowIndex": 182, "columnIndex": 3}, "rows": [{"values": [{"userEnteredValue": {"stringValue": "结论：定义为情景模式实现缺陷。当前“仅注册Bilibili并固定打开”不符合J90A V2.4的多视频App选择规则，不按新增能力转需求。\n依据：[Jira原票·描述/全部评论]；[J90A情景模式V2.4·观影模式]。\n处理：补齐J90A支持的视频App识别/注册清单，并在识别到2个及以上已支持视频App时弹出选择页；情景模式研发（丁黎）处理，测试按0/1/多App三种场景回归。"}, "textFormatRuns": [{}, {"startIndex": 74, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "http://jira.i-tetris.com/browse/HUR-82485"}}}, {"startIndex": 88}, {"startIndex": 91, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"}}}, {"startIndex": 108}]}]}], "fields": "userEnteredValue,textFormatRuns"}},
+    {"updateCells": {"start": {"sheetId": 2135747181, "rowIndex": 182, "columnIndex": 6}, "rows": [{"values": [{"userEnteredValue": {"stringValue": "可转研发"}}]}], "fields": "userEnteredValue"}},
+    {"updateCells": {"start": {"sheetId": 2135747181, "rowIndex": 182, "columnIndex": 8}, "rows": [{"values": [{"userEnteredValue": {"stringValue": "需补齐J90A视频App识别/注册清单，并按0/1/多App规则回归；情景模式研发（丁黎）处理。"}}]}], "fields": "userEnteredValue"}},
+    {"updateCells": {"start": {"sheetId": 2135747181, "rowIndex": 182, "columnIndex": 9}, "rows": [{"values": [{"userEnteredValue": {"stringValue": "Jira原票·HUR-82485\nJira视频·复现\nJ90A情景模式V2.4·观影模式\nJ90A情景模式V1.8·观影模式"}, "textFormatRuns": [{"startIndex": 0, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "http://jira.i-tetris.com/browse/HUR-82485"}}}, {"startIndex": 16}, {"startIndex": 17, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "http://jira.i-tetris.com/secure/attachment/4172102/video_1785229719.mp4"}}}, {"startIndex": 26}, {"startIndex": 27, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk"}}}, {"startIndex": 44}, {"startIndex": 45, "format": {"foregroundColor": {"red": 0.0667, "green": 0.3333, "blue": 0.8}, "underline": true, "link": {"uri": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk"}}}]}]}], "fields": "userEnteredValue,textFormatRuns"}},
+    {"autoResizeDimensions": {"dimensions": {"sheetId": 2135747181, "dimension": "ROWS", "startIndex": 182, "endIndex": 183}}}
+  ]
+}

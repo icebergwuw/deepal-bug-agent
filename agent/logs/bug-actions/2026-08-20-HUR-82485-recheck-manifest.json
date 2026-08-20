@@ -1,0 +1,107 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-82485",
+  "comment_causality": "Jira实车在SWD.05.0安装多个视频App后进入观影模式仍固定打开Bilibili；易昕评论称当前只注册支持Bilibili，其他App需项目确认并注册下发Task。该工程现状与J90A V1.8、V2.4连续版本均明确的多App选择规则冲突，工程评论不能替代正式定义。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["general", "visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "需要核验J90A观影模式正式功能定义。"},
+    "voice": {"applicable": false, "reason": "不涉及语音识别、语义或TTS。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航。"},
+    "visible_interaction": {"applicable": true, "reason": "问题目标是多个视频App时的中控选择界面及应用拉起逻辑。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira评论只描述当前注册实现，并未提供取消多App选择的正式变更。J90A V1.8至V2.4连续版本均保留0/1/多App规则，且V2.4为本轮枚举后已读的最高适用版本，因此以V2.4作为正式目标，将当前仅注册Bilibili并固定拉起判为实现缺陷。",
+  "voice_evidence": {"applicable": false},
+  "scope_checks": [
+    {
+      "source_id": "jira-actual", "source": "HUR-82485 Jira原票", "source_location": "当前字段、描述、附件列表、全部评论；2026-07-28实车复现", "source_type": "jira", "role": "implementation_actual", "project_model": "J90A-All / SWD.05.0 / Android-SceneMode", "trigger": "车机安装多个视频App后进入观影模式", "target_behavior": "实际未出现选择页并固定打开Bilibili；研发说明当前仅注册支持Bilibili。", "match": "exact", "reason": "证明当前实现、版本、复现和研发解释。"
+    },
+    {
+      "source_id": "j90a-v24-prd", "source": "马自达J90A_情景模式_需求文档_V2.4.pdf", "source_location": "情景模式-观影模式：0/1/多个视频App处理规则", "source_type": "prd", "role": "formal_target", "project_model": "马自达J90A", "trigger": "开启观影模式时检测已安装视频App数量", "target_behavior": "1个视频App直接打开；多个视频App弹出选择界面；未安装时引导应用商店。", "match": "exact", "reason": "同项目、同功能、同触发，且为本轮已读最高适用版本。"
+    },
+    {
+      "source_id": "j90a-v18-prd", "source": "马自达J90A_情景模式_需求文档_V1.8.pdf", "source_location": "情景模式-观影模式：0/1/多个视频App处理规则", "source_type": "prd", "role": "formal_target", "project_model": "马自达J90A", "trigger": "开启观影模式时检测已安装视频App数量", "target_behavior": "与V2.4一致：1个直开、多个弹选择页、0个引导安装。", "match": "exact", "reason": "证明规则由V1.8延续至V2.4，未被后续版本删除。"
+    },
+    {
+      "source_id": "j90a-v24-config", "source": "马自达J90A_情景模式_需求文档_V2.4.pdf", "source_location": "观影模式项目配置：0/1/多个视频App进入分支", "source_type": "formal_config", "role": "formal_target", "project_model": "马自达J90A", "trigger": "开启观影模式时统计项目支持的视频App", "target_behavior": "0个引导安装、1个直接打开、多个进入选择页。", "match": "exact", "reason": "同项目当前最高适用文档明确给出分支配置。"
+    },
+    {
+      "source_id": "j90a-v24-ue", "source": "马自达J90A_情景模式_需求文档_V2.4.pdf", "source_location": "情景模式-观影模式页面及多个视频App选择界面说明", "source_type": "ue", "role": "formal_target", "project_model": "马自达J90A", "trigger": "检测到多个项目支持的视频App", "target_behavior": "中控弹出视频App选择界面，由用户选择后拉起。", "match": "exact", "reason": "同项目文档中的可见交互目标与本票预期直接匹配。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search", "status": "read", "searched_at": "2026-08-20", "search_location": "Google Drive按Jira key、问题概念、模块资料和版本族检索并打开正文",
+      "queries": [{"kind": "jira_key", "text": "HUR-82485"}, {"kind": "problem_concept", "text": "J90A 观影模式 多个视频App 选择界面"}, {"kind": "module_artifact", "text": "马自达J90A 情景模式 需求文档"}],
+      "source_ids": ["j90a-v24-prd", "j90a-v18-prd"], "reason": "已读取J90A V2.4和V1.8正文，确认多App规则连续存在。", "material": false, "next_action": "", "search_receipt_ids": ["HUR-82485-formal-definition-20260820", "HUR-82485-formal-definition-family-20260820"],
+      "candidate_audit": {"completed": true, "results_count": 2, "candidates": [
+        {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "disposition": "read", "references": [], "source_ids": ["j90a-v24-prd"], "version_family": "马自达J90A情景模式需求文档系列"},
+        {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "disposition": "read", "references": [], "source_ids": ["j90a-v18-prd"], "version_family": "马自达J90A情景模式需求文档系列"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [{"family": "马自达J90A情景模式需求文档系列", "status": "enumerated", "receipt_ids": ["HUR-82485-formal-definition-family-20260820"], "selected_candidate_id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "selection_reason": "V2.4为已枚举并读取的最高适用版本。", "newer_version_checked": true}]}
+    },
+    {
+      "check_id": "formal_config_search", "status": "read", "searched_at": "2026-08-20", "search_location": "Google Drive读取J90A V2.4观影模式项目分支配置",
+      "queries": [{"kind": "jira_key", "text": "HUR-82485"}, {"kind": "problem_concept", "text": "J90A 观影模式 视频App数量分支"}, {"kind": "module_artifact", "text": "马自达J90A 情景模式 V2.4"}],
+      "source_ids": ["j90a-v24-config"], "reason": "已读取J90A V2.4正文中的0/1/多个视频App分支配置。", "material": false, "next_action": "", "search_receipt_ids": ["HUR-82485-formal-config-20260820", "HUR-82485-formal-config-family-20260820"],
+      "candidate_audit": {"completed": true, "results_count": 2, "candidates": [
+        {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "disposition": "read", "references": [], "source_ids": ["j90a-v24-config"], "version_family": "马自达J90A情景模式需求文档系列"},
+        {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "disposition": "excluded", "reason": "低于当前V2.4，仅用于版本连续性核验。", "references": [], "version_family": "马自达J90A情景模式需求文档系列"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [{"family": "马自达J90A情景模式需求文档系列", "status": "enumerated", "receipt_ids": ["HUR-82485-formal-config-family-20260820"], "selected_candidate_id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "selection_reason": "选择最高适用版本V2.4核验项目分支配置。", "newer_version_checked": true}]}
+    },
+    {
+      "check_id": "interaction_or_ue_search", "status": "read", "searched_at": "2026-08-20", "search_location": "Google Drive读取J90A V2.4/V1.8观影模式交互页",
+      "queries": [{"kind": "jira_key", "text": "HUR-82485"}, {"kind": "problem_concept", "text": "多个视频App 弹出选择界面"}, {"kind": "module_artifact", "text": "J90A 情景模式 观影模式 UE"}],
+      "source_ids": ["j90a-v24-ue"], "reason": "J90A V2.4正文包含观影模式页面和0/1/多App交互说明。", "material": false, "next_action": "", "search_receipt_ids": ["HUR-82485-interaction-ue-20260820", "HUR-82485-interaction-ue-family-20260820"],
+      "candidate_audit": {"completed": true, "results_count": 2, "candidates": [
+        {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "disposition": "read", "references": [], "source_ids": ["j90a-v24-ue"], "version_family": "马自达J90A情景模式需求文档系列"},
+        {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "disposition": "excluded", "reason": "低于当前V2.4，仅用于版本连续性核验。", "references": [], "version_family": "马自达J90A情景模式需求文档系列"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [{"family": "马自达J90A情景模式需求文档系列", "status": "enumerated", "receipt_ids": ["HUR-82485-interaction-ue-family-20260820"], "selected_candidate_id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "selection_reason": "选择最高适用版本V2.4核验当前交互目标。", "newer_version_checked": true}]}
+    }
+  ],
+  "search_receipts": [
+    {"receipt_id": "HUR-82485-formal-definition-20260820", "provider": "google_drive", "check_id": "formal_definition_search", "searched_at": "2026-08-20T19:30:00+08:00", "queries": [{"kind": "jira_key", "text": "HUR-82485"}, {"kind": "problem_concept", "text": "J90A 观影模式 多个视频App 选择界面"}, {"kind": "module_artifact", "text": "马自达J90A 情景模式 需求文档"}], "results": [
+      {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "mime_type": "application/pdf"},
+      {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "mime_type": "application/pdf"}
+    ]},
+    {"receipt_id": "HUR-82485-formal-definition-family-20260820", "provider": "google_drive", "check_id": "formal_definition_search", "searched_at": "2026-08-20T19:31:00+08:00", "queries": [{"kind": "version_family", "text": "马自达J90A情景模式需求文档系列"}], "results": [
+      {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "mime_type": "application/pdf"},
+      {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "mime_type": "application/pdf"}
+    ]},
+    {"receipt_id": "HUR-82485-formal-config-20260820", "provider": "google_drive", "check_id": "formal_config_search", "searched_at": "2026-08-20T19:32:00+08:00", "queries": [{"kind": "jira_key", "text": "HUR-82485"}, {"kind": "problem_concept", "text": "J90A 观影模式 视频App数量分支"}, {"kind": "module_artifact", "text": "马自达J90A 情景模式 V2.4"}], "results": [
+      {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "mime_type": "application/pdf"},
+      {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "mime_type": "application/pdf"}
+    ]},
+    {"receipt_id": "HUR-82485-formal-config-family-20260820", "provider": "google_drive", "check_id": "formal_config_search", "searched_at": "2026-08-20T19:33:00+08:00", "queries": [{"kind": "version_family", "text": "马自达J90A情景模式需求文档系列"}], "results": [
+      {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "mime_type": "application/pdf"},
+      {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "mime_type": "application/pdf"}
+    ]},
+    {"receipt_id": "HUR-82485-interaction-ue-20260820", "provider": "google_drive", "check_id": "interaction_or_ue_search", "searched_at": "2026-08-20T19:34:00+08:00", "queries": [{"kind": "jira_key", "text": "HUR-82485"}, {"kind": "problem_concept", "text": "多个视频App 弹出选择界面"}, {"kind": "module_artifact", "text": "J90A 情景模式 观影模式 UE"}], "results": [
+      {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "mime_type": "application/pdf"},
+      {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "mime_type": "application/pdf"}
+    ]},
+    {"receipt_id": "HUR-82485-interaction-ue-family-20260820", "provider": "google_drive", "check_id": "interaction_or_ue_search", "searched_at": "2026-08-20T19:35:00+08:00", "queries": [{"kind": "version_family", "text": "马自达J90A情景模式需求文档系列"}], "results": [
+      {"id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y", "title": "马自达J90A_情景模式_需求文档_V2.4.pdf", "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view?usp=drivesdk", "mime_type": "application/pdf"},
+      {"id": "1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_", "title": "马自达J90A_情景模式_需求文档_V1.8.pdf", "url": "https://drive.google.com/file/d/1Qe-Ni737Ye_oz8BGZvSf1ElFQNnh676_/view?usp=drivesdk", "mime_type": "application/pdf"}
+    ]}
+  ],
+  "expected_behavior": {
+    "trigger": "用户开启观影模式，系统检测已安装且受支持的视频App数量",
+    "target_state": "0个时引导安装；1个时直接打开；2个及以上时展示视频App选择界面",
+    "intent_function_signal": "SceneMode按视频App识别/注册结果选择分支",
+    "ui_tts_vehicle_behavior": "多个视频App时中控展示选择界面，不固定拉起Bilibili",
+    "boundary": "只统计项目支持的视频App；支持清单由J90A情景模式模块维护并随版本下发",
+    "source_ids": ["j90a-v24-prd", "j90a-v24-config", "j90a-v24-ue"]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "情景模式研发（丁黎）",
+    "implementation_source_ids": ["jira-actual"],
+    "text": "结论：定义为情景模式实现缺陷。当前“仅注册Bilibili并固定打开”不符合J90A V2.4的多视频App选择规则，不按新增能力转需求。\n依据：[Jira原票·描述/全部评论]；[J90A情景模式V2.4·观影模式]。\n处理：补齐J90A支持的视频App识别/注册清单，并在识别到2个及以上已支持视频App时弹出选择页；情景模式研发（丁黎）处理，测试按0/1/多App三种场景回归。"
+  },
+  "run_context": {"run_id": "bug-20260820T194317+0800-HUR-82485-recheck", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 183}
+}
