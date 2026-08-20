@@ -1,0 +1,473 @@
+{
+  "key": "BGS-83155",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 118,
+  "rowIndex": 117,
+  "previewFingerprint": "802d0ee3fee2b02c8bbff193673d31bea12feed89167031e5ddfa21ecde0453f",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Jira：处理中/P2->Medium，接续路算充电偏好二次提示保存确认弹窗，方控唤醒语音会退出弹窗，主唤醒词唤醒语音就不会；关键评论：程云：交互设计请产品确定下呢。吴优；工作说明对应模块未见直接结论。",
+      "after": "[Jira原票·描述/评论]显示：[Jira视频·复现]接续路算充电偏好确认弹窗中，方控语音键会退出、主唤醒词不退出；日志链为ACTION_CLOSE_SYSTEM_DIALOGS(reason=assist)→地图LauncherActivity→BigSurSettingManagerVM关闭事件→BigSurCommonSopDialog.dismiss。[地图导航PRD V5.0·第43页]定义充电站偏好多选；[地图交互850 V0.6·第7页]定义保存、确认不保存和取消留页，但未定义方控reason=assist边界。[弹窗策略V1.8·sheet3]通用层级与[SLV-35661·reason=assist先例]同类修复存在范围冲突。",
+      "links": [
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1PhFZ-c-ZjvrYRPeIfxdrDUccZgAZIHEi/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/SLV-35661"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "语音NLU/应用执行侧处理：校正query与功能点下发；下发正确后由应用执行侧修复。",
+      "after": "结论：定义为地图弹窗与语音交互层级规则待复核。当前实现会在方控语音助理广播后关闭接续路算充电偏好确认弹窗，但正式地图资料只定义保存/确认/取消按钮行为，未定义reason=assist唤醒时的弹窗保持边界；通用弹窗策略与同类Launcher修复存在范围冲突。\n依据：[地图导航PRD V5.0·第43页]；[地图交互850 V0.6·第7页]；[BGS-83155 Jira·日志/视频]；[SLV-35661·reason=assist修复]。\n处理：补齐C385/C673地图弹窗对ACTION_CLOSE_SYSTEM_DIALOGS(reason=assist)的生效层级与保持/退出规则，并据此再决定地图侧修复或按通用层级接受现状；C385/C673地图弹窗生命周期产品负责人处理。",
+      "links": [
+        "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "http://jira.i-tetris.com/browse/SLV-35661"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "转语音",
+      "after": "待复核",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "经办人：吴优；已按时间线读取 4 条评论；语音链路",
+      "after": "唯一缺口：C385/C673正式资料未定义reason=assist唤醒时确认弹窗保持/退出；补齐专项层级规则后再定地图修复或接受现状。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "吴优工作说明",
+      "after": "Jira原票·描述/评论\n地图导航PRD V5.0·第43页\n地图交互850 V0.6·第7页\n弹窗策略V1.8·sheet3\nSLV-35661·reason=assist先例",
+      "links": [
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1PhFZ-c-ZjvrYRPeIfxdrDUccZgAZIHEi/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/SLV-35661"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "[Jira原票·描述/评论]显示：[Jira视频·复现]接续路算充电偏好确认弹窗中，方控语音键会退出、主唤醒词不退出；日志链为ACTION_CLOSE_SYSTEM_DIALOGS(reason=assist)→地图LauncherActivity→BigSurSettingManagerVM关闭事件→BigSurCommonSopDialog.dismiss。[地图导航PRD V5.0·第43页]定义充电站偏好多选；[地图交互850 V0.6·第7页]定义保存、确认不保存和取消留页，但未定义方控reason=assist边界。[弹窗策略V1.8·sheet3]通用层级与[SLV-35661·reason=assist先例]同类修复存在范围冲突。",
+      "links": [
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1PhFZ-c-ZjvrYRPeIfxdrDUccZgAZIHEi/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/SLV-35661"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为地图弹窗与语音交互层级规则待复核。当前实现会在方控语音助理广播后关闭接续路算充电偏好确认弹窗，但正式地图资料只定义保存/确认/取消按钮行为，未定义reason=assist唤醒时的弹窗保持边界；通用弹窗策略与同类Launcher修复存在范围冲突。\n依据：[地图导航PRD V5.0·第43页]；[地图交互850 V0.6·第7页]；[BGS-83155 Jira·日志/视频]；[SLV-35661·reason=assist修复]。\n处理：补齐C385/C673地图弹窗对ACTION_CLOSE_SYSTEM_DIALOGS(reason=assist)的生效层级与保持/退出规则，并据此再决定地图侧修复或按通用层级接受现状；C385/C673地图弹窗生命周期产品负责人处理。",
+      "links": [
+        "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "http://jira.i-tetris.com/browse/SLV-35661"
+      ]
+    },
+    "G": {
+      "visible": "待复核",
+      "links": []
+    },
+    "I": {
+      "visible": "唯一缺口：C385/C673正式资料未定义reason=assist唤醒时确认弹窗保持/退出；补齐专项层级规则后再定地图修复或接受现状。",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·描述/评论\n地图导航PRD V5.0·第43页\n地图交互850 V0.6·第7页\n弹窗策略V1.8·sheet3\nSLV-35661·reason=assist先例",
+      "links": [
+        "http://jira.i-tetris.com/browse/BGS-83155",
+        "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+        "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1PhFZ-c-ZjvrYRPeIfxdrDUccZgAZIHEi/edit?usp=drivesdk",
+        "http://jira.i-tetris.com/browse/SLV-35661"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 117,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "[Jira原票·描述/评论]显示：[Jira视频·复现]接续路算充电偏好确认弹窗中，方控语音键会退出、主唤醒词不退出；日志链为ACTION_CLOSE_SYSTEM_DIALOGS(reason=assist)→地图LauncherActivity→BigSurSettingManagerVM关闭事件→BigSurCommonSopDialog.dismiss。[地图导航PRD V5.0·第43页]定义充电站偏好多选；[地图交互850 V0.6·第7页]定义保存、确认不保存和取消留页，但未定义方控reason=assist边界。[弹窗策略V1.8·sheet3]通用层级与[SLV-35661·reason=assist先例]同类修复存在范围冲突。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 1,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83155"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 13
+                  },
+                  {
+                    "startIndex": 18,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83155"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 27
+                  },
+                  {
+                    "startIndex": 183,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 200
+                  },
+                  {
+                    "startIndex": 212,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 228
+                  },
+                  {
+                    "startIndex": 268,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1PhFZ-c-ZjvrYRPeIfxdrDUccZgAZIHEi/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 283
+                  },
+                  {
+                    "startIndex": 290,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-35661"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 315
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 117,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为地图弹窗与语音交互层级规则待复核。当前实现会在方控语音助理广播后关闭接续路算充电偏好确认弹窗，但正式地图资料只定义保存/确认/取消按钮行为，未定义reason=assist唤醒时的弹窗保持边界；通用弹窗策略与同类Launcher修复存在范围冲突。\n依据：[地图导航PRD V5.0·第43页]；[地图交互850 V0.6·第7页]；[BGS-83155 Jira·日志/视频]；[SLV-35661·reason=assist修复]。\n处理：补齐C385/C673地图弹窗对ACTION_CLOSE_SYSTEM_DIALOGS(reason=assist)的生效层级与保持/退出规则，并据此再决定地图侧修复或按通用层级接受现状；C385/C673地图弹窗生命周期产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 134,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 151
+                  },
+                  {
+                    "startIndex": 154,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 170
+                  },
+                  {
+                    "startIndex": 173,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83155"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 193
+                  },
+                  {
+                    "startIndex": 196,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-35661"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 221
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 117,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 117,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "唯一缺口：C385/C673正式资料未定义reason=assist唤醒时确认弹窗保持/退出；补齐专项层级规则后再定地图修复或接受现状。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 117,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/评论\n地图导航PRD V5.0·第43页\n地图交互850 V0.6·第7页\n弹窗策略V1.8·sheet3\nSLV-35661·reason=assist先例"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83155"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 12
+                  },
+                  {
+                    "startIndex": 13,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 47
+                  },
+                  {
+                    "startIndex": 48,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1PhFZ-c-ZjvrYRPeIfxdrDUccZgAZIHEi/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 63
+                  },
+                  {
+                    "startIndex": 64,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-35661"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}

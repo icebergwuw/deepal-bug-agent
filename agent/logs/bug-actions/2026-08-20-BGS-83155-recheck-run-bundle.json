@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260820T160000+0800-BGS-83155-recheck",
+  "status": "complete",
+  "started_at": "2026-08-20T16:00:00+08:00",
+  "query_summary": "BGS-83155单票普通二次复查；Drive主PRD/专项交互/弹窗策略；线上bug行118；无Jira外部动作",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-BGS-83155-recheck.md",
+  "completed_at": "2026-08-20T16:35:00+08:00",
+  "items": [{
+    "jira_key": "BGS-83155",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 118,
+    "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-BGS-83155-recheck-manifest.json",
+    "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-BGS-83155-readback.json",
+    "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-BGS-83155-validation.json",
+    "readback_sha256": "3281088305cd9dd374403595ace7ddc07a0d25da4dca8f68ef9fc2e9b73831a0"
+  }]
+}
