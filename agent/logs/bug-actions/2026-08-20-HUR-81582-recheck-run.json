@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260820T135750+0800-HUR-81582-recheck",
+  "status": "planned",
+  "started_at": "2026-08-20T13:57:50+08:00",
+  "query_summary": "普通二次复查HUR-81582；Jira与Alchemy当前证据已读，Google Drive和Sheets连接不可用，按fail-closed未更新线上表格。",
+  "action_log": "agent/logs/bug-actions/2026-08-20-HUR-81582-recheck.md",
+  "items": [],
+  "jira_keys": [
+    "HUR-81582"
+  ],
+  "blockers": [
+    "Google Drive连接器连续传输失败，Chrome访问docs.google.com和drive.google.com均连接超时，无法读取J90A生效PRD。",
+    "无法实时回读bug!A23:J23，因此不能生成recheck补丁、验证保护列或完成写后readback_sha256。"
+  ],
+  "completion": {
+    "jira_read": "complete",
+    "alchemy_current": "complete",
+    "alchemy_standard": "complete",
+    "alchemy_project": "complete",
+    "formal_definition_search": "unavailable",
+    "evidence_gate": "passed_for_pending_decision",
+    "sheet_prewrite_readback": "not_run",
+    "sheet_write": "not_run",
+    "final_validation": "not_run"
+  }
+}

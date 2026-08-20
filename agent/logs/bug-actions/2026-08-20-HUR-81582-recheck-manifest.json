@@ -1,0 +1,216 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-81582",
+  "comment_causality": "Jira描述证明洗车模式开启时语音可关闭隐私模式；语音侧评论说明现有语音需求没有该前置条件，需要产品定义后下发Task。2026-08-20重新实测仍命中关闭特定情景模式MetaId 1126。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票属于语音关闭情景模式及项目前置条件问题，由voice画像覆盖。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "涉及语音原话、Alchemy功能点和项目执行前置条件。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图、POI、路线或导航执行。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及当前页面可见节点选择或可见即可说配置，问题是后台情景模式前置条件。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期主张洗车模式内不能关闭隐私模式；Alchemy标准功能明确项目关闭前置条件由PRD判断且不在系统体现，深蓝项目点现有可读配置只列出赛道模式前置条件。当前Google Drive不可访问，未能实时读取J90A PRD中的洗车模式条款，因此不继续沿用转需求的确定性结论，降为待复核。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "关闭隐私模式",
+    "alchemy_tested": true,
+    "alchemy_result": "HUR命中MetaId 1126，classification=task，mode=privacy，op=close。",
+    "meta_id": "1126",
+    "standard_function": {
+      "status": "verified",
+      "name": "1365 关闭特定情景模式",
+      "assessment": "2026-08-20读取；标准说明列出隐私模式可关闭，并明确项目关闭前置条件由PRD判断、不在系统体现。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "14379 深蓝项目关闭特定情景模式",
+      "assessment": "2026-08-20读取；当前可读执行策略仅列出赛道模式开启时不可关闭隐私模式，未列洗车模式条件。"
+    },
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-81582 Jira原票",
+      "source_location": "描述；易昕2026-07-06 09:59评论；徐刚2026-07-06 11:01评论；附件列表",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A-ER / HUR",
+      "trigger": "洗车模式开启后说关闭隐私模式",
+      "target_behavior": "当前实车可以关闭隐私模式，语音侧说明现有需求没有洗车模式前置条件判断。",
+      "match": "exact",
+      "reason": "证明当前现象和语音侧既有实现说明，不单独定义目标行为。"
+    },
+    {
+      "source_id": "formal-definition-gap",
+      "source": "J90A情景模式生效PRD",
+      "source_location": "2026-08-20尝试通过Google Drive连接器和Chrome访问；连接器连续传输失败，docs.google.com与drive.google.com连接超时，未能实时定位洗车模式与隐私模式互锁条款。",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "J90A-ER / HUR",
+      "trigger": "洗车模式开启期间关闭隐私模式",
+      "target_behavior": "需要确定洗车模式是否强制保持隐私模式，以及禁止关闭的交互、TTS和退出边界。",
+      "match": "gap",
+      "reason": "正式目标来源当前不可访问，不能用测试预期或历史结论替代。",
+      "material": true,
+      "next_action": "J90A情景模式产品负责人定位并补齐生效PRD中的洗车模式与隐私模式前置/互锁条款后复核。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy HUR在线对话",
+      "source_location": "2026-08-20原话关闭隐私模式；classification=task；MetaId 1126；mode=privacy；op=close",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "HUR",
+      "trigger": "关闭隐私模式",
+      "target_behavior": "当前语义路由直接下发关闭隐私模式操作。",
+      "match": "exact",
+      "reason": "证明当前语音平台实现结果，不替代产品目标。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点1365",
+      "source_location": "关闭特定情景模式；MetaId 1126；功能点说明与执行策略",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "通用标准",
+      "trigger": "关闭隐私模式",
+      "target_behavior": "隐私模式属于可关闭情景模式；项目内各模式关闭前置条件由PRD判断，不在标准系统体现。",
+      "match": "exact",
+      "reason": "证明标准语义及前置条件责任边界，不能单独定义J90A洗车模式目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能点14379",
+      "source_location": "关闭特定情景模式；继承1365；执行策略说明",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝项目 / HUR",
+      "trigger": "关闭隐私模式",
+      "target_behavior": "当前可读项目策略只配置赛道模式开启时不可关闭隐私模式，未配置洗车模式限制。",
+      "match": "exact",
+      "reason": "证明当前项目功能点配置范围，不能替代缺失的J90A产品正式目标。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-08-20",
+      "search_location": "Google Drive连接器；Chrome中的docs.google.com和drive.google.com",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-81582"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "洗车模式中关闭隐私模式前置条件"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "马自达J90A情景模式需求文档"
+        }
+      ],
+      "source_ids": [],
+      "reason": "Google Drive连接器连续传输失败，Chrome访问Google文档和表格均连接超时，无法完成当前候选检索、正文读取和版本族核验。",
+      "material": true,
+      "next_action": "Google Drive恢复后重新检索并读取J90A情景模式生效PRD，定位洗车模式与隐私模式条款。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-20",
+      "search_location": "Alchemy在线对话测试 / HUR",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "关闭隐私模式"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已重新实测并读取完整operations。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-08-20",
+      "search_location": "Alchemy标准功能点1365",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1126 / 关闭特定情景模式"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "reason": "已读取标准功能说明和执行策略。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-08-20",
+      "search_location": "Alchemy深蓝项目功能点14379",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1126 / 关闭特定情景模式"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目 / HUR / J90A-ER"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "reason": "已读取当前项目功能点和执行策略。",
+      "material": false,
+      "next_action": ""
+    }
+  ],
+  "search_receipts": [],
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A情景模式产品负责人",
+    "text": "结论：定义为待复核。当前语音平台会按1126直接关闭隐私模式，且项目功能点未配置洗车模式前置条件；但本轮无法读取J90A生效PRD，不能确认洗车模式是否正式要求隐私模式持续开启，因此不继续沿用转需求的确定性判断。\n依据：[Jira原票]·描述及2026-07-06评论；[Alchemy标准1365]·关闭特定情景模式说明；[深蓝项目14379]·当前执行策略；Google Drive当前不可访问。\n处理：定位并补齐J90A生效PRD中的洗车模式与隐私模式前置/互锁条款，证据补齐后再判断是补语音需求还是按现有设计关闭；J90A情景模式产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260820T135750+0800-HUR-81582-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 23
+  }
+}
