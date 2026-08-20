@@ -1,0 +1,78 @@
+{
+  "schema_version": 5,
+  "jira_key": "SLV-44149",
+  "comment_causality": "Jira记录原话“打开导航信息显示”在C673实车3/3回复不支持；姜秋月日志定位为classification=task、meta_id=1919、common:func:not:supported、nlu_intent_others，汪雯菁要求产品确认需求。2026-08-20在Alchemy SLV重新测试仍为1919；补测“关闭导航信息显示”误落到1108关闭应用。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "本票属于语音功能点覆盖及NLU路由问题，由voice专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "涉及原话、MetaId、标准功能点、深蓝项目继承功能点及新增语音需求边界。"},
+    "map_navigation": {"applicable": false, "reason": "本票不涉及POI、路线规划或导航执行结果；导航资料仅用于确认功能范围。"},
+    "visible_interaction": {"applicable": false, "reason": "Jira未给出前台页面或可见节点上下文，问题是通用语音功能点覆盖。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira预期TTS为“好的”，但测试预期不能单独定义现行能力。正式深蓝项目语音配置仅存在项目功能24570/24568并原样继承标准1451/1449；标准说明的target枚举不含“导航信息显示”。导航平台化功能清单正文也未检索到同名控制项。因此不把1919判为已有功能点的query缺陷，维持新增需求；关闭原话误落1108作为需求落地时必须一并消除的错误路由。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "打开导航信息显示",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-08-20 SLV实时测试：打开指令classification=task，meta_id=1919，common:func:not:supported，canonical=nlu_intent_others；关闭指令误命中meta_id=1108、app:ctrl、op=close，并将“导航信息显示”识别为应用目标。",
+    "meta_id": "1919",
+    "standard_function": {"status": "verified", "name": "标准功能1451/1449·打开/关闭导航开关项", "assessment": "已锁定；target仅含navi_function、map_broadcast、road_broadcast、cruise_broadcast、security_broadcast、avoid_traffic_restriction、e_dog、route_condition，不含导航信息显示。"},
+    "project_function": {"status": "verified", "name": "深蓝项目24570/24568·打开/关闭导航开关项", "assessment": "均已锁定并继承未修改(1451/1449)，未增加导航信息显示对象。"},
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {"source_id":"jira-actual","source":"SLV-44149 Jira原票","source_location":"描述、2026-07-16附件列表、姜秋月与汪雯菁全部评论；requestId 48fdcc93-c76f-4486-9476-177da9c048f","source_type":"jira","role":"implementation_actual","project_model":"C673-All / OTA_DP4.0 / 2026-07-15测试版本","trigger":"车机上电后说打开导航信息显示","target_behavior":"3/3回复暂不支持；日志为1919 nlu_intent_others。","match":"exact","reason":"证明当前实车复现和语音链路结果。"},
+    {"source_id":"alchemy-current","source":"Alchemy SLV在线对话","source_location":"2026-08-20实时测试“打开导航信息显示”“关闭导航信息显示”及完整operations","source_type":"alchemy_current","role":"implementation_actual","project_model":"深蓝项目 / SLV","trigger":"打开或关闭导航信息显示","target_behavior":"打开落1919不支持；关闭误落1108 app:ctrl。","match":"exact","reason":"证明当前平台仍未路由到导航开关能力。"},
+    {"source_id":"alchemy-standard","source":"Alchemy标准功能1451/1449","source_location":"打开/关闭导航开关项；功能说明·下发参数与target枚举；2026-08-20读取","source_type":"alchemy_standard","role":"context_only","project_model":"通用标准","trigger":"打开或关闭导航设置开关","target_behavior":"只支持八类既有导航target，不含导航信息显示。","match":"exact","reason":"证明标准语义边界和缺少目标对象。"},
+    {"source_id":"alchemy-project","source":"Alchemy深蓝项目功能24570/24568","source_location":"深蓝-功能；打开/关闭导航开关项；继承未修改(1451/1449)；2026-08-20读取","source_type":"alchemy_project","role":"context_only","project_model":"深蓝项目 / SLV / C673","trigger":"打开或关闭导航设置开关","target_behavior":"项目原样继承标准开关项，未扩展导航信息显示。","match":"exact","reason":"证明项目继承状态和当前配置范围。"},
+    {"source_id":"deepal-voice-config-260731","source":"深蓝项目语音功能点 260731.xlsx","source_location":"全量功能点表第54、56项：24568关闭导航开关项、24570打开导航开关项；未检索到导航信息显示；2026-07-31版本","source_type":"formal_config","role":"formal_target","project_model":"深蓝项目 / SLV / C673","trigger":"通过语音打开或关闭导航设置项","target_behavior":"现行项目配置只覆盖已登记导航开关功能点及其标准target；导航信息显示未纳入配置能力。","match":"exact","reason":"生效项目全量语音配置直接定义当前能力覆盖范围。"},
+    {"source_id":"navigation-feature-list-v26","source":"导航软件功能清单_V2.6_0313可发布版本（平台化清单） - 外发(1).xlsx","source_location":"功能清单V2.0全表正文；2026-08-20检索“导航信息显示”无同名条目","source_type":"prd","role":"context_only","project_model":"导航平台化功能清单","trigger":"导航信息展示及设置","target_behavior":"列出地图显示、路线动态信息等导航能力，但未定义同名语音开关。","match":"partial","reason":"仅用于交叉核对导航侧资料，不能替代深蓝项目语音配置。"}
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id":"formal_definition_search","status":"read","searched_at":"2026-08-20","search_location":"Google Drive实时搜索及候选正文读取","queries":[{"kind":"jira_key","text":"SLV-44149"},{"kind":"problem_concept","text":"导航信息显示"},{"kind":"module_artifact","text":"深蓝项目语音功能点与导航功能清单"},{"kind":"exact_document_name","text":"深蓝项目语音功能点 260731.xlsx"},{"kind":"version_family","text":"导航软件功能清单"}],"source_ids":["deepal-voice-config-260731","navigation-feature-list-v26"],"reason":"已读取深蓝项目全量语音配置及导航平台化功能清单正文。","material":false,"next_action":"","search_receipt_ids":["SLV-44149-formal-definition-20260820"],
+      "candidate_audit":{"completed":true,"results_count":4,"candidates":[
+        {"id":"1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs","title":"吴优工作说明","url":"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk","references":[],"version_family":"","disposition":"excluded","reason":"负责人处理清单，不是产品正式定义。"},
+        {"id":"1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa","title":"深蓝项目语音功能点 260731.xlsx","url":"https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk","references":[],"version_family":"","disposition":"read","source_ids":["deepal-voice-config-260731"]},
+        {"id":"1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM","title":"导航软件功能清单_V2.6_0313可发布版本（平台化清单） - 外发(1).xlsx","url":"https://docs.google.com/spreadsheets/d/1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM/edit?usp=drivesdk","references":[],"version_family":"导航软件功能清单","disposition":"read","source_ids":["navigation-feature-list-v26"]},
+        {"id":"1MQNy4Io4OGskuDw2TL7pILX0PM30Zqpx","title":"导航模块PRD-v1.6.pdf","url":"https://drive.google.com/file/d/1MQNy4Io4OGskuDw2TL7pILX0PM30Zqpx/view","references":[],"version_family":"导航模块PRD","disposition":"excluded","reason":"2024旧导航模块资料，适用范围早于当前C673 OTA_DP4.0，且正文未命中同名条款。"}
+      ]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[
+        {"family":"导航软件功能清单","status":"enumerated","receipt_ids":["SLV-44149-formal-definition-20260820"],"selected_candidate_id":"1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM","selection_reason":"选择正文标记V2.6且当前搜索可读的完整平台化清单。","newer_version_checked":true},
+        {"family":"导航模块PRD","status":"not_applicable","reason":"候选V1.6为2024旧平台资料，适用范围早于当前C673 OTA_DP4.0，不用于定义本票目标。"}
+      ]}
+    },
+    {"check_id":"alchemy_current","status":"read","searched_at":"2026-08-20","search_location":"Alchemy在线对话测试 / SLV","queries":[{"kind":"exact_trigger","text":"打开导航信息显示；关闭导航信息显示"}],"source_ids":["alchemy-current"],"reason":"已重新实测并读取完整operations。","material":false,"next_action":""},
+    {"check_id":"alchemy_standard","status":"read","searched_at":"2026-08-20","search_location":"Alchemy标准功能1451/1449详情","queries":[{"kind":"meta_or_function","text":"打开/关闭导航开关项；target枚举；1919"}],"source_ids":["alchemy-standard"],"reason":"已读取标准功能状态、下发参数和全部target。","material":false,"next_action":""},
+    {"check_id":"alchemy_project","status":"read","searched_at":"2026-08-20","search_location":"Alchemy深蓝项目功能24570/24568","queries":[{"kind":"meta_or_function","text":"打开/关闭导航开关项"},{"kind":"project_scope","text":"深蓝项目 / SLV / C673"}],"source_ids":["alchemy-project"],"reason":"已读取项目点状态及继承来源。","material":false,"next_action":""}
+  ],
+  "search_receipts": [{
+    "receipt_id":"SLV-44149-formal-definition-20260820","provider":"google_drive","check_id":"formal_definition_search","searched_at":"2026-08-20T19:08:00+08:00","queries":[{"kind":"jira_key","text":"SLV-44149"},{"kind":"problem_concept","text":"导航信息显示"},{"kind":"module_artifact","text":"深蓝项目语音功能点与导航功能清单"},{"kind":"exact_document_name","text":"深蓝项目语音功能点 260731.xlsx"},{"kind":"version_family","text":"导航软件功能清单"}],
+    "results":[
+      {"id":"1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs","title":"吴优工作说明","url":"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk","mime_type":"application/vnd.google-apps.spreadsheet"},
+      {"id":"1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa","title":"深蓝项目语音功能点 260731.xlsx","url":"https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+      {"id":"1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM","title":"导航软件功能清单_V2.6_0313可发布版本（平台化清单） - 外发(1).xlsx","url":"https://docs.google.com/spreadsheets/d/1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM/edit?usp=drivesdk","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+      {"id":"1MQNy4Io4OGskuDw2TL7pILX0PM30Zqpx","title":"导航模块PRD-v1.6.pdf","url":"https://drive.google.com/file/d/1MQNy4Io4OGskuDw2TL7pILX0PM30Zqpx/view","mime_type":"application/pdf"}
+    ]
+  }],
+  "expected_behavior": {
+    "trigger":"用户说打开/关闭导航信息显示。",
+    "target_state":"在新增需求落地后，进入对应导航信息显示开关状态。",
+    "intent_function_signal":"新增导航信息显示target及深蓝项目打开/关闭功能点映射，禁止继续落1919或1108 app:ctrl。",
+    "ui_tts_vehicle_behavior":"动作成功后播报明确成功TTS；已处于目标状态时返回状态反馈；状态不满足或不支持时返回明确原因，不静默、不误关应用。",
+    "boundary":"适用于C673/SLV项目；需同时定义打开、关闭、当前状态、前置条件和异常TTS。现行版本未覆盖该语音能力。",
+    "source_ids":["deepal-voice-config-260731"]
+  },
+  "decision": {
+    "status":"转需求",
+    "owner":"深蓝语音产品/DS（项目功能点与NLU配置）",
+    "text":"结论：定义为新增语音需求。现行标准及深蓝项目“导航开关项”均未包含“导航信息显示”对象，打开指令仍落1919不支持，关闭指令还误落1108关闭应用，不属于已有功能点的单条query缺陷。\n依据：[SLV-44149 Jira·描述/评论]；[Alchemy SLV·实时测试]；[标准1451/1449·target枚举]；[深蓝项目24570/24568·继承状态]；[深蓝项目语音功能点260731·全量配置]。\n处理：新增“打开/关闭导航信息显示”项目功能点和target，补齐成功、重复操作、状态不满足TTS，并消除关闭指令误落app:ctrl；深蓝语音产品/DS负责需求定义、功能点和NLU配置。",
+    "implementation_source_ids":["jira-actual","alchemy-current"]
+  },
+  "run_context": {"run_id":"bug-20260820T190800+0800-SLV-44149-recheck","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":127}
+}

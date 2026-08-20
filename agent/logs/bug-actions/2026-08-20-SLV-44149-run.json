@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260820T190800+0800-SLV-44149-recheck",
+  "status": "complete",
+  "started_at": "2026-08-20T19:08:00+08:00",
+  "query_summary": "SLV-44149单票普通二次复查；Jira、Alchemy SLV当前/标准/项目、Drive正式配置；更新bug第127行；无Jira外部动作",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-SLV-44149.md",
+  "items": [{
+    "jira_key":"SLV-44149",
+    "operator_owner_id":"wu-you",
+    "target_owner_id":"wu-you",
+    "sheet_name":"bug",
+    "sheet_row":127,
+    "manifest_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-SLV-44149-manifest.json",
+    "readback_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-SLV-44149-readback.json",
+    "validation_path":"/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-20-SLV-44149-validation.json",
+    "readback_sha256":"152040e707e5c2daab9ca73d2eed223f07e61648991e06c86de7ea9c6a355898"
+  }],
+  "jira_keys":["SLV-44149"],
+  "blockers":[],
+  "completed_at":"2026-08-20T19:24:00+08:00",
+  "completion":{"jira_read":"complete","alchemy_current":"complete","alchemy_standard":"complete","alchemy_project":"complete","formal_definition_search":"complete","evidence_gate":"passed","sheet_prewrite_readback":"complete","sheet_write":"complete","final_validation":"passed"}
+}

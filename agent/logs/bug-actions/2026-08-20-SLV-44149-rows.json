@@ -1,0 +1,23 @@
+{
+  "current_row": {
+    "values": [
+      {"userEnteredValue":{"stringValue":"2026-07-21"}},
+      {"userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44149\",\"SLV-44149｜打开导航信息显示提示不支持\")"}},
+      {"userEnteredValue":{"stringValue":"Alchemy（SLV）复测“打开导航信息显示”仍落meta_id=1919；当前无对应语音功能点。"}},
+      {"userEnteredValue":{"stringValue":"转需求：新增“打开/关闭导航信息显示”语音控制；语音产品/DS处理。"}},
+      {"userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+      {"userEnteredValue":{"stringValue":""}},
+      {"userEnteredValue":{"stringValue":"转需求"}},
+      {"userEnteredValue":{"stringValue":""}},
+      {"userEnteredValue":{"stringValue":"补齐关闭指令及功能开关状态TTS。"}},
+      {}
+    ]
+  },
+  "changes": {
+    "C": {"text":"[Jira原票·描述/评论]：C673实车3/3回复暂不支持，日志为1919/nlu_intent_others。[Alchemy SLV·2026-08-20复测]打开仍落1919；关闭误落1108 app:ctrl。[标准1451/1449·功能说明]的导航开关target不含导航信息显示；[深蓝项目24570/24568·继承状态]均为继承未修改。","links":[{"label":"Jira原票·描述/评论","url":"http://jira.i-tetris.com/browse/SLV-44149"},{"label":"Alchemy SLV·2026-08-20复测","url":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},{"label":"标准1451/1449·功能说明","url":"https://alchemy.i-tetris.com/#/functional/standard"},{"label":"深蓝项目24570/24568·继承状态","url":"https://alchemy.i-tetris.com/#/functional/project"}]},
+    "D": {"text":"结论：定义为新增语音需求。现行标准及深蓝项目“导航开关项”均未包含“导航信息显示”对象，打开指令仍落1919不支持，关闭指令还误落1108关闭应用，不属于已有功能点的单条query缺陷。\n依据：[SLV-44149 Jira·描述/评论]；[Alchemy SLV·实时测试]；[标准1451/1449·target枚举]；[深蓝项目24570/24568·继承状态]；[深蓝项目语音功能点260731·全量配置]。\n处理：新增“打开/关闭导航信息显示”项目功能点和target，补齐成功、重复操作、状态不满足TTS，并消除关闭指令误落app:ctrl；深蓝语音产品/DS负责需求定义、功能点和NLU配置。","links":[{"label":"SLV-44149 Jira·描述/评论","url":"http://jira.i-tetris.com/browse/SLV-44149"},{"label":"Alchemy SLV·实时测试","url":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},{"label":"标准1451/1449·target枚举","url":"https://alchemy.i-tetris.com/#/functional/standard"},{"label":"深蓝项目24570/24568·继承状态","url":"https://alchemy.i-tetris.com/#/functional/project"},{"label":"深蓝项目语音功能点260731·全量配置","url":"https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk"}]},
+    "G":"转需求",
+    "I":"新增打开/关闭功能点与target；回归成功、重复操作、状态不满足TTS，并确认关闭指令不再误落1108 app:ctrl。",
+    "J":{"links":[{"label":"SLV-44149 Jira","url":"http://jira.i-tetris.com/browse/SLV-44149"},{"label":"Alchemy在线对话","url":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},{"label":"深蓝项目语音功能点260731","url":"https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk"},{"label":"导航功能清单V2.6","url":"https://docs.google.com/spreadsheets/d/1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM/edit?usp=drivesdk"}]}
+  }
+}

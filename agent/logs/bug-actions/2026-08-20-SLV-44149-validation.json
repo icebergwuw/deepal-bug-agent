@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "key": "SLV-44149",
+  "mode": "recheck",
+  "row": "bug!A127:J127",
+  "changed_columns": ["C", "D", "G", "I", "J"],
+  "protected_columns_unchanged": ["A", "B", "E", "F", "H"],
+  "checks": ["B列Jira HYPERLINK公式保持", "E列BOOLEAN复选框保持FALSE", "C/D/J富文本链接回读一致", "行内容WRAP且请求包含自动行高", "筛选范围覆盖第127行"],
+  "errors": []
+}

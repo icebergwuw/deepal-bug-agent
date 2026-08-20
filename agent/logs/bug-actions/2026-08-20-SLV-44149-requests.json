@@ -1,0 +1,435 @@
+{
+  "key": "SLV-44149",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 127,
+  "rowIndex": 126,
+  "previewFingerprint": "7d3a5d142a7a0870d80faa6205b01e9f88f05367639bf78e0b802ab52ddc950f",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "Alchemy（SLV）复测“打开导航信息显示”仍落meta_id=1919；当前无对应语音功能点。",
+      "after": "[Jira原票·描述/评论]：C673实车3/3回复暂不支持，日志为1919/nlu_intent_others。[Alchemy SLV·2026-08-20复测]打开仍落1919；关闭误落1108 app:ctrl。[标准1451/1449·功能说明]的导航开关target不含导航信息显示；[深蓝项目24570/24568·继承状态]均为继承未修改。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44149",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/standard",
+        "https://alchemy.i-tetris.com/#/functional/project"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "转需求：新增“打开/关闭导航信息显示”语音控制；语音产品/DS处理。",
+      "after": "结论：定义为新增语音需求。现行标准及深蓝项目“导航开关项”均未包含“导航信息显示”对象，打开指令仍落1919不支持，关闭指令还误落1108关闭应用，不属于已有功能点的单条query缺陷。\n依据：[SLV-44149 Jira·描述/评论]；[Alchemy SLV·实时测试]；[标准1451/1449·target枚举]；[深蓝项目24570/24568·继承状态]；[深蓝项目语音功能点260731·全量配置]。\n处理：新增“打开/关闭导航信息显示”项目功能点和target，补齐成功、重复操作、状态不满足TTS，并消除关闭指令误落app:ctrl；深蓝语音产品/DS负责需求定义、功能点和NLU配置。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44149",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/standard",
+        "https://alchemy.i-tetris.com/#/functional/project",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "转需求",
+      "after": "转需求",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "补齐关闭指令及功能开关状态TTS。",
+      "after": "新增打开/关闭功能点与target；回归成功、重复操作、状态不满足TTS，并确认关闭指令不再误落1108 app:ctrl。",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "",
+      "after": "SLV-44149 Jira\nAlchemy在线对话\n深蓝项目语音功能点260731\n导航功能清单V2.6",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44149",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM/edit?usp=drivesdk"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "[Jira原票·描述/评论]：C673实车3/3回复暂不支持，日志为1919/nlu_intent_others。[Alchemy SLV·2026-08-20复测]打开仍落1919；关闭误落1108 app:ctrl。[标准1451/1449·功能说明]的导航开关target不含导航信息显示；[深蓝项目24570/24568·继承状态]均为继承未修改。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44149",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/standard",
+        "https://alchemy.i-tetris.com/#/functional/project"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为新增语音需求。现行标准及深蓝项目“导航开关项”均未包含“导航信息显示”对象，打开指令仍落1919不支持，关闭指令还误落1108关闭应用，不属于已有功能点的单条query缺陷。\n依据：[SLV-44149 Jira·描述/评论]；[Alchemy SLV·实时测试]；[标准1451/1449·target枚举]；[深蓝项目24570/24568·继承状态]；[深蓝项目语音功能点260731·全量配置]。\n处理：新增“打开/关闭导航信息显示”项目功能点和target，补齐成功、重复操作、状态不满足TTS，并消除关闭指令误落app:ctrl；深蓝语音产品/DS负责需求定义、功能点和NLU配置。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44149",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/standard",
+        "https://alchemy.i-tetris.com/#/functional/project",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk"
+      ]
+    },
+    "G": {
+      "visible": "转需求",
+      "links": []
+    },
+    "I": {
+      "visible": "新增打开/关闭功能点与target；回归成功、重复操作、状态不满足TTS，并确认关闭指令不再误落1108 app:ctrl。",
+      "links": []
+    },
+    "J": {
+      "visible": "SLV-44149 Jira\nAlchemy在线对话\n深蓝项目语音功能点260731\n导航功能清单V2.6",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44149",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk",
+        "https://docs.google.com/spreadsheets/d/1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM/edit?usp=drivesdk"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 126,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "[Jira原票·描述/评论]：C673实车3/3回复暂不支持，日志为1919/nlu_intent_others。[Alchemy SLV·2026-08-20复测]打开仍落1919；关闭误落1108 app:ctrl。[标准1451/1449·功能说明]的导航开关target不含导航信息显示；[深蓝项目24570/24568·继承状态]均为继承未修改。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 1,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44149"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 13
+                  },
+                  {
+                    "startIndex": 58,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 82
+                  },
+                  {
+                    "startIndex": 111,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/standard"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 127
+                  },
+                  {
+                    "startIndex": 149,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/project"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 169
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 126,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为新增语音需求。现行标准及深蓝项目“导航开关项”均未包含“导航信息显示”对象，打开指令仍落1919不支持，关闭指令还误落1108关闭应用，不属于已有功能点的单条query缺陷。\n依据：[SLV-44149 Jira·描述/评论]；[Alchemy SLV·实时测试]；[标准1451/1449·target枚举]；[深蓝项目24570/24568·继承状态]；[深蓝项目语音功能点260731·全量配置]。\n处理：新增“打开/关闭导航信息显示”项目功能点和target，补齐成功、重复操作、状态不满足TTS，并消除关闭指令误落app:ctrl；深蓝语音产品/DS负责需求定义、功能点和NLU配置。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 98,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44149"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 118
+                  },
+                  {
+                    "startIndex": 121,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 137
+                  },
+                  {
+                    "startIndex": 140,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/standard"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 160
+                  },
+                  {
+                    "startIndex": 163,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/project"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 183
+                  },
+                  {
+                    "startIndex": 186,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 206
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 126,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "转需求"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 126,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "新增打开/关闭功能点与target；回归成功、重复操作、状态不满足TTS，并确认关闭指令不再误落1108 app:ctrl。"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 126,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "SLV-44149 Jira\nAlchemy在线对话\n深蓝项目语音功能点260731\n导航功能清单V2.6"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44149"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 26
+                  },
+                  {
+                    "startIndex": 27,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 42
+                  },
+                  {
+                    "startIndex": 43,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1utb4HzM9JP_IGQ3fOcTJ1IjryT9JznhM/edit?usp=drivesdk"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}
