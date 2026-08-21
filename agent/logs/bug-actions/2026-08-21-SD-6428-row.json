@@ -1,0 +1,31 @@
+[
+  {
+    "key": "SD-6428",
+    "date": "2026-08-21",
+    "summary": "【内测问题】【镁佳】【C673-G】【欧洲-增程200km】【高德地图】英语充电详情时长显示不完整",
+    "info": "[SD-6428 Jira原票·描述/评论/附件]：英语系统的充电站详情显示 Battery level at arrival 24% | Charging approx. 后接动态时长值，截图中右侧内容显示不完整；评论要求产品/UI确认英文文本展示边界。\n[C673-G翻译清单·高德地图第665行] 已定位 charge_detail_charge_time_desc：充电约 / Charging approx.，说明短译已配置但未说明组合布局。\n[C673地图PRD V6.1·7.4.1/10.3] 规定充电方案详情含到达电量、充电时间等SDK数据，充电站详情列出字段范围，但未给出英文标签与动态时长值的宽度、换行、自适应或省略规则。\n[竞品公开资料·context_only] Tesla、BMW、Mercedes-Benz、Polestar均把充电时长作为独立短字段或充电站卡片信息展示，不能替代C673-G正式UE。",
+    "judgment": "结论：定义为C673-G充电站详情英文布局规则待复核。当前 Charging approx. 与动态时长值在同一行挤压，现象成立；正式翻译表已固定Key和短译，但C673地图PRD V6.1只说明充电详情含到达电量、充电时间等SDK数据，未定义该组合的宽度、换行或省略规则，不能直接归责翻译或地图实现。\n依据：[SD-6428 Jira原票·截图]；[C673-G翻译清单·高德地图第665行]；[C673地图PRD V6.1·7.4.1/10.3]；竞品公开资料仅作context_only参考。\n处理：补齐C673-G充电站详情英文标签与动态时长值的布局边界（优先短标签+独立时长值，禁止截断；明确换行/自适应规则），再按规则由C673-G地图/UI产品负责人确定文言调整或地图UI修复；C673-G地图/UI产品负责人处理。",
+    "status": "待复核",
+    "note": "唯一门槛：缺生效UE/布局规则；先补齐标签与动态时长值的宽度、换行和截断边界，再定文言或地图UI责任。",
+    "links": [
+      {"label": "SD-6428 Jira原票", "url": "http://jira.i-tetris.com/browse/SD-6428"},
+      {"label": "C673-G翻译清单·高德地图第665行", "url": "https://docs.google.com/spreadsheets/d/1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58/edit?gid=1230327488#gid=1230327488"},
+      {"label": "C673地图PRD V6.1·7.4.1/10.3", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "Tesla官方Maps and Navigation", "url": "https://www.tesla.com/ownersmanual/model3/en_eu/GUID-01F1A582-99D1-4933-B5FB-B2F0203FFE6F.html"},
+      {"label": "BMW官方BMW Maps", "url": "https://www.bmw.com/en-au/digital-services/bmw-maps.html"},
+      {"label": "Mercedes-Benz官方MBUX手册", "url": "https://static.oneweb.mercedes-benz.com/css-oom-assets/en-do/pdf/mercedes-g-class-suv-2026-september-e465-mbux-operators-manual.pdf"},
+      {"label": "Polestar官方route planning", "url": "https://www.polestar.com/en-ca/charging/route-planning/"}
+    ],
+    "info_links": [
+      {"label": "SD-6428 Jira原票·描述/评论/附件", "url": "http://jira.i-tetris.com/browse/SD-6428"},
+      {"label": "C673-G翻译清单·高德地图第665行", "url": "https://docs.google.com/spreadsheets/d/1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58/edit?gid=1230327488#gid=1230327488"},
+      {"label": "C673地图PRD V6.1·7.4.1/10.3", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label": "竞品公开资料·context_only", "url": "https://www.tesla.com/ownersmanual/model3/en_eu/GUID-01F1A582-99D1-4933-B5FB-B2F0203FFE6F.html"}
+    ],
+    "judgment_links": [
+      {"label": "SD-6428 Jira原票·截图", "url": "http://jira.i-tetris.com/browse/SD-6428"},
+      {"label": "C673-G翻译清单·高德地图第665行", "url": "https://docs.google.com/spreadsheets/d/1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58/edit?gid=1230327488#gid=1230327488"},
+      {"label": "C673地图PRD V6.1·7.4.1/10.3", "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"}
+    ]
+  }
+]

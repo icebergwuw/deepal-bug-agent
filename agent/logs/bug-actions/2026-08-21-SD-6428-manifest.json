@@ -1,0 +1,548 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-6428",
+  "comment_causality": "Jira当前字段、描述、全部评论和附件证明：英语系统的充电站详情把到达电量、Charging approx.与动态时长值放在同一行，右侧内容显示不完整；评论要求确认英文文本展示边界，未提供可核验的UI边界规则。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票由地图导航和可见交互画像覆盖。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "没有用户语音原话、NLU或Alchemy功能点。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "问题发生在高德地图充电站详情及充电方案信息展示。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "问题是英文标签与动态时长值的可见布局、截断边界。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SD-6428 Jira原票",
+      "source_type": "jira",
+      "source_location": "当前字段、描述、全部评论；image-2026-08-20-21-13-21-767.png、视频和日志附件",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673-G / 欧洲 / Android-Map",
+      "trigger": "系统语言英语，进入充电站充电详情",
+      "target_behavior": "当前显示 Battery level at arrival 24% | Charging approx. 后接动态时长值，但右侧内容显示不完整",
+      "reason": "Jira截图直接证明现象和页面上下文，不单独定义布局目标。"
+    },
+    {
+      "source_id": "translation_config",
+      "source": "另存C673-G/D587G翻译清单260818",
+      "source_type": "formal_config",
+      "source_location": "高德地图 Sheet 第665行：charge_detail_charge_time_desc；Chinese=充电约；English=Charging approx.",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C673-G高德地图",
+      "trigger": "充电站详情充电时长标签",
+      "target_behavior": "标签使用 Key 对应的英文短译 Charging approx.，动态时长值由SDK透出",
+      "reason": "最新翻译清单是当前可读的生效Key配置，但没有给出组合布局规则。"
+    },
+    {
+      "source_id": "map_prd_v61",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_type": "prd",
+      "source_location": "7.4.1接续充电站方案详情：充电详情包含到达电量、充电时间、充电站动态信息等；10.3充电站详情：Y/N字段清单",
+      "role": "formal_target",
+      "match": "partial",
+      "project_model": "C673/C385地图导航",
+      "trigger": "充电站详情/接续充电方案",
+      "target_behavior": "产品要求展示到达电量和充电时间等信息，但未规定英文标签与动态值的宽度、换行或省略方式",
+      "reason": "正式PRD明确字段范围，未覆盖本票的可见布局边界。"
+    },
+    {
+      "source_id": "ui_boundary_gap",
+      "source": "C673-G充电站详情英文布局边界缺口",
+      "source_type": "ue",
+      "source_location": "MasterGo当前回执已过期；Drive检索到的V6.1 PRD和翻译清单未提供该页面有效UE标注",
+      "role": "context_only",
+      "match": "gap",
+      "material": true,
+      "project_model": "C673-G",
+      "trigger": "Charging approx. + 动态时长值",
+      "target_behavior": "未找到生效的单行宽度、换行、自适应或截断规则",
+      "reason": "该缺口会改变文言与地图UI的责任边界，不能确定性转研发或关闭。",
+      "next_action": "由C673-G地图/UI产品负责人补齐英文布局规则并确认最终组件边界。"
+    },
+    {
+      "source_id": "competitor_context",
+      "source": "Tesla/BMW/Mercedes-Benz/Polestar官方公开资料",
+      "source_type": "historical",
+      "source_location": "官方车主手册和官网公开页面，详见竞品检索日志",
+      "role": "context_only",
+      "match": "partial",
+      "project_model": "竞品参考",
+      "trigger": "EV路线规划/充电站信息",
+      "target_behavior": "竞品普遍将充电时长作为独立短字段或充电站卡片信息展示；不作为C673-G正式目标",
+      "reason": "仅用于交互参考，不能替代C673-G正式PRD/UE。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-08-21",
+      "search_location": "Google Drive；C673/C385地图导航PRD版本族",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6428"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 充电站详情 充电时间 英文 显示不完整"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "7.4.1接续充电站方案详情；10.3充电站详情（TSP充电平台）"
+        }
+      ],
+      "source_ids": [
+        "map_prd_v61"
+      ],
+      "search_receipt_ids": [
+        "r-main-prd"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "map_prd_v61"
+            ],
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "references": [
+              {
+                "reference_text": "7.4.1接续充电站方案详情；10.3充电站详情（TSP充电平台）"
+              }
+            ]
+          },
+          {
+            "id": "1c_zTn-i8oUvCw3yeJxQmqs6ltpIXh0x7XG43rv4rs2I",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V4.6",
+            "url": "https://docs.google.com/document/d/1c_zTn-i8oUvCw3yeJxQmqs6ltpIXh0x7XG43rv4rs2I/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "旧版本，已由V6.1覆盖。",
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "references": []
+          },
+          {
+            "id": "1YuX9iJfZy9B2MQ8cJvJti393puzzIw07",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V5.0.pdf",
+            "url": "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+            "disposition": "excluded",
+            "reason": "旧版本，已由V6.1覆盖。",
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "references": []
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [
+          {
+            "source_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "reference_text": "7.4.1接续充电站方案详情；10.3充电站详情（TSP充电平台）",
+            "status": "read",
+            "receipt_ids": [
+              "r-main-prd"
+            ]
+          }
+        ],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": [
+              "r-main-prd"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "V6.1是检索到的最新版本并已读取正文。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-21",
+      "search_location": "Google Drive；C673-G翻译清单和高德地图Key",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6428"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "charge_detail_charge_time_desc Charging approx."
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G 翻译清单 高德地图"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "高德地图第665行：charge_detail_charge_time_desc / 充电约 / Charging approx."
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "高德地图第665行：charge_detail_charge_time_desc / 充电约 / Charging approx."
+        }
+      ],
+      "source_ids": [
+        "translation_config"
+      ],
+      "search_receipt_ids": [
+        "r-special"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+            "title": "另存C673-G/D587G翻译清单260818",
+            "url": "https://docs.google.com/spreadsheets/d/1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "translation_config"
+            ],
+            "version_family": "C673-G/D587G翻译清单",
+            "references": [
+              {
+                "reference_text": "高德地图第665行：charge_detail_charge_time_desc / 充电约 / Charging approx."
+              }
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [
+          {
+            "source_candidate_id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+            "reference_text": "高德地图第665行：charge_detail_charge_time_desc / 充电约 / Charging approx.",
+            "status": "read",
+            "receipt_ids": [
+              "r-special"
+            ]
+          }
+        ],
+        "version_families": [
+          {
+            "family": "C673-G/D587G翻译清单",
+            "status": "enumerated",
+            "receipt_ids": [
+              "r-special"
+            ],
+            "selected_candidate_id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+            "selection_reason": "最新副本已更新至2026-08-20并读取高德地图第665行。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-21",
+      "search_location": "Google Drive；翻译清单高德地图Sheet",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6428"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "Charging approx. 充电约 动态时长"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "charge_detail_charge_time_desc"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "高德地图第665行"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "高德地图第665行"
+        }
+      ],
+      "source_ids": [
+        "translation_config"
+      ],
+      "search_receipt_ids": [
+        "r-config"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+            "title": "另存C673-G/D587G翻译清单260818",
+            "url": "https://docs.google.com/spreadsheets/d/1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58/edit?usp=drivesdk",
+            "disposition": "read",
+            "source_ids": [
+              "translation_config"
+            ],
+            "version_family": "C673-G/D587G翻译清单",
+            "references": [
+              {
+                "reference_text": "高德地图第665行"
+              }
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [
+          {
+            "source_candidate_id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+            "reference_text": "高德地图第665行",
+            "status": "read",
+            "receipt_ids": [
+              "r-config"
+            ]
+          }
+        ],
+        "version_families": [
+          {
+            "family": "C673-G/D587G翻译清单",
+            "status": "enumerated",
+            "receipt_ids": [
+              "r-config"
+            ],
+            "selected_candidate_id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+            "selection_reason": "同一最新副本已完成Key精确读取。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "unavailable",
+      "searched_at": "2026-08-21",
+      "search_location": "MasterGo回执与Drive交互/UE候选",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6428"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "充电站详情 英文布局 换行 截断 自适应"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G 高德地图 充电站详情 UE"
+        }
+      ],
+      "source_ids": [],
+      "search_receipt_ids": [],
+      "reason": "MasterGo短期回执已过期；Drive可读的V6.1 PRD未包含本页面有效UE标注。",
+      "material": true,
+      "next_action": "由C673-G地图/UI产品负责人补充生效UE或书面布局规则。"
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "r-main-prd",
+      "provider": "google_drive",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-08-21",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6428"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 充电站详情 充电时间 英文 显示不完整"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "7.4.1接续充电站方案详情；10.3充电站详情（TSP充电平台）"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "7.4.1接续充电站方案详情；10.3充电站详情（TSP充电平台）"
+        }
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1c_zTn-i8oUvCw3yeJxQmqs6ltpIXh0x7XG43rv4rs2I",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V4.6",
+          "url": "https://docs.google.com/document/d/1c_zTn-i8oUvCw3yeJxQmqs6ltpIXh0x7XG43rv4rs2I/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1YuX9iJfZy9B2MQ8cJvJti393puzzIw07",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V5.0.pdf",
+          "url": "https://drive.google.com/file/d/1YuX9iJfZy9B2MQ8cJvJti393puzzIw07/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "r-special",
+      "provider": "google_drive",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-08-21",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6428"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "charge_detail_charge_time_desc Charging approx."
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G 翻译清单 高德地图"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "高德地图第665行：charge_detail_charge_time_desc / 充电约 / Charging approx."
+        }
+      ],
+      "results": [
+        {
+          "id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+          "title": "另存C673-G/D587G翻译清单260818",
+          "url": "https://docs.google.com/spreadsheets/d/1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "r-config",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-21",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6428"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "Charging approx. 充电约 动态时长"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "charge_detail_charge_time_desc"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "高德地图第665行"
+        }
+      ],
+      "results": [
+        {
+          "id": "1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58",
+          "title": "另存C673-G/D587G翻译清单260818",
+          "url": "https://docs.google.com/spreadsheets/d/1S3zQULjyYZjmcKLl4E7vkAL207MAO7kTm1iqi9ZLm58/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "conflict_resolution": "Jira截图与翻译Key证明现象和当前短译；V6.1 PRD证明字段范围但未定义英文组合布局。Tesla、BMW、Mercedes-Benz和Polestar公开资料只作context_only参考，不能替代C673-G正式UE。缺少生效布局规则会改变文言与地图UI责任边界，因此保持待复核。",
+  "voice_evidence": {
+    "applicable": false,
+    "availability": "not_applicable",
+    "alchemy_tested": false,
+    "standard_function": {
+      "status": "not_applicable",
+      "reason": "本票不是语音/NLU问题。"
+    },
+    "project_function": {
+      "status": "not_applicable",
+      "reason": "本票不是项目语音功能点问题。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C673-G地图/UI产品负责人",
+    "text": "结论：定义为C673-G充电站详情英文布局规则待复核。当前 Charging approx. 与动态时长值在同一行挤压，现象成立；正式翻译表已固定Key和短译，但C673地图PRD V6.1只说明充电详情含到达电量、充电时间等SDK数据，未定义该组合的宽度、换行或省略规则，不能直接归责翻译或地图实现。\n依据：[SD-6428 Jira原票·截图]；[C673-G翻译清单·高德地图第665行]；[C673地图PRD V6.1·7.4.1/10.3]；竞品公开资料仅作context_only参考。\n处理：补齐C673-G充电站详情英文标签与动态时长值的布局边界（优先短标签+独立时长值，禁止截断；明确换行/自适应规则），再按规则由C673-G地图/UI产品负责人确定文言调整或地图UI修复；C673-G地图/UI产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260821T120000+0800-SD-6428",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 379
+  }
+}
