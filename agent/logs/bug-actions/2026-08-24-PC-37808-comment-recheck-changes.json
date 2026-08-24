@@ -1,0 +1,33 @@
+{
+  "changes": {
+    "C": {
+      "text": "现象：‘导航到天安门走最快的路’后选择第一个POI，语义已正确下发route_preference=shortest_time，但POI二次选择后地图启动算路时strategy=null。[Alchemy当前实测/标准1433/项目24552][Jira评论·2026-07-17 16:15]\n正式目标：POI二次命中后应把本次请求的规划条件与命中POI一起传入规划；路线规划正式定义支持‘速度最快’，现有算路页展示最多3条路线并默认选中偏好算路返回的第一条，8秒无操作后开始导航。[路线规划主流程PRD v1.2·5.4.4/5.5][地图主PRD V6.1·3.1]",
+      "links": [
+        {"label":"Alchemy当前实测/标准1433/项目24552","url":"https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+        {"label":"Jira评论·2026-07-17 16:15","url":"http://jira.i-tetris.com/browse/PC-37808"},
+        {"label":"路线规划主流程PRD v1.2·5.4.4/5.5","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk"},
+        {"label":"地图主PRD V6.1·3.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"}
+      ]
+    },
+    "D": {
+      "text": "结论：定义为地图导航执行缺陷。‘导航到天安门走最快的路’经POI二次选择后，应保留route_preference=shortest_time并按该偏好发起算路；仍进入现有路线规划页，展示最多3条路线并默认选中偏好算路返回的第一条，8秒无操作后开始导航，不由客户端按三条耗时二次比选，也不直接跳过规划页。\n依据：Alchemy标准1433/深蓝24552；路线规划主流程PRD v1.2·5.4.4/5.5；地图主PRD V6.1·3.1；Jira评论·2026-07-17 16:15。\n处理：修复POI可见选择后的route_preference透传，并覆盖现有全部支持的路线偏好回归；地图应用研发负责人处理。",
+      "links": [
+        {"label":"Alchemy标准1433/深蓝24552","url":"https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+        {"label":"路线规划主流程PRD v1.2·5.4.4/5.5","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk"},
+        {"label":"地图主PRD V6.1·3.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+        {"label":"Jira评论·2026-07-17 16:15","url":"http://jira.i-tetris.com/browse/PC-37808"}
+      ]
+    },
+    "G": "可转研发",
+    "I": "保留shortest_time发起偏好算路；保留路线规划页及8秒倒计时；公共链路覆盖全部已支持路线偏好",
+    "J": {
+      "links": [
+        {"label":"Jira原票·描述/完整评论","url":"http://jira.i-tetris.com/browse/PC-37808"},
+        {"label":"Alchemy标准1433/深蓝项目24552","url":"https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+        {"label":"路线规划主流程PRD v1.2·5.4.4/5.5","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk"},
+        {"label":"地图主PRD V6.1·3.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+        {"label":"地图交互V0.6","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"}
+      ]
+    }
+  }
+}

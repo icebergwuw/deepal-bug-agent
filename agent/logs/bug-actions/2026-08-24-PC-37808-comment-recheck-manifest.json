@@ -1,0 +1,107 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-37808",
+  "comment_causality": "汪雯菁评论证明NLU已正确下发route_preference=shortest_time；程云2026-07-17 16:15评论证明选择第一个POI后地图执行链收到strategy=null并启动默认route0，说明POI二次交互后的路线偏好未进入算路执行链。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": [{"key": "PC-38933", "relationship": "relates to", "outcome": "地图问题分析总票，无评论和新增产品口径，不改变本票结论。", "read": true}]},
+  "evidence_profiles": ["voice", "map_navigation", "visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "已命中更具体画像。"},
+    "voice": {"applicable": true, "reason": "核验原话、meta_id 1209及项目配置。"},
+    "map_navigation": {"applicable": true, "reason": "争议位于路线偏好、算路和路线规划页。"},
+    "visible_interaction": {"applicable": true, "reason": "用户从POI列表选择第一个。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "旧判断遗漏路线规划主流程PRD v1.2。该专项PRD明确支持速度最快；Alchemy标准1433明确POI二次命中后使用下发规划条件与命中POI执行规划，因此strategy=null违反正式定义。地图主PRD 3.1保留路线规划页和8秒倒计时，故不直接跳页，也不要求客户端比较三条耗时。",
+  "voice_evidence": {
+    "applicable": true, "availability": "complete", "alchemy_tested": true,
+    "original_utterance": "导航到天安门走最快的路",
+    "alchemy_result": "classification=task；meta_id=1209；poi_name=天安门；route_preference=shortest_time；action=navi",
+    "meta_id": "1209",
+    "standard_function": {"status": "verified", "name": "标准1433 导航去【地址】", "assessment": "已锁定，含route_preference和POI列表二次交互。"},
+    "project_function": {"status": "verified", "name": "深蓝24552", "assessment": "已锁定，继承标准1433未修改。"}
+  },
+  "scope_checks": [
+    {"source_id":"jira-actual","source":"PC-37808 Jira原票","source_location":"描述、全部评论、2026-07-17 16:15执行链、附件元数据","source_type":"jira","role":"implementation_actual","project_model":"C673-5 STG SWD.5.70","trigger":"最快路线后选择第一个POI","target_behavior":"当前strategy=null并启动默认route0","match":"exact","reason":"直接证明当前行为。"},
+    {"source_id":"alchemy-current","source":"Alchemy在线对话 BIGSUR","source_location":"原话当前结果","source_type":"alchemy_current","role":"implementation_actual","project_model":"深蓝BIGSUR","trigger":"导航到天安门走最快的路","target_behavior":"下发1209与shortest_time","match":"exact","reason":"排除NLU问题。"},
+    {"source_id":"alchemy-standard-1433","source":"Alchemy标准功能1433","source_location":"导航去【地址】下发参数与执行策略","source_type":"alchemy_standard","role":"context_only","project_model":"标准功能","trigger":"POI列表二次命中","target_behavior":"使用规划条件与命中POI执行规划","match":"exact","reason":"定义二次交互执行参数。"},
+    {"source_id":"alchemy-project-24552","source":"Alchemy深蓝项目功能24552","source_location":"功能详情与继承状态","source_type":"alchemy_project","role":"context_only","project_model":"深蓝","trigger":"1209导航去地址","target_behavior":"继承标准1433未修改","match":"exact","reason":"证明配置适用于深蓝。"},
+    {"source_id":"route-prd-v1-2","source":"路线规划主流程PRD-v1.2","source_location":"5.4.4路线规划页；5.5路线偏好设定","source_type":"special_prd","role":"formal_target","project_model":"高德地图路线规划","trigger":"带路线偏好算路","target_behavior":"支持速度最快并按路线策略请求SDK；路线页8秒无操作后启动当前路线","match":"exact","reason":"补齐专项正式定义。"},
+    {"source_id":"map-prd-v6-1","source":"地图导航产品需求文档_C385&C673_V6.1","source_location":"3.1算路结果","source_type":"prd","role":"formal_target","project_model":"C385/C673","trigger":"算路返回多条路线","target_behavior":"展示最多3条、默认第一条、8秒后开始导航","match":"exact","reason":"定义路线页边界。"},
+    {"source_id":"map-ue-v0-6","source":"C385&673地图导航交互V0.6","source_location":"路线卡片与开始导航交互","source_type":"ue","role":"formal_target","project_model":"C385/C673高德地图","trigger":"路线规划页面","target_behavior":"保留现有路线卡片和开始导航交互","match":"partial","reason":"确认页面形态。"},
+    {"source_id":"formal-config-audit","source":"长安C385&C673地图功能清单","source_location":"当前表格检索速度最快无匹配行","source_type":"formal_config","role":"formal_target","project_model":"C385/C673","trigger":"检查配置冲突","target_behavior":"未发现覆盖专项PRD的冲突配置","match":"partial","reason":"记录现行配置检索结果。"}
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id":"formal_definition_search","status":"read","searched_at":"2026-08-24","search_location":"Google Drive",
+      "queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"路线偏好 最快 导航 地图"},{"kind":"module_artifact","text":"路线规划主流程PRD"},{"kind":"version_family","text":"路线规划主流程PRD"}],
+      "source_ids":["route-prd-v1-2"],"reason":"专项PRD明确速度最快。","material":false,"next_action":"","search_receipt_ids":["r-formal"],
+      "candidate_audit":{"completed":true,"results_count":2,"candidates":[
+        {"id":"1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk","disposition":"read","source_ids":["route-prd-v1-2"],"references":[],"version_family":"路线规划主流程PRD"},
+        {"id":"1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz/view?usp=drivesdk","disposition":"excluded","reason":"相同版本副本","references":[],"version_family":"路线规划主流程PRD"}
+      ]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[{"family":"路线规划主流程PRD","status":"enumerated","receipt_ids":["r-formal"],"selected_candidate_id":"1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3","selection_reason":"两个结果同为v1.2，选择已读副本。","newer_version_checked":true}]}
+    },
+    {"check_id":"alchemy_current","status":"read","searched_at":"2026-08-24","search_location":"Alchemy在线对话 BIGSUR","queries":[{"kind":"exact_trigger","text":"导航到天安门走最快的路"}],"source_ids":["alchemy-current"],"reason":"当前下发shortest_time。","material":false,"next_action":""},
+    {"check_id":"alchemy_standard","status":"read","searched_at":"2026-08-24","search_location":"Alchemy标准1433","queries":[{"kind":"meta_or_function","text":"1209 1433"}],"source_ids":["alchemy-standard-1433"],"reason":"已读锁定标准功能。","material":false,"next_action":""},
+    {"check_id":"alchemy_project","status":"read","searched_at":"2026-08-24","search_location":"Alchemy深蓝24552","queries":[{"kind":"meta_or_function","text":"1209 24552"},{"kind":"project_scope","text":"深蓝"}],"source_ids":["alchemy-project-24552"],"reason":"已核验继承未修改。","material":false,"next_action":""},
+    {
+      "check_id":"main_prd_search","status":"read","searched_at":"2026-08-24","search_location":"Google Drive",
+      "queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"路线规划页 默认第一条 8秒"},{"kind":"module_artifact","text":"地图导航产品需求文档_C385&C673"},{"kind":"version_family","text":"地图导航产品需求文档_C385&C673"}],
+      "source_ids":["map-prd-v6-1"],"reason":"已读V6.1第3.1节。","material":false,"next_action":"","search_receipt_ids":["r-main"],
+      "candidate_audit":{"completed":true,"results_count":2,"candidates":[
+        {"id":"1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y","title":"地图导航产品需求文档_C385&C673_V6.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk","disposition":"read","source_ids":["map-prd-v6-1"],"references":[],"version_family":"地图导航产品需求文档_C385&C673"},
+        {"id":"1vpQb6GYzkaqPFQ3g83MmkQM0EJjlypdT","title":"地图导航产品需求文档_C385&C673_V4.7.pdf","url":"https://drive.google.com/file/d/1vpQb6GYzkaqPFQ3g83MmkQM0EJjlypdT/view?usp=drivesdk","disposition":"excluded","reason":"低于V6.1","references":[],"version_family":"地图导航产品需求文档_C385&C673"}
+      ]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[{"family":"地图导航产品需求文档_C385&C673","status":"enumerated","receipt_ids":["r-main"],"selected_candidate_id":"1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y","selection_reason":"选择最高可读版本V6.1。","newer_version_checked":true}]}
+    },
+    {
+      "check_id":"special_definition_search","status":"read","searched_at":"2026-08-24","search_location":"Google Drive",
+      "queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"速度最快 路线偏好"},{"kind":"module_artifact","text":"路线规划主流程PRD"},{"kind":"version_family","text":"路线规划主流程PRD"}],
+      "source_ids":["route-prd-v1-2"],"reason":"已读v1.2第5.4.4/5.5节。","material":false,"next_action":"","search_receipt_ids":["r-special"],
+      "candidate_audit":{"completed":true,"results_count":2,"candidates":[
+        {"id":"1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk","disposition":"read","source_ids":["route-prd-v1-2"],"references":[],"version_family":"路线规划主流程PRD"},
+        {"id":"1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz/view?usp=drivesdk","disposition":"excluded","reason":"相同版本副本","references":[],"version_family":"路线规划主流程PRD"}
+      ]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[{"family":"路线规划主流程PRD","status":"enumerated","receipt_ids":["r-special"],"selected_candidate_id":"1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3","selection_reason":"两个结果同为v1.2，选择已读副本。","newer_version_checked":true}]}
+    },
+    {
+      "check_id":"formal_config_search","status":"read","searched_at":"2026-08-24","search_location":"Google Drive功能清单",
+      "queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"速度最快 路线偏好"},{"kind":"module_artifact","text":"长安C385&C673地图功能清单"},{"kind":"version_family","text":"长安C385&C673地图功能清单"}],
+      "source_ids":["formal-config-audit"],"reason":"未发现冲突配置。","material":false,"next_action":"","search_receipt_ids":["r-config"],
+      "candidate_audit":{"completed":true,"results_count":1,"candidates":[{"id":"1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk","title":"长安C385&C673地图功能清单","url":"https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit?usp=drivesdk","disposition":"read","source_ids":["formal-config-audit"],"references":[],"version_family":"长安C385&C673地图功能清单"}]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[]}
+    },
+    {
+      "check_id":"interaction_or_ue_search","status":"read","searched_at":"2026-08-24","search_location":"Google Drive",
+      "queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"POI二次选择 路线卡片 开始导航"},{"kind":"module_artifact","text":"C385&673交互设计文档_地图导航 高德 850"},{"kind":"version_family","text":"C385&673交互设计文档_地图导航（高德）_850"}],
+      "source_ids":["map-ue-v0-6"],"reason":"版本族命中V0.5/V0.6，选择V0.6。","material":false,"next_action":"","search_receipt_ids":["r-ue"],
+      "candidate_audit":{"completed":true,"results_count":2,"candidates":[
+        {"id":"1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk","disposition":"read","source_ids":["map-ue-v0-6"],"references":[],"version_family":"C385&673交互设计文档_地图导航（高德）_850"},
+        {"id":"1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf","url":"https://drive.google.com/file/d/1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl/view?usp=drivesdk","disposition":"excluded","reason":"低于V0.6","references":[],"version_family":"C385&673交互设计文档_地图导航（高德）_850"}
+      ]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[{"family":"C385&673交互设计文档_地图导航（高德）_850","status":"enumerated","receipt_ids":["r-ue"],"selected_candidate_id":"1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl","selection_reason":"选择当前版本V0.6。","newer_version_checked":true}]}
+    }
+  ],
+  "search_receipts": [
+    {"receipt_id":"r-formal","provider":"google_drive","check_id":"formal_definition_search","searched_at":"2026-08-24T15:56:30+08:00","queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"路线偏好 最快 导航 地图"},{"kind":"module_artifact","text":"路线规划主流程PRD"},{"kind":"version_family","text":"路线规划主流程PRD"}],"results":[{"id":"1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk","mime_type":"application/pdf"},{"id":"1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz/view?usp=drivesdk","mime_type":"application/pdf"}]},
+    {"receipt_id":"r-main","provider":"google_drive","check_id":"main_prd_search","searched_at":"2026-08-24T15:57:00+08:00","queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"路线规划页 默认第一条 8秒"},{"kind":"module_artifact","text":"地图导航产品需求文档_C385&C673"},{"kind":"version_family","text":"地图导航产品需求文档_C385&C673"}],"results":[{"id":"1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y","title":"地图导航产品需求文档_C385&C673_V6.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk","mime_type":"application/vnd.google-apps.document"},{"id":"1vpQb6GYzkaqPFQ3g83MmkQM0EJjlypdT","title":"地图导航产品需求文档_C385&C673_V4.7.pdf","url":"https://drive.google.com/file/d/1vpQb6GYzkaqPFQ3g83MmkQM0EJjlypdT/view?usp=drivesdk","mime_type":"application/pdf"}]},
+    {"receipt_id":"r-special","provider":"google_drive","check_id":"special_definition_search","searched_at":"2026-08-24T15:57:30+08:00","queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"速度最快 路线偏好"},{"kind":"module_artifact","text":"路线规划主流程PRD"},{"kind":"version_family","text":"路线规划主流程PRD"}],"results":[{"id":"1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk","mime_type":"application/pdf"},{"id":"1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz","title":"路线规划主流程PRD-v1.2.pdf","url":"https://drive.google.com/file/d/1RUdJ4qdU0jsVCVrVM4u2cZcOw3zOGyoz/view?usp=drivesdk","mime_type":"application/pdf"}]},
+    {"receipt_id":"r-config","provider":"google_drive","check_id":"formal_config_search","searched_at":"2026-08-24T15:58:00+08:00","queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"速度最快 路线偏好"},{"kind":"module_artifact","text":"长安C385&C673地图功能清单"},{"kind":"version_family","text":"长安C385&C673地图功能清单"}],"results":[{"id":"1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk","title":"长安C385&C673地图功能清单","url":"https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit?usp=drivesdk","mime_type":"application/vnd.google-apps.spreadsheet"}]},
+    {"receipt_id":"r-ue","provider":"google_drive","check_id":"interaction_or_ue_search","searched_at":"2026-08-24T15:58:30+08:00","queries":[{"kind":"jira_key","text":"PC-37808"},{"kind":"problem_concept","text":"POI二次选择 路线卡片 开始导航"},{"kind":"module_artifact","text":"C385&673交互设计文档_地图导航 高德 850"},{"kind":"version_family","text":"C385&673交互设计文档_地图导航（高德）_850"}],"results":[{"id":"1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk","mime_type":"application/pdf"},{"id":"1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl","title":"C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf","url":"https://drive.google.com/file/d/1Lx8DyBwD31kWKu0LXBrIFl2Dz6QCjckl/view?usp=drivesdk","mime_type":"application/pdf"}]}
+  ],
+  "decision": {
+    "status":"可转研发","owner":"地图应用研发负责人",
+    "text":"结论：定义为地图导航执行缺陷。‘导航到天安门走最快的路’经POI二次选择后，应保留route_preference=shortest_time并按该偏好发起算路；仍进入现有路线规划页，展示最多3条路线并默认选中偏好算路返回的第一条，8秒无操作后开始导航，不由客户端按三条耗时二次比选，也不直接跳过规划页。\n依据：Alchemy标准1433/深蓝24552；路线规划主流程PRD v1.2·5.4.4/5.5；地图主PRD V6.1·3.1；Jira评论·2026-07-17 16:15。\n处理：修复POI可见选择后的route_preference透传，并覆盖现有全部支持的路线偏好回归；地图应用研发负责人处理。",
+    "implementation_source_ids":["jira-actual","alchemy-current"]
+  },
+  "run_context":{"run_id":"bug-20260824T160000+0800-PC-37808-comment-recheck","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":135},
+  "expected_behavior": {
+    "trigger":"带明确路线偏好的导航指令经POI列表二次选择",
+    "target_state":"命中POI与route_preference一起进入偏好算路，路线页默认选中SDK偏好算路返回的第一条",
+    "intent_function_signal":"1209、action=navi、route_preference=shortest_time；二次交互保留规划条件",
+    "ui_tts_vehicle_behavior":"保留路线规划页，最多3条，8秒无操作后启动当前默认路线",
+    "boundary":"不新增路线页语音选第几条，不要求客户端比较三条耗时；公共透传链覆盖全部已支持路线偏好",
+    "source_ids":["route-prd-v1-2","map-prd-v6-1"]
+  }
+}
