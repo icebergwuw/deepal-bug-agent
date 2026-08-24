@@ -1,0 +1,19 @@
+{
+  "sheets": [{
+    "properties": {"sheetId": 2135747181, "title": "bug"},
+    "data": [{"startRow": 128, "rowData": [{
+      "values": [
+        {"userEnteredValue":{"stringValue":"2026-07-21"}},
+        {"userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-2352\",\"SD-2352｜恒温座舱开启时辅助驾驶数据仍可点击\")"}},
+        {"userEnteredValue":{"stringValue":"辅助驾驶数据仅ON档可用；恒温座舱激活后仍可点击，现有按钮定义未覆盖该状态。"}},
+        {"userEnteredValue":{"stringValue":"解决：恒温座舱激活后辅助驾驶数据入口置灰，退出后恢复；CarSettings研发处理。"}},
+        {"userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+        {},
+        {"userEnteredValue":{"stringValue":"可转研发"}},
+        {},
+        {"userEnteredValue":{"stringValue":"确认正常、低功耗两种激活态均一致。"}},
+        {}
+      ]
+    }]}]
+  }]
+}

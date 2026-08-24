@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "key": "SD-2352",
+  "mode": "recheck",
+  "row": "bug!A129:J129",
+  "changed_columns": ["C", "D", "G", "I", "J"],
+  "protected_columns_unchanged": ["A", "B", "E", "F", "H"],
+  "checks": [
+    "B列Jira HYPERLINK公式保持",
+    "E列BOOLEAN复选框保持FALSE",
+    "C/D/J富文本链接回读一致",
+    "原行格式、WRAP和筛选范围保持",
+    "Chrome视觉检查确认A129:J129内容显示且行高可容纳正文"
+  ],
+  "errors": []
+}

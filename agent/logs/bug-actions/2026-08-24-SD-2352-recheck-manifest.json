@@ -1,0 +1,245 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-2352",
+  "run_context": {
+    "run_id": "bug-20260824T161000+0800-SD-2352-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 129
+  },
+  "comment_causality": "Jira描述记录恒温座舱开启后辅助驾驶数据按钮仍可点击；2026-03-23评论质疑需求只写账号登录条件，2026-04-24测试说明辅助驾驶数据前置条件为ON档而恒温座舱处于OFF档，2026-07-10追问需求来源，2026-07-13回复该要求来自长安产品。当前重新打开状态需要用正式资料重新定责。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["general", "visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "需要核验辅助驾驶数据记录的正式电源前置条件。"},
+    "voice": {"applicable": false, "reason": "不涉及语音识别、语义、Alchemy或TTS。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图、导航、路线或POI。"},
+    "visible_interaction": {"applicable": true, "reason": "问题直接涉及车辆设置入口在恒温座舱激活态下应可点击还是置灰。"}
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira_actual",
+      "source": "SD-2352 Jira原票",
+      "source_type": "jira",
+      "source_location": "描述、字段、附件及2026-03-23至2026-07-13完整评论",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673-G5 / Android-CarSettings / 欧洲",
+      "trigger": "开启恒温座舱后进入辅助驾驶数据记录设置",
+      "target_behavior": "当前辅助驾驶数据按钮仍可点击，问题必现，Jira状态为重新打开。",
+      "reason": "当前线上Jira字段、描述、附件截图与完整评论证明实现事实。"
+    },
+    {
+      "source_id": "vehicle_settings_v165",
+      "source": "车辆设置需求文档-海外版-V1.6.5-20260312",
+      "source_type": "prd",
+      "source_location": "2.3.2 界面显示方式；3.5.1 辅助驾驶数据记录；3.5.3 界面元素说明",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C673-G3/G5/G6海外ADR车辆设置",
+      "trigger": "进入或操作辅助驾驶数据记录功能",
+      "target_behavior": "辅助驾驶数据记录的前置条件为电源ON档、HU开机；非允许电源状态下相关设置项置灰不可设置。",
+      "reason": "同项目当前最新车辆设置主需求直接定义目标功能及电源准入边界。"
+    },
+    {
+      "source_id": "scenario_definition_v49",
+      "source": "C385_C673_功能描述_智能情景模式功能定义V4.9",
+      "source_type": "special_prd",
+      "source_location": "恒温座舱设置功能；开关置灰；恒温座舱功能激活",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C673-G3/G5恒温座舱",
+      "trigger": "用户开启正常模式或低功耗模式后下电",
+      "target_behavior": "电源转为OFF后恒温座舱进入激活态；正常模式仅保留空调、影音、座椅调节和用户手册，其余车机功能置灰，低功耗模式仅保持温度。",
+      "reason": "当前V4.9专项定义直接证明恒温座舱激活态的电源状态与可用功能边界。"
+    },
+    {
+      "source_id": "c673_config_v17",
+      "source": "C673-G3、G5座舱全功清单_V1.7_20260730",
+      "source_type": "formal_config",
+      "source_location": "车辆设置2104/210401/210402；情景模式05/0501；电源管理020201/020202",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "C673-G3/G5",
+      "trigger": "核对辅助驾驶数据记录与恒温座舱是否属于当前项目配置",
+      "target_behavior": "清单同时配置辅助驾驶数据记录及恒温座舱正常/低功耗相关功能。",
+      "reason": "证明两项功能在C673-G3/G5当前项目范围内，不单独定义置灰规则。"
+    },
+    {
+      "source_id": "scenario_interaction_v24",
+      "source": "长安C385&C673交互设计文档_情景模式_v2.4",
+      "source_type": "interaction",
+      "source_location": "5.情景模式-恒温座舱",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "C385&C673情景模式",
+      "trigger": "开启恒温座舱正常模式或低功耗模式并闭锁下电",
+      "target_behavior": "正常模式在闭锁下电后保持空调、影音、座椅可用；低功耗模式在闭锁下电后保持温度。",
+      "reason": "当前交互文档印证恒温座舱在下电后的用户可见状态，不替代车辆设置功能准入定义。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive；C673-G3/G5/G6 ADR资料目录及车辆设置版本族",
+      "queries": [
+        {"kind":"jira_key","text":"SD-2352"},
+        {"kind":"problem_concept","text":"恒温座舱 辅助驾驶数据记录 ON档 置灰"},
+        {"kind":"module_artifact","text":"车辆设置需求文档-海外版"},
+        {"kind":"version_family","text":"车辆设置需求文档-海外版"}
+      ],
+      "source_ids": ["vehicle_settings_v165"],
+      "search_receipt_ids": ["sd2352-formal-definition-20260824"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {"id":"1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM","title":"车辆设置需求文档-海外版-V1.6.5-20260312.docx","url":"https://docs.google.com/document/d/1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM/edit","disposition":"read","source_ids":["vehicle_settings_v165"],"version_family":"车辆设置需求文档-海外版","references":[]},
+          {"id":"16iVU9Yegt5NDltCRo3hq210JQIiWjz2w","title":"车辆设置需求文档-海外版-V1.6.2-20251225.docx","url":"https://docs.google.com/document/d/16iVU9Yegt5NDltCRo3hq210JQIiWjz2w/edit","disposition":"excluded","reason":"同系列旧版本，未选用。","version_family":"车辆设置需求文档-海外版","references":[]},
+          {"id":"1fqVNR1igAWhHBQHfMI6xhbx9rePFQK7f","title":"车辆设置需求文档-海外版-V1.6.1-20251111.docx","url":"https://docs.google.com/document/d/1fqVNR1igAWhHBQHfMI6xhbx9rePFQK7f/edit","disposition":"excluded","reason":"同系列旧版本，未选用。","version_family":"车辆设置需求文档-海外版","references":[]},
+          {"id":"10Z44hYft5m1RfwGO_K5e88M3cCB7WmEP","title":"C673-G3-G5-G6-ADR功能文档清单-V1.0.xlsx","url":"https://docs.google.com/spreadsheets/d/10Z44hYft5m1RfwGO_K5e88M3cCB7WmEP/edit","disposition":"excluded","reason":"项目资料目录，仅用于确认车辆设置文档属于ADR资料，不直接定义目标行为。","version_family":"C673-G3-G5-G6-ADR功能文档清单","references":[]}
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {"family":"车辆设置需求文档-海外版","status":"enumerated","receipt_ids":["sd2352-formal-definition-20260824"],"selected_candidate_id":"1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM","selection_reason":"V1.6.5是同一ADR目录中检索到的最新版本，且3.5.1直接覆盖辅助驾驶数据记录。","newer_version_checked":true},
+          {"family":"C673-G3-G5-G6-ADR功能文档清单","status":"not_applicable","reason":"资料目录不是目标行为定义，本次不以其版本决定产品口径。"}
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive；智能情景模式功能定义V4.9精确名称检索及正文读取",
+      "queries": [
+        {"kind":"jira_key","text":"SD-2352"},
+        {"kind":"problem_concept","text":"恒温座舱 下电 OFF 激活 可用功能置灰"},
+        {"kind":"module_artifact","text":"C385_C673_功能描述_智能情景模式功能定义V4.9"},
+        {"kind":"version_family","text":"C385_C673_功能描述_智能情景模式功能定义"}
+      ],
+      "source_ids": ["scenario_definition_v49"],
+      "search_receipt_ids": ["sd2352-special-definition-20260824"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 5,
+        "candidates": [
+          {"id":"1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC","title":"C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）","url":"https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit","disposition":"excluded","reason":"个人盘副本，正文一致但不作为首选。","version_family":"C385_C673_功能描述_智能情景模式功能定义","references":[]},
+          {"id":"1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk","title":"C385_C673_功能描述_智能情景模式功能定义V4.9.docx","url":"https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit","disposition":"excluded","reason":"另一共享盘同版本副本；选择当前项目资料盘版本。","version_family":"C385_C673_功能描述_智能情景模式功能定义","references":[]},
+          {"id":"1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS","title":"C385_C673_功能描述_智能情景模式功能定义V4.9.docx","url":"https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit","disposition":"read","source_ids":["scenario_definition_v49"],"version_family":"C385_C673_功能描述_智能情景模式功能定义","references":[]},
+          {"id":"1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4","title":"深蓝项目变更管理表-2026年","url":"https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit","disposition":"excluded","reason":"变更管理表，不是恒温座舱专项定义。","version_family":"","references":[]},
+          {"id":"1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs","title":"吴优工作说明","url":"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit","disposition":"excluded","reason":"负责人处理清单，不是产品正式定义。","version_family":"","references":[]}
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [{"family":"C385_C673_功能描述_智能情景模式功能定义","status":"enumerated","receipt_ids":["sd2352-special-definition-20260824"],"selected_candidate_id":"1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS","selection_reason":"选择当前项目资料盘中的V4.9非副本，正文恒温座舱章节覆盖C673-G3/G5。","newer_version_checked":true}]
+      }
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive；C673-G3/G5座舱全功清单当前资料目录",
+      "queries": [
+        {"kind":"jira_key","text":"SD-2352"},
+        {"kind":"problem_concept","text":"辅助驾驶数据记录 恒温座舱 C673-G5配置"},
+        {"kind":"module_artifact","text":"C673-G3、G5座舱全功清单_V1.7_20260730"},
+        {"kind":"version_family","text":"C673-G3、G5座舱全功清单"}
+      ],
+      "source_ids": ["c673_config_v17"],
+      "search_receipt_ids": ["sd2352-formal-config-20260824"],
+      "candidate_audit": {"completed":true,"results_count":1,"candidates":[{"id":"11wUCBnYhuh27sn91vQLImZ-mIngsiiTl","title":"C673-G3、G5座舱全功清单_V1.7_20260730.xlsx","url":"https://docs.google.com/spreadsheets/d/11wUCBnYhuh27sn91vQLImZ-mIngsiiTl/edit","disposition":"read","source_ids":["c673_config_v17"],"version_family":"C673-G3、G5座舱全功清单","references":[]}]},
+      "search_completion": {"completed":true,"referenced_sources":[],"version_families":[{"family":"C673-G3、G5座舱全功清单","status":"enumerated","receipt_ids":["sd2352-formal-config-20260824"],"selected_candidate_id":"11wUCBnYhuh27sn91vQLImZ-mIngsiiTl","selection_reason":"当前目录唯一命中且为V1.7，正文包含目标车辆设置和恒温座舱配置项。","newer_version_checked":true}]}
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive；当前情景模式交互目录",
+      "queries": [
+        {"kind":"jira_key","text":"SD-2352"},
+        {"kind":"problem_concept","text":"恒温座舱 正常模式 低功耗模式 闭锁下电"},
+        {"kind":"module_artifact","text":"长安C385&C673交互设计文档_情景模式_v2.4"},
+        {"kind":"version_family","text":"长安C385&C673交互设计文档_情景模式"}
+      ],
+      "source_ids": ["scenario_interaction_v24"],
+      "search_receipt_ids": ["sd2352-interaction-20260824"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 5,
+        "candidates": [
+          {"id":"19reIvFcKMcKaIjkHo95BnFr9nnilzbYR","title":"长安C385&C673交互设计文档_情景模式_v2.4.pdf（副本）","url":"https://drive.google.com/file/d/19reIvFcKMcKaIjkHo95BnFr9nnilzbYR/view","disposition":"read","source_ids":["scenario_interaction_v24"],"version_family":"长安C385&C673交互设计文档_情景模式","references":[]},
+          {"id":"1c2_xAv3Xi0h0xjTQimDxYMyOn7NsTSFO","title":"长安C385&C673交互设计文档_情景模式---废弃.pdf","url":"https://drive.google.com/file/d/1c2_xAv3Xi0h0xjTQimDxYMyOn7NsTSFO/view","disposition":"excluded","reason":"文件名明确标记废弃。","version_family":"长安C385&C673交互设计文档_情景模式","references":[]},
+          {"id":"1zoPPcmcrAy96uJpYxwIv1Sa7Bxhnjixi","title":"长安C385&C673交互设计文档_情景模式--废弃.pdf","url":"https://drive.google.com/file/d/1zoPPcmcrAy96uJpYxwIv1Sa7Bxhnjixi/view","disposition":"excluded","reason":"文件名明确标记废弃。","version_family":"长安C385&C673交互设计文档_情景模式","references":[]},
+          {"id":"1BkzkXUBGGBt7hV6tiz278RW05RdSC9Zm","title":"长安C385&C673交互设计文档_情景模式-废弃.pdf","url":"https://drive.google.com/file/d/1BkzkXUBGGBt7hV6tiz278RW05RdSC9Zm/view","disposition":"excluded","reason":"文件名明确标记废弃。","version_family":"长安C385&C673交互设计文档_情景模式","references":[]},
+          {"id":"1cHPVl3KV0qEPIY4LS5HZeFZ13e39Jde-","title":"长安C385-3交互设计文档_泊车_J3_V1.0.pdf","url":"https://drive.google.com/file/d/1cHPVl3KV0qEPIY4LS5HZeFZ13e39Jde-/view","disposition":"excluded","reason":"泊车资料，与恒温座舱无关。","version_family":"长安C385-3交互设计文档_泊车_J3","references":[]}
+        ]
+      },
+      "search_completion": {"completed":true,"referenced_sources":[],"version_families":[{"family":"长安C385&C673交互设计文档_情景模式","status":"enumerated","receipt_ids":["sd2352-interaction-20260824"],"selected_candidate_id":"19reIvFcKMcKaIjkHo95BnFr9nnilzbYR","selection_reason":"同目录唯一未标记废弃且版本为V2.4，恒温座舱章节可读。","newer_version_checked":true},{"family":"长安C385-3交互设计文档_泊车_J3","status":"not_applicable","reason":"泊车交互资料与恒温座舱及辅助驾驶数据设置无关。"}]}
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id":"sd2352-formal-definition-20260824","provider":"google_drive","check_id":"formal_definition_search","searched_at":"2026-08-24T16:05:00+08:00",
+      "queries":[{"kind":"jira_key","text":"SD-2352"},{"kind":"problem_concept","text":"恒温座舱 辅助驾驶数据记录 ON档 置灰"},{"kind":"module_artifact","text":"车辆设置需求文档-海外版"},{"kind":"version_family","text":"车辆设置需求文档-海外版"}],
+      "results":[
+        {"id":"1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM","title":"车辆设置需求文档-海外版-V1.6.5-20260312.docx","url":"https://docs.google.com/document/d/1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id":"16iVU9Yegt5NDltCRo3hq210JQIiWjz2w","title":"车辆设置需求文档-海外版-V1.6.2-20251225.docx","url":"https://docs.google.com/document/d/16iVU9Yegt5NDltCRo3hq210JQIiWjz2w/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id":"1fqVNR1igAWhHBQHfMI6xhbx9rePFQK7f","title":"车辆设置需求文档-海外版-V1.6.1-20251111.docx","url":"https://docs.google.com/document/d/1fqVNR1igAWhHBQHfMI6xhbx9rePFQK7f/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id":"10Z44hYft5m1RfwGO_K5e88M3cCB7WmEP","title":"C673-G3-G5-G6-ADR功能文档清单-V1.0.xlsx","url":"https://docs.google.com/spreadsheets/d/10Z44hYft5m1RfwGO_K5e88M3cCB7WmEP/edit","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}
+      ]
+    },
+    {
+      "receipt_id":"sd2352-special-definition-20260824","provider":"google_drive","check_id":"special_definition_search","searched_at":"2026-08-24T16:07:00+08:00",
+      "queries":[{"kind":"jira_key","text":"SD-2352"},{"kind":"problem_concept","text":"恒温座舱 下电 OFF 激活 可用功能置灰"},{"kind":"module_artifact","text":"C385_C673_功能描述_智能情景模式功能定义V4.9"},{"kind":"version_family","text":"C385_C673_功能描述_智能情景模式功能定义"}],
+      "results":[
+        {"id":"1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC","title":"C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）","url":"https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id":"1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk","title":"C385_C673_功能描述_智能情景模式功能定义V4.9.docx","url":"https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id":"1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS","title":"C385_C673_功能描述_智能情景模式功能定义V4.9.docx","url":"https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id":"1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4","title":"深蓝项目变更管理表-2026年","url":"https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit","mime_type":"application/vnd.google-apps.spreadsheet"},
+        {"id":"1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs","title":"吴优工作说明","url":"https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit","mime_type":"application/vnd.google-apps.spreadsheet"}
+      ]
+    },
+    {
+      "receipt_id":"sd2352-formal-config-20260824","provider":"google_drive","check_id":"formal_config_search","searched_at":"2026-08-24T16:06:00+08:00",
+      "queries":[{"kind":"jira_key","text":"SD-2352"},{"kind":"problem_concept","text":"辅助驾驶数据记录 恒温座舱 C673-G5配置"},{"kind":"module_artifact","text":"C673-G3、G5座舱全功清单_V1.7_20260730"},{"kind":"version_family","text":"C673-G3、G5座舱全功清单"}],
+      "results":[{"id":"11wUCBnYhuh27sn91vQLImZ-mIngsiiTl","title":"C673-G3、G5座舱全功清单_V1.7_20260730.xlsx","url":"https://docs.google.com/spreadsheets/d/11wUCBnYhuh27sn91vQLImZ-mIngsiiTl/edit","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}]
+    },
+    {
+      "receipt_id":"sd2352-interaction-20260824","provider":"google_drive","check_id":"interaction_or_ue_search","searched_at":"2026-08-24T16:06:00+08:00",
+      "queries":[{"kind":"jira_key","text":"SD-2352"},{"kind":"problem_concept","text":"恒温座舱 正常模式 低功耗模式 闭锁下电"},{"kind":"module_artifact","text":"长安C385&C673交互设计文档_情景模式_v2.4"},{"kind":"version_family","text":"长安C385&C673交互设计文档_情景模式"}],
+      "results":[
+        {"id":"19reIvFcKMcKaIjkHo95BnFr9nnilzbYR","title":"长安C385&C673交互设计文档_情景模式_v2.4.pdf（副本）","url":"https://drive.google.com/file/d/19reIvFcKMcKaIjkHo95BnFr9nnilzbYR/view","mime_type":"application/pdf"},
+        {"id":"1c2_xAv3Xi0h0xjTQimDxYMyOn7NsTSFO","title":"长安C385&C673交互设计文档_情景模式---废弃.pdf","url":"https://drive.google.com/file/d/1c2_xAv3Xi0h0xjTQimDxYMyOn7NsTSFO/view","mime_type":"application/pdf"},
+        {"id":"1zoPPcmcrAy96uJpYxwIv1Sa7Bxhnjixi","title":"长安C385&C673交互设计文档_情景模式--废弃.pdf","url":"https://drive.google.com/file/d/1zoPPcmcrAy96uJpYxwIv1Sa7Bxhnjixi/view","mime_type":"application/pdf"},
+        {"id":"1BkzkXUBGGBt7hV6tiz278RW05RdSC9Zm","title":"长安C385&C673交互设计文档_情景模式-废弃.pdf","url":"https://drive.google.com/file/d/1BkzkXUBGGBt7hV6tiz278RW05RdSC9Zm/view","mime_type":"application/pdf"},
+        {"id":"1cHPVl3KV0qEPIY4LS5HZeFZ13e39Jde-","title":"长安C385-3交互设计文档_泊车_J3_V1.0.pdf","url":"https://drive.google.com/file/d/1cHPVl3KV0qEPIY4LS5HZeFZ13e39Jde-/view","mime_type":"application/pdf"}
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "恒温座舱正常模式或低功耗模式已开启，车辆下电进入OFF激活态。",
+    "target_state": "辅助驾驶数据记录入口置灰且不可点击。",
+    "intent_function_signal": "以电源ON档作为辅助驾驶数据记录入口可操作的必要条件；恒温座舱激活态不得绕过该条件。",
+    "ui_tts_vehicle_behavior": "恒温座舱继续按模式保持允许功能，辅助驾驶数据入口不响应点击；退出恒温座舱并恢复ON档后，再按账号及隐私协议条件恢复入口。",
+    "boundary": "覆盖正常模式与低功耗模式；不改变恒温座舱自身运行逻辑，也不改变账号登录、隐私协议签署及数据删除规则。",
+    "source_ids": ["vehicle_settings_v165", "scenario_definition_v49"]
+  },
+  "conflict_resolution": "Jira当前实现允许OFF激活态点击辅助驾驶数据入口，与车辆设置V1.6.5的ON档前置条件冲突；恒温座舱V4.9进一步明确下电转OFF后的激活态及其有限可用功能范围。按同项目正式定义，入口应置灰并拦截点击，当前实现判为CarSettings缺陷。",
+  "voice_evidence": {"applicable": false},
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android CarSettings研发负责人",
+    "text": "结论：定义为CarSettings状态控制缺陷。恒温座舱激活并进入OFF档后，辅助驾驶数据记录入口必须不可操作；当前仍可点击不符合ON档准入边界。\n依据：车辆设置海外版V1.6.5·2.3.2/3.5.1；智能情景模式V4.9·恒温座舱设置；Jira原票·描述/完整评论。\n处理：恒温座舱正常模式、低功耗模式激活期间将入口置灰并拦截点击；退出恒温座舱且恢复ON档后，再按账号及隐私协议条件恢复；Android CarSettings研发负责人处理。",
+    "implementation_source_ids": ["jira_actual"]
+  }
+}
