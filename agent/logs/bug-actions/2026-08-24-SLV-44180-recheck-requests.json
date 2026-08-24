@@ -1,0 +1,454 @@
+{
+  "key": "SLV-44180",
+  "mode": "recheck",
+  "sheetId": 2135747181,
+  "sheetRow": 328,
+  "rowIndex": 327,
+  "previewFingerprint": "7eb128fe961b69c9253f6dc299fcad02ad1b8422e8029829faa0c6796aaace78",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate": true,
+  "changedColumns": [
+    "C",
+    "D",
+    "G",
+    "I",
+    "J"
+  ],
+  "manifest": [
+    {
+      "column": "C",
+      "before": "现象：[Jira原票·描述/关联PC-38411、PC-38412、SLV-44177、SLV-44179]旧车端三句行车指数查询失败，评论记录当时canonical为空。\nAlchemy：[在线对话·SLV]三句当前均命中1251 weather:query:suggestion，suggestion canonical=traffic；[标准1398·说明/设置范围、深蓝项目26748]已包含行车/行车指数。\n版本差异：[深蓝项目语音功能点260731·第49行]有通用查询天气指数，但未逐字列行车指数；当前平台结果已与Jira旧日志不同。",
+      "after": "现象：[Jira原票·描述/全部评论]原版本三句均无法查询；评论显示天气接口同时返回traffic与travel，车端因slot/英文键映射失败。\n当前复测：[Alchemy在线对话·SLV·2026-08-24]三句均命中1251；‘适合行车吗/适合开车吗’已返回canonical=traffic，但‘行车指数是多少’仍返回空canonical、literal=开车行车指数。\n正式边界：[天气PRD v20250901·查询天气指数][标准1398/深蓝26748]行车、行车指数、开车归入交通；旅游是独立指数。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+      ]
+    },
+    {
+      "column": "D",
+      "before": "结论：当前SLV在线平台已为三句行车问法下发canonical=traffic，旧日志中的canonical为空现象已不复现于当前平台；先按原车型/版本升级后的同环境回归，不再维持“Alchemy未核验”。\n依据：Jira原票及四个关联票、Alchemy SLV三句当前结果、标准1398/深蓝项目26748、深蓝项目语音功能点260731第49行。\n处理：在C673基础款最新集成版本回归三句并核对天气接口入参；若仍失败转天气接口映射研发，否则关闭；C673基础款天气语音测试/研发负责人处理。",
+      "after": "结论：定义为天气指数语义槽值缺陷；不是查询旅游指数。‘适合行车吗/适合开车吗/行车指数是多少’均应查询当天交通指数并统一下发suggestion=traffic。当前SLV实时复测前两句正确，但‘行车指数是多少’仍返回空canonical，问题未闭环。\n依据：天气PRD v20250901·查询天气指数；Alchemy标准1398；Alchemy深蓝26748；Jira评论及2026-08-24在线复测。\n处理：修复‘行车指数是多少’的weather_index canonical并确保车端按英文traffic键匹配，随后回归原三句；语义平台/NLU负责人牵头处理。",
+      "links": [
+        "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1398",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748",
+        "http://jira.i-tetris.com/browse/SLV-44180"
+      ]
+    },
+    {
+      "column": "G",
+      "before": "待复核",
+      "after": "可转研发",
+      "links": []
+    },
+    {
+      "column": "I",
+      "before": "Alchemy当前三句均已下发traffic；未完成项为实车最新版本回归与天气接口入参核对。",
+      "after": "先修复‘行车指数是多少’使canonical=traffic；再回归三句均按英文traffic键获取并播报当天交通指数，不得映射为travel",
+      "links": []
+    },
+    {
+      "column": "J",
+      "before": "Jira原票·描述/全部评论\nAlchemy在线对话·SLV·三句均命中1251 weather:query:suggestion，suggestion canonical=traffic\n标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数\n深蓝项目26748（已锁定、继承未修改）\n深蓝项目语音功能点260731·第49行",
+      "after": "Jira原票·描述/全部评论\n天气PRD v20250901·查询天气指数\nAlchemy在线对话·SLV·2026-08-24\nAlchemy标准1398\nAlchemy深蓝26748\n深蓝项目语音功能点260731·行580",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1398",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    }
+  ],
+  "expectedAfter": {
+    "C": {
+      "visible": "现象：[Jira原票·描述/全部评论]原版本三句均无法查询；评论显示天气接口同时返回traffic与travel，车端因slot/英文键映射失败。\n当前复测：[Alchemy在线对话·SLV·2026-08-24]三句均命中1251；‘适合行车吗/适合开车吗’已返回canonical=traffic，但‘行车指数是多少’仍返回空canonical、literal=开车行车指数。\n正式边界：[天气PRD v20250901·查询天气指数][标准1398/深蓝26748]行车、行车指数、开车归入交通；旅游是独立指数。",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+      ]
+    },
+    "D": {
+      "visible": "结论：定义为天气指数语义槽值缺陷；不是查询旅游指数。‘适合行车吗/适合开车吗/行车指数是多少’均应查询当天交通指数并统一下发suggestion=traffic。当前SLV实时复测前两句正确，但‘行车指数是多少’仍返回空canonical，问题未闭环。\n依据：天气PRD v20250901·查询天气指数；Alchemy标准1398；Alchemy深蓝26748；Jira评论及2026-08-24在线复测。\n处理：修复‘行车指数是多少’的weather_index canonical并确保车端按英文traffic键匹配，随后回归原三句；语义平台/NLU负责人牵头处理。",
+      "links": [
+        "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1398",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748",
+        "http://jira.i-tetris.com/browse/SLV-44180"
+      ]
+    },
+    "G": {
+      "visible": "可转研发",
+      "links": []
+    },
+    "I": {
+      "visible": "先修复‘行车指数是多少’使canonical=traffic；再回归三句均按英文traffic键获取并播报当天交通指数，不得映射为travel",
+      "links": []
+    },
+    "J": {
+      "visible": "Jira原票·描述/全部评论\n天气PRD v20250901·查询天气指数\nAlchemy在线对话·SLV·2026-08-24\nAlchemy标准1398\nAlchemy深蓝26748\n深蓝项目语音功能点260731·行580",
+      "links": [
+        "http://jira.i-tetris.com/browse/SLV-44180",
+        "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit",
+        "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=",
+        "https://alchemy.i-tetris.com/#/functional/points/detail/1398",
+        "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748",
+        "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+      ]
+    }
+  },
+  "requests": [
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 2
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：[Jira原票·描述/全部评论]原版本三句均无法查询；评论显示天气接口同时返回traffic与travel，车端因slot/英文键映射失败。\n当前复测：[Alchemy在线对话·SLV·2026-08-24]三句均命中1251；‘适合行车吗/适合开车吗’已返回canonical=traffic，但‘行车指数是多少’仍返回空canonical、literal=开车行车指数。\n正式边界：[天气PRD v20250901·查询天气指数][标准1398/深蓝26748]行车、行车指数、开车归入交通；旅游是独立指数。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 4,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44180"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 18
+                  },
+                  {
+                    "startIndex": 80,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 106
+                  },
+                  {
+                    "startIndex": 197,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 219
+                  },
+                  {
+                    "startIndex": 221,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 235
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 3
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为天气指数语义槽值缺陷；不是查询旅游指数。‘适合行车吗/适合开车吗/行车指数是多少’均应查询当天交通指数并统一下发suggestion=traffic。当前SLV实时复测前两句正确，但‘行车指数是多少’仍返回空canonical，问题未闭环。\n依据：天气PRD v20250901·查询天气指数；Alchemy标准1398；Alchemy深蓝26748；Jira评论及2026-08-24在线复测。\n处理：修复‘行车指数是多少’的weather_index canonical并确保车端按英文traffic键匹配，随后回归原三句；语义平台/NLU负责人牵头处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 130,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 152
+                  },
+                  {
+                    "startIndex": 153,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1398"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 166
+                  },
+                  {
+                    "startIndex": 167,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 181
+                  },
+                  {
+                    "startIndex": 182,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44180"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 203
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 6
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "可转研发"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 8
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "先修复‘行车指数是多少’使canonical=traffic；再回归三句均按英文traffic键获取并播报当天交通指数，不得映射为travel"
+                }
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue"
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 327,
+          "columnIndex": 9
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/全部评论\n天气PRD v20250901·查询天气指数\nAlchemy在线对话·SLV·2026-08-24\nAlchemy标准1398\nAlchemy深蓝26748\n深蓝项目语音功能点260731·行580"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SLV-44180"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 37
+                  },
+                  {
+                    "startIndex": 38,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 64
+                  },
+                  {
+                    "startIndex": 65,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1398"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 78
+                  },
+                  {
+                    "startIndex": 79,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26748"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 93
+                  },
+                  {
+                    "startIndex": 94,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    }
+  ]
+}
