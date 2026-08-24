@@ -1,0 +1,400 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 380,
+          "endRowIndex": 381,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 380,
+          "endRowIndex": 381,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 380,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-24"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/BGS-83702\",\"BGS-83702｜C673ICA设置充电桩未打开页面并播报未连接\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：C673ICA在0805分支说‘设置充电桩（连接）/打开充电桩（连接）页面’，未打开页面并播报‘当前还没有充电桩连接’，测试期待‘好的’；李相建评论指出PC-12923已屏蔽充电桩。\n核验：深蓝项目变更管理表-2025第45行明确PC-12923适用于C673ICA，ECR已签署、最终变更通过、实施状态Closed；同类PC-31541已按测试预期错误关闭。Alchemy当前仍命中通用MetaId 1305，但不定义车型页面开放范围。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 3,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83702"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 79,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-12923"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 87
+                  },
+                  {
+                    "startIndex": 98,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 116
+                  },
+                  {
+                    "startIndex": 162,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-31541"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 172
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为测试预期错误，BGS-83702可关闭。C673ICA已通过PC-12923批准并实施屏蔽蓝牙充电桩设置；‘设置充电桩’虽仍命中通用页面打开语义1305，但不代表该车型必须开放页面。当前不打开页面并播报‘当前还没有充电桩连接’符合功能被屏蔽后的拒绝方向，不应期待‘好的’。\n依据：深蓝项目变更管理表-2025第45行；PC-12923；同类历史票PC-31541；Alchemy当前1305、标准功能1423及深蓝项目功能24542；车辆设置UE v2.2仅作平台通用背景。\n处理：维持C673ICA屏蔽配置，测试用例移除‘好的/打开页面’预期，改为不打开页面并播报未找到或未连接类提示后关闭本票；若需重新开放功能或统一精确TTS文案，另走需求变更；C673ICA产品与测试负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 146,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 164
+                  },
+                  {
+                    "startIndex": 165,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-12923"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 173
+                  },
+                  {
+                    "startIndex": 174,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-31541"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 187
+                  },
+                  {
+                    "startIndex": 223,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1nTKPxD5XvYRttwsviJsNk1LzYdCuN7ua/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 234
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "测试预期改为不打开页面并播报未找到/未连接类提示；重新开放功能或统一精确TTS需另走需求变更。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·BGS-83702\n项目变更·PC-12923\n深蓝项目变更管理表-2025\n同类历史票·PC-31541\n车辆设置UE v2.2\nC673车辆设置功能定义V6.6\nAlchemy标准·1423\nAlchemy深蓝项目·24542"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83702"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-12923"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 45
+                  },
+                  {
+                    "startIndex": 46,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-31541"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 60
+                  },
+                  {
+                    "startIndex": 61,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1nTKPxD5XvYRttwsviJsNk1LzYdCuN7ua/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 72
+                  },
+                  {
+                    "startIndex": 73,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1FKBR6-3vbMInDWDShx21ft9wKZya3mWA/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 89
+                  },
+                  {
+                    "startIndex": 90,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1423"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 104
+                  },
+                  {
+                    "startIndex": 105,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24542"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 380,
+          "endIndex": 381
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 381,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}
+

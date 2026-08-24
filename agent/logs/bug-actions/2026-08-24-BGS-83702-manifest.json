@@ -1,0 +1,133 @@
+{
+  "schema_version": 5,
+  "jira_key": "BGS-83702",
+  "comment_causality": "原票要求语音打开充电桩连接页面并期待TTS‘好的’；李相建评论指出PC-12923已屏蔽充电桩，要求产品跟进。实时核验确认PC-12923对应变更在深蓝项目变更管理表中标记C673ICA适用、ECR已签署、最终变更通过且实施状态Closed；历史同类PC-31541也因同一屏蔽边界按Invalid关闭。当前Alchemy仍将‘设置充电桩’识别为通用打开页面MetaId 1305，只证明语义存在，不证明C673ICA项目开放该页面。",
+  "customer_issue": {"identified": false},
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {"key": "PC-12923", "relationship": "评论直接引用的C673ICA蓝牙充电桩屏蔽变更", "read": true, "outcome": "已完整读取；客户邮件输入要求屏蔽，代码已合入，变更管理表记录ECR签署、最终变更通过、Closed。"},
+      {"key": "PC-31541", "relationship": "同车型同query历史同类Bug", "read": true, "outcome": "已完整读取；因PC-12923屏蔽蓝牙充电桩，测试预期被认定错误，解决结果Invalid并关闭。"},
+      {"key": "BGS-83700", "relationship": "原票描述引用的日志承载票", "read": true, "outcome": "已完整读取；该票主体为手套箱密码页面问题，未提供本票充电桩链路的新增反向证据。"}
+    ]
+  },
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "由voice专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "涉及语音query、MetaId、项目功能点、页面打开与TTS反馈。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图或导航。"},
+    "visible_interaction": {"applicable": false, "reason": "争议是项目功能是否开放，不依赖当前页面可见状态判责。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira截图中的语音用例清单把‘充电桩连接’标记为已支持，平台UE和功能定义也保留通用充电桩连接能力；但这些资料未表达C673ICA项目差异。PC-12923及当前深蓝项目变更管理表第45行是针对C673ICA的已批准、已实施差异化变更，且PC-31541已按同一边界关闭，因此以项目变更覆盖通用清单。Alchemy标准/项目功能点仅证明1305可识别为打开页面，不等于目标页面在该车型配置中必须开放。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "设置充电桩",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-08-24 BIGSUR实时测试classification=task，operations命中meta_id 1305、app:ctrl、canonical open，target=pile_connection。",
+    "meta_id": "1305",
+    "standard_function": {"status": "verified", "name": "标准功能ID 1423·打开特定页面/APP", "assessment": "MetaId 1305，状态草稿；仅定义通用页面打开语义。"},
+    "project_function": {"status": "verified", "name": "深蓝项目功能ID 24542·打开特定页面/APP", "assessment": "已锁定、继承未修改(1423)；不定义C673ICA目标页面是否开放。"},
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {"source_id": "jira-current", "source": "BGS-83702 Jira原票", "source_location": "完整字段、描述、截图附件及李相建评论", "source_type": "jira", "role": "implementation_actual", "project_model": "C385/C673 ICA·0805分支", "trigger": "设置充电桩（连接）/打开充电桩（连接）页面", "target_behavior": "实际不打开页面并播报‘当前还没有充电桩连接’；测试期待‘好的’。", "match": "exact", "reason": "证明当前复现、测试预期与评论争议。"},
+    {"source_id": "change-row-45", "source": "深蓝项目变更管理表-2025", "source_location": "深蓝国内新表第45行·PC-12923", "source_type": "formal_config", "role": "formal_target", "project_model": "C673ICA", "trigger": "屏蔽蓝牙充电桩开关", "target_behavior": "C673ICA适用；ECR已签署；最终结论变更通过；实施状态Closed。", "match": "exact", "reason": "当前正式项目变更记录直接定义C673ICA差异化边界。"},
+    {"source_id": "pc-12923", "source": "PC-12923", "source_location": "描述、附件、问题链接及合入记录", "source_type": "jira", "role": "implementation_actual", "project_model": "C673ICA", "trigger": "客户要求屏蔽蓝牙充电桩开关", "target_behavior": "屏蔽C673ICA蓝牙充电桩设置，Android CarSettings改动已合入并完成。", "match": "exact", "reason": "项目变更任务与实施事实。"},
+    {"source_id": "pc-31541", "source": "PC-31541", "source_location": "描述、全部评论、关联关系及解决结果", "source_type": "historical", "role": "context_only", "project_model": "C673ICA", "trigger": "设置充电桩并期待打开能量管理页面", "target_behavior": "因PC-12923屏蔽，测试预期错误，应反馈未找到蓝牙充电桩；Invalid关闭。", "match": "exact", "reason": "同车型同query的直接历史判例。"},
+    {"source_id": "ue-v22", "source": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.2", "source_location": "能量管理·充电桩连接", "source_type": "ue", "role": "context_only", "project_model": "8155平台C385MCA&C673ICA通用", "trigger": "进入能量管理充电桩连接", "target_behavior": "通用UE保留充电桩连接入口。", "match": "partial", "reason": "说明平台通用能力，但未表达PC-12923的C673ICA项目差异。"},
+    {"source_id": "c673-v66", "source": "C673_功能定义_车辆设置功能定义V6.6", "source_location": "4.14.9感应解锁充电舱盖设置", "source_type": "prd", "role": "context_only", "project_model": "C673平台通用", "trigger": "设置充电桩连接", "target_behavior": "定义充电桩连接开关、设备列表和连接状态信号。", "match": "partial", "reason": "平台通用功能定义，不覆盖C673ICA已批准的屏蔽变更。"},
+    {"source_id": "alchemy-current", "source": "Alchemy BIGSUR在线对话", "source_location": "2026-08-24实时原话测试", "source_type": "alchemy_current", "role": "implementation_actual", "project_model": "BIGSUR/深蓝", "trigger": "设置充电桩", "target_behavior": "命中MetaId 1305、app:ctrl/open、target=pile_connection。", "match": "exact", "reason": "证明当前语义识别正常，不证明车型页面开放。"},
+    {"source_id": "alchemy-standard", "source": "Alchemy标准功能点", "source_location": "标准功能ID 1423；MetaId 1305；打开特定页面/APP", "source_type": "alchemy_standard", "role": "context_only", "project_model": "通用标准", "trigger": "打开特定页面/APP", "target_behavior": "通用打开页面能力，状态草稿。", "match": "partial", "reason": "仅说明语义能力。"},
+    {"source_id": "alchemy-project", "source": "Alchemy深蓝项目功能点", "source_location": "项目功能ID 24542；继承未修改(1423)；MetaId 1305", "source_type": "alchemy_project", "role": "context_only", "project_model": "深蓝项目", "trigger": "打开特定页面/APP", "target_behavior": "已锁定的通用项目功能点。", "match": "partial", "reason": "不覆盖C673ICA具体页面配置。"}
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive精确检索、正文读取与当前变更表行核验",
+      "queries": [
+        {"kind": "jira_key", "text": "BGS-83702"},
+        {"kind": "jira_key", "text": "PC-12923"},
+        {"kind": "problem_concept", "text": "C673ICA 蓝牙充电桩 放开"},
+        {"kind": "problem_concept", "text": "C673ICA 充电桩 解屏蔽"},
+        {"kind": "module_artifact", "text": "C673ICA 充电桩 交互"},
+        {"kind": "exact_document_name", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.2"},
+        {"kind": "exact_document_name", "text": "C673_功能定义_车辆设置功能定义V6.6"},
+        {"kind": "version_family", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置"},
+        {"kind": "version_family", "text": "C673_功能定义_车辆设置功能定义"}
+      ],
+      "source_ids": ["change-row-45", "ue-v22", "c673-v66"],
+      "reason": "已读取当前变更管理表的PC-12923整行，并读取最新已检索到的通用UE v2.2与C673车辆设置功能定义V6.6。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": ["BGS-83702-formal-definition-20260824"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 5,
+        "candidates": [
+          {"id": "1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8", "title": "深蓝项目变更管理表-2025", "url": "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit", "references": [], "disposition": "read", "source_ids": ["change-row-45"]},
+          {"id": "1nTKPxD5XvYRttwsviJsNk1LzYdCuN7ua", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.2 (1).pdf", "url": "https://drive.google.com/file/d/1nTKPxD5XvYRttwsviJsNk1LzYdCuN7ua/view", "references": [], "version_family": "长安C385MCA&C673ICA交互设计文档_车辆设置", "disposition": "read", "source_ids": ["ue-v22"]},
+          {"id": "1GIn_4sOoHDskgIYJQNXjAogOtpGb5sx5", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.1.pdf", "url": "https://drive.google.com/file/d/1GIn_4sOoHDskgIYJQNXjAogOtpGb5sx5/view", "references": [], "version_family": "长安C385MCA&C673ICA交互设计文档_车辆设置", "disposition": "excluded", "reason": "同版本族低于已读v2.2。"},
+          {"id": "1XhJMU6bIMz-RiJVxbCesdNYvnWcgCHvS", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.0_20250909.pdf", "url": "https://drive.google.com/file/d/1XhJMU6bIMz-RiJVxbCesdNYvnWcgCHvS/view", "references": [], "version_family": "长安C385MCA&C673ICA交互设计文档_车辆设置", "disposition": "excluded", "reason": "同版本族低于已读v2.2。"},
+          {"id": "1FKBR6-3vbMInDWDShx21ft9wKZya3mWA", "title": "C673_功能定义_车辆设置功能定义V6.6.pdf", "url": "https://drive.google.com/file/d/1FKBR6-3vbMInDWDShx21ft9wKZya3mWA/view", "references": [], "version_family": "C673_功能定义_车辆设置功能定义", "disposition": "read", "source_ids": ["c673-v66"]}
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {"family": "长安C385MCA&C673ICA交互设计文档_车辆设置", "status": "enumerated", "receipt_ids": ["BGS-83702-formal-definition-20260824"], "selected_candidate_id": "1nTKPxD5XvYRttwsviJsNk1LzYdCuN7ua", "selection_reason": "选择检索结果中版本最高且更新时间最新的v2.2。", "newer_version_checked": true},
+          {"family": "C673_功能定义_车辆设置功能定义", "status": "enumerated", "receipt_ids": ["BGS-83702-formal-definition-20260824"], "selected_candidate_id": "1FKBR6-3vbMInDWDShx21ft9wKZya3mWA", "selection_reason": "选择检索结果中版本最高的V6.6。", "newer_version_checked": true}
+        ]
+      }
+    },
+    {"check_id": "alchemy_current", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy BIGSUR在线对话", "queries": [{"kind": "exact_trigger", "text": "设置充电桩"}], "source_ids": ["alchemy-current"], "reason": "已保存当前原话输出。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_standard", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy标准功能点", "queries": [{"kind": "meta_or_function", "text": "MetaId 1305 / 标准功能ID 1423"}], "source_ids": ["alchemy-standard"], "reason": "已读取名称、分类和状态。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_project", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy深蓝项目功能点", "queries": [{"kind": "meta_or_function", "text": "MetaId 1305 / 项目功能ID 24542"}, {"kind": "project_scope", "text": "深蓝项目/BIGSUR/C673_ICA"}], "source_ids": ["alchemy-project"], "reason": "已读取项目点状态和继承来源。", "material": false, "next_action": ""}
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "BGS-83702-formal-definition-20260824",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-24T17:50:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "BGS-83702"},
+        {"kind": "jira_key", "text": "PC-12923"},
+        {"kind": "problem_concept", "text": "C673ICA 蓝牙充电桩 放开"},
+        {"kind": "problem_concept", "text": "C673ICA 充电桩 解屏蔽"},
+        {"kind": "module_artifact", "text": "C673ICA 充电桩 交互"},
+        {"kind": "exact_document_name", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.2"},
+        {"kind": "exact_document_name", "text": "C673_功能定义_车辆设置功能定义V6.6"},
+        {"kind": "version_family", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置"},
+        {"kind": "version_family", "text": "C673_功能定义_车辆设置功能定义"}
+      ],
+      "results": [
+        {"id": "1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8", "title": "深蓝项目变更管理表-2025", "url": "https://docs.google.com/spreadsheets/d/1ERFEzIF-0v5xJ1HGblbuzF5uuanSP0939VwZnAhOSb8/edit", "mime_type": "application/vnd.google-apps.spreadsheet"},
+        {"id": "1nTKPxD5XvYRttwsviJsNk1LzYdCuN7ua", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.2 (1).pdf", "url": "https://drive.google.com/file/d/1nTKPxD5XvYRttwsviJsNk1LzYdCuN7ua/view", "mime_type": "application/pdf"},
+        {"id": "1GIn_4sOoHDskgIYJQNXjAogOtpGb5sx5", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.1.pdf", "url": "https://drive.google.com/file/d/1GIn_4sOoHDskgIYJQNXjAogOtpGb5sx5/view", "mime_type": "application/pdf"},
+        {"id": "1XhJMU6bIMz-RiJVxbCesdNYvnWcgCHvS", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v2.0_20250909.pdf", "url": "https://drive.google.com/file/d/1XhJMU6bIMz-RiJVxbCesdNYvnWcgCHvS/view", "mime_type": "application/pdf"},
+        {"id": "1FKBR6-3vbMInDWDShx21ft9wKZya3mWA", "title": "C673_功能定义_车辆设置功能定义V6.6.pdf", "url": "https://drive.google.com/file/d/1FKBR6-3vbMInDWDShx21ft9wKZya3mWA/view", "mime_type": "application/pdf"}
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "C673ICA用户说‘设置充电桩（连接）’或同义query。",
+    "target_state": "保留C673ICA项目已批准的蓝牙充电桩屏蔽配置，不打开充电桩连接页面。",
+    "intent_function_signal": "NLU可继续命中MetaId 1305和pile_connection，但项目配置必须阻止进入被屏蔽页面。",
+    "ui_tts_vehicle_behavior": "不打开页面，并反馈未找到/未连接蓝牙充电桩类TTS；不得以‘好的’承诺进入页面。",
+    "boundary": "平台通用UE、功能定义和Alchemy能力不覆盖C673ICA已签署并实施的项目差异；若要求重新开放或统一精确TTS文案，另走需求变更。",
+    "source_ids": ["change-row-45"]
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "C673ICA产品与测试负责人",
+    "text": "结论：定义为测试预期错误，BGS-83702可关闭。C673ICA已通过PC-12923批准并实施屏蔽蓝牙充电桩设置；‘设置充电桩’虽仍命中通用页面打开语义1305，但不代表该车型必须开放页面。当前不打开页面并播报‘当前还没有充电桩连接’符合功能被屏蔽后的拒绝方向，不应期待‘好的’。\n依据：深蓝项目变更管理表-2025第45行；PC-12923；同类历史票PC-31541；Alchemy当前1305、标准功能1423及深蓝项目功能24542；车辆设置UE v2.2仅作平台通用背景。\n处理：维持C673ICA屏蔽配置，测试用例移除‘好的/打开页面’预期，改为不打开页面并播报未找到或未连接类提示后关闭本票；若需重新开放功能或统一精确TTS文案，另走需求变更；C673ICA产品与测试负责人处理。",
+    "implementation_source_ids": ["jira-current", "alchemy-current"]
+  },
+  "run_context": {"run_id": "bug-20260824T175000Z-bgs-83702", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 381}
+}
