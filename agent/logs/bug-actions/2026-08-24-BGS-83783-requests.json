@@ -1,0 +1,365 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 379,
+          "endRowIndex": 380,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 379,
+          "endRowIndex": 380,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 379,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-24"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/BGS-83783\",\"BGS-83783｜C673ICA燃油补电功能无法开启\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "[BGS-83783 Jira原票·附件/评论]：P挡、READY、SOC 4%、燃油里程305km时燃油补电开关置灰，且关闭态仍显示低/中/高挡；姜秋月评论要求确认开关和挡位显示条件。\n[EPA1平台化车辆设置功能定义V2.0·燃油补电]：P挡、可行驶、未插枪、SOC低于80%、油量充足且VcuFuelrechargeFlag可用时开关可操作；不可用时置灰。\n[车辆设置UE v1.5·能量管理/燃油补电]：开启确认后展开挡位，关闭时收起；开关默认关闭且上下电不记忆，挡位上电默认高挡。\n[PC-22109/PC-22690·需求链]：功能范围对应673全部车型，C673-ICA已有IFS实现任务；本票仍缺同次复现的插枪状态及三个VCU燃油补电信号值。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 1,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83783"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 23
+                  },
+                  {
+                    "startIndex": 95,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1TAkcMhQ5Z3qLdub-M5Y3oiwUsgnxmPhR/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 119
+                  },
+                  {
+                    "startIndex": 183,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 204
+                  },
+                  {
+                    "startIndex": 247,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-22109"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 268
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为C673 ICA燃油补电显示规则已明确、当前无法开启需按信号链会诊。该功能支持673全系；开关在能量管理页显示，P挡、可行驶、未插枪、SOC低于80%、油量充足且VCU可用标志为可用时应可开启，不满足时置灰。功率挡位仅在开关开启后展开，关闭时收起，上电默认高挡。当前附件证明P挡、READY、SOC 4%及油量充足，但缺少未插枪状态和VCU可用/状态信号，暂不能直接归责HU或动力域。\n依据：BGS-83783 Jira原票·附件/姜秋月评论；EPA1平台化车辆设置功能定义V2.0·燃油补电；车辆设置UE v1.5·能量管理/燃油补电；PC-22109/PC-22690·673全系需求及IFS实现。\n处理：补充同次复现的充电连接状态及VcuFuelrechargeFlag、VcuFuelrechargeSetSts、VcuFuelrechargePosnSetSts日志，按上述显示与可用规则完成端到端定责并修复；C673 ICA燃油补电端到端功能负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 202,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83783"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 227
+                  },
+                  {
+                    "startIndex": 228,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1TAkcMhQ5Z3qLdub-M5Y3oiwUsgnxmPhR/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 252
+                  },
+                  {
+                    "startIndex": 253,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 274
+                  },
+                  {
+                    "startIndex": 275,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-22690"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 306
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "唯一门槛：补齐未插枪状态和VCU可用/开关/挡位状态信号，区分动力域返回与HU显示联动责任。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "BGS-83783 Jira原票·描述/评论/附件\nEPA1车辆设置功能定义V2.0·燃油补电\nC673ICA车辆设置UE v1.5·燃油补电\nPC-22109·673全系需求\nPC-22690·IFS实现\nPC-22588·UI实现"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/BGS-83783"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 25
+                  },
+                  {
+                    "startIndex": 26,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1TAkcMhQ5Z3qLdub-M5Y3oiwUsgnxmPhR/edit?usp=drivesdk"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 47
+                  },
+                  {
+                    "startIndex": 48,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 71
+                  },
+                  {
+                    "startIndex": 72,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-22109"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 88
+                  },
+                  {
+                    "startIndex": 89,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-22690"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 103
+                  },
+                  {
+                    "startIndex": 104,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/PC-22588"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 379,
+          "endIndex": 380
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 380,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

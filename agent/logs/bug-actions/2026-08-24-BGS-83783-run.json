@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260824T170000+0800-BGS-83783",
+  "status": "complete",
+  "started_at": "2026-08-24T17:00:00+08:00",
+  "query_summary": "BGS-83783完整重新处理；Jira主单、评论、附件、PC-22109/PC-22588/PC-22690及Drive正式定义/UE已读；四个负责人页查重0行，计划新增bug第380行；无Jira外部动作。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83783.md",
+  "items": [{
+    "jira_key": "BGS-83783",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 380,
+    "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83783-manifest.json",
+    "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83783-readback.json",
+    "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83783-validation.json",
+    "readback_sha256": "e10376c7586d90fd3416e1e26e2f95ab2c20821c9d21edf63a686188206b313c"
+  }],
+  "completed_at": "2026-08-24T17:18:00+08:00"
+}

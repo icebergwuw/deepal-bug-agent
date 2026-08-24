@@ -1,0 +1,229 @@
+{
+  "schema_version": 5,
+  "jira_key": "BGS-83783",
+  "comment_causality": "姜秋月评论要求确认燃油补电开关和功率挡位的显示条件，并指出需求PC-22690及673全系支持。Jira附件显示车辆处于P挡、READY、SOC 4%、剩余燃油里程305km时，燃油补电开关置灰且关闭态仍显示低/中/高挡；正式PRD与UE已明确可用和展开规则，但本票未提供当时是否插枪及VCU可用/状态信号日志。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260818175636591",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira标题、描述和附件包含C673 ICA项目、CDC SWD.6.65、前置页面、操作步骤、触发动作、预期/实际、Always复现及截图；车辆唯一标识不写入日志。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "PC-22690",
+        "relationship": "Jira评论引用的IFS拆分需求",
+        "read": true,
+        "outcome": "已完整读取；C673-ICA、OTA_DP4.0，需求指向673全部车型、开关及三挡功率，并记录IFS合入。"
+      },
+      {
+        "key": "PC-22109",
+        "relationship": "PC-22690的拆分来源",
+        "read": true,
+        "outcome": "已完整读取；原始需求明确对应673全部车型，并关联UI票PC-22588。"
+      },
+      {
+        "key": "PC-22588",
+        "relationship": "PC-22109关联的UI实现票",
+        "read": true,
+        "outcome": "已完整读取；UI已完成，引用同一车辆设置UE v1.5及EPA1车辆设置功能定义。"
+      }
+    ]
+  },
+  "evidence_profiles": ["visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "本票由可见交互/UI状态专项画像覆盖。"},
+    "voice": {"applicable": false, "reason": "不涉及语音、NLU或Alchemy功能点。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航。"},
+    "visible_interaction": {"applicable": true, "reason": "涉及能量管理页开关置灰、挡位展开/收起和可操作状态。"}
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "BGS-83783 Jira原票",
+      "source_type": "jira",
+      "source_location": "当前字段、描述、姜秋月2026-08-21评论及附件6ce842eb-b916-4f60-8fee-afdb3dce2527.jpg",
+      "role": "implementation_actual",
+      "match": "exact",
+      "project_model": "C673 ICA / 常态化OTA / CDC SWD.6.65",
+      "trigger": "进入设置-能量管理，尝试开启燃油补电",
+      "target_behavior": "当前P挡、READY、SOC 4%、燃油里程305km时开关置灰；关闭态仍展示低/中/高挡。",
+      "reason": "证明当前用户可见现象、评论问题和部分车辆前置状态，不单独定义目标行为。"
+    },
+    {
+      "source_id": "epa1-prd-v20",
+      "source": "EPA1平台化_车辆设置功能定义V2.0",
+      "source_type": "prd",
+      "source_location": "燃油补电-场景一/场景二及HU需求分解：开关可用标志、开启条件、档位高/中/低、上电默认高挡",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "EPA1平台化 / C673 ICA适用车辆设置",
+      "trigger": "电源ON、HU开机，操作燃油补电开关或功率挡位",
+      "target_behavior": "P挡、可行驶、未插枪、SOC低于80%、油量充足且VcuFuelrechargeFlag可用时开关可操作；不可用时仅置灰。档位按高/中/低设置并上电默认高挡。",
+      "reason": "当前检索到的EPA1车辆设置最新版，正式定义开关可用与档位状态。"
+    },
+    {
+      "source_id": "vehicle-ue-v15",
+      "source": "长安C385MCA&C673ICA交互设计文档_车辆设置_v1.5",
+      "source_type": "interaction",
+      "source_location": "设置-能量管理-燃油补电：第9项及v1.5更新页面",
+      "role": "formal_target",
+      "match": "exact",
+      "project_model": "C385MCA & C673ICA",
+      "trigger": "点击开启或关闭燃油补电",
+      "target_behavior": "点击开启并确认后展开功率挡位；关闭时收起；开关默认关闭且上下电不记忆；挡位上电默认高挡。",
+      "reason": "同车型专项交互直接定义开关与挡位的显示联动。"
+    },
+    {
+      "source_id": "pc-demand-chain",
+      "source": "PC-22109 / PC-22588 / PC-22690需求链",
+      "source_type": "jira",
+      "source_location": "PC-22109描述及问题链接；PC-22588描述/UI完成评论；PC-22690描述、评论及IFS合入记录",
+      "role": "context_only",
+      "match": "exact",
+      "project_model": "673全部车型；PC-22690字段为C673-ICA",
+      "trigger": "燃油补电功能和三挡功率选择",
+      "target_behavior": "需求范围覆盖673全部车型；IFS和UI均有对应实现任务。",
+      "reason": "用于核对评论所述车型范围和实现链，不替代PRD/UE正式目标。"
+    },
+    {
+      "source_id": "runtime-signal-gap",
+      "source": "BGS-83783运行时信号缺口",
+      "source_type": "implementation_log",
+      "source_location": "Jira描述、评论和附件均未提供当时充电连接状态及VcuFuelrechargeFlag/VcuFuelrechargeSetSts/VcuFuelrechargePosnSetSts值",
+      "role": "context_only",
+      "match": "gap",
+      "material": true,
+      "project_model": "C673 ICA / CDC SWD.6.65",
+      "trigger": "截图时开关置灰且档位可见",
+      "target_behavior": "需区分VCU返回不可用、HU未正确消费状态或显示联动错误。",
+      "reason": "缺少信号值会改变VCU与HU/CarSettings责任边界。",
+      "next_action": "补充同次复现的未插枪状态及三个燃油补电信号日志后完成端到端定责。"
+    },
+    {
+      "source_id": "formal-config-gap",
+      "source": "C673 ICA燃油补电生效配置缺口",
+      "source_type": "formal_config",
+      "source_location": "Google Drive精确检索C673ICA功能清单和CDC变更清单；可读候选未命中燃油补电配置项，PC需求链仅能证明需求范围",
+      "role": "context_only",
+      "match": "gap",
+      "material": true,
+      "project_model": "C673 ICA",
+      "trigger": "燃油补电功能车型配置和VCU可用标志",
+      "target_behavior": "未找到可独立核验当前车辆配置是否已启用燃油补电的生效配置表项。",
+      "reason": "正式配置缺口会影响对当前车辆为何返回不可用的判断。",
+      "next_action": "由C673 ICA燃油补电端到端功能负责人补充当前车辆配置和接口信号日志。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_config_search",
+      "status": "not_found",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive连接器；C673ICA全量功能清单与CDC变更清单",
+      "queries": [
+        {"kind": "jira_key", "text": "BGS-83783"},
+        {"kind": "problem_concept", "text": "C673ICA 燃油补电 开关 挡位 显示条件"},
+        {"kind": "module_artifact", "text": "C673ICA 全量功能清单 CDC变更清单"}
+      ],
+      "source_ids": [],
+      "reason": "已精确读取可访问的C673ICA全量功能清单与CDC变更清单候选，未命中燃油补电生效配置项；PRD和UE不能冒充配置证据。",
+      "material": true,
+      "next_action": "补充当前车辆燃油补电生效配置及VcuFuelrechargeFlag日志。",
+      "search_receipt_ids": ["bgs83783-config-drive-20260824"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {"id": "15VchnkhA7mDWsBPHxOtlPqrg5Z8ueH6c", "title": "座舱平台化功能清单_C673ICA_CC 全量功能清单 20240322.pdf", "url": "https://drive.google.com/file/d/15VchnkhA7mDWsBPHxOtlPqrg5Z8ueH6c/view", "references": [], "disposition": "excluded", "reason": "早于2025年燃油补电需求且当前读取未形成可核验的燃油补电配置命中。"},
+          {"id": "1Uxqo4FCIxIGG2EmWSVqHkclHNls81owe", "title": "C673ICA华为智驾需求开发 CDC 变更清单-20231213.xlsx", "url": "https://docs.google.com/spreadsheets/d/1Uxqo4FCIxIGG2EmWSVqHkclHNls81owe/edit?usp=drivesdk", "references": [], "disposition": "excluded", "reason": "正文检索未命中燃油补电、PC-22109或PC-22690，且版本早于本需求。"}
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive连接器；PC-22109/PC-22588/PC-22690引用的C673ICA车辆设置UE",
+      "queries": [
+        {"kind": "jira_key", "text": "BGS-83783"},
+        {"kind": "problem_concept", "text": "燃油补电 开关 挡位 展开 收起"},
+        {"kind": "module_artifact", "text": "C673ICA 交互设计文档 车辆设置"},
+        {"kind": "version_family", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置"},
+        {"kind": "exact_document_name", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置_v1.5"}
+      ],
+      "source_ids": ["vehicle-ue-v15"],
+      "reason": "已读取关联需求指定的v1.5全文和燃油补电页面，确认开启展开、关闭收起及默认高挡。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": ["bgs83783-ue-drive-20260824"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [{"id": "1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v1.5", "url": "https://drive.google.com/file/d/1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX/view", "references": [{"reference_text": "长安C385MCA&C673ICA交互设计文档_车辆设置_v1.5"}], "version_family": "长安C385MCA&C673ICA交互设计文档_车辆设置", "disposition": "read", "source_ids": ["vehicle-ue-v15"], "reason": "关联需求直接指定且正文已读。"}]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [{"source_candidate_id": "1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX", "reference_text": "长安C385MCA&C673ICA交互设计文档_车辆设置_v1.5", "status": "read", "receipt_ids": ["bgs83783-ue-drive-20260824"]}],
+        "version_families": [{"family": "长安C385MCA&C673ICA交互设计文档_车辆设置", "status": "enumerated", "receipt_ids": ["bgs83783-ue-drive-20260824"], "selected_candidate_id": "1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX", "selection_reason": "关联需求指定的生效交互版本，已核对正文。", "newer_version_checked": true}]
+      }
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "bgs83783-config-drive-20260824",
+      "provider": "google_drive",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-08-24",
+      "queries": [
+        {"kind": "jira_key", "text": "BGS-83783"},
+        {"kind": "problem_concept", "text": "C673ICA 燃油补电 开关 挡位 显示条件"},
+        {"kind": "module_artifact", "text": "C673ICA 全量功能清单 CDC变更清单"}
+      ],
+      "results": [
+        {"id": "15VchnkhA7mDWsBPHxOtlPqrg5Z8ueH6c", "title": "座舱平台化功能清单_C673ICA_CC 全量功能清单 20240322.pdf", "url": "https://drive.google.com/file/d/15VchnkhA7mDWsBPHxOtlPqrg5Z8ueH6c/view", "mime_type": "application/pdf"},
+        {"id": "1Uxqo4FCIxIGG2EmWSVqHkclHNls81owe", "title": "C673ICA华为智驾需求开发 CDC 变更清单-20231213.xlsx", "url": "https://docs.google.com/spreadsheets/d/1Uxqo4FCIxIGG2EmWSVqHkclHNls81owe/edit?usp=drivesdk", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}
+      ]
+    },
+    {
+      "receipt_id": "bgs83783-ue-drive-20260824",
+      "provider": "google_drive",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-08-24",
+      "queries": [
+        {"kind": "jira_key", "text": "BGS-83783"},
+        {"kind": "problem_concept", "text": "燃油补电 开关 挡位 展开 收起"},
+        {"kind": "module_artifact", "text": "C673ICA 交互设计文档 车辆设置"},
+        {"kind": "version_family", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置"},
+        {"kind": "exact_document_name", "text": "长安C385MCA&C673ICA交互设计文档_车辆设置_v1.5"}
+      ],
+      "results": [{"id": "1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX", "title": "长安C385MCA&C673ICA交互设计文档_车辆设置_v1.5", "url": "https://drive.google.com/file/d/1ZJp0r6e4nVx-Gp8jXn9R-o4VInq53tQX/view", "mime_type": "application/pdf"}]
+    }
+  ],
+  "conflict_resolution": "姜秋月评论的‘673全系支持’与PC需求链、C673ICA专项UE一致。Jira附件证明开关置灰和挡位关闭态仍显示，但未证明当时未插枪，也没有VCU可用/状态信号；因此显示条件可以确定，端到端责任不能仅凭截图归给HU或VCU，状态保持待会诊。",
+  "voice_evidence": {"applicable": false, "availability": "not_applicable", "alchemy_tested": false, "standard_function": {"status": "not_applicable", "reason": "非语音问题。"}, "project_function": {"status": "not_applicable", "reason": "非语音问题。"}},
+  "expected_behavior": {
+    "trigger": "C673 ICA车辆进入设置-能量管理，电源ON并操作燃油补电。",
+    "target_state": "燃油补电功能项支持673全系；开关显示，满足P挡、可行驶、未插枪、SOC低于80%、油量充足且VCU可用标志可用时可操作，否则置灰。",
+    "intent_function_signal": "HU依据VcuFuelrechargeFlag决定开关是否可操作，并依据VcuFuelrechargeSetSts及VcuFuelrechargePosnSetSts显示开关和功率挡位状态。",
+    "ui_tts_vehicle_behavior": "开启确认后展开低/中/高挡，关闭时收起；上电默认高挡。",
+    "boundary": "当前缺少未插枪状态和运行时信号值，只能确定目标显示规则，不能确定VCU或HU根因。",
+    "source_ids": ["epa1-prd-v20", "vehicle-ue-v15"]
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "C673 ICA燃油补电端到端功能负责人",
+    "text": "结论：定义为C673 ICA燃油补电显示规则已明确、当前无法开启需按信号链会诊。该功能支持673全系；开关在能量管理页显示，P挡、可行驶、未插枪、SOC低于80%、油量充足且VCU可用标志为可用时应可开启，不满足时置灰。功率挡位仅在开关开启后展开，关闭时收起，上电默认高挡。当前附件证明P挡、READY、SOC 4%及油量充足，但缺少未插枪状态和VCU可用/状态信号，暂不能直接归责HU或动力域。\n依据：BGS-83783 Jira原票·附件/姜秋月评论；EPA1平台化车辆设置功能定义V2.0·燃油补电；车辆设置UE v1.5·能量管理/燃油补电；PC-22109/PC-22690·673全系需求及IFS实现。\n处理：补充同次复现的充电连接状态及VcuFuelrechargeFlag、VcuFuelrechargeSetSts、VcuFuelrechargePosnSetSts日志，按上述显示与可用规则完成端到端定责并修复；C673 ICA燃油补电端到端功能负责人处理。"
+  },
+  "run_context": {"run_id": "bug-20260824T170000+0800-BGS-83783", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 380}
+}
