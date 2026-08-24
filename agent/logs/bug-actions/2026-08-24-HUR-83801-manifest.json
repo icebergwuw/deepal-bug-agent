@@ -119,5 +119,5 @@
     "text": "结论：定义为测试预期错误，HUR-83801可关闭。J90A-EL在语音唤醒后点击语音助手形象以外的空调区域，不应退出语音助手，被操作的空调控件仍应正常响应；本票视频表现符合现行定义。\n依据：AIS语音退出产品需求文档v2.2第3.5.1节明确‘点击助手形象退出、点击其他任意区域不退出’；J90A-G/EL座舱功能清单V1.6确认相关语音与空调能力搭载；HUR-83804说明空调面板关闭与语音唤醒无业务联动；Alchemy马自达项目26396仅定义明确口头退出。\n处理：将测试用例预期改为‘点击/滑动空调区域不作为退出条件，空调控件正常响应；点击语音助手形象或明确说退出才退出’，随后关闭本票；J90A-EL测试负责人处理。",
     "implementation_source_ids": ["jira-current", "alchemy-current"]
   },
-  "run_context": {"run_id": "bug-20260824T190000+0800-HUR-83801", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 382}
+  "run_context": {"run_id": "bug-20260824T190000+0800-HUR-83801", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 383}
 }

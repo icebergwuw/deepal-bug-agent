@@ -1,0 +1,28 @@
+[
+  {
+    "key": "HUR-83532",
+    "summary": "手动选择电话候选后未播报确认/取消TTS",
+    "date": "2026-08-24",
+    "info": "现象：导航中说‘I want to call for’后出现两个电话候选，测试人员手动点击第二个候选，进入5秒预拨号确认页；测试期待播报接听或取消。\n评论核验：聂汉维指出视频为手动点击，询问是否本就不触发TTS。逐帧复核确认约8秒出现候选列表、约13秒进入‘You Can Say Confirm or Cancel’倒计时页。AIS语音蓝牙电话PRD将‘接听/挂断’限定于来电场景，预拨号仅保持收音并支持语音确认/取消，未定义手动点击候选后必须追加TTS。",
+    "info_links": [
+      {"label": "聂汉维", "url": "http://jira.i-tetris.com/browse/HUR-83532"},
+      {"label": "AIS语音蓝牙电话PRD", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"}
+    ],
+    "judgment": "结论：定义为测试预期错误，HUR-83532可关闭。视频中测试人员手动点击电话候选后进入5秒预拨号确认页；手动点击不属于语音二轮选择，不要求额外播报Confirm/Cancel。原预期‘接听/挂断’仅适用于来电播报场景，不适用于本次拨出电话。\n依据：Jira原票视频及聂汉维评论；AIS语音蓝牙电话PRD·2.1.2/3.1/4.1；J90A蓝牙电话功能定义V0.5·电话功能/二次交互。\n处理：测试用例改为手动选择候选后展示5秒预拨号确认页并保持语音收音，移除‘接听/挂断TTS’预期后关闭本票；当前HUR原话在线命中1435退出+1063 E-Call，与视频链路不一致，另提语义映射Bug处理；J90A电话测试负责人处理。",
+    "judgment_links": [
+      {"label": "AIS语音蓝牙电话PRD", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"},
+      {"label": "J90A蓝牙电话功能定义V0.5", "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"}
+    ],
+    "status": "可关闭",
+    "note": "评论确认：手动点击候选不触发额外TTS；当前原话1435+1063异常需另提语义映射Bug。",
+    "links": [
+      {"label": "Jira原票·HUR-83532", "url": "http://jira.i-tetris.com/browse/HUR-83532"},
+      {"label": "AIS语音蓝牙电话PRD", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"},
+      {"label": "J90A蓝牙电话V0.5", "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"},
+      {"label": "Alchemy标准·1340", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1340"},
+      {"label": "Alchemy标准·1421", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1421"},
+      {"label": "Alchemy深蓝·24488", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24488"},
+      {"label": "Alchemy深蓝·24540", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24540"}
+    ]
+  }
+]

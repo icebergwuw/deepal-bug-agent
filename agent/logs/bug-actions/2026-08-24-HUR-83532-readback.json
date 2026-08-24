@@ -22,7 +22,7 @@
       },
       "data": [
         {
-          "startRow": 382,
+          "startRow": 381,
           "rowData": [
             {
               "values": [
@@ -147,12 +147,12 @@
                   }
                 },
                 {
-                  "formattedValue": "HUR-83801｜空调弹窗触屏未退出语音助手",
+                  "formattedValue": "HUR-83532｜手动选择电话候选后未播报确认/取消TTS",
                   "userEnteredValue": {
-                    "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83801\",\"HUR-83801｜空调弹窗触屏未退出语音助手\")"
+                    "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83532\",\"HUR-83532｜手动选择电话候选后未播报确认/取消TTS\")"
                   },
                   "effectiveValue": {
-                    "stringValue": "HUR-83801｜空调弹窗触屏未退出语音助手"
+                    "stringValue": "HUR-83532｜手动选择电话候选后未播报确认/取消TTS"
                   },
                   "userEnteredFormat": {
                     "backgroundColor": {
@@ -252,7 +252,7 @@
                         }
                       },
                       "link": {
-                        "uri": "http://jira.i-tetris.com/browse/HUR-83801"
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83532"
                       }
                     },
                     "hyperlinkDisplayType": "LINKED",
@@ -264,15 +264,15 @@
                       }
                     }
                   },
-                  "hyperlink": "http://jira.i-tetris.com/browse/HUR-83801"
+                  "hyperlink": "http://jira.i-tetris.com/browse/HUR-83532"
                 },
                 {
-                  "formattedValue": "现象：J90A-EL阿拉伯语0904版本中，打开空调弹窗并唤醒马自达后，滑动或点击空调区域，空调控件可操作但语音状态仍保持；测试期待退出语音。\n评论：黄文追问需求并建议无需求不改；陈柯钰以‘其他界面点击都会取消唤醒’为参考。核验后，跨页面表现不是正式定义，本票关联HUR-83804也不是日志承载票。",
+                  "formattedValue": "现象：导航中说‘I want to call for’后出现两个电话候选，测试人员手动点击第二个候选，进入5秒预拨号确认页；测试期待播报接听或取消。\n评论核验：聂汉维指出视频为手动点击，询问是否本就不触发TTS。逐帧复核确认约8秒出现候选列表、约13秒进入‘You Can Say Confirm or Cancel’倒计时页。AIS语音蓝牙电话PRD将‘接听/挂断’限定于来电场景，预拨号仅保持收音并支持语音确认/取消，未定义手动点击候选后必须追加TTS。",
                   "userEnteredValue": {
-                    "stringValue": "现象：J90A-EL阿拉伯语0904版本中，打开空调弹窗并唤醒马自达后，滑动或点击空调区域，空调控件可操作但语音状态仍保持；测试期待退出语音。\n评论：黄文追问需求并建议无需求不改；陈柯钰以‘其他界面点击都会取消唤醒’为参考。核验后，跨页面表现不是正式定义，本票关联HUR-83804也不是日志承载票。"
+                    "stringValue": "现象：导航中说‘I want to call for’后出现两个电话候选，测试人员手动点击第二个候选，进入5秒预拨号确认页；测试期待播报接听或取消。\n评论核验：聂汉维指出视频为手动点击，询问是否本就不触发TTS。逐帧复核确认约8秒出现候选列表、约13秒进入‘You Can Say Confirm or Cancel’倒计时页。AIS语音蓝牙电话PRD将‘接听/挂断’限定于来电场景，预拨号仅保持收音并支持语音确认/取消，未定义手动点击候选后必须追加TTS。"
                   },
                   "effectiveValue": {
-                    "stringValue": "现象：J90A-EL阿拉伯语0904版本中，打开空调弹窗并唤醒马自达后，滑动或点击空调区域，空调控件可操作但语音状态仍保持；测试期待退出语音。\n评论：黄文追问需求并建议无需求不改；陈柯钰以‘其他界面点击都会取消唤醒’为参考。核验后，跨页面表现不是正式定义，本票关联HUR-83804也不是日志承载票。"
+                    "stringValue": "现象：导航中说‘I want to call for’后出现两个电话候选，测试人员手动点击第二个候选，进入5秒预拨号确认页；测试期待播报接听或取消。\n评论核验：聂汉维指出视频为手动点击，询问是否本就不触发TTS。逐帧复核确认约8秒出现候选列表、约13秒进入‘You Can Say Confirm or Cancel’倒计时页。AIS语音蓝牙电话PRD将‘接听/挂断’限定于来电场景，预拨号仅保持收音并支持语音确认/取消，未定义手动点击候选后必须追加TTS。"
                   },
                   "userEnteredFormat": {
                     "backgroundColor": {
@@ -382,7 +382,7 @@
                   "textFormatRuns": [
                     {},
                     {
-                      "startIndex": 3,
+                      "startIndex": 80,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -398,15 +398,15 @@
                           }
                         },
                         "link": {
-                          "uri": "http://jira.i-tetris.com/browse/HUR-83801"
+                          "uri": "http://jira.i-tetris.com/browse/HUR-83532"
                         }
                       }
                     },
                     {
-                      "startIndex": 10
+                      "startIndex": 83
                     },
                     {
-                      "startIndex": 132,
+                      "startIndex": 164,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -422,22 +422,22 @@
                           }
                         },
                         "link": {
-                          "uri": "http://jira.i-tetris.com/browse/HUR-83804"
+                          "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
                         }
                       }
                     },
                     {
-                      "startIndex": 141
+                      "startIndex": 176
                     }
                   ]
                 },
                 {
-                  "formattedValue": "结论：定义为测试预期错误，HUR-83801可关闭。J90A-EL在语音唤醒后点击语音助手形象以外的空调区域，不应退出语音助手，被操作的空调控件仍应正常响应；本票视频表现符合现行定义。\n依据：AIS语音退出产品需求文档v2.2第3.5.1节明确‘点击助手形象退出、点击其他任意区域不退出’；J90A-G/EL座舱功能清单V1.6确认相关语音与空调能力搭载；HUR-83804说明空调面板关闭与语音唤醒无业务联动；Alchemy马自达项目26396仅定义明确口头退出。\n处理：将测试用例预期改为‘点击/滑动空调区域不作为退出条件，空调控件正常响应；点击语音助手形象或明确说退出才退出’，随后关闭本票；J90A-EL测试负责人处理。",
+                  "formattedValue": "结论：定义为测试预期错误，HUR-83532可关闭。视频中测试人员手动点击电话候选后进入5秒预拨号确认页；手动点击不属于语音二轮选择，不要求额外播报Confirm/Cancel。原预期‘接听/挂断’仅适用于来电播报场景，不适用于本次拨出电话。\n依据：Jira原票视频及聂汉维评论；AIS语音蓝牙电话PRD·2.1.2/3.1/4.1；J90A蓝牙电话功能定义V0.5·电话功能/二次交互。\n处理：测试用例改为手动选择候选后展示5秒预拨号确认页并保持语音收音，移除‘接听/挂断TTS’预期后关闭本票；当前HUR原话在线命中1435退出+1063 E-Call，与视频链路不一致，另提语义映射Bug处理；J90A电话测试负责人处理。",
                   "userEnteredValue": {
-                    "stringValue": "结论：定义为测试预期错误，HUR-83801可关闭。J90A-EL在语音唤醒后点击语音助手形象以外的空调区域，不应退出语音助手，被操作的空调控件仍应正常响应；本票视频表现符合现行定义。\n依据：AIS语音退出产品需求文档v2.2第3.5.1节明确‘点击助手形象退出、点击其他任意区域不退出’；J90A-G/EL座舱功能清单V1.6确认相关语音与空调能力搭载；HUR-83804说明空调面板关闭与语音唤醒无业务联动；Alchemy马自达项目26396仅定义明确口头退出。\n处理：将测试用例预期改为‘点击/滑动空调区域不作为退出条件，空调控件正常响应；点击语音助手形象或明确说退出才退出’，随后关闭本票；J90A-EL测试负责人处理。"
+                    "stringValue": "结论：定义为测试预期错误，HUR-83532可关闭。视频中测试人员手动点击电话候选后进入5秒预拨号确认页；手动点击不属于语音二轮选择，不要求额外播报Confirm/Cancel。原预期‘接听/挂断’仅适用于来电播报场景，不适用于本次拨出电话。\n依据：Jira原票视频及聂汉维评论；AIS语音蓝牙电话PRD·2.1.2/3.1/4.1；J90A蓝牙电话功能定义V0.5·电话功能/二次交互。\n处理：测试用例改为手动选择候选后展示5秒预拨号确认页并保持语音收音，移除‘接听/挂断TTS’预期后关闭本票；当前HUR原话在线命中1435退出+1063 E-Call，与视频链路不一致，另提语义映射Bug处理；J90A电话测试负责人处理。"
                   },
                   "effectiveValue": {
-                    "stringValue": "结论：定义为测试预期错误，HUR-83801可关闭。J90A-EL在语音唤醒后点击语音助手形象以外的空调区域，不应退出语音助手，被操作的空调控件仍应正常响应；本票视频表现符合现行定义。\n依据：AIS语音退出产品需求文档v2.2第3.5.1节明确‘点击助手形象退出、点击其他任意区域不退出’；J90A-G/EL座舱功能清单V1.6确认相关语音与空调能力搭载；HUR-83804说明空调面板关闭与语音唤醒无业务联动；Alchemy马自达项目26396仅定义明确口头退出。\n处理：将测试用例预期改为‘点击/滑动空调区域不作为退出条件，空调控件正常响应；点击语音助手形象或明确说退出才退出’，随后关闭本票；J90A-EL测试负责人处理。"
+                    "stringValue": "结论：定义为测试预期错误，HUR-83532可关闭。视频中测试人员手动点击电话候选后进入5秒预拨号确认页；手动点击不属于语音二轮选择，不要求额外播报Confirm/Cancel。原预期‘接听/挂断’仅适用于来电播报场景，不适用于本次拨出电话。\n依据：Jira原票视频及聂汉维评论；AIS语音蓝牙电话PRD·2.1.2/3.1/4.1；J90A蓝牙电话功能定义V0.5·电话功能/二次交互。\n处理：测试用例改为手动选择候选后展示5秒预拨号确认页并保持语音收音，移除‘接听/挂断TTS’预期后关闭本票；当前HUR原话在线命中1435退出+1063 E-Call，与视频链路不一致，另提语义映射Bug处理；J90A电话测试负责人处理。"
                   },
                   "userEnteredFormat": {
                     "backgroundColor": {
@@ -536,6 +536,7 @@
                         }
                       }
                     },
+                    "hyperlinkDisplayType": "LINKED",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
@@ -547,7 +548,7 @@
                   "textFormatRuns": [
                     {},
                     {
-                      "startIndex": 96,
+                      "startIndex": 140,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -563,15 +564,15 @@
                           }
                         },
                         "link": {
-                          "uri": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view"
+                          "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
                         }
                       }
                     },
                     {
-                      "startIndex": 113
+                      "startIndex": 152
                     },
                     {
-                      "startIndex": 145,
+                      "startIndex": 167,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -587,36 +588,12 @@
                           }
                         },
                         "link": {
-                          "uri": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view"
+                          "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"
                         }
                       }
                     },
                     {
-                      "startIndex": 164
-                    },
-                    {
-                      "startIndex": 178,
-                      "format": {
-                        "foregroundColor": {
-                          "red": 0.06666667,
-                          "green": 0.32941177,
-                          "blue": 0.8
-                        },
-                        "underline": true,
-                        "foregroundColorStyle": {
-                          "rgbColor": {
-                            "red": 0.06666667,
-                            "green": 0.32941177,
-                            "blue": 0.8
-                          }
-                        },
-                        "link": {
-                          "uri": "http://jira.i-tetris.com/browse/HUR-83804"
-                        }
-                      }
-                    },
-                    {
-                      "startIndex": 187
+                      "startIndex": 183
                     }
                   ]
                 },
@@ -1057,12 +1034,12 @@
                   }
                 },
                 {
-                  "formattedValue": "测试预期改为非助手区域触屏不退出；评论中的‘其他页面都会退出’仅是实现对比，不能覆盖正式定义。",
+                  "formattedValue": "评论确认：手动点击候选不触发额外TTS；当前原话1435+1063异常需另提语义映射Bug。",
                   "userEnteredValue": {
-                    "stringValue": "测试预期改为非助手区域触屏不退出；评论中的‘其他页面都会退出’仅是实现对比，不能覆盖正式定义。"
+                    "stringValue": "评论确认：手动点击候选不触发额外TTS；当前原话1435+1063异常需另提语义映射Bug。"
                   },
                   "effectiveValue": {
-                    "stringValue": "测试预期改为非助手区域触屏不退出；评论中的‘其他页面都会退出’仅是实现对比，不能覆盖正式定义。"
+                    "stringValue": "评论确认：手动点击候选不触发额外TTS；当前原话1435+1063异常需另提语义映射Bug。"
                   },
                   "userEnteredFormat": {
                     "backgroundColor": {
@@ -1170,12 +1147,12 @@
                   }
                 },
                 {
-                  "formattedValue": "Jira原票·HUR-83801\n关联票·HUR-83804\n语音退出PRD v2.2\nJ90A-G/EL功能清单V1.6\nAlchemy标准·1254\nAlchemy马自达项目·26396",
+                  "formattedValue": "Jira原票·HUR-83532\nAIS语音蓝牙电话PRD\nJ90A蓝牙电话V0.5\nAlchemy标准·1340\nAlchemy标准·1421\nAlchemy深蓝·24488\nAlchemy深蓝·24540",
                   "userEnteredValue": {
-                    "stringValue": "Jira原票·HUR-83801\n关联票·HUR-83804\n语音退出PRD v2.2\nJ90A-G/EL功能清单V1.6\nAlchemy标准·1254\nAlchemy马自达项目·26396"
+                    "stringValue": "Jira原票·HUR-83532\nAIS语音蓝牙电话PRD\nJ90A蓝牙电话V0.5\nAlchemy标准·1340\nAlchemy标准·1421\nAlchemy深蓝·24488\nAlchemy深蓝·24540"
                   },
                   "effectiveValue": {
-                    "stringValue": "Jira原票·HUR-83801\n关联票·HUR-83804\n语音退出PRD v2.2\nJ90A-G/EL功能清单V1.6\nAlchemy标准·1254\nAlchemy马自达项目·26396"
+                    "stringValue": "Jira原票·HUR-83532\nAIS语音蓝牙电话PRD\nJ90A蓝牙电话V0.5\nAlchemy标准·1340\nAlchemy标准·1421\nAlchemy深蓝·24488\nAlchemy深蓝·24540"
                   },
                   "userEnteredFormat": {
                     "backgroundColor": {
@@ -1299,7 +1276,7 @@
                           }
                         },
                         "link": {
-                          "uri": "http://jira.i-tetris.com/browse/HUR-83801"
+                          "uri": "http://jira.i-tetris.com/browse/HUR-83532"
                         }
                       }
                     },
@@ -1323,15 +1300,15 @@
                           }
                         },
                         "link": {
-                          "uri": "http://jira.i-tetris.com/browse/HUR-83804"
+                          "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
                         }
                       }
                     },
                     {
-                      "startIndex": 30
+                      "startIndex": 29
                     },
                     {
-                      "startIndex": 31,
+                      "startIndex": 30,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -1347,15 +1324,15 @@
                           }
                         },
                         "link": {
-                          "uri": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view"
+                          "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"
                         }
                       }
                     },
                     {
-                      "startIndex": 43
+                      "startIndex": 42
                     },
                     {
-                      "startIndex": 44,
+                      "startIndex": 43,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -1371,15 +1348,15 @@
                           }
                         },
                         "link": {
-                          "uri": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view"
+                          "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1340"
                         }
                       }
                     },
                     {
-                      "startIndex": 61
+                      "startIndex": 57
                     },
                     {
-                      "startIndex": 62,
+                      "startIndex": 58,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -1395,15 +1372,15 @@
                           }
                         },
                         "link": {
-                          "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1254"
+                          "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1421"
                         }
                       }
                     },
                     {
-                      "startIndex": 76
+                      "startIndex": 72
                     },
                     {
-                      "startIndex": 77,
+                      "startIndex": 73,
                       "format": {
                         "foregroundColor": {
                           "red": 0.06666667,
@@ -1419,7 +1396,31 @@
                           }
                         },
                         "link": {
-                          "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26396"
+                          "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24488"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 88
+                    },
+                    {
+                      "startIndex": 89,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.32941177,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.32941177,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24540"
                         }
                       }
                     }

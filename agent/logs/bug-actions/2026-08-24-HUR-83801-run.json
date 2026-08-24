@@ -3,7 +3,7 @@
   "run_id": "bug-20260824T190000+0800-HUR-83801",
   "status": "complete",
   "started_at": "2026-08-24T18:45:00+08:00",
-  "query_summary": "HUR-83801全部字段、全部评论、视频附件、关联HUR-83804、Drive语音退出正式定义、J90A-EL当前功能清单及Alchemy当前/标准/马自达项目功能均已实时读取；吴优bug页查重0行，计划新增第382行；无Jira外部动作。",
+  "query_summary": "HUR-83801全部字段、全部评论、视频附件、关联HUR-83804、Drive语音退出正式定义、J90A-EL当前功能清单及Alchemy当前/标准/马自达项目功能均已实时读取；并发占行修复后迁移至第383行；无Jira外部动作。",
   "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-HUR-83801.md",
   "items": [
     {
@@ -11,12 +11,12 @@
       "operator_owner_id": "wu-you",
       "target_owner_id": "wu-you",
       "sheet_name": "bug",
-      "sheet_row": 382,
+      "sheet_row": 383,
       "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-HUR-83801-manifest.json",
       "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-HUR-83801-readback.json",
       "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-HUR-83801-validation.json",
-      "readback_sha256": "0d49019f05b302b702eaba15979ec9c446728236b417abaa9cfdf163a9d17b04"
+      "readback_sha256": "c169c584b361543d9a685f95fe8d03316bf662d95ca439f1d4a4318bb34dbedb"
     }
   ],
-  "completed_at": "2026-08-24T19:04:26+08:00"
+  "completed_at": "2026-08-24T19:13:55+08:00"
 }
