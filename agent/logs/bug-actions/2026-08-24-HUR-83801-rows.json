@@ -1,0 +1,28 @@
+[
+  {
+    "key": "HUR-83801",
+    "summary": "空调弹窗触屏未退出语音助手",
+    "date": "2026-08-24",
+    "info": "现象：J90A-EL阿拉伯语0904版本中，打开空调弹窗并唤醒马自达后，滑动或点击空调区域，空调控件可操作但语音状态仍保持；测试期待退出语音。\n评论：黄文追问需求并建议无需求不改；陈柯钰以‘其他界面点击都会取消唤醒’为参考。核验后，跨页面表现不是正式定义，本票关联HUR-83804也不是日志承载票。",
+    "info_links": [
+      {"label": "J90A-EL", "url": "http://jira.i-tetris.com/browse/HUR-83801"},
+      {"label": "HUR-83804", "url": "http://jira.i-tetris.com/browse/HUR-83804"}
+    ],
+    "judgment": "结论：定义为测试预期错误，HUR-83801可关闭。J90A-EL在语音唤醒后点击语音助手形象以外的空调区域，不应退出语音助手，被操作的空调控件仍应正常响应；本票视频表现符合现行定义。\n依据：AIS语音退出产品需求文档v2.2第3.5.1节明确‘点击助手形象退出、点击其他任意区域不退出’；J90A-G/EL座舱功能清单V1.6确认相关语音与空调能力搭载；HUR-83804说明空调面板关闭与语音唤醒无业务联动；Alchemy马自达项目26396仅定义明确口头退出。\n处理：将测试用例预期改为‘点击/滑动空调区域不作为退出条件，空调控件正常响应；点击语音助手形象或明确说退出才退出’，随后关闭本票；J90A-EL测试负责人处理。",
+    "judgment_links": [
+      {"label": "AIS语音退出产品需求文档v2.2", "url": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view"},
+      {"label": "J90A-G/EL座舱功能清单V1.6", "url": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view"},
+      {"label": "HUR-83804", "url": "http://jira.i-tetris.com/browse/HUR-83804"}
+    ],
+    "status": "可关闭",
+    "note": "测试预期改为非助手区域触屏不退出；评论中的‘其他页面都会退出’仅是实现对比，不能覆盖正式定义。",
+    "links": [
+      {"label": "Jira原票·HUR-83801", "url": "http://jira.i-tetris.com/browse/HUR-83801"},
+      {"label": "关联票·HUR-83804", "url": "http://jira.i-tetris.com/browse/HUR-83804"},
+      {"label": "语音退出PRD v2.2", "url": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view"},
+      {"label": "J90A-G/EL功能清单V1.6", "url": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view"},
+      {"label": "Alchemy标准·1254", "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1254"},
+      {"label": "Alchemy马自达项目·26396", "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26396"}
+    ]
+  }
+]
