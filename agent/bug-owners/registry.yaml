@@ -1,5 +1,5 @@
 schema_version: 1
-last_updated: "2026-07-29"
+last_updated: "2026-08-25"
 
 routing:
   explicit_user_owner_first: true
@@ -86,3 +86,14 @@ owners:
     source_type: "unconfirmed"
     profile: "agent/bug-owners/tao-yongjiang/README.md"
     note: "2026-07-29 由 HUR-82492 当前 Jira 经办人发现；其线上 Bug 清单、页签和默认写回边界尚未确认，禁止写入其他负责人清单。"
+
+  - id: "cheng-yun"
+    name: "程云"
+    status: "pending"
+    jira_display_names:
+      - "程云"
+    jira_account: "yun.cheng"
+    write_mode: "read_only"
+    source_type: "unconfirmed"
+    profile: "agent/bug-owners/cheng-yun/README.md"
+    note: "2026-08-25 由 PC-37473 当前 Jira 经办人发现；其线上 Bug 清单、页签和默认写回边界尚未确认，禁止写入其他负责人清单。"
