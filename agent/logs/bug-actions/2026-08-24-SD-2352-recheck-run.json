@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260824T161000+0800-SD-2352-recheck",
+  "status": "complete",
+  "started_at": "2026-08-24T16:10:00+08:00",
+  "query_summary": "SD-2352单票普通二次复查；完整读取Jira、Drive正式定义/配置/交互；计划更新bug第129行；无Jira外部动作",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-SD-2352-recheck.md",
+  "items": [{
+    "jira_key": "SD-2352",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 129,
+    "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-SD-2352-recheck-manifest.json",
+    "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-SD-2352-recheck-readback.json",
+    "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-SD-2352-recheck-validation.json",
+    "readback_sha256": "a7b22ff4eeafabef232fb7633f7f4e89d0a16c68b378dcb24bfe8195e7bd175c"
+  }],
+  "jira_keys": ["SD-2352"],
+  "blockers": [],
+  "completed_at": "2026-08-24T16:21:00+08:00",
+  "completion": {"jira_read":"complete","formal_definition_search":"complete","special_definition_search":"complete","formal_config_search":"complete","interaction_or_ue_search":"complete","evidence_gate":"passed","sheet_prewrite_readback":"complete","sheet_write":"complete","final_validation":"passed"}
+}

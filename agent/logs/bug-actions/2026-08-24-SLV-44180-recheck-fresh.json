@@ -1,0 +1,19 @@
+{
+  "sheets": [{
+    "properties": {"sheetId": 2135747181, "title": "bug"},
+    "data": [{"startRow": 327, "rowData": [{
+      "values": [
+        {"userEnteredValue":{"stringValue":"2026-08-12"}},
+        {"userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/SLV-44180\",\"SLV-44180｜行车指数查询参数映射失败\")"}},
+        {"userEnteredValue":{"stringValue":"现象：[Jira原票·描述/关联PC-38411、PC-38412、SLV-44177、SLV-44179]旧车端三句行车指数查询失败，评论记录当时canonical为空。\nAlchemy：[在线对话·SLV]三句当前均命中1251 weather:query:suggestion，suggestion canonical=traffic；[标准1398·说明/设置范围、深蓝项目26748]已包含行车/行车指数。\n版本差异：[深蓝项目语音功能点260731·第49行]有通用查询天气指数，但未逐字列行车指数；当前平台结果已与Jira旧日志不同。"}},
+        {"userEnteredValue":{"stringValue":"结论：当前SLV在线平台已为三句行车问法下发canonical=traffic，旧日志中的canonical为空现象已不复现于当前平台；先按原车型/版本升级后的同环境回归，不再维持“Alchemy未核验”。\n依据：Jira原票及四个关联票、Alchemy SLV三句当前结果、标准1398/深蓝项目26748、深蓝项目语音功能点260731第49行。\n处理：在C673基础款最新集成版本回归三句并核对天气接口入参；若仍失败转天气接口映射研发，否则关闭；C673基础款天气语音测试/研发负责人处理。"}},
+        {"userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+        {},
+        {"userEnteredValue":{"stringValue":"待复核"}},
+        {},
+        {"userEnteredValue":{"stringValue":"Alchemy当前三句均已下发traffic；未完成项为实车最新版本回归与天气接口入参核对。"}},
+        {"userEnteredValue":{"stringValue":"Jira原票·描述/全部评论\nAlchemy在线对话·SLV·三句均命中1251 weather:query:suggestion，suggestion canonical=traffic\n标准1398（已锁定）查询天气指数，说明及设置范围明确含行车/行车指数\n深蓝项目26748（已锁定、继承未修改）\n深蓝项目语音功能点260731·第49行"}}
+      ]
+    }]}]
+  }]
+}

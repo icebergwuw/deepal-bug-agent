@@ -1,0 +1,314 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 382,
+          "endRowIndex": 383,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 382,
+          "endRowIndex": 383,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 382,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-24"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83801\",\"HUR-83801｜空调弹窗触屏未退出语音助手\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：J90A-EL阿拉伯语0904版本中，打开空调弹窗并唤醒马自达后，滑动或点击空调区域，空调控件可操作但语音状态仍保持；测试期待退出语音。\n评论：黄文追问需求并建议无需求不改；陈柯钰以‘其他界面点击都会取消唤醒’为参考。核验后，跨页面表现不是正式定义，本票关联HUR-83804也不是日志承载票。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 3,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83801"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 10
+                  },
+                  {
+                    "startIndex": 132,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83804"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 141
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为测试预期错误，HUR-83801可关闭。J90A-EL在语音唤醒后点击语音助手形象以外的空调区域，不应退出语音助手，被操作的空调控件仍应正常响应；本票视频表现符合现行定义。\n依据：AIS语音退出产品需求文档v2.2第3.5.1节明确‘点击助手形象退出、点击其他任意区域不退出’；J90A-G/EL座舱功能清单V1.6确认相关语音与空调能力搭载；HUR-83804说明空调面板关闭与语音唤醒无业务联动；Alchemy马自达项目26396仅定义明确口头退出。\n处理：将测试用例预期改为‘点击/滑动空调区域不作为退出条件，空调控件正常响应；点击语音助手形象或明确说退出才退出’，随后关闭本票；J90A-EL测试负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 96,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 113
+                  },
+                  {
+                    "startIndex": 145,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 164
+                  },
+                  {
+                    "startIndex": 178,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83804"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 187
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "测试预期改为非助手区域触屏不退出；评论中的‘其他页面都会退出’仅是实现对比，不能覆盖正式定义。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83801\n关联票·HUR-83804\n语音退出PRD v2.2\nJ90A-G/EL功能清单V1.6\nAlchemy标准·1254\nAlchemy马自达项目·26396"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83801"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83804"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 43
+                  },
+                  {
+                    "startIndex": 44,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 61
+                  },
+                  {
+                    "startIndex": 62,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1254"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 76
+                  },
+                  {
+                    "startIndex": 77,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26396"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 382,
+          "endIndex": 383
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 383,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

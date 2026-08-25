@@ -1,0 +1,45 @@
+{
+  "current_row": {
+    "values": [
+      {"userEnteredValue":{"stringValue":"2026-07-21"}},
+      {"userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/PC-37808\",\"PC-37808｜最快路线偏好未传入选路执行\")"}},
+      {"userEnteredValue":{"stringValue":"现象：‘导航到天安门走最快的路’后选择第一个POI，实际启动的不是最快路线。[Jira原票·描述/2026-07-17 16:15评论]\n当前证据：Alchemy正确下发meta_id=1209、route_preference=shortest_time；Jira日志显示POI确认后strategy=null。[Alchemy标准1433/项目24552][Jira评论·2026-07-17 16:15执行链]\n正式缺口：主PRD V6.1第33页只定义三路线展示及默认第一条，第104页未含最快偏好；当前UE V0.6也未定义POI确认后的shortest_time透传和选路。[地图PRD V6.1·第33/104页][地图UE V0.6·第3页]"}},
+      {"userEnteredValue":{"stringValue":"结论：语音已正确识别shortest_time，POI确认后strategy确实丢失，但现行产品正式资料未明确二次确认后的路线偏好透传与最快路线选择规则，暂不能直接定为研发缺陷。\n依据：主PRD V6.1第33页仅定义三路线展示及默认第一条，第104页未包含最快路线偏好；当前UE V0.6第3页也未定义shortest_time处理；Alchemy标准1433/项目24552只证明语义字段与POI二次交互，Jira 2026-07-17 16:15日志证明当前strategy=null。\n处理：补齐POI二次确认后route_preference的保留、选路和启动规则，再依据正式定义定责并复测；地图产品/交互负责人处理。"}},
+      {"userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"},"strict":true}},
+      {},
+      {"userEnteredValue":{"stringValue":"待复核"}},
+      {},
+      {"userEnteredValue":{"stringValue":"缺POI确认后shortest_time透传与选路正式定义；补齐后定责"}},
+      {"userEnteredValue":{"stringValue":"Jira原票·描述/2026-07-17执行链\n地图PRD V6.1·第33/104页\n地图UE V0.6·第3页\nAlchemy标准1433/项目24552·meta_id 1209"}}
+    ]
+  },
+  "changes": {
+    "C": {
+      "text": "现象：‘导航到天安门走最快的路’后选择第一个POI，语义已正确下发route_preference=shortest_time，但POI二次选择后地图启动算路时strategy=null。[Alchemy当前实测/标准1433/项目24552][Jira评论·2026-07-17 16:15]\n正式目标：POI二次命中后应把本次请求的规划条件与命中POI一起传入规划；路线规划正式定义支持‘速度最快’，现有算路页展示最多3条路线并默认选中偏好算路返回的第一条，8秒无操作后开始导航。[路线规划主流程PRD v1.2·5.4.4/5.5][地图主PRD V6.1·3.1]",
+      "links": [
+        {"label":"Alchemy当前实测/标准1433/项目24552","url":"https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+        {"label":"Jira评论·2026-07-17 16:15","url":"http://jira.i-tetris.com/browse/PC-37808"},
+        {"label":"路线规划主流程PRD v1.2·5.4.4/5.5","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk"},
+        {"label":"地图主PRD V6.1·3.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"}
+      ]
+    },
+    "D": {
+      "text": "结论：定义为地图导航执行缺陷。‘导航到天安门走最快的路’经POI二次选择后，应保留route_preference=shortest_time并按该偏好发起算路；仍进入现有路线规划页，展示最多3条路线并默认选中偏好算路返回的第一条，8秒无操作后开始导航，不由客户端按三条耗时二次比选，也不直接跳过规划页。\n依据：Alchemy标准1433/深蓝24552；路线规划主流程PRD v1.2·5.4.4/5.5；地图主PRD V6.1·3.1；Jira评论·2026-07-17 16:15。\n处理：修复POI可见选择后的route_preference透传，并覆盖现有全部支持的路线偏好回归；地图应用研发负责人处理。",
+      "links": [
+        {"label":"Alchemy标准1433/深蓝24552","url":"https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+        {"label":"路线规划主流程PRD v1.2·5.4.4/5.5","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk"},
+        {"label":"地图主PRD V6.1·3.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+        {"label":"Jira评论·2026-07-17 16:15","url":"http://jira.i-tetris.com/browse/PC-37808"}
+      ]
+    },
+    "G": "可转研发",
+    "I": "保留shortest_time发起偏好算路；保留路线规划页及8秒倒计时；公共链路覆盖全部已支持路线偏好",
+    "J": {"links": [
+      {"label":"Jira原票·描述/完整评论","url":"http://jira.i-tetris.com/browse/PC-37808"},
+      {"label":"Alchemy标准1433/深蓝项目24552","url":"https://alchemy.i-tetris.com/#/functional/points/detail/1433"},
+      {"label":"路线规划主流程PRD v1.2·5.4.4/5.5","url":"https://drive.google.com/file/d/1e5OWQ2V8BL27TfbAlcBGLyeZU08tYSr3/view?usp=drivesdk"},
+      {"label":"地图主PRD V6.1·3.1","url":"https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit?usp=drivesdk"},
+      {"label":"地图交互V0.6","url":"https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view?usp=drivesdk"}
+    ]}
+  }
+}

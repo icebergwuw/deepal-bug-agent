@@ -1,0 +1,314 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 1,
+          "endRowIndex": 2,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 381,
+          "endRowIndex": 382,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 381,
+          "endRowIndex": 382,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 381,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-08-24"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-83532\",\"HUR-83532｜手动选择电话候选后未播报确认/取消TTS\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：导航中说‘I want to call for’后出现两个电话候选，测试人员手动点击第二个候选，进入5秒预拨号确认页；测试期待播报接听或取消。\n评论核验：聂汉维指出视频为手动点击，询问是否本就不触发TTS。逐帧复核确认约8秒出现候选列表、约13秒进入‘You Can Say Confirm or Cancel’倒计时页。AIS语音蓝牙电话PRD将‘接听/挂断’限定于来电场景，预拨号仅保持收音并支持语音确认/取消，未定义手动点击候选后必须追加TTS。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 80,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83532"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 83
+                  },
+                  {
+                    "startIndex": 164,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 176
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：定义为测试预期错误，HUR-83532可关闭。视频中测试人员手动点击电话候选后进入5秒预拨号确认页；手动点击不属于语音二轮选择，不要求额外播报Confirm/Cancel。原预期‘接听/挂断’仅适用于来电播报场景，不适用于本次拨出电话。\n依据：Jira原票视频及聂汉维评论；AIS语音蓝牙电话PRD·2.1.2/3.1/4.1；J90A蓝牙电话功能定义V0.5·电话功能/二次交互。\n处理：测试用例改为手动选择候选后展示5秒预拨号确认页并保持语音收音，移除‘接听/挂断TTS’预期后关闭本票；当前HUR原话在线命中1435退出+1063 E-Call，与视频链路不一致，另提语义映射Bug处理；J90A电话测试负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 140,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 152
+                  },
+                  {
+                    "startIndex": 167,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 183
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "评论确认：手动点击候选不触发额外TTS；当前原话1435+1063异常需另提语义映射Bug。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-83532\nAIS语音蓝牙电话PRD\nJ90A蓝牙电话V0.5\nAlchemy标准·1340\nAlchemy标准·1421\nAlchemy深蓝·24488\nAlchemy深蓝·24540"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-83532"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 29
+                  },
+                  {
+                    "startIndex": 30,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 42
+                  },
+                  {
+                    "startIndex": 43,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1340"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 57
+                  },
+                  {
+                    "startIndex": 58,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1421"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 72
+                  },
+                  {
+                    "startIndex": 73,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24488"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 88
+                  },
+                  {
+                    "startIndex": 89,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24540"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 381,
+          "endIndex": 382
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 382,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

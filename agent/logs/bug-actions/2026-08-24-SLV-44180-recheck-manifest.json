@@ -1,0 +1,87 @@
+{
+  "schema_version": 5,
+  "jira_key": "SLV-44180",
+  "comment_causality": "Jira评论证明原版本三句均命中1251但canonical为空；天气接口以英文键traffic返回，车端无法按中文literal匹配。2026-08-24实时复测进一步确认：前两句已返回traffic，第三句仍返回空canonical，因此问题尚未闭环。",
+  "customer_issue": {"identified": false},
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {"key":"PC-38411","relationship":"duplicates","read":true,"outcome":"已关闭重复票；过敏指数同类执行问题，无新增产品口径。"},
+      {"key":"PC-38412","relationship":"duplicates","read":true,"outcome":"已关闭重复票；目的地交通指数同指本票，无新增产品口径。"},
+      {"key":"SLV-44177","relationship":"duplicates","read":true,"outcome":"已关闭重复票；健身指数同类执行问题，无新增产品口径。"},
+      {"key":"SLV-44179","relationship":"duplicates","read":true,"outcome":"已关闭重复票；交通指数同指本票，无新增产品口径。"}
+    ]
+  },
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "已命中语音专项画像。"},
+    "voice": {"applicable": true, "reason": "需核验原话、meta_id、slot canonical、标准与项目功能。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航。"},
+    "visible_interaction": {"applicable": false, "reason": "不涉及可见交互。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "Jira标题将三句期望写为旅游指数，但正式标准1398把行车、行车指数、开车归入交通，旅游为独立标准值；天气接口评论也分别返回traffic与travel。因此本票目标应为当日交通指数。当前在线复测第三句canonical为空，违反已锁定配置，不能按待实车回归关闭。",
+  "scope_checks": [
+    {"source_id":"jira-actual","source":"SLV-44180 Jira当前页及四个重复票","source_location":"字段、描述、附件、问题链接、全部评论","source_type":"jira","role":"implementation_actual","project_model":"C673基础款","trigger":"适合行车吗；适合开车吗；行车指数是多少","target_behavior":"原车端三句均无法查询，评论指向canonical与英文接口键映射问题","match":"exact","reason":"证明原实现与评论因果。"},
+    {"source_id":"weather-prd-v20250901","source":"Megatronix_天气_产品需求文档深蓝8155&8295_v20250901","source_location":"查询天气指数·功能说明/执行动作/TTS","source_type":"prd","role":"formal_target","project_model":"深蓝8155&8295","trigger":"查询指定天气指数","target_behavior":"默认查询当天、当前定位城市的指定指数，并按接口结果播报指数值及详细描述","match":"exact","reason":"定义天气指数主流程与TTS。"},
+    {"source_id":"deepal-function-260731","source":"深蓝项目语音功能点 260731.xlsx","source_location":"行580，项目功能26748/Meta 1251 查询天气指数","source_type":"formal_config","role":"formal_target","project_model":"深蓝","trigger":"天气指数查询","target_behavior":"深蓝锁定支持查询天气指数并继承标准1398","match":"exact","reason":"证明功能已纳入深蓝项目。"},
+    {"source_id":"alchemy-current","source":"Alchemy在线对话·SLV","source_location":"2026-08-24三条原话实时测试","source_type":"alchemy_current","role":"implementation_actual","project_model":"SLV","trigger":"三条原话","target_behavior":"前两句canonical=traffic；行车指数是多少返回canonical空、literal=开车行车指数","match":"exact","reason":"证明当前仍可复现一条slot异常。"},
+    {"source_id":"alchemy-standard-1398","source":"Alchemy标准1398 查询天气指数","source_location":"已锁定；泛化表与下发参数","source_type":"alchemy_standard","role":"formal_target","project_model":"标准功能","trigger":"行车、行车指数、开车","target_behavior":"统一归入标准值交通；旅游为独立标准值","match":"exact","reason":"定义语义标准值边界。"},
+    {"source_id":"alchemy-project-26748","source":"Alchemy深蓝26748 查询天气指数","source_location":"项目功能详情","source_type":"alchemy_project","role":"formal_target","project_model":"深蓝","trigger":"Meta 1251 weather:query:suggestion","target_behavior":"已锁定并继承标准1398未修改","match":"exact","reason":"证明标准配置适用于深蓝。"}
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id":"formal_definition_search","status":"read","searched_at":"2026-08-24","search_location":"Google Drive",
+      "queries":[{"kind":"jira_key","text":"SLV-44180"},{"kind":"problem_concept","text":"天气指数 交通指数 旅游指数"},{"kind":"module_artifact","text":"Megatronix 天气 产品需求文档 深蓝8155 8295"},{"kind":"version_family","text":"Megatronix_天气_产品需求文档深蓝8155&8295"}],
+      "source_ids":["weather-prd-v20250901"],"reason":"选择当前命中的最高版本v20250901并读取天气指数条款。","material":false,"next_action":"","search_receipt_ids":["r-weather-prd"],
+      "candidate_audit":{"completed":true,"results_count":4,"candidates":[
+        {"id":"1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG","title":"Megatronix_天气_产品需求文档深蓝8155&8295_v20250901.docx","url":"https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit","disposition":"read","source_ids":["weather-prd-v20250901"],"references":[],"version_family":"Megatronix_天气_产品需求文档深蓝8155&8295"},
+        {"id":"16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt","title":"Megatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx","url":"https://docs.google.com/document/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt/edit","disposition":"excluded","reason":"低于v20250901","references":[],"version_family":"Megatronix_天气_产品需求文档深蓝8155&8295"},
+        {"id":"1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q","title":"Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250610.docx","url":"https://docs.google.com/document/d/1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q/edit","disposition":"excluded","reason":"低于v20250901","references":[],"version_family":"Megatronix_天气_产品需求文档深蓝8155&8295"},
+        {"id":"1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs","title":"Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx","url":"https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit","disposition":"excluded","reason":"低于v20250901","references":[],"version_family":"Megatronix_天气_产品需求文档深蓝8155&8295"}
+      ]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[]}
+    },
+    {
+      "check_id":"formal_config_search","status":"read","searched_at":"2026-08-24","search_location":"Google Drive",
+      "queries":[{"kind":"jira_key","text":"SLV-44180"},{"kind":"module_artifact","text":"深蓝项目语音功能点 260731"},{"kind":"problem_concept","text":"查询天气指数"},{"kind":"version_family","text":"深蓝项目语音功能点"}],
+      "source_ids":["deepal-function-260731"],"reason":"已读行580，26748/1251查询天气指数。","material":false,"next_action":"","search_receipt_ids":["r-deepal-function"],
+      "candidate_audit":{"completed":true,"results_count":1,"candidates":[{"id":"1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa","title":"深蓝项目语音功能点 260731.xlsx","url":"https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit","disposition":"read","source_ids":["deepal-function-260731"],"references":[],"version_family":"深蓝项目语音功能点"}]},
+      "search_completion":{"completed":true,"referenced_sources":[],"version_families":[]}
+    },
+    {"check_id":"alchemy_current","status":"read","searched_at":"2026-08-24","search_location":"Alchemy在线对话·SLV","queries":[{"kind":"exact_trigger","text":"适合行车吗"},{"kind":"exact_trigger","text":"适合开车吗"},{"kind":"exact_trigger","text":"行车指数是多少"}],"source_ids":["alchemy-current"],"reason":"三句均实时测试；第三句canonical仍为空。","material":false,"next_action":""},
+    {"check_id":"alchemy_standard","status":"read","searched_at":"2026-08-24","search_location":"Alchemy标准功能1398","queries":[{"kind":"meta_or_function","text":"1251 1398 查询天气指数"}],"source_ids":["alchemy-standard-1398"],"reason":"已读锁定标准功能及交通/旅游泛化表。","material":false,"next_action":""},
+    {"check_id":"alchemy_project","status":"read","searched_at":"2026-08-24","search_location":"Alchemy深蓝项目功能26748","queries":[{"kind":"meta_or_function","text":"1251 26748"},{"kind":"project_scope","text":"深蓝"}],"source_ids":["alchemy-project-26748"],"reason":"已核验已锁定、继承标准1398未修改。","material":false,"next_action":""}
+  ],
+  "search_receipts": [
+    {"receipt_id":"r-weather-prd","provider":"google_drive","check_id":"formal_definition_search","searched_at":"2026-08-24T18:58:00+08:00","queries":[{"kind":"jira_key","text":"SLV-44180"},{"kind":"problem_concept","text":"天气指数 交通指数 旅游指数"},{"kind":"module_artifact","text":"Megatronix 天气 产品需求文档 深蓝8155 8295"},{"kind":"version_family","text":"Megatronix_天气_产品需求文档深蓝8155&8295"}],"results":[{"id":"1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG","title":"Megatronix_天气_产品需求文档深蓝8155&8295_v20250901.docx","url":"https://docs.google.com/document/d/1C3bB74uTmhXOa-qAKNitPXihC8q0zaGG/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},{"id":"16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt","title":"Megatronix_天气_产品需求文档深蓝8155&8295_v20250613.docx","url":"https://docs.google.com/document/d/16EcbUzhq0fIiKZKZtbcEYgKj3FHxoXYt/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},{"id":"1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q","title":"Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250610.docx","url":"https://docs.google.com/document/d/1tzD9oBbsH45xGGoxyr_Fjzyqly2t5J4q/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},{"id":"1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs","title":"Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx","url":"https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit","mime_type":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"}]},
+    {"receipt_id":"r-deepal-function","provider":"google_drive","check_id":"formal_config_search","searched_at":"2026-08-24T18:57:00+08:00","queries":[{"kind":"jira_key","text":"SLV-44180"},{"kind":"module_artifact","text":"深蓝项目语音功能点 260731"},{"kind":"problem_concept","text":"查询天气指数"},{"kind":"version_family","text":"深蓝项目语音功能点"}],"results":[{"id":"1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa","title":"深蓝项目语音功能点 260731.xlsx","url":"https://docs.google.com/spreadsheets/d/1NIigtu118wKH_NGGMMjFNsKqJV0p8QXa/edit","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}]}
+  ],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "适合行车吗；适合开车吗；行车指数是多少",
+    "alchemy_tested": true,
+    "alchemy_result": "均命中1251 weather:query:suggestion；前两句canonical=traffic，第三句canonical为空且literal=开车行车指数",
+    "meta_id": "1251",
+    "standard_function": {"status":"verified","name":"标准1398 查询天气指数","assessment":"已锁定；行车/行车指数/开车归入交通，旅游为独立标准值。"},
+    "project_function": {"status":"verified","name":"深蓝26748 查询天气指数","assessment":"已锁定，继承标准1398未修改。"},
+    "unavailable_reason": "",
+    "next_action": "修复第三句canonical并回归三句端到端traffic映射。"
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "语义平台/NLU负责人",
+    "implementation_source_ids": ["jira-actual","alchemy-current"],
+    "text": "结论：定义为天气指数语义槽值缺陷；不是查询旅游指数。‘适合行车吗/适合开车吗/行车指数是多少’均应查询当天交通指数并统一下发suggestion=traffic。当前SLV实时复测前两句正确，但‘行车指数是多少’仍返回空canonical，问题未闭环。\n依据：天气PRD v20250901·查询天气指数；Alchemy标准1398/深蓝26748；Jira评论及2026-08-24在线复测。\n处理：修复‘行车指数是多少’的weather_index canonical并确保车端按英文traffic键匹配，随后回归原三句；语义平台/NLU负责人牵头处理。"
+  },
+  "expected_behavior": {
+    "trigger": "适合行车吗；适合开车吗；行车指数是多少",
+    "target_state": "统一查询当前地点当天交通指数",
+    "intent_function_signal": "meta_id=1251，type=weather:query:suggestion，suggestion canonical=traffic",
+    "ui_tts_vehicle_behavior": "车端按天气接口英文traffic键取值，播报地点、当天交通指数值和详细描述",
+    "boundary": "交通/行车与旅游是两个独立指数；本票不改为travel",
+    "source_ids": ["weather-prd-v20250901","alchemy-standard-1398","alchemy-project-26748"]
+  },
+  "run_context": {"run_id":"bug-20260824T191100+0800-SLV-44180-recheck","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":328}
+}

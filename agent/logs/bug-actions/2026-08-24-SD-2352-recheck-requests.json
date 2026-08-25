@@ -1,0 +1,72 @@
+[
+  {
+    "updateCells": {
+      "start": {"sheetId": 2135747181, "rowIndex": 128, "columnIndex": 2},
+      "rows": [{"values": [{
+        "userEnteredValue": {"stringValue": "现象：C673-G5开启恒温座舱后，辅助驾驶数据记录入口仍可点击；Jira当前为重新打开、必现。[Jira原票·描述/完整评论]\n正式边界：海外车辆设置V1.6.5规定辅助驾驶数据记录仅在电源ON档、HU开机时可操作；恒温座舱V4.9规定两种模式在下电转为OFF后进入激活态，正常模式除空调、影音、座椅和用户手册外其余车机功能置灰。[车辆设置海外版V1.6.5·3.5.1][智能情景模式V4.9·恒温座舱设置]"},
+        "textFormatRuns": [
+          {},
+          {"startIndex":49,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"http://jira.i-tetris.com/browse/SD-2352"}}},
+          {"startIndex":63},
+          {"startIndex":167,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://docs.google.com/document/d/1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM/edit"}}},
+          {"startIndex":186},
+          {"startIndex":188,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit"}}},
+          {"startIndex":205}
+        ]
+      }]}],
+      "fields": "userEnteredValue,textFormatRuns"
+    }
+  },
+  {
+    "updateCells": {
+      "start": {"sheetId": 2135747181, "rowIndex": 128, "columnIndex": 3},
+      "rows": [{"values": [{
+        "userEnteredValue": {"stringValue": "结论：定义为CarSettings状态控制缺陷。恒温座舱激活并进入OFF档后，辅助驾驶数据记录入口必须不可操作；当前仍可点击不符合ON档准入边界。\n依据：车辆设置海外版V1.6.5·2.3.2/3.5.1；智能情景模式V4.9·恒温座舱设置；Jira原票·描述/完整评论。\n处理：恒温座舱正常模式、低功耗模式激活期间将入口置灰并拦截点击；退出恒温座舱且恢复ON档后，再按账号及隐私协议条件恢复；Android CarSettings研发负责人处理。"},
+        "textFormatRuns": [
+          {},
+          {"startIndex":77,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://docs.google.com/document/d/1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM/edit"}}},
+          {"startIndex":102},
+          {"startIndex":103,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit"}}},
+          {"startIndex":120},
+          {"startIndex":121,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"http://jira.i-tetris.com/browse/SD-2352"}}},
+          {"startIndex":135}
+        ]
+      }]}],
+      "fields": "userEnteredValue,textFormatRuns"
+    }
+  },
+  {
+    "updateCells": {
+      "start": {"sheetId":2135747181,"rowIndex":128,"columnIndex":6},
+      "rows": [{"values":[{"userEnteredValue":{"stringValue":"可转研发"}}]}],
+      "fields":"userEnteredValue"
+    }
+  },
+  {
+    "updateCells": {
+      "start": {"sheetId":2135747181,"rowIndex":128,"columnIndex":8},
+      "rows": [{"values":[{"userEnteredValue":{"stringValue":"回归正常模式、低功耗模式的OFF激活态：入口置灰且点击无响应；退出并恢复ON档后按账号及隐私协议条件恢复"}}]}],
+      "fields":"userEnteredValue"
+    }
+  },
+  {
+    "updateCells": {
+      "start": {"sheetId":2135747181,"rowIndex":128,"columnIndex":9},
+      "rows": [{"values":[{
+        "userEnteredValue":{"stringValue":"Jira原票·描述/完整评论\n车辆设置海外版V1.6.5·2.3.2/3.5.1\n智能情景模式V4.9·恒温座舱设置\n情景模式交互V2.4·恒温座舱\nC673-G3/G5全功清单V1.7·配置"},
+        "textFormatRuns":[
+          {"startIndex":0,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"http://jira.i-tetris.com/browse/SD-2352"}}},
+          {"startIndex":14},
+          {"startIndex":15,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://docs.google.com/document/d/1ihjSpuWU8bYjKQzW-8O3rB5Xbc41oIXM/edit"}}},
+          {"startIndex":40},
+          {"startIndex":41,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit"}}},
+          {"startIndex":58},
+          {"startIndex":59,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://drive.google.com/file/d/19reIvFcKMcKaIjkHo95BnFr9nnilzbYR/view"}}},
+          {"startIndex":74},
+          {"startIndex":75,"format":{"foregroundColor":{"red":0.0667,"green":0.3333,"blue":0.8},"underline":true,"link":{"uri":"https://docs.google.com/spreadsheets/d/11wUCBnYhuh27sn91vQLImZ-mIngsiiTl/edit"}}}
+        ]
+      }]}],
+      "fields":"userEnteredValue,textFormatRuns"
+    }
+  }
+]

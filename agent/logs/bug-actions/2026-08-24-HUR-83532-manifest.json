@@ -1,0 +1,91 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-83532",
+  "comment_causality": "聂汉维评论指出视频中的电话候选由测试人员手动点击，并询问手动操作是否本就不会触发TTS。逐帧复核确认约8秒出现两个电话候选，随后人工选择并在约13秒进入5秒预拨号确认页；正式电话定义将接听/挂断播报限定于来电场景，未定义手动选择拨出号码后必须额外播报确认/取消。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": [
+    {"key": "HUR-83012", "relationship": "同项目来电接听/挂断TTS边界票", "read": true, "outcome": "历史完整处理记录确认来电播报模式才适用接听/挂断TTS，与本票拨出电话场景不同。"},
+    {"key": "HUR-82887", "relationship": "同项目预拨号边界票", "read": true, "outcome": "历史完整处理记录确认指定联系人/机构可进入预拨号，预拨号与来电场景分离。"}
+  ]},
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "由voice专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "涉及英语原话、电话意图、多轮候选、预拨号和TTS。"},
+    "map_navigation": {"applicable": false, "reason": "导航仅为背景，争议是电话多轮与TTS。"},
+    "visible_interaction": {"applicable": false, "reason": "视频仅用于还原人工点击事实，正式判断由电话语音PRD覆盖，不依赖MasterGo可见交互定义。"}
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期把拨出电话预拨号误写为来电接听/挂断。按同项目视频和正式PRD的场景区分处理：人工选择候选后进入预拨号，界面提示可语音Confirm/Cancel并保持收音，但不要求额外TTS；来电播报才要求接听/挂断提示。当前Alchemy原话命中退出与E-Call，和视频链路不一致，作为独立语义映射风险另提单，不改变本票TTS预期错误结论。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "I want to call for",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-08-24 HUR在线对话classification=task，同时命中MetaId 1435 common:ctrl exit与MetaId 1063 phone:call call_type=ecall；与Jira视频联系人候选链路不一致。",
+    "meta_id": "1435,1063",
+    "standard_function": {"status": "verified", "name": "标准功能1340·打电话给B/E-Call；1421·退出/取消/关闭", "assessment": "两项均已锁定；当前双命中不符合本票视频中的普通联系人选择链路。"},
+    "project_function": {"status": "verified", "name": "深蓝项目24488·打电话给B/E-Call；24540·退出/取消/关闭", "assessment": "分别继承标准1340与1421；24540已下发，24488已锁定。"},
+    "unavailable_reason": "",
+    "next_action": "当前原话双命中另提HUR语义映射Bug。"
+  },
+  "scope_checks": [
+    {"source_id": "jira-current", "source": "HUR-83532 Jira原票", "source_location": "完整字段、描述、聂汉维评论及video(79).mp4逐帧", "source_type": "jira", "role": "implementation_actual", "project_model": "J90A-EL", "trigger": "导航中说I want to call for后手动点击电话候选", "target_behavior": "进入5秒预拨号确认页，页面提示可说Confirm或Cancel；实际无额外TTS。", "match": "exact", "reason": "证明评论因果链与真实操作。"},
+    {"source_id": "ais-phone", "source": "AIS_语音蓝牙电话产品需求文档_v2.7", "source_location": "2.1.2多轮交互、3.1来电呼叫、4.1预拨号；正文版本记录含v2.8", "source_type": "prd", "role": "formal_target", "project_model": "AIS电话通用/含马自达差异", "trigger": "人工选择候选并进入预拨号", "target_behavior": "预拨号5秒保持收音，支持语音取消/拨打；接听/挂断播报仅适用于来电。", "match": "exact", "reason": "直接区分本票拨出预拨号与测试误用的来电场景。"},
+    {"source_id": "j90a-phone", "source": "J90A_功能定义_蓝牙电话功能定义V0.5.docx", "source_location": "功能目录与4.9语音电话功能需求·电话首选项/二次交互确认取消", "source_type": "prd", "role": "formal_target", "project_model": "J90A", "trigger": "联系人多个号码后人工选择候选", "target_behavior": "支持电话候选和二次交互确认取消，未定义手动选择后播报来电接听/挂断TTS。", "match": "exact", "reason": "J90A车型正式功能边界。"},
+    {"source_id": "alchemy-current", "source": "Alchemy HUR在线对话", "source_location": "2026-08-24原话测试", "source_type": "alchemy_current", "role": "implementation_actual", "project_model": "HUR", "trigger": "I want to call for", "target_behavior": "当前同时命中1435退出与1063 E-Call。", "match": "exact", "reason": "证明当前语义映射与视频链路不一致，需另提单。"},
+    {"source_id": "alchemy-standard", "source": "Alchemy标准功能点", "source_location": "1340/MetaId1063；1421/MetaId1435", "source_type": "alchemy_standard", "role": "context_only", "project_model": "通用标准", "trigger": "E-Call及退出/取消/关闭", "target_behavior": "两项标准功能均已锁定。", "match": "exact", "reason": "解释当前双命中的标准语义。"},
+    {"source_id": "alchemy-project", "source": "Alchemy深蓝项目功能点", "source_location": "24488/MetaId1063；24540/MetaId1435", "source_type": "alchemy_project", "role": "context_only", "project_model": "深蓝/HUR", "trigger": "E-Call及退出/取消/关闭", "target_behavior": "项目点继承标准功能。", "match": "exact", "reason": "确认项目继承关系。"}
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search", "status": "read", "searched_at": "2026-08-24", "search_location": "Google Drive精确名称、版本族检索并打开正文", "queries": [
+        {"kind": "jira_key", "text": "HUR-83532"},
+        {"kind": "problem_concept", "text": "手动选择电话候选 预拨号 Confirm Cancel TTS"},
+        {"kind": "module_artifact", "text": "J90A 蓝牙电话 语音产品需求"},
+        {"kind": "exact_document_name", "text": "AIS_语音蓝牙电话产品需求文档_v2.7"},
+        {"kind": "exact_document_name", "text": "J90A_功能定义_蓝牙电话功能定义V0.5.docx"},
+        {"kind": "version_family", "text": "AIS_语音蓝牙电话产品需求文档"},
+        {"kind": "version_family", "text": "J90A_功能定义_蓝牙电话功能定义"}
+      ],
+      "source_ids": ["ais-phone", "j90a-phone"], "reason": "已读取AIS电话PRD完整正文的2.1.2/3.1/4.1及J90A V0.5电话/二次交互章节，并枚举同名版本族。", "material": false, "next_action": "", "search_receipt_ids": ["HUR-83532-formal-20260824"],
+      "candidate_audit": {"completed": true, "results_count": 4, "candidates": [
+        {"id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc", "title": "AIS_语音蓝牙电话产品需求文档_v2.7", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit", "references": [], "version_family": "AIS_语音蓝牙电话产品需求文档", "disposition": "read", "source_ids": ["ais-phone"]},
+        {"id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2", "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx", "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit", "references": [], "version_family": "J90A_功能定义_蓝牙电话功能定义", "disposition": "read", "source_ids": ["j90a-phone"]},
+        {"id": "1TK948aEsdjmSw5P9DUaQGZKildkbbec_", "title": "【作废】J90A_功能定义_蓝牙电话功能定义V0.5.docx", "url": "https://docs.google.com/document/d/1TK948aEsdjmSw5P9DUaQGZKildkbbec_/edit", "references": [], "version_family": "J90A_功能定义_蓝牙电话功能定义", "disposition": "excluded", "reason": "标题明确作废。"},
+        {"id": "1bgmKBfInqw6MOc8qTYDjIhldLHMH9OXP", "title": "J90A&J90AEU_功能定义_蓝牙电话功能定义V0.5.docx", "url": "https://docs.google.com/document/d/1bgmKBfInqw6MOc8qTYDjIhldLHMH9OXP/edit", "references": [], "version_family": "J90A_功能定义_蓝牙电话功能定义", "disposition": "excluded", "reason": "更新时间早于已读J90A单车型现行V0.5。"}
+      ]},
+      "search_completion": {"completed": true, "referenced_sources": [], "version_families": [
+        {"family": "AIS_语音蓝牙电话产品需求文档", "status": "enumerated", "receipt_ids": ["HUR-83532-formal-20260824"], "selected_candidate_id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc", "selection_reason": "唯一同名在线文档，正文版本记录已延续至v2.8，且当前更新时间最新。", "newer_version_checked": true},
+        {"family": "J90A_功能定义_蓝牙电话功能定义", "status": "enumerated", "receipt_ids": ["HUR-83532-formal-20260824"], "selected_candidate_id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2", "selection_reason": "排除作废项并选择更新时间最新且明确适用于J90A的V0.5。", "newer_version_checked": true}
+      ]}
+    },
+    {"check_id": "alchemy_current", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy HUR在线对话", "queries": [{"kind": "exact_trigger", "text": "I want to call for"}], "source_ids": ["alchemy-current"], "reason": "已保存当前双命中结果。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_standard", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy标准功能点", "queries": [{"kind": "meta_or_function", "text": "1063/标准1340"}, {"kind": "meta_or_function", "text": "1435/标准1421"}], "source_ids": ["alchemy-standard"], "reason": "已读取名称、分类与锁定状态。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_project", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy深蓝项目功能点", "queries": [{"kind": "meta_or_function", "text": "1063/项目24488"}, {"kind": "meta_or_function", "text": "1435/项目24540"}, {"kind": "project_scope", "text": "深蓝项目/HUR"}], "source_ids": ["alchemy-project"], "reason": "已读取项目继承功能点。", "material": false, "next_action": ""}
+  ],
+  "search_receipts": [
+    {"receipt_id": "HUR-83532-formal-20260824", "provider": "google_drive", "check_id": "formal_definition_search", "searched_at": "2026-08-24T19:20:00+08:00", "queries": [
+      {"kind": "jira_key", "text": "HUR-83532"}, {"kind": "problem_concept", "text": "手动选择电话候选 预拨号 Confirm Cancel TTS"}, {"kind": "module_artifact", "text": "J90A 蓝牙电话 语音产品需求"}, {"kind": "exact_document_name", "text": "AIS_语音蓝牙电话产品需求文档_v2.7"}, {"kind": "exact_document_name", "text": "J90A_功能定义_蓝牙电话功能定义V0.5.docx"}, {"kind": "version_family", "text": "AIS_语音蓝牙电话产品需求文档"}, {"kind": "version_family", "text": "J90A_功能定义_蓝牙电话功能定义"}
+    ], "results": [
+      {"id": "1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc", "title": "AIS_语音蓝牙电话产品需求文档_v2.7", "url": "https://docs.google.com/document/d/1V3TC1qm3IqLN1qABKereetThkKPbdOqgkrUxzeSYsDc/edit", "mime_type": "application/vnd.google-apps.document"},
+      {"id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2", "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx", "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+      {"id": "1TK948aEsdjmSw5P9DUaQGZKildkbbec_", "title": "【作废】J90A_功能定义_蓝牙电话功能定义V0.5.docx", "url": "https://docs.google.com/document/d/1TK948aEsdjmSw5P9DUaQGZKildkbbec_/edit", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+      {"id": "1bgmKBfInqw6MOc8qTYDjIhldLHMH9OXP", "title": "J90A&J90AEU_功能定义_蓝牙电话功能定义V0.5.docx", "url": "https://docs.google.com/document/d/1bgmKBfInqw6MOc8qTYDjIhldLHMH9OXP/edit", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+    ]}
+  ],
+  "expected_behavior": {
+    "trigger": "语音进入电话候选列表后，用户手动点击一个候选号码。",
+    "target_state": "进入5秒预拨号确认状态并保持语音收音。",
+    "intent_function_signal": "人工点击候选不等同于语音二轮选择；当前原话在线1435+1063双命中另行修复。",
+    "ui_tts_vehicle_behavior": "展示预拨号倒计时及Confirm/Cancel语音提示入口；不要求追加接听/挂断或确认/取消TTS。",
+    "boundary": "接听/挂断TTS仅适用于来电播报；若用户通过语音选择候选，则按语音二轮定义反馈。",
+    "source_ids": ["ais-phone", "j90a-phone"]
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "J90A电话测试负责人",
+    "text": "结论：定义为测试预期错误，HUR-83532可关闭。视频中测试人员手动点击电话候选后进入5秒预拨号确认页；手动点击不属于语音二轮选择，不要求额外播报Confirm/Cancel。原预期‘接听/挂断’仅适用于来电播报场景，不适用于本次拨出电话。\n依据：Jira原票视频及聂汉维评论；AIS语音蓝牙电话PRD·2.1.2/3.1/4.1；J90A蓝牙电话功能定义V0.5·电话功能/二次交互。\n处理：测试用例改为手动选择候选后展示5秒预拨号确认页并保持语音收音，移除‘接听/挂断TTS’预期后关闭本票；当前HUR原话在线命中1435退出+1063 E-Call，与视频链路不一致，另提语义映射Bug处理；J90A电话测试负责人处理。",
+    "implementation_source_ids": ["jira-current", "alchemy-current"]
+  },
+  "run_context": {"run_id": "bug-20260824T192000Z-hur-83532", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 382}
+}

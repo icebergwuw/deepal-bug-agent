@@ -1,0 +1,123 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-83801",
+  "comment_causality": "黄文连续追问是否有对应需求，并表示无需求不建议修改；陈柯钰以‘其他界面点击都会取消唤醒’作为参考。实时核验发现，现行语音退出产品需求文档v2.2已明确：点击唤醒后的语音助手形象才退出，点击语音助手形象以外的任意区域不退出，且被点击控件仍须正常响应。因此评论中的跨页面现象只能说明实现差异，不能覆盖正式定义；黄文不修改的方向正确，但应以已存在的正式定义为依据，而不是以‘没有需求’为依据。",
+  "customer_issue": {"identified": false},
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {"key": "HUR-83804", "relationship": "原票评论标注为‘日志’的关联票", "read": true, "outcome": "已完整读取。该票实际是另一条空调弹窗与语音唤醒时序问题，不是本票日志承载票；研发说明空调面板退出来自自身10秒自动隐藏，语音唤醒与空调关闭无业务联动，最终按Invalid关闭。"}
+    ]
+  },
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "由voice专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "争议对象是语音助手唤醒后的手动退出条件与退出指令能力。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图或导航。"},
+    "visible_interaction": {"applicable": false, "reason": "空调弹窗仅是触摸发生页面；本票判定目标是全局语音生命周期，不是空调页面状态、可见即可说或控件选中逻辑。"}
+  },
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "退出语音助手",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-08-24 HUR项目在线测试命中meta_id 1634、common:assistant:exit；当前无可见结果。该测试只核验明确口头退出路径，触屏操作不经过NLU。",
+    "meta_id": "1634",
+    "standard_function": {"status": "verified", "name": "标准功能ID 1254·语音助手退下", "assessment": "已锁定；动作是语音助手退出且仍可再次唤醒，TTS为‘好的’，适用于明确表达退出意图。"},
+    "project_function": {"status": "verified", "name": "马自达项目功能ID 26396·语音助手退下", "assessment": "已锁定，继承未修改(1254)，车型范围含J90A；不把触摸空调区域定义为退出指令。"},
+    "unavailable_reason": "",
+    "next_action": ""
+  },
+  "scope_checks": [
+    {"source_id": "jira-current", "source": "HUR-83801 Jira原票", "source_location": "完整字段、描述、全部评论及视频附件video_1787557683.mp4", "source_type": "jira", "role": "implementation_actual", "project_model": "J90A-EL·阿拉伯语·0904版本", "trigger": "空调弹窗页面唤醒马自达后滑动或点击空调区域", "target_behavior": "视频约00:09-00:18显示空调控件可操作，顶部语音状态持续；测试期待退出语音助手。", "match": "exact", "reason": "证明当前复现、触屏响应和评论争议。"},
+    {"source_id": "voice-exit-v22", "source": "AIS_语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档_v2.2", "source_location": "第10-11页·3.5.1手动主动退出；3.1.1马自达唤醒词", "source_type": "interaction", "role": "formal_target", "project_model": "AIS语音通用定义，明确覆盖马自达唤醒词‘Hi，马自达’", "trigger": "语音助手唤醒后进行屏幕点击操作", "target_behavior": "点击唤醒后的语音助手形象退出；点击语音助手形象以外任意区域不退出，且被点击控件正常响应。", "match": "exact", "reason": "现行正式交互定义直接回答本票评论争议。"},
+    {"source_id": "j90a-el-config-v16", "source": "J90A-G -EL座舱功能清单V1.6 20260605", "source_location": "变更记录V1.6；J90A-G座舱功能清单第2-6、25行", "source_type": "formal_config", "role": "context_only", "project_model": "J90A-EL当前配置", "trigger": "基础语音、全局语音交互和空调语音能力", "target_behavior": "J90A-EL各区域配置搭载基础语音、全局语音交互及语音控制空调；未定义触摸空调页即退出语音。", "match": "exact", "reason": "证明现行车型配置具备相关语音与空调能力，详细退出动作仍由专项PRD定义。"},
+    {"source_id": "hur-83804", "source": "HUR-83804", "source_location": "描述、全部评论与解决结果", "source_type": "historical", "role": "context_only", "project_model": "J90A-EL·同版本", "trigger": "空调弹窗显示期间两次唤醒马自达", "target_behavior": "研发确认语音唤醒与空调关闭无业务联动，首次退出由空调自身10秒自动隐藏导致；Invalid关闭。", "match": "partial", "reason": "说明空调页和语音唤醒不存在自动关闭联动，但不直接定义本票的手动触摸退出条件。"},
+    {"source_id": "alchemy-current", "source": "Alchemy HUR在线对话", "source_location": "2026-08-24实时原话‘退出语音助手’", "source_type": "alchemy_current", "role": "implementation_actual", "project_model": "HUR在线项目", "trigger": "明确口头退出语音助手", "target_behavior": "命中meta_id 1634、common:assistant:exit。", "match": "exact", "reason": "证明明确口头退出路径存在；触屏不经过NLU。"},
+    {"source_id": "alchemy-standard", "source": "Alchemy标准功能点", "source_location": "标准功能ID 1254；MetaId 1634；语音助手退下", "source_type": "alchemy_standard", "role": "context_only", "project_model": "通用标准", "trigger": "用户明确表达退出或关闭语音助手", "target_behavior": "退出语音助手，仍可再次唤醒，TTS‘好的’。", "match": "exact", "reason": "定义口头退出能力。"},
+    {"source_id": "alchemy-project", "source": "Alchemy马自达项目功能点", "source_location": "项目功能ID 26396；继承未修改(1254)；MetaId 1634", "source_type": "alchemy_project", "role": "context_only", "project_model": "马自达项目·J90A", "trigger": "用户明确表达退出或关闭语音助手", "target_behavior": "项目点已锁定并继承标准退出能力。", "match": "exact", "reason": "证明J90A项目保留明确口头退出能力。"}
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-24",
+      "search_location": "Google Drive精确检索、版本族核验与正文读取",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83801"},
+        {"kind": "problem_concept", "text": "语音助手 唤醒 点击其他区域 退出"},
+        {"kind": "module_artifact", "text": "语音唤醒 全局免唤醒 关键词免唤醒 退出 产品需求文档"},
+        {"kind": "exact_document_name", "text": "AIS_语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档_v2.2"},
+        {"kind": "version_family", "text": "语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档"},
+        {"kind": "exact_document_name", "text": "J90A-G -EL座舱功能清单V1.6 20260605"},
+        {"kind": "version_family", "text": "J90A-G -EL座舱功能清单"}
+      ],
+      "source_ids": ["voice-exit-v22", "j90a-el-config-v16"],
+      "reason": "已读取语音退出专项正式定义和J90A-EL当前功能清单；专项文档直接定义非助手区域点击不退出。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": ["HUR-83801-formal-definition-20260824"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {"id": "1xekG1P1xiddgVfbkwgdmetK6T-q9poqG", "title": "AIS_语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档_v2.2.pdf", "url": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view", "references": [], "version_family": "语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档", "disposition": "read", "source_ids": ["voice-exit-v22"]},
+          {"id": "1uuwpVoH3YQFZwNw-Gc8yZMANTWUS1AR6", "title": "AIS_语音唤醒_全局免唤醒_关键词免唤醒_退出产品需求文档_v2.2.pdf", "url": "https://drive.google.com/file/d/1uuwpVoH3YQFZwNw-Gc8yZMANTWUS1AR6/view", "references": [], "version_family": "语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档", "disposition": "excluded", "reason": "同版本同内容重复文件，选择斜杠命名版本作为主引用。"},
+          {"id": "1mgtc-CG_SyKHWmFx-zZbzOnO7N3ay6QQ", "title": "Megatronix_语音唤醒_全局免唤醒_关键词免唤醒_退出产品需求文档_v2.2.docx", "url": "https://drive.google.com/file/d/1mgtc-CG_SyKHWmFx-zZbzOnO7N3ay6QQ/view", "references": [], "version_family": "语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档", "disposition": "excluded", "reason": "同为v2.2，已读PDF为稳定发布引用。"},
+          {"id": "1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp", "title": "J90A-G -EL座舱功能清单V1.6 20260605.xlsx", "url": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view", "references": [], "version_family": "J90A-G -EL座舱功能清单", "disposition": "read", "source_ids": ["j90a-el-config-v16"]}
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {"family": "语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档", "status": "enumerated", "receipt_ids": ["HUR-83801-formal-definition-20260824"], "selected_candidate_id": "1xekG1P1xiddgVfbkwgdmetK6T-q9poqG", "selection_reason": "检索到的最高版本为v2.2，选择已完整读取的PDF。", "newer_version_checked": true},
+          {"family": "J90A-G -EL座舱功能清单", "status": "enumerated", "receipt_ids": ["HUR-83801-formal-definition-20260824"], "selected_candidate_id": "1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp", "selection_reason": "选择变更记录中当前最高版本V1.6。", "newer_version_checked": true}
+        ]
+      }
+    },
+    {"check_id": "alchemy_current", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy HUR在线对话", "queries": [{"kind": "exact_trigger", "text": "退出语音助手"}], "source_ids": ["alchemy-current"], "reason": "已保存明确口头退出原话的当前输出；触屏操作不经过NLU。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_standard", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy标准功能点", "queries": [{"kind": "meta_or_function", "text": "MetaId 1634 / 标准功能ID 1254"}], "source_ids": ["alchemy-standard"], "reason": "已读取功能名、锁定状态、query示例、动作与TTS。", "material": false, "next_action": ""},
+    {"check_id": "alchemy_project", "status": "read", "searched_at": "2026-08-24", "search_location": "Alchemy马自达项目功能点", "queries": [{"kind": "meta_or_function", "text": "MetaId 1634 / 项目功能ID 26396"}, {"kind": "project_scope", "text": "马自达项目/J90A"}], "source_ids": ["alchemy-project"], "reason": "已读取项目点锁定状态、继承关系和车型范围。", "material": false, "next_action": ""}
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-83801-formal-definition-20260824",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-24T18:45:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-83801"},
+        {"kind": "problem_concept", "text": "语音助手 唤醒 点击其他区域 退出"},
+        {"kind": "module_artifact", "text": "语音唤醒 全局免唤醒 关键词免唤醒 退出 产品需求文档"},
+        {"kind": "exact_document_name", "text": "AIS_语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档_v2.2"},
+        {"kind": "version_family", "text": "语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档"},
+        {"kind": "exact_document_name", "text": "J90A-G -EL座舱功能清单V1.6 20260605"},
+        {"kind": "version_family", "text": "J90A-G -EL座舱功能清单"}
+      ],
+      "results": [
+        {"id": "1xekG1P1xiddgVfbkwgdmetK6T-q9poqG", "title": "AIS_语音唤醒/全局免唤醒/关键词免唤醒/退出产品需求文档_v2.2.pdf", "url": "https://drive.google.com/file/d/1xekG1P1xiddgVfbkwgdmetK6T-q9poqG/view", "mime_type": "application/pdf"},
+        {"id": "1uuwpVoH3YQFZwNw-Gc8yZMANTWUS1AR6", "title": "AIS_语音唤醒_全局免唤醒_关键词免唤醒_退出产品需求文档_v2.2.pdf", "url": "https://drive.google.com/file/d/1uuwpVoH3YQFZwNw-Gc8yZMANTWUS1AR6/view", "mime_type": "application/pdf"},
+        {"id": "1mgtc-CG_SyKHWmFx-zZbzOnO7N3ay6QQ", "title": "Megatronix_语音唤醒_全局免唤醒_关键词免唤醒_退出产品需求文档_v2.2.docx", "url": "https://drive.google.com/file/d/1mgtc-CG_SyKHWmFx-zZbzOnO7N3ay6QQ/view", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+        {"id": "1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp", "title": "J90A-G -EL座舱功能清单V1.6 20260605.xlsx", "url": "https://drive.google.com/file/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/view", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "J90A-EL在空调弹窗中唤醒马自达后，用户点击语音助手形象以外的空调区域或操作空调控件。",
+    "target_state": "语音助手保持唤醒；只有点击语音助手形象或表达明确退出意图才退出。",
+    "intent_function_signal": "触屏操作不进入NLU；明确口头退出命中MetaId 1634。",
+    "ui_tts_vehicle_behavior": "空调控件正常响应，非助手区域点击不退出语音；明确口头退出时执行退出并播报‘好的’。",
+    "boundary": "其他页面当前可能存在点击即退的实现差异，但不能反推为正式定义；语音卡片和大模型功能卡片另按专项例外处理。",
+    "source_ids": ["voice-exit-v22"]
+  },
+  "conflict_resolution": "陈柯钰以‘其他界面点击都会取消唤醒’主张本页也应退出，但这属于横向实现对比，不是正式需求。现行语音退出PRD v2.2第3.5.1节直接规定非语音助手形象区域点击不退出、控件仍响应；本票视频与该定义一致。HUR-83804还证明空调关闭与语音唤醒无业务联动。因此以正式专项定义覆盖跨页面类比；黄文‘不修改’结论成立，但理由应改为已有需求明确不退出。",
+  "decision": {
+    "status": "可关闭",
+    "owner": "J90A-EL测试负责人",
+    "text": "结论：定义为测试预期错误，HUR-83801可关闭。J90A-EL在语音唤醒后点击语音助手形象以外的空调区域，不应退出语音助手，被操作的空调控件仍应正常响应；本票视频表现符合现行定义。\n依据：AIS语音退出产品需求文档v2.2第3.5.1节明确‘点击助手形象退出、点击其他任意区域不退出’；J90A-G/EL座舱功能清单V1.6确认相关语音与空调能力搭载；HUR-83804说明空调面板关闭与语音唤醒无业务联动；Alchemy马自达项目26396仅定义明确口头退出。\n处理：将测试用例预期改为‘点击/滑动空调区域不作为退出条件，空调控件正常响应；点击语音助手形象或明确说退出才退出’，随后关闭本票；J90A-EL测试负责人处理。",
+    "implementation_source_ids": ["jira-current", "alchemy-current"]
+  },
+  "run_context": {"run_id": "bug-20260824T190000+0800-HUR-83801", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 383}
+}

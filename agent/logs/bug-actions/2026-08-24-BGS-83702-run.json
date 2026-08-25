@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260824T175000Z-bgs-83702",
+  "status": "complete",
+  "started_at": "2026-08-24T17:50:00+08:00",
+  "query_summary": "BGS-83702、评论、截图附件、PC-12923、PC-31541、BGS-83700、当前变更管理表、Drive正式资料及Alchemy当前/标准/项目功能均已实时读取；吴优bug页查重0行，计划新增第381行；无Jira外部动作。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83702.md",
+  "items": [
+    {
+      "jira_key": "BGS-83702",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 381,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83702-manifest.json",
+      "readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83702-readback.json",
+      "validation_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-08-24-BGS-83702-validation.json",
+      "readback_sha256": "2cde16d0fb1c066a24d561f33d29091094447677d5d7418958c9676c3880b8b1"
+    }
+  ],
+  "completed_at": "2026-08-24T18:08:00+08:00"
+}
