@@ -1,0 +1,245 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-7381",
+  "comment_causality": "客户测试明确燃油补电目标SOC低于当前SOC时应回弹并提示；评论与IC分析证明回弹正确，VCU已给提示值1且IC已发布Topic，Android/HMI未显示提示。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260822110420009",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述包含前置条件、步骤、预期、实际和5/5复现"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "车辆设置提示显示及信号执行链问题"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不涉及语音"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不是可见即可说或节点选择问题"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-current",
+      "source": "SD-7381 Jira原票",
+      "source_location": "描述、完整评论、IC分析报告、附件列表",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-G5",
+      "trigger": "当前SOC大于70%，将燃油补电目标SOC设为40%",
+      "target_behavior": "目标SOC回弹到原值，并显示目标SOC需高于当前SOC的文字提示",
+      "match": "exact",
+      "reason": "客户测试用例完整，评论和日志覆盖同次复现。"
+    },
+    {
+      "source_id": "function-list",
+      "source": "C673-G3、G5座舱全功清单V1.7",
+      "source_location": "04-车辆设置，序号636 燃油补电SOC设置",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G3/G5",
+      "trigger": "燃油补电SOC设置",
+      "target_behavior": "C673-G5搭载燃油补电SOC设置能力",
+      "match": "exact",
+      "reason": "确认项目范围与功能搭载。"
+    },
+    {
+      "source_id": "ic-analysis",
+      "source": "SD-7381 IC分析报告",
+      "source_location": "2026-08-21 11:08:33.699-11:08:33.927",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-G5 LS0.1.0.6",
+      "trigger": "VcuFuelrechargeSetInfo=1",
+      "target_behavior": "IC接收值1并发布VehicleControl/FuelrechargeSetInfo=1；Android日志无接收与提示",
+      "match": "exact",
+      "reason": "直接定位故障位于IC Topic发布之后。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-26",
+      "search_location": "Google Drive精确检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-7381"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "燃油补电目标SOC提示"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G3、G5座舱全功清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G3、G5座舱全功清单"
+        }
+      ],
+      "source_ids": [
+        "function-list"
+      ],
+      "reason": "已读取C673-G5功能清单序号636，并结合完整客户用例与同次信号日志判断。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "sd7381-drive-20260826"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit",
+            "references": [
+              {
+                "reference_text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+                "status": "read",
+                "receipt_ids": [
+                  "sd7381-drive-20260826"
+                ],
+                "result_ids": [
+                  "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM"
+                ]
+              }
+            ],
+            "disposition": "read",
+            "reason": "已读取并命中序号636燃油补电SOC设置。",
+            "version_family": "C673-G3、G5座舱全功清单",
+            "source_ids": [
+              "function-list"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [
+          {
+            "source_candidate_id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "reference_text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "status": "read",
+            "receipt_ids": [
+              "sd7381-drive-20260826"
+            ]
+          }
+        ],
+        "version_families": [
+          {
+            "family": "C673-G3、G5座舱全功清单",
+            "status": "enumerated",
+            "receipt_ids": [
+              "sd7381-drive-20260826"
+            ],
+            "selected_candidate_id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "selection_reason": "V1.7为当前检索到的最新版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "sd7381-drive-20260826",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-26",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-7381"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "燃油补电目标SOC提示"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G3、G5座舱全功清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G3、G5座舱全功清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "conflict_resolution": "SOC回弹与无反馈是脉冲设置机制的正常结果；文字提示由独立FuelrechargeSetInfo触发。VCU和IC链路正常，Android/HMI未显示提示，责任落在应用订阅/属性映射/提示触发。",
+  "voice_evidence": {
+    "applicable": false,
+    "availability": "not_applicable",
+    "alchemy_tested": false,
+    "standard_function": {
+      "status": "not_applicable",
+      "reason": "非语音问题。"
+    },
+    "project_function": {
+      "status": "not_applicable",
+      "reason": "非语音问题。"
+    }
+  },
+  "expected_behavior": {
+    "trigger": "C673 ICA车辆进入设置-能量管理，电源ON并操作燃油补电。",
+    "target_state": "燃油补电功能项支持673全系；开关显示，满足P挡、可行驶、未插枪、SOC低于80%、油量充足且VCU可用标志可用时可操作，否则置灰。",
+    "intent_function_signal": "HU依据VcuFuelrechargeFlag决定开关是否可操作，并依据VcuFuelrechargeSetSts及VcuFuelrechargePosnSetSts显示开关和功率挡位状态。",
+    "ui_tts_vehicle_behavior": "开启确认后展开低/中/高挡，关闭时收起；上电默认高挡。",
+    "boundary": "当前缺少未插枪状态和运行时信号值，只能确定目标显示规则，不能确定VCU或HU根因。",
+    "source_ids": [
+      "function-list"
+    ]
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "C673-G5车辆设置/Android应用负责人",
+    "text": "结论：定义为待复核。当前证据已证明SOC回弹符合请求脉冲机制，VCU已返回FuelrechargeSetInfo=1且IC已发布对应Topic，但缺少可直接引用的C673-G5生效提示文案条款，暂不能将“目标SOC需高于当前SOC”的显示责任最终归给Android/HMI。\n依据：[SD-7381 Jira原票·完整客户用例/评论/IC分析]；[C673-G3/G5全功清单V1.7·车辆设置序号636]。\n处理：补齐C673-G5生效需求中FuelrechargeSetInfo=1对应文字提示及Android订阅映射定义，再按定义回归并定责；C673-G5车辆设置/Android应用负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260826T184500+0800-SD-7381",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 384
+  }
+}

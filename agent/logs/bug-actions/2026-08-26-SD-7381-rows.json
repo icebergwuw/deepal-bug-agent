@@ -1,0 +1,24 @@
+[
+  {
+    "key": "SD-7381",
+    "summary": "燃油补电目标SOC超限无文字提示",
+    "date": "2026-08-26",
+    "info": "现象：C673-G5在当前SOC>70%时把燃油补电目标SOC设为40%，目标值回弹但未显示“燃油补电目标SOC需高于车辆当前SOC”。[SD-7381 Jira原票·客户用例/完整评论/IC分析]\n实现：VCU已发VcuFuelrechargeSetInfo=1，IC已发布VehicleControl/FuelrechargeSetInfo=1；Android日志未见对应receive，提示链路未完成。[IC分析·11:08:33.699-11:08:33.927]\n正式资料：C673-G3/G5全功清单V1.7序号636确认燃油补电SOC设置搭载，但当前可读版本未找到该提示文案的生效条款。[C673-G3/G5全功清单V1.7·序号636]",
+    "info_links": [
+      {"label":"SD-7381 Jira原票·客户用例/完整评论/IC分析","url":"http://jira.i-tetris.com/browse/SD-7381"},
+      {"label":"IC分析·11:08:33.699-11:08:33.927","url":"http://jira.i-tetris.com/browse/SD-7381"},
+      {"label":"C673-G3/G5全功清单V1.7·序号636","url":"https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"}
+    ],
+    "judgment": "结论：定义为待复核。当前证据已证明SOC回弹符合请求脉冲机制，VCU已返回FuelrechargeSetInfo=1且IC已发布对应Topic，但缺少可直接引用的C673-G5生效提示文案条款，暂不能将“目标SOC需高于当前SOC”的显示责任最终归给Android/HMI。\n依据：[SD-7381 Jira原票·完整客户用例/评论/IC分析]；[C673-G3/G5全功清单V1.7·车辆设置序号636]。\n处理：补齐C673-G5生效需求中FuelrechargeSetInfo=1对应文字提示及Android订阅映射定义，再按定义回归并定责；C673-G5车辆设置/Android应用负责人处理。",
+    "judgment_links": [
+      {"label":"SD-7381 Jira原票·完整客户用例/评论/IC分析","url":"http://jira.i-tetris.com/browse/SD-7381"},
+      {"label":"C673-G3/G5全功清单V1.7·车辆设置序号636","url":"https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"}
+    ],
+    "status": "待复核",
+    "note": "需补齐C673-G5生效提示文案及Android订阅映射定义，再按定义回归定责。",
+    "links": [
+      {"label":"Jira原票·SD-7381","url":"http://jira.i-tetris.com/browse/SD-7381"},
+      {"label":"C673-G3/G5全功清单V1.7","url":"https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"}
+    ]
+  }
+]

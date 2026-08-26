@@ -1,0 +1,228 @@
+{
+  "spreadsheetId": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+  "sheets": [
+    {
+      "properties": {
+        "sheetId": 2135747181,
+        "title": "bug"
+      },
+      "data": [
+        {
+          "startRow": 383,
+          "rowData": [
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "stringValue": "2026-08-26"
+                  },
+                  "formattedValue": "2026-08-26",
+                  "effectiveValue": {
+                    "stringValue": "2026-08-26"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-7381\",\"SD-7381｜燃油补电目标SOC超限无文字提示\")"
+                  },
+                  "formattedValue": "SD-7381｜燃油补电目标SOC超限无文字提示",
+                  "effectiveValue": {
+                    "stringValue": "SD-7381｜燃油补电目标SOC超限无文字提示"
+                  },
+                  "hyperlink": "http://jira.i-tetris.com/browse/SD-7381"
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "现象：C673-G5在当前SOC>70%时把燃油补电目标SOC设为40%，目标值回弹但未显示“燃油补电目标SOC需高于车辆当前SOC”。[SD-7381 Jira原票·客户用例/完整评论/IC分析]\n实现：VCU已发VcuFuelrechargeSetInfo=1，IC已发布VehicleControl/FuelrechargeSetInfo=1；Android日志未见对应receive，提示链路未完成。[IC分析·11:08:33.699-11:08:33.927]\n正式资料：C673-G3/G5全功清单V1.7序号636确认燃油补电SOC设置搭载，但当前可读版本未找到该提示文案的生效条款。[C673-G3/G5全功清单V1.7·序号636]"
+                  },
+                  "textFormatRuns": [
+                    {},
+                    {
+                      "startIndex": 69,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/SD-7381"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 98
+                    },
+                    {
+                      "startIndex": 205,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/SD-7381"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 235
+                    },
+                    {
+                      "startIndex": 301,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 325
+                    }
+                  ],
+                  "formattedValue": "现象：C673-G5在当前SOC>70%时把燃油补电目标SOC设为40%，目标值回弹但未显示“燃油补电目标SOC需高于车辆当前SOC”。[SD-7381 Jira原票·客户用例/完整评论/IC分析]\n实现：VCU已发VcuFuelrechargeSetInfo=1，IC已发布VehicleControl/FuelrechargeSetInfo=1；Android日志未见对应receive，提示链路未完成。[IC分析·11:08:33.699-11:08:33.927]\n正式资料：C673-G3/G5全功清单V1.7序号636确认燃油补电SOC设置搭载，但当前可读版本未找到该提示文案的生效条款。[C673-G3/G5全功清单V1.7·序号636]",
+                  "effectiveValue": {
+                    "stringValue": "现象：C673-G5在当前SOC>70%时把燃油补电目标SOC设为40%，目标值回弹但未显示“燃油补电目标SOC需高于车辆当前SOC”。[SD-7381 Jira原票·客户用例/完整评论/IC分析]\n实现：VCU已发VcuFuelrechargeSetInfo=1，IC已发布VehicleControl/FuelrechargeSetInfo=1；Android日志未见对应receive，提示链路未完成。[IC分析·11:08:33.699-11:08:33.927]\n正式资料：C673-G3/G5全功清单V1.7序号636确认燃油补电SOC设置搭载，但当前可读版本未找到该提示文案的生效条款。[C673-G3/G5全功清单V1.7·序号636]"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "结论：定义为待复核。当前证据已证明SOC回弹符合请求脉冲机制，VCU已返回FuelrechargeSetInfo=1且IC已发布对应Topic，但缺少可直接引用的C673-G5生效提示文案条款，暂不能将“目标SOC需高于当前SOC”的显示责任最终归给Android/HMI。\n依据：[SD-7381 Jira原票·完整客户用例/评论/IC分析]；[C673-G3/G5全功清单V1.7·车辆设置序号636]。\n处理：补齐C673-G5生效需求中FuelrechargeSetInfo=1对应文字提示及Android订阅映射定义，再按定义回归并定责；C673-G5车辆设置/Android应用负责人处理。"
+                  },
+                  "textFormatRuns": [
+                    {},
+                    {
+                      "startIndex": 142,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/SD-7381"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 171
+                    },
+                    {
+                      "startIndex": 174,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 202
+                    }
+                  ],
+                  "formattedValue": "结论：定义为待复核。当前证据已证明SOC回弹符合请求脉冲机制，VCU已返回FuelrechargeSetInfo=1且IC已发布对应Topic，但缺少可直接引用的C673-G5生效提示文案条款，暂不能将“目标SOC需高于当前SOC”的显示责任最终归给Android/HMI。\n依据：[SD-7381 Jira原票·完整客户用例/评论/IC分析]；[C673-G3/G5全功清单V1.7·车辆设置序号636]。\n处理：补齐C673-G5生效需求中FuelrechargeSetInfo=1对应文字提示及Android订阅映射定义，再按定义回归并定责；C673-G5车辆设置/Android应用负责人处理。",
+                  "effectiveValue": {
+                    "stringValue": "结论：定义为待复核。当前证据已证明SOC回弹符合请求脉冲机制，VCU已返回FuelrechargeSetInfo=1且IC已发布对应Topic，但缺少可直接引用的C673-G5生效提示文案条款，暂不能将“目标SOC需高于当前SOC”的显示责任最终归给Android/HMI。\n依据：[SD-7381 Jira原票·完整客户用例/评论/IC分析]；[C673-G3/G5全功清单V1.7·车辆设置序号636]。\n处理：补齐C673-G5生效需求中FuelrechargeSetInfo=1对应文字提示及Android订阅映射定义，再按定义回归并定责；C673-G5车辆设置/Android应用负责人处理。"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "boolValue": false
+                  },
+                  "formattedValue": "FALSE",
+                  "effectiveValue": {
+                    "boolValue": false
+                  },
+                  "dataValidation": {
+                    "condition": {
+                      "type": "BOOLEAN"
+                    },
+                    "strict": true,
+                    "showCustomUi": true
+                  }
+                },
+                {},
+                {
+                  "userEnteredValue": {
+                    "stringValue": "待复核"
+                  },
+                  "formattedValue": "待复核",
+                  "effectiveValue": {
+                    "stringValue": "待复核"
+                  }
+                },
+                {},
+                {
+                  "userEnteredValue": {
+                    "stringValue": "需补齐C673-G5生效提示文案及Android订阅映射定义，再按定义回归定责。"
+                  },
+                  "formattedValue": "需补齐C673-G5生效提示文案及Android订阅映射定义，再按定义回归定责。",
+                  "effectiveValue": {
+                    "stringValue": "需补齐C673-G5生效提示文案及Android订阅映射定义，再按定义回归定责。"
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Jira原票·SD-7381\nC673-G3/G5全功清单V1.7"
+                  },
+                  "textFormatRuns": [
+                    {
+                      "startIndex": 0,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "http://jira.i-tetris.com/browse/SD-7381"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 14
+                    },
+                    {
+                      "startIndex": 15,
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.0667,
+                          "green": 0.3333,
+                          "blue": 0.8
+                        },
+                        "underline": true,
+                        "link": {
+                          "uri": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"
+                        }
+                      }
+                    }
+                  ],
+                  "formattedValue": "Jira原票·SD-7381\nC673-G3/G5全功清单V1.7",
+                  "effectiveValue": {
+                    "stringValue": "Jira原票·SD-7381\nC673-G3/G5全功清单V1.7"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
