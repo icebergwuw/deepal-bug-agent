@@ -1,0 +1,25 @@
+{
+  "key":"HUR-81582","mode":"recheck","sheetId":2135747181,"sheetRow":23,"rowIndex":22,
+  "previewFingerprint":"939ff474740bcec181b214d425025311b838432f58ff7e3c8abcf4711258354e",
+  "freshReadRequiredImmediatelyBeforeBatchUpdate":true,
+  "changedColumns":["C","D","G","I","J"],
+  "current_row":{"values":[
+    {"userEnteredValue":{"numberValue":46210}},
+    {"userEnteredValue":{"formulaValue":"=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-81582\",\"HUR-81582｜洗车模式可语音关闭隐私模式\")"}},
+    {"userEnteredValue":{"stringValue":"Jira：ER洗车模式中可通过语音关闭隐私模式；1126关闭特定情景模式支持隐私/洗车模式，马自达26295设置表未写洗车中禁止退出隐私模式前置条件。"}},
+    {"userEnteredValue":{"stringValue":"解决：走语音文档task/bug转需求，补“洗车模式开启时禁止语音关闭隐私模式”的前置条件和TTS。"}},
+    {"userEnteredValue":{"boolValue":false},"dataValidation":{"condition":{"type":"BOOLEAN"}}},
+    {},
+    {"userEnteredValue":{"stringValue":"转需求"}},
+    {"userEnteredValue":{"stringValue":"复核后：补语音前置条件需求，不直接按现状关闭。"}},
+    {"userEnteredValue":{"stringValue":"语音平台/需求文档处理；易昕已指出语音需求缺少前置条件判断。"}},
+    {"userEnteredValue":{"stringValue":"Jira HUR-81582；Alchemy 1126/标准1365；马自达项目点26295；长马情景模式配置表。"}}
+  ]},
+  "changes":{
+    "C":{"text":"现象：洗车模式开启后，语音‘关闭隐私模式’可实际关闭隐私模式。[Jira原票·描述/完整评论]\n当前实现：Alchemy HUR将原话路由至MetaId 1126，mode=privacy、op=close。[Alchemy当前·1126]\n正式资料：可读《智能情景模式功能定义V4.9》将隐私模式指向独立PRD，自动洗车模式业务流程标注待补，未定义J90A该互锁。[情景模式功能定义V4.9·隐私模式设置/13.自动洗车模式设置]","links":[{"label":"Jira原票·描述/完整评论","url":"http://jira.i-tetris.com/browse/HUR-81582"},{"label":"Alchemy当前·1126","url":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},{"label":"情景模式功能定义V4.9·隐私模式设置/13.自动洗车模式设置","url":"https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"}]},
+    "D":{"text":"结论：定义为待复核。当前语音平台会按1126直接关闭隐私模式；可读正式情景模式文档仅将隐私模式指向独立PRD，且自动洗车模式业务流程标注待补，尚不能确认J90A是否正式要求洗车模式中保持隐私模式开启。\n依据：Jira原票及2026-07-06评论；Alchemy HUR当前1126；[情景模式功能定义V4.9]隐私模式设置/13.自动洗车模式设置。\n处理：补齐并确认J90A生效PRD中的洗车模式与隐私模式前置/互锁条款后再决定补语音需求或按现有设计关闭；J90A情景模式产品负责人处理。","links":[{"label":"Jira原票及2026-07-06评论","url":"http://jira.i-tetris.com/browse/HUR-81582"},{"label":"Alchemy HUR当前1126","url":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},{"label":"情景模式功能定义V4.9","url":"https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"}]},
+    "G":"待复核",
+    "I":"需J90A生效PRD明确洗车模式与隐私模式互锁；确认后再补语音前置条件/TTS或关闭本票。",
+    "J":{"links":[{"label":"Jira原票·描述/完整评论","url":"http://jira.i-tetris.com/browse/HUR-81582"},{"label":"Alchemy当前·1126","url":"https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="},{"label":"情景模式功能定义V4.9","url":"https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit"}]}
+  }
+}

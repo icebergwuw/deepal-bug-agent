@@ -1,7 +1,7 @@
 {
   "schema_version": 5,
   "jira_key": "HUR-81582",
-  "comment_causality": "Jira描述证明洗车模式开启时语音可关闭隐私模式；语音侧评论说明现有语音需求没有该前置条件，需要产品定义后下发Task。2026-08-20重新实测仍命中关闭特定情景模式MetaId 1126。",
+  "comment_causality": "Jira描述证明洗车模式开启时语音可关闭隐私模式；易昕评论明确现有语音需求没有洗车模式前置条件判断，需产品定义后下发Task。2026-08-26复查继续核验当前Jira、正式情景模式文档和Alchemy证据。",
   "customer_issue": {
     "identified": false
   },
@@ -42,12 +42,12 @@
     "standard_function": {
       "status": "verified",
       "name": "1365 关闭特定情景模式",
-      "assessment": "2026-08-20读取；标准说明列出隐私模式可关闭，并明确项目关闭前置条件由PRD判断、不在系统体现。"
+      "assessment": "2026-08-26复查沿用已核验标准边界；隐私模式可关闭，项目关闭前置条件由PRD判断、不在标准系统体现。"
     },
     "project_function": {
       "status": "verified",
       "name": "14379 深蓝项目关闭特定情景模式",
-      "assessment": "2026-08-20读取；当前可读执行策略仅列出赛道模式开启时不可关闭隐私模式，未列洗车模式条件。"
+      "assessment": "2026-08-26复查仍未见洗车模式限制；该项目点不是J90A正式目标来源，不能替代J90A PRD。"
     },
     "unavailable_reason": "",
     "next_action": ""
@@ -78,6 +78,20 @@
       "reason": "正式目标来源当前不可访问，不能用测试预期或历史结论替代。",
       "material": true,
       "next_action": "J90A情景模式产品负责人定位并补齐生效PRD中的洗车模式与隐私模式前置/互锁条款后复核。"
+    },
+    {
+      "source_id": "drive-scenemode-v49",
+      "source": "Google Drive《智能情景模式功能定义V4.9》",
+      "source_location": "文档总说明；隐私模式设置；13.自动洗车模式设置",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C385/C673情景模式基线",
+      "trigger": "洗车模式期间关闭隐私模式",
+      "target_behavior": "文档将隐私模式指向独立PRD，自动洗车模式业务流程标注待补，未定义该互锁",
+      "match": "gap",
+      "reason": "作为正式资料检索结果，证明当前可读版本不足以定义J90A该前置条件。",
+      "material": true,
+      "next_action": "由J90A情景模式产品负责人补齐生效PRD条款。"
     },
     {
       "source_id": "alchemy-current",
@@ -120,8 +134,8 @@
     {
       "check_id": "formal_definition_search",
       "status": "unavailable",
-      "searched_at": "2026-08-20",
-      "search_location": "Google Drive连接器；Chrome中的docs.google.com和drive.google.com",
+      "searched_at": "2026-08-26",
+      "search_location": "Google Drive精确检索并读取《C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）》",
       "queries": [
         {
           "kind": "jira_key",
@@ -136,10 +150,10 @@
           "text": "马自达J90A情景模式需求文档"
         }
       ],
-      "source_ids": [],
-      "reason": "Google Drive连接器连续传输失败，Chrome访问Google文档和表格均连接超时，无法完成当前候选检索、正文读取和版本族核验。",
+      "source_ids": ["drive-scenemode-v49"],
+      "reason": "当前正式文档仅说明隐私模式参照SmartMega OS+隐私模式PRD，自动洗车模式业务流程标注待补；未提供J90A洗车模式禁止关闭隐私模式的生效条款。",
       "material": true,
-      "next_action": "Google Drive恢复后重新检索并读取J90A情景模式生效PRD，定位洗车模式与隐私模式条款。"
+      "next_action": "J90A情景模式产品负责人补齐并确认生效PRD中的洗车模式与隐私模式前置/互锁条款后复核。"
     },
     {
       "check_id": "alchemy_current",
@@ -207,7 +221,7 @@
     "text": "结论：定义为待复核。当前语音平台会按1126直接关闭隐私模式，且项目功能点未配置洗车模式前置条件；但本轮无法读取J90A生效PRD，不能确认洗车模式是否正式要求隐私模式持续开启，因此不继续沿用转需求的确定性判断。\n依据：[Jira原票]·描述及2026-07-06评论；[Alchemy标准1365]·关闭特定情景模式说明；[深蓝项目14379]·当前执行策略；Google Drive当前不可访问。\n处理：定位并补齐J90A生效PRD中的洗车模式与隐私模式前置/互锁条款，证据补齐后再判断是补语音需求还是按现有设计关闭；J90A情景模式产品负责人处理。"
   },
   "run_context": {
-    "run_id": "bug-20260820T135750+0800-HUR-81582-recheck",
+    "run_id": "bug-20260826T153200+0800-HUR-81582-recheck",
     "operator_owner_id": "wu-you",
     "target_owner_id": "wu-you",
     "sheet_name": "bug",

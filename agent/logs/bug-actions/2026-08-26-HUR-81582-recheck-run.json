@@ -1,0 +1,12 @@
+{
+  "schema_version":1,
+  "run_id":"bug-20260826T153200+0800-HUR-81582-recheck",
+  "status":"complete",
+  "started_at":"2026-08-26T15:32:00+08:00",
+  "query_summary":"普通二次复查HUR-81582；完成Jira、Alchemy和正式情景模式文档核验，更新负责人表原行C/D/G/I/J。",
+  "action_log":"agent/logs/bug-actions/2026-08-26-HUR-81582-recheck.md",
+  "items":[{"jira_key":"HUR-81582","operator_owner_id":"wu-you","target_owner_id":"wu-you","sheet_name":"bug","sheet_row":23,"manifest_path":"agent/logs/bug-actions/2026-08-20-HUR-81582-recheck-manifest.json","readback_path":"agent/logs/bug-actions/2026-08-26-HUR-81582-readback.json","validation_path":"agent/logs/bug-actions/2026-08-26-HUR-81582-validation.json","readback_sha256":"fb599b85fbe7c59ffe17c3c32549f1bd90c649e16ce94a117fd41bc4db68bd61"}],
+  "jira_keys":["HUR-81582"],
+  "blockers":[],
+  "completed_at":"2026-08-26T15:38:00+08:00"
+}
