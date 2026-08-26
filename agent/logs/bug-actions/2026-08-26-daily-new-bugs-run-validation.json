@@ -1,0 +1,11 @@
+{
+  "ok": false,
+  "phase": "final",
+  "run_id": "bug-20260826T024657Z-bec55186-a295-4e32-85d2-b2ef78131e1e",
+  "errors": [
+    "有写入计划的 run 必须包含 items",
+    "final 阶段 status 必须为 complete 或 no_changes",
+    "final run 缺少 completed_at"
+  ],
+  "reason": "Jira and Google Sheets authentication prevented real issue counts, online A:J deduplication, and a truthful complete/no_changes closure."
+}
