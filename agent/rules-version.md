@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.15.0-trial.1`
+- 当前版本：`v1.16.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-08-18`
+- 生效日期：`2026-08-26`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -14,6 +14,36 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.16.0-trial.1 — 2026-08-26
+
+### 试行内容
+
+- 明确 Alchemy 是语音产品专属配置平台，只有语音产品负责人可以修改。
+- 将意图、query/泛化语料、slot、literal/canonical、标准/项目功能点继承、项目执行策略、TTS 话术和下发发布列为产品专属动作。
+- Agent 只负责读取、测试、定位、提出修改项、验收和回读；只有产品完成配置且 canonical 正确后仍执行失败，才转研发。
+
+### 修改原因
+
+- PC-38902 处理中发现现有规则要求读取 Alchemy，但未把 Alchemy 修改权限和研发执行边界写成硬规则，容易将平台配置动作错误归给研发。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/product-kb/modules/voice-vui.md`
+- `agent/product-kb/org/component-owner-map.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-26-alchemy-product-only-boundary.md`
+
+### 验证案例
+
+- PC-38902：`mode_type=女` 已识别但 canonical 为空，先由语音产品在 Alchemy 补配置和下发；不能直接转研发改平台。
+- 已有 canonical 且车端仍执行失败时，才按车端/语音服务执行链路分流。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.15.0-trial.1`，不使用 `git reset --hard`。
+- 回滚只撤销 Alchemy 产品专属权限规则，不删除已形成的证据、日志或历史判断。
 
 ## v1.15.0-trial.1 — 2026-08-18
 

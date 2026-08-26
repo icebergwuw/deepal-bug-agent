@@ -27,3 +27,4 @@
 - 页面层级、AppList、状态栏、dock、快捷中心优先查 SystemUI / Launcher。
 - 语音问题要拆：VUI、语音服务、AIS、TTS、应用执行侧，不要笼统写“语音处理”。
 - AIS 的通用模块负责人信息不覆盖具体路由规则；确认是 ASR 识别错误时统一转汪文菁。
+- Alchemy 平台配置不按以上研发模块路由；意图、语料、slot、literal/canonical、功能点继承、项目执行策略、TTS 话术和下发均由语音产品负责人操作。研发只接收产品已下发且 canonical 正确后的执行问题。

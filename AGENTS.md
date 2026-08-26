@@ -23,6 +23,13 @@
 - 人员、Jira 经办人、状态、线上数据源和本地索引只在 `agent/bug-owners/registry.yaml` 登记；具体路由规则见 `agent/bug-owners/README.md`。
 - 所有负责人共用同一套证据、输出、流程和表格契约，不在负责人文件中复制公共规则。
 
+### Alchemy 语音平台权限边界
+
+- Alchemy 是语音产品配置平台；只有语音产品负责人可以修改 Alchemy。
+- 产品专属修改包括意图、query/泛化语料、slot、literal/canonical、标准/项目功能点继承、项目执行策略、TTS 话术与下发发布。
+- Agent 只读取、测试、定位、提出修改项、整理验收用例和回读结果；不得把 Alchemy 修改动作归给研发或代替产品写入。
+- 只有在产品已补齐并下发 Alchemy，且车端仍按正确 canonical 执行失败时，才转车端/服务研发继续排查。
+
 ## 权威文件
 
 - 证据深度与来源门槛：`agent/evidence-contract.md`
