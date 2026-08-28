@@ -1,0 +1,8 @@
+{
+  "phase": "prewrite",
+  "ok": false,
+  "errors": [
+    "有写入计划的 run 必须包含 items"
+  ],
+  "interpretation": "Expected fail-closed result: 10 new Jira keys were discovered, but no item may enter prewrite until its schema v5 evidence manifest and actual target row are complete."
+}
