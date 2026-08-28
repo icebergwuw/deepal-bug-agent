@@ -137,5 +137,5 @@
 - 链接实现：C/D 每格只有一个 Jira 来源；因 Google Sheets 富文本编辑器在名称框导航下发生焦点串格，最终使用单个 `HYPERLINK` 公式承载同一可见文本和 Jira 目标，并通过登录态导出逐格验证。J 列仍为单个短标签 `HYPERLINK` 公式。
 - 原始回读：`agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json`
 - 回读校验文件：`agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json`
-- readback_sha256：`47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec`
+- readback_sha256：`a13da5495e41f3407b2d4d81f5c2f9a2345944ebaa407d69af98b3e297af14a1`
 - 未执行动作：未评论 Jira、未转派 Jira、未关闭 Jira、未修改 Jira 状态、未修改 Alchemy。
