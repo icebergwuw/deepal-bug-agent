@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272",
+  "status": "planned",
+  "started_at": "2026-08-28T15:00:18+08:00",
+  "query_summary": "重新读取十个原行 Bug；Jira 当前字段/描述/附件/全部评论/关联票已读；Alchemy 当前会话已读；Drive/MasterGo 正式目标逐候选正文引用或发布回执仍有缺口，未生成写表请求。",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-recheck.md",
+  "items": [
+    {
+      "jira_key": "ADS-49639",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 399,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-ADS-49639-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "PC-39803",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 400,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-PC-39803-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "PC-39802",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 401,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-PC-39802-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "HUR-83827",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 402,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-HUR-83827-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "ADS-49485",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 403,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-ADS-49485-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "ADS-49405",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 404,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-ADS-49405-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "ADS-49400",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 405,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-ADS-49400-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "BGS-83806",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 406,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-BGS-83806-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "HUR-83059",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 407,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-HUR-83059-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    },
+    {
+      "jira_key": "PC-38534",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 408,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-PC-38534-manifest.json",
+      "write_status": "blocked_until_evidence_gate"
+    }
+  ],
+  "no_external_jira_actions": true,
+  "write_target": "wu-you bug rows 399-408",
+  "next_action": "补齐正式目标章节/功能点、版本族选择及语音项目功能点发布下发回执后再跑 evidence gate 与 patch。"
+}

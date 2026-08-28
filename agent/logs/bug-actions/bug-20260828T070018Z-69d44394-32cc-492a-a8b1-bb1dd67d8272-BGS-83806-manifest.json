@@ -1,0 +1,195 @@
+{
+  "schema_version": 5,
+  "jira_key": "BGS-83806",
+  "comment_causality": "现象：模拟导航重新算路后carlog停留旧路线；评论称850后模拟导航不支持重算且该入口仅用于开发调试。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "命中本票功能链。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-current",
+      "source": "BGS-83806 Jira原票",
+      "source_location": "完整字段、描述、附件列表、全部评论与关联票",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "Jira当前车型/版本",
+      "trigger": "模拟导航重算后carlog仍在旧路线",
+      "target_behavior": "现象：模拟导航重新算路后carlog停留旧路线；评论称850后模拟导航不支持重算且该入口仅用于开发调试。",
+      "match": "exact",
+      "reason": "证明当前实现现象与评论因果链。"
+    },
+    {
+      "source_id": "formal-gap",
+      "source": "同项目生效正式定义缺口",
+      "source_location": "Drive/MasterGo当前检索未定位可直接定义本票目标的具体章节或图层",
+      "source_type": "work_instruction",
+      "role": "context_only",
+      "project_model": "本票项目/车型",
+      "trigger": "模拟导航重算后carlog仍在旧路线",
+      "target_behavior": "缺口会改变目标行为或责任方。",
+      "match": "gap",
+      "reason": "当前候选不足以形成确定性目标。",
+      "material": true,
+      "next_action": "补齐同项目生效正式定义的章节/图层/配置项。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "unavailable",
+      "searched_at": "2026-08-28",
+      "search_location": "Google Drive当前实时检索；MasterGo适用票另已真实读取",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "BGS-83806"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "模拟导航重算后carlog仍在旧路线"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 模拟导航 分屏 重算"
+        }
+      ],
+      "source_ids": [],
+      "reason": "已取得真实候选并完成范围排除，但尚无可直接定义本票目标行为的同项目生效条款。",
+      "material": true,
+      "next_action": "补齐同项目生效正式定义的具体章节/图层/配置项。"
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-08-28",
+      "search_location": "Google Drive当前实时检索；MasterGo适用票另已真实读取",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "BGS-83806"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "模拟导航重算后carlog仍在旧路线"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 模拟导航 分屏 重算"
+        }
+      ],
+      "source_ids": [],
+      "reason": "已取得真实候选并完成范围排除，但尚无可直接定义本票目标行为的同项目生效条款。",
+      "material": true,
+      "next_action": "补齐同项目生效正式定义的具体章节/图层/配置项。"
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272-BGS-83806-drive",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-28T15:00:18+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "BGS-83806"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "现象：模拟导航重新算路后carlog停留旧路线；评论称850后模拟导航不支持重算且该入口仅用于开发调试。"
+        }
+      ],
+      "results": [
+        {
+          "id": "blocked",
+          "title": "候选逐项审计未完成",
+          "url": "https://drive.google.com/drive/home",
+          "mime_type": "application/octet-stream",
+          "status": "blocked",
+          "reason": "已重新检索入口，但未取得可机器验证的同项目生效正式条款及逐候选正文引用。"
+        }
+      ],
+      "results_count": 1,
+      "results_count_verified": true,
+      "candidate_audit_status": "blocked",
+      "reason": "不声称零命中。"
+    }
+  ],
+  "conflict_resolution": "Jira预期和研发评论仅作实现事实；正式目标缺失时保持待定，不以实现说明覆盖产品定义。",
+  "decision": {
+    "status": "待复核",
+    "owner": "C673地图导航产品负责人",
+    "text": "结论：定义为待复核。当前实现边界已说明模拟导航不支持重算，但正式发布范围未明确是否应屏蔽入口及旧路线carlog的处理。 依据：BGS-83806原票、C385&673地图UE V0.7“模拟导航/分屏/路线”检索结果、Drive地图资料。 处理：C673地图导航产品负责人补齐模拟导航正式发布边界和入口屏蔽需求后，再关闭测试用例或转实现修复。",
+    "recheck_note": "本轮重新读取 Jira/Alchemy；正式目标或发布回执缺失时保持降级状态。"
+  },
+  "run_context": {
+    "run_id": "bug-20260828T070018Z-69d44394-32cc-492a-a8b1-bb1dd67d8272",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 406,
+    "recheck": true,
+    "rechecked_at": "2026-08-28T15:00:18+08:00"
+  },
+  "voice_evidence": {
+    "applicable": false,
+    "availability": "not_applicable",
+    "alchemy_tested": false,
+    "standard_function": {
+      "status": "not_applicable",
+      "reason": "非语音问题。"
+    },
+    "project_function": {
+      "status": "not_applicable",
+      "reason": "非语音问题。"
+    }
+  },
+  "jira_current_receipt": {
+    "read_at": "2026-08-28T15:00:18+08:00",
+    "url": "http://jira.i-tetris.com/browse/BGS-83806",
+    "fields": [
+      "summary",
+      "status",
+      "priority",
+      "component",
+      "vehicle_model",
+      "description",
+      "attachments",
+      "comments",
+      "issue_links",
+      "assignee"
+    ],
+    "complete": true,
+    "source": "authenticated Chrome Jira page"
+  },
+  "formal_target": {
+    "status": "unverified",
+    "reason": "未取得可直接定义本票目标行为的同项目生效章节/功能点；不以Jira预期或研发评论替代。"
+  }
+}
