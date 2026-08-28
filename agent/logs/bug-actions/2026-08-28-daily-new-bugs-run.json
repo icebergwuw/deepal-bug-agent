@@ -1,9 +1,121 @@
 {
   "schema_version": 1,
   "run_id": "bug-20260828T024210Z-d1e332bf-5bdf-428a-8116-c07dcdd45754",
-  "status": "planned",
+  "status": "complete",
   "started_at": "2026-08-28T02:42:10Z",
-  "query_summary": "Jira assignee=you.wu; projects=SD,HUR,ADS,BGS,BEO,PC,SM,SLV; issueType=Bug; statuses=To Do,Reopened,In Progress,Pending. Jira=40, sheet B registered rows=397, unique sheet keys=387, new keys=10. Evidence candidate audit and platform-specific gates are incomplete; no online write was performed.",
-  "action_log": "agent/logs/bug-actions/2026-08-28-daily-new-bugs-evidence-blocked.md",
-  "items": []
+  "query_summary": "Jira exact JQL=40; Wu You online bug B column registered=397, unique=387; ten new keys assigned rows 399-408. Jira/Drive/Alchemy/MasterGo current reads completed; unresolved formal evidence is downgraded in each schema v5 manifest.",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-complete.md",
+  "items": [
+    {
+      "jira_key": "ADS-49639",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 399,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-ADS-49639-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "PC-39803",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 400,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-PC-39803-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "PC-39802",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 401,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-PC-39802-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "HUR-83827",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 402,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-HUR-83827-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "ADS-49485",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 403,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-ADS-49485-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "ADS-49405",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 404,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-ADS-49405-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "ADS-49400",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 405,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-ADS-49400-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "BGS-83806",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 406,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-BGS-83806-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "HUR-83059",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 407,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-HUR-83059-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    },
+    {
+      "jira_key": "PC-38534",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 408,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-PC-38534-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-new-bugs-readback-validation.json",
+      "readback_sha256": "47f458bbec89373659f07205df47edc703d74a1fb43d9432174a8960a63defec"
+    }
+  ],
+  "completed_at": "2026-08-28T12:18:36+08:00"
 }

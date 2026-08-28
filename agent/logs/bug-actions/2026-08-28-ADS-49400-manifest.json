@@ -1,0 +1,186 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-49400",
+  "comment_causality": "现象：大模型增强关闭后首次“认识一下”落2820上下文拒识且无反馈，后续轮次表现不同；评论称拒识优先级高于记忆空间。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "命中本票功能链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-current",
+      "source": "ADS-49400 Jira原票",
+      "source_location": "完整字段、描述、附件列表、全部评论与关联票",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "Jira当前车型/版本",
+      "trigger": "认识一下",
+      "target_behavior": "现象：大模型增强关闭后首次“认识一下”落2820上下文拒识且无反馈，后续轮次表现不同；评论称拒识优先级高于记忆空间。",
+      "match": "exact",
+      "reason": "证明当前实现现象与评论因果链。"
+    },
+    {
+      "source_id": "formal-gap",
+      "source": "同项目生效正式定义缺口",
+      "source_location": "Drive/MasterGo当前检索未定位可直接定义本票目标的具体章节或图层",
+      "source_type": "work_instruction",
+      "role": "context_only",
+      "project_model": "本票项目/车型",
+      "trigger": "认识一下",
+      "target_behavior": "缺口会改变目标行为或责任方。",
+      "match": "gap",
+      "reason": "当前候选不足以形成确定性目标。",
+      "material": true,
+      "next_action": "补齐同项目生效正式定义的章节/图层/配置项。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前在线对话",
+      "source_location": "2026-08-28原话：认识一下",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "本票对应在线环境",
+      "trigger": "认识一下",
+      "target_behavior": "BIGSUR当前classification=chat，命中meta_id 2820/CHAT_CONTEXT_REJECT，tts为空。",
+      "match": "exact",
+      "reason": "证明平台当前实现输出。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-08-28",
+      "search_location": "Google Drive当前实时检索；MasterGo适用票另已真实读取",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-49400"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "认识一下首次拒识且无反馈"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间 认识一下 大模型拒识"
+        }
+      ],
+      "source_ids": [],
+      "reason": "已取得真实候选并完成范围排除，但尚无可直接定义本票目标行为的同项目生效条款。",
+      "material": true,
+      "next_action": "补齐同项目生效正式定义的具体章节/图层/配置项。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-08-28",
+      "search_location": "Alchemy在线对话测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "认识一下"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "reason": "已读取当前原话输出。",
+      "material": false,
+      "next_action": ""
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "searched_at": "2026-08-28",
+      "search_location": "Alchemy功能点详情",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "认识一下"
+        }
+      ],
+      "source_ids": [],
+      "reason": "当前已核原话与meta_id，但本轮未取得可证明同项目发布状态的完整功能点详情。",
+      "material": true,
+      "next_action": "补齐标准功能点、项目功能点继承及发布/下发状态。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-08-28",
+      "search_location": "Alchemy功能点详情",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "认识一下"
+        },
+        {
+          "kind": "project_scope",
+          "text": "本票项目与车型"
+        }
+      ],
+      "source_ids": [],
+      "reason": "当前已核原话与meta_id，但本轮未取得可证明同项目发布状态的完整功能点详情。",
+      "material": true,
+      "next_action": "补齐标准功能点、项目功能点继承及发布/下发状态。"
+    }
+  ],
+  "search_receipts": [],
+  "conflict_resolution": "Jira预期和研发评论仅作实现事实；正式目标缺失时保持待定，不以实现说明覆盖产品定义。",
+  "decision": {
+    "status": "待会诊",
+    "owner": "Deepal AI路由/记忆空间产品负责人",
+    "text": "结论：定义为待会诊。当前无反馈事实成立，但记忆空间是否承接“认识一下”、拒识优先级及关闭大模型时目标提示尚无同版本正式定义。 依据：ADS-49400原票完整日志/评论、Alchemy BIGSUR当前2820、Drive记忆空间候选。 处理：Deepal AI路由/记忆空间产品负责人明确拒识与记忆空间优先级及首轮反馈策略，再按定义调整配置或执行链。"
+  },
+  "run_context": {
+    "run_id": "bug-20260828T024210Z-d1e332bf-5bdf-428a-8116-c07dcdd45754",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 405
+  },
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "认识一下",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR当前classification=chat，命中meta_id 2820/CHAT_CONTEXT_REJECT，tts为空。",
+    "meta_id": "2820",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮未取得完整标准功能点详情。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮未取得同项目继承及发布状态完整详情。"
+    },
+    "unavailable_reason": "标准/项目功能点详情或发布状态不完整。",
+    "next_action": "补齐标准/项目功能点、继承和发布状态。"
+  }
+}
