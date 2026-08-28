@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260828T073812Z-2b6b56f6-4b77-4c9c-9650-7a8aab6c6f55",
+  "status": "planned",
+  "started_at": "2026-08-28T15:38:12+08:00",
+  "query_summary": "Exact JQL returned 39 Bugs. Five keys were not present in the Wu You local index: ADS-49702, HUR-83830, SD-7244, HUR-82934, ADS-44267. Current Jira pages and real Drive search result titles were read, but schema-v5 evidence gates are incomplete, so no sheet write was attempted.",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/2026-08-28-daily-bug-current-run-blocked.md",
+  "items": [
+    {"jira_key": "ADS-49702", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 409, "evidence_status": "blocked", "manifest_path": null},
+    {"jira_key": "HUR-83830", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 410, "evidence_status": "blocked", "manifest_path": null},
+    {"jira_key": "SD-7244", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 411, "evidence_status": "blocked", "manifest_path": null},
+    {"jira_key": "HUR-82934", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 412, "evidence_status": "blocked", "manifest_path": null},
+    {"jira_key": "ADS-44267", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 413, "evidence_status": "blocked", "manifest_path": null}
+  ],
+  "write_performed": false,
+  "blockers": [
+    "Per-candidate real search receipts and exact source locations are incomplete",
+    "Version-family enumeration is incomplete",
+    "Alchemy standard/project function and downlink evidence is incomplete for voice tickets",
+    "MasterGo/current layer evidence is incomplete for visible-layer tickets"
+  ]
+}
