@@ -1,0 +1,150 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-7244",
+  "comment_causality": "客户复现证明闭锁下电后本地音乐界面仍可操作但喇叭无声；评论进一步证明功放此时已经下电。研发称多半是需求如此，但未提供生效条款，不能替代产品目标定义。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260820144228069",
+    "test_case": {"checked": true, "status": "complete", "source": "Jira描述包含环境、前置条件、步骤、预期、实际、VIN、版本及5/5复现"}
+  },
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["general"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "恒温座舱闭锁下电后的电源与音频行为边界"},
+    "voice": {"applicable": false, "reason": "不涉及语音"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航"},
+    "visible_interaction": {"applicable": false, "reason": "不是可见节点选择或可见即可说问题"}
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-current",
+      "source": "SD-7244 Jira原票",
+      "source_location": "描述、4条完整评论、附件清单",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-G3/G5 SWA.3.64",
+      "trigger": "开启恒温座舱正常模式后闭锁下电，再播放本地音乐",
+      "target_behavior": "当前界面仍可操作，但喇叭无响应；评论确认功放已经下电",
+      "match": "exact",
+      "reason": "客户测试用例完整，版本、VIN及5/5复现明确。"
+    },
+    {
+      "source_id": "function-list",
+      "source": "C673-G3、G5座舱全功清单V1.7",
+      "source_location": "座舱全功清单Sheet，第921、1260、1419-1425、1465、1506-1514行",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G3/G5",
+      "trigger": "恒温座舱、本地音乐、音频策略和电源管理",
+      "target_behavior": "确认上述能力在C673-G3/G5搭载，并要求继续追查音频策略与电源管理原文",
+      "match": "partial",
+      "reason": "功能清单证明能力范围，但未直接定义闭锁下电后的功放保持行为。"
+    },
+    {
+      "source_id": "audio-policy",
+      "source": "C673_功能定义_音频策略功能定义V0.6",
+      "source_location": "第12页下电检索；4.2音频通道、4.4音量调节、内/外置功放音频矩阵",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673",
+      "trigger": "电源状态、媒体音频与功放通道",
+      "target_behavior": "定义常规电源状态和音频矩阵；未找到恒温座舱闭锁下电后维持外置功放或本地音乐出声的条款",
+      "match": "partial",
+      "reason": "原文已读，但缺少本票场景的直接目标条款。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-31",
+      "search_location": "Google Drive精确检索与原文打开",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-7244"},
+        {"kind": "problem_concept", "text": "C673 恒温座舱 下电 本地音乐 功放"},
+        {"kind": "module_artifact", "text": "C673 音频策略 电源管理"},
+        {"kind": "exact_document_name", "text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"},
+        {"kind": "exact_document_name", "text": "C673_功能定义_音频策略功能定义V0.6.docx"},
+        {"kind": "version_family", "text": "C673-G3、G5座舱全功清单"},
+        {"kind": "version_family", "text": "C673_功能定义_音频策略功能定义"}
+      ],
+      "source_ids": ["function-list", "audio-policy"],
+      "reason": "已读取当前C673-G3/G5全功清单及其引用的C673音频策略原文，确认搭载范围与本票目标条款缺口。",
+      "material": true,
+      "next_action": "由C673情景模式/电源管理产品负责人补齐闭锁下电进入恒温座舱正常模式时的功放与媒体目标状态。",
+      "search_receipt_ids": ["sd7244-drive-20260831"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit",
+            "references": [{"reference_text": "C673_功能定义_音频策略功能定义V0.6.docx", "status": "read", "receipt_ids": ["sd7244-drive-20260831"], "result_ids": ["1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx"]}],
+            "disposition": "read",
+            "reason": "已读取并命中恒温座舱、本地音乐、音频策略与电源管理行。",
+            "version_family": "C673-G3、G5座舱全功清单",
+            "source_ids": ["function-list"]
+          },
+          {
+            "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+            "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+            "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit",
+            "references": [],
+            "disposition": "read",
+            "reason": "已读取电源状态、音频通道及内外置功放矩阵，未发现本票场景直接条款。",
+            "version_family": "C673_功能定义_音频策略功能定义",
+            "source_ids": ["audio-policy"]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [{"source_candidate_id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM", "reference_text": "C673_功能定义_音频策略功能定义V0.6.docx", "status": "read", "receipt_ids": ["sd7244-drive-20260831"]}],
+        "version_families": [
+          {"family": "C673-G3、G5座舱全功清单", "status": "enumerated", "receipt_ids": ["sd7244-drive-20260831"], "selected_candidate_id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM", "selection_reason": "V1.7为检索到的当前C673-G3/G5清单。", "newer_version_checked": true},
+          {"family": "C673_功能定义_音频策略功能定义", "status": "enumerated", "receipt_ids": ["sd7244-drive-20260831"], "selected_candidate_id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx", "selection_reason": "C673项目候选为V0.6，其他命中为J90A或非C673项目。", "newer_version_checked": true}
+        ]
+      }
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "sd7244-drive-20260831",
+      "provider": "google_drive",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-08-31",
+      "queries": [
+        {"kind": "jira_key", "text": "SD-7244"},
+        {"kind": "problem_concept", "text": "C673 恒温座舱 下电 本地音乐 功放"},
+        {"kind": "module_artifact", "text": "C673 音频策略 电源管理"},
+        {"kind": "exact_document_name", "text": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"},
+        {"kind": "exact_document_name", "text": "C673_功能定义_音频策略功能定义V0.6.docx"},
+        {"kind": "version_family", "text": "C673-G3、G5座舱全功清单"},
+        {"kind": "version_family", "text": "C673_功能定义_音频策略功能定义"}
+      ],
+      "results": [
+        {"id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM", "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx", "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit", "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+        {"id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx", "title": "C673_功能定义_音频策略功能定义V0.6.docx", "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit", "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+      ]
+    }
+  ],
+  "conflict_resolution": "研发评论称多半是需求如此，但无正式条款；客户预期要求继续播放，但也不是正式目标。按证据优先级保留待确认，由产品责任方补齐边界，不直接关闭或转Music研发。",
+  "voice_evidence": {"applicable": false, "availability": "not_applicable", "alchemy_tested": false, "standard_function": {"status": "not_applicable", "reason": "非语音问题。"}, "project_function": {"status": "not_applicable", "reason": "非语音问题。"}},
+  "expected_behavior": {
+    "trigger": "C673-G3/G5开启恒温座舱正常模式后闭锁下电，再操作本地音乐。",
+    "target_state": "当前正式资料未直接定义此时外置功放及本地音乐的目标状态。",
+    "intent_function_signal": "需补齐恒温座舱正常模式的电源保活范围、功放供电状态及媒体音频策略。",
+    "ui_tts_vehicle_behavior": "当前实现为车机界面可操作、功放下电、喇叭无声。",
+    "boundary": "现有资料只证明能力搭载和当前实现，不能确定应关闭还是转研发修复。",
+    "source_ids": ["function-list", "audio-policy"]
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "C673情景模式/电源管理产品负责人",
+    "text": "结论：定义为待确认。现有正式资料确认C673-G3/G5搭载恒温座舱、本地音乐、音频策略和电源管理能力，但未定义闭锁下电进入恒温座舱正常模式后必须维持功放及本地音乐出声，当前只能确认功放已下电，不能直接按Music缺陷处理或关闭。\n依据：[SD-7244 Jira原票·描述/4条评论]；[C673-G3/G5全功清单V1.7·第921/1260/1419-1425/1465/1506-1514行]；[C673音频策略V0.6·第12页/4.2/4.4]。\n处理：补齐恒温座舱正常模式闭锁下电后的功放供电与媒体音频目标定义，再据定义关闭或转对应研发；C673情景模式/电源管理产品负责人处理。"
+  },
+  "run_context": {"run_id": "bug-20260831T110500+0800-SD-7244", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 411}
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "SD-7244",
+    "summary": "恒温座舱闭锁下电后本地音乐无声",
+    "date": "2026-08-31",
+    "info": "现象：C673-G3/G5 SWA.3.64开启恒温座舱正常模式、闭锁下电后，本地音乐界面可操作但喇叭无声，5/5复现；评论确认功放此时已下电。[SD-7244 Jira原票·描述/4条评论]\n正式资料：全功清单确认恒温座舱、本地音乐、音频策略和电源管理均搭载；音频策略V0.6未找到该场景必须维持功放及媒体出声的条款。[C673-G3/G5全功清单V1.7·关键行] [C673音频策略V0.6·第12页/4.2/4.4]",
+    "info_links": [
+      {"label": "SD-7244 Jira原票·描述/4条评论", "url": "http://jira.i-tetris.com/browse/SD-7244"},
+      {"label": "C673-G3/G5全功清单V1.7·关键行", "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"},
+      {"label": "C673音频策略V0.6·第12页/4.2/4.4", "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit"}
+    ],
+    "judgment": "结论：定义为待确认。现有正式资料确认C673-G3/G5搭载恒温座舱、本地音乐、音频策略和电源管理能力，但未定义闭锁下电进入恒温座舱正常模式后必须维持功放及本地音乐出声，当前只能确认功放已下电，不能直接按Music缺陷处理或关闭。\n依据：[SD-7244 Jira原票·描述/4条评论]；[C673-G3/G5全功清单V1.7·第921/1260/1419-1425/1465/1506-1514行]；[C673音频策略V0.6·第12页/4.2/4.4]。\n处理：补齐恒温座舱正常模式闭锁下电后的功放供电与媒体音频目标定义，再据定义关闭或转对应研发；C673情景模式/电源管理产品负责人处理。",
+    "judgment_links": [
+      {"label": "SD-7244 Jira原票·描述/4条评论", "url": "http://jira.i-tetris.com/browse/SD-7244"},
+      {"label": "C673-G3/G5全功清单V1.7·第921/1260/1419-1425/1465/1506-1514行", "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"},
+      {"label": "C673音频策略V0.6·第12页/4.2/4.4", "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit"}
+    ],
+    "status": "待确认",
+    "note": "需补齐恒温座舱闭锁下电后的功放供电及媒体音频目标定义。",
+    "links": [
+      {"label": "Jira原票·SD-7244", "url": "http://jira.i-tetris.com/browse/SD-7244"},
+      {"label": "C673-G3/G5全功清单V1.7", "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit"},
+      {"label": "C673音频策略V0.6", "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit"}
+    ]
+  }
+]
