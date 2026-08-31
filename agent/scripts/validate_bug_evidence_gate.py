@@ -155,6 +155,11 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
             receipt_by_id[receipt_id] = receipt
         if receipt.get("provider") != "google_drive":
             errors.append(f"检索回执 {receipt_id or index} provider 必须为 google_drive")
+        if receipt.get("origin") != "connector":
+            errors.append(
+                f"检索回执 {receipt_id or index} 必须标记 origin=connector；"
+                "禁止用手工拼接内容冒充 Drive 回执"
+            )
         if not nonempty(receipt.get("check_id")):
             errors.append(f"检索回执 {receipt_id or index} 缺少 check_id")
         if not nonempty(receipt.get("searched_at")):

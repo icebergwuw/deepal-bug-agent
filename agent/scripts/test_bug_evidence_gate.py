@@ -32,6 +32,16 @@ def bind_manifest(payload: dict) -> dict:
         } or check["status"] not in {"read", "not_found"}:
             continue
         receipt_id = f"receipt-{check['check_id']}"
+        if check["check_id"] == "formal_definition_search":
+            existing_kinds = {item.get("kind") for item in check.get("queries", [])}
+            if "exact_document_name" not in existing_kinds:
+                check["queries"].append(
+                    {"kind": "exact_document_name", "text": "候选正式文档全名"}
+                )
+            if "version_family" not in existing_kinds:
+                check["queries"].append(
+                    {"kind": "version_family", "text": "候选正式文档版本族"}
+                )
         results = []
         candidates = []
         version_families = []
@@ -73,6 +83,7 @@ def bind_manifest(payload: dict) -> dict:
             {
                 "receipt_id": receipt_id,
                 "provider": "google_drive",
+                "origin": "connector",
                 "check_id": check["check_id"],
                 "searched_at": "2026-08-06T09:00:00+08:00",
                 "queries": deepcopy(check["queries"]),
@@ -464,6 +475,15 @@ class BugEvidenceGateTest(unittest.TestCase):
 
     def test_hur_case_passes(self) -> None:
         self.assertEqual(validate_manifest(self.item, "HUR-82492"), [])
+
+    def test_formal_definition_cannot_use_alchemy_config_as_product_definition(self) -> None:
+        item = hur_case()
+        source = next(
+            scope for scope in item["scope_checks"] if scope["source_id"] == "j90a-formal"
+        )
+        source["source_type"] = "formal_config"
+        errors = validate_manifest(item, "HUR-82492")
+        self.assertTrue(any("引用了不允许的来源类型" in error for error in errors), errors)
 
     def test_unread_related_issue_fails(self) -> None:
         self.item["related_issues"]["items"][0]["read"] = False
@@ -960,6 +980,7 @@ class BugEvidenceGateTest(unittest.TestCase):
             {
                 "receipt_id": exact_receipt_id,
                 "provider": "google_drive",
+                "origin": "connector",
                 "check_id": formal["check_id"],
                 "searched_at": "2026-08-17T14:00:00+08:00",
                 "queries": queries(("exact_document_name", reference_text)),

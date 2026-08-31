@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.16.0-trial.2`
+- 当前版本：`v1.16.0-trial.3`
 - 状态：`trial`
 - 生效日期：`2026-08-26`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
@@ -14,6 +14,34 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.16.0-trial.3 — 2026-08-31
+
+### 试行内容
+
+- `formal_definition_search` 只能引用产品正式资料，不得用 Alchemy 标准/项目配置替代 Drive/PRD 定义。
+- 正式定义检索强制包含精确文档名和版本族查询；Drive 回执必须标记 `origin=connector`，禁止手工拼接回执冒充真实检索。
+- 命中正式资料后必须记录正文页码/章节和适用项目；未闭合关键参数（例如模板中的 `$NUM$`）时只能降级为待复核。
+
+### 修改原因
+
+- ADS-49856 处理中错误引用了不适用的“东风S平台”文档，且旧门禁允许手工构造回执并将配置事实当作正式产品定义，导致错误确定性判断通过。
+
+### 影响文件
+
+- `agent/config/evidence-requirements.json`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- ADS-49856：正确读取深蓝 C673 PRD 第4-5页；因 `$NUM$` 未明确，结论保持待复核。
+- 证据门禁单元测试 35 项全部通过；规则架构校验通过。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.16.0-trial.2`，不使用 `git reset --hard`；保留 ADS-49856 的更正日志作为审计记录。
 
 ## v1.16.0-trial.1 — 2026-08-26
 

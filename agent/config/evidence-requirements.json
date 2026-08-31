@@ -57,12 +57,11 @@
         "special_prd",
         "interaction",
         "ue",
-        "formal_config",
         "customer_final_decision"
       ],
       "allow_not_applicable": false,
       "missing_is_material": true,
-      "required_query_kinds": ["jira_key", "problem_concept", "module_artifact"],
+      "required_query_kinds": ["jira_key", "problem_concept", "module_artifact", "exact_document_name", "version_family"],
       "requires_candidate_audit_for_not_found": true
     },
     "alchemy_current": {

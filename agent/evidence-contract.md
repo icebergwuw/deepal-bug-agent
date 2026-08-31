@@ -83,6 +83,8 @@
 10. `search_completion.completed` 必须为 `true`；`referenced_sources` 和 `version_families` 即使没有项目也必须显式为空数组。宽泛关键词检索、精确文档名追查和版本族枚举可以分属不同回执，必查动作绑定的全部回执合并覆盖其声明查询。
 11. manifest 必须用 `run_context` 绑定同一批次的 `run_id`、操作者、目标负责人、页签和 1-based 行号；单票 manifest 不得脱离本次运行上下文复用。
 
+`formal_definition_search` 的来源类型必须是产品正式资料（PRD、专项 PRD、交互、UE 或客户最终结论）；Alchemy 标准/项目配置只能在对应的 Alchemy 必查动作中证明配置现状，不能替代正式产品定义。Drive 检索回执必须由连接器产生并标记 `origin=connector`；手工拼接的回执一律不得进入写表门禁。
+
 完整流程即使最终状态为待复核、待确认或待会诊，也必须完成检索动作或记录不可用限制。缺少必查动作本身不能通过门禁；已执行检索但关键资料未找到时，记录为 material gap 并降级。UE 只由 `visible_interaction` 等相关画像要求，纯后端或纯语义问题不一律强制读取 UE。
 
 ## 客户提报 Bug 与测试用例门槛
