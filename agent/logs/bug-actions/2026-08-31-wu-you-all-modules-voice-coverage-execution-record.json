@@ -1,0 +1,3579 @@
+{
+  "schema_version": 1,
+  "title": "2026-08-31 吴优全部8295模块UE语音覆盖完整执行记录",
+  "operator": "吴优（wu-you）",
+  "vehicle": "8295",
+  "alchemy_environment": "BIGSUR",
+  "modules": [
+    "3D桌面&动效",
+    "情景模式",
+    "场景积木",
+    "充放电",
+    "语音形象&GUI",
+    "地图",
+    "蓝牙电话",
+    "创意画舫",
+    "车外语音",
+    "大模型"
+  ],
+  "completeness_statement": {
+    "ue_page_directory": "已覆盖10个负责模块的当前UE来源和可识别页面目录",
+    "current_live_test": "仅对符合简单、高频、离屏可记忆、12类且非通话中的23个功能执行本轮实时测试",
+    "excluded_items": "规则排除项逐项记录但不执行Query；通话中完全禁止语音操作",
+    "historical_evidence": "92个历史功能、208条历史Query逐项保留为参考，不冒充本轮实测"
+  },
+  "counts": {
+    "modules": 10,
+    "pages": 48,
+    "current_live_controls": 45,
+    "current_live_queries": 46,
+    "current_reportable_failures": 6,
+    "historical_controls": 92,
+    "historical_queries": 208,
+    "prohibited_call_controls": 14,
+    "tested_in_error_controls": 5,
+    "tested_in_error_queries": 8,
+    "explicit_untested_exclusions": 15
+  },
+  "pages": [
+    {
+      "id": "drive:3d-desktop-v1.1.15",
+      "name": "3D桌面&动效 / 当前交互文档",
+      "status": "active",
+      "evidence": "Drive 当前文档全4页，背门、后视镜和车窗为有效直接控件",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "543:38855",
+      "name": "情景模式 V1.9 / 当前版本主模式页",
+      "status": "active",
+      "evidence": "MasterGo当前V1.9页面目录；主模式按各自名称在当前有效页审核",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "543:58241",
+      "name": "情景模式 V1.9 / 小憩模式",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "543:49168",
+      "name": "情景模式 V1.9 / 睡眠空间",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "543:54419",
+      "name": "情景模式 V1.9 / 恒温座舱第3页",
+      "status": "deleted",
+      "evidence": "当前画布位于红色 v1.9删除区域",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "543:53811",
+      "name": "情景模式 V1.9 / 恒温座舱第4页",
+      "status": "deleted",
+      "evidence": "当前画布位于红色 v1.9删除区域",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "543:48581",
+      "name": "情景模式 V1.9 / 离车不下电模式",
+      "status": "shelved",
+      "evidence": "当前图层名称明确标注搁置",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "1335:21767",
+      "name": "场景积木 V1.0 / 当前版本",
+      "status": "active",
+      "evidence": "场景空间、触发条件、前置条件和执行动作均属复杂配置，按筛选规则不纳入语音申报",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "blocks:controls-do-not-use",
+      "name": "场景积木 / 控件（不要）",
+      "status": "deprecated",
+      "evidence": "当前页面名称明确标注不要；V0.9、V0.8为历史版本",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "1020:64596",
+      "name": "充放电 / 预约充电",
+      "status": "active",
+      "evidence": "车辆设置当前有效页面",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "202:4388",
+      "name": "语音形象&GUI V0.9",
+      "status": "active",
+      "evidence": "当前内容为唤醒、收音、Loading和回复状态展示，无用户设置控件",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "818:038239",
+      "name": "地图导航 850_V0.7 / 当前版本",
+      "status": "active",
+      "evidence": "草稿、废弃和未下发页面已排除；导航播报模式为当前有效设置",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "map:draft-deprecated-unreleased",
+      "name": "地图导航 / 草稿、废弃、未下发页面",
+      "status": "deprecated",
+      "evidence": "当前画布状态明确标注草稿、废弃或未下发",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:05580",
+      "name": "蓝牙电话 V0.4 / 1 / 封面",
+      "status": "active",
+      "evidence": "MasterGo MCP 实时读取，页面仅为封面，无用户控件",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:05457",
+      "name": "蓝牙电话 V0.4 / 2 / 修改记录",
+      "status": "active",
+      "evidence": "MasterGo MCP 实时读取，记录 V0.4 于2026-05-26新增柔性桌面和桌面卡片隐私协议限制",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:05269",
+      "name": "蓝牙电话 V0.4 / 3 / 隐私政策",
+      "status": "active",
+      "evidence": "同意、暂不同意、查看和撤回属于隐私授权复杂流程，按用户筛选规则不测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:04699",
+      "name": "蓝牙电话 V0.4 / 4 / 蓝牙连接与数据同步",
+      "status": "active",
+      "evidence": "连接、授权、同步、CarPlay和HiCar切换依赖当前界面及外部状态，按用户筛选规则不测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:03907",
+      "name": "蓝牙电话 V0.4 / 5 / 通话记录与通讯录",
+      "status": "active",
+      "evidence": "可从记录或联系人发起拨号；列表、筛选和字母定位优先可见交互",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:03153",
+      "name": "蓝牙电话 V0.4 / 6 / 拨号键盘与更多设置",
+      "status": "active",
+      "evidence": "拨号属于高频直接操作；T9、数据同步、来电设置和隐私撤回依赖可见界面或复杂流程",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:02506",
+      "name": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "status": "active",
+      "evidence": "当前页为通话中状态；挂断、麦克风静音、键盘、手机车机切换、缩小等全部规则禁止测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:01465",
+      "name": "蓝牙电话 V0.4 / 8 / 通话状态-来电",
+      "status": "active",
+      "evidence": "来电接听、拒接和来电铃声静音可在通话建立前测试；接通后的麦克风、设备切换、键盘等禁止测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:00169",
+      "name": "蓝牙电话 V0.4 / 9 / 通话状态-三方来电",
+      "status": "active",
+      "evidence": "通话中三方来电的挂断、结束并接听、保留并接听等全部规则禁止测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:9581",
+      "name": "蓝牙电话 V0.4 / 10 / 通话状态-三方去电",
+      "status": "active",
+      "evidence": "通话中三方去电和切换通话全部规则禁止测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:9357",
+      "name": "蓝牙电话 V0.4 / 11 / 语音聊天、Bcall、Ecall",
+      "status": "active",
+      "evidence": "语音聊天、Bcall和Ecall均处于通话中，话筒和通话设备等全部规则禁止测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "94:9056",
+      "name": "蓝牙电话 V0.4 / 12 / 电话卡片",
+      "status": "active",
+      "evidence": "最近通话、同步、蓝牙连接、隐私授权、拖动等依赖卡片可见状态，按用户筛选规则不测试",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "473:16202",
+      "name": "创意画舫 AIGCv1.0",
+      "status": "active",
+      "evidence": "当前内容为文生图、上传和分享等复杂内容流程，按筛选规则不纳入",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "art:aigcv0.1-8155",
+      "name": "创意画舫 AIGCv0.1 8155",
+      "status": "backup",
+      "evidence": "默认打开页不是8295当前AIGCv1.0版本",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "2742:13434",
+      "name": "车外语音 V0.9",
+      "status": "active",
+      "evidence": "当前主要为车外喊话入口、播放和音频优先级链路，未确认独立高频设置控件",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "drive:voice-llm-v1.5",
+      "name": "语音大模型 v1.5",
+      "status": "active",
+      "evidence": "工作表F列为空后按Drive回退，已枚举版本族并读取最新v1.5；暂停和关闭依赖当前弹窗可见上下文",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "llm:deep-thinking-v1.4",
+      "name": "大模型 / 深度思考",
+      "status": "deleted",
+      "evidence": "v1.5修改记录及画布明确标注V1.4删除，C385-5/C673-7已删除",
+      "evidence_class": "current_page_state",
+      "checked_at": "2026-08-31"
+    },
+    {
+      "id": "543:50288",
+      "name": "8.情景模式-车内关怀（依赖OMS）",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面",
+      "module": "情景模式",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json"
+    },
+    {
+      "id": "543:52488",
+      "name": "4.情景模式-视听联动",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面",
+      "module": "情景模式",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:32153",
+      "name": "1.场景积木-场景空间",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:29890",
+      "name": "2.场景积木-我的场景",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:28617",
+      "name": "3.场景积木-触发条件",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:23840",
+      "name": "4.我的场景-前置条件",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:22081",
+      "name": "5.我的场景-执行动作",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:24583",
+      "name": "6.新手引导",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:24996",
+      "name": "7.场景分享",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "1335:27062",
+      "name": "8.AI生成场景积木",
+      "status": "active",
+      "evidence": "V1.0 current page",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "version-v0.9",
+      "name": "V0.9",
+      "status": "deprecated",
+      "evidence": "MasterGo page list shows V0.9 below current V1.0",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "version-v0.8",
+      "name": "V0.8",
+      "status": "deprecated",
+      "evidence": "MasterGo page list shows V0.8 below current V1.0",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "controls-do-not-use",
+      "name": "控件（不要）",
+      "status": "deprecated",
+      "evidence": "MasterGo page name explicitly marks the page as do not use",
+      "module": "场景积木",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json"
+    },
+    {
+      "id": "854:77410",
+      "name": "能源明细 V0.1 / 能源明细",
+      "status": "active",
+      "module": "充放电",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json"
+    },
+    {
+      "id": "1020:64372",
+      "name": "车辆设置 V3.5 / 放电",
+      "status": "active",
+      "module": "充放电",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json"
+    },
+    {
+      "id": "1020:64168",
+      "name": "车辆设置 V3.5 / 即时加热",
+      "status": "active",
+      "module": "充放电",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json"
+    },
+    {
+      "id": "1020:55689",
+      "name": "车辆设置 V3.5 / 能量",
+      "status": "active",
+      "module": "充放电",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json"
+    },
+    {
+      "id": "345:28175",
+      "name": "D587-G车辆设置 V1.1 / 能量",
+      "status": "active",
+      "module": "充放电",
+      "evidence_class": "historical_page_reference",
+      "checked_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json"
+    }
+  ],
+  "current_live_tests": [
+    {
+      "id": "nap-end-time",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "情景模式 V1.9 / 小憩模式",
+      "control": "设置小憩模式结束时间",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "设置小憩模式结束时间为20点30分"
+      ],
+      "classification": "chat",
+      "operation": "classification=chat；meta_id=3189，仅返回 llm:scenario_block session_id，无可执行的结束时间设置 operation",
+      "verdict": "blocked",
+      "decision": "add_or_keep_in_coverage_sheet",
+      "reason": "当前有效UE动作无法由Alchemy正确执行",
+      "report": true
+    },
+    {
+      "id": "nap-sound",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "情景模式 V1.9 / 小憩模式",
+      "control": "设置小憩模式音效",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "设置小憩模式音效为夜阑听雨"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1919，返回 common:func:not:supported / nlu_intent_others",
+      "verdict": "unsupported",
+      "decision": "add_or_keep_in_coverage_sheet",
+      "reason": "当前有效UE动作无法由Alchemy正确执行",
+      "report": true
+    },
+    {
+      "id": "sleep-volume-lower",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "情景模式 V1.9 / 睡眠空间",
+      "control": "调节睡眠空间音量",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "调低睡眠空间音量"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1186，vehicle:audio:volume:adjust 的 scale_offset=lower，但 channel canonical 为空",
+      "verdict": "empty_required_slot",
+      "decision": "add_or_keep_in_coverage_sheet",
+      "reason": "当前有效UE动作无法由Alchemy正确执行",
+      "report": true
+    },
+    {
+      "id": "sleep-unlimited",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "情景模式 V1.9 / 睡眠空间",
+      "control": "设置睡眠空间不限时",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "设置睡眠空间为不限时"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1146，mode=sleep_space、op=set，但 duration 只有 literal=不限时，没有 canonical",
+      "verdict": "empty_required_slot",
+      "decision": "add_or_keep_in_coverage_sheet",
+      "reason": "当前有效UE动作无法由Alchemy正确执行",
+      "report": true
+    },
+    {
+      "id": "charge-book-full-stop",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "充放电 / 预约充电",
+      "control": "设置预约充电结束方式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "设置预约充电结束方式为充满后停止"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1919，返回 common:func:not:supported / nlu_intent_others",
+      "verdict": "unsupported",
+      "decision": "add_or_keep_in_coverage_sheet",
+      "reason": "当前有效UE动作无法由Alchemy正确执行",
+      "report": true
+    },
+    {
+      "id": "open-tailgate",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "打开后备箱",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开后备箱"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1097，vehicle:ctrl:back_door，op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-tailgate",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "关闭后备箱",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭后备箱"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1098，vehicle:ctrl:back_door，op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "fold-side-mirrors",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "折叠后视镜",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "折叠后视镜"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1095，vehicle:ctrl:rear_mirror:side_mirror，op=fold",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "unfold-side-mirrors",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "展开后视镜",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "展开后视镜"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1094，vehicle:ctrl:rear_mirror:side_mirror，op=unfold",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-driver-window",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "打开主驾车窗",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开主驾车窗"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1263，vehicle:ctrl:window，op=open，position=main_driver",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-driver-window",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "关闭主驾车窗",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭主驾车窗"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1264，vehicle:ctrl:window，op=close，position=main_driver",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "set-driver-window-50",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "调节主驾车窗开度",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "主驾车窗开度调到50%"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1266，vehicle:ctrl:window，position=main_driver，scale_percent=50%",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-all-windows",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "打开全部车窗",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开全部车窗"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1263，vehicle:ctrl:window，op=open，position=all",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-all-windows",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "关闭全部车窗",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭全部车窗"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1264，vehicle:ctrl:window，op=close，position=all",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "ventilate-all-windows",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "设置全部车窗为通风状态",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "将全部车窗调到通风状态"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1266，vehicle:ctrl:window，mode=overall_ventilation，position=all",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "navi-broadcast-exhaustive",
+      "module": "地图",
+      "page_id": "818:038239",
+      "page": "地图导航 850_V0.7 / 当前版本",
+      "control": "设置导航播报模式为详细播报",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "设置导航播报模式为详细播报"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1023，navi:setting，target=map_broadcast_mode，value=exhaustive",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "navi-broadcast-simple",
+      "module": "地图",
+      "page_id": "818:038239",
+      "page": "地图导航 850_V0.7 / 当前版本",
+      "control": "设置导航播报模式为简洁播报",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "设置导航播报模式为简洁播报"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1023，navi:setting，target=map_broadcast_mode，value=simple",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "navi-broadcast-mute",
+      "module": "地图",
+      "page_id": "818:038239",
+      "page": "地图导航 850_V0.7 / 当前版本",
+      "control": "设置导航播报模式为静音",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "设置导航播报模式为静音"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1023，navi:setting，target=map_broadcast_mode，value=mute",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "dial-number",
+      "module": "蓝牙电话",
+      "page_id": "94:03153",
+      "page": "蓝牙电话 V0.4 / 6 / 拨号键盘与更多设置",
+      "control": "拨打电话号码",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "拨打10086"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1061，phone:call，with_number=10086",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "answer-call",
+      "module": "蓝牙电话",
+      "page_id": "94:01465",
+      "page": "蓝牙电话 V0.4 / 8 / 通话状态-来电",
+      "control": "接听电话",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "接听电话"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1065，phone:call:ctrl，op=answer_call",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "reject-call",
+      "module": "蓝牙电话",
+      "page_id": "94:01465",
+      "page": "蓝牙电话 V0.4 / 8 / 通话状态-来电",
+      "control": "拒接电话",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "拒接电话"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1065，phone:call:ctrl，op=reject_call",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-incoming-ringtone-mute",
+      "module": "蓝牙电话",
+      "page_id": "94:01465",
+      "page": "蓝牙电话 V0.4 / 8 / 通话状态-来电",
+      "control": "打开来电铃声静音",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开铃声静音"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "meta_id=1188，vehicle:audio:volume:mute，op=open，channel=ringtone",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-incoming-ringtone-mute",
+      "module": "蓝牙电话",
+      "page_id": "94:01465",
+      "page": "蓝牙电话 V0.4 / 8 / 通话状态-来电",
+      "control": "关闭来电铃声静音",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭铃声静音",
+        "关闭来电铃声静音"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "两个Query均返回 meta_id=1919、common:func:not:supported",
+      "verdict": "unsupported",
+      "decision": "add_or_keep_in_coverage_sheet",
+      "reason": "当前有效UE动作无法由Alchemy正确执行",
+      "report": true
+    },
+    {
+      "id": "open-camp",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开露营模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开露营模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=camp；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-camp",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭露营模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭露营模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=camp；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-comfort",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开舒享模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开舒享模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=comfort；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-comfort",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭舒享模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭舒享模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=comfort；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-rest",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开小憩模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开小憩模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=rest；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-rest",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭小憩模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭小憩模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=rest；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-sleep-space",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开睡眠空间",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开睡眠空间"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=sleep_space；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-sleep-space",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭睡眠空间",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭睡眠空间"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=sleep_space；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-privacy",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开隐私模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开隐私模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=privacy；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-privacy",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭隐私模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭隐私模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=privacy；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-smoking",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开吸烟模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开吸烟模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=smoking；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-smoking",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭吸烟模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭吸烟模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=smoking；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-rear-care",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开车内关怀",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开车内关怀"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=rear_care_mode；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-rear-care",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭车内关怀",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭车内关怀"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=rear_care_mode；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-winter",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开冬季模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开冬季模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=winter；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-winter",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭冬季模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭冬季模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=winter；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-car-wash",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开洗车模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开洗车模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=car_wash_mode；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-car-wash",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭洗车模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭洗车模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=car_wash_mode；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-pet",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开宠物模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开宠物模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=pet；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-pet",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭宠物模式",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭宠物模式"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=pet；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "open-music-light-show",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "打开音乐灯光秀",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开音乐灯光秀"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1127；vehicle:scenario:ctrl；mode=music_light_show；op=open",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    },
+    {
+      "id": "close-music-light-show",
+      "module": "情景模式",
+      "page_id": "543:38855",
+      "page": "情景模式 V1.9 / 当前版本主模式页",
+      "control": "关闭音乐灯光秀",
+      "evidence_class": "current_live_test",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭音乐灯光秀"
+      ],
+      "classification": "task",
+      "operation": "classification=task；meta_id=1126；vehicle:scenario:ctrl；mode=music_light_show；op=close",
+      "verdict": "pass",
+      "decision": "not_add_platform_pass",
+      "reason": "Alchemy返回可执行operation且目标、动作、值匹配",
+      "report": false
+    }
+  ],
+  "historical_tests": [
+    {
+      "id": "情景模式:sleep-seat-settings-entry",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "10.情景模式-睡眠空间",
+      "control": "睡眠空间座椅设置入口",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "打开睡眠空间座椅设置"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "返回 app:ctrl，但没有座椅 target canonical",
+      "historical_verdict": "empty_required_slot",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:nap-seat-position",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "小憩模式",
+      "control": "小憩模式座椅位置选择",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "小憩模式设置为主驾"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "返回 common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:nap-end-time",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "小憩模式",
+      "control": "小憩模式结束时间设置",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "小憩模式结束时间设置为20点30分"
+      ],
+      "classification": "not_recorded",
+      "operation": "误生成充电预约操作",
+      "historical_verdict": "misrouted",
+      "decision": "superseded_by_current_live_test",
+      "reason": "本轮已用当前Query重新测试，见 nap-end-time",
+      "report": false
+    },
+    {
+      "id": "情景模式:nap-unlimited",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "小憩模式",
+      "control": "小憩模式不限时开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "打开小憩模式不限时"
+      ],
+      "classification": "not_recorded",
+      "operation": "返回 llm:scenario_block",
+      "historical_verdict": "blocked",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:nap-sound",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "小憩模式",
+      "control": "小憩模式音效选择",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "小憩模式音效切换为夜阑听雨"
+      ],
+      "classification": "not_recorded",
+      "operation": "未形成可执行的小憩音效选择操作",
+      "historical_verdict": "unsupported",
+      "decision": "superseded_by_current_live_test",
+      "reason": "本轮已用当前Query重新测试，见 nap-sound",
+      "report": false
+    },
+    {
+      "id": "情景模式:nap-screen-off",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "小憩模式",
+      "control": "小憩模式熄屏",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "小憩模式熄屏"
+      ],
+      "classification": "not_recorded",
+      "operation": "熄屏同时被解析为关闭小憩模式",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:nap-music-switch",
+      "module": "情景模式",
+      "page_id": "543:58241",
+      "page": "小憩模式",
+      "control": "小憩模式音乐切换",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "小憩模式切换音乐"
+      ],
+      "classification": "not_recorded",
+      "operation": "未形成可执行的小憩音乐切换操作",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:sleep-volume",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "10.情景模式-睡眠空间",
+      "control": "睡眠空间音量调节",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "睡眠空间音量调高"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "vehicle:audio:volume:adjust 的 channel canonical 为空",
+      "historical_verdict": "empty_required_slot",
+      "decision": "superseded_by_current_live_test",
+      "reason": "本轮已用当前Query重新测试，见 sleep-volume-lower",
+      "report": false
+    },
+    {
+      "id": "情景模式:sleep-skip-voice",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "10.情景模式-睡眠空间",
+      "control": "睡眠空间跳过人声",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "睡眠空间跳过人声"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "vehicle:scenario:theme_adjust 的 operation canonical 为空",
+      "historical_verdict": "empty_required_slot",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:sleep-diagnosis",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "10.情景模式-睡眠空间",
+      "control": "打开睡眠问诊",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "打开睡眠问诊"
+      ],
+      "classification": "chat",
+      "operation": "classification=chat，仅返回已打开的文本，无 operation",
+      "historical_verdict": "chat_only",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:sleep-unlimited",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "10.情景模式-睡眠空间",
+      "control": "睡眠空间不限时设置",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "睡眠空间设置为不限时"
+      ],
+      "classification": "not_recorded",
+      "operation": "duration 仅有 literal=不限时，canonical 为空",
+      "historical_verdict": "empty_required_slot",
+      "decision": "superseded_by_current_live_test",
+      "reason": "本轮已用当前Query重新测试，见 sleep-unlimited",
+      "report": false
+    },
+    {
+      "id": "情景模式:care-window-mode",
+      "module": "情景模式",
+      "page_id": "543:50288",
+      "page": "8.情景模式-车内关怀（依赖OMS）",
+      "control": "车内关怀窗口模式切换",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "车内关怀切换为小窗"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "小窗指令返回 common:func:not:supported；全屏可执行",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:music-light-show-download",
+      "module": "情景模式",
+      "page_id": "543:52488",
+      "page": "4.情景模式-视听联动",
+      "control": "下载音乐灯光秀",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "下载音乐灯光秀"
+      ],
+      "classification": "not_recorded",
+      "operation": "误生成打开音乐灯光秀操作，未执行下载/打开应用商城",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "情景模式:sleep-screen-off",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "10.情景模式-睡眠空间",
+      "control": "睡眠空间熄屏",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "睡眠空间熄屏"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "返回 vehicle:display:ctrl:screen_off，target_screen=default_screen",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "情景模式:sleep-air-conditioner-entry",
+      "module": "情景模式",
+      "page_id": "543:49168",
+      "page": "10.情景模式-睡眠空间",
+      "control": "睡眠空间空调设置入口",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scenario-voice-coverage-audit.json",
+      "queries": [
+        "打开睡眠空间空调设置"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "返回 app:ctrl open，target=air_conditioner",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "场景积木:space-tab-navigation",
+      "module": "场景积木",
+      "page_id": "1335:32153",
+      "page": "1.场景积木-场景空间",
+      "control": "场景空间与我的场景页签切换",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "打开场景积木的场景空间",
+        "打开场景积木的我的场景"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "app:ctrl lacked a target or custom scenario control was returned instead of the requested tab",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:recommended-scene-detail",
+      "module": "场景积木",
+      "page_id": "1335:32153",
+      "page": "1.场景积木-场景空间",
+      "control": "推荐场景详情打开",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "打开第一个推荐场景详情"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:recommended-scene-add",
+      "module": "场景积木",
+      "page_id": "1335:32153",
+      "page": "1.场景积木-场景空间",
+      "control": "推荐场景添加到我的场景",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把第一个推荐场景添加到我的场景"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-create",
+      "module": "场景积木",
+      "page_id": "1335:29890",
+      "page": "2.场景积木-我的场景",
+      "control": "创建自定义场景",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "创建一个场景积木"
+      ],
+      "classification": "not_recorded",
+      "operation": "llm:scenario_block returned instead of creating a scene",
+      "historical_verdict": "blocked",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-edit",
+      "module": "场景积木",
+      "page_id": "1335:29890",
+      "page": "2.场景积木-我的场景",
+      "control": "编辑自定义场景",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "编辑第一个场景积木"
+      ],
+      "classification": "not_recorded",
+      "operation": "misrouted to media:music:play and llm:draw:image",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-rename",
+      "module": "场景积木",
+      "page_id": "1335:29890",
+      "page": "2.场景积木-我的场景",
+      "control": "自定义场景重命名",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把第一个场景积木重命名为下班回家"
+      ],
+      "classification": "not_recorded",
+      "operation": "misrouted to navigation favorite home",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-delete",
+      "module": "场景积木",
+      "page_id": "1335:29890",
+      "page": "2.场景积木-我的场景",
+      "control": "自定义场景删除与批量删除",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "删除第一个场景积木"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-sort",
+      "module": "场景积木",
+      "page_id": "1335:29890",
+      "page": "2.场景积木-我的场景",
+      "control": "自定义场景排序",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把第一个场景积木排到第二个"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-execute",
+      "module": "场景积木",
+      "page_id": "1335:29890",
+      "page": "2.场景积木-我的场景",
+      "control": "执行场景与跳过前置条件执行",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "执行第一个场景积木",
+        "跳过前置条件执行第一个场景积木"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "both queries returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-auto-execute",
+      "module": "场景积木",
+      "page_id": "1335:29890",
+      "page": "2.场景积木-我的场景",
+      "control": "场景自动执行开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "打开第一个场景积木自动执行",
+        "关闭第一个场景积木自动执行"
+      ],
+      "classification": "not_recorded",
+      "operation": "opened or closed the sceneblock app instead of changing the selected scene auto-execute switch",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:custom-scene-trial",
+      "module": "场景积木",
+      "page_id": "1335:32153",
+      "page": "1.场景积木-场景空间",
+      "control": "场景试用与暂停",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "试用第一个场景积木",
+        "暂停试用场景积木"
+      ],
+      "classification": "not_recorded",
+      "operation": "opened or closed the app instead of starting or pausing scene trial",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:onboarding-controls",
+      "module": "场景积木",
+      "page_id": "1335:24583",
+      "page": "6.新手引导",
+      "control": "新手引导进入、翻页、跳过、完成与关闭",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "打开场景积木新手引导",
+        "场景积木新手引导下一步",
+        "场景积木新手引导上一步",
+        "跳过场景积木新手引导",
+        "开始体验场景积木",
+        "关闭场景积木新手引导"
+      ],
+      "classification": "not_recorded",
+      "operation": "guide target canonical was empty; step actions were unsupported or misrouted to navigation",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:scene-share-code",
+      "module": "场景积木",
+      "page_id": "1335:24996",
+      "page": "7.场景分享",
+      "control": "场景分享、分享码生成与复制",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "分享第一个场景积木",
+        "生成第一个场景积木的分享码",
+        "复制第一个场景积木的分享码"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "chat text claimed sharing, generation, or copy success but no executable operation was returned",
+      "historical_verdict": "chat_only",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:share-code-add",
+      "module": "场景积木",
+      "page_id": "1335:24996",
+      "page": "7.场景分享",
+      "control": "输入分享码添加场景",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "输入分享码123456789添加场景积木"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:ai-scene-generate",
+      "module": "场景积木",
+      "page_id": "1335:27062",
+      "page": "8.AI生成场景积木",
+      "control": "AI生成场景积木",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "用AI生成一个下班回家场景积木"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "chat text described a generated scene but no executable scene-generation operation was returned",
+      "historical_verdict": "chat_only",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:ai-scene-pause-close",
+      "module": "场景积木",
+      "page_id": "1335:27062",
+      "page": "8.AI生成场景积木",
+      "control": "AI生成暂停与卡片关闭",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "暂停AI生成场景积木",
+        "关闭AI生成场景积木卡片"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "both queries returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:ai-scene-save",
+      "module": "场景积木",
+      "page_id": "1335:27062",
+      "page": "8.AI生成场景积木",
+      "control": "保存AI生成场景",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "保存AI生成的场景积木"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:ai-scene-edit",
+      "module": "场景积木",
+      "page_id": "1335:27062",
+      "page": "8.AI生成场景积木",
+      "control": "编辑AI生成场景",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "去编辑AI生成的场景积木"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:trigger-time",
+      "module": "场景积木",
+      "page_id": "1335:28617",
+      "page": "3.场景积木-触发条件",
+      "control": "触发条件-时间",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的触发条件设置为每天8点"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:trigger-driving",
+      "module": "场景积木",
+      "page_id": "1335:28617",
+      "page": "3.场景积木-触发条件",
+      "control": "触发条件-驾驶与能量",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的触发条件设置为P挡",
+        "把场景积木的触发条件设置为车速大于30公里每小时",
+        "把场景积木的触发条件设置为舒适驾驶模式",
+        "把场景积木的触发条件设置为强制纯电",
+        "把场景积木的触发条件设置为电池电量低于20%"
+      ],
+      "classification": "not_recorded",
+      "operation": "queries were unsupported or immediately changed driving/energy functions; battery query navigated to a charging station",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:trigger-body",
+      "module": "场景积木",
+      "page_id": "1335:28617",
+      "page": "3.场景积木-触发条件",
+      "control": "触发条件-车门车窗",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的触发条件设置为主驾车门打开",
+        "把场景积木的触发条件设置为左侧儿童锁开启",
+        "把场景积木的触发条件设置为主驾车窗降下",
+        "把场景积木的触发条件设置为遮阳帘打开",
+        "把场景积木的触发条件设置为全车门锁上锁"
+      ],
+      "classification": "not_recorded",
+      "operation": "door, child-lock, window, and sunshade actions executed immediately; door-lock condition was unsupported",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:trigger-occupant",
+      "module": "场景积木",
+      "page_id": "1335:28617",
+      "page": "3.场景积木-触发条件",
+      "control": "触发条件-乘员",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的触发条件设置为主驾有人",
+        "把场景积木的触发条件设置为主驾安全带系上"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "both queries returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:trigger-environment",
+      "module": "场景积木",
+      "page_id": "1335:28617",
+      "page": "3.场景积木-触发条件",
+      "control": "触发条件-环境",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的触发条件设置为空气质量重度污染",
+        "把场景积木的触发条件设置为车内温度高于30度",
+        "把场景积木的触发条件设置为环境光昏暗",
+        "把场景积木的触发条件设置为雨天"
+      ],
+      "classification": "not_recorded",
+      "operation": "air-quality query became a weather query, temperature changed AC immediately, and light/weather conditions were unsupported",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:trigger-navigation",
+      "module": "场景积木",
+      "page_id": "1335:28617",
+      "page": "3.场景积木-触发条件",
+      "control": "触发条件-导航",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的触发条件设置为预计到达时间早于20点",
+        "场景积木触发条件设为距离目的地小于3公里"
+      ],
+      "classification": "not_recorded",
+      "operation": "returned journey query/charging booking or immediate navigation search instead of storing a trigger",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:trigger-charging",
+      "module": "场景积木",
+      "page_id": "1335:28617",
+      "page": "3.场景积木-触发条件",
+      "control": "触发条件-充电状态",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的触发条件设置为开始充电"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:precondition-time-location",
+      "module": "场景积木",
+      "page_id": "1335:23840",
+      "page": "4.我的场景-前置条件",
+      "control": "前置条件-时间与位置",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的前置条件设置为每天8点到9点",
+        "把场景积木的前置条件设置为距离家2公里以内"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "both queries returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:precondition-vehicle-state",
+      "module": "场景积木",
+      "page_id": "1335:23840",
+      "page": "4.我的场景-前置条件",
+      "control": "前置条件-车辆状态",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的前置条件设置为未充电",
+        "把场景积木的前置条件设置为四门车窗全关"
+      ],
+      "classification": "not_recorded",
+      "operation": "charging state was unsupported and window state immediately closed all windows",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:precondition-navigation-media",
+      "module": "场景积木",
+      "page_id": "1335:23840",
+      "page": "4.我的场景-前置条件",
+      "control": "前置条件-导航与媒体状态",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的前置条件设置为导航中",
+        "把场景积木的前置条件设置为媒体播放中"
+      ],
+      "classification": "not_recorded",
+      "operation": "misrouted to navigation favorite control or media playback",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:precondition-connection",
+      "module": "场景积木",
+      "page_id": "1335:23840",
+      "page": "4.我的场景-前置条件",
+      "control": "前置条件-连接状态",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的前置条件设置为蓝牙已连接",
+        "把场景积木的前置条件设置为WLAN已连接",
+        "把场景积木的前置条件设置为无线充电中"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "all connection-state queries returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-body",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-车身",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为打开门把手",
+        "把场景积木的执行动作设置为全车门锁上锁",
+        "把场景积木的执行动作设置为开启左侧儿童锁",
+        "把场景积木的执行动作设置为四门车窗开度50%",
+        "把场景积木的执行动作设置为主驾车窗开度30%",
+        "把场景积木的执行动作设置为后视镜折叠",
+        "把场景积木的执行动作设置为前雨刮低速",
+        "把场景积木的执行动作设置为后雨刮开启",
+        "把场景积木的执行动作设置为升起电动尾翼"
+      ],
+      "classification": "not_recorded",
+      "operation": "underlying body controls executed immediately or were unsupported; no scenario action was stored",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-seat",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-座椅",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为主驾座椅位置向前",
+        "把场景积木的执行动作设置为副驾座椅位置向后",
+        "把场景积木的执行动作设置为开启主驾座椅加热",
+        "把场景积木的执行动作设置为开启主驾座椅通风",
+        "把场景积木的执行动作设置为主驾按摩高强度波浪模式"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "seat operations executed immediately; no scenario action was stored",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-light",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-灯光",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为打开左转向灯",
+        "把场景积木的执行动作设置为打开大灯",
+        "把场景积木的执行动作设置为打开后雾灯"
+      ],
+      "classification": "not_recorded",
+      "operation": "returned immediate light control or light clarification instead of storing a scenario action",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-climate",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-空调",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为打开空调",
+        "把场景积木的执行动作设置为主驾空调25度",
+        "把场景积木的执行动作设置为空调内循环",
+        "把场景积木的执行动作设置为打开空气净化",
+        "把场景积木的执行动作设置为空调风量5级",
+        "把场景积木的执行动作设置为空调吹脸",
+        "把场景积木的执行动作设置为打开自动空调",
+        "把场景积木的执行动作设置为空调制冷"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "all climate operations controlled the current vehicle immediately instead of storing a scenario action",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-media",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-媒体与应用",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为播放蓝牙音乐",
+        "把场景积木的执行动作设置为播放网易云音乐今日推荐",
+        "把场景积木的执行动作设置为播放QQ音乐我的收藏",
+        "把场景积木的执行动作设置为播放周杰伦的晴天",
+        "把场景积木的执行动作设置为媒体暂停"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "media operations played or paused content immediately instead of storing a scenario action",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-navigation",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-导航",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为导航回家"
+      ],
+      "classification": "not_recorded",
+      "operation": "immediate navigation to home was returned instead of storing a scenario action",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-driving-energy",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-驾驶与能量",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为舒适驾驶模式",
+        "把场景积木的执行动作设置为强制纯电"
+      ],
+      "classification": "not_recorded",
+      "operation": "driving or energy mode changed immediately instead of storing a scenario action",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-network-settings",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-连接与车辆设置",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为打开低速提示音",
+        "把场景积木的执行动作设置为打开蓝牙",
+        "把场景积木的执行动作设置为打开无线热点",
+        "把场景积木的执行动作设置为打开无线充电",
+        "把场景积木的执行动作设置为打开WLAN",
+        "把场景积木的执行动作设置为打开离车记录",
+        "把场景积木的执行动作设置为打开智能钥匙感应闭锁",
+        "把场景积木的执行动作设置为打开蓝牙钥匙感应闭锁",
+        "把场景积木的执行动作设置为打开智能钥匙感应解锁",
+        "把场景积木的执行动作设置为打开蓝牙钥匙感应解锁",
+        "把场景积木的执行动作设置为打开闭锁音",
+        "把场景积木的执行动作设置为打开后排安全带未系提示"
+      ],
+      "classification": "not_recorded",
+      "operation": "settings were controlled immediately or unsupported; no scenario action was stored",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-broadcast-delay",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-语音播报与延时",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为语音播报欢迎回家",
+        "把场景积木的执行动作设置为延时30秒"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "both queries returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-display-hud",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-屏幕与HUD",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为中控旋转屏10度",
+        "把场景积木的执行动作设置为副驾屏展开",
+        "把场景积木的执行动作设置为中控屏旋转",
+        "把场景积木的执行动作设置为中控屏熄屏",
+        "把场景积木的执行动作设置为中控屏亮度60%",
+        "把场景积木的执行动作设置为打开自动亮度",
+        "把场景积木的执行动作设置为中控屏深色背景模式",
+        "把场景积木的执行动作设置为打开HUD",
+        "把场景积木的执行动作设置为HUD标准模式"
+      ],
+      "classification": "not_recorded",
+      "operation": "screen/HUD controls executed immediately, were unsupported, or had empty canonical; no scenario action was stored",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-audio-volume",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-音量",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为多媒体音量16",
+        "把场景积木的执行动作设置为通话音量16",
+        "把场景积木的执行动作设置为导航播报音量16",
+        "把场景积木的执行动作设置为语音播报音量16"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "volume operations ran immediately and some channels were empty or polluted by sceneblock",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:action-thermostatic-box",
+      "module": "场景积木",
+      "page_id": "1335:22081",
+      "page": "5.我的场景-执行动作",
+      "control": "执行动作-冷暖箱",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "把场景积木的执行动作设置为冷暖箱制冷5度"
+      ],
+      "classification": "not_recorded",
+      "operation": "cold-box temperature changed immediately instead of storing a scenario action",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "场景积木:sceneblock-app-entry",
+      "module": "场景积木",
+      "page_id": "1335:32153",
+      "page": "1.场景积木-场景空间",
+      "control": "打开场景积木",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-scene-block-voice-coverage-audit.json",
+      "queries": [
+        "打开场景积木"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "app:ctrl open target=sceneblock",
+      "historical_verdict": "pass",
+      "decision": "excluded_by_user_filter",
+      "reason": "复杂配置或内容流程；能走可见交互优先可见，不纳入当前语音申报",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-now",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "立即充电",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "立即充电"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned navi:dest:search for a charging station instead of starting vehicle charging",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-stop",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "结束充电",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "结束充电"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned energy:charging:ctrl close charge",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-book-switch",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "预约充电开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开预约充电",
+        "关闭预约充电"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned charge_book open and close operations",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-book-time",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "预约充电开始与结束时间",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "把预约充电开始时间设置为晚上10点",
+        "把预约充电结束时间设置为早上6点"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned booking start and end time operations with canonical values",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-book-full-stop",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "预约充电充满后停止",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "预约充电设置为充满后停止",
+        "预约充电结束方式设置为充满后停止"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR closed charge_book instead of setting the completion mode",
+      "historical_verdict": "misrouted",
+      "decision": "superseded_by_current_live_test",
+      "reason": "本轮已用当前Query重新测试，见 charge-book-full-stop",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-book-confirm",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "预约充电设置确认",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "确认预约充电设置"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned navi:dest:via:add with empty params",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-current-limit",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "充电电流限值",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "把充电电流限值设置为8A",
+        "把充电电流限值设置为10A",
+        "把充电电流限值设置为16A",
+        "把充电电流限值设置为32A"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned charge_current with 8, 10, 16 and 32 amp values",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:discharge-outward",
+      "module": "充放电",
+      "page_id": "1020:64372",
+      "page": "车辆设置 V3.5 / 放电",
+      "control": "对外放电开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开对外放电",
+        "关闭对外放电"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned open/close for canonical discharge_outward",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:pulse-heating",
+      "module": "充放电",
+      "page_id": "1020:64168",
+      "page": "车辆设置 V3.5 / 即时加热",
+      "control": "脉冲加热",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "开启脉冲加热"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned vehicle:energy:battery:ctrl open pulse_heat",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:slow-charge-auto-unlock",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "慢充口自动解锁",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开慢充口自动解锁",
+        "关闭慢充口自动解锁"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned charge_gun_auto_unlock open and close",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:consumption-method-domestic",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "能耗计量方式",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能耗计量方式设置为CLTC工况",
+        "能耗计量方式设置为WLTC工况"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned cltc and wltc consumption_method modes",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:energy-display",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "能量显示方式",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能量显示设置为剩余里程",
+        "能量显示设置为剩余电量"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned mileage and energy display_method modes",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:dc-vin-authorization",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "直流充电VIN授权",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开直流充电VIN授权",
+        "关闭直流充电VIN授权"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned energy:charging:ctrl but setting_item canonical was empty for both directions",
+      "historical_verdict": "empty_required_slot",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:super-power-saving",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "超级省电开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开超级省电",
+        "关闭超级省电",
+        "确认开启超级省电"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned super_power_saving open/close operations",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-pile-connection-switch",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "充电桩连接开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开充电桩连接",
+        "关闭充电桩连接"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned charge_pile_connection open and close",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:charge-pile-device-operations",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "充电桩设备连接、断开、忘记、重试与取消配对",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "断开已连接的充电桩",
+        "忘记已连接的充电桩",
+        "连接第一个充电桩",
+        "重试连接充电桩",
+        "取消充电桩配对"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR either returned unsupported or only toggled the global charge_pile_connection switch without the selected device operation",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:fuel-charge-switch",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "燃油补电开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开燃油补电",
+        "关闭燃油补电",
+        "确认开启燃油补电"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned charge_with_fuel open and close",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:fuel-charge-level",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "燃油补电档位",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "燃油补电档位设置为低",
+        "燃油补电档位设置为中",
+        "燃油补电档位设置为高"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned low, medium and high fuel charging power values",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:fuel-charge-soc-limit",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "燃油补电SOC上限",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "燃油补电SOC上限设置为60%"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:energy-management-domestic",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "国内能量管理模式",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能量管理设置为市区模式",
+        "能量管理设置为高速模式",
+        "能量管理设置为山地模式"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned urban, highway and mountain management modes",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:forced-pure-electric",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "强制纯电开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开强制纯电",
+        "关闭强制纯电",
+        "确认开启强制纯电"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned forced_pure_electricity open and close",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:soc-target",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "电量保持目标",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "电量保持目标设置为60%"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned soc_target scale_percent 60%",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:energy-management-memory",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "能量管理记忆开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开能量管理记忆",
+        "关闭能量管理记忆"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned energy_management_memory open and close",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:battery-insulation",
+      "module": "充放电",
+      "page_id": "1020:55689",
+      "page": "车辆设置 V3.5 / 能量",
+      "control": "电池保温开关",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开电池保温",
+        "关闭电池保温"
+      ],
+      "classification": "not_recorded",
+      "operation": "BIGSUR returned battery_insulation open and close",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:energy-detail-entry",
+      "module": "充放电",
+      "page_id": "854:77410",
+      "page": "能源明细 V0.1 / 能源明细",
+      "control": "能源明细入口",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开能源明细"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:energy-detail-tabs",
+      "module": "充放电",
+      "page_id": "854:77410",
+      "page": "能源明细 V0.1 / 能源明细",
+      "control": "能源明细页签切换",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能源明细切换到能耗曲线",
+        "切换能源明细到能耗曲线",
+        "能源明细切换到行程信息"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned common:func:not:supported for both tabs",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:energy-curve-mode",
+      "module": "充放电",
+      "page_id": "854:77410",
+      "page": "能源明细 V0.1 / 能源明细",
+      "control": "能耗曲线筛选",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能耗曲线选择全部",
+        "能耗曲线选择电耗",
+        "能耗曲线选择油耗"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned statistical/curve mode operations with empty params for all three values",
+      "historical_verdict": "empty_required_slot",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:trip-reset",
+      "module": "充放电",
+      "page_id": "854:77410",
+      "page": "能源明细 V0.1 / 能源明细",
+      "control": "小计行程清零及确认取消",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "清零小计行程",
+        "确认清除小计行程",
+        "取消清除小计行程"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned an empty energy curve mode operation or unsupported responses instead of trip reset",
+      "historical_verdict": "misrouted",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:charging-info-entry",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "充电信息弹窗入口",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开充电信息"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned app:ctrl open without a target",
+      "historical_verdict": "empty_required_slot",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:discharging-info-entry",
+      "module": "充放电",
+      "page_id": "1020:64372",
+      "page": "车辆设置 V3.5 / 放电",
+      "control": "放电信息弹窗入口",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开放电信息"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned app:ctrl open with an empty target canonical",
+      "historical_verdict": "empty_required_slot",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:battery-reminder-dismiss",
+      "module": "充放电",
+      "page_id": "1020:64596",
+      "page": "车辆设置 V3.5 / 充电桌面",
+      "control": "动力电池提醒关闭",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "关闭动力电池提醒"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "BIGSUR returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    },
+    {
+      "id": "充放电:d587-auto-unlock",
+      "module": "充放电",
+      "page_id": "345:28175",
+      "page": "D587-G车辆设置 V1.1 / 能量",
+      "control": "D587-G充电枪自动解锁",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "打开充电枪自动解锁",
+        "关闭充电枪自动解锁"
+      ],
+      "classification": "not_recorded",
+      "operation": "D587-G returned charge_gun_auto_unlock open and close",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:d587-consumption-method",
+      "module": "充放电",
+      "page_id": "345:28175",
+      "page": "D587-G车辆设置 V1.1 / 能量",
+      "control": "D587-G能耗计量方式",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能耗计量方式设置为NEDC工况",
+        "能耗计量方式设置为WLTP工况"
+      ],
+      "classification": "not_recorded",
+      "operation": "D587-G returned nedc and wltp modes",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:d587-energy-modes-pass",
+      "module": "充放电",
+      "page_id": "345:28175",
+      "page": "D587-G车辆设置 V1.1 / 能量",
+      "control": "D587-G燃油优先与纯电优先",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能量管理设置为燃油优先",
+        "能量管理设置为纯电优先"
+      ],
+      "classification": "not_recorded",
+      "operation": "D587-G returned pv and ev energy modes",
+      "historical_verdict": "pass",
+      "decision": "not_add_historical_pass",
+      "reason": "历史Alchemy操作匹配；本轮未重复测试，不作为本轮实时证据",
+      "report": false
+    },
+    {
+      "id": "充放电:d587-energy-hold-mode",
+      "module": "充放电",
+      "page_id": "345:28175",
+      "page": "D587-G车辆设置 V1.1 / 能量",
+      "control": "D587-G电量保持模式",
+      "evidence_class": "historical_reference",
+      "tested_at": "2026-08-14",
+      "source": "2026-08-14-charge-discharge-voice-coverage-audit.json",
+      "queries": [
+        "能量管理设置为电量保持"
+      ],
+      "classification": "task_or_operation_recorded",
+      "operation": "D587-G returned common:func:not:supported",
+      "historical_verdict": "unsupported",
+      "decision": "excluded_by_user_filter",
+      "reason": "虽有历史失败证据，但不满足当前简单、高频、离屏可记忆和12类筛选规则",
+      "report": false
+    }
+  ],
+  "prohibited_call_controls": [
+    {
+      "id": "call-policy-1",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "缩小或展开通话浮窗",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-2",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "打开通话键盘",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-3",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "关闭通话键盘",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-4",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "结束通话",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-5",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "打开通话麦克风静音",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-6",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "关闭通话麦克风静音",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-7",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "设置通话设备为手机",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-8",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "设置通话设备为车机",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-9",
+      "module": "蓝牙电话",
+      "page_id": "94:01465",
+      "page": "蓝牙电话 V0.4 / 8 / 通话状态-来电",
+      "control": "接通后的通话键盘、话筒、设备切换及挂断",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-10",
+      "module": "蓝牙电话",
+      "page_id": "94:00169",
+      "page": "蓝牙电话 V0.4 / 9 / 通话状态-三方来电",
+      "control": "三方来电挂断",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-11",
+      "module": "蓝牙电话",
+      "page_id": "94:00169",
+      "page": "蓝牙电话 V0.4 / 9 / 通话状态-三方来电",
+      "control": "三方来电结束当前通话并接听",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-12",
+      "module": "蓝牙电话",
+      "page_id": "94:00169",
+      "page": "蓝牙电话 V0.4 / 9 / 通话状态-三方来电",
+      "control": "三方来电保留当前通话并接听",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-13",
+      "module": "蓝牙电话",
+      "page_id": "94:9581",
+      "page": "蓝牙电话 V0.4 / 10 / 通话状态-三方去电",
+      "control": "三方通话去电与切换通话",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    },
+    {
+      "id": "call-policy-14",
+      "module": "蓝牙电话",
+      "page_id": "94:9357",
+      "page": "蓝牙电话 V0.4 / 11 / 语音聊天、Bcall、Ecall",
+      "control": "语音聊天、Bcall、Ecall中的话筒与设备切换",
+      "evidence_class": "excluded_by_policy",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_test_or_report",
+      "reason": "通话中完全禁止语音操作"
+    }
+  ],
+  "tested_in_error": [
+    {
+      "id": "tested-in-error-1",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "结束通话",
+      "evidence_class": "tested_in_error",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "挂断电话",
+        "结束通话"
+      ],
+      "decision": "withdrawn_no_capability_conclusion",
+      "reason": "通话中完全禁止语音操作；历史结果撤销，不用于能力判断"
+    },
+    {
+      "id": "tested-in-error-2",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "打开通话麦克风静音",
+      "evidence_class": "tested_in_error",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "打开麦克风静音"
+      ],
+      "decision": "withdrawn_no_capability_conclusion",
+      "reason": "通话中完全禁止语音操作；历史结果撤销，不用于能力判断"
+    },
+    {
+      "id": "tested-in-error-3",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "关闭通话麦克风静音",
+      "evidence_class": "tested_in_error",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "关闭麦克风静音"
+      ],
+      "decision": "withdrawn_no_capability_conclusion",
+      "reason": "通话中完全禁止语音操作；历史结果撤销，不用于能力判断"
+    },
+    {
+      "id": "tested-in-error-4",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "设置通话设备为手机",
+      "evidence_class": "tested_in_error",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "切换到手机接听",
+        "设置通话设备为手机"
+      ],
+      "decision": "withdrawn_no_capability_conclusion",
+      "reason": "通话中完全禁止语音操作；历史结果撤销，不用于能力判断"
+    },
+    {
+      "id": "tested-in-error-5",
+      "module": "蓝牙电话",
+      "page_id": "94:02506",
+      "page": "蓝牙电话 V0.4 / 7 / 通话状态-去电",
+      "control": "设置通话设备为车机",
+      "evidence_class": "tested_in_error",
+      "tested_at": "2026-08-31",
+      "queries": [
+        "切换到车机接听",
+        "设置通话设备为车机"
+      ],
+      "decision": "withdrawn_no_capability_conclusion",
+      "reason": "通话中完全禁止语音操作；历史结果撤销，不用于能力判断"
+    }
+  ],
+  "untested_exclusions": [
+    {
+      "id": "untested-exclusion-1",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "设置3D车身颜色",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "低频且依赖可见界面"
+    },
+    {
+      "id": "untested-exclusion-2",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "设置3D轮毂样式",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "低频且依赖可见界面"
+    },
+    {
+      "id": "untested-exclusion-3",
+      "module": "3D桌面&动效",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "page": "3D桌面&动效 / 当前交互文档",
+      "control": "胎压和车灯逻辑",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "状态展示或联动逻辑，不是独立用户设置控件"
+    },
+    {
+      "id": "untested-exclusion-4",
+      "module": "语音形象&GUI",
+      "page_id": "202:4388",
+      "page": "语音形象&GUI V0.9",
+      "control": "唤醒、收音、Loading、回复和形象动效",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "系统状态展示，无用户可操作设置控件"
+    },
+    {
+      "id": "untested-exclusion-5",
+      "module": "地图",
+      "page_id": "818:038239",
+      "page": "地图导航 850_V0.7 / 当前版本",
+      "control": "设置手动限速或道路限速",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "依赖当前页面与行车条件，复杂且可见交互优先"
+    },
+    {
+      "id": "untested-exclusion-6",
+      "module": "创意画舫",
+      "page_id": "473:16202",
+      "page": "创意画舫 AIGCv1.0",
+      "control": "进入或退出创意画舫",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "页面导航动作，不属于当前12类高频直接执行"
+    },
+    {
+      "id": "untested-exclusion-7",
+      "module": "创意画舫",
+      "page_id": "473:16202",
+      "page": "创意画舫 AIGCv1.0",
+      "control": "文生图生成、重试、保存或分享",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "复杂内容流程，依赖当前页面和生成状态"
+    },
+    {
+      "id": "untested-exclusion-8",
+      "module": "创意画舫",
+      "page_id": "473:16202",
+      "page": "创意画舫 AIGCv1.0",
+      "control": "车机分享手机图片",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "跨设备复杂内容流程"
+    },
+    {
+      "id": "untested-exclusion-9",
+      "module": "车外语音",
+      "page_id": "2742:13434",
+      "page": "车外语音 V0.9",
+      "control": "进入车外喊话",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "页面入口，依赖可见交互"
+    },
+    {
+      "id": "untested-exclusion-10",
+      "module": "车外语音",
+      "page_id": "2742:13434",
+      "page": "车外语音 V0.9",
+      "control": "播放或试听车外喊话",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "播放链路受导航、音乐、通话优先级影响，不是独立简单设置"
+    },
+    {
+      "id": "untested-exclusion-11",
+      "module": "车外语音",
+      "page_id": "2742:13434",
+      "page": "车外语音 V0.9",
+      "control": "取消或打断车外喊话",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "依赖当前播放状态，可见交互优先"
+    },
+    {
+      "id": "untested-exclusion-12",
+      "module": "大模型",
+      "page_id": "drive:voice-llm-v1.5",
+      "page": "语音大模型 v1.5",
+      "control": "暂停大模型回复",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "依赖当前弹窗和生成状态，不看界面无法确定目标"
+    },
+    {
+      "id": "untested-exclusion-13",
+      "module": "大模型",
+      "page_id": "drive:voice-llm-v1.5",
+      "page": "语音大模型 v1.5",
+      "control": "关闭大模型回复",
+      "evidence_class": "excluded_by_user_filter",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "依赖当前弹窗和生成状态，不看界面无法确定目标"
+    },
+    {
+      "id": "untested-exclusion-14",
+      "module": "大模型",
+      "page_id": "llm:deep-thinking-v1.4",
+      "page": "大模型 / 深度思考",
+      "control": "打开深度思考",
+      "evidence_class": "excluded_by_page_status",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "V1.4删除，当前UE无效"
+    },
+    {
+      "id": "untested-exclusion-15",
+      "module": "大模型",
+      "page_id": "llm:deep-thinking-v1.4",
+      "page": "大模型 / 深度思考",
+      "control": "关闭深度思考",
+      "evidence_class": "excluded_by_page_status",
+      "query_executed": false,
+      "query": "未执行",
+      "decision": "do_not_add",
+      "reason": "V1.4删除，当前UE无效"
+    }
+  ],
+  "coverage_sheet_result": {
+    "target": "长安产品组语音功能覆盖走查 / 吴优 / gid=1756053093",
+    "current_rows": 6,
+    "reportable_controls": [
+      "设置小憩模式结束时间",
+      "设置小憩模式音效",
+      "调节睡眠空间音量",
+      "设置睡眠空间不限时",
+      "设置预约充电结束方式",
+      "关闭来电铃声静音"
+    ],
+    "removed_as_invalid_call_policy": [
+      "打开通话麦克风静音",
+      "关闭通话麦克风静音",
+      "设置通话设备为手机",
+      "设置通话设备为车机"
+    ]
+  }
+}
