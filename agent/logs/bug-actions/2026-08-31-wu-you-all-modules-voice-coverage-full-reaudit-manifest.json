@@ -1,0 +1,289 @@
+{
+  "schema_version": 2,
+  "module": "吴优负责的深蓝8295模块全集",
+  "vehicle": "8295",
+  "alchemy_environment": "BIGSUR",
+  "pages": [
+    {
+      "id": "543:58241",
+      "module": "情景模式",
+      "name": "情景模式 V1.9 / 小憩模式",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面",
+      "audit_round": "2026-08-31-full-reaudit"
+    },
+    {
+      "id": "543:49168",
+      "module": "情景模式",
+      "name": "情景模式 V1.9 / 睡眠空间",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面",
+      "audit_round": "2026-08-31-full-reaudit"
+    },
+    {
+      "id": "1020:64596",
+      "module": "充放电",
+      "name": "充放电 / 预约充电",
+      "status": "active",
+      "evidence": "车辆设置当前有效页面",
+      "audit_round": "2026-08-31-full-reaudit"
+    },
+    {
+      "id": "94:01465",
+      "module": "蓝牙电话",
+      "name": "蓝牙电话 V0.4 / 8 / 通话状态-来电",
+      "status": "active",
+      "evidence": "来电接听、拒接和来电铃声静音可在通话建立前测试；接通后的麦克风、设备切换、键盘等禁止测试",
+      "audit_round": "2026-08-31-full-reaudit"
+    }
+  ],
+  "controls": [
+    {
+      "id": "full-reaudit-failure-1",
+      "page_id": "543:58241",
+      "name": "设置小憩模式结束时间",
+      "query": "设置小憩模式结束时间为20点30分",
+      "tested_queries": [
+        "设置小憩模式结束时间为20点30分"
+      ],
+      "execution_standard": "调节数值-指定",
+      "offscreen_real_need": true,
+      "expected_effect": "direct",
+      "verdict": "blocked",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "属于12类且存在离屏真实需求；llm:scenario_block / meta_id=3189"
+      },
+      "classification": "chat",
+      "operations": [
+        {
+          "meta_id": 3189,
+          "type": "llm:scenario_block",
+          "index": 0,
+          "offline_first": false,
+          "params": {
+            "session_id": [
+              {
+                "canonical": "4e9bfb55-4e30-450d-9f8d-e241f2ba9405",
+                "literal": ""
+              }
+            ]
+          }
+        }
+      ],
+      "report": true
+    },
+    {
+      "id": "full-reaudit-failure-2",
+      "page_id": "543:58241",
+      "name": "设置小憩模式音效",
+      "query": "设置小憩模式音效为夜阑听雨",
+      "tested_queries": [
+        "设置小憩模式音效为夜阑听雨"
+      ],
+      "execution_standard": "设置具体模式",
+      "offscreen_real_need": true,
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "属于12类且存在离屏真实需求；common:func:not:supported / meta_id=1919"
+      },
+      "classification": "task",
+      "operations": [
+        {
+          "meta_id": 1919,
+          "type": "common:func:not:supported",
+          "index": 0,
+          "offline_first": false,
+          "params": {
+            "code": [
+              {
+                "canonical": "nlu_intent_others"
+              }
+            ]
+          }
+        }
+      ],
+      "report": true
+    },
+    {
+      "id": "full-reaudit-failure-3",
+      "page_id": "543:49168",
+      "name": "调节睡眠空间音量",
+      "query": "调低睡眠空间音量",
+      "tested_queries": [
+        "调低睡眠空间音量"
+      ],
+      "execution_standard": "调节数值-增量",
+      "offscreen_real_need": true,
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": false,
+        "action_match": true,
+        "value_match": false,
+        "evidence": "属于12类且存在离屏真实需求；vehicle:audio:volume:adjust 的 channel canonical 为空"
+      },
+      "classification": "task",
+      "operations": [
+        {
+          "meta_id": 1186,
+          "type": "vehicle:audio:volume:adjust",
+          "index": 0,
+          "offline_first": false,
+          "params": {
+            "scale_offset": [
+              {
+                "canonical": "lower",
+                "literal": "调低",
+                "slot": "scale_offset"
+              }
+            ],
+            "channel": [
+              {
+                "canonical": "",
+                "literal": "睡眠空间",
+                "slot": "control_target_app"
+              }
+            ]
+          }
+        }
+      ],
+      "report": true
+    },
+    {
+      "id": "full-reaudit-failure-4",
+      "page_id": "543:49168",
+      "name": "设置睡眠空间不限时",
+      "query": "设置睡眠空间为不限时",
+      "tested_queries": [
+        "设置睡眠空间为不限时"
+      ],
+      "execution_standard": "设置值",
+      "offscreen_real_need": true,
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": false,
+        "action_match": true,
+        "value_match": false,
+        "evidence": "属于12类且存在离屏真实需求；duration 仅有 literal=不限时，缺少 canonical"
+      },
+      "classification": "task",
+      "operations": [
+        {
+          "meta_id": 1146,
+          "type": "vehicle:scenario:ctrl:time:adjust",
+          "index": 0,
+          "offline_first": false,
+          "params": {
+            "mode": [
+              {
+                "canonical": "sleep_space",
+                "literal": "睡眠空间",
+                "slot": "mode_type"
+              }
+            ],
+            "op": [
+              {
+                "canonical": "set",
+                "literal": "设置",
+                "slot": "operation"
+              }
+            ],
+            "scale_to": [
+              {
+                "literal": "不限时",
+                "slot": "duration"
+              }
+            ]
+          }
+        }
+      ],
+      "report": true
+    },
+    {
+      "id": "full-reaudit-failure-5",
+      "page_id": "1020:64596",
+      "name": "设置预约充电结束方式",
+      "query": "设置预约充电结束方式为充满后停止",
+      "tested_queries": [
+        "设置预约充电结束方式为充满后停止"
+      ],
+      "execution_standard": "停止运动",
+      "offscreen_real_need": true,
+      "expected_effect": "direct",
+      "verdict": "misrouted",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "属于12类且存在离屏真实需求；返回关闭预约充电 energy:charging:ctrl(op=close,target=charge_book)，没有设置结束方式"
+      },
+      "classification": "task",
+      "operations": [
+        {
+          "meta_id": 1122,
+          "type": "energy:charging:ctrl",
+          "index": 0,
+          "offline_first": false,
+          "params": {
+            "op": [
+              {
+                "canonical": "close"
+              }
+            ],
+            "target": [
+              {
+                "canonical": "charge_book"
+              }
+            ]
+          }
+        }
+      ],
+      "report": true
+    },
+    {
+      "id": "full-reaudit-failure-6",
+      "page_id": "94:01465",
+      "name": "关闭来电铃声静音",
+      "query": "关闭来电铃声静音",
+      "tested_queries": [
+        "关闭铃声静音",
+        "关闭来电铃声静音"
+      ],
+      "execution_standard": "关闭开关/设置项",
+      "offscreen_real_need": true,
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "属于12类且存在离屏真实需求；common:func:not:supported / meta_id=1919"
+      },
+      "classification": "task",
+      "operations": [
+        {
+          "meta_id": 1919,
+          "type": "common:func:not:supported",
+          "index": 0,
+          "offline_first": false,
+          "params": {
+            "code": [
+              {
+                "canonical": "nlu_intent_others"
+              }
+            ]
+          }
+        }
+      ],
+      "report": true
+    }
+  ]
+}
