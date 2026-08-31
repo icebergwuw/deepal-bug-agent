@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.16.0-trial.1`
+- 当前版本：`v1.16.0-trial.2`
 - 状态：`trial`
 - 生效日期：`2026-08-26`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
@@ -44,6 +44,31 @@
 
 - 通过新提交恢复 `v1.15.0-trial.1`，不使用 `git reset --hard`。
 - 回滚只撤销 Alchemy 产品专属权限规则，不删除已形成的证据、日志或历史判断。
+
+## v1.16.0-trial.2 — 2026-08-31
+
+### 试行内容
+
+- 新增行必须复制同页完整正常数据行作为格式/数据验证模板，禁止从空白行或分隔行复制。
+- 新增行最终写入必须使用结构化列请求，禁止剪贴板 HTML/纯文本作为最终载荷；写后增加实际页面视觉回读，确认自动行高、富文本链接、BOOLEAN 验证和对齐格式。
+
+### 修改原因
+
+- SD-7244 写入 `bug!411` 时暴露空白行格式和剪贴板粘贴会造成长文本截断、链接及验证格式不稳定的问题。
+
+### 影响文件
+
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- SD-7244：对比 `bug!152`，修复 `bug!411` 的正常数据行格式并执行“适合数据”自动行高，页面回读确认来源链接可点击。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.16.0-trial.1` 的表格写入要求，不使用 `git reset --hard`。
 
 ## v1.15.0-trial.1 — 2026-08-18
 
