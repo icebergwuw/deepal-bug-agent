@@ -1,0 +1,583 @@
+{
+  "module": "吴优负责的深蓝8295模块全集",
+  "vehicle": "8295",
+  "alchemy_environment": "BIGSUR",
+  "operator": "吴优（wu-you）",
+  "source_workbook": "吴优工作说明 / gid 0",
+  "modules": [
+    "3D桌面&动效",
+    "情景模式",
+    "场景积木",
+    "充放电",
+    "语音形象&GUI",
+    "地图",
+    "蓝牙电话",
+    "创意画舫",
+    "车外语音",
+    "大模型"
+  ],
+  "selection_rules": [
+    "复杂配置不纳入",
+    "只纳入高频直接语音控制，其他优先走可见交互",
+    "不看界面难以想起用途的操作不纳入",
+    "二值开关按打开和关闭分别测试、分别申报"
+  ],
+  "sources": [
+    "Drive 深蓝汽车_8295平台-3D桌面交互文档v1.1.15-2025_1231.pdf",
+    "MasterGo 长安深蓝8295平台交互设计文档_情景模式_V1.9",
+    "MasterGo 长安深蓝8295平台交互设计文档_场景积木_V1.0",
+    "MasterGo 长安深蓝8295平台交互设计文档_能源明细_V0.1",
+    "MasterGo 长安深蓝8295平台交互设计文档_车辆设置_V3.4",
+    "MasterGo 长安深蓝D587-G交互设计文档_车辆设置_V1.1",
+    "MasterGo 长安深蓝8295平台交互设计文档_语音GUI_V0.9",
+    "MasterGo C385&673交互设计文档_地图导航（高德）_850_V0.7",
+    "MasterGo 长安深蓝8295平台交互设计文档_蓝牙电话_V0.4",
+    "MasterGo 长安深蓝平台化交互设计文档_创意画舫_AIGCv1.0",
+    "MasterGo 长安深蓝8295平台交互设计文档_车外语音_V0.9",
+    "Drive 长安深蓝8295平台交互设计文档_语音大模型_v1.5.pdf"
+  ],
+  "pages": [
+    {
+      "id": "drive:3d-desktop-v1.1.15",
+      "name": "3D桌面&动效 / 当前交互文档",
+      "status": "active",
+      "evidence": "Drive 当前文档全4页，背门、后视镜和车窗为有效直接控件"
+    },
+    {
+      "id": "543:58241",
+      "name": "情景模式 V1.9 / 小憩模式",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面"
+    },
+    {
+      "id": "543:49168",
+      "name": "情景模式 V1.9 / 睡眠空间",
+      "status": "active",
+      "evidence": "V1.9 当前有效页面"
+    },
+    {
+      "id": "543:54419",
+      "name": "情景模式 V1.9 / 恒温座舱第3页",
+      "status": "deleted",
+      "evidence": "当前画布位于红色 v1.9删除区域"
+    },
+    {
+      "id": "543:53811",
+      "name": "情景模式 V1.9 / 恒温座舱第4页",
+      "status": "deleted",
+      "evidence": "当前画布位于红色 v1.9删除区域"
+    },
+    {
+      "id": "543:48581",
+      "name": "情景模式 V1.9 / 离车不下电模式",
+      "status": "shelved",
+      "evidence": "当前图层名称明确标注搁置"
+    },
+    {
+      "id": "1335:21767",
+      "name": "场景积木 V1.0 / 当前版本",
+      "status": "active",
+      "evidence": "场景空间、触发条件、前置条件和执行动作均属复杂配置，按筛选规则不纳入语音申报"
+    },
+    {
+      "id": "blocks:controls-do-not-use",
+      "name": "场景积木 / 控件（不要）",
+      "status": "deprecated",
+      "evidence": "当前页面名称明确标注不要；V0.9、V0.8为历史版本"
+    },
+    {
+      "id": "1020:64596",
+      "name": "充放电 / 预约充电",
+      "status": "active",
+      "evidence": "车辆设置当前有效页面"
+    },
+    {
+      "id": "202:4388",
+      "name": "语音形象&GUI V0.9",
+      "status": "active",
+      "evidence": "当前内容为唤醒、收音、Loading和回复状态展示，无用户设置控件"
+    },
+    {
+      "id": "818:038239",
+      "name": "地图导航 850_V0.7 / 当前版本",
+      "status": "active",
+      "evidence": "草稿、废弃和未下发页面已排除；导航播报模式为当前有效设置"
+    },
+    {
+      "id": "map:draft-deprecated-unreleased",
+      "name": "地图导航 / 草稿、废弃、未下发页面",
+      "status": "deprecated",
+      "evidence": "当前画布状态明确标注草稿、废弃或未下发"
+    },
+    {
+      "id": "94:9055",
+      "name": "蓝牙电话 V0.4 / 当前版本",
+      "status": "active",
+      "evidence": "当前有效页面包含拨号、接听、挂断、静音和通话设备切换"
+    },
+    {
+      "id": "473:16202",
+      "name": "创意画舫 AIGCv1.0",
+      "status": "active",
+      "evidence": "当前内容为文生图、上传和分享等复杂内容流程，按筛选规则不纳入"
+    },
+    {
+      "id": "art:aigcv0.1-8155",
+      "name": "创意画舫 AIGCv0.1 8155",
+      "status": "backup",
+      "evidence": "默认打开页不是8295当前AIGCv1.0版本"
+    },
+    {
+      "id": "2742:13434",
+      "name": "车外语音 V0.9",
+      "status": "active",
+      "evidence": "当前主要为车外喊话入口、播放和音频优先级链路，未确认独立高频设置控件"
+    },
+    {
+      "id": "drive:voice-llm-v1.5",
+      "name": "语音大模型 v1.5",
+      "status": "active",
+      "evidence": "工作表F列为空后按Drive回退，已枚举版本族并读取最新v1.5；暂停和关闭依赖当前弹窗可见上下文"
+    },
+    {
+      "id": "llm:deep-thinking-v1.4",
+      "name": "大模型 / 深度思考",
+      "status": "deleted",
+      "evidence": "v1.5修改记录及画布明确标注V1.4删除，C385-5/C673-7已删除"
+    }
+  ],
+  "controls": [
+    {
+      "id": "nap-end-time",
+      "page_id": "543:58241",
+      "name": "设置小憩模式结束时间",
+      "query": "设置小憩模式结束时间为20点30分",
+      "tested_queries": ["设置小憩模式结束时间为20点30分"],
+      "expected_effect": "direct",
+      "verdict": "blocked",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "classification=chat；meta_id=3189，仅返回 llm:scenario_block session_id，无可执行的结束时间设置 operation"
+      },
+      "report": true
+    },
+    {
+      "id": "nap-sound",
+      "page_id": "543:58241",
+      "name": "设置小憩模式音效",
+      "query": "设置小憩模式音效为夜阑听雨",
+      "tested_queries": ["设置小憩模式音效为夜阑听雨"],
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "meta_id=1919，返回 common:func:not:supported / nlu_intent_others"
+      },
+      "report": true
+    },
+    {
+      "id": "sleep-volume-lower",
+      "page_id": "543:49168",
+      "name": "调节睡眠空间音量",
+      "query": "调低睡眠空间音量",
+      "tested_queries": ["调低睡眠空间音量"],
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": false,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1186，vehicle:audio:volume:adjust 的 scale_offset=lower，但 channel canonical 为空"
+      },
+      "report": true
+    },
+    {
+      "id": "sleep-unlimited",
+      "page_id": "543:49168",
+      "name": "设置睡眠空间不限时",
+      "query": "设置睡眠空间为不限时",
+      "tested_queries": ["设置睡眠空间为不限时"],
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": false,
+        "evidence": "meta_id=1146，mode=sleep_space、op=set，但 duration 只有 literal=不限时，没有 canonical"
+      },
+      "report": true
+    },
+    {
+      "id": "charge-book-full-stop",
+      "page_id": "1020:64596",
+      "name": "设置预约充电结束方式",
+      "query": "设置预约充电结束方式为充满后停止",
+      "tested_queries": ["设置预约充电结束方式为充满后停止"],
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "meta_id=1919，返回 common:func:not:supported / nlu_intent_others"
+      },
+      "report": true
+    },
+    {
+      "id": "open-tailgate",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "打开后备箱",
+      "query": "打开后备箱",
+      "tested_queries": ["打开后备箱"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1097，vehicle:ctrl:back_door，op=open"
+      },
+      "report": false
+    },
+    {
+      "id": "close-tailgate",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "关闭后备箱",
+      "query": "关闭后备箱",
+      "tested_queries": ["关闭后备箱"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1098，vehicle:ctrl:back_door，op=close"
+      },
+      "report": false
+    },
+    {
+      "id": "fold-side-mirrors",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "折叠后视镜",
+      "query": "折叠后视镜",
+      "tested_queries": ["折叠后视镜"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1095，vehicle:ctrl:rear_mirror:side_mirror，op=fold"
+      },
+      "report": false
+    },
+    {
+      "id": "unfold-side-mirrors",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "展开后视镜",
+      "query": "展开后视镜",
+      "tested_queries": ["展开后视镜"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1094，vehicle:ctrl:rear_mirror:side_mirror，op=unfold"
+      },
+      "report": false
+    },
+    {
+      "id": "open-driver-window",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "打开主驾车窗",
+      "query": "打开主驾车窗",
+      "tested_queries": ["打开主驾车窗"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1263，vehicle:ctrl:window，op=open，position=main_driver"
+      },
+      "report": false
+    },
+    {
+      "id": "close-driver-window",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "关闭主驾车窗",
+      "query": "关闭主驾车窗",
+      "tested_queries": ["关闭主驾车窗"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1264，vehicle:ctrl:window，op=close，position=main_driver"
+      },
+      "report": false
+    },
+    {
+      "id": "set-driver-window-50",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "调节主驾车窗开度",
+      "query": "主驾车窗开度调到50%",
+      "tested_queries": ["主驾车窗开度调到50%"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1266，vehicle:ctrl:window，position=main_driver，scale_percent=50%"
+      },
+      "report": false
+    },
+    {
+      "id": "open-all-windows",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "打开全部车窗",
+      "query": "打开全部车窗",
+      "tested_queries": ["打开全部车窗"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1263，vehicle:ctrl:window，op=open，position=all"
+      },
+      "report": false
+    },
+    {
+      "id": "close-all-windows",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "关闭全部车窗",
+      "query": "关闭全部车窗",
+      "tested_queries": ["关闭全部车窗"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1264，vehicle:ctrl:window，op=close，position=all"
+      },
+      "report": false
+    },
+    {
+      "id": "ventilate-all-windows",
+      "page_id": "drive:3d-desktop-v1.1.15",
+      "name": "设置全部车窗为通风状态",
+      "query": "将全部车窗调到通风状态",
+      "tested_queries": ["将全部车窗调到通风状态"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1266，vehicle:ctrl:window，mode=overall_ventilation，position=all"
+      },
+      "report": false
+    },
+    {
+      "id": "navi-broadcast-exhaustive",
+      "page_id": "818:038239",
+      "name": "设置导航播报模式为详细播报",
+      "query": "设置导航播报模式为详细播报",
+      "tested_queries": ["设置导航播报模式为详细播报"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1023，navi:setting，target=map_broadcast_mode，value=exhaustive"
+      },
+      "report": false
+    },
+    {
+      "id": "navi-broadcast-simple",
+      "page_id": "818:038239",
+      "name": "设置导航播报模式为简洁播报",
+      "query": "设置导航播报模式为简洁播报",
+      "tested_queries": ["设置导航播报模式为简洁播报"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1023，navi:setting，target=map_broadcast_mode，value=simple"
+      },
+      "report": false
+    },
+    {
+      "id": "navi-broadcast-mute",
+      "page_id": "818:038239",
+      "name": "设置导航播报模式为静音",
+      "query": "设置导航播报模式为静音",
+      "tested_queries": ["设置导航播报模式为静音"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1023，navi:setting，target=map_broadcast_mode，value=mute"
+      },
+      "report": false
+    },
+    {
+      "id": "dial-number",
+      "page_id": "94:9055",
+      "name": "拨打电话号码",
+      "query": "拨打10086",
+      "tested_queries": ["拨打10086"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1061，phone:call，with_number=10086"
+      },
+      "report": false
+    },
+    {
+      "id": "answer-call",
+      "page_id": "94:9055",
+      "name": "接听电话",
+      "query": "接听电话",
+      "tested_queries": ["接听电话"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1065，phone:call:ctrl，op=answer_call"
+      },
+      "report": false
+    },
+    {
+      "id": "end-call",
+      "page_id": "94:9055",
+      "name": "结束通话",
+      "query": "结束通话",
+      "tested_queries": ["挂断电话", "结束通话"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "主Query结束通话返回 meta_id=1065、op=reject_call；同时保留挂断电话曾返回 answer_call+reject_call 两个冲突operation的证据"
+      },
+      "report": false
+    },
+    {
+      "id": "open-call-microphone-mute",
+      "page_id": "94:9055",
+      "name": "打开通话麦克风静音",
+      "query": "打开麦克风静音",
+      "tested_queries": ["打开麦克风静音"],
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": false,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1188，vehicle:audio:volume:mute，op=open，但没有麦克风或通话 channel/target"
+      },
+      "report": true
+    },
+    {
+      "id": "close-call-microphone-mute",
+      "page_id": "94:9055",
+      "name": "关闭通话麦克风静音",
+      "query": "关闭麦克风静音",
+      "tested_queries": ["关闭麦克风静音"],
+      "expected_effect": "direct",
+      "verdict": "empty_required_slot",
+      "operation_check": {
+        "target_match": false,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1189，vehicle:audio:volume:mute，op=close，但没有麦克风或通话 channel/target"
+      },
+      "report": true
+    },
+    {
+      "id": "open-incoming-ringtone-mute",
+      "page_id": "94:9055",
+      "name": "打开来电铃声静音",
+      "query": "打开铃声静音",
+      "tested_queries": ["打开铃声静音"],
+      "expected_effect": "direct",
+      "verdict": "pass",
+      "operation_check": {
+        "target_match": true,
+        "action_match": true,
+        "value_match": true,
+        "evidence": "meta_id=1188，vehicle:audio:volume:mute，op=open，channel=ringtone"
+      },
+      "report": false
+    },
+    {
+      "id": "close-incoming-ringtone-mute",
+      "page_id": "94:9055",
+      "name": "关闭来电铃声静音",
+      "query": "关闭来电铃声静音",
+      "tested_queries": ["关闭铃声静音", "关闭来电铃声静音"],
+      "expected_effect": "direct",
+      "verdict": "unsupported",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "两个Query均返回 meta_id=1919、common:func:not:supported"
+      },
+      "report": true
+    },
+    {
+      "id": "set-call-device-phone",
+      "page_id": "94:9055",
+      "name": "设置通话设备为手机",
+      "query": "设置通话设备为手机",
+      "tested_queries": ["切换到手机接听", "设置通话设备为手机"],
+      "expected_effect": "direct",
+      "verdict": "misrouted",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "切换说法误命中 meta_id=1065、op=answer_call；设置说法返回 meta_id=1919，不支持设备切换"
+      },
+      "report": true
+    },
+    {
+      "id": "set-call-device-head-unit",
+      "page_id": "94:9055",
+      "name": "设置通话设备为车机",
+      "query": "设置通话设备为车机",
+      "tested_queries": ["切换到车机接听", "设置通话设备为车机"],
+      "expected_effect": "direct",
+      "verdict": "misrouted",
+      "operation_check": {
+        "target_match": false,
+        "action_match": false,
+        "value_match": false,
+        "evidence": "切换说法误命中 meta_id=1065、op=answer_call；设置说法返回 meta_id=1919，不支持设备切换"
+      },
+      "report": true
+    }
+  ]
+}
