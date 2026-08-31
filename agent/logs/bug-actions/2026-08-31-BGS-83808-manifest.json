@@ -1,0 +1,114 @@
+{
+  "schema_version": 5,
+  "jira_key": "BGS-83808",
+  "comment_causality": "实现评论确认BcuChrgSts反馈充电结束，但兜底逻辑将其显示为充电中；正式定义明确悬浮球显示当前充电状态，并将充电结束映射为充电结束/充电已充满。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "Jira未提供客户问题编号",
+    "test_case": {"checked": true, "status": "incomplete", "source": "标题标注客户问题，摘要含操作与实际结果，附件视频可见交流充电中；描述缺软件版本、完整前置条件、明确预期和复现概率"}
+  },
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["general"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "C385能量管理充电状态映射与悬浮球显示问题"},
+    "voice": {"applicable": false, "reason": "不涉及语音"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航"},
+    "visible_interaction": {"applicable": false, "reason": "不是可见节点选择问题"}
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-current",
+      "source": "BGS-83808 Jira原票",
+      "source_location": "摘要、描述、姜秋月2026-08-31评论、video_1787212328.mp4首帧",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385 All",
+      "trigger": "未预约时开始充电，再开启预约充电导致充电停止",
+      "target_behavior": "BcuChrgSts反馈充电结束，但悬浮球仍显示充电中",
+      "match": "exact",
+      "reason": "评论直接定位状态映射，视频首帧可见交流充电中。"
+    },
+    {
+      "source_id": "charge-definition",
+      "source": "C385功能定义_充放电能量管理功能定义V4.2",
+      "source_location": "第56页充电悬浮球扩展场景；第59页充电状态信息显示",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385",
+      "trigger": "插枪后退出充电页，悬浮球显示当前充电状态；BcuChrgSts为充电结束",
+      "target_behavior": "悬浮球显示当前充电状态；充电结束映射为充电结束/充电已充满，不得显示充电中",
+      "match": "exact",
+      "reason": "正式定义直接覆盖本票状态映射与悬浮球显示。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-08-31",
+      "search_location": "Google Drive精确检索及PDF原文下载读取",
+      "queries": [
+        {"kind": "jira_key", "text": "BGS-83808"},
+        {"kind": "problem_concept", "text": "C385 预约充电 充电状态 悬浮球 充电结束"},
+        {"kind": "module_artifact", "text": "C385 充放电能量管理功能定义"},
+        {"kind": "exact_document_name", "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"},
+        {"kind": "version_family", "text": "C385功能定义_充放电能量管理功能定义"}
+      ],
+      "source_ids": ["charge-definition"],
+      "reason": "已枚举V0.6至V4.2候选，选取最高版本V4.2并读取第56、59页。",
+      "material": true,
+      "next_action": "补齐客户发生版本和复现概率后，Android-Energy按BcuChrgSts修复悬浮球状态映射。",
+      "search_receipt_ids": ["bgs83808-drive-20260831"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [{
+          "id": "19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd",
+          "title": "C385功能定义_充放电能量管理功能定义V4.2.pdf",
+          "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view",
+          "references": [],
+          "disposition": "read",
+          "reason": "第56页定义悬浮球显示当前充电状态，第59页定义充电结束映射。",
+          "version_family": "C385功能定义_充放电能量管理功能定义",
+          "source_ids": ["charge-definition"]
+        }]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [{"family": "C385功能定义_充放电能量管理功能定义", "status": "enumerated", "receipt_ids": ["bgs83808-drive-20260831"], "selected_candidate_id": "19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd", "selection_reason": "检索结果中V4.2为最高版本，且覆盖C385项目。", "newer_version_checked": true}]
+      }
+    }
+  ],
+  "search_receipts": [{
+    "receipt_id": "bgs83808-drive-20260831",
+    "provider": "google_drive",
+    "check_id": "formal_definition_search",
+    "searched_at": "2026-08-31",
+    "queries": [
+      {"kind": "jira_key", "text": "BGS-83808"},
+      {"kind": "problem_concept", "text": "C385 预约充电 充电状态 悬浮球 充电结束"},
+      {"kind": "module_artifact", "text": "C385 充放电能量管理功能定义"},
+      {"kind": "exact_document_name", "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"},
+      {"kind": "version_family", "text": "C385功能定义_充放电能量管理功能定义"}
+    ],
+    "results": [{"id": "19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd", "title": "C385功能定义_充放电能量管理功能定义V4.2.pdf", "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view", "mime_type": "application/pdf"}]
+  }],
+  "conflict_resolution": "实现询问充电结束是否显示未充电；正式定义优先，充电结束应显示充电结束/充电已充满，未充电只对应未充电状态。客户用例字段不完整，因此状态降为待确认版本，不影响目标映射判断。",
+  "voice_evidence": {"applicable": false, "availability": "not_applicable", "alchemy_tested": false, "standard_function": {"status": "not_applicable", "reason": "非语音问题。"}, "project_function": {"status": "not_applicable", "reason": "非语音问题。"}},
+  "expected_behavior": {
+    "trigger": "充电中开启预约充电后，BcuChrgSts反馈充电结束。",
+    "target_state": "充电悬浮球显示当前充电状态为充电结束/充电已充满。",
+    "intent_function_signal": "按BcuChrgSts枚举直接映射，不应由充电中兜底分支拦截。",
+    "ui_tts_vehicle_behavior": "悬浮球不得继续显示充电中；未充电仅用于未充电枚举。",
+    "boundary": "客户描述缺发生版本和复现概率，需补齐后进入研发修复与回归。",
+    "source_ids": ["charge-definition"]
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优/C385 Android-Energy研发负责人",
+    "text": "结论：定义为有效状态映射缺陷，待补齐客户发生版本后转研发。正式定义要求充电悬浮球显示当前充电状态，BcuChrgSts反馈充电结束时应显示“充电结束/充电已充满”，不能继续显示“充电中”，也不应改为“未充电”。\n依据：[BGS-83808 Jira原票·评论/视频]；[C385充放电能量管理V4.2·第56/59页]。\n处理：吴优向客户收集完整客户测试用例，包括客户问题编号、发生版本、完整前置条件和复现概率；信息齐全后由C385 Android-Energy研发负责人删除“充电中”兜底拦截并按BcuChrgSts正确映射。"
+  },
+  "run_context": {"run_id": "bug-20260831T142000+0800-BGS-83808", "operator_owner_id": "wu-you", "target_owner_id": "wu-you", "sheet_name": "bug", "sheet_row": 412}
+}

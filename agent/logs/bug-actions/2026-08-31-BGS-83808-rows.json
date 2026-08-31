@@ -1,0 +1,23 @@
+[
+  {
+    "key": "BGS-83808",
+    "summary": "预约充电停止后悬浮球仍显示充电中",
+    "date": "2026-08-31",
+    "info": "现象：未预约时开始充电，再开启预约充电后实际已停止充电，但能量管理页/悬浮球仍显示“充电中”；实现评论确认BcuChrgSts已反馈充电结束，被兜底显示逻辑拦截。[BGS-83808 Jira原票·评论/视频]\n正式资料：悬浮球应显示当前充电状态；充电结束应映射为“充电结束/充电已充满”，未充电仅对应未充电枚举。[C385充放电能量管理V4.2·第56/59页]",
+    "info_links": [
+      {"label": "BGS-83808 Jira原票·评论/视频", "url": "http://jira.i-tetris.com/browse/BGS-83808"},
+      {"label": "C385充放电能量管理V4.2·第56/59页", "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"}
+    ],
+    "judgment": "结论：定义为有效状态映射缺陷，待补齐客户发生版本后转研发。正式定义要求充电悬浮球显示当前充电状态，BcuChrgSts反馈充电结束时应显示“充电结束/充电已充满”，不能继续显示“充电中”，也不应改为“未充电”。\n依据：[BGS-83808 Jira原票·评论/视频]；[C385充放电能量管理V4.2·第56/59页]。\n处理：吴优向客户收集完整客户测试用例，包括客户问题编号、发生版本、完整前置条件和复现概率；信息齐全后由C385 Android-Energy研发负责人删除“充电中”兜底拦截并按BcuChrgSts正确映射。",
+    "judgment_links": [
+      {"label": "BGS-83808 Jira原票·评论/视频", "url": "http://jira.i-tetris.com/browse/BGS-83808"},
+      {"label": "C385充放电能量管理V4.2·第56/59页", "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"}
+    ],
+    "status": "待确认",
+    "note": "缺客户发生版本、完整前置条件和复现概率；补齐后转Android-Energy修复。",
+    "links": [
+      {"label": "Jira原票·BGS-83808", "url": "http://jira.i-tetris.com/browse/BGS-83808"},
+      {"label": "C385充放电能量管理V4.2·第56/59页", "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"}
+    ]
+  }
+]

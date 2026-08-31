@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260831T142000+0800-BGS-83808",
+  "operator_owner_id": "wu-you",
+  "status": "complete",
+  "started_at": "2026-08-31T14:20:00+08:00",
+  "query_summary": "BGS-83808完整Bug流程；读取Jira、评论/附件与C385充放电能量管理V4.2，查重后计划新增吴优负责人清单第412行。",
+  "items": [
+    {
+      "jira_key": "BGS-83808",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 412,
+      "manifest_path": "agent/logs/bug-actions/2026-08-31-BGS-83808-manifest.json",
+      "readback_path": "agent/logs/bug-actions/2026-08-31-BGS-83808-readback.json",
+      "validation_path": "agent/logs/bug-actions/2026-08-31-BGS-83808-validation.json",
+      "readback_sha256": "0e7de30e78eaef00aa2b9ba1d0d7fa9c9e280a1763eaef7b6e8827d84dab5351"
+    }
+  ],
+  "action_log": "agent/logs/bug-actions/2026-08-31-BGS-83808.md",
+  "completed_at": "2026-08-31T14:50:00+08:00"
+}
