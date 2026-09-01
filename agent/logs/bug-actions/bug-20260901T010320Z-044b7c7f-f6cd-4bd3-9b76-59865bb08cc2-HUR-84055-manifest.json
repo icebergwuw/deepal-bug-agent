@@ -1,0 +1,135 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-84055",
+  "comment_causality": "J90A瑞典语用例将“Förläng lite”标为露营时长减少一点，但该瑞典语原话表示延长一点，实际执行也为增加。标准语料表mode_08_08同样把表示增加一点的瑞典语Öka varaktigheten en aning映射到中文减少一点，形成方向性标注冲突。",
+  "customer_issue": {"identified": false},
+  "related_issues": {"checked": true, "items": []},
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": false, "reason": "由voice专项画像覆盖。"},
+    "voice": {"applicable": true, "reason": "涉及瑞典语query、模糊步长语料、Alchemy标准/项目功能点和车端执行。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图导航。"},
+    "visible_interaction": {"applicable": false, "reason": "争议是语料方向与语音执行，不是可见节点选择。"}
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "hur84055-jira",
+      "source": "HUR-84055 Jira原票",
+      "source_location": "字段、描述、附件截图及全部评论",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A EU / 瑞典语",
+      "trigger": "露营模式编辑状态说Förläng lite",
+      "target_behavior": "Jira中文标注为减少一点，实际执行为增加；附件显示原话与执行结果。",
+      "match": "exact",
+      "reason": "证明当前测试用例标签和实车执行的方向冲突。"
+    },
+    {
+      "source_id": "hur84055-corpus",
+      "source": "OTA节点_J90A-标准语料_V0.7.xlsx",
+      "source_location": "Sheet 8_瑞典语，第486行，Key mode_08_08",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "J90A / 瑞典语",
+      "trigger": "中文标签“露营模式减少一点时长”对应瑞典语Öka varaktigheten en aning",
+      "target_behavior": "同一行中文为减少、瑞典语字面为增加一点，证明标准语料本身存在方向性错配风险。",
+      "match": "exact",
+      "reason": "与Jira原话并非完全相同词形，但属于同场景同方向的语料配置证据；需用Alchemy锁定本票实际meta_id和当前映射。"
+    },
+    {
+      "source_id": "hur84055-alchemy-gap",
+      "source": "Alchemy J90A当前配置不可访问",
+      "source_location": "2026-09-01打开Alchemy后跳转SSO登录页；未输入凭据",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "J90A",
+      "trigger": "Förläng lite",
+      "target_behavior": "当前classification、operations、slot/canonical、meta_id、标准功能点、项目功能点及发布下发状态均未取得。",
+      "match": "gap",
+      "material": true,
+      "next_action": "恢复Alchemy登录后测试Jira原话并读取标准/项目功能点及下发状态。",
+      "reason": "缺少当前配置链会改变责任落点和是否仅为测试语料错误。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-09-01",
+      "search_location": "Google Drive网页搜索及本地下载的J90A情景模式PDF/标准语料；当前运行无Google Drive connector工具",
+      "queries": [
+        {"kind": "jira_key", "text": "HUR-84055"},
+        {"kind": "problem_concept", "text": "J90A 瑞典语 露营模式 时长 增加一点 减少一点"},
+        {"kind": "module_artifact", "text": "J90A 情景模式 标准语料"},
+        {"kind": "exact_document_name", "text": "OTA节点_J90A-标准语料_V0.7.xlsx"},
+        {"kind": "exact_document_name", "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"},
+        {"kind": "version_family", "text": "OTA节点_J90A-标准语料"}
+      ],
+      "source_ids": [],
+      "reason": "网页搜索和下载正文已执行，但当前无Drive connector，不能保存origin=connector回执、证明完整候选数或闭合版本族。",
+      "material": true,
+      "next_action": "恢复Drive connector后重新检索精确文档名和版本族，逐项打开或排除全部候选。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "searched_at": "2026-09-01",
+      "search_location": "Alchemy J90A在线对话入口，跳转SSO登录页",
+      "queries": [{"kind": "exact_trigger", "text": "Förläng lite"}],
+      "source_ids": [],
+      "reason": "Alchemy当前会话失效，未取得实时分类、operations、slot/canonical或meta_id。",
+      "material": true,
+      "next_action": "完成安全SSO登录后测试原话并保存当前结果。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "searched_at": "2026-09-01",
+      "search_location": "Alchemy标准功能点入口，受SSO阻断",
+      "queries": [{"kind": "meta_or_function", "text": "J90A 露营模式 调节时长 标准功能点/meta_id"}],
+      "source_ids": [],
+      "reason": "未取得meta_id，无法读取标准功能点和瑞典语slot/canonical配置。",
+      "material": true,
+      "next_action": "从原话测试取得meta_id后读取标准功能详情及语料映射。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-09-01",
+      "search_location": "Alchemy J90A项目功能点入口，受SSO阻断",
+      "queries": [
+        {"kind": "meta_or_function", "text": "露营模式 调节时长 项目功能点/meta_id"},
+        {"kind": "project_scope", "text": "J90A EU 瑞典语"}
+      ],
+      "source_ids": [],
+      "reason": "未读取J90A项目继承、模糊步长策略、TTS和发布下发状态。",
+      "material": true,
+      "next_action": "读取项目功能点并核验继承、瑞典语配置、10分钟模糊步长与最近下发版本。"
+    }
+  ],
+  "search_receipts": [],
+  "conflict_resolution": "Jira中文标签要求减少一点，但瑞典语原话及实际执行均指向增加一点；标准语料V0.7第486行另有同方向错配。由于本票原话与表格用词不是逐字相同，且Alchemy当前映射不可读，不能直接关闭为测试预期错误或确定性定责。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "unavailable",
+    "original_utterance": "Förläng lite",
+    "alchemy_tested": false,
+    "standard_function": {"status": "unavailable", "reason": "Alchemy跳转SSO，未取得meta_id和标准功能点。"},
+    "project_function": {"status": "unavailable", "reason": "Alchemy跳转SSO，未读取J90A项目功能点和下发状态。"},
+    "unavailable_reason": "Alchemy登录会话失效，当前只取得Jira和本地语料证据。",
+    "next_action": "登录Alchemy后对原话做在线测试，读取meta_id、标准功能点、项目功能点和下发状态。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "J90A海外语音语料产品负责人",
+    "text": "结论：HUR-84055定义为瑞典语露营时长方向性标注疑似错误，当前保持待复核；“Förläng lite”表示延长一点，与用例中的“减少一点”标签相反，实际增加方向与原话一致。\n依据：[HUR-84055 Jira原票·描述/附件/全部评论]；[J90A标准语料V0.7·8_瑞典语第486行 mode_08_08]；Alchemy当前配置因SSO不可访问。\n处理：核对并修正本票中文语义标签、瑞典语音频/query与slot/canonical的同向映射，确认模糊步长10分钟，完成Alchemy标准/项目功能点及下发后回归；J90A海外语音语料产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260901T010320Z-044b7c7f-f6cd-4bd3-9b76-59865bb08cc2",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 400
+  }
+}

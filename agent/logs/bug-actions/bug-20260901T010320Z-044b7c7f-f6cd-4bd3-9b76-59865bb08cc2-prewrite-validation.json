@@ -1,0 +1,23 @@
+{
+  "run_id": "bug-20260901T010320Z-044b7c7f-f6cd-4bd3-9b76-59865bb08cc2",
+  "validated_at": "2026-09-01T09:24:33+08:00",
+  "phase": "prewrite",
+  "manifest_schema_version": 5,
+  "checks": {
+    "ADS-44267_manifest": {"ok": true, "errors": []},
+    "HUR-84049_manifest": {"ok": true, "errors": []},
+    "HUR-84055_manifest": {"ok": true, "errors": []},
+    "ADS-44267_decision_card": {"ok": true, "errors": []},
+    "HUR-84049_decision_card": {"ok": true, "errors": []},
+    "HUR-84055_decision_card": {"ok": true, "errors": []},
+    "run_bundle_prewrite": {"ok": true, "errors": []}
+  },
+  "write_authorized": false,
+  "blockers": [
+    "Google Drive connector is unavailable; browser searches cannot produce origin=connector receipts required by v1.16.0-trial.3.",
+    "Alchemy redirects to SSO; current utterance, meta_id, standard/project function points and release/downlink evidence are unavailable.",
+    "MasterGo access receipt is expired; the ADS-44267 target layer was not read in the current validity window."
+  ],
+  "sheet_write": "not_attempted",
+  "readback": "not_applicable"
+}

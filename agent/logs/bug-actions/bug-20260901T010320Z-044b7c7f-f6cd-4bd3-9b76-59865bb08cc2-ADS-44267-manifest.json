@@ -1,0 +1,143 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-44267",
+  "comment_causality": "客户在C673-6 SWD.3.68复现：查询指定时间天气后挂R挡，天气卡片仍覆盖AVM/360。评论存在三方冲突：历史意见称设计如此，吴优判断AVM优先级应高于天气大卡，供应商说明AVM为华为Activity且现实现无法保证层级。关联票ADS-46283仅确认生日场景可接受，不覆盖天气卡片与AVM的仲裁规则。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260602134722264",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述及附件包含C673-6、SWD.3.68、前置状态、查询天气并挂R挡的完整步骤、预期AVM最高层、实际天气卡覆盖以及截图/视频入口。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-46283",
+        "relationship": "评论引用的同类层级/场景票",
+        "read": true,
+        "outcome": "已完整读取全部9条评论；该票因客户接受生日场景行为而按Invalid关闭，不能证明天气卡片与AVM场景的目标层级。"
+      }
+    ]
+  },
+  "evidence_profiles": ["general", "visible_interaction"],
+  "evidence_profile_assessment": {
+    "general": {"applicable": true, "reason": "涉及C673天气卡片与AVM跨域层级仲裁的正式产品定义。"},
+    "voice": {"applicable": false, "reason": "语音仅用于触发天气卡片，争议不是ASR/NLU或语音功能点执行。"},
+    "map_navigation": {"applicable": false, "reason": "不涉及地图搜索、路线或导航执行。"},
+    "visible_interaction": {"applicable": true, "reason": "天气卡片与挂R后AVM/360均为前台可见界面，需核验层级与互斥规则。"}
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "ads44267-jira",
+      "source": "ADS-44267 Jira原票",
+      "source_location": "字段、描述、附件截图/视频、全部评论及问题链接",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-6 / SWD.3.68",
+      "trigger": "查询指定时间天气并显示天气卡片后挂R挡进入AVM/360",
+      "target_behavior": "当前实现中天气卡片仍位于AVM上方；附件标注天气卡片优先级P2。",
+      "match": "exact",
+      "reason": "证明本票当前复现事实与评论冲突。"
+    },
+    {
+      "source_id": "ads44267-weather-prd",
+      "source": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+      "source_location": "查询天气功能说明：指定时间Query场景、执行策略及查询指定时间天气并展示语音卡片条款",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C673-6 / 深蓝8155&8295",
+      "trigger": "指定时间天气查询",
+      "target_behavior": "支持指定时间查询并展示天气语音卡片；正文未定位到天气卡片与AVM的层级仲裁条款。",
+      "match": "exact",
+      "reason": "只证明天气卡片的正式能力，不定义挂R后的跨域层级。"
+    },
+    {
+      "source_id": "ads44267-layer-gap",
+      "source": "C673-6天气卡片与AVM层级正式定义缺口",
+      "source_location": "2026-09-01已查Drive UI候选及天气PRD正文；MasterGo当前目标图层访问回执已过期，未取得可复查图层",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "C673-6",
+      "trigger": "天气大卡显示期间挂R进入AVM/360",
+      "target_behavior": "尚未取得同范围正式资料定义AVM与P2天气卡片的优先级及Activity仲裁方式。",
+      "match": "gap",
+      "material": true,
+      "next_action": "C673系统交互产品负责人补齐生效层级仲裁规则及MasterGo目标图层，明确挂R后AVM是否强制置顶。",
+      "reason": "该规则直接决定测试预期、责任模块及是否可关闭。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-09-01",
+      "search_location": "Google Drive网页搜索及本地下载正文；当前运行无Google Drive connector工具",
+      "queries": [
+        {"kind": "jira_key", "text": "ADS-44267"},
+        {"kind": "problem_concept", "text": "天气卡片 360 AVM 层级 C673"},
+        {"kind": "module_artifact", "text": "C673-6 天气 产品需求 交互 层级"},
+        {"kind": "exact_document_name", "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx"},
+        {"kind": "version_family", "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6"}
+      ],
+      "source_ids": [],
+      "reason": "网页搜索已执行并打开强候选，但v1.16.0-trial.3要求Drive回执必须由connector产生；当前无connector，不能保存合规search_receipts或声称候选闭环。",
+      "material": true,
+      "next_action": "恢复Google Drive connector后重跑宽泛、精确文档名与版本族查询，逐项审计全部真实候选。"
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "unavailable",
+      "searched_at": "2026-09-01",
+      "search_location": "Google Drive网页搜索；当前运行无Google Drive connector工具",
+      "queries": [
+        {"kind": "jira_key", "text": "ADS-44267"},
+        {"kind": "problem_concept", "text": "C673-6 AVM 天气卡片 图层优先级 P2"},
+        {"kind": "module_artifact", "text": "C673 Components 层级 配置"}
+      ],
+      "source_ids": [],
+      "reason": "已见网页候选，但不能取得connector原始结果列表并逐项审计，未定位同项目生效层级配置。",
+      "material": true,
+      "next_action": "恢复Drive connector后读取C673组件/层级配置并保存真实回执。"
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "unavailable",
+      "searched_at": "2026-09-01",
+      "search_location": "MasterGo项目入口与Drive交互资料入口",
+      "queries": [
+        {"kind": "jira_key", "text": "ADS-44267"},
+        {"kind": "problem_concept", "text": "挂R AVM 360 天气卡片 覆盖"},
+        {"kind": "module_artifact", "text": "C673-6 AVM 交互 UE 图层"}
+      ],
+      "source_ids": [],
+      "reason": "MasterGo访问回执已过期，当前未取得可复查的fileId/layerId或目标图层；Drive connector亦不可用。",
+      "material": true,
+      "next_action": "重新登录并真实读取MasterGo目标图层，记录页面、画板、图层和层级规则。"
+    }
+  ],
+  "search_receipts": [],
+  "conflict_resolution": "天气PRD只定义天气卡片能力，不定义AVM层级。Jira中“设计如此”、AVM应高于大卡及Activity无法保证三种说法互相冲突；ADS-46283的客户接受结论属于生日场景，不能外推。正式层级配置和MasterGo目标图层未读到前保持待会诊。",
+  "voice_evidence": {
+    "applicable": false,
+    "availability": "not_applicable",
+    "alchemy_tested": false,
+    "standard_function": {"status": "not_applicable", "reason": "争议不在语音识别或功能点。"},
+    "project_function": {"status": "not_applicable", "reason": "争议不在语音项目功能点。"}
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "C673系统交互产品负责人",
+    "text": "结论：ADS-44267定义为跨域可见层级规则冲突，当前保持待会诊；天气PRD仅证明指定时间天气查询应展示天气卡片，尚不能证明挂R后天气卡片与AVM/360的优先级。\n依据：[ADS-44267 Jira原票·描述/附件/全部评论]；[天气PRD C673-6 v20250520·查询天气功能说明]；MasterGo当前图层与Drive connector回执不可用。\n处理：补齐C673-6生效层级配置和MasterGo目标图层，明确AVM Activity与P2天气卡片的仲裁规则后再判定修复或关闭；C673系统交互产品负责人处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20260901T010320Z-044b7c7f-f6cd-4bd3-9b76-59865bb08cc2",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 398
+  }
+}

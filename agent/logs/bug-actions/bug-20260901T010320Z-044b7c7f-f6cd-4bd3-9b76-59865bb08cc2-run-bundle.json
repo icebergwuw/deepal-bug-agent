@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260901T010320Z-044b7c7f-f6cd-4bd3-9b76-59865bb08cc2",
+  "operator_owner_id": "wu-you",
+  "status": "planned",
+  "started_at": "2026-09-01T09:03:20+08:00",
+  "query_summary": "Exact Jira JQL returned 28 Bugs. Wu You online bug sheet had 396 registered rows and 395 unique keys, including one duplicate. Three unregistered keys were identified: ADS-44267, HUR-84049 and HUR-84055. Required connector-origin Drive receipts, current Alchemy evidence and current MasterGo layer evidence are unavailable, so no sheet request or external write was made.",
+  "items": [
+    {
+      "jira_key": "ADS-44267",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 398,
+      "manifest_path": "agent/logs/bug-actions/bug-20260901T010320Z-044b7c7f-f6cd-4bd3-9b76-59865bb08cc2-ADS-44267-manifest.json"
+    },
+    {
+      "jira_key": "HUR-84049",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 399,
+      "manifest_path": "agent/logs/bug-actions/bug-20260901T010320Z-044b7c7f-f6cd-4bd3-9b76-59865bb08cc2-HUR-84049-manifest.json"
+    },
+    {
+      "jira_key": "HUR-84055",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 400,
+      "manifest_path": "agent/logs/bug-actions/bug-20260901T010320Z-044b7c7f-f6cd-4bd3-9b76-59865bb08cc2-HUR-84055-manifest.json"
+    }
+  ],
+  "action_log": "agent/logs/bug-actions/2026-09-01-daily-new-bugs-blocked.md"
+}
