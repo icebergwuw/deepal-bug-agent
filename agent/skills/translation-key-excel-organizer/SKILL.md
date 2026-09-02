@@ -15,7 +15,7 @@ description: Read Jira translation parent issues and all relates-to tickets, fol
    - Use the TextID row's `拆分后模块`/module field as `模块(表单)` (for example a toast entry is `19_Toast`, even when the feature is camping mode).
    - Treat Jira language signals explicitly: `EL` means 阿拉伯语; `英语`、`英文`、`英文模式` mean 英语; `阿拉伯` means 阿拉伯语. When an `EL` title also names English mode, record both `阿拉伯语、英语` rather than leaving the language unknown.
 6. Query the system date at the start of each run. Set every row's `时间` to that run date (`YYYY/M/D`) and every row's `提出人` to `吴优`; do not use Jira reporter/comment author for these two output fields.
-7. Build one row per Jira issue with exactly these columns: `时间`, `提出人`, `模块(表单)`, `KEY`, `中文`, `文言状态`, `备注`, `涉及语种`, `票号`, `是否更新`.
+7. Build one row per Jira issue/key pair with exactly these columns: `时间`, `提出人`, `模块(表单)`, `KEY`, `中文`, `文言状态`, `备注`, `涉及语种`, `票号`, `是否更新`. If one Jira ticket contains multiple keys, split them into separate rows with the same ticket number and shared evidence fields.
 8. Put the Jira key (`HUR-XXXXX`) in `票号`. Put the requested action in `文言状态` (for example `缩减翻译`, `确认翻译`, `补充翻译`, `删除多余换行`, `未提供`). Preserve uncertainty in `备注`.
 9. Never infer a missing key, language, or translation from a similar issue. Keep Jira hyperlinks in the workbook, freeze the header row, enable filters, wrap text, and verify row counts and hyperlinks after saving. Configure `是否更新` as a BOOLEAN/list validation field with default `FALSE` so the operator can manually check it.
 
