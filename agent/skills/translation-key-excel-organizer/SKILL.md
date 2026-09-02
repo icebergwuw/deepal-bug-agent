@@ -12,6 +12,8 @@ description: Read Jira translation parent issues and all relates-to tickets, fol
 3. Open the supplied Jira parent in the signed-in browser. Extract every `relates to` key, expand “more links,” de-duplicate keys, and record the total.
 4. Open each related issue and read the full comment timeline in chronological order. Select the last comment containing `<string name="KEY">VALUE</string>`. If absent, use only an explicitly stated key or source from the title/comments and mark missing fields as `未提供`.
 5. Look up each extracted key in the confirmed TextID workbook (prefer `All Key`, then the exact module sheet). Copy its module and Chinese source verbatim. If a key is absent or conflicting, keep the Jira evidence and mark the gap in `备注`.
+   - Use the TextID row's `拆分后模块`/module field as `模块(表单)` (for example a toast entry is `19_Toast`, even when the feature is camping mode).
+   - Treat Jira language tags explicitly: `EL` means 阿拉伯语; do not leave `EL` as an unknown language.
 6. Query the system date at the start of each run. Set every row's `时间` to that run date (`YYYY/M/D`) and every row's `提出人` to `吴优`; do not use Jira reporter/comment author for these two output fields.
 7. Build one row per Jira issue with exactly these columns: `时间`, `提出人`, `模块(表单)`, `KEY`, `中文`, `文言状态`, `备注`, `涉及语种`, `票号`, `是否更新`.
 8. Put the Jira key (`HUR-XXXXX`) in `票号`. Put the requested action in `文言状态` (for example `缩减翻译`, `确认翻译`, `补充翻译`, `删除多余换行`, `未提供`). Preserve uncertainty in `备注`.
