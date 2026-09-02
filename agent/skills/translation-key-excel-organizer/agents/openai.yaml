@@ -1,0 +1,4 @@
+interface:
+  display_name: "Translation Key Excel Organizer"
+  short_description: "整理 Jira 翻译票并生成标准 Excel 表格"
+  default_prompt: "读取指定 Jira 主票及关联票评论，使用确认的最新 TextID 填充模块和中文，更新标准翻译 Excel。"
