@@ -24,3 +24,12 @@
 - `取消智能语音静音` returned `meta_id=1189`, `channel=mars`, `op=close`; the same unintended `meta_id=1026` prefix operation occurred.
 - `导航为什么不说话` returned `meta_id=2820` rejection (`REJECTION`), with no navigation mute operation.
 - These are current Alchemy implementation results only; standard/project function-point detail and release/downlink receipts still need formal evidence binding before any write.
+
+## Google Drive local MCP recovery
+
+- 2026-09-03 14:01 +08:00: Codex Settings did not expose a Google Drive connector. A local stdio `google-workspace` MCP was used instead, with `drive:readonly` and `sheets:full` permissions and credentials kept outside the repository.
+- Google OAuth completed in the authenticated Chrome session as `you.wu@megatronix.co`; the callback confirmed that the new credentials were stored. No token, client secret or browser cookie was read into this log.
+- A real `search_drive_files` call succeeded after authorization. This proves that the previous `invalid_grant` came from the revoked local refresh token and was independent of the valid Chrome login sessions.
+- Exact-Key search results: `HUR-80638=0`, `ADS-47883=0`, `ADS-47882=0`, `ADS-47078=0`, `ADS-44267=0`.
+- Concept search results were not hidden as zero: `拒接电话=17`, `来电+拒接=13`, `取消多媒体静音>=100` (next page present), `多媒体+静音>=100` (next page present), `取消智能语音静音>=100` (next page present), `智能语音+静音>=100` (next page present), `导航为什么不说话=2`, `导航+静音>=100` (next page present), `天气卡片+360>=100` (next page present), `天气卡片+AVM>=100` (next page present), `全景影像+天气=58`.
+- Drive access is restored, but these broad candidate sets still require complete pagination plus per-candidate open/exclusion receipts and binding to same-project formal evidence. Therefore rows 409-413 remain unwritten in this recovery step; no Jira, Alchemy or MasterGo write was performed.
