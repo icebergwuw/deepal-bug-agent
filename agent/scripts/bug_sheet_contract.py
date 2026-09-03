@@ -76,6 +76,8 @@ COLUMNS = (
 
 COLUMN_INDEX = {chr(ord("A") + index): index for index in range(len(COLUMNS))}
 RICH_TEXT_COLUMNS = frozenset(("C", "D", "H", "J"))
+DEFAULT_FORMAT_ANCHOR_ROW = 107
+DEFAULT_FORMAT_ANCHOR_ROW_INDEX = DEFAULT_FORMAT_ANCHOR_ROW - 1
 UPDATE_MODES_PATH = (
     Path(__file__).resolve().parents[1] / "config/sheet-update-modes.json"
 )
@@ -473,7 +475,7 @@ def build_batch_requests(
     items: list[dict[str, Any]],
     *,
     date: str = "",
-    format_source_row_index: int = 1,
+    format_source_row_index: int = DEFAULT_FORMAT_ANCHOR_ROW_INDEX,
     filter_end_row_index: int | None = None,
 ) -> list[dict[str, Any]]:
     """Build Sheets batchUpdate requests for appending one new bug block."""
@@ -552,6 +554,34 @@ def build_batch_requests(
             }
         },
     ]
+
+
+def resolve_format_source_row_index(
+    owner_id: str,
+    requested_index: int | None,
+    owners: dict[str, dict[str, Any]] | None = None,
+) -> int:
+    """Return the registered fixed format anchor and reject caller overrides."""
+
+    owner = (owners or load_owners()).get(owner_id)
+    if not owner:
+        raise ValueError(f"负责人未登记：{owner_id}")
+    configured = owner.get("format_anchor_row")
+    if configured is None:
+        return 1 if requested_index is None else requested_index
+    try:
+        anchor_row = int(configured)
+    except (TypeError, ValueError) as error:
+        raise ValueError(f"负责人 {owner_id} 的 format_anchor_row 无效") from error
+    if anchor_row < 2:
+        raise ValueError(f"负责人 {owner_id} 的 format_anchor_row 不得是表头")
+    anchor_index = anchor_row - 1
+    if requested_index is not None and requested_index != anchor_index:
+        raise ValueError(
+            f"负责人 {owner_id} 固定格式锚点为第 {anchor_row} 行"
+            f"（索引 {anchor_index}），禁止改用索引 {requested_index}"
+        )
+    return anchor_index
 
 
 def _readback_rows(payload: Any) -> list[dict[str, Any]]:
@@ -672,6 +702,63 @@ def validate_append_readback(
     return errors
 
 
+FORMAT_FIELDS = (
+    "numberFormat",
+    "backgroundColor",
+    "borders",
+    "padding",
+    "horizontalAlignment",
+    "verticalAlignment",
+    "wrapStrategy",
+)
+TEXT_FORMAT_FIELDS = (
+    "foregroundColor",
+    "fontFamily",
+    "fontSize",
+    "bold",
+    "italic",
+    "strikethrough",
+    "underline",
+)
+
+
+def _fixed_format(cell: dict[str, Any]) -> dict[str, Any]:
+    """Extract fixed style fields while excluding content-specific link URIs."""
+
+    value = cell.get("effectiveFormat", {})
+    result = {field: value.get(field) for field in FORMAT_FIELDS}
+    text_format = value.get("textFormat", {})
+    result["textFormat"] = {
+        field: text_format.get(field) for field in TEXT_FORMAT_FIELDS
+    }
+    return result
+
+
+def validate_append_format(anchor_payload: Any, appended_payload: Any) -> list[str]:
+    """Require every appended A:J cell to match the fixed anchor's base style."""
+
+    errors: list[str] = []
+    anchor_rows = _readback_rows(anchor_payload)
+    rows = _readback_rows(appended_payload)
+    if len(anchor_rows) != 1:
+        return [f"格式锚点必须精确回读 1 行，实际 {len(anchor_rows)} 行"]
+    anchor_cells = anchor_rows[0].get("values", [])
+    if len(anchor_cells) != len(COLUMNS):
+        return [f"格式锚点列数为 {len(anchor_cells)}，不是 10"]
+    for row_index, row in enumerate(rows, start=1):
+        cells = row.get("values", [])
+        if len(cells) != len(COLUMNS):
+            errors.append(f"新增第{row_index}行列数为 {len(cells)}，不是 10")
+            continue
+        for column_index, (anchor, actual) in enumerate(zip(anchor_cells, cells)):
+            if _fixed_format(anchor) != _fixed_format(actual):
+                errors.append(
+                    f"新增第{row_index}行 {chr(ord('A') + column_index)}列"
+                    f"固定格式与第 {DEFAULT_FORMAT_ANCHOR_ROW} 行锚点不一致"
+                )
+    return errors
+
+
 def _load_json(stream: Any) -> Any:
     return json.load(stream)
 
@@ -679,7 +766,7 @@ def _load_json(stream: Any) -> Any:
 def validate_bound_manifests(
     manifest_paths: list[str], expected_keys: list[str]
 ) -> list[str]:
-    """Validate one schema-v4 evidence manifest for every pending sheet row."""
+    """Validate one schema-v5 evidence manifest for every pending sheet row."""
 
     errors: list[str] = []
     if len(manifest_paths) != len(expected_keys):
@@ -769,13 +856,17 @@ def main(argv: list[str] | None = None) -> int:
     build.add_argument("--start-row-index", type=int, required=True)
     build.add_argument("--owner-id", required=True)
     build.add_argument("--date", default="")
-    build.add_argument("--format-source-row-index", type=int, default=1)
+    build.add_argument(
+        "--format-source-row-index",
+        type=int,
+        help="兼容参数；若负责人已登记固定锚点，只允许传对应的 0-based 索引",
+    )
     build.add_argument("--filter-end-row-index", type=int)
     build.add_argument(
         "--manifest",
         action="append",
         required=True,
-        help="每个新增 Jira 对应的 schema-v4 manifest；按输入行顺序重复传入",
+        help="每个新增 Jira 对应的 schema-v5 manifest；按输入行顺序重复传入",
     )
     build.add_argument("--run-bundle", required=True, help="完整批次 run bundle")
     build.add_argument(
@@ -794,6 +885,11 @@ def main(argv: list[str] | None = None) -> int:
         help="按原始 rows 输入逐格校验新增行和 C/D/H/J 链接",
     )
     validate_append.add_argument("--date", default="")
+
+    sub.add_parser(
+        "validate-format",
+        help="将新增行完整格式与负责人固定锚点逐列对比",
+    )
 
     sub.add_parser("snapshot", help="读取完整 A:J 后生成写前 fingerprint")
 
@@ -823,7 +919,7 @@ def main(argv: list[str] | None = None) -> int:
     patch.add_argument(
         "--manifest",
         required=True,
-        help="与 --key 一致且已通过证据门禁的 schema-v4 manifest",
+        help="与 --key 一致且已通过证据门禁的 schema-v5 manifest",
     )
     patch.add_argument("--run-bundle", required=True, help="完整批次 run bundle")
 
@@ -856,12 +952,25 @@ def main(argv: list[str] | None = None) -> int:
             )
             sys.stdout.write("\n")
             return 1
+        try:
+            format_source_row_index = resolve_format_source_row_index(
+                args.owner_id, args.format_source_row_index
+            )
+        except ValueError as error:
+            json.dump(
+                {"ok": False, "errors": [str(error)]},
+                sys.stdout,
+                ensure_ascii=False,
+                indent=2,
+            )
+            sys.stdout.write("\n")
+            return 1
         requests = build_batch_requests(
             args.sheet_id,
             args.start_row_index,
             payload,
             date=args.date,
-            format_source_row_index=args.format_source_row_index,
+            format_source_row_index=format_source_row_index,
             filter_end_row_index=args.filter_end_row_index,
         )
         json.dump({"requests": requests}, sys.stdout, ensure_ascii=False, indent=2)
@@ -889,6 +998,25 @@ def main(argv: list[str] | None = None) -> int:
             payload["readback"],
             payload["items"],
             date=args.date,
+        )
+        json.dump(
+            {"ok": not errors, "errors": errors},
+            sys.stdout,
+            ensure_ascii=False,
+            indent=2,
+        )
+        sys.stdout.write("\n")
+        return 0 if not errors else 1
+
+    if args.command == "validate-format":
+        if (
+            not isinstance(payload, dict)
+            or "anchor_readback" not in payload
+            or "readback" not in payload
+        ):
+            parser.error("validate-format 输入必须包含 anchor_readback 和 readback")
+        errors = validate_append_format(
+            payload["anchor_readback"], payload["readback"]
         )
         json.dump(
             {"ok": not errors, "errors": errors},

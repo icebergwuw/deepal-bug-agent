@@ -144,6 +144,19 @@ def validate(root: Path, skill: Path) -> list[str]:
         if token not in agents_text:
             errors.append(f"AGENTS.md 缺少团队身份门禁：{token}")
 
+    registry_text = read(root / "agent/bug-owners/registry.yaml")
+    wu_you_block = re.search(
+        r'  - id: "wu-you"(?P<body>.*?)(?=\n  - id:|\Z)',
+        registry_text,
+        re.DOTALL,
+    )
+    if not wu_you_block or not re.search(
+        r"^    format_anchor_row:\s*107\s*$",
+        wu_you_block.group("body") if wu_you_block else "",
+        re.MULTILINE,
+    ):
+        errors.append("吴优 bug 页固定格式锚点必须登记为第 107 行")
+
     for relative in (
         "AGENTS.md",
         "agent/evidence-contract.md",
@@ -214,6 +227,9 @@ def validate(root: Path, skill: Path) -> list[str]:
         '"fields": "userEnteredValue,textFormatRuns"',
         "validate_local_write_gate",
         "--owner-id",
+        "resolve_format_source_row_index",
+        "validate_append_format",
+        "DEFAULT_FORMAT_ANCHOR_ROW = 107",
     ):
         if token not in sheet_script:
             errors.append(f"写表脚本缺少已有行安全更新能力：{token}")

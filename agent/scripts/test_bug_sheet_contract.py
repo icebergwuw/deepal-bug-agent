@@ -18,6 +18,8 @@ from bug_sheet_contract import (
     validate_readback,
     validate_bound_manifests,
     required_platforms_for_manifests,
+    resolve_format_source_row_index,
+    validate_append_format,
 )
 from test_bug_evidence_gate import hur_case
 
@@ -112,7 +114,7 @@ class BugSheetContractTest(unittest.TestCase):
             errors = validate_bound_manifests([str(path)], ["ADS-TEST"])
         self.assertTrue(any("Jira key 不一致" in error for error in errors), errors)
 
-    def test_sheet_request_accepts_valid_schema_v4_manifest(self) -> None:
+    def test_sheet_request_accepts_valid_schema_v5_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "manifest.json"
             path.write_text(
@@ -210,6 +212,49 @@ class BugSheetContractTest(unittest.TestCase):
             requests[2]["updateCells"]["fields"],
             "userEnteredValue,textFormatRuns",
         )
+        self.assertEqual(
+            requests[0]["copyPaste"]["source"]["startRowIndex"],
+            106,
+        )
+
+    def test_wu_you_format_anchor_is_fixed_to_row_107(self) -> None:
+        owners = {"wu-you": {"format_anchor_row": "107"}}
+        self.assertEqual(resolve_format_source_row_index("wu-you", None, owners), 106)
+        self.assertEqual(resolve_format_source_row_index("wu-you", 106, owners), 106)
+        with self.assertRaisesRegex(ValueError, "固定格式锚点为第 107 行"):
+            resolve_format_source_row_index("wu-you", 411, owners)
+
+    def test_append_format_must_match_anchor(self) -> None:
+        def cell(column: int) -> dict:
+            return {
+                "effectiveFormat": {
+                    "numberFormat": {"type": "DATE"} if column == 0 else None,
+                    "backgroundColor": {"red": 1, "green": 1, "blue": 1},
+                    "borders": {"bottom": {"style": "SOLID"}},
+                    "padding": {"top": 6, "right": 8, "bottom": 6, "left": 8},
+                    "horizontalAlignment": "CENTER" if column in (0, 1, 4, 6) else "LEFT",
+                    "verticalAlignment": "MIDDLE",
+                    "wrapStrategy": "WRAP",
+                    "hyperlinkDisplayType": "LINKED" if column in (1, 9) else "PLAIN_TEXT",
+                    "textFormat": {
+                        "foregroundColor": {"red": 0.1},
+                        "fontFamily": "Arial",
+                        "fontSize": 10,
+                        "bold": column in (1, 6),
+                        "italic": False,
+                        "strikethrough": False,
+                        "underline": column == 1,
+                    },
+                }
+            }
+
+        anchor = {"rowData": [{"values": [cell(i) for i in range(10)]}]}
+        matching = json.loads(json.dumps(anchor))
+        self.assertEqual(validate_append_format(anchor, matching), [])
+        mismatched = json.loads(json.dumps(anchor))
+        mismatched["rowData"][0]["values"][2]["effectiveFormat"]["padding"]["top"] = 2
+        errors = validate_append_format(anchor, mismatched)
+        self.assertIn("新增第1行 C列固定格式与第 107 行锚点不一致", errors)
 
     def test_voice_manifest_requires_alchemy_preflight(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
