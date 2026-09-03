@@ -1,0 +1,115 @@
+[
+  {
+    "date": "2026-09-03",
+    "key": "HUR-80638",
+    "summary": "拒接电话后反馈TTS被状态退出截断",
+    "info": "现象：最新1.2.11.708仍失败；Jira 2026-09-02根因时间线确认YLY_000463完整内容已生成，电话焦点释放后进入Idle，TTS以interrupted=true停止。J90A蓝牙电话功能定义V0.5第5页3.3/第24页4.9支持语音拒接；Alchemy标准1343、马自达25991均支持1065且项目已下发。\n来源：[Jira原票·HUR-80638]",
+    "judgment": "结论：HUR-80638定义为拒接电话后的语音会话退出错误，当前待回归；拒接语义和马自达项目功能点均正确，TTS被电话焦点释放后的Idle清理中断。\n依据：[HUR-80638 Jira原票·2026-09-02根因时间线]；[J90A蓝牙电话功能定义V0.5·3.3/4.9]；[Alchemy标准1343/马自达25991·已下发]。\n处理：J90A语音服务/蓝牙电话研发负责人按焦点来源区分电话结束释放与新竞争焦点，保证YLY_000463播完后退出，并在1.2.11.708之后同分支连续10次回归。",
+    "status": "待回归",
+    "note": "研发区分电话结束释放与竞争焦点；新包同分支连续10次回归。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-80638",
+        "url": "http://jira.i-tetris.com/browse/HUR-80638"
+      },
+      {
+        "label": "J90A蓝牙电话V0.5·3.3/4.9",
+        "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"
+      },
+      {
+        "label": "Alchemy标准1343",
+        "url": "https://alchemy.i-tetris.com/#/functional/points"
+      },
+      {
+        "label": "Alchemy马自达25991",
+        "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/25991"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·HUR-80638",
+        "url": "http://jira.i-tetris.com/browse/HUR-80638"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "HUR-80638 Jira原票·2026-09-02根因时间线",
+        "url": "http://jira.i-tetris.com/browse/HUR-80638"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-03",
+    "key": "ADS-47078",
+    "summary": "导航取消静音回复错误且当前原话退化拒识",
+    "info": "现象：历史NLU为1189/op=close/channel=navi但回复“关闭”，8月26日10/10失败；当前Alchemy“导航为什么不说话”已退化为2820拒识。标准1367与深蓝24512定义重复取消静音应回复“$FUNC$已经是$MODE$”，MODE=取消静音的；缺SW29/SWC.3.47下发回执。\n来源：[Jira原票·ADS-47078]",
+    "judgment": "结论：ADS-47078当前保持待复核；标准/深蓝项目功能点要求导航取消静音且重复操作应回复“取消静音的”，但当前原话已从历史1189退化为2820拒识，目标版本下发状态未闭合。\n依据：[ADS-47078 Jira原票·描述/最新回归]；[Alchemy标准1367/深蓝24512·meta_id1189]；[C673音频策略V0.6·3.3/4.1.1]。\n处理：深蓝语音产品负责人先核对“导航为什么不说话”的1189泛化、24512项目继承及SW29/SWC.3.47下发，确保当前值匹配走1006语义模板；下发后实车仍错再转BigsurMars/车端研发。",
+    "status": "待复核",
+    "note": "先恢复1189泛化并核对24512目标release下发，再回归1006语义模板。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-47078",
+        "url": "http://jira.i-tetris.com/browse/ADS-47078"
+      },
+      {
+        "label": "Alchemy标准1367",
+        "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1367"
+      },
+      {
+        "label": "Alchemy深蓝24512",
+        "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24512"
+      },
+      {
+        "label": "C673音频策略V0.6·3.3/4.1.1",
+        "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·ADS-47078",
+        "url": "http://jira.i-tetris.com/browse/ADS-47078"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "ADS-47078 Jira原票·描述/最新回归",
+        "url": "http://jira.i-tetris.com/browse/ADS-47078"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-03",
+    "key": "ADS-44267",
+    "summary": "天气卡覆盖倒车AVM的层级规则冲突",
+    "info": "客户用例完整：C673-6 SWD.3.68，天气卡显示后挂R，卡片覆盖360。天气PRD v20250520只定义查询后展示卡片；C673-6全功能清单只确认倒车AVM/360能力。当前未找到天气P2卡片与AVM Activity仲裁的正式配置或MasterGo图层。\n来源：[Jira原票·ADS-44267]",
+    "judgment": "结论：ADS-44267定义为天气卡与AVM跨域层级规则缺口，当前待会诊；天气PRD只证明应展示天气卡，不能证明挂R后仍可覆盖360。\n依据：[ADS-44267 Jira原票·描述/附件/全部评论]；[天气PRD C673-6 v20250520·查询天气]；[C673-6全功能清单·AVM/360能力]。\n处理：C673系统交互产品负责人补齐当前MasterGo页面/画板/图层或正式层级配置，明确AVM Activity与P2天气卡的仲裁；规则确认后再决定转实现修复或关闭。",
+    "status": "待会诊",
+    "note": "补当前MasterGo画板/图层或正式层级配置，明确挂R后AVM置顶规则。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-44267",
+        "url": "http://jira.i-tetris.com/browse/ADS-44267"
+      },
+      {
+        "label": "天气PRD C673-6 v20250520·查询天气",
+        "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit"
+      },
+      {
+        "label": "C673-6全功能清单·AVM/360",
+        "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票·ADS-44267",
+        "url": "http://jira.i-tetris.com/browse/ADS-44267"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "ADS-44267 Jira原票·描述/附件/全部评论",
+        "url": "http://jira.i-tetris.com/browse/ADS-44267"
+      }
+    ]
+  }
+]

@@ -1,0 +1,518 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 411,
+          "endRowIndex": 412,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 412,
+          "endRowIndex": 415,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 412,
+          "endRowIndex": 415,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 412,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-09-03"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-80638\",\"HUR-80638｜拒接电话后反馈TTS被状态退出截断\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：最新1.2.11.708仍失败；Jira 2026-09-02根因时间线确认YLY_000463完整内容已生成，电话焦点释放后进入Idle，TTS以interrupted=true停止。J90A蓝牙电话功能定义V0.5第5页3.3/第24页4.9支持语音拒接；Alchemy标准1343、马自达25991均支持1065且项目已下发。\n来源：[Jira原票·HUR-80638]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 174,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-80638"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 190
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：HUR-80638定义为拒接电话后的语音会话退出错误，当前待回归；拒接语义和马自达项目功能点均正确，TTS被电话焦点释放后的Idle清理中断。\n依据：[HUR-80638 Jira原票·2026-09-02根因时间线]；[J90A蓝牙电话功能定义V0.5·3.3/4.9]；[Alchemy标准1343/马自达25991·已下发]。\n处理：J90A语音服务/蓝牙电话研发负责人按焦点来源区分电话结束释放与新竞争焦点，保证YLY_000463播完后退出，并在1.2.11.708之后同分支连续10次回归。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 79,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-80638"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 111
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待回归"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "研发区分电话结束释放与竞争焦点；新包同分支连续10次回归。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·HUR-80638\nJ90A蓝牙电话V0.5·3.3/4.9\nAlchemy标准1343\nAlchemy马自达25991"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-80638"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 37
+                  },
+                  {
+                    "startIndex": 38,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 51
+                  },
+                  {
+                    "startIndex": 52,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/25991"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-09-03"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-47078\",\"ADS-47078｜导航取消静音回复错误且当前原话退化拒识\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：历史NLU为1189/op=close/channel=navi但回复“关闭”，8月26日10/10失败；当前Alchemy“导航为什么不说话”已退化为2820拒识。标准1367与深蓝24512定义重复取消静音应回复“$FUNC$已经是$MODE$”，MODE=取消静音的；缺SW29/SWC.3.47下发回执。\n来源：[Jira原票·ADS-47078]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 164,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47078"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 180
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：ADS-47078当前保持待复核；标准/深蓝项目功能点要求导航取消静音且重复操作应回复“取消静音的”，但当前原话已从历史1189退化为2820拒识，目标版本下发状态未闭合。\n依据：[ADS-47078 Jira原票·描述/最新回归]；[Alchemy标准1367/深蓝24512·meta_id1189]；[C673音频策略V0.6·3.3/4.1.1]。\n处理：深蓝语音产品负责人先核对“导航为什么不说话”的1189泛化、24512项目继承及SW29/SWC.3.47下发，确保当前值匹配走1006语义模板；下发后实车仍错再转BigsurMars/车端研发。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 94,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47078"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 118
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待复核"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "先恢复1189泛化并核对24512目标release下发，再回归1006语义模板。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-47078\nAlchemy标准1367\nAlchemy深蓝24512\nC673音频策略V0.6·3.3/4.1.1"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-47078"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/points/detail/1367"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 30
+                  },
+                  {
+                    "startIndex": 31,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24512"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 45
+                  },
+                  {
+                    "startIndex": 46,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-09-03"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-44267\",\"ADS-44267｜天气卡覆盖倒车AVM的层级规则冲突\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "客户用例完整：C673-6 SWD.3.68，天气卡显示后挂R，卡片覆盖360。天气PRD v20250520只定义查询后展示卡片；C673-6全功能清单只确认倒车AVM/360能力。当前未找到天气P2卡片与AVM Activity仲裁的正式配置或MasterGo图层。\n来源：[Jira原票·ADS-44267]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 140,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-44267"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 156
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：ADS-44267定义为天气卡与AVM跨域层级规则缺口，当前待会诊；天气PRD只证明应展示天气卡，不能证明挂R后仍可覆盖360。\n依据：[ADS-44267 Jira原票·描述/附件/全部评论]；[天气PRD C673-6 v20250520·查询天气]；[C673-6全功能清单·AVM/360能力]。\n处理：C673系统交互产品负责人补齐当前MasterGo页面/画板/图层或正式层级配置，明确AVM Activity与P2天气卡的仲裁；规则确认后再决定转实现修复或关闭。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 72,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-44267"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 99
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "待会诊"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "补当前MasterGo画板/图层或正式层级配置，明确挂R后AVM置顶规则。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·ADS-44267\n天气PRD C673-6 v20250520·查询天气\nC673-6全功能清单·AVM/360"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/ADS-44267"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 16
+                  },
+                  {
+                    "startIndex": 17,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 44
+                  },
+                  {
+                    "startIndex": 45,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 412,
+          "endIndex": 415
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 415,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

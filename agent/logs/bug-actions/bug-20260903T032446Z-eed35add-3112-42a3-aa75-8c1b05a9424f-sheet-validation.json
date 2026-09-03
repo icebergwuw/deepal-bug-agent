@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "errors": [],
+  "validated_range": "bug!A413:J415",
+  "keys": [
+    "HUR-80638",
+    "ADS-47078",
+    "ADS-44267"
+  ],
+  "checks": {
+    "exact_A_to_J_values": true,
+    "B_hyperlink_formulas": true,
+    "C_D_J_link_targets": true,
+    "E_false_boolean_validation": true,
+    "F_H_protected_columns_blank": true,
+    "font_arial_10": true,
+    "vertical_middle": true,
+    "wrap": true,
+    "row_auto_resize_request_applied": true,
+    "conditional_format_count_zero": true,
+    "basic_filter_A1_J415": true,
+    "new_key_occurrence_once": true
+  },
+  "readback_sha256": "acb2fdc6aff3533557ea620f12cdd8aa8e008fcb844e4adb261ad402b92fa0c8"
+}

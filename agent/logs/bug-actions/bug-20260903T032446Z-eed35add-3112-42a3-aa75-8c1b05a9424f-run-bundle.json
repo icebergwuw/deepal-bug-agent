@@ -2,11 +2,53 @@
   "schema_version": 1,
   "run_id": "bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f",
   "operator_owner_id": "wu-you",
-  "status": "planned",
+  "status": "complete",
   "started_at": "2026-09-03T11:24:46+08:00",
-  "query_summary": "Exact JQL returned 24 Bugs. Wu You online bug sheet contained 447 unique keys. Five unregistered keys were found: HUR-80638, ADS-47883, ADS-47882, ADS-47078 and ADS-44267. Google Drive access was restored through a local stdio MCP at 2026-09-03 14:01 +08:00 and real searches returned nonzero concept candidates, including paginated sets of at least 100 items. Candidate-by-candidate Drive audit and remaining formal evidence binding are incomplete, so no write is authorized yet.",
-  "items": [],
-  "new_keys": ["HUR-80638", "ADS-47883", "ADS-47882", "ADS-47078", "ADS-44267"],
-  "planned_rows": {"HUR-80638": 409, "ADS-47883": 410, "ADS-47882": 411, "ADS-47078": 412, "ADS-44267": 413},
-  "action_log": "agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-daily-new-bugs-blocked.md"
+  "query_summary": "Current exact JQL returned 22 Bugs; Wu You online bug sheet had 396 registered rows / 395 unique keys. Three current unregistered keys remain after reassignment changes: HUR-80638, ADS-47078 and ADS-44267; planned rows 413-415.",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-daily-new-bugs.md",
+  "items": [
+    {
+      "jira_key": "HUR-80638",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 413,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-HUR-80638-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-sheet-readback-raw.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-sheet-validation.json",
+      "readback_sha256": "acb2fdc6aff3533557ea620f12cdd8aa8e008fcb844e4adb261ad402b92fa0c8"
+    },
+    {
+      "jira_key": "ADS-47078",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 414,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-ADS-47078-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-sheet-readback-raw.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-sheet-validation.json",
+      "readback_sha256": "acb2fdc6aff3533557ea620f12cdd8aa8e008fcb844e4adb261ad402b92fa0c8"
+    },
+    {
+      "jira_key": "ADS-44267",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 415,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-ADS-44267-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-sheet-readback-raw.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f-sheet-validation.json",
+      "readback_sha256": "acb2fdc6aff3533557ea620f12cdd8aa8e008fcb844e4adb261ad402b92fa0c8"
+    }
+  ],
+  "new_keys": [
+    "HUR-80638",
+    "ADS-47078",
+    "ADS-44267"
+  ],
+  "excluded_after_requery": [
+    "ADS-47882",
+    "ADS-47883"
+  ],
+  "completed_at": "2026-09-03T14:48:24+08:00"
 }

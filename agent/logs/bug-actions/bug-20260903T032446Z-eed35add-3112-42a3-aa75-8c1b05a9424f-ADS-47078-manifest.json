@@ -1,0 +1,821 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-47078",
+  "run_context": {
+    "run_id": "bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 414
+  },
+  "comment_causality": "原票历史NLU为1189/op=close/channel=navi但播报“关闭”；8月26日10/10仍失败，最新Alchemy原话测试又变为2820拒识，说明formal_target与implementation_actual必须分开。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-46961",
+        "relationship": "主测试单",
+        "read": true,
+        "outcome": "已关闭的专项主单，提供原始log/video入口，不定义TTS目标。"
+      },
+      {
+        "key": "PC-38047",
+        "relationship": "blocks修复票",
+        "read": true,
+        "outcome": "已关闭；基础Recipe曾调整取消静音回复，但不能证明C673-7音色覆盖和当前release已生效。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项链路。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票不涉及该专项链路。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项链路。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及该专项链路。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "a47078-jira",
+      "source": "ADS-47078 Jira原票",
+      "source_location": "描述；2026-08-24、08-26、08-29、09-02评论；关联ADS-46961与PC-38047",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-7 / SWB.3.49至SWC.3.47",
+      "trigger": "导航未静音时说“导航为什么不说话”",
+      "target_behavior": "历史车端返回“导航已经是关闭的了”，8月26日10/10仍失败；评论归因同ADS-47882音色覆盖。",
+      "match": "exact",
+      "reason": "证明当前车端实现和回归状态。"
+    },
+    {
+      "source_id": "a47078-prd",
+      "source": "C673_功能定义_音频策略功能定义V0.6.docx",
+      "source_location": "第6页1.2适应范围；第10页3.3语音；第12页4.1.1音频种类表“NAVI/Assistant/Music”",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C673EV/C673EVE",
+      "trigger": "导航音量/静音状态控制",
+      "target_behavior": "正式资料定义导航、助手和媒体为独立声音通道，但未给出本原话及重复取消静音TTS。",
+      "match": "exact",
+      "reason": "证明通道边界，不足以单独定义本票TTS。"
+    },
+    {
+      "source_id": "a47078-alchemy-current",
+      "source": "Alchemy BIGSUR当前原话测试",
+      "source_location": "在线对话“导航为什么不说话”，当前meta_id=2820，REJECTION",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR/C673",
+      "trigger": "导航为什么不说话",
+      "target_behavior": "当前平台已不再输出历史1189导航取消静音操作。",
+      "match": "exact",
+      "reason": "证明当前实现已出现新的NLU退化。"
+    },
+    {
+      "source_id": "a47078-alchemy-standard",
+      "source": "Alchemy标准功能点1367",
+      "source_location": "“（指定通道/全局）取消静音”，meta_id=1189；当前值已匹配TTS“$FUNC$已经是$MODE$”，MODE=取消静音的",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "让车机导航重新出声/导航取消静音",
+      "target_behavior": "标准功能要求当前已非静音时回复取消静音语义。",
+      "match": "exact",
+      "reason": "证明标准语义与TTS模板。"
+    },
+    {
+      "source_id": "a47078-alchemy-project",
+      "source": "Alchemy深蓝项目功能点24512",
+      "source_location": "meta_id=1189；继承未修改(1367)；已锁定；C673_7在项目车型范围",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝/C673_7",
+      "trigger": "导航取消静音",
+      "target_behavior": "项目继承标准功能，但页面未提供本票目标release下发回执。",
+      "match": "exact",
+      "reason": "证明项目功能点实态。"
+    },
+    {
+      "source_id": "a47078-release-gap",
+      "source": "C673-7目标版本下发与原话映射缺口",
+      "source_location": "Alchemy项目24512仅显示已锁定；未取得SW29/SWC.3.47对应下发包与“导航为什么不说话”泛化变更记录",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-7 / SW29-SWC.3.47",
+      "trigger": "导航为什么不说话",
+      "target_behavior": "需确认该原话在目标版本应继承1189，以及1006模板是否进入目标包。",
+      "match": "gap",
+      "reason": "当前2820与历史1189冲突，会改变先补配置还是转研发。",
+      "material": true,
+      "next_action": "深蓝语音产品负责人核对1189泛化、项目功能点24512及目标release下发；先恢复正确canonical/TTS再实车回归。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-03",
+      "search_location": "Google Drive 本地 stdio MCP（公司账号 OAuth）",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47078"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "导航为什么不说话 取消静音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673_功能定义_音频策略功能定义V0.6.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_音频策略功能定义V0.6.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673 音频策略 V0.6"
+        }
+      ],
+      "source_ids": [
+        "a47078-prd"
+      ],
+      "search_receipt_ids": [
+        "a47078-key",
+        "a47078-concept",
+        "a47078-doc",
+        "a47078-doc-exact",
+        "a47078-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 21,
+        "candidates": [
+          {
+            "id": "1VPXk6D0yPRZpMb9_dlLWd2RfHcPqp0Yz",
+            "title": "罗稚钦工作说明.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1VPXk6D0yPRZpMb9_dlLWd2RfHcPqp0Yz/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+            "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.14",
+            "url": "https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：【正式版】长安系_海外各国语料清单汇总_V0.3.2.14"
+          },
+          {
+            "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+            "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+            "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "a47078-prd"
+            ],
+            "version_family": "C673 音频策略 V0.6"
+          },
+          {
+            "id": "1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv",
+            "title": "D587-G文档管理-20260729.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+            "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）"
+          },
+          {
+            "id": "1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME",
+            "title": "C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+            "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME/view?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C385&C673_功能描述_智能情景模式功能定义V3.8.pdf"
+          },
+          {
+            "id": "1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+            "url": "https://docs.google.com/document/d/1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx"
+          },
+          {
+            "id": "1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+            "url": "https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C385_C673_功能描述_智能情景模式功能定义V4.9.docx"
+          },
+          {
+            "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+            "url": "https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C385_C673_功能描述_智能情景模式功能定义V4.9.docx"
+          },
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1B0iqxJoepey97aAfGpdytvXzVTmOa8KP",
+            "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+            "url": "https://docs.google.com/document/d/1B0iqxJoepey97aAfGpdytvXzVTmOa8KP/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx"
+          },
+          {
+            "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+            "title": "C673-6全功能清单V1.3--可编辑",
+            "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C673-6全功能清单V1.3--可编辑"
+          },
+          {
+            "id": "1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH",
+            "title": "C673_功能定义_蓝牙电话功能定义V0.8.pdf",
+            "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH/view?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C673_功能定义_蓝牙电话功能定义V0.8.pdf"
+          },
+          {
+            "id": "1h5-hsbhDs9r38t_x9fx22mPSsQMBadab_0RNAwVOy1Q",
+            "title": "冯智秀工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1h5-hsbhDs9r38t_x9fx22mPSsQMBadab_0RNAwVOy1Q/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+            "title": "产品部周报",
+            "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1oss2mCmfWgxOocq-9-fD_Fl5nVyxwqwlz66Bcke4LkU",
+            "title": "产品新人必读_v1.6",
+            "url": "https://docs.google.com/spreadsheets/d/1oss2mCmfWgxOocq-9-fD_Fl5nVyxwqwlz66Bcke4LkU/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：产品新人必读_v1.6"
+          },
+          {
+            "id": "1CAHKOunh_fT1I-ba9dSaOHDbb7E32ceL",
+            "title": "C385&C673_功能描述_智能情景模式功能定义V4.3.docx",
+            "url": "https://docs.google.com/document/d/1CAHKOunh_fT1I-ba9dSaOHDbb7E32ceL/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C385&C673_功能描述_智能情景模式功能定义V4.3.docx"
+          },
+          {
+            "id": "1UZwbfDPj9HKGoGiwfiehOuOUbS2n5lLu",
+            "title": "C385&C673_功能描述_智能情景模式功能定义V3.9.docx",
+            "url": "https://docs.google.com/document/d/1UZwbfDPj9HKGoGiwfiehOuOUbS2n5lLu/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C385&C673_功能描述_智能情景模式功能定义V3.9.docx"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+            "title": "长马项目变更管理表.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1PJNBatouUu1hrsmKk46xfuxKe0cx_QqG",
+            "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.3.docx",
+            "url": "https://docs.google.com/document/d/1PJNBatouUu1hrsmKk46xfuxKe0cx_QqG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：D587-G智能座舱域控制器-智能情景模式功能定义V0.3.docx"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "排除候选：【正式版】长安系_海外各国语料清单汇总_V0.3.2.14",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "C673 音频策略 V0.6",
+            "status": "enumerated",
+            "receipt_ids": [
+              "a47078-family"
+            ],
+            "selected_candidate_id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+            "selection_reason": "同项目正式资料标题版本与当前可访问正文一致；枚举结果未发现更新版本。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "排除候选：C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C673-6全功能清单V1.3--可编辑",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C673_功能定义_蓝牙电话功能定义V0.8.pdf",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：产品新人必读_v1.6",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C385&C673_功能描述_智能情景模式功能定义V4.3.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C385&C673_功能描述_智能情景模式功能定义V3.9.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：D587-G智能座舱域控制器-智能情景模式功能定义V0.3.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-09-03",
+      "search_location": "Alchemy在线对话测试",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "导航为什么不说话"
+        }
+      ],
+      "source_ids": [
+        "a47078-alchemy-current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-09-03",
+      "search_location": "Alchemy标准功能详情1367",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "meta_id=1189 / 指定通道取消静音"
+        }
+      ],
+      "source_ids": [
+        "a47078-alchemy-standard"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-09-03",
+      "search_location": "Alchemy深蓝项目功能详情24512",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "meta_id=1189 / 项目功能点24512"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝/C673_7"
+        }
+      ],
+      "source_ids": [
+        "a47078-alchemy-project"
+      ]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "a47078-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47078"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "a47078-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "导航为什么不说话 取消静音"
+        }
+      ],
+      "results": [
+        {
+          "id": "1VPXk6D0yPRZpMb9_dlLWd2RfHcPqp0Yz",
+          "title": "罗稚钦工作说明.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1VPXk6D0yPRZpMb9_dlLWd2RfHcPqp0Yz/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+          "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.14",
+          "url": "https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "a47078-doc",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "C673_功能定义_音频策略功能定义V0.6.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+          "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+          "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv",
+          "title": "D587-G文档管理-20260729.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+          "url": "https://docs.google.com/document/d/1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1B0iqxJoepey97aAfGpdytvXzVTmOa8KP",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+          "url": "https://docs.google.com/document/d/1B0iqxJoepey97aAfGpdytvXzVTmOa8KP/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "a47078-doc-exact",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_音频策略功能定义V0.6.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+          "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+          "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv",
+          "title": "D587-G文档管理-20260729.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+          "url": "https://docs.google.com/document/d/1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1B0iqxJoepey97aAfGpdytvXzVTmOa8KP",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+          "url": "https://docs.google.com/document/d/1B0iqxJoepey97aAfGpdytvXzVTmOa8KP/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "a47078-family",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C673 音频策略 V0.6"
+        }
+      ],
+      "results": [
+        {
+          "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+          "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+          "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv",
+          "title": "D587-G文档管理-20260729.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH",
+          "title": "C673_功能定义_蓝牙电话功能定义V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1h5-hsbhDs9r38t_x9fx22mPSsQMBadab_0RNAwVOy1Q",
+          "title": "冯智秀工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1h5-hsbhDs9r38t_x9fx22mPSsQMBadab_0RNAwVOy1Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1oss2mCmfWgxOocq-9-fD_Fl5nVyxwqwlz66Bcke4LkU",
+          "title": "产品新人必读_v1.6",
+          "url": "https://docs.google.com/spreadsheets/d/1oss2mCmfWgxOocq-9-fD_Fl5nVyxwqwlz66Bcke4LkU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1CAHKOunh_fT1I-ba9dSaOHDbb7E32ceL",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V4.3.docx",
+          "url": "https://docs.google.com/document/d/1CAHKOunh_fT1I-ba9dSaOHDbb7E32ceL/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1UZwbfDPj9HKGoGiwfiehOuOUbS2n5lLu",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.9.docx",
+          "url": "https://docs.google.com/document/d/1UZwbfDPj9HKGoGiwfiehOuOUbS2n5lLu/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+          "url": "https://docs.google.com/document/d/1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1B0iqxJoepey97aAfGpdytvXzVTmOa8KP",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+          "url": "https://docs.google.com/document/d/1B0iqxJoepey97aAfGpdytvXzVTmOa8KP/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1PJNBatouUu1hrsmKk46xfuxKe0cx_QqG",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.3.docx",
+          "url": "https://docs.google.com/document/d/1PJNBatouUu1hrsmKk46xfuxKe0cx_QqG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "conflict_resolution": "Jira历史1189与当前Alchemy 2820直接冲突；标准和项目功能点支持1189，但缺目标release下发证据，因此先归语音产品核对配置与下发，不把平台现状直接当正式目标。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "导航为什么不说话",
+    "alchemy_tested": true,
+    "alchemy_result": "当前meta_id=2820 REJECTION；历史日志为meta_id=1189, op=close, channel=navi",
+    "meta_id": "2820（当前）/1189（历史）",
+    "standard_function": {
+      "status": "verified",
+      "name": "（指定通道/全局）取消静音（标准ID1367，meta_id=1189）",
+      "assessment": "当前值已匹配应使用$FUNC$已经是$MODE$，MODE=取消静音的。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "深蓝项目功能点24512",
+      "assessment": "继承未修改(1367)、已锁定，覆盖C673_7；目标release下发回执未显示。"
+    },
+    "unavailable_reason": "缺SW29/SWC.3.47目标release下发回执，且当前原话从历史1189退化为2820。",
+    "next_action": "核对原话泛化、项目功能点和目标release下发，恢复1189后再回归音色TTS。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "深蓝语音产品负责人",
+    "text": "结论：ADS-47078当前保持待复核；标准/深蓝项目功能点要求导航取消静音且重复操作应回复“取消静音的”，但当前原话已从历史1189退化为2820拒识，目标版本下发状态未闭合。\n依据：[ADS-47078 Jira原票·描述/最新回归]；[Alchemy标准1367/深蓝24512·meta_id1189]；[C673音频策略V0.6·3.3/4.1.1]。\n处理：深蓝语音产品负责人先核对“导航为什么不说话”的1189泛化、24512项目继承及SW29/SWC.3.47下发，确保当前值匹配走1006语义模板；下发后实车仍错再转BigsurMars/车端研发。"
+  }
+}

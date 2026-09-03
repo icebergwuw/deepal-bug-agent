@@ -1,0 +1,1153 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-44267",
+  "run_context": {
+    "run_id": "bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 415
+  },
+  "comment_causality": "客户完整用例在C673-6 SWD.3.68复现；天气PRD要求展示卡片，但Jira三方意见冲突且功能清单只证明AVM能力，不证明层级。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260602134722264",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述含项目/版本/前置状态/步骤/输入/预期/实际/视频附件。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-46283",
+        "relationship": "评论引用的同类场景票",
+        "read": true,
+        "outcome": "客户仅接受生日场景的小弹窗/无卡片行为，不能外推天气大卡与AVM层级。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "general",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "本票不涉及该专项链路。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及该专项链路。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及该专项链路。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "本票不涉及该专项链路。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "w-jira",
+      "source": "ADS-44267 Jira原票",
+      "source_location": "描述、视频/截图附件、2026-07-09与2026-08-28全部评论；关联ADS-46283",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-6 / SWD.3.68",
+      "trigger": "天气卡显示后挂R挡",
+      "target_behavior": "天气卡仍覆盖AVM/360；评论在“设计如此”“AVM应更高”“Activity无法保证层级”之间冲突。",
+      "match": "exact",
+      "reason": "证明当前实现与冲突。"
+    },
+    {
+      "source_id": "w-weather-prd",
+      "source": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+      "source_location": "“查询天气”功能说明：指定时间Query、执行策略、展示语音卡片",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "深蓝8155&8295 / C673-6",
+      "trigger": "语音查询指定时间天气",
+      "target_behavior": "正式要求展示天气语音卡片，但未定义挂R后与AVM层级。",
+      "match": "exact",
+      "reason": "证明天气卡能力，不证明跨域仲裁。"
+    },
+    {
+      "source_id": "w-config",
+      "source": "C673-6全功能清单V1.3--可编辑",
+      "source_location": "AVM/360相关功能条目与倒车触发能力；正文检索未找到天气卡P2与AVM层级优先级",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-6",
+      "trigger": "挂R进入AVM/360",
+      "target_behavior": "确认项目具备倒车AVM/360能力，但不定义其与天气卡的Activity层级。",
+      "match": "exact",
+      "reason": "仅作项目能力桥接。"
+    },
+    {
+      "source_id": "w-layer-gap",
+      "source": "C673-6天气卡与AVM层级正式定义缺口",
+      "source_location": "Drive候选逐项审计；MasterGo未解析到对应fileId/layerId",
+      "source_type": "ue",
+      "role": "formal_target",
+      "project_model": "C673-6 / SWD.3.68",
+      "trigger": "天气大卡显示期间挂R",
+      "target_behavior": "尚无正式来源明确AVM Activity与天气P2卡片谁置顶、何时收起。",
+      "match": "gap",
+      "reason": "该缺口直接决定测试预期和责任模块。",
+      "material": true,
+      "next_action": "补齐生效MasterGo图层或正式层级配置，明确挂R后AVM置顶规则。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-03",
+      "search_location": "Google Drive 本地 stdio MCP（公司账号 OAuth）",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 天气 AVM"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673 天气 v20250520"
+        }
+      ],
+      "source_ids": [
+        "w-weather-prd"
+      ],
+      "search_receipt_ids": [
+        "w-key",
+        "w-concept",
+        "w-doc",
+        "w-doc-exact",
+        "w-family"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 11,
+        "candidates": [
+          {
+            "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+            "title": "产品部周报",
+            "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw",
+            "title": "深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：深蓝_8155语音控制APP和页面开启需求文档_v2.6"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+            "title": "OTA4.3开发计划.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+            "title": "C673-6全功能清单V1.3--可编辑",
+            "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C673-6全功能清单V1.3--可编辑"
+          },
+          {
+            "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+            "title": "项目新增需求评审表",
+            "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+            "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6"
+          },
+          {
+            "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+            "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+            "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：D587-G_功能定义_车辆设置功能定义V2.3.docx"
+          },
+          {
+            "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+            "title": "长马项目变更管理表.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+            "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+            "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "w-weather-prd"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "排除候选：深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C673-6全功能清单V1.3--可编辑",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：D587-G_功能定义_车辆设置功能定义V2.3.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-09-03",
+      "search_location": "Google Drive 本地 stdio MCP（公司账号 OAuth）",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 AVM 360 配置"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-6全功能清单"
+        }
+      ],
+      "source_ids": [
+        "w-config"
+      ],
+      "search_receipt_ids": [
+        "cfg-key",
+        "cfg-concept",
+        "cfg-module"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 17,
+        "candidates": [
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"
+          },
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+            "title": "李欣的工作说明（深蓝&马自达）",
+            "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+            "title": "C673-6全功能清单V1.3--可编辑",
+            "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "w-config"
+            ],
+            "version_family": "排除候选：C673-6全功能清单V1.3--可编辑"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1K19FDsI-6vUnBJFLR5NrK17JEWNamU-v",
+            "title": "长安 C673&C385-Components.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1K19FDsI-6vUnBJFLR5NrK17JEWNamU-v/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+            "title": "OTA4.3开发计划.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw",
+            "title": "深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：深蓝_8155语音控制APP和页面开启需求文档_v2.6"
+          },
+          {
+            "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+            "title": "产品部周报",
+            "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1EBVm2BziQnML7p-gKtGPAqppfWExm2np",
+            "title": "[PC]_Changan__ParkCity_OTA_DP4.0_质量审查_20260818-161420.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1EBVm2BziQnML7p-gKtGPAqppfWExm2np/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+            "url": "https://docs.google.com/document/d/1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx"
+          },
+          {
+            "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+            "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6"
+          },
+          {
+            "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+            "title": "长马项目变更管理表.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS",
+            "title": "深蓝8295平台技术方案评审V1.1.pptx",
+            "url": "https://docs.google.com/presentation/d/1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：深蓝8295平台技术方案评审V1.1.pptx"
+          },
+          {
+            "id": "1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B",
+            "title": "EPA1平台化_车辆设置功能定义V1.4.docx",
+            "url": "https://docs.google.com/document/d/1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：EPA1平台化_车辆设置功能定义V1.4.docx"
+          },
+          {
+            "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+            "title": "项目新增需求评审表",
+            "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+            "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+            "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：D587-G_功能定义_车辆设置功能定义V2.3.docx"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "排除候选：C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C673-6全功能清单V1.3--可编辑",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：深蓝8295平台技术方案评审V1.1.pptx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：EPA1平台化_车辆设置功能定义V1.4.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：D587-G_功能定义_车辆设置功能定义V2.3.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "not_found",
+      "searched_at": "2026-09-03",
+      "search_location": "Google Drive 本地 stdio MCP（公司账号 OAuth）",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673 AVM 360 交互 UE"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-6 AVM交互与天气卡片图层"
+        }
+      ],
+      "source_ids": [],
+      "search_receipt_ids": [
+        "ue-key",
+        "ue-concept",
+        "ue-module"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 11,
+        "candidates": [
+          {
+            "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+            "title": "李欣的工作说明（深蓝&马自达）",
+            "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+            "title": "OTA4.3开发计划.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+            "title": "产品部周报",
+            "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+            "title": "C673-6全功能清单V1.3--可编辑",
+            "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C673-6全功能清单V1.3--可编辑"
+          },
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：C673-G3、G5座舱全功清单_V1.7_20260730.xlsx"
+          },
+          {
+            "id": "1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS",
+            "title": "深蓝8295平台技术方案评审V1.1.pptx",
+            "url": "https://docs.google.com/presentation/d/1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：深蓝8295平台技术方案评审V1.1.pptx"
+          },
+          {
+            "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+            "title": "项目新增需求评审表",
+            "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+            "title": "长马项目变更管理表.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。"
+          },
+          {
+            "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+            "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+            "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已按标题、项目和正文相关性核验；不直接定义本票目标行为。",
+            "version_family": "排除候选：D587-G_功能定义_车辆设置功能定义V2.3.docx"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "排除候选：C673-6全功能清单V1.3--可编辑",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：深蓝8295平台技术方案评审V1.1.pptx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          },
+          {
+            "family": "排除候选：D587-G_功能定义_车辆设置功能定义V2.3.docx",
+            "status": "not_applicable",
+            "reason": "候选已因项目、模块或资料角色不匹配排除，不进入本票版本选择。"
+          }
+        ]
+      },
+      "reason": "全部11个去重候选均已按项目、标题和资料角色排除；未命中可复查的C673-6 AVM与天气卡片同画板图层，MasterGo也未解析到fileId/layerId。",
+      "material": true,
+      "next_action": "C673系统交互产品负责人提供当前生效MasterGo页面/画板/图层或正式层级配置。"
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "w-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "w-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "C673 天气 AVM"
+        }
+      ],
+      "results": [
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw",
+          "title": "深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+          "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+          "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "w-doc",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+          "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "w-doc-exact",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+          "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "w-family",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C673 天气 v20250520"
+        }
+      ],
+      "results": [
+        {
+          "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+          "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "cfg-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "cfg-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "C673 AVM 360 配置"
+        }
+      ],
+      "results": [
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+          "title": "李欣的工作说明（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1K19FDsI-6vUnBJFLR5NrK17JEWNamU-v",
+          "title": "长安 C673&C385-Components.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1K19FDsI-6vUnBJFLR5NrK17JEWNamU-v/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw",
+          "title": "深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1EBVm2BziQnML7p-gKtGPAqppfWExm2np",
+          "title": "[PC]_Changan__ParkCity_OTA_DP4.0_质量审查_20260818-161420.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1EBVm2BziQnML7p-gKtGPAqppfWExm2np/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+          "url": "https://docs.google.com/document/d/1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS",
+          "title": "深蓝8295平台技术方案评审V1.1.pptx",
+          "url": "https://docs.google.com/presentation/d/1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        },
+        {
+          "id": "1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B",
+          "title": "EPA1平台化_车辆设置功能定义V1.4.docx",
+          "url": "https://docs.google.com/document/d/1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+          "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+          "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "cfg-module",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "C673-6全功能清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ue-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "ue-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "C673 AVM 360 交互 UE"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+          "title": "李欣的工作说明（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS",
+          "title": "深蓝8295平台技术方案评审V1.1.pptx",
+          "url": "https://docs.google.com/presentation/d/1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+          "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+          "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ue-module",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "C673-6 AVM交互与天气卡片图层"
+        }
+      ],
+      "results": [
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "conflict_resolution": "“设计如此”是实现说明；“AVM应高于卡片”是产品意见；“Activity无法保证层级”是技术限制。三者均不能替代同项目生效层级规则，故保持待会诊。",
+  "voice_evidence": {
+    "applicable": false,
+    "availability": "not_applicable",
+    "alchemy_tested": false,
+    "standard_function": {
+      "status": "not_applicable",
+      "reason": "争议是卡片与AVM层级，不是语音识别。"
+    },
+    "project_function": {
+      "status": "not_applicable",
+      "reason": "语音仅触发天气卡，项目功能点不定义Activity层级。"
+    }
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "C673系统交互产品负责人",
+    "text": "结论：ADS-44267定义为天气卡与AVM跨域层级规则缺口，当前待会诊；天气PRD只证明应展示天气卡，不能证明挂R后仍可覆盖360。\n依据：[ADS-44267 Jira原票·描述/附件/全部评论]；[天气PRD C673-6 v20250520·查询天气]；[C673-6全功能清单·AVM/360能力]。\n处理：C673系统交互产品负责人补齐当前MasterGo页面/画板/图层或正式层级配置，明确AVM Activity与P2天气卡的仲裁；规则确认后再决定转实现修复或关闭。"
+  }
+}

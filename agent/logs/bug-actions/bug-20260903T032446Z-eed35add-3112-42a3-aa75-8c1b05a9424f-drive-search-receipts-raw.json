@@ -1,0 +1,1365 @@
+{
+  "run_id": "bug-20260903T032446Z-eed35add-3112-42a3-aa75-8c1b05a9424f",
+  "provider": "google_drive",
+  "origin": "connector",
+  "retrieved_at": "2026-09-03T14:36:00+08:00",
+  "receipts": [
+    {
+      "receipt_id": "hur-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-80638"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "hur-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "J90A 拒接电话"
+        }
+      ],
+      "results": [
+        {
+          "id": "1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--",
+          "title": "OTA节点_J90A-标准语料_V0.7.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1nOtLN6Kzo9biD-T0sLJnjAy76ZGy5dzXG8s-Zn-osf8",
+          "title": "J90A_EU-PI_LanguageList外发版V0.5.8_0712",
+          "url": "https://docs.google.com/spreadsheets/d/1nOtLN6Kzo9biD-T0sLJnjAy76ZGy5dzXG8s-Zn-osf8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "hur-doc",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "J90A_功能定义_蓝牙电话功能定义V0.5.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "hur-doc-exact",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_功能定义_蓝牙电话功能定义V0.5.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "hur-family",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "J90A_功能定义_蓝牙电话功能定义V0.5"
+        }
+      ],
+      "results": [
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+          "title": "J90A_海外LanguageList_V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+          "title": "李欣的工作说明（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+          "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+          "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+          "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+          "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1FCpTNtI2B5JbvtquukB9RdV-R0To8dpbJkidAXkqcPU",
+          "title": "J90A_图片提取复核临时副本",
+          "url": "https://docs.google.com/spreadsheets/d/1FCpTNtI2B5JbvtquukB9RdV-R0To8dpbJkidAXkqcPU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+          "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1xrS1B5FwM72AloQyUEGVOTCK6oTOMLJeaXlVy5Z6S8g",
+          "title": "J90A_清理新增删除线并补页面ID_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1xrS1B5FwM72AloQyUEGVOTCK6oTOMLJeaXlVy5Z6S8g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1uXZSL6u7_mGNsi6laECZZaCKwx6ktfL0msb1w27qC-g",
+          "title": "J90A_含义备注中英补充_参考原有优化版",
+          "url": "https://docs.google.com/spreadsheets/d/1uXZSL6u7_mGNsi6laECZZaCKwx6ktfL0msb1w27qC-g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+          "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1fTMDPBwpW3MYoSs7LKjTgBeqj-XBLK_bmWzvUpKBems",
+          "title": "J90A_补齐业务多语言翻译_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1fTMDPBwpW3MYoSs7LKjTgBeqj-XBLK_bmWzvUpKBems/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1i8ojdEtY1VI_tNMShfr3cP_h_uoMsbUSJXHUutksTUY",
+          "title": "J90A_同步截图_轻量预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1i8ojdEtY1VI_tNMShfr3cP_h_uoMsbUSJXHUutksTUY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1EvUn3zJ3BVSAyV6Jkw5wZrsSPrtCpisgGNK1mI6ue5s",
+          "title": "J90A_文本列补中英翻译_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1EvUn3zJ3BVSAyV6Jkw5wZrsSPrtCpisgGNK1mI6ue5s/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+          "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+          "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+          "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+          "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1puQ6uZX-L7OetNozUjAHVdbzNj92WnBsonXtck5Mi6I",
+          "title": "J90A_文本列改公式_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1puQ6uZX-L7OetNozUjAHVdbzNj92WnBsonXtck5Mi6I/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Ty4fubQOXPEK2nmk7UXtCh7yYrAuRAqubei-g15oIag",
+          "title": "J90A_反向同步AllKey_TextID_安全预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1Ty4fubQOXPEK2nmk7UXtCh7yYrAuRAqubei-g15oIag/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+          "title": "J90A_海外LanguageList内部版V1.0_260806",
+          "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Wz3a4V4q3RyQBLC9pgMumXyB48iY10aCoPTd5P7U8C4",
+          "title": "J90A_含义备注中英补充_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1Wz3a4V4q3RyQBLC9pgMumXyB48iY10aCoPTd5P7U8C4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1kFwlB3DTsUn10Y1sodPL6ggEDXQnSFTOGY199k2HkKY",
+          "title": "J90A_按模块补入旧表各sheet_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1kFwlB3DTsUn10Y1sodPL6ggEDXQnSFTOGY199k2HkKY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+          "title": "J90A_海外LanguageList_V1.1_260807",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "hur-ref",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_语音功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://docs.google.com/document/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp",
+          "title": "J90A-G -EL座舱功能清单V1.6 20260605.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1lOcSXIWQMZYE8ja4m33wRXR4qkRzn3zp/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+          "url": "https://docs.google.com/spreadsheets/d/1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "16Q76gIcxKJad0ofAD3L_74BYnxh-3V-gl9oT8VfOZqY",
+          "title": "马自达J90A_地图导航需求文档_V0.7",
+          "url": "https://docs.google.com/document/d/16Q76gIcxKJad0ofAD3L_74BYnxh-3V-gl9oT8VfOZqY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+          "title": "李欣的工作说明（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+          "title": "J90A_海外LanguageList内部版V1.0_260806",
+          "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1FCpTNtI2B5JbvtquukB9RdV-R0To8dpbJkidAXkqcPU",
+          "title": "J90A_图片提取复核临时副本",
+          "url": "https://docs.google.com/spreadsheets/d/1FCpTNtI2B5JbvtquukB9RdV-R0To8dpbJkidAXkqcPU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+          "title": "J90A_海外LanguageList_V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1xrS1B5FwM72AloQyUEGVOTCK6oTOMLJeaXlVy5Z6S8g",
+          "title": "J90A_清理新增删除线并补页面ID_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1xrS1B5FwM72AloQyUEGVOTCK6oTOMLJeaXlVy5Z6S8g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+          "title": "J90A_海外LanguageList_V1.1_260807",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+          "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+          "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+          "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+          "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1uXZSL6u7_mGNsi6laECZZaCKwx6ktfL0msb1w27qC-g",
+          "title": "J90A_含义备注中英补充_参考原有优化版",
+          "url": "https://docs.google.com/spreadsheets/d/1uXZSL6u7_mGNsi6laECZZaCKwx6ktfL0msb1w27qC-g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1puQ6uZX-L7OetNozUjAHVdbzNj92WnBsonXtck5Mi6I",
+          "title": "J90A_文本列改公式_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1puQ6uZX-L7OetNozUjAHVdbzNj92WnBsonXtck5Mi6I/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1fTMDPBwpW3MYoSs7LKjTgBeqj-XBLK_bmWzvUpKBems",
+          "title": "J90A_补齐业务多语言翻译_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1fTMDPBwpW3MYoSs7LKjTgBeqj-XBLK_bmWzvUpKBems/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1i8ojdEtY1VI_tNMShfr3cP_h_uoMsbUSJXHUutksTUY",
+          "title": "J90A_同步截图_轻量预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1i8ojdEtY1VI_tNMShfr3cP_h_uoMsbUSJXHUutksTUY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1EvUn3zJ3BVSAyV6Jkw5wZrsSPrtCpisgGNK1mI6ue5s",
+          "title": "J90A_文本列补中英翻译_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1EvUn3zJ3BVSAyV6Jkw5wZrsSPrtCpisgGNK1mI6ue5s/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Ty4fubQOXPEK2nmk7UXtCh7yYrAuRAqubei-g15oIag",
+          "title": "J90A_反向同步AllKey_TextID_安全预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1Ty4fubQOXPEK2nmk7UXtCh7yYrAuRAqubei-g15oIag/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1kFwlB3DTsUn10Y1sodPL6ggEDXQnSFTOGY199k2HkKY",
+          "title": "J90A_按模块补入旧表各sheet_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1kFwlB3DTsUn10Y1sodPL6ggEDXQnSFTOGY199k2HkKY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Wz3a4V4q3RyQBLC9pgMumXyB48iY10aCoPTd5P7U8C4",
+          "title": "J90A_含义备注中英补充_预览版",
+          "url": "https://docs.google.com/spreadsheets/d/1Wz3a4V4q3RyQBLC9pgMumXyB48iY10aCoPTd5P7U8C4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+          "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+          "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+          "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+          "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+          "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+          "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "a47078-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-47078"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "a47078-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "导航为什么不说话 取消静音"
+        }
+      ],
+      "results": [
+        {
+          "id": "1VPXk6D0yPRZpMb9_dlLWd2RfHcPqp0Yz",
+          "title": "罗稚钦工作说明.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1VPXk6D0yPRZpMb9_dlLWd2RfHcPqp0Yz/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+          "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.14",
+          "url": "https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "a47078-doc",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "C673_功能定义_音频策略功能定义V0.6.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+          "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+          "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv",
+          "title": "D587-G文档管理-20260729.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+          "url": "https://docs.google.com/document/d/1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1B0iqxJoepey97aAfGpdytvXzVTmOa8KP",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+          "url": "https://docs.google.com/document/d/1B0iqxJoepey97aAfGpdytvXzVTmOa8KP/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "a47078-doc-exact",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_音频策略功能定义V0.6.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+          "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+          "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv",
+          "title": "D587-G文档管理-20260729.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+          "url": "https://docs.google.com/document/d/1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1B0iqxJoepey97aAfGpdytvXzVTmOa8KP",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+          "url": "https://docs.google.com/document/d/1B0iqxJoepey97aAfGpdytvXzVTmOa8KP/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "a47078-family",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C673 音频策略 V0.6"
+        }
+      ],
+      "results": [
+        {
+          "id": "1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx",
+          "title": "C673_功能定义_音频策略功能定义V0.6.docx",
+          "url": "https://docs.google.com/document/d/1jOcQXhtLxBVX93-q81XIMJ11QtjKqgkx/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv",
+          "title": "D587-G文档管理-20260729.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1-OhIpKx8F-7qjJ0GGrJ-hQ9nMRlipHbv/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH",
+          "title": "C673_功能定义_蓝牙电话功能定义V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.8.pdf",
+          "url": "https://drive.google.com/file/d/1M6M33yzem48Tcl6tB2mfEXFJF1WNgUME/view?usp=drivesdk",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1h5-hsbhDs9r38t_x9fx22mPSsQMBadab_0RNAwVOy1Q",
+          "title": "冯智秀工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1h5-hsbhDs9r38t_x9fx22mPSsQMBadab_0RNAwVOy1Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx（副本）",
+          "url": "https://docs.google.com/document/d/1mAhtOwE67MCq4zsp9_iAkClhD34E2KdC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1oss2mCmfWgxOocq-9-fD_Fl5nVyxwqwlz66Bcke4LkU",
+          "title": "产品新人必读_v1.6",
+          "url": "https://docs.google.com/spreadsheets/d/1oss2mCmfWgxOocq-9-fD_Fl5nVyxwqwlz66Bcke4LkU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1CAHKOunh_fT1I-ba9dSaOHDbb7E32ceL",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V4.3.docx",
+          "url": "https://docs.google.com/document/d/1CAHKOunh_fT1I-ba9dSaOHDbb7E32ceL/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1UZwbfDPj9HKGoGiwfiehOuOUbS2n5lLu",
+          "title": "C385&C673_功能描述_智能情景模式功能定义V3.9.docx",
+          "url": "https://docs.google.com/document/d/1UZwbfDPj9HKGoGiwfiehOuOUbS2n5lLu/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.4（385-ASE2）.docx",
+          "url": "https://docs.google.com/document/d/1X9M_FkkPYHSOW5oV41HrviiswLiNoG4Z/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1M_ADA5f5KzLTB12YoIijgrp-gsMaCnyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://docs.google.com/document/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1B0iqxJoepey97aAfGpdytvXzVTmOa8KP",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.2.docx",
+          "url": "https://docs.google.com/document/d/1B0iqxJoepey97aAfGpdytvXzVTmOa8KP/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1PJNBatouUu1hrsmKk46xfuxKe0cx_QqG",
+          "title": "D587-G智能座舱域控制器-智能情景模式功能定义V0.3.docx",
+          "url": "https://docs.google.com/document/d/1PJNBatouUu1hrsmKk46xfuxKe0cx_QqG/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "w-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "w-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "C673 天气 AVM"
+        }
+      ],
+      "results": [
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw",
+          "title": "深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+          "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+          "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "w-doc",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+          "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "w-doc-exact",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx"
+        }
+      ],
+      "results": [
+        {
+          "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+          "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "w-family",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "version_family",
+          "text": "C673 天气 v20250520"
+        }
+      ],
+      "results": [
+        {
+          "id": "1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs",
+          "title": "Megatronix_天气_产品需求文档深蓝8155&8295_C673-6_v20250520.docx",
+          "url": "https://docs.google.com/document/d/1GVyAC6JeEN2xQhDPgM9K-RWn_eRAj7rs/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "cfg-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "cfg-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "C673 AVM 360 配置"
+        }
+      ],
+      "results": [
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+          "title": "李欣的工作说明（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1K19FDsI-6vUnBJFLR5NrK17JEWNamU-v",
+          "title": "长安 C673&C385-Components.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1K19FDsI-6vUnBJFLR5NrK17JEWNamU-v/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw",
+          "title": "深蓝_8155语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1XRkVEiJ4UY56dKNsp3_SU0ZQ3NUG7aIwkrMCV53yrbw/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1EBVm2BziQnML7p-gKtGPAqppfWExm2np",
+          "title": "[PC]_Changan__ParkCity_OTA_DP4.0_质量审查_20260818-161420.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1EBVm2BziQnML7p-gKtGPAqppfWExm2np/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+          "url": "https://docs.google.com/document/d/1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI",
+          "title": "1305_深蓝_8295语音控制APP和页面开启需求文档_v2.6",
+          "url": "https://docs.google.com/spreadsheets/d/1Cy1_2mxEId-jz5aFr5hJuN2U7-YN90b7vkC9qLq0pcI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS",
+          "title": "深蓝8295平台技术方案评审V1.1.pptx",
+          "url": "https://docs.google.com/presentation/d/1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        },
+        {
+          "id": "1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B",
+          "title": "EPA1平台化_车辆设置功能定义V1.4.docx",
+          "url": "https://docs.google.com/document/d/1zoFRexVDj25oLn9fsOEIvqjUGS8wjH8B/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+          "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+          "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "cfg-module",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "C673-6全功能清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ue-key",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-44267"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "ue-concept",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "C673 AVM 360 交互 UE"
+        }
+      ],
+      "results": [
+        {
+          "id": "1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU",
+          "title": "李欣的工作说明（深蓝&马自达）",
+          "url": "https://docs.google.com/spreadsheets/d/1dkVWO52bgDbD-RqNqA0Up3r3sWfneeoIX5-K_qvd2QU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/11TarpolrgEF0IzoksMzXFNcy9LiEkZQM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS",
+          "title": "深蓝8295平台技术方案评审V1.1.pptx",
+          "url": "https://docs.google.com/presentation/d/1c_num4mlZjS1e8XItjMJ4ax7KRQw_uyS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1",
+          "title": "长马项目变更管理表.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1p_1Yq4U1dtpd-Y3eL4kxmY1v50lPMJp1/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3",
+          "title": "D587-G_功能定义_车辆设置功能定义V2.3.docx",
+          "url": "https://docs.google.com/document/d/1rUWSBwxyyPK4VpKkocE1cR1DImGI6bX3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ue-module",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-03T14:36:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "C673-6 AVM交互与天气卡片图层"
+        }
+      ],
+      "results": [
+        {
+          "id": "18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ",
+          "title": "OTA4.3开发计划.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/18LLFs4C8bdyN3cpHbU0LQIylFNT5DMlZ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU",
+          "title": "产品部周报",
+          "url": "https://docs.google.com/spreadsheets/d/1VNK_9U-yoadIvJhrPBf-3KbL_HGeuB1QaHDEA7iDCHU/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8",
+          "title": "C673-6全功能清单V1.3--可编辑",
+          "url": "https://docs.google.com/spreadsheets/d/15Qxx8f9A-fJ2o99f_bCLm2twGVERAmA4H1VyoovW6Y8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://docs.google.com/spreadsheets/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY",
+          "title": "项目新增需求评审表",
+          "url": "https://docs.google.com/spreadsheets/d/1P6xRSdFG519GfEYJsuJY-ylsJwSg3btut7QZvrk3kzY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ]
+}
