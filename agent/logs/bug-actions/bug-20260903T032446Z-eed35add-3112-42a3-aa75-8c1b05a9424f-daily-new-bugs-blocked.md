@@ -16,3 +16,11 @@
 
 - 2026-09-03 11:26 +08:00: direct authenticated Chrome verification succeeded for Alchemy (`运营平台`, user `you.wu`) and MasterGo (`主页 - MasterGo`, 吴优 workspace). Google Sheets was also directly readable. The earlier blocker referred to expired local short-term receipts and unavailable connector-origin Drive receipts, not an expired Chrome login session.
 - Preflight access receipts were refreshed for `google_drive`, `alchemy` and `mastergo`; no external write was performed.
+
+## Current Alchemy readback
+
+- `拒接电话` in BIGSUR returned `meta_id=1065`, `phone:call:ctrl`, `op=reject_call`.
+- `取消多媒体静音` returned `meta_id=1189`, `vehicle:audio:volume:mute`, `channel=media_center`, `op=close`; the test also produced an unintended `meta_id=1026` media operation from the `@BIGSUR` prefix.
+- `取消智能语音静音` returned `meta_id=1189`, `channel=mars`, `op=close`; the same unintended `meta_id=1026` prefix operation occurred.
+- `导航为什么不说话` returned `meta_id=2820` rejection (`REJECTION`), with no navigation mute operation.
+- These are current Alchemy implementation results only; standard/project function-point detail and release/downlink receipts still need formal evidence binding before any write.
