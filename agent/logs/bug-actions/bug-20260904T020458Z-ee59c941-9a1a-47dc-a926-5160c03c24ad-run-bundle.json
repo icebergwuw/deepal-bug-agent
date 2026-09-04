@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260904T020458Z-ee59c941-9a1a-47dc-a926-5160c03c24ad",
+  "operator_owner_id": "wu-you",
+  "status": "no_changes",
+  "started_at": "2026-09-04T10:04:58+08:00",
+  "completed_at": "2026-09-04T10:23:13+08:00",
+  "query_summary": "Initial exact Jira JQL returned 15 Bugs and the Wu You online bug sheet had 415 rows. Before any write, the final exact JQL returned 12 Bugs; all 12 were already registered. The two initially unregistered candidates BGS-83923 and PC-40004 had been reassigned away from you.wu and were excluded. 本次无新增。",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260904T020458Z-ee59c941-9a1a-47dc-a926-5160c03c24ad-daily-new-bugs.md",
+  "items": [],
+  "initial_jira_count": 15,
+  "final_jira_count": 12,
+  "online_sheet_rows": 415,
+  "final_keys": [
+    "SLV-43461",
+    "SD-6421",
+    "SD-6404",
+    "SD-5515",
+    "PC-38942",
+    "PC-37759",
+    "PC-37473",
+    "HUR-82934",
+    "HUR-81582",
+    "HUR-79477",
+    "HUR-78190",
+    "ADS-44267"
+  ],
+  "excluded_after_requery": [
+    "BGS-83923",
+    "PC-40004"
+  ],
+  "new_keys": []
+}
