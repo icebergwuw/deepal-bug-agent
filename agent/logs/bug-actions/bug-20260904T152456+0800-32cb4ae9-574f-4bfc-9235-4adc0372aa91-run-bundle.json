@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260904T152456+0800-32cb4ae9-574f-4bfc-9235-4adc0372aa91",
+  "operator_owner_id": "wu-you",
+  "status": "planned",
+  "started_at": "2026-09-04T15:19:00+08:00",
+  "query_summary": "Jira exact JQL returned 18 Bugs. The Wu You online bug sheet B2:B415 returned 414 rows. Six unregistered candidates were found: ADS-49755, ADS-50016, HUR-82843, HUR-84237, PC-39978, PC-40004. Evidence gates remain incomplete; no write was performed.",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260904T152456+0800-32cb4ae9-574f-4bfc-9235-4adc0372aa91-daily-new-bugs-recheck-blocked.md",
+  "items": [],
+  "jira_count": 18,
+  "online_sheet_rows": 414,
+  "new_keys": [
+    "ADS-49755",
+    "ADS-50016",
+    "HUR-82843",
+    "HUR-84237",
+    "PC-39978",
+    "PC-40004"
+  ],
+  "blocked_reason": "Schema v5 manifests are not ready: Drive candidate/version-family audits remain open, and voice tickets lack complete Alchemy current/standard/project evidence."
+}
