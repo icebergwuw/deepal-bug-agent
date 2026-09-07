@@ -1,0 +1,118 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-84152",
+  "comment_causality": "蓝牙通话中方控调电话音量、语音调媒体音量；评论称免唤醒固定媒体但无正式目标。缺Drive正式定义及Alchemy语音链路复核。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "",
+    "test_case": {
+      "checked": true,
+      "status": "incomplete",
+      "source": "Jira描述/附件；正式客户用例未完整可读"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "本票涉及产品行为定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "详见语音缺口。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不适用。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不适用。"
+    }
+  },
+  "inheritance_chains": [],
+  "conflict_resolution": "正式Drive/Alchemy实时证据不可访问，结论降级，不写表。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "unavailable",
+    "original_utterance": "",
+    "alchemy_tested": false,
+    "meta_id": "",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮无Alchemy读取回执"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮无Alchemy读取回执"
+    },
+    "unavailable_reason": "Alchemy平台当前回执过期且未发现可用connector",
+    "next_action": "重新验证Alchemy原话、标准功能点和项目功能点"
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "Jira HUR-84152",
+      "source_location": "描述、附件元数据、全部评论；本轮2026-09-07读取",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "当前项目",
+      "trigger": "见Jira描述",
+      "target_behavior": "见Jira预期/实际",
+      "match": "exact",
+      "reason": "当前实现事实已读取。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-09-07T06:36:26Z",
+      "search_location": "Google Drive connector不可用；仅有浏览器表格读取",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-84152"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "蓝牙通话中方控调电话音量、语音调媒体音量；评论称免唤醒固定媒体但无正式目标。缺Drive正式定义及Alchemy语音链路复核。"
+        }
+      ],
+      "source_ids": [],
+      "reason": "无法生成真实provider=google_drive, origin=connector回执",
+      "material": true,
+      "next_action": "恢复Google Drive MCP并完成精确文档名、版本族、正文定位及候选审计",
+      "search_receipt_ids": [],
+      "candidate_audit": {
+        "completed": false,
+        "results_count": 0,
+        "candidates": []
+      },
+      "search_completion": {
+        "completed": false,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    }
+  ],
+  "search_receipts": [],
+  "decision": {
+    "status": "待复核",
+    "owner": "待证据门禁通过后按registry路由",
+    "text": "结论：待复核。Jira当前实现事实已读取，但正式产品定义/Alchemy实时证据不可访问，不能形成可写入的确定性产品判断。处理：恢复Google Drive/Alchemy实时读取并补齐正式章节、版本族和语音功能点证据后再定责；当前不更新线上清单。"
+  },
+  "run_context": {
+    "run_id": "bug-20260907T063626Z-4b988536-8590-459f-97c3-763a6fe850e5",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 421
+  }
+}
