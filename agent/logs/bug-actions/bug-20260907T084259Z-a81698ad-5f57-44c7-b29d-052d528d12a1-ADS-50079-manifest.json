@@ -1,0 +1,602 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-50079",
+  "run_context": {
+    "run_id": "bug-20260907T084259Z-a81698ad-5f57-44c7-b29d-052d528d12a1",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 419
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ads-prd-drive-20260907",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-07T17:10:03+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+          "title": "记忆空间-需求文档-v0.7.pdf",
+          "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Wp33prApQchr1PTt18dEOgghva__B2Wd",
+          "title": "记忆空间-需求文档-v0.1.pdf",
+          "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ads-config-drive-20260907",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-07T17:10:03+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "深蓝8155可见新表_v2.0.1"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝8295可见新表—给3D_V5.0.1"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝8295可见新表—非3DV1.0"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8155可见新表_v2.0.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295可见新表—给3D_V5.0.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295可见新表—非3DV1.0"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v2.0.1",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+          "title": "深蓝8295可见新表—给3D_V5.0.1",
+          "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+          "title": "深蓝8295可见新表—非3DV1.0",
+          "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ads-ue-drive-20260907",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-07T17:10:03+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        }
+      ],
+      "results": [
+        {
+          "id": "1f1qBB4cwcw_F56dE542hCr7HA8gA5ZJU",
+          "title": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf",
+          "url": "https://drive.google.com/file/d/1f1qBB4cwcw_F56dE542hCr7HA8gA5ZJU/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "comment_causality": "正式PRD支持可见即可说；当前Alchemy通用原话落meta_id=1919不支持，三份可见配置无命中；但客户用例不完整，保持待确认。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "客户_JIRA（未提供独立客户编号）",
+    "test_case": {
+      "checked": true,
+      "status": "incomplete",
+      "source": "Jira ADS-50079描述：缺完整前置条件、步骤、预期、实际和复现概率"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "general",
+    "voice",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "命中本票功能链，已执行对应必查资料。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "命中本票功能链，已执行对应必查资料。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "命中本票功能链，已执行对应必查资料。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "Jira ADS-50079",
+      "source_location": "描述、附件、全部评论；客户票缺完整前置条件/步骤/预期/实际/概率",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-7 舱外激光",
+      "trigger": "庆生页面说“结束庆生”",
+      "target_behavior": "不支持可见即可说。",
+      "match": "exact",
+      "reason": "证明当前客户现象和用例缺口。"
+    },
+    {
+      "source_id": "ads-prd",
+      "source": "记忆空间-需求文档-v0.7.pdf",
+      "source_location": "第35页 2.2.4.2“生日惊喜祝福”：结束庆生按钮支持可见即可说；过程中可唤醒语音助手",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝8295/C673",
+      "trigger": "庆生页面说“结束庆生”",
+      "target_behavior": "结束整体庆生应用。",
+      "match": "exact",
+      "reason": "当前最高版本PRD直接定义目标。"
+    },
+    {
+      "source_id": "ads-alchemy-current",
+      "source": "Alchemy当前在线对话",
+      "source_location": "2026-09-07 BIGSUR原话“结束庆生”返回meta_id=1919 common:func:not:supported",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR",
+      "trigger": "结束庆生",
+      "target_behavior": "当前脱离页面上下文返回不支持。",
+      "match": "exact",
+      "reason": "仅证明通用语义当前结果，不能替代可见配置。"
+    },
+    {
+      "source_id": "ads-config-gap",
+      "source": "三份当前可见配置表",
+      "source_location": "全量搜索“结束庆生/庆生/生日”均无命中",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "深蓝8155/8295 3D/非3D",
+      "trigger": "庆生页面说“结束庆生”",
+      "target_behavior": "当前配置未定位对应可见节点。",
+      "match": "gap",
+      "reason": "缺口可能改变配置责任与项目生效范围。",
+      "material": true,
+      "next_action": "由Deepal AI/可见即可说产品负责人补齐并核验生效配置。"
+    },
+    {
+      "source_id": "ads-ue-gap",
+      "source": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf",
+      "source_location": "图像型PDF，当前无法定位庆生图层",
+      "source_type": "ue",
+      "role": "context_only",
+      "project_model": "深蓝8295",
+      "trigger": "庆生页面说“结束庆生”",
+      "target_behavior": "无法核验具体图层节点。",
+      "match": "gap",
+      "reason": "UE正文不可检索。",
+      "material": true,
+      "next_action": "取得可检索UE或MasterGo生效图层后复核。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Google Workspace MCP Drive实时检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "source_ids": [
+        "ads-prd"
+      ],
+      "search_receipt_ids": [
+        "ads-prd-drive-20260907"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+            "title": "记忆空间-需求文档-v0.7.pdf",
+            "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "ads-prd"
+            ],
+            "version_family": "记忆空间-需求文档"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "文件名明确标记误加需删除。",
+            "version_family": "记忆空间-需求文档"
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "旧版本V0.6。",
+            "version_family": "记忆空间-需求文档"
+          },
+          {
+            "id": "1Wp33prApQchr1PTt18dEOgghva__B2Wd",
+            "title": "记忆空间-需求文档-v0.1.pdf",
+            "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "旧版本V0.1。",
+            "version_family": "记忆空间-需求文档"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "记忆空间-需求文档",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ads-prd-drive-20260907"
+            ],
+            "selected_candidate_id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+            "selection_reason": "V0.7为版本族最高有效版本；V0.6副本明确误加。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Google Workspace MCP Drive/Sheets实时读取",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "深蓝8155可见新表_v2.0.1"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "深蓝8295可见新表—给3D_V5.0.1"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝8295可见新表—非3DV1.0"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8155可见新表_v2.0.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295可见新表—给3D_V5.0.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8295可见新表—非3DV1.0"
+        }
+      ],
+      "source_ids": [
+        "ads-config-gap"
+      ],
+      "search_receipt_ids": [
+        "ads-config-drive-20260907"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "title": "深蓝8155可见新表_v2.0.1",
+            "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "ads-config-gap"
+            ],
+            "version_family": "深蓝8155可见新表_v2.0.1"
+          },
+          {
+            "id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+            "title": "深蓝8295可见新表—给3D_V5.0.1",
+            "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "ads-config-gap"
+            ],
+            "version_family": "深蓝8295可见新表—给3D_V5.0.1"
+          },
+          {
+            "id": "1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q",
+            "title": "深蓝8295可见新表—非3DV1.0",
+            "url": "https://docs.google.com/spreadsheets/d/1igZUJg_CV2Jb7kCTSz0zZvxtrojbLXTBdzs2ee92X2Q/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "ads-config-gap"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝8155可见新表_v2.0.1",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ads-config-drive-20260907"
+            ],
+            "selected_candidate_id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "selection_reason": "精确名称命中当前配置表并已逐表检索。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "深蓝8295可见新表—给3D_V5.0.1",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ads-config-drive-20260907"
+            ],
+            "selected_candidate_id": "1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc",
+            "selection_reason": "精确名称命中当前配置表并已逐表检索。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Google Workspace MCP Drive实时检索及PDF正文提取",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+        }
+      ],
+      "source_ids": [
+        "ads-ue-gap"
+      ],
+      "search_receipt_ids": [
+        "ads-ue-drive-20260907"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1f1qBB4cwcw_F56dE542hCr7HA8gA5ZJU",
+            "title": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf",
+            "url": "https://drive.google.com/file/d/1f1qBB4cwcw_F56dE542hCr7HA8gA5ZJU/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "ads-ue-gap"
+            ],
+            "version_family": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝_8295平台_交互设计文档_记忆空间（记忆界面）_V0.2_0701.pdf",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ads-ue-drive-20260907"
+            ],
+            "selected_candidate_id": "1f1qBB4cwcw_F56dE542hCr7HA8gA5ZJU",
+            "selection_reason": "精确名称命中当前UE并已打开；图像型正文无法定位庆生图层。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Alchemy BIGSUR在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "结束庆生"
+        }
+      ],
+      "source_ids": [
+        "ads-alchemy-current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "searched_at": "2026-09-07",
+      "search_location": "Alchemy标准功能详情",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "meta_id 1919"
+        }
+      ],
+      "source_ids": [],
+      "reason": "1919为通用不支持兜底meta，无法映射庆生可见节点标准功能。",
+      "material": true,
+      "next_action": "结合页面可见节点配置确认实际功能点。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "searched_at": "2026-09-07",
+      "search_location": "Alchemy项目功能详情",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "结束庆生可见节点"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C673-7/BIGSUR"
+        }
+      ],
+      "source_ids": [],
+      "reason": "当前未定位C673-7庆生可见节点项目功能点。",
+      "material": true,
+      "next_action": "补齐C673-7生效可见配置后回查项目功能点。"
+    }
+  ],
+  "conflict_resolution": "正式生效定义确定目标行为；Jira与Alchemy只作为当前实现事实。冲突时不以实现现状覆盖正式目标。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "结束庆生",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR返回meta_id=1919 common:func:not:supported。",
+    "meta_id": "1919",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "通用不支持兜底无法对应庆生可见节点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "未定位C673-7庆生可见项目功能点。"
+    },
+    "unavailable_reason": "生效可见配置和项目功能点未定位。",
+    "next_action": "补齐配置后复测当前/标准/项目链路。"
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "Deepal AI/可见即可说产品负责人",
+    "text": "结论：正式PRD定义“结束庆生”支持可见即可说，但当前客户测试用例与生效可见配置不完整，暂不能确定最终责任。\n依据：记忆空间PRD V0.7·第35页/2.2.4.2；Jira原票·客户描述。\n处理：向客户收集完整客户测试用例，并补齐/核验C673-7庆生页生效可见配置；Deepal AI/可见即可说产品负责人处理。"
+  }
+}

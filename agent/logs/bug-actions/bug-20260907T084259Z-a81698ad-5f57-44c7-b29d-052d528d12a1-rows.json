@@ -1,0 +1,194 @@
+[
+  {
+    "key": "PC-40004",
+    "summary": "冷启动后充电电流16A回退32A",
+    "info": "Jira原票显示同地点设置16A后冷启动回到32A；C673车辆设置V6.1明确借用C385定义，C385充放电V4.2第47-50页要求±50米内恢复地点记忆值。",
+    "judgment": "结论：PC-40004为充电电流记忆恢复缺陷，与PC-39978同根因但分别保留。\n依据：C673车辆设置V6.1·充放电章节；C385充放电V4.2·第47-50页。\n处理：同地点冷启动或OTA后恢复已保存的16A，避免定位无效或VHAL 0.0触发默认32A；Android - CarSettings 研发处理。",
+    "status": "可转研发",
+    "note": "与PC-39978同根因，冷启动触发链分别保留。",
+    "links": [
+      {
+        "label": "Jira原票·PC-40004",
+        "url": "http://jira.i-tetris.com/browse/PC-40004"
+      },
+      {
+        "label": "C673车辆设置V6.1·充放电章节",
+        "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit"
+      },
+      {
+        "label": "C385充放电V4.2·第47-50页",
+        "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-40004"
+      },
+      {
+        "label": "C673车辆设置V6.1",
+        "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit"
+      },
+      {
+        "label": "C385充放电V4.2",
+        "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "C673车辆设置V6.1·充放电章节",
+        "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit"
+      },
+      {
+        "label": "C385充放电V4.2·第47-50页",
+        "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"
+      }
+    ]
+  },
+  {
+    "key": "PC-39978",
+    "summary": "OTA后充电电流16A回退32A",
+    "info": "Jira原票显示OTA后VHAL读取0.0，页面按默认32A显示；C673车辆设置V6.1明确借用C385定义，C385充放电V4.2第47-50页要求±50米内恢复地点记忆值。",
+    "judgment": "结论：PC-39978为充电电流记忆恢复缺陷，与PC-40004同根因但分别保留。\n依据：C673车辆设置V6.1·充放电章节；C385充放电V4.2·第47-50页。\n处理：同地点冷启动或OTA后恢复已保存的16A，避免定位无效或VHAL 0.0触发默认32A；Android - CarSettings 研发处理。",
+    "status": "可转研发",
+    "note": "与PC-40004同根因，OTA触发链分别保留。",
+    "links": [
+      {
+        "label": "Jira原票·PC-39978",
+        "url": "http://jira.i-tetris.com/browse/PC-39978"
+      },
+      {
+        "label": "C673车辆设置V6.1·充放电章节",
+        "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit"
+      },
+      {
+        "label": "C385充放电V4.2·第47-50页",
+        "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/PC-39978"
+      },
+      {
+        "label": "C673车辆设置V6.1",
+        "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit"
+      },
+      {
+        "label": "C385充放电V4.2",
+        "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "C673车辆设置V6.1·充放电章节",
+        "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit"
+      },
+      {
+        "label": "C385充放电V4.2·第47-50页",
+        "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view"
+      }
+    ]
+  },
+  {
+    "key": "HUR-84152",
+    "summary": "通话中语音增大音量错误调媒体音量",
+    "info": "Jira原票及当前评论确认免唤醒逻辑固定USAGE_MEDIA；J90A系统设置V2.0第3.3节/1476-1487行要求无主体音量按当前音源焦点处理；Alchemy当前原话、标准1368和项目26409均已核验。",
+    "judgment": "结论：蓝牙通话中无主体“增大音量”应跟随当前通话焦点调节通话音量，固定调多媒体音量属于执行缺陷。\n依据：J90A系统设置V2.0·3.3节/1476-1487行；Alchemy标准1368/项目26409。\n处理：将免唤醒无主体音量调节从固定USAGE_MEDIA改为按当前音源焦点路由；Android - SystemSettings / 音量执行研发处理。",
+    "status": "可转研发",
+    "note": "已有吴优Jira评论，本轮不重复评论。",
+    "links": [
+      {
+        "label": "Jira原票·HUR-84152",
+        "url": "http://jira.i-tetris.com/browse/HUR-84152"
+      },
+      {
+        "label": "J90A系统设置V2.0·3.3节",
+        "url": "https://docs.google.com/document/d/1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8/edit"
+      },
+      {
+        "label": "Alchemy标准1368",
+        "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1368"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/HUR-84152"
+      },
+      {
+        "label": "当前评论",
+        "url": "http://jira.i-tetris.com/browse/HUR-84152"
+      },
+      {
+        "label": "J90A系统设置V2.0",
+        "url": "https://docs.google.com/document/d/1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8/edit"
+      },
+      {
+        "label": "Alchemy当前原话",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "J90A系统设置V2.0·3.3节/1476-1487行",
+        "url": "https://docs.google.com/document/d/1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8/edit"
+      },
+      {
+        "label": "Alchemy标准1368/项目26409",
+        "url": "https://alchemy.i-tetris.com/#/functional/points/detail/1368"
+      }
+    ]
+  },
+  {
+    "key": "ADS-50079",
+    "summary": "结束庆生不支持可见即可说",
+    "info": "记忆空间PRD V0.7第35页2.2.4.2定义结束庆生支持可见即可说；Alchemy当前返回meta_id=1919不支持，三份可见配置无命中；Jira原票缺完整客户测试用例。",
+    "judgment": "结论：正式PRD定义“结束庆生”支持可见即可说，但当前客户测试用例与生效可见配置不完整，暂不能确定最终责任。\n依据：记忆空间PRD V0.7·第35页/2.2.4.2；Jira原票·客户描述。\n处理：向客户收集完整客户测试用例，并补齐/核验C673-7庆生页生效可见配置；Deepal AI/可见即可说产品负责人处理。",
+    "status": "待确认",
+    "note": "待客户补齐前置条件、步骤、预期、实际和复现概率。",
+    "links": [
+      {
+        "label": "Jira原票·ADS-50079",
+        "url": "http://jira.i-tetris.com/browse/ADS-50079"
+      },
+      {
+        "label": "记忆空间PRD V0.7·第35页",
+        "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view"
+      },
+      {
+        "label": "8295 3D可见配置V5.0.1",
+        "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit"
+      }
+    ],
+    "info_links": [
+      {
+        "label": "记忆空间PRD V0.7",
+        "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view"
+      },
+      {
+        "label": "Alchemy当前",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "三份可见配置",
+        "url": "https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit"
+      },
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/ADS-50079"
+      }
+    ],
+    "judgment_links": [
+      {
+        "label": "记忆空间PRD V0.7·第35页/2.2.4.2",
+        "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view"
+      },
+      {
+        "label": "Jira原票·客户描述",
+        "url": "http://jira.i-tetris.com/browse/ADS-50079"
+      }
+    ]
+  }
+]

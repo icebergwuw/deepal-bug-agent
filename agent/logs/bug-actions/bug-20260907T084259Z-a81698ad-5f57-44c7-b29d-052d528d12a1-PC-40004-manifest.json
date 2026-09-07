@@ -1,0 +1,294 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-40004",
+  "run_context": {
+    "run_id": "bug-20260907T084259Z-a81698ad-5f57-44c7-b29d-052d528d12a1",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 416
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "pc-formal-drive-20260907",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-07T17:10:03+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "C673_功能定义_车辆设置功能定义V6.1"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_车辆设置功能定义V6.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385功能定义_充放电能量管理功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_车辆设置功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd",
+          "title": "C385功能定义_充放电能量管理功能定义V4.2.pdf",
+          "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM",
+          "title": "C673_功能定义_车辆设置功能定义V6.1",
+          "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+          "url": "https://docs.google.com/document/d/1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "comment_causality": "冷启动后定位信息无效，充电电流限值回到32A。 Jira评论显示恢复链分别出现定位无效或VHAL 0.0；PC-39978为同根因互关联票。",
+  "customer_issue": {
+    "identified": false,
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述、附件与完整评论时间线"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "PC-39978",
+        "relationship": "同根因关联票",
+        "read": true,
+        "outcome": "同为16A在重启类场景后回退32A，触发链不同，分别保留。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "命中本票功能链，已执行对应必查资料。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票不涉及语音链路。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及可见交互。"
+    }
+  },
+  "inheritance_chains": [
+    {
+      "id": "c673-c385-charge",
+      "project_model": "C673-5",
+      "function": "充放电能量管理/充电电流限值地点记忆",
+      "project_source_id": "c673-context",
+      "definition_source_id": "c385-formal",
+      "verified": true,
+      "reason": "C673 V6.1明确声明借用C385充放电定义。"
+    }
+  ],
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "Jira PC-40004",
+      "source_location": "描述、附件、全部评论及关联票；2026-09-07完整读取",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-5 / OTA_DP4.0",
+      "trigger": "设置16A后休眠唤醒冷启动",
+      "target_behavior": "冷启动后定位信息无效，充电电流限值回到32A。",
+      "match": "exact",
+      "reason": "证明当前实现现象。"
+    },
+    {
+      "source_id": "c673-context",
+      "source": "C673_功能定义_车辆设置功能定义V6.1",
+      "source_location": "充放电/能量管理章节：该功能定义借用C385",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C673-5",
+      "trigger": "设置16A后休眠唤醒冷启动",
+      "target_behavior": "C673充放电能力继承C385定义。",
+      "match": "exact",
+      "reason": "证明C673项目继承关系。"
+    },
+    {
+      "source_id": "c385-formal",
+      "source": "C385功能定义_充放电能量管理功能定义V4.2.pdf",
+      "source_location": "第47-50页：充电电流按地点保存；±50米恢复记忆值，范围外默认32A；下电按地点保存",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385定义，经C673 V6.1核验继承",
+      "trigger": "设置16A后休眠唤醒冷启动",
+      "target_behavior": "同地点冷启动或OTA后应恢复已保存16A，不应因定位无效/VHAL 0.0重置为32A。",
+      "match": "partial",
+      "reason": "被C673当前项目定义明确继承。",
+      "inheritance_chain_id": "c673-c385-charge"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Google Workspace MCP Drive实时检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "C673_功能定义_车辆设置功能定义V6.1"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385功能定义_充放电能量管理功能定义V4.2.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_车辆设置功能定义V6.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385功能定义_充放电能量管理功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_车辆设置功能定义"
+        }
+      ],
+      "source_ids": [
+        "c385-formal",
+        "c673-context"
+      ],
+      "search_receipt_ids": [
+        "pc-formal-drive-20260907"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 3,
+        "candidates": [
+          {
+            "id": "19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd",
+            "title": "C385功能定义_充放电能量管理功能定义V4.2.pdf",
+            "url": "https://drive.google.com/file/d/19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "c385-formal"
+            ],
+            "version_family": "C385功能定义_充放电能量管理功能定义"
+          },
+          {
+            "id": "1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM",
+            "title": "C673_功能定义_车辆设置功能定义V6.1",
+            "url": "https://docs.google.com/document/d/1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "c673-context"
+            ],
+            "version_family": "C673_功能定义_车辆设置功能定义"
+          },
+          {
+            "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+            "url": "https://docs.google.com/document/d/1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK/edit",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "海外新架构项目不适用于C673-5当前票。",
+            "version_family": "C673_功能定义_车辆设置功能定义"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385功能定义_充放电能量管理功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "pc-formal-drive-20260907"
+            ],
+            "selected_candidate_id": "19SnPt0OhhIUnRO2-oV5SpWTOzuJARmLd",
+            "selection_reason": "Drive版本族仅命中V4.2，且C673 V6.1明确借用该定义。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "C673_功能定义_车辆设置功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "pc-formal-drive-20260907"
+            ],
+            "selected_candidate_id": "1xJNaGIROmYece1QxietbUfbRctqOggh4DPK_Tu08gTM",
+            "selection_reason": "当前C673-5项目资料；海外新架构V0.1范围不符。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "conflict_resolution": "正式生效定义确定目标行为；Jira与Alchemy只作为当前实现事实。冲突时不以实现现状覆盖正式目标。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android - CarSettings 研发",
+    "text": "结论：PC-40004为充电电流记忆恢复缺陷，与PC-39978同根因但分别保留。\n依据：C673车辆设置V6.1·充放电章节；C385充放电V4.2·第47-50页。\n处理：同地点冷启动或OTA后恢复已保存的16A，避免定位无效或VHAL 0.0触发默认32A；Android - CarSettings 研发处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  },
+  "expected_behavior": {
+    "trigger": "设置16A后休眠唤醒冷启动",
+    "target_state": "车辆仍在原设置地点且此前已保存16A。",
+    "intent_function_signal": "系统按地点持久化并恢复充电电流限值。",
+    "ui_tts_vehicle_behavior": "设置页显示并使用16A，不回退32A。",
+    "boundary": "离开保存地点±50米范围才恢复默认32A。",
+    "source_ids": [
+      "c385-formal"
+    ]
+  }
+}

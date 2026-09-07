@@ -1,0 +1,61 @@
+{
+  "ok": true,
+  "errors": [],
+  "checks": {
+    "validate": {
+      "ok": true,
+      "errors": []
+    },
+    "validate_append": {
+      "ok": true,
+      "errors": []
+    },
+    "validate_format": {
+      "ok": true,
+      "errors": []
+    },
+    "duplicate_keys": {
+      "ok": true,
+      "counts": {
+        "PC-40004": 1,
+        "PC-39978": 1,
+        "HUR-84152": 1,
+        "ADS-50079": 1
+      },
+      "errors": []
+    },
+    "basic_filter": {
+      "ok": true,
+      "range": {
+        "sheetId": 2135747181,
+        "startRowIndex": 0,
+        "endRowIndex": 419,
+        "startColumnIndex": 0,
+        "endColumnIndex": 10
+      },
+      "errors": []
+    },
+    "format_anchor_row": 107,
+    "target_rows": [
+      416,
+      417,
+      418,
+      419
+    ],
+    "auto_resize_request": {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 415,
+          "endIndex": 419
+        }
+      }
+    },
+    "protected_columns": {
+      "E": "FALSE BOOLEAN with validation",
+      "F": "blank owner judgment",
+      "H": "blank review judgment"
+    }
+  }
+}

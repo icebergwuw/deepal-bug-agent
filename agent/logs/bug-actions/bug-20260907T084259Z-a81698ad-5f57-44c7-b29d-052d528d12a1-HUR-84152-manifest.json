@@ -1,0 +1,304 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-84152",
+  "run_context": {
+    "run_id": "bug-20260907T084259Z-a81698ad-5f57-44c7-b29d-052d528d12a1",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 418
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "hur-formal-drive-20260907",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-07T17:10:03+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_功能定义_系统设置功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8",
+          "title": "J90A_功能定义_系统设置功能定义V2.0.docx",
+          "url": "https://docs.google.com/document/d/1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "comment_causality": "Jira评论确认免唤醒逻辑固定USAGE_MEDIA，与正式定义的“按当前音源焦点”冲突；吴优已有评论，本轮不重复评论。",
+  "customer_issue": {
+    "identified": false,
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira描述、附件与完整评论时间线"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及通用定义。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "命中本票功能链，已执行对应必查资料。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本票不涉及可见交互。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "Jira HUR-84152",
+      "source_location": "描述、附件与全部评论；评论确认免唤醒音量逻辑固定USAGE_MEDIA",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A 0526",
+      "trigger": "蓝牙通话中说“增大音量”",
+      "target_behavior": "方控调电话音量，语音错误调多媒体音量。",
+      "match": "exact",
+      "reason": "证明实现固定媒体通道。"
+    },
+    {
+      "source_id": "hur-formal",
+      "source": "J90A_功能定义_系统设置功能定义V2.0.docx",
+      "source_location": "第3.3节；导出文本1476-1487行：通话音量0-20；无主体音量调节按当前音源焦点处理",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "蓝牙通话中无主体地调大音量",
+      "target_behavior": "按当前通话焦点调节通话音量。",
+      "match": "exact",
+      "reason": "正式系统设置定义直接覆盖。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy当前在线对话",
+      "source_location": "2026-09-07：“增大音量”meta_id=1186且无channel；“通话音量增大”channel=phone",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "HUR/J90A",
+      "trigger": "增大音量",
+      "target_behavior": "平台当前无主体原话不指定channel。",
+      "match": "exact",
+      "reason": "当前原话实测。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能点1368",
+      "source_location": "（指定通道/全局）音量调节-增量调节；包含媒体/通话/导航/语音助手通道",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "增大音量",
+      "target_behavior": "标准能力覆盖通话通道。",
+      "match": "exact",
+      "reason": "标准功能点实时读取。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy马自达项目功能点26409",
+      "source_location": "锁定；继承未修改（1368）",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "马自达/J90A",
+      "trigger": "增大音量",
+      "target_behavior": "项目继承标准1368未修改。",
+      "match": "exact",
+      "reason": "项目功能点实时读取。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Google Workspace MCP Drive实时检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_功能定义_系统设置功能定义V2.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_功能定义_系统设置功能定义"
+        }
+      ],
+      "source_ids": [
+        "hur-formal"
+      ],
+      "search_receipt_ids": [
+        "hur-formal-drive-20260907"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8",
+            "title": "J90A_功能定义_系统设置功能定义V2.0.docx",
+            "url": "https://docs.google.com/document/d/1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8/edit",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "hur-formal"
+            ],
+            "version_family": "J90A_功能定义_系统设置功能定义"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_功能定义_系统设置功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "hur-formal-drive-20260907"
+            ],
+            "selected_candidate_id": "1laRdGnMmzFB68BDTVAqIX6hESmqdhfX8",
+            "selection_reason": "版本族仅命中V2.0，且为当前J90A系统设置定义。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "增大音量；通话音量增大"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Alchemy标准功能详情1368",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "meta_id 1186 / 标准功能1368"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-09-07",
+      "search_location": "Alchemy项目功能详情26409",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "标准功能1368"
+        },
+        {
+          "kind": "project_scope",
+          "text": "马自达项目功能26409"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ]
+    }
+  ],
+  "conflict_resolution": "正式生效定义确定目标行为；Jira与Alchemy只作为当前实现事实。冲突时不以实现现状覆盖正式目标。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "增大音量；通话音量增大",
+    "alchemy_tested": true,
+    "alchemy_result": "无主体原话meta_id=1186且无channel；指定通话时channel=phone。",
+    "meta_id": "1186",
+    "standard_function": {
+      "status": "verified",
+      "name": "1368（指定通道/全局）音量调节 - 增量调节",
+      "assessment": "覆盖媒体、通话、导航和语音助手通道。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "26409 马自达项目功能",
+      "assessment": "锁定，继承未修改（1368）。"
+    }
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "Android - SystemSettings / 音量执行研发",
+    "text": "结论：蓝牙通话中无主体“增大音量”应跟随当前通话焦点调节通话音量，固定调多媒体音量属于执行缺陷。\n依据：J90A系统设置V2.0·3.3节/1476-1487行；Alchemy标准1368/项目26409。\n处理：将免唤醒无主体音量调节从固定USAGE_MEDIA改为按当前音源焦点路由；Android - SystemSettings / 音量执行研发处理。",
+    "implementation_source_ids": [
+      "jira-actual",
+      "alchemy-current"
+    ]
+  },
+  "expected_behavior": {
+    "trigger": "蓝牙通话中无主体说“增大音量”。",
+    "target_state": "当前音源焦点为通话。",
+    "intent_function_signal": "meta_id=1186增量调节按焦点选择phone通道。",
+    "ui_tts_vehicle_behavior": "调节通话音量0-20，不改变多媒体音量。",
+    "boundary": "明确说“通话音量”时同样走phone；非通话焦点按实际当前音源处理。",
+    "source_ids": [
+      "hur-formal"
+    ]
+  }
+}
