@@ -1,0 +1,155 @@
+[
+  {
+    "date": "2026-09-08",
+    "key": "SD-7647",
+    "summary": "波兰语设置充电站为途经点未执行",
+    "info": "必现未执行；Jira历史曾下发meta_id=1206/action=waypoint/charging_station，当前Alchemy C673-G返回空operations。 Jira历史实现为1206/waypoint，当前Alchemy同原话为空；正式PRD只定义HU/地图方式添加途经点，未定义波兰语触发。保留冲突并降级，不直接转车端。",
+    "info_links": [
+      {
+        "label": "必现未执行；Jira历史曾下发meta_id=1206/action=waypoint/charging_station，当前Alchemy C673-G返回空operations。",
+        "url": "http://jira.i-tetris.com/browse/SD-7647"
+      }
+    ],
+    "judgment": "结论：定义为待复核。标准/深蓝项目功能支持添加地址或POI为途经点，但当前C673-G波兰语原话返回空operations，且正式地图资料未定义该波兰语说法及“充电站”类别词语音边界。\n依据：Jira原票·描述/评论；Alchemy C673-G当前测试；地图PRD V6.1·第55页4.8.1。\n处理：核对波兰语泛化、charging_station类别映射和C673-G项目下发范围，补齐后复测；C673-G地图语音产品负责人处理。",
+    "judgment_links": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/SD-7647"
+      },
+      {
+        "label": "Alchemy C673-G当前测试",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "地图PRD V6.1·第55页4.8.1",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit"
+      }
+    ],
+    "status": "待复核",
+    "note": "核对波兰语泛化、charging_station类别映射和C673-G项目下发范围，补齐后复测",
+    "links": [
+      {
+        "label": "Jira原票·SD-7647",
+        "url": "http://jira.i-tetris.com/browse/SD-7647"
+      },
+      {
+        "label": "地图PRD V6.1",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit"
+      },
+      {
+        "label": "地图UE V0.7",
+        "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view"
+      },
+      {
+        "label": "Alchemy当前测试",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Alchemy项目功能",
+        "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24556"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-08",
+    "key": "SLV-44787",
+    "summary": "打开终点停车场推荐回复不支持",
+    "info": "实车10/10回复不支持；当前Alchemy BIGSUR命中meta_id=1024、target=recommend_dest_parking，但Jira日志中当前页面ui_nodes缺该节点。 测试预期要求语音打开；当前Alchemy已识别，但项目设置项范围不含该项，PRD只明确点击触发。三者冲突未闭合，降级待复核。",
+    "info_links": [
+      {
+        "label": "实车10/10回复不支持；当前Alchemy BIGSUR命中meta_id=1024、target=recommend_dest_parking，但Jira日志中当前页面ui_nodes缺该节点。",
+        "url": "http://jira.i-tetris.com/browse/SLV-44787"
+      }
+    ],
+    "judgment": "结论：定义为待复核。当前Alchemy能识别并下发recommend_dest_parking，但深蓝项目功能范围未列该设置项，生效PRD只定义点击开关，尚不能确定它是既有语音缺陷还是新增语音范围。\n依据：Jira原票·描述/评论；Alchemy 1024/项目24570；地图PRD V6.1·第104页6.6.2。\n处理：明确终点停车场推荐的语音搭载范围并补齐项目功能/可见节点配置后回归；深蓝地图语音产品负责人处理。",
+    "judgment_links": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44787"
+      },
+      {
+        "label": "Alchemy 1024/项目24570",
+        "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24570"
+      },
+      {
+        "label": "地图PRD V6.1·第104页6.6.2",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit"
+      }
+    ],
+    "status": "待复核",
+    "note": "明确终点停车场推荐的语音搭载范围并补齐项目功能/可见节点配置后回归",
+    "links": [
+      {
+        "label": "Jira原票·SLV-44787",
+        "url": "http://jira.i-tetris.com/browse/SLV-44787"
+      },
+      {
+        "label": "地图PRD V6.1",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit"
+      },
+      {
+        "label": "地图UE V0.7",
+        "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view"
+      },
+      {
+        "label": "Alchemy当前测试",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Alchemy项目功能",
+        "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24570"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-08",
+    "key": "SLV-44789",
+    "summary": "打开步行接续回复不支持",
+    "info": "实车10/10回复不支持；当前Alchemy BIGSUR返回meta_id=1919/no_matched_function，Jira历史曾出现meta_id=1024、target=continue_on_foot。 测试预期与Jira历史要求1024/continue_on_foot，但当前Alchemy不匹配，项目范围未列该项，PRD只明确点击触发。降级待复核。",
+    "info_links": [
+      {
+        "label": "实车10/10回复不支持；当前Alchemy BIGSUR返回meta_id=1919/no_matched_function，Jira历史曾出现meta_id=1024、target=continue_on_foot。",
+        "url": "http://jira.i-tetris.com/browse/SLV-44789"
+      }
+    ],
+    "judgment": "结论：定义为待复核。当前Alchemy对“打开步行接续”返回no_matched_function，Jira历史曾下发continue_on_foot；深蓝项目功能范围未列该设置项，生效PRD也只定义点击开关。\n依据：Jira原票·描述/评论；Alchemy当前1919/项目24570；地图PRD V6.1·第104页6.6.3。\n处理：明确步行接续的语音搭载范围，核对历史泛化和项目发布状态后补齐配置并回归；深蓝地图语音产品负责人处理。",
+    "judgment_links": [
+      {
+        "label": "Jira原票·描述/评论",
+        "url": "http://jira.i-tetris.com/browse/SLV-44789"
+      },
+      {
+        "label": "Alchemy当前1919/项目24570",
+        "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24570"
+      },
+      {
+        "label": "地图PRD V6.1·第104页6.6.3",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit"
+      }
+    ],
+    "status": "待复核",
+    "note": "明确步行接续的语音搭载范围，核对历史泛化和项目发布状态后补齐配置并回归",
+    "links": [
+      {
+        "label": "Jira原票·SLV-44789",
+        "url": "http://jira.i-tetris.com/browse/SLV-44789"
+      },
+      {
+        "label": "地图PRD V6.1",
+        "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit"
+      },
+      {
+        "label": "地图UE V0.7",
+        "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view"
+      },
+      {
+        "label": "Alchemy当前测试",
+        "url": "https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env="
+      },
+      {
+        "label": "Alchemy项目功能",
+        "url": "https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24570"
+      }
+    ]
+  }
+]

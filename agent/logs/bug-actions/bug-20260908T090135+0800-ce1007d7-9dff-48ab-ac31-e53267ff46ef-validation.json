@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "errors": [],
+  "checks": {
+    "validate": {
+      "ok": true,
+      "errors": []
+    },
+    "validate_append": {
+      "ok": true,
+      "errors": []
+    },
+    "validate_format": {
+      "ok": true,
+      "errors": []
+    },
+    "duplicate_keys": {
+      "ok": true,
+      "counts": {
+        "SD-7647": 1,
+        "SLV-44787": 1,
+        "SLV-44789": 1
+      },
+      "errors": []
+    },
+    "basic_filter": {
+      "ok": true,
+      "range": {
+        "sheetId": 2135747181,
+        "startRowIndex": 0,
+        "endRowIndex": 422,
+        "startColumnIndex": 0,
+        "endColumnIndex": 10
+      },
+      "errors": []
+    },
+    "row_heights": {
+      "ok": true,
+      "pixel_sizes": [
+        21,
+        21,
+        21
+      ],
+      "errors": []
+    },
+    "auto_resize_request": {
+      "ok": true,
+      "request": {
+        "autoResizeDimensions": {
+          "dimensions": {
+            "sheetId": 2135747181,
+            "dimension": "ROWS",
+            "startIndex": 419,
+            "endIndex": 422
+          }
+        }
+      },
+      "errors": []
+    }
+  },
+  "format_anchor_row": 107,
+  "target_rows": [
+    420,
+    421,
+    422
+  ],
+  "protected_columns": {
+    "E": "FALSE BOOLEAN with validation",
+    "F": "blank owner judgment",
+    "H": "blank review judgment"
+  }
+}

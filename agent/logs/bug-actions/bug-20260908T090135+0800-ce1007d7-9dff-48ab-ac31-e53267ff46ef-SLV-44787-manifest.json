@@ -1,0 +1,1281 @@
+{
+  "schema_version": 5,
+  "jira_key": "SLV-44787",
+  "run_context": {
+    "run_id": "bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 421
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SLV-44787-formal_definition_search-drive-20260908",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-08T09:27:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "results": [
+        {
+          "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+          "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+          "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+          "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+          "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+          "title": "C385&673交互设计文档_导航高德地图_v0.3",
+          "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+          "title": "长安C385&C673地图功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SLV-44787-main_prd_search-drive-20260908",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-09-08T09:27:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "results": [
+        {
+          "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+          "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+          "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+          "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+          "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+          "title": "C385&673交互设计文档_导航高德地图_v0.3",
+          "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+          "title": "长安C385&C673地图功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SLV-44787-special_definition_search-drive-20260908",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-09-08T09:27:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "results": [
+        {
+          "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+          "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+          "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+          "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+          "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+          "title": "C385&673交互设计文档_导航高德地图_v0.3",
+          "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+          "title": "长安C385&C673地图功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SLV-44787-formal_config_search-drive-20260908",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-08T09:34:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝8155可见新表 地图-高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "深蓝8155可见新表_v2.0.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8155可见新表"
+        }
+      ],
+      "results": [
+        {
+          "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+          "title": "深蓝8155可见新表_v2.0.1",
+          "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "SLV-44787-interaction_or_ue_search-drive-20260908",
+      "provider": "google_drive",
+      "origin": "connector",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-08T09:27:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "results": [
+        {
+          "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+          "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+          "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+          "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+          "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+          "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+          "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+          "mime_type": "application/pdf",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+          "title": "C385&673交互设计文档_导航高德地图_v0.3",
+          "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+          "mime_type": "application/vnd.google-apps.document",
+          "version_family": "C385&673交互设计文档_地图导航（高德）"
+        },
+        {
+          "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+          "title": "长安C385&C673地图功能清单",
+          "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "comment_causality": "当前Alchemy可下发1024/recommend_dest_parking；Jira日志显示可见节点缺失，且深蓝项目功能24570的设置项范围未列终点停车场推荐。",
+  "customer_issue": {
+    "identified": false,
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira SLV-44787 描述、附件与完整评论时间线"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SLV-44785",
+        "relationship": "Jira关联日志票",
+        "read": true,
+        "outcome": "收藏夹重复点击导致路线请求竞态的地图研发问题，不改变本票开关语音目标。"
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "voice",
+    "map_navigation",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票不涉及该专项画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "本票涉及该功能链，已执行对应必查资料。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "本票涉及该功能链，已执行对应必查资料。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "本票涉及该功能链，已执行对应必查资料。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-current",
+      "source": "Jira SLV-44787",
+      "source_location": "描述、附件、完整评论时间线及关联票",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "Jira当前车型/版本",
+      "trigger": "打开终点停车场推荐",
+      "target_behavior": "实车10/10回复不支持；当前Alchemy BIGSUR命中meta_id=1024、target=recommend_dest_parking，但Jira日志中当前页面ui_nodes缺该节点。",
+      "match": "exact",
+      "reason": "证明本票当前现象与历史诊断。"
+    },
+    {
+      "source_id": "map-prd",
+      "source": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+      "source_location": "第55页4.8.1；第63页4.14/4.15；第104页6.6.2/6.6.3",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C385/C673 高德地图",
+      "trigger": "HU点击或地图交互",
+      "target_behavior": "定义途经点、终点停车场推荐和步行接续的UI能力；两项开关触发条件只写点击。",
+      "match": "partial",
+      "reason": "同车型功能定义可证明UI能力，但未直接定义本票语音原话。"
+    },
+    {
+      "source_id": "map-ue",
+      "source": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+      "source_location": "版本记录第1页；地图设置区域及终点停车场/步行接续交互",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "C385/C673 850 高德地图",
+      "trigger": "页面点击和地图交互",
+      "target_behavior": "展示对应开关、弹窗和点击逻辑。",
+      "match": "partial",
+      "reason": "生效交互稿已读，但未直接定义语音触发。"
+    },
+    {
+      "source_id": "map-list",
+      "source": "长安C385&C673地图功能清单",
+      "source_location": "地图模块：途经点/导航设置/地图设置；清单正文",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C385/C673",
+      "trigger": "地图功能范围",
+      "target_behavior": "确认功能模块存在，不直接定义本票语音触发。",
+      "match": "partial",
+      "reason": "仅作功能范围桥接。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy BIGSUR当前在线对话",
+      "source_location": "2026-09-08原话测试：meta_id=1024，op=open，target=recommend_dest_parking",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "BIGSUR/SLV",
+      "trigger": "打开终点停车场推荐",
+      "target_behavior": "当前平台能识别并下发目标。",
+      "match": "exact",
+      "reason": "当前平台实时结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "Alchemy标准功能1451",
+      "source_location": "打开导航开关项；meta_id=1024；已锁定",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "打开导航开关项",
+      "target_behavior": "标准功能提供导航设置开关框架。",
+      "match": "partial",
+      "reason": "标准设置项示例未直接列本票目标。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "Alchemy深蓝项目功能24570",
+      "source_location": "继承未修改1451；高德范围仅实时路况/电子眼/避开限行/绿波车速；已锁定",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝/BIGSUR",
+      "trigger": "打开导航开关项",
+      "target_behavior": "当前项目范围未列终点停车场推荐。",
+      "match": "gap",
+      "reason": "缺少该设置项的语音范围定义。",
+      "material": true,
+      "next_action": "由深蓝地图语音产品负责人明确是否纳入现有项目功能或新增需求。"
+    },
+    {
+      "source_id": "visible-config",
+      "source": "深蓝8155可见新表_v2.0.1",
+      "source_location": "地图-高德页323-325行仅含终点停车场推荐弹窗按钮；未检到开关节点或recommend_dest_parking",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "深蓝8155/C673",
+      "trigger": "当前页面可见语音",
+      "target_behavior": "弹窗操作节点存在，设置开关节点未定位。",
+      "match": "gap",
+      "reason": "无法证明本票设置页开关已配置可见节点。",
+      "material": true,
+      "next_action": "核验目标版本设置页可见节点并补齐配置。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Google Workspace MCP Drive实时检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "source_ids": [
+        "map-prd",
+        "map-ue"
+      ],
+      "search_receipt_ids": [
+        "SLV-44787-formal_definition_search-drive-20260908"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 7,
+        "candidates": [
+          {
+            "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+            "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+            "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "文件名已明确标记废弃，排除为生效来源。"
+          },
+          {
+            "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+            "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-ue"
+            ]
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-prd"
+            ]
+          },
+          {
+            "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+            "title": "C385&673交互设计文档_导航高德地图_v0.3",
+            "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+            "title": "长安C385&C673地图功能清单",
+            "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-list"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-formal_definition_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "版本族只命中V6.1，已读取正文并核对本票章节。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "C385&673交互设计文档_地图导航（高德）",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-formal_definition_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "selection_reason": "V0.7是枚举到的最高生效版本；另有文件明确标记废弃，V0.6/V0.5/v0.3为旧版。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Google Workspace MCP Drive实时检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "source_ids": [
+        "map-prd"
+      ],
+      "search_receipt_ids": [
+        "SLV-44787-main_prd_search-drive-20260908"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 7,
+        "candidates": [
+          {
+            "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+            "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+            "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "文件名已明确标记废弃，排除为生效来源。"
+          },
+          {
+            "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+            "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-ue"
+            ]
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-prd"
+            ]
+          },
+          {
+            "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+            "title": "C385&673交互设计文档_导航高德地图_v0.3",
+            "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+            "title": "长安C385&C673地图功能清单",
+            "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-list"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-main_prd_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "版本族只命中V6.1，已读取正文并核对本票章节。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "C385&673交互设计文档_地图导航（高德）",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-main_prd_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "selection_reason": "V0.7是枚举到的最高生效版本；另有文件明确标记废弃，V0.6/V0.5/v0.3为旧版。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Google Workspace MCP Drive实时检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "source_ids": [
+        "map-ue"
+      ],
+      "search_receipt_ids": [
+        "SLV-44787-special_definition_search-drive-20260908"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 7,
+        "candidates": [
+          {
+            "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+            "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+            "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "文件名已明确标记废弃，排除为生效来源。"
+          },
+          {
+            "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+            "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-ue"
+            ]
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-prd"
+            ]
+          },
+          {
+            "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+            "title": "C385&673交互设计文档_导航高德地图_v0.3",
+            "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+            "title": "长安C385&C673地图功能清单",
+            "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-list"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-special_definition_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "版本族只命中V6.1，已读取正文并核对本票章节。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "C385&673交互设计文档_地图导航（高德）",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-special_definition_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "selection_reason": "V0.7是枚举到的最高生效版本；另有文件明确标记废弃，V0.6/V0.5/v0.3为旧版。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "打开终点停车场推荐"
+        }
+      ],
+      "source_ids": [
+        "alchemy-current"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Alchemy标准功能详情1451（meta_id=1024）",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "meta_id 1024 / 标准功能1451"
+        }
+      ],
+      "source_ids": [
+        "alchemy-standard"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Alchemy深蓝项目功能详情24570",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "meta_id 1024 / 标准功能1451"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝项目功能24570；BIGSUR/SLV"
+        }
+      ],
+      "source_ids": [
+        "alchemy-project"
+      ]
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Google Workspace MCP Drive与Sheets实时读取",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "深蓝8155可见新表 地图-高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "深蓝8155可见新表_v2.0.1"
+        },
+        {
+          "kind": "version_family",
+          "text": "深蓝8155可见新表"
+        }
+      ],
+      "source_ids": [
+        "visible-config"
+      ],
+      "search_receipt_ids": [
+        "SLV-44787-formal_config_search-drive-20260908"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "title": "深蓝8155可见新表_v2.0.1",
+            "url": "https://docs.google.com/spreadsheets/d/1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "version_family": "深蓝8155可见新表",
+            "disposition": "read",
+            "source_ids": [
+              "visible-config"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "深蓝8155可见新表",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-formal_config_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1_mR_0YsUj7oUZnhy1GRhg1vXYcGZ4waAvlEc82PsinI",
+            "selection_reason": "版本族仅命中v2.0.1；已读取变更记录及地图-高德页。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-09-08",
+      "search_location": "Google Workspace MCP Drive实时检索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SLV-44787"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "终点停车场推荐 开关 语音"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 地图导航 高德"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673_V6.1"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "Megatronix_地图导航产品需求文档_C385&C673"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385&673交互设计文档_地图导航（高德）"
+        }
+      ],
+      "source_ids": [
+        "map-ue"
+      ],
+      "search_receipt_ids": [
+        "SLV-44787-interaction_or_ue_search-drive-20260908"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 7,
+        "candidates": [
+          {
+            "id": "1inP69utiK5liaTwFq-_dj7YkD73I4QLD",
+            "title": "C385&673交互设计文档_地图导航（高德）_850废弃.pdf",
+            "url": "https://drive.google.com/file/d/1inP69utiK5liaTwFq-_dj7YkD73I4QLD/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "文件名已明确标记废弃，排除为生效来源。"
+          },
+          {
+            "id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.7.pdf",
+            "url": "https://drive.google.com/file/d/1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-ue"
+            ]
+          },
+          {
+            "id": "1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.6.pdf",
+            "url": "https://drive.google.com/file/d/1Xca7y1SPBCHFOB87CHmiEjcbhPDwH5gl/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-prd"
+            ]
+          },
+          {
+            "id": "1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM",
+            "title": "C385&673交互设计文档_地图导航（高德）_850_V0.5.pdf",
+            "url": "https://drive.google.com/file/d/1hSXvB3yJmBg3Idt-CKs0w0PnoU-pn9uM/view",
+            "mime_type": "application/pdf",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U",
+            "title": "C385&673交互设计文档_导航高德地图_v0.3",
+            "url": "https://docs.google.com/document/d/18gfzyNoALgz8oPFXgno_r4CTtMm0rSPu4KlscyYJT0U/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "version_family": "C385&673交互设计文档_地图导航（高德）",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "已枚举但不是当前最高适用版本，排除为生效来源。"
+          },
+          {
+            "id": "1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk",
+            "title": "长安C385&C673地图功能清单",
+            "url": "https://docs.google.com/spreadsheets/d/1VX1nRulOMsor9oYnibtXlKaLWZghF6MSLR_5KVu4vbk/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "map-list"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-interaction_or_ue_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "版本族只命中V6.1，已读取正文并核对本票章节。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "C385&673交互设计文档_地图导航（高德）",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SLV-44787-interaction_or_ue_search-drive-20260908"
+            ],
+            "selected_candidate_id": "1Zk2NRfXpF7nUv6KtFkqjVeQ5IM5Xtegr",
+            "selection_reason": "V0.7是枚举到的最高生效版本；另有文件明确标记废弃，V0.6/V0.5/v0.3为旧版。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "conflict_resolution": "测试预期要求语音打开；当前Alchemy已识别，但项目设置项范围不含该项，PRD只明确点击触发。三者冲突未闭合，降级待复核。",
+  "expected_behavior": null,
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "打开终点停车场推荐",
+    "alchemy_tested": true,
+    "alchemy_result": "BIGSUR返回meta_id=1024，op=open，target=recommend_dest_parking。",
+    "meta_id": "1024",
+    "standard_function": {
+      "status": "verified",
+      "name": "1451 打开导航开关项",
+      "assessment": "已锁定；提供导航设置开关框架。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "24570 深蓝项目功能",
+      "assessment": "已锁定、继承未修改；当前高德范围不含终点停车场推荐。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "深蓝地图语音产品负责人",
+    "text": "结论：定义为待复核。当前Alchemy能识别并下发recommend_dest_parking，但深蓝项目功能范围未列该设置项，生效PRD只定义点击开关，尚不能确定它是既有语音缺陷还是新增语音范围。\n依据：Jira原票·描述/评论；Alchemy 1024/项目24570；地图PRD V6.1·第104页6.6.2。\n处理：明确终点停车场推荐的语音搭载范围并补齐项目功能/可见节点配置后回归；深蓝地图语音产品负责人处理。",
+    "implementation_source_ids": [
+      "jira-current",
+      "alchemy-current"
+    ]
+  }
+}

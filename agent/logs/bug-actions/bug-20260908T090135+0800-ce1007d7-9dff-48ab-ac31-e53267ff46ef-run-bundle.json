@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef",
+  "operator_owner_id": "wu-you",
+  "status": "complete",
+  "started_at": "2026-09-08T09:01:35+08:00",
+  "query_summary": "精确JQL返回16个Bug；吴优线上bug页B2:B419有418个已填单元格、402个唯一Jira Key；新增SD-7647、SLV-44787、SLV-44789。",
+  "action_log": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-daily-new-bugs.md",
+  "items": [
+    {
+      "jira_key": "SD-7647",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 420,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-SD-7647-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-validation.json",
+      "readback_sha256": "257cb446c1a1a1d610ed2d5225c459d59fcb7ee5290416b16363c1759077f4f6"
+    },
+    {
+      "jira_key": "SLV-44787",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 421,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-SLV-44787-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-validation.json",
+      "readback_sha256": "257cb446c1a1a1d610ed2d5225c459d59fcb7ee5290416b16363c1759077f4f6"
+    },
+    {
+      "jira_key": "SLV-44789",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 422,
+      "manifest_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-SLV-44789-manifest.json",
+      "readback_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-readback.json",
+      "validation_path": "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260908T090135+0800-ce1007d7-9dff-48ab-ac31-e53267ff46ef-validation.json",
+      "readback_sha256": "257cb446c1a1a1d610ed2d5225c459d59fcb7ee5290416b16363c1759077f4f6"
+    }
+  ],
+  "initial_jira_count": 16,
+  "final_jira_count": 16,
+  "online_sheet_rows": 422,
+  "final_keys": [
+    "ADS-44267",
+    "ADS-50079",
+    "HUR-78190",
+    "HUR-79477",
+    "HUR-82934",
+    "PC-37473",
+    "PC-37759",
+    "PC-38942",
+    "PC-39978",
+    "PC-40004",
+    "SD-5515",
+    "SD-6404",
+    "SD-6421",
+    "SD-7647",
+    "SLV-44787",
+    "SLV-44789"
+  ],
+  "new_keys": [
+    "SD-7647",
+    "SLV-44787",
+    "SLV-44789"
+  ],
+  "excluded_after_requery": [],
+  "completed_at": "2026-09-08T09:49:06+08:00"
+}
