@@ -1,11 +1,37 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.16.1-trial.1`
+- 当前版本：`v1.17.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-08-26`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
+
+## v1.17.0-trial.1 — 2026-09-10
+
+### 试行内容
+
+- 新增 `agent/skills/bug-chain-recheck-trigger/SKILL.md`：用户发送仅由 `!`、`！`、`?`、`？` 组成的纯标点消息时，重新审查当前 Bug 的完整证据与处理链路。
+- 触发器沿用普通 `recheck` 模式，不新增 Jira 外部动作授权，也不绕过身份、证据、写表、日志和回读门禁。
+
+### 修改原因
+
+- 为当前 Bug 上下文提供低摩擦的完整链路复查入口，避免快捷指令只复用旧结论或只更新单一字段。
+
+### 影响文件
+
+- `agent/skills/bug-chain-recheck-trigger/SKILL.md`
+- `agent/logs/bug-actions/2026-09-10-bug-chain-recheck-trigger-skill.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- `!`、`？？`、`!？！` 触发。
+- `! 看一下`、`HUR-12345!`、Jira 链接不触发。
+
+### 回滚口径
+
+- 删除新增 Skill 与对应日志，并恢复 `v1.16.0-trial.1` 版本记录；不删除 Bug 证据或历史判断。
 
 ## 版本规则
 
@@ -14,68 +40,6 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
-
-## v1.16.1-trial.1 — 2026-09-03
-
-### 试行内容
-
-- 吴优 `bug` 页新增行唯一格式锚点固定为第 107 行，并在负责人注册表以 `format_anchor_row: 107` 登记。
-- 写表脚本默认从第 107 行对应的 0-based 索引 106 复制格式；调用方为吴优页传入其他格式源时直接拒绝生成请求。
-- 新增 `validate-format` 写后门禁，逐列比较日期格式、背景、边框、内边距、对齐、换行、字体、字号、粗体和基础文字颜色；内容相关的 `hyperlinkDisplayType`、链接 URI 与局部富文本样式继续由链接校验负责。
-
-### 修改原因
-
-- 2026-09-03 新增 Bug 写入曾错误沿用第 412 行的简化格式，导致 413-415 行缺少第 107 行标准样式的边框、内边距和居中规则。原规则允许选择“最近正常行”，缺少唯一锚点和机器化格式回读门禁。
-
-### 影响文件
-
-- `agent/bug-owners/registry.yaml`
-- `agent/bug-owners/README.md`
-- `agent/sheet-contract.md`
-- `agent/workflows/bug.md`
-- `agent/scripts/bug_sheet_contract.py`
-- `agent/scripts/test_bug_sheet_contract.py`
-- `agent/scripts/validate_rule_architecture.py`
-- `agent/rules-version.md`
-- `agent/logs/bug-actions/2026-09-03-row-107-format-anchor-rule.md`
-
-### 验证案例
-
-- `build_batch_requests` 默认格式源为索引 106；吴优页显式传入 411 时必须失败。
-- 构造与锚点内边距不同的新增行时，`validate-format` 必须定位到具体行列并失败。
-- 线上 `bug!413:J415` 已按 `bug!107` 修复并回读，固定格式逐列一致。
-
-### 回滚口径
-
-- 通过新提交恢复 `v1.16.0-trial.3` 的动态模板行规则，不使用 `git reset --hard`；已修正的 413-415 行格式和历史回读日志保留。
-
-## v1.16.0-trial.3 — 2026-08-31
-
-### 试行内容
-
-- `formal_definition_search` 只能引用产品正式资料，不得用 Alchemy 标准/项目配置替代 Drive/PRD 定义。
-- 正式定义检索强制包含精确文档名和版本族查询；Drive 回执必须标记 `origin=connector`，禁止手工拼接回执冒充真实检索。
-- 命中正式资料后必须记录正文页码/章节和适用项目；未闭合关键参数（例如模板中的 `$NUM$`）时只能降级为待复核。
-
-### 修改原因
-
-- ADS-49856 处理中错误引用了不适用的“东风S平台”文档，且旧门禁允许手工构造回执并将配置事实当作正式产品定义，导致错误确定性判断通过。
-
-### 影响文件
-
-- `agent/config/evidence-requirements.json`
-- `agent/scripts/validate_bug_evidence_gate.py`
-- `agent/scripts/test_bug_evidence_gate.py`
-- `agent/rules-version.md`
-
-### 验证案例
-
-- ADS-49856：正确读取深蓝 C673 PRD 第4-5页；因 `$NUM$` 未明确，结论保持待复核。
-- 证据门禁单元测试 35 项全部通过；规则架构校验通过。
-
-### 回滚口径
-
-- 通过新提交恢复 `v1.16.0-trial.2`，不使用 `git reset --hard`；保留 ADS-49856 的更正日志作为审计记录。
 
 ## v1.16.0-trial.1 — 2026-08-26
 
@@ -106,31 +70,6 @@
 
 - 通过新提交恢复 `v1.15.0-trial.1`，不使用 `git reset --hard`。
 - 回滚只撤销 Alchemy 产品专属权限规则，不删除已形成的证据、日志或历史判断。
-
-## v1.16.0-trial.2 — 2026-08-31
-
-### 试行内容
-
-- 新增行必须复制同页完整正常数据行作为格式/数据验证模板，禁止从空白行或分隔行复制。
-- 新增行最终写入必须使用结构化列请求，禁止剪贴板 HTML/纯文本作为最终载荷；写后增加实际页面视觉回读，确认自动行高、富文本链接、BOOLEAN 验证和对齐格式。
-
-### 修改原因
-
-- SD-7244 写入 `bug!411` 时暴露空白行格式和剪贴板粘贴会造成长文本截断、链接及验证格式不稳定的问题。
-
-### 影响文件
-
-- `agent/sheet-contract.md`
-- `agent/workflows/bug.md`
-- `agent/rules-version.md`
-
-### 验证案例
-
-- SD-7244：对比 `bug!152`，修复 `bug!411` 的正常数据行格式并执行“适合数据”自动行高，页面回读确认来源链接可点击。
-
-### 回滚口径
-
-- 通过新提交恢复 `v1.16.0-trial.1` 的表格写入要求，不使用 `git reset --hard`。
 
 ## v1.15.0-trial.1 — 2026-08-18
 
