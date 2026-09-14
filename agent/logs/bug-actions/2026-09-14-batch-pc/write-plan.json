@@ -1,0 +1,20 @@
+{
+  "run_date":"2026-09-14",
+  "owner":"wu-you",
+  "mode":"recheck",
+  "source":"Jira current JQL, 12 issues",
+  "updates":{
+    "SD-6421":{"row":166,"status":"转需求","owner":"C673海外语音产品负责人","summary":"Search + POI类别英文句式未覆盖，补语料/句式需求"},
+    "SD-6404":{"row":167,"status":"可转研发","owner":"Android - Map地图UI研发（程云）","summary":"导航卡片英文长文本分区重叠，按UE修复布局"},
+    "SD-5515":{"row":171,"status":"可转语音","owner":"C673海外语音配置负责人","summary":"当前位置能力存在，马来语误落音乐，恢复映射并补目标TTS"},
+    "PC-39375":{"row":373,"status":"可转语音","owner":"深蓝语音天气意图配置负责人","summary":"几点退潮分类冲突，统一到天气1975并处理付费能力边界"},
+    "PC-38942":{"row":264,"status":"转需求","owner":"POI/VUI产品负责人","summary":"POI二次交互列表保持/关闭规则空白，补齐需求"},
+    "PC-37759":{"row":71,"status":"非 Bug","owner":"吴优（电话产品）","summary":"明确数字直拨不依赖通讯录授权，按非问题关闭"},
+    "PC-37473":{"row":178,"status":"待确认","owner":"地图与行车记录仪产品负责人","summary":"跨应用POI弹窗互斥未定义，先补正式交互规则"},
+    "HUR-78190":{"row":113,"status":"可转语音","owner":"语音平台/NLU配置负责人","summary":"meta_id=1018 close正确但TTS指向打开文案，修正配置后回归"},
+    "ADS-44267":{"row":415,"status":"待会诊","owner":"C673系统交互产品负责人","summary":"天气卡与AVM层级仲裁缺正式定义，补齐配置后再判修复/关闭"},
+    "SD-7737":{"row":423,"status":"待确认","owner":"C673海外语音产品负责人","summary":"当前希伯来语测试语料已被产品指出错误，需核对最新语料表后回归"},
+    "SD-7226":{"row":424,"status":"待确认","owner":"语音/NLU与小憩模式产品负责人","summary":"秒级调节是否属于正式支持范围未定义，补齐范围与超范围策略"},
+    "PC-38414":{"row":425,"status":"转需求","owner":"BTPhone产品/研发负责人","summary":"多同名联系人按号码尾号二次消歧未覆盖，补需求后实现"}
+  }
+}
