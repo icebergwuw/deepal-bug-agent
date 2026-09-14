@@ -1,0 +1,251 @@
+{
+  "tested_at": "2026-09-14T17:20:00+08:00",
+  "operator": "you.wu",
+  "surface": "chrome_logged_in_alchemy",
+  "url": "https://alchemy.i-tetris.com/#/conversation/testing",
+  "results": [
+    {
+      "project": "BIGSUR",
+      "query": "几点退潮",
+      "classification": "task",
+      "meta_id": 1975,
+      "type": "weather:query:check",
+      "params": "weather_condition literal=退潮",
+      "standard": {
+        "id": 1400,
+        "name": "查询天气现象",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 26750,
+        "name": "查询天气现象",
+        "inherit": "继承未修改(1400)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "BIGSUR",
+      "query": "我要收藏西湖山水",
+      "classification": "task",
+      "meta_id": 1021,
+      "type": "navi:map:favorite_ctrl",
+      "params": "op=add poi=西湖山水",
+      "standard": {
+        "id": 1432,
+        "name": "收藏【地址 / POI】",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 24551,
+        "inherit": "继承未修改(1432)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "BIGSUR",
+      "query": "第一个",
+      "classification": "task",
+      "meta_id": 3116,
+      "type": "common:favorites:ctrl",
+      "params": "op=favorite list_offset=1",
+      "standard": {
+        "id": 1792,
+        "name": "收藏",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 27043,
+        "inherit": "继承未修改(1792)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "BIGSUR",
+      "query": "拨打电话",
+      "classification": "task",
+      "meta_id": 1059,
+      "type": "phone:call",
+      "standard": {
+        "id": 1338,
+        "name": "仅表达打电话意图",
+        "state": "草稿"
+      },
+      "project_fn": {
+        "id": 24486,
+        "inherit": "继承未修改(1338)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "BIGSUR",
+      "query": "打开行车记录仪",
+      "classification": "task",
+      "meta_id": 1305,
+      "type": "app:ctrl",
+      "params": "op=open target=driving_recorder",
+      "standard": {
+        "id": 1423,
+        "name": "打开特定页面/APP",
+        "state": "草稿"
+      },
+      "project_fn": {
+        "id": 24542,
+        "inherit": "继承未修改(1423)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "BIGSUR",
+      "query": "打开车辆设置",
+      "classification": "task",
+      "meta_id": 1305,
+      "type": "app:ctrl",
+      "params": "op=open target=car_settings"
+    },
+    {
+      "project": "BIGSUR",
+      "query": "今天天气如何",
+      "classification": "task",
+      "meta_id": 1249,
+      "type": "weather:query",
+      "params": "time=今天",
+      "standard": {
+        "id": 1401,
+        "name": "查询天气",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 26751,
+        "inherit": "继承未修改(1401)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "BIGSUR",
+      "query": "打开深蓝管家",
+      "classification": "task",
+      "meta_id": 1305,
+      "type": "app:ctrl",
+      "params": "op=open target=深蓝管家"
+    },
+    {
+      "project": "BIGSUR",
+      "query": "打开场景积木",
+      "classification": "task",
+      "meta_id": 1305,
+      "type": "app:ctrl",
+      "params": "op=open target=sceneblock"
+    },
+    {
+      "project": "BIGSUR",
+      "query": "前面是什么小区",
+      "classification": "recognition",
+      "meta_id": 1356,
+      "type": "llm:multimodal:external_recognition",
+      "params": "intent=geo_match",
+      "standard": {
+        "id": 1412,
+        "name": "车外识别",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 26067,
+        "inherit": "继承未修改(1412)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "C673-G",
+      "query": "Search Parking",
+      "classification": "task",
+      "meta_id": 1026,
+      "type": "media:music:play",
+      "standard": {
+        "id": 1097,
+        "name": "点播【歌曲】",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 24325,
+        "inherit": "继承未修改(1097)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "C673-G",
+      "query": "SEARCH PARKING",
+      "classification": "task",
+      "meta_id": 1026,
+      "type": "media:music:play"
+    },
+    {
+      "project": "C673-G",
+      "query": "Di manakah saya sekarang",
+      "classification": "chat",
+      "meta_id": 2820,
+      "type": "dialogue:method:reject",
+      "params": "CHAT_CONTEXT_REJECT",
+      "standard": {
+        "id": 1689,
+        "name": "拒识",
+        "state": "草稿"
+      },
+      "project_fn": {
+        "id": 25192,
+        "inherit": "继承未修改(1689)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "C673DA",
+      "query": "Di manakah saya sekarang",
+      "classification": "chat",
+      "meta_id": 2820,
+      "type": "dialogue:method:reject"
+    },
+    {
+      "project": "D587-G",
+      "query": "Search Parking",
+      "classification": "task",
+      "meta_id": 1026,
+      "type": "media:music:play"
+    },
+    {
+      "project": "D587-G",
+      "query": "SEARCH COFFEE",
+      "classification": "task",
+      "meta_id": 1208,
+      "type": "navi:dest:search",
+      "params": "action=search poi=search coffee",
+      "standard": {
+        "id": 1429,
+        "name": "搜索/展示【地址】",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 24548,
+        "inherit": "继承未修改(1429)",
+        "state": "已锁定"
+      }
+    },
+    {
+      "project": "HUR",
+      "query": "退出全程预览",
+      "classification": "task",
+      "meta_id": 1018,
+      "type": "navi:map:journey:view",
+      "params": "op=close",
+      "standard": {
+        "id": 1445,
+        "name": "导航全程预览",
+        "state": "已锁定"
+      },
+      "project_fn": {
+        "id": 26006,
+        "project": "马自达",
+        "inherit": "继承未修改(1445)",
+        "state": "已下发"
+      }
+    }
+  ]
+}

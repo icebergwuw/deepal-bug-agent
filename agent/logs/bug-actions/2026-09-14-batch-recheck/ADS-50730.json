@@ -1,0 +1,673 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "1766407",
+  "self": "http://jira.i-tetris.com/rest/api/2/issue/1766407",
+  "key": "ADS-50730",
+  "fields": {
+    "issuetype": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issuetype/10006",
+      "id": "10006",
+      "description": "",
+      "iconUrl": "http://jira.i-tetris.com/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+      "name": "故障",
+      "subtask": false,
+      "avatarId": 10303
+    },
+    "components": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/component/15915",
+        "id": "15915",
+        "name": "AI Cockpit - Voice/执行",
+        "description": "识别上屏正确但执行结果不符合预期"
+      }
+    ],
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "description": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.语音输入场景积木的query，在播报期间可以挂R档，并且播报内容显示在360影像上层，时间点：9/14 14:30\r\n问题时间：9/14 14:30\r\nlog见附件\r\n视频见附件",
+    "project": {
+      "self": "http://jira.i-tetris.com/rest/api/2/project/12100",
+      "id": "12100",
+      "key": "ADS",
+      "name": "Changan: Andes",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/projectavatar?pid=12100&avatarId=10204",
+        "24x24": "http://jira.i-tetris.com/secure/projectavatar?size=small&pid=12100&avatarId=10204",
+        "16x16": "http://jira.i-tetris.com/secure/projectavatar?size=xsmall&pid=12100&avatarId=10204",
+        "32x32": "http://jira.i-tetris.com/secure/projectavatar?size=medium&pid=12100&avatarId=10204"
+      },
+      "projectCategory": {
+        "self": "http://jira.i-tetris.com/rest/api/2/projectCategory/10000",
+        "id": "10000",
+        "description": "Contracted Customer Project",
+        "name": "客户项目"
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/version/22152",
+        "id": "22152",
+        "description": "用于后续C385-5&C673-7大激光项目管理",
+        "name": "SW30_C673-7&C385-5_OTA1_20261230",
+        "archived": false,
+        "released": false,
+        "releaseDate": "2026-12-31"
+      }
+    ],
+    "customfield_11200": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11149",
+      "value": "A(严重)",
+      "id": "11149"
+    },
+    "aggregatetimespent": null,
+    "resolution": null,
+    "customfield_11103": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11141",
+      "value": "代码实现问题_General",
+      "id": "11141"
+    },
+    "timetracking": {},
+    "customfield_10500": "{}",
+    "customfield_10005": "2|i2x8n3:",
+    "customfield_10701": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13317",
+      "value": "C385-5",
+      "id": "13317"
+    },
+    "attachment": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4411928",
+        "id": "4411928",
+        "filename": "LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:17:07.000+0000",
+        "size": 327184943,
+        "mimeType": "application/zip",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411928/LS6C3E2T3TF812038_2026_09_14_14_43_57.zip"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4411828",
+        "id": "4411828",
+        "filename": "video_1789369069.mp4",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:12:40.000+0000",
+        "size": 34944257,
+        "mimeType": "video/mp4",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411828/video_1789369069.mp4"
+      }
+    ],
+    "customfield_10702": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/10308",
+      "value": "Always",
+      "id": "10308"
+    },
+    "aggregatetimeestimate": null,
+    "customfield_10703": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+      "name": "deng.pan.o",
+      "key": "deng.pan.o",
+      "emailAddress": "deng.pan.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+      },
+      "displayName": "潘登",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "resolutiondate": null,
+    "workratio": -1,
+    "summary": "【客户问题】【LS6C3E2T3TF812038】【MegaClaw】语音输入场景积木query播报期间挂R档，播报内容显示在360影像上层，时间点：9/14 14:30",
+    "lastViewed": "2026-09-14T08:27:49.104+0000",
+    "watches": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issue/ADS-50730/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "creator": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+      "name": "deng.pan.o",
+      "key": "deng.pan.o",
+      "emailAddress": "deng.pan.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+      },
+      "displayName": "潘登",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "subtasks": [],
+    "created": "2026-09-14T08:08:10.000+0000",
+    "reporter": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+      "name": "deng.pan.o",
+      "key": "deng.pan.o",
+      "emailAddress": "deng.pan.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+      },
+      "displayName": "潘登",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "customfield_10000": "ADS-4",
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "priority": {
+      "self": "http://jira.i-tetris.com/rest/api/2/priority/2",
+      "iconUrl": "http://jira.i-tetris.com/images/icons/priorities/high.svg",
+      "name": "P1->High",
+      "id": "2"
+    },
+    "labels": [
+      "客户_JIRA"
+    ],
+    "customfield_10004": null,
+    "environment": null,
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": [],
+    "duedate": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "comment": {
+      "comments": [
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1766407/comment/8465039",
+          "id": "8465039",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "卡片层级显示问题，车端老师看看",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-09-14T08:24:38.000+0000",
+          "updated": "2026-09-14T08:24:38.000+0000"
+        }
+      ],
+      "maxResults": 1,
+      "total": 1,
+      "startAt": 0
+    },
+    "issuelinks": [],
+    "votes": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issue/ADS-50730/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "assignee": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=you.wu",
+      "name": "you.wu",
+      "key": "you.wu",
+      "emailAddress": "you.wu@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+      },
+      "displayName": "吴优",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "updated": "2026-09-14T08:26:24.000+0000",
+    "status": {
+      "self": "http://jira.i-tetris.com/rest/api/2/status/10000",
+      "description": "",
+      "iconUrl": "http://jira.i-tetris.com/",
+      "name": "待办",
+      "id": "10000",
+      "statusCategory": {
+        "self": "http://jira.i-tetris.com/rest/api/2/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "待办"
+      }
+    }
+  },
+  "renderedFields": {
+    "issuetype": null,
+    "components": null,
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "description": "<p>【客户问题】【LS6C3E2T3TF812038】<br/>\n问题描述：<br/>\n1.语音输入场景积木的query，在播报期间可以挂R档，并且播报内容显示在360影像上层，时间点：9/14 14:30<br/>\n问题时间：9/14 14:30<br/>\nlog见附件<br/>\n视频见附件</p>",
+    "project": null,
+    "fixVersions": null,
+    "customfield_11200": null,
+    "aggregatetimespent": null,
+    "resolution": null,
+    "customfield_11103": null,
+    "timetracking": {},
+    "customfield_10500": null,
+    "customfield_10005": null,
+    "customfield_10701": null,
+    "attachment": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4411928",
+        "id": "4411928",
+        "filename": "LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "18分钟前",
+        "size": "312.03 MB",
+        "mimeType": "application/zip",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411928/LS6C3E2T3TF812038_2026_09_14_14_43_57.zip"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4411828",
+        "id": "4411828",
+        "filename": "video_1789369069.mp4",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "23分钟前",
+        "size": "33.33 MB",
+        "mimeType": "video/mp4",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411828/video_1789369069.mp4"
+      }
+    ],
+    "customfield_10702": null,
+    "aggregatetimeestimate": null,
+    "customfield_10703": null,
+    "resolutiondate": null,
+    "workratio": null,
+    "summary": null,
+    "lastViewed": "8分钟前",
+    "watches": null,
+    "creator": null,
+    "subtasks": null,
+    "created": "27分钟前",
+    "reporter": null,
+    "customfield_10000": null,
+    "aggregateprogress": null,
+    "priority": null,
+    "labels": null,
+    "customfield_10004": null,
+    "environment": "",
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": null,
+    "duedate": null,
+    "progress": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1766407/comment/8465039",
+          "id": "8465039",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p>卡片层级显示问题，车端老师看看</p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "11分钟前",
+          "updated": "11分钟前"
+        }
+      ],
+      "maxResults": 1,
+      "total": 1,
+      "startAt": 0
+    },
+    "issuelinks": null,
+    "votes": null,
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "assignee": null,
+    "updated": "9分钟前",
+    "status": null
+  },
+  "names": {
+    "issuetype": "问题类型",
+    "components": "模块",
+    "timespent": "耗费时间",
+    "timeoriginalestimate": "初始预估",
+    "description": "描述",
+    "project": "项目",
+    "fixVersions": "修复的版本",
+    "customfield_11200": "Severity",
+    "aggregatetimespent": "Σ 耗费时间",
+    "resolution": "解决结果",
+    "customfield_11103": "Root Cause",
+    "timetracking": "时间跟踪",
+    "customfield_10500": "Development",
+    "customfield_10005": "Rank",
+    "customfield_10701": "Vehicle Model",
+    "attachment": "附件",
+    "customfield_10702": "Reproducibility",
+    "aggregatetimeestimate": "Σ 预估剩余时间",
+    "customfield_10703": "QA",
+    "resolutiondate": "已解决",
+    "workratio": "工作量比率",
+    "summary": "概要",
+    "lastViewed": "最近查看的",
+    "watches": "管理关注列表",
+    "creator": "创建者",
+    "subtasks": "子任务",
+    "created": "创建日期",
+    "reporter": "报告人",
+    "customfield_10000": "Epic Link",
+    "aggregateprogress": "Σ 进度",
+    "priority": "优先级",
+    "labels": "标签",
+    "customfield_10004": "Sprint",
+    "environment": "环境",
+    "timeestimate": "剩余的估算",
+    "aggregatetimeoriginalestimate": "Σ 原预估时间",
+    "versions": "影响版本",
+    "duedate": "到期日",
+    "progress": "进度",
+    "comment": "备注",
+    "issuelinks": "链接的问题",
+    "votes": "表决",
+    "worklog": "登记工作日志",
+    "assignee": "经办人",
+    "updated": "已更新",
+    "status": "状态"
+  },
+  "changelog": {
+    "startAt": 0,
+    "maxResults": 6,
+    "total": 6,
+    "histories": [
+      {
+        "id": "27612821",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:08:10.000+0000",
+        "items": [
+          {
+            "field": "Epic Link",
+            "fieldtype": "custom",
+            "from": null,
+            "fromString": null,
+            "to": "489640",
+            "toString": "ADS-4"
+          }
+        ]
+      },
+      {
+        "id": "27612864",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:08:42.000+0000",
+        "items": [
+          {
+            "field": "description",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.点击车机主页车辆信息，弹出的车辆信息卡片被大模型卡片遮挡，时间点：9/14 10:13\r\n问题时间：9/14 10:13\r\nlog见附件\r\n视频见附件",
+            "to": null,
+            "toString": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.语音输入场景积木的query，在播报期间可以挂R档，并且播报内容显示在360影像上层，时间点：9/14 14:30\r\n问题时间：9/14 14:30\r\nlog见附件\r\n视频见附件"
+          }
+        ]
+      },
+      {
+        "id": "27613152",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:12:40.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "4411828",
+            "toString": "video_1789369069.mp4"
+          }
+        ]
+      },
+      {
+        "id": "27613546",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=deng.pan.o",
+          "name": "deng.pan.o",
+          "key": "deng.pan.o",
+          "emailAddress": "deng.pan.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=deng.pan.o&avatarId=13515",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=deng.pan.o&avatarId=13515",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=deng.pan.o&avatarId=13515",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=deng.pan.o&avatarId=13515"
+          },
+          "displayName": "潘登",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:17:08.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "4411928",
+            "toString": "LS6C3E2T3TF812038_2026_09_14_14_43_57.zip"
+          }
+        ]
+      },
+      {
+        "id": "27614125",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+          "name": "rong.chang.o",
+          "key": "rong.chang.o",
+          "emailAddress": "rong.chang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+          },
+          "displayName": "常荣",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:24:45.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "wenjing.wang.o",
+            "fromString": "汪雯菁",
+            "to": "wei.tan",
+            "toString": "谭威"
+          }
+        ]
+      },
+      {
+        "id": "27614255",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=wei.tan",
+          "name": "wei.tan",
+          "key": "wei.tan",
+          "emailAddress": "wei.tan@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10351",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10351",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10351",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10351"
+          },
+          "displayName": "谭威",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-14T08:26:24.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "wei.tan",
+            "fromString": "谭威",
+            "to": "you.wu",
+            "toString": "吴优"
+          }
+        ]
+      }
+    ]
+  }
+}

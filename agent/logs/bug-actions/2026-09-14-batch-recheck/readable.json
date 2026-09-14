@@ -1,0 +1,1022 @@
+[
+  {
+    "key": "SD-6421",
+    "summary": "【G3G5】VR Search (Googel UIKIT) does not work",
+    "status": "处理中",
+    "priority": "P2->Medium",
+    "assignee": "吴优",
+    "reporter": "江权",
+    "created": "2026-07-22T07:26:04.000+0000",
+    "updated": "2026-08-27T09:43:08.000+0000",
+    "components": [
+      "Android - Map"
+    ],
+    "labels": [
+      "客户_JIRA"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13201",
+      "value": "C673",
+      "id": "13201"
+    },
+    "frequency": "Always",
+    "severity": "B(一般)",
+    "cause": "代码实现问题_General",
+    "description": "Stept:\n\n# Open VR in system settings\n# Launch VR and say \"Search Parking\"\n\nActual Result:\n\nSearch Parking 上屏（应该被识别了）但是search没反应\n\nExpected Result:\n\n返回搜索结果\n\n内部：http://jira.i-tetris.com/browse/SD-6421\n外部：http://211.159.155.78:8080/browse/SD-666",
+    "comments": [
+      {
+        "author": "it-agent",
+        "created": "2026-07-22T07:26:05.000+0000",
+        "body": "来自用户 泰为科技-陈哲 的评论：\n\n(Comment from He, Na (Jennifer)):\n\n帮忙弄一份VR的流程的log,附件中的log我无法找到和VR相关的。dev这边查看了逻辑，目前看不出什么问题。\n\n"
+      },
+      {
+        "author": "it-agent",
+        "created": "2026-07-22T07:26:05.000+0000",
+        "body": "来自用户 泰为科技-陈哲 的评论：\n\n(Comment from Gao, Guogang):\n\n{code}\n07-13 17:02:27.503752  3024  4569 I DialogController: processMessage: type = 2102, id = 0f762817-9ec6-4789-b037-a7dacce7f4cb, obj = {\"extra\":{},\"query\":\"SEARCH PARKING\",\"queryAsrConfidence\":1.0,\"regionId\":0}, regionId = 1\n\n\n\n{code}\n\n\n!image-2026-07-22-13-47-59-706.png|alt=\"See attachment image-2026-07-22-13-47-59-706.png\"! \n语音侧在执行Search parking的命令时没有调用导航提供的VR SDK,因此这个问题需要系统侧调查，\n但是在后面执行go home的命令时，是调用了VR SDK的api的\n\n{code}\n07-13 17:05:29.032369  3319  3482 I Speech:SpeechManager: sendCommand command:FetchCommand(voiceCommandKey=com.telenav.speech.commands.VoiceCommandKey$FetchFavorite@e799250, favorite=FavoriteFetcher(favoriteType=com.telenav.speech.commands.types.FavoriteType$Home@e37dc49, fetchAll=false, isEmpty=false, isFull=false), poi=null, status=null, recent=null)\n\n\n\n{code}\n\n\n因此该问题是系统侧对于语音实现不完整导致的。\n\n需要系统侧调查\n\n"
+      },
+      {
+        "author": "聂汉维",
+        "created": "2026-07-27T06:05:44.000+0000",
+        "body": "{code:java}\r\n07-13 17:02:30.505891 3024 4570 I VosController_Event: [ (VosController.java:1048)#onDialogueResult ]onDialogueResult() called with: dialogueResult = [{\"asrFinishTime\":1783933347503,\"asrRejected\":false,\"classification\":\"chat\",\"emotion\":0,\"nluFinishTime\":1783933350505,\"oneshot\":false,\"operations\":[{\"index\":0,\"meta_id\":2820,\"offline_first\":false,\"type\":\"dialogue:method:reject\"}],\"query\":\"SEARCH PARKING\",\"regionId\":1,\"requestId\":\"0f762817-9ec6-4789-b037-a7dacce7f4cb\",\"resultType\":\"finish\",\"sessionId\":\"6beacfdd-b906-4652-9b34-ec2f9920c70b\",\"soundLocation\":\"front_left\",\"tts\":[],\"useCloudResponse\":false,\"vadStartTime\":-1}], region = [1]\r\n{code}\r\n{code:java}\r\n07-13 17:02:42.184281  3024  4570 I VosController_Event: [ (VosController.java:1048)#onDialogueResult ]onDialogueResult() called with: dialogueResult = [{\"asrFinishTime\":1783933359176,\"asrRejected\":false,\"classification\":\"chat\",\"emotion\":0,\"nluFinishTime\":1783933362182,\"oneshot\":false,\"operations\":[{\"index\":0,\"meta_id\":2820,\"offline_first\":false,\"type\":\"dialogue:method:reject\"}],\"query\":\"SEARCH COFFEE\",\"regionId\":1,\"requestId\":\"5783af8d-02d8-4ebf-9a40-641446e4ac04\",\"resultType\":\"finish\",\"sessionId\":\"4d1e4af8-a623-402e-a0bf-95ab36c2f623\",\"soundLocation\":\"front_left\",\"tts\":[],\"useCloudResponse\":false,\"vadStartTime\":-1}], region = [1]\r\n{code}\r\n 当前测试指令：SEARCH PARKING、SEARCH COFFEE  ，麻烦产品老师先帮忙确认下语料"
+      },
+      {
+        "author": "吴优",
+        "created": "2026-08-07T02:26:16.000+0000",
+        "body": "!image-2026-08-07-10-25-46-235.png! 有这个语料的\r\n [https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit?gid=1845215852#gid=1845215852]\r\n\r\n \r\n\r\n与SEARCH PARKING、SEARCH COFFEE意图相符，需要作出识别"
+      },
+      {
+        "author": "聂汉维",
+        "created": "2026-08-07T05:37:13.000+0000",
+        "body": "07-13 17:02:27.503631 3024 4569 I DialogController: processMessage: type = 2116, id = 0f762817-9ec6-4789-b037-a7dacce7f4cb, obj = \\{\"asrFinishTime\":1783933347503,\"asr_rejected\":false,\"is_from_online\":false,\"offline_result_with_contacts\":\"\",\"offline_frame_count\":0,\"offline_hotwords\":[],\"offline_is_use_dir_trans\":false,\"offline_reject_type\":\"\",\"offline_result\":\"SEARCH PARKING\",\"offline_result_to_translate\":\"SEARCH PARKING\",\"offline_state\":\"finish\",\"offline_result_with_contacts_translate_ch\":\"\",\"offline_translate_ch_result\":\"\",\"online_hotwords\":[],\"online_result\":\"\",\"online_state\":\"\",\"online_translate_ch_result\":\"\",\"region_id\":1,\"request_id\":\"0f762817-9ec6-4789-b037-a7dacce7f4cb\"}, regionId = 1\r\n\r\n07-13 17:02:39.177163 3024 4871 I DialogController: processMessage: type = 2116, id = 5783af8d-02d8-4ebf-9a40-641446e4ac04, obj = \\{\"asrFinishTime\":1783933359176,\"asr_rejected\":false,\"is_from_online\":false,\"offline_result_with_contacts\":\"\",\"offline_frame_count\":0,\"offline_hotwords\":[],\"offline_is_use_dir_trans\":false,\"offline_reject_type\":\"\",\"offline_result\":\"SEARCH COFFEE\",\"offline_result_to_translate\":\"SEARCH COFFEE\",\"offline_state\":\"finish\",\"offline_result_with_contacts_translate_ch\":\"\",\"offline_translate_ch_result\":\"\",\"online_hotwords\":[],\"online_result\":\"\",\"online_state\":\"\",\"online_translate_ch_result\":\"\",\"region_id\":1,\"request_id\":\"5783af8d-02d8-4ebf-9a40-641446e4ac04\"}, regionId = 1\r\n\r\ndebug系统无数据，如上产品描述，麻烦算法老师看看~ 链接到：ST-63842"
+      },
+      {
+        "author": "于丽美",
+        "created": "2026-08-07T05:49:22.000+0000",
+        "body": "这个问题修复需要产品下发新增句式的需求，除了Navigate to xxx还需要新增哪些句式，比如search xxx"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "image-2026-07-22-13-47-59-706.png",
+        "mime": "image/png",
+        "created": "2026-07-22T07:26:05.000+0000",
+        "author": "it-agent",
+        "content": "http://jira.i-tetris.com/secure/attachment/4141956/image-2026-07-22-13-47-59-706.png",
+        "size": 87821
+      },
+      {
+        "filename": "image-2026-08-07-10-25-46-235.png",
+        "mime": "image/png",
+        "created": "2026-08-07T02:25:47.000+0000",
+        "author": "吴优",
+        "content": "http://jira.i-tetris.com/secure/attachment/4220287/image-2026-08-07-10-25-46-235.png",
+        "size": 90309
+      },
+      {
+        "filename": "log.7z",
+        "mime": "application/x-7z-compressed",
+        "created": "2026-07-22T07:26:21.000+0000",
+        "author": "it-agent",
+        "content": "http://jira.i-tetris.com/secure/attachment/4141960/log.7z",
+        "size": 237356854
+      },
+      {
+        "filename": "logcat.log.082_2026_07_13_17_05_34.gz",
+        "mime": "application/gzip",
+        "created": "2026-07-27T06:06:14.000+0000",
+        "author": "聂汉维",
+        "content": "http://jira.i-tetris.com/secure/attachment/4163590/logcat.log.082_2026_07_13_17_05_34.gz",
+        "size": 2138899
+      },
+      {
+        "filename": "VID_20260713_170244.mp4",
+        "mime": "video/mp4",
+        "created": "2026-07-22T12:33:42.000+0000",
+        "author": "it-agent",
+        "content": "http://jira.i-tetris.com/secure/attachment/4145151/VID_20260713_170244.mp4",
+        "size": 24345028
+      }
+    ],
+    "links": [
+      {
+        "type": "Relates",
+        "dir": "out",
+        "key": "SD-6991",
+        "summary": "[SL2.0][G3G5][RoadTest][20260721]15:42~54 purestreaming模式下,VR搜索始终失败.但其他VR导航交互指令可正常工作.",
+        "status": "已关闭"
+      }
+    ]
+  },
+  {
+    "key": "SD-6404",
+    "summary": "[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21  11：07导航中，导航卡片上出现重叠",
+    "status": "待办",
+    "priority": "P2->Medium",
+    "assignee": "吴优",
+    "reporter": "黄有权",
+    "created": "2026-07-21T10:20:28.000+0000",
+    "updated": "2026-09-11T03:39:03.000+0000",
+    "components": [
+      "Android - Map"
+    ],
+    "labels": [],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13201",
+      "value": "C673",
+      "id": "13201"
+    },
+    "frequency": "Always",
+    "severity": "B(一般)",
+    "cause": "代码实现问题_模块内逻辑问题",
+    "description": "测试环境：LS6CME165TF830470\r\n版本信息：c673_g-cdc-release_parkcity_hqx.1.2.1_20260309-ota_full-user-secure-2.0ota-SWA.3.19-20260720050145\r\nmcu版本：2.33.0.223\r\n测试硬件：ED49\r\n[预置条件]：1.车辆上电  \r\n[问题现象]：7月21  11：07导航中，导航卡片上出现重叠\r\n[LOG/视频]：",
+    "comments": [
+      {
+        "author": "程云",
+        "created": "2026-07-23T02:13:32.000+0000",
+        "body": "需产品和UI确认下显示边界问题。[~you.wu]　[~shuanglin.xiong.o]"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "logcat.log.078_2026_07_21_11_01_05.gz",
+        "mime": "application/gzip",
+        "created": "2026-07-21T10:20:51.000+0000",
+        "author": "黄有权",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137308/logcat.log.078_2026_07_21_11_01_05.gz",
+        "size": 3941064
+      },
+      {
+        "filename": "logcat.log.079_2026_07_21_11_30_57.gz",
+        "mime": "application/gzip",
+        "created": "2026-07-21T10:20:50.000+0000",
+        "author": "黄有权",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137309/logcat.log.079_2026_07_21_11_30_57.gz",
+        "size": 4177516
+      },
+      {
+        "filename": "video_1784629256.mp4",
+        "mime": "video/mp4",
+        "created": "2026-07-21T10:21:13.000+0000",
+        "author": "黄有权",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137318/video_1784629256.mp4",
+        "size": 3343257
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "SD-5515",
+    "summary": "[内测问题][镁佳]【SWA.2.94】[C673-G3/G5][0309][C673-G3 东南亚-右 500km Ultra 港澳][14扬]【语音-马来语】【高德地图】【STG】query：Di manakah saya sekarang，回复ok",
+    "status": "待办",
+    "priority": "P2->Medium",
+    "assignee": "吴优",
+    "reporter": "唐洋",
+    "created": "2026-06-30T02:28:36.000+0000",
+    "updated": "2026-09-11T03:39:04.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13201",
+      "value": "C673",
+      "id": "13201"
+    },
+    "frequency": "Always",
+    "severity": "B(一般)",
+    "cause": "软件版本问题",
+    "description": "测试环境：实车-LS6CME164SF830393\r\n测试版本：c673_g-cdc-release_parkcity_hqx.1.2.1_20260309-ota_full-user-secure-2.0ota-SWA.2.94-20260629030241.zip\r\n[操作步骤]：1.query：Navigasi ke kedai kopi berhampiran\r\n\r\n【预期结果】\r\n1.执行正确\r\n\r\n【实际结果】1.回复ok\r\n[复现概率/恢复条件]\r\n10/10\r\n[视频地址]\r\n见附件\r\n[log地址]\r\nhttp://jira.i-tetris.com/browse/SD-5514\r\n[问题时间点]\r\n\r\n2026.6.29     20：35左右",
+    "comments": [
+      {
+        "author": "唐洋",
+        "created": "2026-06-30T02:29:05.000+0000",
+        "body": "我现在在哪里，回复ok"
+      },
+      {
+        "author": "聂汉维",
+        "created": "2026-06-30T09:43:09.000+0000",
+        "body": "{code:java}\r\n06-29 20:35:32.461930  2821  4522 I DialogController: cerenceEntity : {\"multi_intent_rule_based\":0,\"result\":[{\"domain\":\"locations\",\"intent\":\"locations:where_am_i\",\"rule_based\":10000,\"slots\":[],\"utterance\":\"di manakah saya sekarang\"}],\"utterance\":\"di manakah saya sekarang\"}, reqId: a7f2fabe-e3dc-45f1-8279-d9ebed1fa5b6\r\n{code}\r\n  !image-2026-06-30-17-41-50-057.png!\r\n{code:java}\r\n06-29 20:35:32.476604 2821 4289 I VosController_Event: [ (VosController.java:1048)#onDialogueResult ]onDialogueResult() called with: dialogueResult = [{\"asrFinishTime\":-1,\"asrRejected\":false,\"classification\":\"task\",\"emotion\":0,\"nluFinishTime\":1782736532474,\"oneshot\":false,\"operations\":[{\"index\":0,\"meta_id\":1006,\"offline_first\":false,\"params\":{},\"type\":\"navi:query:locate\"}],\"query\":\"di manakah saya sekarang\",\"regionId\":1,\"requestId\":\"a7f2fabe-e3dc-45f1-8279-d9ebed1fa5b6\",\"resultType\":\"finish\",\"sessionId\":\"b5ad9d29-7a22-48b9-89e3-e62757ca8a0b\",\"soundLocation\":\"front_right\",\"tts\":[],\"useCloudResponse\":true,\"vadStartTime\":-1}], region = [1]\r\n{code}\r\n \"params\":{}  麻烦云端老师帮忙看下下发~"
+      },
+      {
+        "author": "魏新享",
+        "created": "2026-07-01T02:42:14.000+0000",
+        "body": "1006就是查询当前位置功能点，下发无问题，转车机分析执行问题"
+      },
+      {
+        "author": "程云",
+        "created": "2026-07-01T03:10:53.000+0000",
+        "body": "高德查询返回的当前位置是中文，与tts播报语言不一致，无法播报。请项目或产品确认下。 [~banghe.zhang]\r\n\r\n06-29 20:35:32.477 2821 3060 I MegaAssistantService [ (ConversationStateMachine.java:1753)#handleRecognitionResult ]handleRecognitionResult: AsrResult: [di manakah saya sekarang], NluResult: [NluResponseData\\{ requestId=a7f2fabe-e3dc-45f1-8279-d9ebed1fa5b6', query='di manakah saya sekarang', sessionId='b5ad9d29-7a22-48b9-89e3-e62757ca8a0b', operations=[Operation{metaId=1006, originMetaId=0, type=navi:query:locate, params={}, order=0}], tts=[], regionId=1, view=null, resultType=finish, emotion=0, specialVoiceId=0, classification=task}], Region: [1]\r\n\r\n06-29 20:35:32.620 2687 2687 I MegaMap [ (ActionClient.java:242)#actionDone ]action callback: ActionCallback\\{mResultFlag=0, mResultFlags=1, mViewFlag=0, mAction=34, Tts=1011:我们现在位于重庆市两江新区在龙兴智能汽车软件产业园附近, ViewText=, requestId=a7f2fabe-e3dc-45f1-8279-d9ebed1fa5b6, region=1}\r\n\r\n06-29 20:35:32.621 2821 3177 I ClientSession onActionCallback: ActionCallback\\{mResultFlag=0, mResultFlags=1, mViewFlag=0, mAction=34, Tts=1011:我们现在位于重庆市两江新区在龙兴智能汽车软件产业园附近, ViewText=, requestId=a7f2fabe-e3dc-45f1-8279-d9ebed1fa5b6, region=1}"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "image-2026-06-30-17-41-50-057.png",
+        "mime": "image/png",
+        "created": "2026-06-30T09:41:50.000+0000",
+        "author": "聂汉维",
+        "content": "http://jira.i-tetris.com/secure/attachment/4033287/image-2026-06-30-17-41-50-057.png",
+        "size": 9704
+      },
+      {
+        "filename": "logcat.log.041_2026_06_29_20_41_27.gz",
+        "mime": "application/gzip",
+        "created": "2026-06-30T09:43:13.000+0000",
+        "author": "聂汉维",
+        "content": "http://jira.i-tetris.com/secure/attachment/4033309/logcat.log.041_2026_06_29_20_41_27.gz",
+        "size": 3153828
+      },
+      {
+        "filename": "video_1782736557.mp4",
+        "mime": "video/mp4",
+        "created": "2026-06-30T02:28:08.000+0000",
+        "author": "唐洋",
+        "content": "http://jira.i-tetris.com/secure/attachment/4029742/video_1782736557.mp4",
+        "size": 7766016
+      }
+    ],
+    "links": [
+      {
+        "type": "Relates",
+        "dir": "out",
+        "key": "PC-38933",
+        "summary": "地图问题分析总票",
+        "status": "处理中"
+      },
+      {
+        "type": "Relates",
+        "dir": "out",
+        "key": "SD-5514",
+        "summary": "[内测问题][镁佳]【SWA.2.94】[C673-G3/G5][0309][C673-G3 东南亚-右 500km Ultra 港澳][14扬]【语音-马来语】【高德地图】【STG】query：Navigasi ke kedai kopi berhampiran，执行错误",
+        "status": "已关闭"
+      }
+    ]
+  },
+  {
+    "key": "PC-39375",
+    "summary": "语音标记日志-执行问题-几点退潮",
+    "status": "处理中",
+    "priority": "P2->Medium",
+    "assignee": "吴优",
+    "reporter": "赵容吉",
+    "created": "2026-08-18T06:27:28.000+0000",
+    "updated": "2026-09-11T02:50:31.000+0000",
+    "components": [
+      "AI Cockpit - Voice/General"
+    ],
+    "labels": [],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11734",
+      "value": "All",
+      "id": "11734"
+    },
+    "frequency": "High Probability",
+    "severity": "B(一般)",
+    "cause": "代码实现问题_General",
+    "description": "| https://vos-debug.i-tetris.com/#/mark/log/detail/68900\t| X/需求定义\t| multi_classification_model:[\n0:{\ncost_ms:21\nmodel_name:\"task\"\nquery:\"几点退潮\"\ntype:1\n类似指令有时候可走到闲聊回复，有时候又是走到查询天气，麻烦产品老师确认下执行预期 \t|",
+    "comments": [
+      {
+        "author": "吴优",
+        "created": "2026-08-18T10:35:42.000+0000",
+        "body": "几点退潮’带明确时间询问，应稳定进入天气现象查询1975"
+      },
+      {
+        "author": "汪雯菁",
+        "created": "2026-08-20T03:48:03.000+0000",
+        "body": "[https://vos-debug.i-tetris.com/#/info/getReqInfo?rid=43f78fc9-4c97-4234-9f14-47ca825a29a3&ts=1786405080861]\r\n\r\nmulti_task_model:[\r\n0:{\r\ncost_ms:12\r\ndomain:\"WEATHER\"\r\n{color:#de350b}intents:\"others\"{color}\r\njoint_energy:1.3472288\r\norigin_intents:\"weather_weather\"\r\nquery:\"几点退潮\"\r\nques_type:\"WHEN\"\r\nrw:0\r\nslot_intent_tagging:[\r\n0:\"0 -- 1 -- 几点 -- weather_weather\"]\r\ntagging:[\r\n0:\"0 -- 1 -- 几点 -- q_time\"\r\n1:\"2 -- 3 -- 退潮 -- operation\"\r\n无法重复提报，链接到：ST-63391"
+      },
+      {
+        "author": "张凯迪",
+        "created": "2026-09-10T02:58:30.000+0000",
+        "body": "1975中不包含退潮[https://alchemy.i-tetris.com/#/functional/points/detail/1400]\r\n\r\n辛苦产品老师看一下预期执行"
+      }
+    ],
+    "attachments": [],
+    "links": [
+      {
+        "type": "Relates",
+        "dir": "in",
+        "key": "ST-63391",
+        "summary": "【深蓝国内】指令匹配问题 - 外部/无法标记 - 许俊",
+        "status": "待办"
+      }
+    ]
+  },
+  {
+    "key": "PC-38942",
+    "summary": "【主线】【User】14：50 query：我要收藏西湖山水，弹出的收藏POI列表后query：第一个  有时候列表会收起有时候又不会",
+    "status": "处理中",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "徐飞",
+    "created": "2026-08-03T12:40:56.000+0000",
+    "updated": "2026-09-07T02:51:21.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [
+      "Env_车辆动态"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11735",
+      "value": "C673-ICA",
+      "id": "11735",
+      "child": {
+        "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11737",
+        "value": "All",
+        "id": "11737"
+      }
+    },
+    "frequency": "Always",
+    "severity": "C(轻微)",
+    "cause": "代码实现问题_General",
+    "description": "版本： c673_5-cdc-sop_bigsur_hqx.1.2.1_20230130-ota_full-user-secure-2.0ota-SWD.6.78-20260731235622\r\nVIN：LS6C3E167RF811284\r\n【问题时间】\r\n2026/8/3 14:50\r\n【前置条件】\r\n1、电源On档，\r\n【操作步骤】\r\n1. 车机上电，\r\n2. query：收藏西湖山水，弹窗出现poi列表\r\n3. query：第一个\r\n【预期结果】\r\n2. 收藏POI关闭列表\r\n【实际结果】\r\n2. 有时候没关闭列表\r\n【概率】\r\n10/10\r\n【日志链接】\r\n\\\\10.59.50.10\\sambashare\\haiyang.li\\LS6C3E167RF811284_2026_08_03_17_10_27\r\n",
+    "comments": [
+      {
+        "author": "程云",
+        "created": "2026-08-04T07:38:43.000+0000",
+        "body": "语音poi结果列表展示时，\"第一个\"执行的可见操作，会关闭列表弹窗，但“选择第一个”执行的是语义二次交互，用户可能还会操作其他功能（导航、添加途经点），所以没有关闭列表弹窗。\r\n\r\n这里的交互之前没有产品定义，请产品确认下，二次交互时，哪些操作需要关闭列表弹窗，请统一梳理出来，转需求票修改。[~you.wu]"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "IMG_0680.MOV",
+        "mime": "video/quicktime",
+        "created": "2026-08-03T12:44:50.000+0000",
+        "author": "雷洁",
+        "content": "http://jira.i-tetris.com/secure/attachment/4200352/IMG_0680.MOV",
+        "size": 161695747
+      }
+    ],
+    "links": [
+      {
+        "type": "Relates",
+        "dir": "out",
+        "key": "PC-38933",
+        "summary": "地图问题分析总票",
+        "status": "处理中"
+      }
+    ]
+  },
+  {
+    "key": "PC-37759",
+    "summary": "【主线】【User】16：08  蓝牙电话未授权，连接蓝牙后，query：拨打电话依然能够打出电话",
+    "status": "待办",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "徐飞",
+    "created": "2026-07-09T09:38:06.000+0000",
+    "updated": "2026-09-07T02:51:20.000+0000",
+    "components": [
+      "Android - BTPhone"
+    ],
+    "labels": [
+      "Env_车辆动态"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11735",
+      "value": "C673-ICA",
+      "id": "11735",
+      "child": {
+        "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11737",
+        "value": "All",
+        "id": "11737"
+      }
+    },
+    "frequency": "Always",
+    "severity": "B(一般)",
+    "cause": "软件版本问题",
+    "description": " c673_ica-cdc-sop_bigsur_hqx.1.2.1_20230130-ota_full-user-secure-2.0ota-SWD.6.27-20260707000721\r\nVIN：LS6C3E2R2RF810956\r\n【问题时间】\r\n2026/7/9 16：08\r\n【前置条件】\r\n1、电源On档，蓝牙已连接\r\n【操作步骤】\r\n1. 车机上电，query：我要打电话\r\n2. query： 10086 \r\n【预期结果】\r\n2. 不能打电话  提示未授权\r\n【实际结果】\r\n2. 能够打电话出去\r\n【概率】\r\n10/10\r\n【日志链接】\r\n\\\\10.59.50.10\\sambashare\\Log\\yiqi.zou\\2026.07.09",
+    "comments": [
+      {
+        "author": "雷磊02",
+        "created": "2026-07-10T06:43:33.000+0000",
+        "body": "产品确认下呢，蓝牙电话隐私授权相关的，之前讨论过的，通过非点击的方式触发打电话"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "IMG_0358.MOV",
+        "mime": "video/quicktime",
+        "created": "2026-07-09T09:39:52.000+0000",
+        "author": "雷洁",
+        "content": "http://jira.i-tetris.com/secure/attachment/4079192/IMG_0358.MOV",
+        "size": 60122831
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "PC-37473",
+    "summary": "【主线】【User】11：52 POI搜索界面 query：打开行车记录仪 打开行车记录仪后没有取消POI弹窗",
+    "status": "处理中",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "徐飞",
+    "created": "2026-07-06T02:18:29.000+0000",
+    "updated": "2026-09-07T02:51:21.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [
+      "Env_车辆动态",
+      "功能_语音"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11735",
+      "value": "C673-ICA",
+      "id": "11735",
+      "child": {
+        "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11737",
+        "value": "All",
+        "id": "11737"
+      }
+    },
+    "frequency": "Always",
+    "severity": "B(一般)",
+    "cause": "软件版本问题",
+    "description": "c673_5-cdc-sop_bigsur_hqx.1.2.1_20230130-ota_full-secure-2.0ota-SWA.1.32-20260630103824\r\nVIN：LS6C3E167RF811284\r\n【问题时间】\r\n2026/7/4  11：52\r\n【前置条件】\r\n1、电源On档，\r\n【操作步骤】\r\n1. 车机上电，地图搜索POI列表界面\r\n2. query：打开行车记录仪\r\n【预期结果】\r\n2. 打开行车记录仪  关闭POI搜索弹窗\r\n【实际结果】\r\n2. 打开行车记录仪，依然显示POI搜索弹窗\r\n【概率】\r\n10/10\r\n【日志链接】\r\n\\\\10.59.50.10\\sambashare\\Log\\fei.xu.o\\7\\7.4",
+    "comments": [
+      {
+        "author": "程云",
+        "created": "2026-07-06T02:37:47.000+0000",
+        "body": "现象同PC-37201，需要产品确认下浮窗的显示层级"
+      },
+      {
+        "author": "冯智秀",
+        "created": "2026-07-17T08:52:32.000+0000",
+        "body": "!image-2026-07-17-16-51-16-911.png|width=720,height=475![https://docs.google.com/spreadsheets/d/1u7DVXYjJBC8PtI0Dq9cgAShiEPKATVGKTkV5xJWIUR4/edit?gid=0#gid=0] 未明确poi弹窗"
+      },
+      {
+        "author": "程云",
+        "created": "2026-07-23T03:34:02.000+0000",
+        "body": "需求未定义，交互设计也未定义，请产品确认下呢。[~you.wu]"
+      },
+      {
+        "author": "吴优",
+        "created": "2026-08-20T03:48:33.000+0000",
+        "body": "预期是关闭poi弹窗，不然会影响可见"
+      },
+      {
+        "author": "程云",
+        "created": "2026-08-21T14:05:32.000+0000",
+        "body": "这种不应该应用端处理，请语音侧看看。[~wei.tan]"
+      },
+      {
+        "author": "谭威",
+        "created": "2026-08-24T03:46:18.000+0000",
+        "body": "该 POI 搜索卡片属于地图侧页面。语音仅作为打开行车记录仪的触发入口；若通过手动打开行车记录仪或其他非语音入口也无法关闭 POI 卡片，则可排除语音执行链路问题。\r\n\r\n建议地图侧统一处理行车记录仪与导航 POI 卡片的互斥关系：任一入口触发行车记录仪打开时，均关闭当前 POI 搜索卡片，保证语音和非语音入口行为一致。请地图侧评估并优化该互斥逻辑。"
+      },
+      {
+        "author": "程云",
+        "created": "2026-08-24T11:48:40.000+0000",
+        "body": "语音控制不同模块，有的显示VUI，有的没有，那这个互斥交互请产品梳理确认下。[~you.wu] [~ke.chen]"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "image-2026-07-17-16-51-16-911.png",
+        "mime": "image/png",
+        "created": "2026-07-17T08:51:18.000+0000",
+        "author": "冯智秀",
+        "content": "http://jira.i-tetris.com/secure/attachment/4119820/image-2026-07-17-16-51-16-911.png",
+        "size": 409311
+      },
+      {
+        "filename": "IMG_0252.MOV",
+        "mime": "video/quicktime",
+        "created": "2026-07-06T02:20:42.000+0000",
+        "author": "雷洁",
+        "content": "http://jira.i-tetris.com/secure/attachment/4056833/IMG_0252.MOV",
+        "size": 115654196
+      }
+    ],
+    "links": [
+      {
+        "type": "Relates",
+        "dir": "in",
+        "key": "PC-37201",
+        "summary": " 19：41[0130]27号 导航结果卡片显示时，语音：我要设置音效，导航卡片遮盖部分音效卡片界面",
+        "status": "已关闭"
+      }
+    ]
+  },
+  {
+    "key": "HUR-84753",
+    "summary": "BG20260911000677 【WT】【J90A】【座舱】【蓝牙电话】【必现】【SWD.050】麦克风权限里面没有蓝牙电话，关闭麦克风权限开关，蓝牙电话麦克风可用，根据隐私协议里说明，涉及隐私权限的必须给客户提示，有信息泄露风险",
+    "status": "处理中",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "钟锐",
+    "created": "2026-09-13T04:23:21.000+0000",
+    "updated": "2026-09-14T06:08:06.000+0000",
+    "components": [
+      "项目管理"
+    ],
+    "labels": [
+      "客户_DTM"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11726",
+      "value": "J90A",
+      "id": "11726",
+      "child": {
+        "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11727",
+        "value": "All",
+        "id": "11727"
+      }
+    },
+    "frequency": "Always",
+    "severity": "B(一般)",
+    "cause": "代码实现问题_General",
+    "description": "【版本信息】SWD.050\n【测试环境】实车 010230\n【前提条件】车机上电\n【重现步骤】麦克风权限里面没有蓝牙电话，关闭麦克风权限开关，蓝牙电话麦克风可用，根据隐私协议里说明，涉及隐私权限的必须给客户提示，有信息泄露风险\n【实际结果】麦克风权限里面没有蓝牙电话，关闭麦克风权限开关，蓝牙电话麦克风可用，根据隐私协议里说明，涉及隐私权限的必须给客户提示，有信息泄露风险\n【预期结果】蓝牙电话增加麦克风权限\n【复现概率】5/5\n【恢复条件】无\n【发生时间】14：34\n\n[联系人]\n蒋朋呈(梧桐)(132****8569)\n\n[附件地址]\n Windows: \\\\10.59.50.10\\sambashare\\dtm\\BG20260911000677\n Linux: smb://10.59.50.10/sambashare/dtm/BG20260911000677\n\n内部：http://jira.i-tetris.com/browse/HUR-84753\n外部：http://211.159.155.78:8080/browse/HUR-50223",
+    "comments": [
+      {
+        "author": "张齐财",
+        "created": "2026-09-14T03:01:17.000+0000",
+        "body": "麻烦确定下此问题"
+      },
+      {
+        "author": "吴优",
+        "created": "2026-09-14T03:30:00.000+0000",
+        "body": "有此定义，国内应为同规则，认为是问题：[马自达J90A EU交互设计文档_隐私授权_v1.0.pdf|https://drive.google.com/file/d/13qXkTKHDQa4fqrWGWKmO3OqE0D8kPUho/view?usp=sharing]!image-2026-09-14-11-29-04-727.png!"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "7.mp4",
+        "mime": "video/mp4",
+        "created": "2026-09-14T03:00:14.000+0000",
+        "author": "张齐财",
+        "content": "http://jira.i-tetris.com/secure/attachment/4409057/7.mp4",
+        "size": 24273874
+      },
+      {
+        "filename": "android.7z",
+        "mime": "application/x-7z-compressed",
+        "created": "2026-09-14T02:59:48.000+0000",
+        "author": "张齐财",
+        "content": "http://jira.i-tetris.com/secure/attachment/4409058/android.7z",
+        "size": 4375380
+      },
+      {
+        "filename": "image-2026-09-14-11-29-04-727.png",
+        "mime": "image/png",
+        "created": "2026-09-14T03:29:05.000+0000",
+        "author": "吴优",
+        "content": "http://jira.i-tetris.com/secure/attachment/4409414/image-2026-09-14-11-29-04-727.png",
+        "size": 99979
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "HUR-78190",
+    "summary": "【ER】【OKTB】【0306分支】【userdebug】【泰国属地化测试】【中文】【离线】16:00–query：退出全程预览，语音回复：好的，这就打开导航全览",
+    "status": "处理中",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "熊元锋",
+    "created": "2026-04-28T10:41:08.000+0000",
+    "updated": "2026-08-06T18:27:20.000+0000",
+    "components": [
+      "Android - Map"
+    ],
+    "labels": [
+      "Env_车辆静态"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11726",
+      "value": "J90A",
+      "id": "11726",
+      "child": {
+        "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/12622",
+        "value": "ER",
+        "id": "12622"
+      }
+    },
+    "frequency": "Always",
+    "severity": "A(严重)",
+    "cause": "软件版本问题",
+    "description": "测试环境：实车、生产、车机网络（离线状态）\r\nVID：LVRHDAEK4SN500017\r\nTUID：31002030251209140000000272522921\r\n测试版本：j90a_er-cdc-release_huron_hqx.1.2.1_20260306-ota_full-2.0ota-1.2.32.32821-20260427042438\r\nMCU：2.25.0.111\r\n【硬件版本】A样\r\n【前置条件】\r\n\r\n1.车机已上电\r\n2.车机为中文\r\n\r\n[操作步骤]\r\n\r\n1.导航中，已打开全程预览\r\n\r\n2.query：退出全程预览\r\n\r\n[预期结果]\r\n\r\n1.识别正确，执行正确，语音回复正确\r\n\r\n[实际结果]\r\n\r\n1.语音回复：好的，这就打开导航全览\t\r\n\r\n【测试时间】\r\n\r\n2026.4.28-------16：00\r\n",
+    "comments": [
+      {
+        "author": "常荣",
+        "created": "2026-04-29T02:51:32.000+0000",
+        "body": "【基础信息】\n- 车辆标识: LVRHDAEK4SN500017\n- 发生时间: 2026-04-28 16:00:26 (日志时间，Time Offset: 26s)\n- 用户语音: 退出全程预览\n- reqId: e663072e-ccd5-4445-a5f6-bca89a13e2dc\n\n【诊断证据】\n1. 决策路径判定：`isUsingCloudResponse: false` (即 `using_cloud: false`)，完全走离线路径。\n2. 离线 NLU 解析详情：离线模型准确命中了 `map_overview_close` 意图，并正确提取了 `operation: 退出`。\n3. 协议下发详情：离线引擎成功下发了 `meta_id: 1018` (导航全程预览) 控制协议，且参数准确无误：\n```json\n[\n  {\n    \"meta_id\": 1018,\n    \"type\": \"navi:map:journey:view\",\n    \"params\": {\n      \"op\": [{\"canonical\": \"close\"}]\n    }\n  }\n]\n```\n4. 异常表现：车端在接收到带有明确 `op: close`（退出）参数的指令后，未能正确执行关闭动作，反而触发了“好的，正在打开导航全览”的本地 TTS 播报，并执行了打开逻辑。\n\n【问题原因】\n车端（Vehicle / App）执行逻辑异常。\n离线 ASR 与 NLU 识别完全准确，且成功下发了对应的控制协议（1018）和关闭参数。遵循“只要 `meta_id` 成功下发，后续执行与反馈一律归责车端”的红线准则，该异常完全是由车端本地处理状态机流转时出错导致的。\n经日志深度追溯推测，这极有可能是因为当时地图处于后台状态（前一轮交互后可能弹出了其他页面），而车端状态机（或其读取的本地配置）在 `TARGET_PAGE_BACKGROUND` 分支下未能正确兼容 `op=close` 的情况，错误地回落到了默认的“打开”分支，从而触发了错误的播报与执行。\n\n【解决方案】\n责任方：Vehicle / App（车端）。\n请车端导航 App 或 VUI 团队核实：在接收到 `meta_id: 1018` 且 `op=close` 时，若地图应用处于后台等特定状态，本地状态机的处理逻辑是否存在漏洞，修复将“退出”误执行为“打开”的 Bug。\n\n（AI Generated）"
+      },
+      {
+        "author": "常荣",
+        "created": "2026-04-29T03:00:17.000+0000",
+        "body": "麻烦车端老师看一下执行问题"
+      },
+      {
+        "author": "刘洪星",
+        "created": "2026-04-30T06:08:47.000+0000",
+        "body": "04-28 16:00:26.860164 4190 4824 I ActionClientService: [ (ActionClientService.java:449)#resolveActionNluData ]ActionClient: class com.mega.mapassistantproxy.MapActionService, receive data: ActionNluData{requestId='e663072e-ccd5-4445-a5f6-bca89a13e2dc', query='退出全程预览', sessionId='406b6a74-6a2a-4162-9776-36fe694e8303', operations=[Operation{metaId=1018, originMetaId=0, type=navi:map:journey:view, params={op=[Params\r\n\r\n{canonical='close', literal='null'}\r\n\r\n]}, order=0}], tts=[], view=null, resultType='finish', regionId=1, sceneWord='null', soundLocation=2, uiNodes=[], asrRejected=false, useOffline=true}\r\n\r\n04-28 16:00:26.921075 2279 2507 I MegaAssistantService: [ (TtsComposer.java:245)#genTtsDataList ]genTtsDataList() called with: ttsList = [, uid='null', patternId='null', functionName='null', triggers='null', robotAction='null', recordingId='null', application='null'}]\">[Tts{{{color:#de350b}content='好的。这就打开导航全览', id='1022'{color}, uid='null', patternId='null', functionName='null', triggers='null', robotAction='null', recordingId='null', application='null'}]|#de350b}content='好的。这就打开导航全览', id='1022'<font color=], emotion = [0]\r\n\r\n \r\n\r\n界面在doAction中执行的是 return defaultActionCallback(operation, hitStrategy); ，非自定义tts，只会做tts填充\r\n\r\ntts反馈指向的id='1022，按照平台配置，tts应指向id=1056，需要语音侧看看\r\n\r\n!image-2026-04-30-14-07-56-189.png!\r\n\r\n "
+      },
+      {
+        "author": "张齐财",
+        "created": "2026-05-06T05:50:35.000+0000",
+        "body": "@Override\r\npublic boolean targetPageForeground(@NonNull String requestId,\r\n @NonNull ActionNluData.Operation operation) {\r\n return false;\r\n}\r\n\r\n@Override\r\npublic boolean targetPageBackground(@NonNull String requestId,\r\n @NonNull ActionNluData.Operation operation) {\r\n return true;\r\n}\r\n \r\n判断地图前后台，目前写死在后台。确定泰为地图能否提供是否在前后台，或者根据什么判断导航是否在前后台"
+      },
+      {
+        "author": "张齐财",
+        "created": "2026-05-06T05:57:04.000+0000",
+        "body": "[https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26006]  此meta_id是否有问题，地图全程预览和是否在前后台是否没关系，只是功能开关"
+      },
+      {
+        "author": "刘洪星",
+        "created": "2026-05-08T06:53:01.000+0000",
+        "body": "麻烦产品老师确认"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "android(1)(1).zip",
+        "mime": "application/zip",
+        "created": "2026-04-28T10:41:11.000+0000",
+        "author": "熊元锋",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730036/android%281%29%281%29.zip",
+        "size": 147412216
+      },
+      {
+        "filename": "audio(1).zip",
+        "mime": "application/zip",
+        "created": "2026-04-28T10:41:11.000+0000",
+        "author": "熊元锋",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730037/audio%281%29.zip",
+        "size": 157364428
+      },
+      {
+        "filename": "image-2026-04-30-14-07-56-189.png",
+        "mime": "image/png",
+        "created": "2026-04-30T06:07:56.000+0000",
+        "author": "刘洪星",
+        "content": "http://jira.i-tetris.com/secure/attachment/3741266/image-2026-04-30-14-07-56-189.png",
+        "size": 33104
+      },
+      {
+        "filename": "logcat.log.014_2026_04_28_16_04_48.gz",
+        "mime": "application/x-gzip",
+        "created": "2026-04-29T02:57:49.000+0000",
+        "author": "常荣",
+        "content": "http://jira.i-tetris.com/secure/attachment/3732536/logcat.log.014_2026_04_28_16_04_48.gz",
+        "size": 4171537
+      },
+      {
+        "filename": "video_1777367620.mp4",
+        "mime": "video/mp4",
+        "created": "2026-04-28T10:43:53.000+0000",
+        "author": "熊元锋",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730054/video_1777367620.mp4",
+        "size": 4144909
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "ADS-50733",
+    "summary": "【客户问题】【LS6C3E2T3TF812038】【MegaClaw】场景积木卡片生成后语音打开车辆设置，积木卡片消失且车辆设置卡片层级低于语音卡片，时间点：9/14 14:42",
+    "status": "待办",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "潘登",
+    "created": "2026-09-14T08:23:08.000+0000",
+    "updated": "2026-09-14T08:27:27.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [
+      "客户_JIRA"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13317",
+      "value": "C385-5",
+      "id": "13317"
+    },
+    "frequency": "Always",
+    "severity": "A(严重)",
+    "cause": "代码实现问题_General",
+    "description": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.场景积木的卡片生成后，语音说出“打开车辆设置”，积木卡片消失。车辆设置卡片的层级低于语音卡片，时间点：9/14 14:42\r\n问题时间：9/14 14:42\r\nlog见附件\r\n视频见附件",
+    "comments": [
+      {
+        "author": "常荣",
+        "created": "2026-09-14T08:26:25.000+0000",
+        "body": "卡片层级显示问题，车端老师看看"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "mime": "application/zip",
+        "created": "2026-09-14T08:23:10.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4412026/LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "size": 327184943
+      },
+      {
+        "filename": "video_1789369069(1).mp4",
+        "mime": "video/mp4",
+        "created": "2026-09-14T08:23:44.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4412036/video_1789369069%281%29.mp4",
+        "size": 33842492
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "ADS-50732",
+    "summary": "【客户问题】【LS6C3E2T3TF812038】【MegaClaw】出行助手卡片生成后语音打开车辆设置，出行卡片消失且车辆设置卡片层级低于语音卡片，时间点：9/14 14:37",
+    "status": "待办",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "潘登",
+    "created": "2026-09-14T08:20:32.000+0000",
+    "updated": "2026-09-14T08:27:10.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [
+      "客户_JIRA"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13317",
+      "value": "C385-5",
+      "id": "13317"
+    },
+    "frequency": "Always",
+    "severity": "A(严重)",
+    "cause": "代码实现问题_General",
+    "description": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.出行助手卡片生成后，语音说出“打开车辆设置”，出行卡片消失。车辆设置卡片的层级低于语音卡片，时间点：9/14 14:37\r\n问题时间：9/14 14:37\r\nlog见附件\r\n视频见附件",
+    "comments": [
+      {
+        "author": "常荣",
+        "created": "2026-09-14T08:25:45.000+0000",
+        "body": "卡片层级显示问题，车端老师看看"
+      },
+      {
+        "author": "谭威",
+        "created": "2026-09-14T08:27:05.000+0000",
+        "body": "语音卡片层级本身就比较高。[~you.wu]确认一下吧。"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "mime": "application/zip",
+        "created": "2026-09-14T08:20:36.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411980/LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "size": 327184943
+      },
+      {
+        "filename": "video_1789369069(2).mp4",
+        "mime": "video/mp4",
+        "created": "2026-09-14T08:21:11.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411993/video_1789369069%282%29.mp4",
+        "size": 48532755
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "ADS-50731",
+    "summary": "【客户问题】【LS6C3E2T3TF812038】【MegaClaw】语音输入深蓝管家query播报期间挂R档，播报内容显示在360影像上层，时间点：9/14 14:29",
+    "status": "待办",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "潘登",
+    "created": "2026-09-14T08:18:04.000+0000",
+    "updated": "2026-09-14T08:26:17.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [
+      "客户_JIRA"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13317",
+      "value": "C385-5",
+      "id": "13317"
+    },
+    "frequency": "Always",
+    "severity": "A(严重)",
+    "cause": "代码实现问题_General",
+    "description": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.语音输入深蓝管家的query，在播报期间可以挂R档，并且播报内容显示在360影像上层，时间点：9/14 14:29\r\n问题时间：9/14 14:29\r\nlog见附件\r\n视频见附件",
+    "comments": [
+      {
+        "author": "常荣",
+        "created": "2026-09-14T08:25:08.000+0000",
+        "body": "卡片层级显示问题，车端老师看看"
+      },
+      {
+        "author": "谭威",
+        "created": "2026-09-14T08:26:12.000+0000",
+        "body": "[~you.wu]看一下 。大模型相关的应该都有这个问题。"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "mime": "application/zip",
+        "created": "2026-09-14T08:18:07.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411941/LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "size": 327184943
+      },
+      {
+        "filename": "video_1789369442.mp4",
+        "mime": "video/mp4",
+        "created": "2026-09-14T08:20:24.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411979/video_1789369442.mp4",
+        "size": 237961818
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "ADS-50730",
+    "summary": "【客户问题】【LS6C3E2T3TF812038】【MegaClaw】语音输入场景积木query播报期间挂R档，播报内容显示在360影像上层，时间点：9/14 14:30",
+    "status": "待办",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "潘登",
+    "created": "2026-09-14T08:08:10.000+0000",
+    "updated": "2026-09-14T08:26:24.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [
+      "客户_JIRA"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13317",
+      "value": "C385-5",
+      "id": "13317"
+    },
+    "frequency": "Always",
+    "severity": "A(严重)",
+    "cause": "代码实现问题_General",
+    "description": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.语音输入场景积木的query，在播报期间可以挂R档，并且播报内容显示在360影像上层，时间点：9/14 14:30\r\n问题时间：9/14 14:30\r\nlog见附件\r\n视频见附件",
+    "comments": [
+      {
+        "author": "常荣",
+        "created": "2026-09-14T08:24:38.000+0000",
+        "body": "卡片层级显示问题，车端老师看看"
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "mime": "application/zip",
+        "created": "2026-09-14T08:17:07.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411928/LS6C3E2T3TF812038_2026_09_14_14_43_57.zip",
+        "size": 327184943
+      },
+      {
+        "filename": "video_1789369069.mp4",
+        "mime": "video/mp4",
+        "created": "2026-09-14T08:12:40.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4411828/video_1789369069.mp4",
+        "size": 34944257
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "ADS-50551",
+    "summary": "【客户问题】【LS6C3E2T3TF812038】【MegaClaw】1.语音输入“前面是什么小区”，在播报期间可以挂R档，并且播报内容显示在360影像上层，时间点：9/11 18:25",
+    "status": "处理中",
+    "priority": "P1->High",
+    "assignee": "吴优",
+    "reporter": "潘登",
+    "created": "2026-09-13T02:48:22.000+0000",
+    "updated": "2026-09-14T08:19:39.000+0000",
+    "components": [
+      "AI Cockpit - Voice/执行"
+    ],
+    "labels": [
+      "客户_JIRA"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13317",
+      "value": "C385-5",
+      "id": "13317"
+    },
+    "frequency": "Always",
+    "severity": "A(严重)",
+    "cause": "代码实现问题_General",
+    "description": "【客户问题】【LS6C3E2T3TF812038】\r\n问题描述：\r\n1.语音输入“前面是什么小区”，在播报期间可以挂R档，并且播报内容显示在360影像上层，时间点：9/11 18:25\r\n问题时间：9/11 18:25\r\nlog见附件\r\n视频见附件",
+    "comments": [
+      {
+        "author": "谭威",
+        "created": "2026-09-14T08:19:12.000+0000",
+        "body": "和之前生日卡片类似[~you.wu]\r\n\r\n "
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "LS6C3E2T3TF812038_2026_09_11_19_21_16.zip",
+        "mime": "application/zip",
+        "created": "2026-09-13T02:48:24.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4407030/LS6C3E2T3TF812038_2026_09_11_19_21_16.zip",
+        "size": 234978011
+      },
+      {
+        "filename": "LS6C3E2T5TF811974_2026_09_11_15_22_57.zip",
+        "mime": "application/zip",
+        "created": "2026-09-13T02:48:24.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4407031/LS6C3E2T5TF811974_2026_09_11_15_22_57.zip",
+        "size": 176801576
+      },
+      {
+        "filename": "video_1789131057.mp4",
+        "mime": "video/mp4",
+        "created": "2026-09-13T02:48:48.000+0000",
+        "author": "潘登",
+        "content": "http://jira.i-tetris.com/secure/attachment/4407033/video_1789131057.mp4",
+        "size": 5796330
+      }
+    ],
+    "links": []
+  },
+  {
+    "key": "ADS-44267",
+    "summary": "【ID20260602134722264】【C673-6】【CDC】【SWD.3.68】【域内测试】【UI】【必现】通过语音查询天气，车机出现天气弹窗后挂R挡，弹窗层级高于360界面",
+    "status": "Pending",
+    "priority": "P2->Medium",
+    "assignee": "吴优",
+    "reporter": "测试",
+    "created": "2026-06-03T09:34:34.000+0000",
+    "updated": "2026-08-31T03:40:54.000+0000",
+    "components": [
+      "Android - General"
+    ],
+    "labels": [
+      "Env_车辆静态",
+      "客户_DTM"
+    ],
+    "vehicle": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/12195",
+      "value": "C673-6",
+      "id": "12195"
+    },
+    "frequency": "Always",
+    "severity": "C(轻微)",
+    "cause": "客户方/供应商问题",
+    "description": "【前置条件/发生环境】\n测试环境：实车\n测试人员：刁吴东\nVIN：LS6C3E2S7SF811464\n时间：2026/6/2 10:37\n前置条件：①车辆ON档；②车辆使用挡位P挡；\n【测试步骤】\n1.激活语音输入“今天天气如何“\n2.挂R挡\n【预期结果】\n1.车机出现天气弹窗\n2.360界面霸屏（界面处于最高层）\n【实际结果】\n1.车机出现天气弹窗\n2.车机出现天气弹窗后挂R挡，弹窗层级高于360界面\n备注：C385-2、C673-7均有此问题\n【项目名称】\nC673-6\n【提单版本号】\n{\"versionNo\": \"SWD.3.68\"}\n【提单人】\n刁吴东(202516635)\n【当前处理人】\n柴子程(zicheng.chai.o)\n【问题发生日期】\n2026-06-02 00:00:00\n【期望解决时间】\n2026-07-01 00:00:00",
+    "comments": [
+      {
+        "author": "谭威",
+        "created": "2026-07-09T08:27:23.000+0000",
+        "body": "同http://jira.i-tetris.com/browse/ADS-46283  \r\n\r\n主要的作用是：：当语音在倾听、处理或播报有含金量的业务内容时，如果车端状态发生一些非严重级变化而临时禁用语音，系统通过 intentToExit 挂起重置动作，静默等当前的播报播完才优雅退场，以保证语音交互的连续性与完整性\r\n\r\n这里等待天气播报完成后，语音会自动退出，天气卡片也会自动退出。"
+      },
+      {
+        "author": "谭威",
+        "created": "2026-07-09T08:28:53.000+0000",
+        "body": "设计如此，非层级问题。本身天气卡片层级就比较高。 "
+      },
+      {
+        "author": "柴子程",
+        "created": "2026-07-09T08:41:11.000+0000",
+        "body": "如上所述，此问题关闭"
+      },
+      {
+        "author": "吴优",
+        "created": "2026-08-27T11:19:00.000+0000",
+        "body": "不应如此，之前票只表明客户接受无卡片、仅打字机小弹窗的情况出现，不代表接受大卡片的出现，AVM的优先级应该比卡片高"
+      },
+      {
+        "author": "谭威",
+        "created": "2026-08-28T03:40:04.000+0000",
+        "body": "AVM是华为提供。是一个Activity。 无法保证层级。 请继续确认。[~you.wu]。  "
+      }
+    ],
+    "attachments": [
+      {
+        "filename": "20260602_1····.mp4",
+        "mime": "video/mp4",
+        "created": "2026-06-03T09:34:38.000+0000",
+        "author": "吴建达",
+        "content": "http://jira.i-tetris.com/secure/attachment/3900599/20260602_1%C2%B7%C2%B7%C2%B7%C2%B7.mp4",
+        "size": 7776460
+      },
+      {
+        "filename": "image-2026-08-27-16-26-00-156.png",
+        "mime": "image/png",
+        "created": "2026-08-27T08:26:00.000+0000",
+        "author": "吴优",
+        "content": "http://jira.i-tetris.com/secure/attachment/4323269/image-2026-08-27-16-26-00-156.png",
+        "size": 220289
+      }
+    ],
+    "links": []
+  }
+]

@@ -1,0 +1,1579 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "1519933",
+  "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933",
+  "key": "HUR-78190",
+  "fields": {
+    "issuetype": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issuetype/10006",
+      "id": "10006",
+      "description": "",
+      "iconUrl": "http://jira.i-tetris.com/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+      "name": "故障",
+      "subtask": false,
+      "avatarId": 10303
+    },
+    "components": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/component/12827",
+        "id": "12827",
+        "name": "Android - Map",
+        "description": "导航相关（含仪表投屏）"
+      }
+    ],
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "description": "测试环境：实车、生产、车机网络（离线状态）\r\nVID：LVRHDAEK4SN500017\r\nTUID：31002030251209140000000272522921\r\n测试版本：j90a_er-cdc-release_huron_hqx.1.2.1_20260306-ota_full-2.0ota-1.2.32.32821-20260427042438\r\nMCU：2.25.0.111\r\n【硬件版本】A样\r\n【前置条件】\r\n\r\n1.车机已上电\r\n2.车机为中文\r\n\r\n[操作步骤]\r\n\r\n1.导航中，已打开全程预览\r\n\r\n2.query：退出全程预览\r\n\r\n[预期结果]\r\n\r\n1.识别正确，执行正确，语音回复正确\r\n\r\n[实际结果]\r\n\r\n1.语音回复：好的，这就打开导航全览\t\r\n\r\n【测试时间】\r\n\r\n2026.4.28-------16：00\r\n",
+    "project": {
+      "self": "http://jira.i-tetris.com/rest/api/2/project/12000",
+      "id": "12000",
+      "key": "HUR",
+      "name": "Changan-Mazda: Huron",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/projectavatar?pid=12000&avatarId=10204",
+        "24x24": "http://jira.i-tetris.com/secure/projectavatar?size=small&pid=12000&avatarId=10204",
+        "16x16": "http://jira.i-tetris.com/secure/projectavatar?size=xsmall&pid=12000&avatarId=10204",
+        "32x32": "http://jira.i-tetris.com/secure/projectavatar?size=medium&pid=12000&avatarId=10204"
+      },
+      "projectCategory": {
+        "self": "http://jira.i-tetris.com/rest/api/2/projectCategory/10000",
+        "id": "10000",
+        "description": "Contracted Customer Project",
+        "name": "客户项目"
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/version/19840",
+        "id": "19840",
+        "description": "VAVE版本",
+        "name": "J90A-ER_VAVE_20261110",
+        "archived": false,
+        "released": false,
+        "releaseDate": "2026-09-30"
+      }
+    ],
+    "customfield_11200": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11149",
+      "value": "A(严重)",
+      "id": "11149"
+    },
+    "aggregatetimespent": null,
+    "resolution": null,
+    "customfield_11103": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11130",
+      "value": "软件版本问题",
+      "id": "11130"
+    },
+    "timetracking": {},
+    "customfield_10500": "{}",
+    "customfield_10005": "2|i1rhvz:",
+    "customfield_10701": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11726",
+      "value": "J90A",
+      "id": "11726",
+      "child": {
+        "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/12622",
+        "value": "ER",
+        "id": "12622"
+      }
+    },
+    "attachment": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3730036",
+        "id": "3730036",
+        "filename": "android(1)(1).zip",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:41:11.000+0000",
+        "size": 147412216,
+        "mimeType": "application/zip",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730036/android%281%29%281%29.zip"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3730037",
+        "id": "3730037",
+        "filename": "audio(1).zip",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:41:11.000+0000",
+        "size": 157364428,
+        "mimeType": "application/zip",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730037/audio%281%29.zip"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3741266",
+        "id": "3741266",
+        "filename": "image-2026-04-30-14-07-56-189.png",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+          "name": "hongxing.liu",
+          "key": "hongxing.liu",
+          "emailAddress": "hongxing.liu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+          },
+          "displayName": "刘洪星",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-30T06:07:56.000+0000",
+        "size": 33104,
+        "mimeType": "image/png",
+        "content": "http://jira.i-tetris.com/secure/attachment/3741266/image-2026-04-30-14-07-56-189.png",
+        "thumbnail": "http://jira.i-tetris.com/secure/thumbnail/3741266/_thumb_3741266.png"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3732536",
+        "id": "3732536",
+        "filename": "logcat.log.014_2026_04_28_16_04_48.gz",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+          "name": "rong.chang.o",
+          "key": "rong.chang.o",
+          "emailAddress": "rong.chang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+          },
+          "displayName": "常荣",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-29T02:57:49.000+0000",
+        "size": 4171537,
+        "mimeType": "application/x-gzip",
+        "content": "http://jira.i-tetris.com/secure/attachment/3732536/logcat.log.014_2026_04_28_16_04_48.gz"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3730054",
+        "id": "3730054",
+        "filename": "video_1777367620.mp4",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:43:53.000+0000",
+        "size": 4144909,
+        "mimeType": "video/mp4",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730054/video_1777367620.mp4"
+      }
+    ],
+    "customfield_10702": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/10308",
+      "value": "Always",
+      "id": "10308"
+    },
+    "aggregatetimeestimate": null,
+    "customfield_10703": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+      "name": "yuanfeng.xiong.o",
+      "key": "yuanfeng.xiong.o",
+      "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+      },
+      "displayName": "熊元锋",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "resolutiondate": null,
+    "workratio": -1,
+    "summary": "【ER】【OKTB】【0306分支】【userdebug】【泰国属地化测试】【中文】【离线】16:00–query：退出全程预览，语音回复：好的，这就打开导航全览",
+    "lastViewed": "2026-09-14T06:47:19.656+0000",
+    "watches": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issue/HUR-78190/watchers",
+      "watchCount": 4,
+      "isWatching": false
+    },
+    "creator": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+      "name": "yuanfeng.xiong.o",
+      "key": "yuanfeng.xiong.o",
+      "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+      },
+      "displayName": "熊元锋",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "subtasks": [],
+    "created": "2026-04-28T10:41:08.000+0000",
+    "reporter": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+      "name": "yuanfeng.xiong.o",
+      "key": "yuanfeng.xiong.o",
+      "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+      },
+      "displayName": "熊元锋",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "customfield_10000": "HUR-5",
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "priority": {
+      "self": "http://jira.i-tetris.com/rest/api/2/priority/2",
+      "iconUrl": "http://jira.i-tetris.com/images/icons/priorities/high.svg",
+      "name": "P1->High",
+      "id": "2"
+    },
+    "labels": [
+      "Env_车辆静态"
+    ],
+    "customfield_10004": null,
+    "environment": null,
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": [],
+    "duedate": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "comment": {
+      "comments": [
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7241796",
+          "id": "7241796",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "【基础信息】\n- 车辆标识: LVRHDAEK4SN500017\n- 发生时间: 2026-04-28 16:00:26 (日志时间，Time Offset: 26s)\n- 用户语音: 退出全程预览\n- reqId: e663072e-ccd5-4445-a5f6-bca89a13e2dc\n\n【诊断证据】\n1. 决策路径判定：`isUsingCloudResponse: false` (即 `using_cloud: false`)，完全走离线路径。\n2. 离线 NLU 解析详情：离线模型准确命中了 `map_overview_close` 意图，并正确提取了 `operation: 退出`。\n3. 协议下发详情：离线引擎成功下发了 `meta_id: 1018` (导航全程预览) 控制协议，且参数准确无误：\n```json\n[\n  {\n    \"meta_id\": 1018,\n    \"type\": \"navi:map:journey:view\",\n    \"params\": {\n      \"op\": [{\"canonical\": \"close\"}]\n    }\n  }\n]\n```\n4. 异常表现：车端在接收到带有明确 `op: close`（退出）参数的指令后，未能正确执行关闭动作，反而触发了“好的，正在打开导航全览”的本地 TTS 播报，并执行了打开逻辑。\n\n【问题原因】\n车端（Vehicle / App）执行逻辑异常。\n离线 ASR 与 NLU 识别完全准确，且成功下发了对应的控制协议（1018）和关闭参数。遵循“只要 `meta_id` 成功下发，后续执行与反馈一律归责车端”的红线准则，该异常完全是由车端本地处理状态机流转时出错导致的。\n经日志深度追溯推测，这极有可能是因为当时地图处于后台状态（前一轮交互后可能弹出了其他页面），而车端状态机（或其读取的本地配置）在 `TARGET_PAGE_BACKGROUND` 分支下未能正确兼容 `op=close` 的情况，错误地回落到了默认的“打开”分支，从而触发了错误的播报与执行。\n\n【解决方案】\n责任方：Vehicle / App（车端）。\n请车端导航 App 或 VUI 团队核实：在接收到 `meta_id: 1018` 且 `op=close` 时，若地图应用处于后台等特定状态，本地状态机的处理逻辑是否存在漏洞，修复将“退出”误执行为“打开”的 Bug。\n\n（AI Generated）",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-04-29T02:51:32.000+0000",
+          "updated": "2026-04-29T02:51:32.000+0000"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7241973",
+          "id": "7241973",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "麻烦车端老师看一下执行问题",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-04-29T03:00:17.000+0000",
+          "updated": "2026-04-29T03:00:17.000+0000"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7254481",
+          "id": "7254481",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "04-28 16:00:26.860164 4190 4824 I ActionClientService: [ (ActionClientService.java:449)#resolveActionNluData ]ActionClient: class com.mega.mapassistantproxy.MapActionService, receive data: ActionNluData{requestId='e663072e-ccd5-4445-a5f6-bca89a13e2dc', query='退出全程预览', sessionId='406b6a74-6a2a-4162-9776-36fe694e8303', operations=[Operation{metaId=1018, originMetaId=0, type=navi:map:journey:view, params={op=[Params\r\n\r\n{canonical='close', literal='null'}\r\n\r\n]}, order=0}], tts=[], view=null, resultType='finish', regionId=1, sceneWord='null', soundLocation=2, uiNodes=[], asrRejected=false, useOffline=true}\r\n\r\n04-28 16:00:26.921075 2279 2507 I MegaAssistantService: [ (TtsComposer.java:245)#genTtsDataList ]genTtsDataList() called with: ttsList = [, uid='null', patternId='null', functionName='null', triggers='null', robotAction='null', recordingId='null', application='null'}]\">[Tts{{{color:#de350b}content='好的。这就打开导航全览', id='1022'{color}, uid='null', patternId='null', functionName='null', triggers='null', robotAction='null', recordingId='null', application='null'}]|#de350b}content='好的。这就打开导航全览', id='1022'<font color=], emotion = [0]\r\n\r\n \r\n\r\n界面在doAction中执行的是 return defaultActionCallback(operation, hitStrategy); ，非自定义tts，只会做tts填充\r\n\r\ntts反馈指向的id='1022，按照平台配置，tts应指向id=1056，需要语音侧看看\r\n\r\n!image-2026-04-30-14-07-56-189.png!\r\n\r\n ",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-04-30T06:08:47.000+0000",
+          "updated": "2026-04-30T06:09:24.000+0000"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7277059",
+          "id": "7277059",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "@Override\r\npublic boolean targetPageForeground(@NonNull String requestId,\r\n @NonNull ActionNluData.Operation operation) {\r\n return false;\r\n}\r\n\r\n@Override\r\npublic boolean targetPageBackground(@NonNull String requestId,\r\n @NonNull ActionNluData.Operation operation) {\r\n return true;\r\n}\r\n \r\n判断地图前后台，目前写死在后台。确定泰为地图能否提供是否在前后台，或者根据什么判断导航是否在前后台",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-05-06T05:50:35.000+0000",
+          "updated": "2026-05-06T05:50:35.000+0000"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7277167",
+          "id": "7277167",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "[https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26006]  此meta_id是否有问题，地图全程预览和是否在前后台是否没关系，只是功能开关",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-05-06T05:57:04.000+0000",
+          "updated": "2026-05-06T05:57:04.000+0000"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7302450",
+          "id": "7302450",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "麻烦产品老师确认",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-05-08T06:53:01.000+0000",
+          "updated": "2026-05-08T06:53:01.000+0000"
+        }
+      ],
+      "maxResults": 6,
+      "total": 6,
+      "startAt": 0
+    },
+    "issuelinks": [],
+    "votes": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issue/HUR-78190/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "assignee": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=you.wu",
+      "name": "you.wu",
+      "key": "you.wu",
+      "emailAddress": "you.wu@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+      },
+      "displayName": "吴优",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "updated": "2026-08-06T18:27:20.000+0000",
+    "status": {
+      "self": "http://jira.i-tetris.com/rest/api/2/status/3",
+      "description": "此问题正在被经办人积极处理。",
+      "iconUrl": "http://jira.i-tetris.com/images/icons/statuses/inprogress.png",
+      "name": "处理中",
+      "id": "3",
+      "statusCategory": {
+        "self": "http://jira.i-tetris.com/rest/api/2/statuscategory/4",
+        "id": 4,
+        "key": "indeterminate",
+        "colorName": "yellow",
+        "name": "处理中"
+      }
+    }
+  },
+  "renderedFields": {
+    "issuetype": null,
+    "components": null,
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "description": "<p>测试环境：实车、生产、车机网络（离线状态）<br/>\nVID：LVRHDAEK4SN500017<br/>\nTUID：31002030251209140000000272522921<br/>\n测试版本：j90a_er-cdc-release_huron_hqx.1.2.1_20260306-ota_full-2.0ota-1.2.32.32821-20260427042438<br/>\nMCU：2.25.0.111<br/>\n【硬件版本】A样<br/>\n【前置条件】</p>\n\n<p>1.车机已上电<br/>\n2.车机为中文</p>\n\n<p><span class=\"error\">&#91;操作步骤&#93;</span></p>\n\n<p>1.导航中，已打开全程预览</p>\n\n<p>2.query：退出全程预览</p>\n\n<p><span class=\"error\">&#91;预期结果&#93;</span></p>\n\n<p>1.识别正确，执行正确，语音回复正确</p>\n\n<p><span class=\"error\">&#91;实际结果&#93;</span></p>\n\n<p>1.语音回复：好的，这就打开导航全览\t</p>\n\n<p>【测试时间】</p>\n\n<p>2026.4.28-------16：00</p>",
+    "project": null,
+    "fixVersions": null,
+    "customfield_11200": null,
+    "aggregatetimespent": null,
+    "resolution": null,
+    "customfield_11103": null,
+    "timetracking": {},
+    "customfield_10500": null,
+    "customfield_10005": null,
+    "customfield_10701": null,
+    "attachment": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3730036",
+        "id": "3730036",
+        "filename": "android(1)(1).zip",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "28/四月/26 6:41 下午",
+        "size": "140.58 MB",
+        "mimeType": "application/zip",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730036/android%281%29%281%29.zip"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3730037",
+        "id": "3730037",
+        "filename": "audio(1).zip",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "28/四月/26 6:41 下午",
+        "size": "150.07 MB",
+        "mimeType": "application/zip",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730037/audio%281%29.zip"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3741266",
+        "id": "3741266",
+        "filename": "image-2026-04-30-14-07-56-189.png",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+          "name": "hongxing.liu",
+          "key": "hongxing.liu",
+          "emailAddress": "hongxing.liu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+          },
+          "displayName": "刘洪星",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "30/四月/26 2:07 下午",
+        "size": "32 kB",
+        "mimeType": "image/png",
+        "content": "http://jira.i-tetris.com/secure/attachment/3741266/image-2026-04-30-14-07-56-189.png",
+        "thumbnail": "http://jira.i-tetris.com/secure/thumbnail/3741266/_thumb_3741266.png"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3732536",
+        "id": "3732536",
+        "filename": "logcat.log.014_2026_04_28_16_04_48.gz",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+          "name": "rong.chang.o",
+          "key": "rong.chang.o",
+          "emailAddress": "rong.chang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+          },
+          "displayName": "常荣",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "29/四月/26 10:57 上午",
+        "size": "3.98 MB",
+        "mimeType": "application/x-gzip",
+        "content": "http://jira.i-tetris.com/secure/attachment/3732536/logcat.log.014_2026_04_28_16_04_48.gz"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/3730054",
+        "id": "3730054",
+        "filename": "video_1777367620.mp4",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "28/四月/26 6:43 下午",
+        "size": "3.95 MB",
+        "mimeType": "video/mp4",
+        "content": "http://jira.i-tetris.com/secure/attachment/3730054/video_1777367620.mp4"
+      }
+    ],
+    "customfield_10702": null,
+    "aggregatetimeestimate": null,
+    "customfield_10703": null,
+    "resolutiondate": null,
+    "workratio": null,
+    "summary": null,
+    "lastViewed": "1小时前",
+    "watches": null,
+    "creator": null,
+    "subtasks": null,
+    "created": "28/四月/26 6:41 下午",
+    "reporter": null,
+    "customfield_10000": null,
+    "aggregateprogress": null,
+    "priority": null,
+    "labels": null,
+    "customfield_10004": null,
+    "environment": "",
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": null,
+    "duedate": null,
+    "progress": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7241796",
+          "id": "7241796",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p>【基础信息】</p>\n<ul class=\"alternate\" type=\"square\">\n\t<li>车辆标识: LVRHDAEK4SN500017</li>\n\t<li>发生时间: 2026-04-28 16:00:26 (日志时间，Time Offset: 26s)</li>\n\t<li>用户语音: 退出全程预览</li>\n\t<li>reqId: e663072e-ccd5-4445-a5f6-bca89a13e2dc</li>\n</ul>\n\n\n<p>【诊断证据】<br/>\n1. 决策路径判定：`isUsingCloudResponse: false` (即 `using_cloud: false`)，完全走离线路径。<br/>\n2. 离线 NLU 解析详情：离线模型准确命中了 `map_overview_close` 意图，并正确提取了 `operation: 退出`。<br/>\n3. 协议下发详情：离线引擎成功下发了 `meta_id: 1018` (导航全程预览) 控制协议，且参数准确无误：<br/>\n```json<br/>\n[<br/>\n  {<br/>\n    \"meta_id\": 1018,<br/>\n    \"type\": \"navi:map:journey:view\",<br/>\n    \"params\": {<br/>\n      \"op\": [</p>\n{\"canonical\": \"close\"}\n<p>]<br/>\n    }<br/>\n  }<br/>\n]<br/>\n```<br/>\n4. 异常表现：车端在接收到带有明确 `op: close`（退出）参数的指令后，未能正确执行关闭动作，反而触发了“好的，正在打开导航全览”的本地 TTS 播报，并执行了打开逻辑。</p>\n\n<p>【问题原因】<br/>\n车端（Vehicle / App）执行逻辑异常。<br/>\n离线 ASR 与 NLU 识别完全准确，且成功下发了对应的控制协议（1018）和关闭参数。遵循“只要 `meta_id` 成功下发，后续执行与反馈一律归责车端”的红线准则，该异常完全是由车端本地处理状态机流转时出错导致的。<br/>\n经日志深度追溯推测，这极有可能是因为当时地图处于后台状态（前一轮交互后可能弹出了其他页面），而车端状态机（或其读取的本地配置）在 `TARGET_PAGE_BACKGROUND` 分支下未能正确兼容 `op=close` 的情况，错误地回落到了默认的“打开”分支，从而触发了错误的播报与执行。</p>\n\n<p>【解决方案】<br/>\n责任方：Vehicle / App（车端）。<br/>\n请车端导航 App 或 VUI 团队核实：在接收到 `meta_id: 1018` 且 `op=close` 时，若地图应用处于后台等特定状态，本地状态机的处理逻辑是否存在漏洞，修复将“退出”误执行为“打开”的 Bug。</p>\n\n<p>（AI Generated）</p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "29/四月/26 10:51 上午",
+          "updated": "29/四月/26 10:51 上午"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7241973",
+          "id": "7241973",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p>麻烦车端老师看一下执行问题</p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+            "name": "rong.chang.o",
+            "key": "rong.chang.o",
+            "emailAddress": "rong.chang.o@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+            },
+            "displayName": "常荣",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "29/四月/26 11:00 上午",
+          "updated": "29/四月/26 11:00 上午"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7254481",
+          "id": "7254481",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p>04-28 16:00:26.860164 4190 4824 I ActionClientService: [ (ActionClientService.java:449)#resolveActionNluData ]ActionClient: class com.mega.mapassistantproxy.MapActionService, receive data: ActionNluData{requestId='e663072e-ccd5-4445-a5f6-bca89a13e2dc', query='退出全程预览', sessionId='406b6a74-6a2a-4162-9776-36fe694e8303', operations=[Operation{metaId=1018, originMetaId=0, type=navi:map:journey:view, params={op=[Params</p>\n\n{canonical='close', literal='null'}\n\n<p>]}, order=0}], tts=[], view=null, resultType='finish', regionId=1, sceneWord='null', soundLocation=2, uiNodes=[], asrRejected=false, useOffline=true}</p>\n\n<p>04-28 16:00:26.921075 2279 2507 I MegaAssistantService: [ (TtsComposer.java:245)#genTtsDataList ]genTtsDataList() called with: ttsList = <span class=\"error\">&#91;, uid=&#39;null&#39;, patternId=&#39;null&#39;, functionName=&#39;null&#39;, triggers=&#39;null&#39;, robotAction=&#39;null&#39;, recordingId=&#39;null&#39;, application=&#39;null&#39;}&#93;</span>\"&gt;<span class=\"error\">&#91;Tts{{<font color=\"#de350b\">content='好的。这就打开导航全览', id='1022'</font>, uid=&#39;null&#39;, patternId=&#39;null&#39;, functionName=&#39;null&#39;, triggers=&#39;null&#39;, robotAction=&#39;null&#39;, recordingId=&#39;null&#39;, application=&#39;null&#39;}&#93;</span>|#de350b}content='好的。这就打开导航全览', id='1022'&lt;font color=], emotion = <span class=\"error\">&#91;0&#93;</span></p>\n\n<p> </p>\n\n<p>界面在doAction中执行的是 return defaultActionCallback(operation, hitStrategy); ，非自定义tts，只会做tts填充</p>\n\n<p>tts反馈指向的id='1022，按照平台配置，tts应指向id=1056，需要语音侧看看</p>\n\n<p><span class=\"image-wrap\" style=\"\"><img src=\"http://jira.i-tetris.com/secure/attachment/3741266/3741266_image-2026-04-30-14-07-56-189.png\" style=\"border: 0px solid black\" /></span></p>\n\n<p> </p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "30/四月/26 2:08 下午",
+          "updated": "30/四月/26 2:09 下午"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7277059",
+          "id": "7277059",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p>@Override<br/>\npublic boolean targetPageForeground(@NonNull String requestId,<br/>\n @NonNull ActionNluData.Operation operation) </p>\n{\r\n return false;\r\n}\n\n<p>@Override<br/>\npublic boolean targetPageBackground(@NonNull String requestId,<br/>\n @NonNull ActionNluData.Operation operation) </p>\n{\r\n return true;\r\n}\n<p> <br/>\n判断地图前后台，目前写死在后台。确定泰为地图能否提供是否在前后台，或者根据什么判断导航是否在前后台</p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "06/五月/26 1:50 下午",
+          "updated": "06/五月/26 1:50 下午"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7277167",
+          "id": "7277167",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p><a href=\"https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26006\" class=\"external-link\" rel=\"nofollow\">https://alchemy.i-tetris.com/#/functional/projectPoints/detail/26006</a>  此meta_id是否有问题，地图全程预览和是否在前后台是否没关系，只是功能开关</p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+            "name": "qicai.zhang",
+            "key": "qicai.zhang",
+            "emailAddress": "qicai.zhang@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+            },
+            "displayName": "张齐财",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "06/五月/26 1:57 下午",
+          "updated": "06/五月/26 1:57 下午"
+        },
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1519933/comment/7302450",
+          "id": "7302450",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p>麻烦产品老师确认</p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+            "name": "hongxing.liu",
+            "key": "hongxing.liu",
+            "emailAddress": "hongxing.liu@megatronix.co",
+            "avatarUrls": {
+              "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+              "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+              "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+              "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+            },
+            "displayName": "刘洪星",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "08/五月/26 2:53 下午",
+          "updated": "08/五月/26 2:53 下午"
+        }
+      ],
+      "maxResults": 6,
+      "total": 6,
+      "startAt": 0
+    },
+    "issuelinks": null,
+    "votes": null,
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "assignee": null,
+    "updated": "07/八月/26 2:27 上午",
+    "status": null
+  },
+  "names": {
+    "issuetype": "问题类型",
+    "components": "模块",
+    "timespent": "耗费时间",
+    "timeoriginalestimate": "初始预估",
+    "description": "描述",
+    "project": "项目",
+    "fixVersions": "修复的版本",
+    "customfield_11200": "Severity",
+    "aggregatetimespent": "Σ 耗费时间",
+    "resolution": "解决结果",
+    "customfield_11103": "Root Cause",
+    "timetracking": "时间跟踪",
+    "customfield_10500": "Development",
+    "customfield_10005": "Rank",
+    "customfield_10701": "Vehicle Model",
+    "attachment": "附件",
+    "customfield_10702": "Reproducibility",
+    "aggregatetimeestimate": "Σ 预估剩余时间",
+    "customfield_10703": "QA",
+    "resolutiondate": "已解决",
+    "workratio": "工作量比率",
+    "summary": "概要",
+    "lastViewed": "最近查看的",
+    "watches": "管理关注列表",
+    "creator": "创建者",
+    "subtasks": "子任务",
+    "created": "创建日期",
+    "reporter": "报告人",
+    "customfield_10000": "Epic Link",
+    "aggregateprogress": "Σ 进度",
+    "priority": "优先级",
+    "labels": "标签",
+    "customfield_10004": "Sprint",
+    "environment": "环境",
+    "timeestimate": "剩余的估算",
+    "aggregatetimeoriginalestimate": "Σ 原预估时间",
+    "versions": "影响版本",
+    "duedate": "到期日",
+    "progress": "进度",
+    "comment": "备注",
+    "issuelinks": "链接的问题",
+    "votes": "表决",
+    "worklog": "登记工作日志",
+    "assignee": "经办人",
+    "updated": "已更新",
+    "status": "状态"
+  },
+  "changelog": {
+    "startAt": 0,
+    "maxResults": 19,
+    "total": 19,
+    "histories": [
+      {
+        "id": "23738536",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:41:08.000+0000",
+        "items": [
+          {
+            "field": "Epic Link",
+            "fieldtype": "custom",
+            "from": null,
+            "fromString": null,
+            "to": "352299",
+            "toString": "HUR-5"
+          }
+        ]
+      },
+      {
+        "id": "23738557",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:41:53.000+0000",
+        "items": [
+          {
+            "field": "description",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": "测试环境：实车、生产、车机网络（离线状态）\r\nVID：LVRHDAEK4SN500017\r\nTUID：31002030251209140000000272522921\r\n测试版本：j90a_er-cdc-release_huron_hqx.1.2.1_20260306-ota_full-2.0ota-1.2.32.32821-20260427042438\r\nMCU：2.25.0.111\r\n【硬件版本】A样\r\n【前置条件】\r\n\r\n1.车机已上电\r\n2.车机为中文\r\n\r\n[操作步骤]\r\n\r\n1.导航中\r\n\r\n2.query：结束导航\r\n\r\n[预期结果]\r\n\r\n1.识别正确，执行正确，语音回复正确\r\n\r\n[实际结果]\r\n\r\n1.语音回复不全\r\n\r\n【测试时间】\r\n\r\n2026.4.28-------16：00\r\n",
+            "to": null,
+            "toString": "测试环境：实车、生产、车机网络（离线状态）\r\nVID：LVRHDAEK4SN500017\r\nTUID：31002030251209140000000272522921\r\n测试版本：j90a_er-cdc-release_huron_hqx.1.2.1_20260306-ota_full-2.0ota-1.2.32.32821-20260427042438\r\nMCU：2.25.0.111\r\n【硬件版本】A样\r\n【前置条件】\r\n\r\n1.车机已上电\r\n2.车机为中文\r\n\r\n[操作步骤]\r\n\r\n1.导航中，已打开全程预览\r\n\r\n2.query：退出全程预览\r\n\r\n[预期结果]\r\n\r\n1.识别正确，执行正确，语音回复正确\r\n\r\n[实际结果]\r\n\r\n1.语音回复：\r\n\r\n【测试时间】\r\n\r\n2026.4.28-------16：00\r\n"
+          }
+        ]
+      },
+      {
+        "id": "23738559",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:41:59.000+0000",
+        "items": [
+          {
+            "field": "description",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": "测试环境：实车、生产、车机网络（离线状态）\r\nVID：LVRHDAEK4SN500017\r\nTUID：31002030251209140000000272522921\r\n测试版本：j90a_er-cdc-release_huron_hqx.1.2.1_20260306-ota_full-2.0ota-1.2.32.32821-20260427042438\r\nMCU：2.25.0.111\r\n【硬件版本】A样\r\n【前置条件】\r\n\r\n1.车机已上电\r\n2.车机为中文\r\n\r\n[操作步骤]\r\n\r\n1.导航中，已打开全程预览\r\n\r\n2.query：退出全程预览\r\n\r\n[预期结果]\r\n\r\n1.识别正确，执行正确，语音回复正确\r\n\r\n[实际结果]\r\n\r\n1.语音回复：\r\n\r\n【测试时间】\r\n\r\n2026.4.28-------16：00\r\n",
+            "to": null,
+            "toString": "测试环境：实车、生产、车机网络（离线状态）\r\nVID：LVRHDAEK4SN500017\r\nTUID：31002030251209140000000272522921\r\n测试版本：j90a_er-cdc-release_huron_hqx.1.2.1_20260306-ota_full-2.0ota-1.2.32.32821-20260427042438\r\nMCU：2.25.0.111\r\n【硬件版本】A样\r\n【前置条件】\r\n\r\n1.车机已上电\r\n2.车机为中文\r\n\r\n[操作步骤]\r\n\r\n1.导航中，已打开全程预览\r\n\r\n2.query：退出全程预览\r\n\r\n[预期结果]\r\n\r\n1.识别正确，执行正确，语音回复正确\r\n\r\n[实际结果]\r\n\r\n1.语音回复：好的，这就打开导航全览\t\r\n\r\n【测试时间】\r\n\r\n2026.4.28-------16：00\r\n"
+          }
+        ]
+      },
+      {
+        "id": "23738563",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:42:08.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": "3730038",
+            "fromString": "video_1777367620(2).mp4",
+            "to": null,
+            "toString": null
+          }
+        ]
+      },
+      {
+        "id": "23738594",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T10:43:54.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "3730054",
+            "toString": "video_1777367620.mp4"
+          }
+        ]
+      },
+      {
+        "id": "23740120",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yuanfeng.xiong.o",
+          "name": "yuanfeng.xiong.o",
+          "key": "yuanfeng.xiong.o",
+          "emailAddress": "yuanfeng.xiong.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "熊元锋",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-28T11:24:38.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "yuanfeng.xiong.o",
+            "fromString": "熊元锋",
+            "to": "hanwei.nie.o",
+            "toString": "聂汉维"
+          }
+        ]
+      },
+      {
+        "id": "23752669",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+          "name": "rong.chang.o",
+          "key": "rong.chang.o",
+          "emailAddress": "rong.chang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+          },
+          "displayName": "常荣",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-29T02:57:49.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "3732536",
+            "toString": "logcat.log.014_2026_04_28_16_04_48.gz"
+          }
+        ]
+      },
+      {
+        "id": "23752805",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+          "name": "rong.chang.o",
+          "key": "rong.chang.o",
+          "emailAddress": "rong.chang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+          },
+          "displayName": "常荣",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-29T03:00:23.000+0000",
+        "items": [
+          {
+            "field": "labels",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": "Env_车辆静态 功能_语音",
+            "to": null,
+            "toString": "Env_车辆静态"
+          }
+        ]
+      },
+      {
+        "id": "23752819",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=rong.chang.o",
+          "name": "rong.chang.o",
+          "key": "rong.chang.o",
+          "emailAddress": "rong.chang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=rong.chang.o&avatarId=15010",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=rong.chang.o&avatarId=15010",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=rong.chang.o&avatarId=15010",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=rong.chang.o&avatarId=15010"
+          },
+          "displayName": "常荣",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-29T03:00:26.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "hanwei.nie.o",
+            "fromString": "聂汉维",
+            "to": "hongxing.liu",
+            "toString": "刘洪星"
+          }
+        ]
+      },
+      {
+        "id": "23795942",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+          "name": "hongxing.liu",
+          "key": "hongxing.liu",
+          "emailAddress": "hongxing.liu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+          },
+          "displayName": "刘洪星",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-30T06:07:56.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "3741266",
+            "toString": "image-2026-04-30-14-07-56-189.png"
+          }
+        ]
+      },
+      {
+        "id": "23796124",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+          "name": "hongxing.liu",
+          "key": "hongxing.liu",
+          "emailAddress": "hongxing.liu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+          },
+          "displayName": "刘洪星",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-04-30T06:11:06.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "hongxing.liu",
+            "fromString": "刘洪星",
+            "to": "hanwei.nie.o",
+            "toString": "聂汉维"
+          }
+        ]
+      },
+      {
+        "id": "23853790",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=hanwei.nie.o",
+          "name": "hanwei.nie.o",
+          "key": "hanwei.nie.o",
+          "emailAddress": "hanwei.nie.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=hanwei.nie.o&avatarId=15012",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=hanwei.nie.o&avatarId=15012",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=hanwei.nie.o&avatarId=15012",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=hanwei.nie.o&avatarId=15012"
+          },
+          "displayName": "聂汉维",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-05-04T07:15:04.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "hanwei.nie.o",
+            "fromString": "聂汉维",
+            "to": "hongxing.liu",
+            "toString": "刘洪星"
+          }
+        ]
+      },
+      {
+        "id": "23874378",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+          "name": "hongxing.liu",
+          "key": "hongxing.liu",
+          "emailAddress": "hongxing.liu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+          },
+          "displayName": "刘洪星",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-05-06T01:03:38.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "hongxing.liu",
+            "fromString": "刘洪星",
+            "to": "qicai.zhang",
+            "toString": "张齐财"
+          }
+        ]
+      },
+      {
+        "id": "23890281",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=qicai.zhang",
+          "name": "qicai.zhang",
+          "key": "qicai.zhang",
+          "emailAddress": "qicai.zhang@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/a442780d4a7a0f945141b0c8034d72ed?d=mm&s=32"
+          },
+          "displayName": "张齐财",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-05-06T06:47:52.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "qicai.zhang",
+            "fromString": "张齐财",
+            "to": "hongxing.liu",
+            "toString": "刘洪星"
+          }
+        ]
+      },
+      {
+        "id": "23970923",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=hongxing.liu",
+          "name": "hongxing.liu",
+          "key": "hongxing.liu",
+          "emailAddress": "hongxing.liu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/8d85ba8617f8241a65063c2368bbbc13?d=mm&s=32"
+          },
+          "displayName": "刘洪星",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-05-08T06:53:01.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "hongxing.liu",
+            "fromString": "刘洪星",
+            "to": "ke.chen",
+            "toString": "陈可"
+          }
+        ]
+      },
+      {
+        "id": "24050065",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=ke.chen",
+          "name": "ke.chen",
+          "key": "ke.chen",
+          "emailAddress": "ke.chen@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=ke.chen&avatarId=13030",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=ke.chen&avatarId=13030",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=ke.chen&avatarId=13030",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=ke.chen&avatarId=13030"
+          },
+          "displayName": "陈可",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-05-11T03:47:04.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "ke.chen",
+            "fromString": "陈可",
+            "to": "xin.li.i",
+            "toString": "李欣"
+          }
+        ]
+      },
+      {
+        "id": "25486862",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=ke.chen",
+          "name": "ke.chen",
+          "key": "ke.chen",
+          "emailAddress": "ke.chen@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=ke.chen&avatarId=13030",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=ke.chen&avatarId=13030",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=ke.chen&avatarId=13030",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=ke.chen&avatarId=13030"
+          },
+          "displayName": "陈可",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-01T04:07:36.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "xin.li.i",
+            "fromString": "李欣",
+            "to": "you.wu",
+            "toString": "吴优"
+          }
+        ]
+      },
+      {
+        "id": "25779750",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=houdong.wu",
+          "name": "houdong.wu",
+          "key": "houdong.wu",
+          "emailAddress": "houdong.wu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=houdong.wu&avatarId=13534",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=houdong.wu&avatarId=13534",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=houdong.wu&avatarId=13534",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=houdong.wu&avatarId=13534"
+          },
+          "displayName": "吴厚东",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-13T01:55:56.000+0000",
+        "items": [
+          {
+            "field": "Fix Version",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "19840",
+            "toString": "J90A-ER_VAVE_20260930"
+          },
+          {
+            "field": "Fix Version",
+            "fieldtype": "jira",
+            "from": "19417",
+            "fromString": "J90A-ER_OTA1_20260630",
+            "to": null,
+            "toString": null
+          }
+        ]
+      },
+      {
+        "id": "26512872",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=you.wu",
+          "name": "you.wu",
+          "key": "you.wu",
+          "emailAddress": "you.wu@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+          },
+          "displayName": "吴优",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-08-06T18:27:20.000+0000",
+        "items": [
+          {
+            "field": "status",
+            "fieldtype": "jira",
+            "from": "10000",
+            "fromString": "To Do",
+            "to": "3",
+            "toString": "In Progress"
+          }
+        ]
+      }
+    ]
+  }
+}

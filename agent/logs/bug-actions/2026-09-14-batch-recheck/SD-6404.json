@@ -1,0 +1,742 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "1664838",
+  "self": "http://jira.i-tetris.com/rest/api/2/issue/1664838",
+  "key": "SD-6404",
+  "fields": {
+    "issuetype": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issuetype/10006",
+      "id": "10006",
+      "description": "",
+      "iconUrl": "http://jira.i-tetris.com/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+      "name": "故障",
+      "subtask": false,
+      "avatarId": 10303
+    },
+    "components": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/component/15825",
+        "id": "15825",
+        "name": "Android - Map",
+        "description": "导航相关应用 (含仪表投屏)"
+      }
+    ],
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "description": "测试环境：LS6CME165TF830470\r\n版本信息：c673_g-cdc-release_parkcity_hqx.1.2.1_20260309-ota_full-user-secure-2.0ota-SWA.3.19-20260720050145\r\nmcu版本：2.33.0.223\r\n测试硬件：ED49\r\n[预置条件]：1.车辆上电  \r\n[问题现象]：7月21  11：07导航中，导航卡片上出现重叠\r\n[LOG/视频]：",
+    "project": {
+      "self": "http://jira.i-tetris.com/rest/api/2/project/13100",
+      "id": "13100",
+      "key": "SD",
+      "name": "Changan: SanDiego",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/projectavatar?pid=13100&avatarId=10204",
+        "24x24": "http://jira.i-tetris.com/secure/projectavatar?size=small&pid=13100&avatarId=10204",
+        "16x16": "http://jira.i-tetris.com/secure/projectavatar?size=xsmall&pid=13100&avatarId=10204",
+        "32x32": "http://jira.i-tetris.com/secure/projectavatar?size=medium&pid=13100&avatarId=10204"
+      },
+      "projectCategory": {
+        "self": "http://jira.i-tetris.com/rest/api/2/projectCategory/10000",
+        "id": "10000",
+        "description": "Contracted Customer Project",
+        "name": "客户项目"
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/version/22493",
+        "id": "22493",
+        "description": "基于0309分支迭代开发，跟踪管理后续的OTA任务事项，预计1230进行OTA推送",
+        "name": "C673-G5_OTA1_20261230",
+        "archived": false,
+        "released": false,
+        "releaseDate": "2026-12-30"
+      }
+    ],
+    "customfield_11200": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11150",
+      "value": "B(一般)",
+      "id": "11150"
+    },
+    "aggregatetimespent": null,
+    "resolution": null,
+    "customfield_11103": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11145",
+      "value": "代码实现问题_模块内逻辑问题",
+      "id": "11145"
+    },
+    "customfield_11500": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/11615",
+      "value": "欧洲",
+      "id": "11615"
+    },
+    "timetracking": {},
+    "customfield_10500": "{}",
+    "customfield_10005": "2|i2g35z:",
+    "customfield_10701": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/13201",
+      "value": "C673",
+      "id": "13201"
+    },
+    "attachment": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4137308",
+        "id": "4137308",
+        "filename": "logcat.log.078_2026_07_21_11_01_05.gz",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-21T10:20:51.000+0000",
+        "size": 3941064,
+        "mimeType": "application/gzip",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137308/logcat.log.078_2026_07_21_11_01_05.gz"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4137309",
+        "id": "4137309",
+        "filename": "logcat.log.079_2026_07_21_11_30_57.gz",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-21T10:20:50.000+0000",
+        "size": 4177516,
+        "mimeType": "application/gzip",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137309/logcat.log.079_2026_07_21_11_30_57.gz"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4137318",
+        "id": "4137318",
+        "filename": "video_1784629256.mp4",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-21T10:21:13.000+0000",
+        "size": 3343257,
+        "mimeType": "video/mp4",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137318/video_1784629256.mp4"
+      }
+    ],
+    "customfield_10702": {
+      "self": "http://jira.i-tetris.com/rest/api/2/customFieldOption/10308",
+      "value": "Always",
+      "id": "10308"
+    },
+    "aggregatetimeestimate": null,
+    "customfield_10703": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+      "name": "youquan.huang.o",
+      "key": "youquan.huang.o",
+      "emailAddress": "youquan.huang.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+        "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+        "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+        "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+      },
+      "displayName": "黄有权",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "resolutiondate": null,
+    "workratio": -1,
+    "summary": "[内测问题][镁佳][C673-G][0309分支][欧洲-增程200km]7月21  11：07导航中，导航卡片上出现重叠",
+    "lastViewed": "2026-09-14T06:47:19.084+0000",
+    "watches": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issue/SD-6404/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "creator": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+      "name": "youquan.huang.o",
+      "key": "youquan.huang.o",
+      "emailAddress": "youquan.huang.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+        "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+        "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+        "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+      },
+      "displayName": "黄有权",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "subtasks": [],
+    "created": "2026-07-21T10:20:28.000+0000",
+    "reporter": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+      "name": "youquan.huang.o",
+      "key": "youquan.huang.o",
+      "emailAddress": "youquan.huang.o@megatronix.co",
+      "avatarUrls": {
+        "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+        "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+        "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+        "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+      },
+      "displayName": "黄有权",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "customfield_10000": "SD-1",
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "priority": {
+      "self": "http://jira.i-tetris.com/rest/api/2/priority/3",
+      "iconUrl": "http://jira.i-tetris.com/images/icons/priorities/medium.svg",
+      "name": "P2->Medium",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_10004": null,
+    "environment": null,
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": [],
+    "duedate": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "comment": {
+      "comments": [
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1664838/comment/8049305",
+          "id": "8049305",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=yun.cheng",
+            "name": "yun.cheng",
+            "key": "yun.cheng",
+            "emailAddress": "yun.cheng@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=yun.cheng&avatarId=13703",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=yun.cheng&avatarId=13703",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=yun.cheng&avatarId=13703",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=yun.cheng&avatarId=13703"
+            },
+            "displayName": "程云",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "需产品和UI确认下显示边界问题。[~you.wu]　[~shuanglin.xiong.o]",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=yun.cheng",
+            "name": "yun.cheng",
+            "key": "yun.cheng",
+            "emailAddress": "yun.cheng@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=yun.cheng&avatarId=13703",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=yun.cheng&avatarId=13703",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=yun.cheng&avatarId=13703",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=yun.cheng&avatarId=13703"
+            },
+            "displayName": "程云",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "2026-07-23T02:13:32.000+0000",
+          "updated": "2026-07-23T02:13:32.000+0000"
+        }
+      ],
+      "maxResults": 1,
+      "total": 1,
+      "startAt": 0
+    },
+    "issuelinks": [],
+    "votes": {
+      "self": "http://jira.i-tetris.com/rest/api/2/issue/SD-6404/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "assignee": {
+      "self": "http://jira.i-tetris.com/rest/api/2/user?username=you.wu",
+      "name": "you.wu",
+      "key": "you.wu",
+      "emailAddress": "you.wu@megatronix.co",
+      "avatarUrls": {
+        "48x48": "http://jira.i-tetris.com/secure/useravatar?avatarId=10334",
+        "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&avatarId=10334",
+        "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&avatarId=10334",
+        "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&avatarId=10334"
+      },
+      "displayName": "吴优",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "updated": "2026-09-11T03:39:03.000+0000",
+    "status": {
+      "self": "http://jira.i-tetris.com/rest/api/2/status/10000",
+      "description": "",
+      "iconUrl": "http://jira.i-tetris.com/",
+      "name": "待办",
+      "id": "10000",
+      "statusCategory": {
+        "self": "http://jira.i-tetris.com/rest/api/2/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "待办"
+      }
+    }
+  },
+  "renderedFields": {
+    "issuetype": null,
+    "components": null,
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "description": "<p>测试环境：LS6CME165TF830470<br/>\n版本信息：c673_g-cdc-release_parkcity_hqx.1.2.1_20260309-ota_full-user-secure-2.0ota-SWA.3.19-20260720050145<br/>\nmcu版本：2.33.0.223<br/>\n测试硬件：ED49<br/>\n<span class=\"error\">&#91;预置条件&#93;</span>：1.车辆上电  <br/>\n<span class=\"error\">&#91;问题现象&#93;</span>：7月21  11：07导航中，导航卡片上出现重叠<br/>\n<span class=\"error\">&#91;LOG/视频&#93;</span>：</p>",
+    "project": null,
+    "fixVersions": null,
+    "customfield_11200": null,
+    "aggregatetimespent": null,
+    "resolution": null,
+    "customfield_11103": null,
+    "customfield_11500": null,
+    "timetracking": {},
+    "customfield_10500": null,
+    "customfield_10005": null,
+    "customfield_10701": null,
+    "attachment": [
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4137308",
+        "id": "4137308",
+        "filename": "logcat.log.078_2026_07_21_11_01_05.gz",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "21/七月/26 6:20 下午",
+        "size": "3.76 MB",
+        "mimeType": "application/gzip",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137308/logcat.log.078_2026_07_21_11_01_05.gz"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4137309",
+        "id": "4137309",
+        "filename": "logcat.log.079_2026_07_21_11_30_57.gz",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "21/七月/26 6:20 下午",
+        "size": "3.98 MB",
+        "mimeType": "application/gzip",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137309/logcat.log.079_2026_07_21_11_30_57.gz"
+      },
+      {
+        "self": "http://jira.i-tetris.com/rest/api/2/attachment/4137318",
+        "id": "4137318",
+        "filename": "video_1784629256.mp4",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "21/七月/26 6:21 下午",
+        "size": "3.19 MB",
+        "mimeType": "video/mp4",
+        "content": "http://jira.i-tetris.com/secure/attachment/4137318/video_1784629256.mp4"
+      }
+    ],
+    "customfield_10702": null,
+    "aggregatetimeestimate": null,
+    "customfield_10703": null,
+    "resolutiondate": null,
+    "workratio": null,
+    "summary": null,
+    "lastViewed": "1小时前",
+    "watches": null,
+    "creator": null,
+    "subtasks": null,
+    "created": "21/七月/26 6:20 下午",
+    "reporter": null,
+    "customfield_10000": null,
+    "aggregateprogress": null,
+    "priority": null,
+    "labels": null,
+    "customfield_10004": null,
+    "environment": "",
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": null,
+    "duedate": null,
+    "progress": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "http://jira.i-tetris.com/rest/api/2/issue/1664838/comment/8049305",
+          "id": "8049305",
+          "author": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=yun.cheng",
+            "name": "yun.cheng",
+            "key": "yun.cheng",
+            "emailAddress": "yun.cheng@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=yun.cheng&avatarId=13703",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=yun.cheng&avatarId=13703",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=yun.cheng&avatarId=13703",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=yun.cheng&avatarId=13703"
+            },
+            "displayName": "程云",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "body": "<p>需产品和UI确认下显示边界问题。<a href=\"http://jira.i-tetris.com/secure/ViewProfile.jspa?name=you.wu\" class=\"user-hover\" rel=\"you.wu\">吴优</a>　<a href=\"http://jira.i-tetris.com/secure/ViewProfile.jspa?name=shuanglin.xiong.o\" class=\"user-hover\" rel=\"shuanglin.xiong.o\">熊双林</a></p>",
+          "updateAuthor": {
+            "self": "http://jira.i-tetris.com/rest/api/2/user?username=yun.cheng",
+            "name": "yun.cheng",
+            "key": "yun.cheng",
+            "emailAddress": "yun.cheng@megatronix.co",
+            "avatarUrls": {
+              "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=yun.cheng&avatarId=13703",
+              "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=yun.cheng&avatarId=13703",
+              "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=yun.cheng&avatarId=13703",
+              "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=yun.cheng&avatarId=13703"
+            },
+            "displayName": "程云",
+            "active": true,
+            "timeZone": "Asia/Shanghai"
+          },
+          "created": "23/七月/26 10:13 上午",
+          "updated": "23/七月/26 10:13 上午"
+        }
+      ],
+      "maxResults": 1,
+      "total": 1,
+      "startAt": 0
+    },
+    "issuelinks": null,
+    "votes": null,
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "assignee": null,
+    "updated": "3天前 11:39 上午",
+    "status": null
+  },
+  "names": {
+    "issuetype": "问题类型",
+    "components": "模块",
+    "timespent": "耗费时间",
+    "timeoriginalestimate": "初始预估",
+    "description": "描述",
+    "project": "项目",
+    "fixVersions": "修复的版本",
+    "customfield_11200": "Severity",
+    "aggregatetimespent": "Σ 耗费时间",
+    "resolution": "解决结果",
+    "customfield_11103": "Root Cause",
+    "customfield_11500": "Country",
+    "timetracking": "时间跟踪",
+    "customfield_10500": "Development",
+    "customfield_10005": "Rank",
+    "customfield_10701": "Vehicle Model",
+    "attachment": "附件",
+    "customfield_10702": "Reproducibility",
+    "aggregatetimeestimate": "Σ 预估剩余时间",
+    "customfield_10703": "QA",
+    "resolutiondate": "已解决",
+    "workratio": "工作量比率",
+    "summary": "概要",
+    "lastViewed": "最近查看的",
+    "watches": "管理关注列表",
+    "creator": "创建者",
+    "subtasks": "子任务",
+    "created": "创建日期",
+    "reporter": "报告人",
+    "customfield_10000": "Epic Link",
+    "aggregateprogress": "Σ 进度",
+    "priority": "优先级",
+    "labels": "标签",
+    "customfield_10004": "Sprint",
+    "environment": "环境",
+    "timeestimate": "剩余的估算",
+    "aggregatetimeoriginalestimate": "Σ 原预估时间",
+    "versions": "影响版本",
+    "duedate": "到期日",
+    "progress": "进度",
+    "comment": "备注",
+    "issuelinks": "链接的问题",
+    "votes": "表决",
+    "worklog": "登记工作日志",
+    "assignee": "经办人",
+    "updated": "已更新",
+    "status": "状态"
+  },
+  "changelog": {
+    "startAt": 0,
+    "maxResults": 6,
+    "total": 6,
+    "histories": [
+      {
+        "id": "26052101",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-21T10:20:28.000+0000",
+        "items": [
+          {
+            "field": "Epic Link",
+            "fieldtype": "custom",
+            "from": null,
+            "fromString": null,
+            "to": "1088244",
+            "toString": "SD-1"
+          }
+        ]
+      },
+      {
+        "id": "26052141",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-21T10:20:51.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "4137308",
+            "toString": "logcat.log.078_2026_07_21_11_01_05.gz"
+          },
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "4137309",
+            "toString": "logcat.log.079_2026_07_21_11_30_57.gz"
+          }
+        ]
+      },
+      {
+        "id": "26052204",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=youquan.huang.o",
+          "name": "youquan.huang.o",
+          "key": "youquan.huang.o",
+          "emailAddress": "youquan.huang.o@megatronix.co",
+          "avatarUrls": {
+            "48x48": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=48",
+            "24x24": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=24",
+            "16x16": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=16",
+            "32x32": "https://www.gravatar.com/avatar/865c7758884e315bd8f43acfd99c68cb?d=mm&s=32"
+          },
+          "displayName": "黄有权",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-21T10:21:13.000+0000",
+        "items": [
+          {
+            "field": "Attachment",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "4137318",
+            "toString": "video_1784629256.mp4"
+          }
+        ]
+      },
+      {
+        "id": "26095326",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=yun.cheng",
+          "name": "yun.cheng",
+          "key": "yun.cheng",
+          "emailAddress": "yun.cheng@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=yun.cheng&avatarId=13703",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=yun.cheng&avatarId=13703",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=yun.cheng&avatarId=13703",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=yun.cheng&avatarId=13703"
+          },
+          "displayName": "程云",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-07-23T02:13:46.000+0000",
+        "items": [
+          {
+            "field": "assignee",
+            "fieldtype": "jira",
+            "from": "yun.cheng",
+            "fromString": "程云",
+            "to": "you.wu",
+            "toString": "吴优"
+          }
+        ]
+      },
+      {
+        "id": "27097355",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=banghe.zhang",
+          "name": "banghe.zhang",
+          "key": "banghe.zhang",
+          "emailAddress": "banghe.zhang@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=banghe.zhang&avatarId=13076",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=banghe.zhang&avatarId=13076",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=banghe.zhang&avatarId=13076",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=banghe.zhang&avatarId=13076"
+          },
+          "displayName": "张帮贺",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-08-27T09:43:07.000+0000",
+        "items": [
+          {
+            "field": "Severity",
+            "fieldtype": "custom",
+            "from": "11149",
+            "fromString": "A(严重)",
+            "to": "11150",
+            "toString": "B(一般)"
+          }
+        ]
+      },
+      {
+        "id": "27537141",
+        "author": {
+          "self": "http://jira.i-tetris.com/rest/api/2/user?username=banghe.zhang",
+          "name": "banghe.zhang",
+          "key": "banghe.zhang",
+          "emailAddress": "banghe.zhang@megatronix.co",
+          "avatarUrls": {
+            "48x48": "http://jira.i-tetris.com/secure/useravatar?ownerId=banghe.zhang&avatarId=13076",
+            "24x24": "http://jira.i-tetris.com/secure/useravatar?size=small&ownerId=banghe.zhang&avatarId=13076",
+            "16x16": "http://jira.i-tetris.com/secure/useravatar?size=xsmall&ownerId=banghe.zhang&avatarId=13076",
+            "32x32": "http://jira.i-tetris.com/secure/useravatar?size=medium&ownerId=banghe.zhang&avatarId=13076"
+          },
+          "displayName": "张帮贺",
+          "active": true,
+          "timeZone": "Asia/Shanghai"
+        },
+        "created": "2026-09-11T03:39:04.000+0000",
+        "items": [
+          {
+            "field": "Fix Version",
+            "fieldtype": "jira",
+            "from": null,
+            "fromString": null,
+            "to": "22493",
+            "toString": "C673-G5_OTA1_20261230"
+          },
+          {
+            "field": "Fix Version",
+            "fieldtype": "jira",
+            "from": "17467",
+            "fromString": "C673-G5_VS节点_20260830",
+            "to": null,
+            "toString": null
+          }
+        ]
+      }
+    ]
+  }
+}
