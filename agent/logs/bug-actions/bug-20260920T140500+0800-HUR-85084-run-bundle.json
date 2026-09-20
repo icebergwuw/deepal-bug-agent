@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260920T140500+0800-HUR-85084",
+  "operator_owner_id": "wu-you",
+  "status": "planned",
+  "started_at": "2026-09-20T14:05:00+08:00",
+  "query_summary": "用户发送 HUR-85084 要求完整流程；吴优 bug 页无该 Jira，拟新增第426行。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-09-20-HUR-85084.md",
+  "initial_jira_count": 1,
+  "final_jira_count": 1,
+  "online_sheet_rows": 425,
+  "final_keys": [
+    "HUR-85084"
+  ],
+  "new_keys": [
+    "HUR-85084"
+  ],
+  "excluded_after_requery": [],
+  "items": [
+    {
+      "jira_key": "HUR-85084",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 426,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260920T140500+0800-HUR-85084-manifest.json"
+    }
+  ]
+}

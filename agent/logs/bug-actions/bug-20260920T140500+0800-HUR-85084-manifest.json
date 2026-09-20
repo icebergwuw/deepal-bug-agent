@@ -1,0 +1,726 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-85084",
+  "run_context": {
+    "run_id": "bug-20260920T140500+0800-HUR-85084",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 426
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-85084-formal_definition_search-20260920",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-20T13:44:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-85084"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "洗车模式 锁闭充电舱盖"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 情景模式 洗车模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "情景模式功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "马自达J90A_情景模式_需求文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+          "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+          "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view",
+          "mime_type": "application/pdf",
+          "version_family": "马自达J90A_情景模式_需求文档"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-85084-interaction_or_ue_search-20260920",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "interaction_or_ue_search",
+      "searched_at": "2026-09-20T13:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-85084"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "洗车模式 锁闭充电舱盖"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 情景模式 交互"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "马自达J90A交互设计文档_情景模式"
+        }
+      ],
+      "results": [
+        {
+          "id": "1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL",
+          "title": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf",
+          "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view",
+          "mime_type": "application/pdf",
+          "version_family": "马自达J90A交互设计文档_情景模式"
+        }
+      ]
+    },
+    {
+      "receipt_id": "HUR-85084-formal_config_search-20260920",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_config_search",
+      "searched_at": "2026-09-20T14:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-85084"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "wash_into_msg 锁闭充电舱盖"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 海外LanguageList 洗车模式文案"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.1_260902_260916.xlsx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.1_260917.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=636699787#gid=636699787",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+          "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+          "url": "https://drive.google.com/file/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+          "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+          "url": "https://drive.google.com/file/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+          "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+          "url": "https://drive.google.com/file/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+          "title": "J90A_海外LanguageList内部版V1.0_260806",
+          "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+          "title": "J90A_海外LanguageList_V1.1_260807",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后_历史漏追踪译文合入_0.5.8语义恢复_260901.xlsx",
+          "url": "https://drive.google.com/file/d/14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+          "url": "https://drive.google.com/file/d/1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+          "url": "https://drive.google.com/file/d/1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+          "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet",
+          "version_family": "J90A_海外LanguageList"
+        },
+        {
+          "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+          "title": "J90A_海外LanguageList_V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet",
+          "version_family": "J90A_海外LanguageList"
+        }
+      ]
+    }
+  ],
+  "comment_causality": "易昕2026-09-18 13:57评论：代码侧无充电舱盖CAN，HU只发BODYINFO_HU_CARWASHMODELREQUEST；要求吴优确认是缺少信号还是物理按钮无电子锁闭并修改文案。随后15:34将经办人从易昕改为吴优。外部映射HUR-50295当前入口不可读，未作为结论依据。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "BG20260917000610",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "Jira HUR-85084 描述含步骤/结果/期望/VIN，附件洗车模式.mp4已回读"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-85013",
+        "relationship": "同文案wash_into_msg的希腊语排版问题，非充电舱盖锁闭能力",
+        "outcome": "已关闭为Workaround，不改变本票J90A锁闭能力判断",
+        "read": true
+      }
+    ]
+  },
+  "evidence_profiles": [
+    "general",
+    "visible_interaction"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "需要核对J90A洗车模式正式定义与进入提示边界。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票无语音原话，是进入提示文案与充电舱盖物理开盖是否一致。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": true,
+      "reason": "进入确认弹窗文案与实车充电舱盖开闭状态属于可见交互。"
+    }
+  },
+  "inheritance_chains": [],
+  "scope_checks": [
+    {
+      "source_id": "jira-current",
+      "source": "Jira HUR-85084",
+      "source_location": "描述、易昕2026-09-18 13:57评论、改动记录",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A - All / 0230车 VIN LVRHDAEJ6RN010230",
+      "trigger": "打开洗车模式并点击进入洗车模式",
+      "target_behavior": "进入前提示会锁闭充电舱盖，进入后仍能打开充电舱盖；研发确认无充电舱盖CAN。",
+      "match": "exact",
+      "reason": "证明本票当前现象、客户用例和研发调查。"
+    },
+    {
+      "source_id": "jira-video",
+      "source": "Jira附件 洗车模式.mp4",
+      "source_location": "00:06进入提示弹窗；00:22-00:34手动打开充电舱盖",
+      "source_type": "jira_attachment",
+      "role": "implementation_actual",
+      "project_model": "J90A 0230实车",
+      "trigger": "进入洗车模式后到车外按充电舱盖",
+      "target_behavior": "弹窗文案含锁闭充电舱盖；进入后舱盖可被手动打开并露出充电口。",
+      "match": "exact",
+      "reason": "实车视频证明文案与开盖结果。"
+    },
+    {
+      "source_id": "prd-v24",
+      "source": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+      "source_location": "第14页 情景模式-洗车模式 进入提示/其他逻辑/专属页状态",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "马自达J90A",
+      "trigger": "点击进入洗车模式",
+      "target_behavior": "进入提示写锁闭充电舱盖；控制逻辑(1)-(6)和专属页状态不含充电舱盖锁闭，只发洗车模式相关车身动作。",
+      "match": "exact",
+      "reason": "J90A现行洗车模式正式定义：文案承诺锁闭，但可执行控制项未包含充电舱盖锁闭。"
+    },
+    {
+      "source_id": "ue-v26",
+      "source": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf",
+      "source_location": "第14页 情景模式-洗车模式 进入提示/其他逻辑/专属页状态",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "马自达J90A",
+      "trigger": "点击进入洗车模式",
+      "target_behavior": "与PRD V2.4第14页同一进入文案和控制项；V2.6修订未改洗车模式。",
+      "match": "exact",
+      "reason": "现行交互稿确认进入提示和控制边界，洗车模式最近修订仍为V1.3文案。"
+    },
+    {
+      "source_id": "lang-list",
+      "source": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+      "source_location": "14_Vehicle Mode 第56行 wash_into_msg；第47行 mode_wash_float_tip；https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=636699787#gid=636699787",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "J90A 海外/中文源文案",
+      "trigger": "洗车模式开启确认弹窗",
+      "target_behavior": "wash_into_msg当前中文源文为锁闭充电舱盖；mode_wash_float_tip为启动后自动锁定充电接口。",
+      "match": "exact",
+      "reason": "证明当前已下发文案Key和源文，是需要修改的配置对象。"
+    },
+    {
+      "source_id": "c673-v49-context",
+      "source": "C385_C673_功能描述_智能情景模式功能定义V4.9",
+      "source_location": "修订记录V4.3：部分项目洗车模式充电舱盖无法锁闭，需优化提示文案；输出边界充电舱盖控制（手动）由车身域按洗车模式状态执行",
+      "source_type": "special_prd",
+      "role": "context_only",
+      "project_model": "C385/C673平台，不直接覆盖J90A",
+      "trigger": "洗车模式开启",
+      "target_behavior": "平台已识别部分车型无法锁闭充电舱盖，文案应优化；HU不单独发充电舱盖CAN。",
+      "match": "partial",
+      "reason": "仅作平台化对照，不能替代J90A正式定义。"
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-20",
+      "search_location": "操作者当前Chrome Google Drive搜索页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-85084"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "洗车模式 锁闭充电舱盖"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 情景模式 洗车模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "马自达J90A_情景模式_需求文档_V2.4.pdf"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "情景模式功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "马自达J90A_情景模式_需求文档"
+        }
+      ],
+      "source_ids": [
+        "prd-v24"
+      ],
+      "search_receipt_ids": [
+        "HUR-85084-formal_definition_search-20260920"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "title": "马自达J90A_情景模式_需求文档_V2.4.pdf",
+            "url": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view",
+            "mime_type": "application/pdf",
+            "version_family": "马自达J90A_情景模式_需求文档",
+            "disposition": "read",
+            "source_ids": [
+              "prd-v24"
+            ],
+            "references": [
+              {
+                "reference_text": "情景模式功能定义"
+              }
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [
+          {
+            "source_candidate_id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "reference_text": "情景模式功能定义",
+            "status": "searched",
+            "receipt_ids": [
+              "HUR-85084-formal_definition_search-20260920"
+            ],
+            "reason": "Drive检索J90A情景模式功能定义无专名命中；同系列已读J90A需求文档V2.4第14页控制逻辑。"
+          }
+        ],
+        "version_families": [
+          {
+            "family": "马自达J90A_情景模式_需求文档",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-85084-formal_definition_search-20260920"
+            ],
+            "selected_candidate_id": "1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y",
+            "selection_reason": "Chrome检索该系列最高命名版本为V2.4 PDF（2024-07-18）；未见V2.5+。修订记录V2.4只改儿童模式，洗车模式仍以第14页为准。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "interaction_or_ue_search",
+      "status": "read",
+      "searched_at": "2026-09-20",
+      "search_location": "操作者当前Chrome Google Drive文件页及检索页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-85084"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "洗车模式 锁闭充电舱盖"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 情景模式 交互"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "马自达J90A交互设计文档_情景模式"
+        }
+      ],
+      "source_ids": [
+        "ue-v26"
+      ],
+      "search_receipt_ids": [
+        "HUR-85084-interaction_or_ue_search-20260920"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL",
+            "title": "马自达J90A交互设计文档_情景模式_V2.6 (2).pdf",
+            "url": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view",
+            "mime_type": "application/pdf",
+            "version_family": "马自达J90A交互设计文档_情景模式",
+            "disposition": "read",
+            "source_ids": [
+              "ue-v26"
+            ],
+            "references": []
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "马自达J90A交互设计文档_情景模式",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-85084-interaction_or_ue_search-20260920"
+            ],
+            "selected_candidate_id": "1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL",
+            "selection_reason": "当前打开文件为V2.6；文档修订记录最高版本V2.6（2024-10-11）只改小憩/观影/露营，洗车模式页仍为第14页。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "formal_config_search",
+      "status": "read",
+      "searched_at": "2026-09-20",
+      "search_location": "操作者当前Chrome Google Drive搜索页；回读当前生效表格 14_Vehicle Mode",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-85084"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "wash_into_msg 锁闭充电舱盖"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 海外LanguageList 洗车模式文案"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.1_260902_260916.xlsx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.1_260917.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "source_ids": [
+        "lang-list"
+      ],
+      "search_receipt_ids": [
+        "HUR-85084-formal_config_search-20260920"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 14,
+        "candidates": [
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=636699787#gid=636699787",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "disposition": "read",
+            "source_ids": [
+              "lang-list"
+            ],
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+            "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+            "url": "https://drive.google.com/file/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "disposition": "excluded",
+            "reason": "同名较早副本，修改日期9月17日，未选为当前生效文件。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+            "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+            "url": "https://drive.google.com/file/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "disposition": "excluded",
+            "reason": "文件名已标废弃，不是当前生效LanguageList。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+            "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+            "url": "https://drive.google.com/file/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "disposition": "excluded",
+            "reason": "留底备份，不是当前生效文件。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+            "title": "J90A_海外LanguageList内部版V1.0_260806",
+            "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "disposition": "excluded",
+            "reason": "内部旧版，低于当前V1.1_260902_260916。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+            "title": "J90A_海外LanguageList_V1.1_260807",
+            "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "disposition": "excluded",
+            "reason": "V1.1旧日期版本，低于当前V1.1_260902_260916。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+            "url": "https://docs.google.com/spreadsheets/d/148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "disposition": "excluded",
+            "reason": "V1.1_260819过程稿，低于当前生效文件。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+            "url": "https://docs.google.com/spreadsheets/d/1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "disposition": "excluded",
+            "reason": "V1.1_260819过程稿副本，低于当前生效文件。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后_历史漏追踪译文合入_0.5.8语义恢复_260901.xlsx",
+            "url": "https://drive.google.com/file/d/14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "disposition": "excluded",
+            "reason": "V1.1_260819/260901过程稿，低于当前生效文件。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+            "url": "https://drive.google.com/file/d/1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "disposition": "excluded",
+            "reason": "V1.1_260819过程稿，低于当前生效文件。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+            "url": "https://drive.google.com/file/d/1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "disposition": "excluded",
+            "reason": "V1.1_260819过程稿副本，低于当前生效文件。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+            "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "disposition": "excluded",
+            "reason": "内部旧版V0.5.8，低于当前V1.1。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+            "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "disposition": "excluded",
+            "reason": "内部旧版V0.5.8，低于当前V1.1。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          },
+          {
+            "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+            "title": "J90A_海外LanguageList_V0.5.8_0722",
+            "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit",
+            "mime_type": "application/vnd.google-apps.spreadsheet",
+            "disposition": "excluded",
+            "reason": "内部旧版V0.5.8，低于当前V1.1。",
+            "version_family": "J90A_海外LanguageList",
+            "references": []
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_海外LanguageList",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-85084-formal_config_search-20260920"
+            ],
+            "selected_candidate_id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "selection_reason": "Drive系列检索中当前生效文件为已加星标的J90A_海外LanguageList_V1.1_260902_260916.xlsx，今日14:09仍在更新；V1.2已标废弃。已回读14_Vehicle Mode第56行wash_into_msg和第47行mode_wash_float_tip，源文仍写锁闭充电舱盖/自动锁定充电接口。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "conflict_resolution": "进入提示文案承诺锁闭充电舱盖，但PRD/UE控制逻辑、专属页状态、研发CAN说明和实车开盖结果均表明J90A无充电舱盖电子锁闭。取控制逻辑与实车能力，定义为改文案，不转车身补信号。",
+  "expected_behavior": {
+    "trigger": "用户点击进入洗车模式",
+    "target_state": "进入提示只描述本车实际执行的动作，不得写锁闭充电舱盖；进入后充电舱盖保持可手动打开",
+    "intent_function_signal": "HU只发送洗车模式请求CAN，不发送充电舱盖锁闭CAN",
+    "ui_tts_vehicle_behavior": "wash_into_msg/mode_wash_float_tip删除锁闭充电舱盖或锁定充电接口；专属页不展示充电舱盖锁闭状态",
+    "boundary": "适用于J90A无充电舱盖电子锁闭的车型；若后续配置电子锁闭再按车型恢复文案",
+    "source_ids": [
+      "prd-v24",
+      "ue-v26"
+    ]
+  },
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "J90A情景模式产品负责人",
+    "text": "结论：J90A洗车模式进入提示不得再承诺“锁闭充电舱盖”。现行PRD/UE第14页进入文案写了锁闭充电舱盖，但同页控制逻辑和专属页状态均无充电舱盖锁闭；研发确认无充电舱盖CAN、只发洗车模式请求，0230实车进入后仍可手动打开舱盖。本车为物理开盖、无电子锁闭，不是HU缺单独锁闭信号。\n依据：Jira原票·描述/易昕评论；Jira视频·00:22-00:34；J90A情景模式PRD V2.4·第14页；J90A情景模式交互V2.6·第14页。\n处理：修改wash_into_msg和mode_wash_float_tip，删除锁闭充电舱盖/自动锁定充电接口表述并同步多语言；J90A情景模式产品负责人处理。",
+    "implementation_source_ids": [
+      "jira-current",
+      "jira-video"
+    ]
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 106,
+          "endRowIndex": 107,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 425,
+          "endRowIndex": 426,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 425,
+          "endRowIndex": 426,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 425,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-09-20"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-85084\",\"HUR-85084｜J90A洗车模式提示锁闭充电舱盖但进入后仍能打开\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：客户BG20260917000610，J90A 0230车进入洗车模式前弹窗写“锁闭充电舱盖”，进入后仍可手动打开充电舱盖。[Jira原票][Jira视频]证据：易昕2026-09-18评论系统无充电舱盖CAN、只发BODYINFO_HU_CARWASHMODELREQUEST。[易昕评论]J90A情景模式PRD V2.4第14页与交互V2.6第14页进入提示含锁闭充电舱盖，但控制项(1)-(6)和专属页状态不含充电舱盖锁闭。[J90A情景模式PRD V2.4第14页][J90A情景模式交互V2.6第14页]当前LanguageList 14_Vehicle Mode第56行wash_into_msg、第47行mode_wash_float_tip仍写锁闭充电舱盖/自动锁定充电接口。[J90A海外LanguageList V1.1·wash_into_msg]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 66,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-85084"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 72
+                  },
+                  {
+                    "startIndex": 74,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4437747/%E6%B4%97%E8%BD%A6%E6%A8%A1%E5%BC%8F.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 80
+                  },
+                  {
+                    "startIndex": 144,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-85084"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 148
+                  },
+                  {
+                    "startIndex": 149,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 169
+                  },
+                  {
+                    "startIndex": 241,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 259
+                  },
+                  {
+                    "startIndex": 350,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=636699787#gid=636699787"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 387
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：J90A洗车模式进入提示不得再承诺“锁闭充电舱盖”。现行PRD/UE第14页进入文案写了锁闭充电舱盖，但同页控制逻辑和专属页状态均无充电舱盖锁闭；研发确认无充电舱盖CAN、只发洗车模式请求，0230实车进入后仍可手动打开舱盖。本车为物理开盖、无电子锁闭，不是HU缺单独锁闭信号。\n依据：Jira原票·描述/易昕评论；Jira视频·00:22-00:34；J90A情景模式PRD V2.4·第14页；J90A情景模式交互V2.6·第14页。\n处理：修改wash_into_msg和mode_wash_float_tip，删除锁闭充电舱盖/自动锁定充电接口表述并同步多语言；J90A情景模式产品负责人处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 146,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-85084"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 160
+                  },
+                  {
+                    "startIndex": 161,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4437747/%E6%B4%97%E8%BD%A6%E6%A8%A1%E5%BC%8F.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 179
+                  },
+                  {
+                    "startIndex": 180,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 201
+                  },
+                  {
+                    "startIndex": 202,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 221
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "转需求"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "后续若J90A增加充电舱盖电子锁闭，再按车型配置恢复文案；本次不补CAN。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述/易昕评论\nJira视频·00:22-00:34\nJ90A情景模式PRD V2.4·第14页\nJ90A情景模式交互V2.6·第14页\nJ90A海外LanguageList V1.1·wash_into_msg"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/HUR-85084"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 14
+                  },
+                  {
+                    "startIndex": 15,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4437747/%E6%B4%97%E8%BD%A6%E6%A8%A1%E5%BC%8F.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 33
+                  },
+                  {
+                    "startIndex": 34,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 55
+                  },
+                  {
+                    "startIndex": 56,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1XD8lJA0Pe5UcD7mdpTk1j3QtBCqkAIiL/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 75
+                  },
+                  {
+                    "startIndex": 76,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=636699787#gid=636699787"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 425,
+          "endIndex": 426
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 426,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}
