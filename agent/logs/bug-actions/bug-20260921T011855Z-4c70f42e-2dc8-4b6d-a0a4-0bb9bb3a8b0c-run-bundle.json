@@ -1,0 +1,47 @@
+{
+  "run_id": "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c",
+  "started_at": "2026-09-21T01:18:55Z",
+  "operator_owner_id": "wu-you",
+  "target_owner_id": "wu-you",
+  "query": {
+    "jql": "assignee = you.wu AND project in (SD,HUR,ADS,BGS,BEO,PC,SLV,SM) AND issuetype = Bug AND status in (To Do, Reopened, In Progress, Pending)",
+    "jira_result_count": 12,
+    "sheet_populated_rows": 409,
+    "sheet_unique_keys": 408,
+    "unregistered_keys": [
+      "ADS-50980",
+      "HUR-85064",
+      "HUR-85062",
+      "ADS-51117",
+      "HUR-80638",
+      "ADS-46438",
+      "HUR-85084",
+      "ADS-50563",
+      "ADS-50547"
+    ]
+  },
+  "platform_reads": {
+    "jira": "chrome live read completed",
+    "google_sheets": "chrome export completed",
+    "google_drive": "chrome live search completed; candidate body/version audits incomplete",
+    "alchemy": "not required to decide write gate yet; no fresh receipt"
+  },
+  "write_gate": "blocked",
+  "manifests": [
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-ADS-50980-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-HUR-85064-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-HUR-85062-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-ADS-51117-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-HUR-80638-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-ADS-46438-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-HUR-85084-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-ADS-50563-manifest.json",
+    "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c-ADS-50547-manifest.json"
+  ],
+  "writes": {
+    "sheet": false,
+    "index": false,
+    "jira_external_actions": false
+  },
+  "captured_at": "2026-09-21T01:18:55Z"
+}

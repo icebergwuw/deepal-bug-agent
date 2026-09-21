@@ -1,0 +1,32 @@
+{
+  "schema_version": 5,
+  "run_context": {
+    "run_id": "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": null
+  },
+  "jira_key": "ADS-50980",
+  "intent": "new_bug",
+  "evidence_profiles": [
+    {
+      "profile": "voice",
+      "applicable": true,
+      "reason": "标题/模块/语音链路"
+    }
+  ],
+  "decision_card": {
+    "current_status": "待复核",
+    "decision_text": "云端二次交互规则与当前新闻状态继承正式定义未完成；Jira 评论称该句不符合二次交互，但语料/产品语义需核对。",
+    "formal_target_status": "unavailable_or_incomplete",
+    "implementation_actual_status": "read_from_jira",
+    "material_gaps": [
+      "云端二次交互规则与当前新闻状态继承正式定义未完成；Jira 评论称该句不符合二次交互，但语料/产品语义需核对。"
+    ]
+  },
+  "write_gate": "blocked",
+  "write_gate_reason": "schema-v5 formal definition body/version-family audit and complete source receipts not complete",
+  "jira_source": "http://jira.i-tetris.com/browse/ADS-50980",
+  "captured_at": "2026-09-21T01:18:55Z"
+}

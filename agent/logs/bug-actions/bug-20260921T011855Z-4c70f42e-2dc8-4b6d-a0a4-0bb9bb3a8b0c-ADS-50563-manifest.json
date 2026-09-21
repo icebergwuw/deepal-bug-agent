@@ -1,0 +1,32 @@
+{
+  "schema_version": 5,
+  "run_context": {
+    "run_id": "bug-20260921T011855Z-4c70f42e-2dc8-4b6d-a0a4-0bb9bb3a8b0c",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": null
+  },
+  "jira_key": "ADS-50563",
+  "intent": "new_bug",
+  "evidence_profiles": [
+    {
+      "profile": "voice",
+      "applicable": true,
+      "reason": "标题/模块/语音链路"
+    }
+  ],
+  "decision_card": {
+    "current_status": "转需求",
+    "decision_text": "Jira 证据明确当前媒体状态未传给外部，需做需求评估；客户完整测试用例与媒体 PRD/语音大模型版本正文尚未完成。",
+    "formal_target_status": "unavailable_or_incomplete",
+    "implementation_actual_status": "read_from_jira",
+    "material_gaps": [
+      "Jira 证据明确当前媒体状态未传给外部，需做需求评估；客户完整测试用例与媒体 PRD/语音大模型版本正文尚未完成。"
+    ]
+  },
+  "write_gate": "blocked",
+  "write_gate_reason": "schema-v5 formal definition body/version-family audit and complete source receipts not complete",
+  "jira_source": "http://jira.i-tetris.com/browse/ADS-50563",
+  "captured_at": "2026-09-21T01:18:55Z"
+}
