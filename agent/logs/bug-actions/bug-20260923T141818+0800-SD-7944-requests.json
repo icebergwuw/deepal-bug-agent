@@ -1,0 +1,382 @@
+{
+  "requests": [
+    {
+      "copyPaste": {
+        "source": {
+          "sheetId": 2135747181,
+          "startRowIndex": 106,
+          "endRowIndex": 107,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "destination": {
+          "sheetId": 2135747181,
+          "startRowIndex": 425,
+          "endRowIndex": 426,
+          "startColumnIndex": 0,
+          "endColumnIndex": 10
+        },
+        "pasteType": "PASTE_FORMAT"
+      }
+    },
+    {
+      "setDataValidation": {
+        "range": {
+          "sheetId": 2135747181,
+          "startRowIndex": 425,
+          "endRowIndex": 426,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "rule": {
+          "condition": {
+            "type": "BOOLEAN"
+          },
+          "strict": true,
+          "showCustomUi": true
+        }
+      }
+    },
+    {
+      "updateCells": {
+        "start": {
+          "sheetId": 2135747181,
+          "rowIndex": 425,
+          "columnIndex": 0
+        },
+        "rows": [
+          {
+            "values": [
+              {
+                "userEnteredValue": {
+                  "stringValue": "2026-09-23"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "formulaValue": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-7944\",\"SD-7944｜C673-G3/G5能量管理出现直流VIN授权软开关\")"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "现象：客户ID20260918112432746，C673-G3/G5，VIN LS6CME168SF830395，OS 3.2.0.0.2，电源ON观察充电设置，预期没有直流VIN授权软开关，实际有，5/5。[Jira原票][Jira视频]姜秋月2026-09-21评论要求确认是否有隐藏需求。[姜秋月评论]海外车辆设置V1.8第4.14.10节：电源ON、HU开机时可设置该开关，出厂默认关闭、上下电记忆，无G3/G5隐藏条件。[C673海外车辆设置功能定义V1.8·4.14.10]CIIA1.5专项V1.21第4.2.1/5.1.1：能量管理界面有该软开关，默认关闭；第12页项目差异为空。[直流充电VIN授权功能定义V1.21·4.2.1/5.1.1]同现象历史票已关Invalid，本次以正式定义而不是其截图结案。[SD-4688]"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 106,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-7944"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 112
+                  },
+                  {
+                    "startIndex": 114,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4453037/G3G5+%E7%9B%B4%E6%B5%81VIN%E6%8E%88%E6%9D%83%E8%BD%AF%E5%BC%80%E5%85%B3%E5%86%92%E5%87%BA.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 120
+                  },
+                  {
+                    "startIndex": 149,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-7944?focusedCommentId=8525371"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 154
+                  },
+                  {
+                    "startIndex": 217,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 243
+                  },
+                  {
+                    "startIndex": 300,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 330
+                  },
+                  {
+                    "startIndex": 364,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-4688"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 371
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "结论：C673-G3/G5能量管理应显示“直流充电VIN授权”软开关，客户预期“不应出现”不成立。海外车辆设置功能定义和CIIA1.5专项定义都要求能量管理界面提供该开关，出厂默认关闭；本车实测出现开关，与定义一致，不是隐藏需求漏放，也不是误显示。\n依据：C673海外车辆设置功能定义V1.8·4.14.10；直流充电VIN授权功能定义V1.21·4.2.1/5.1.1；Jira原票·描述。\n处理：保留开关，不新增屏蔽配置字、不改界面；按非问题关闭。吴优处理。"
+                },
+                "textFormatRuns": [
+                  {},
+                  {
+                    "startIndex": 128,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 154
+                  },
+                  {
+                    "startIndex": 155,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 185
+                  },
+                  {
+                    "startIndex": 186,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-7944"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 195
+                  }
+                ]
+              },
+              {
+                "userEnteredValue": {
+                  "boolValue": false
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "可关闭"
+                }
+              },
+              {},
+              {
+                "userEnteredValue": {
+                  "stringValue": "无隐藏需求；出厂默认关闭，但开关应显示。"
+                }
+              },
+              {
+                "userEnteredValue": {
+                  "stringValue": "Jira原票·描述\nJira视频·软开关\n姜秋月评论\nC673海外车辆设置功能定义V1.8·4.14.10\n直流充电VIN授权功能定义V1.21·4.2.1/5.1.1\nSD-4688·同现象"
+                },
+                "textFormatRuns": [
+                  {
+                    "startIndex": 0,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-7944"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 9
+                  },
+                  {
+                    "startIndex": 10,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/secure/attachment/4453037/G3G5+%E7%9B%B4%E6%B5%81VIN%E6%8E%88%E6%9D%83%E8%BD%AF%E5%BC%80%E5%85%B3%E5%86%92%E5%87%BA.mp4"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 20
+                  },
+                  {
+                    "startIndex": 21,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-7944?focusedCommentId=8525371"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 26
+                  },
+                  {
+                    "startIndex": 27,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 53
+                  },
+                  {
+                    "startIndex": 54,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 84
+                  },
+                  {
+                    "startIndex": 85,
+                    "format": {
+                      "foregroundColor": {
+                        "red": 0.0667,
+                        "green": 0.3333,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "link": {
+                        "uri": "http://jira.i-tetris.com/browse/SD-4688"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fields": "userEnteredValue,textFormatRuns"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 2135747181,
+          "dimension": "ROWS",
+          "startIndex": 425,
+          "endIndex": 426
+        }
+      }
+    },
+    {
+      "setBasicFilter": {
+        "filter": {
+          "range": {
+            "sheetId": 2135747181,
+            "startRowIndex": 0,
+            "endRowIndex": 426,
+            "startColumnIndex": 0,
+            "endColumnIndex": 10
+          }
+        }
+      }
+    }
+  ]
+}

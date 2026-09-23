@@ -1,0 +1,77 @@
+[
+  {
+    "date": "2026-09-23",
+    "key": "SD-7944",
+    "summary": "C673-G3/G5能量管理出现直流VIN授权软开关",
+    "info": "现象：客户ID20260918112432746，C673-G3/G5，VIN LS6CME168SF830395，OS 3.2.0.0.2，电源ON观察充电设置，预期没有直流VIN授权软开关，实际有，5/5。[Jira原票][Jira视频]姜秋月2026-09-21评论要求确认是否有隐藏需求。[姜秋月评论]海外车辆设置V1.8第4.14.10节：电源ON、HU开机时可设置该开关，出厂默认关闭、上下电记忆，无G3/G5隐藏条件。[C673海外车辆设置功能定义V1.8·4.14.10]CIIA1.5专项V1.21第4.2.1/5.1.1：能量管理界面有该软开关，默认关闭；第12页项目差异为空。[直流充电VIN授权功能定义V1.21·4.2.1/5.1.1]同现象历史票已关Invalid，本次以正式定义而不是其截图结案。[SD-4688]",
+    "info_links": [
+      {
+        "label": "Jira原票",
+        "url": "http://jira.i-tetris.com/browse/SD-7944"
+      },
+      {
+        "label": "Jira视频",
+        "url": "http://jira.i-tetris.com/secure/attachment/4453037/G3G5+%E7%9B%B4%E6%B5%81VIN%E6%8E%88%E6%9D%83%E8%BD%AF%E5%BC%80%E5%85%B3%E5%86%92%E5%87%BA.mp4"
+      },
+      {
+        "label": "姜秋月评论",
+        "url": "http://jira.i-tetris.com/browse/SD-7944?focusedCommentId=8525371"
+      },
+      {
+        "label": "C673海外车辆设置功能定义V1.8·4.14.10",
+        "url": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+      },
+      {
+        "label": "直流充电VIN授权功能定义V1.21·4.2.1/5.1.1",
+        "url": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+      },
+      {
+        "label": "SD-4688",
+        "url": "http://jira.i-tetris.com/browse/SD-4688"
+      }
+    ],
+    "judgment": "结论：C673-G3/G5能量管理应显示“直流充电VIN授权”软开关，客户预期“不应出现”不成立。海外车辆设置功能定义和CIIA1.5专项定义都要求能量管理界面提供该开关，出厂默认关闭；本车实测出现开关，与定义一致，不是隐藏需求漏放，也不是误显示。\n依据：C673海外车辆设置功能定义V1.8·4.14.10；直流充电VIN授权功能定义V1.21·4.2.1/5.1.1；Jira原票·描述。\n处理：保留开关，不新增屏蔽配置字、不改界面；按非问题关闭。吴优处理。",
+    "judgment_links": [
+      {
+        "label": "C673海外车辆设置功能定义V1.8·4.14.10",
+        "url": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+      },
+      {
+        "label": "直流充电VIN授权功能定义V1.21·4.2.1/5.1.1",
+        "url": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+      },
+      {
+        "label": "Jira原票·描述",
+        "url": "http://jira.i-tetris.com/browse/SD-7944"
+      }
+    ],
+    "status": "可关闭",
+    "note": "无隐藏需求；出厂默认关闭，但开关应显示。",
+    "links": [
+      {
+        "label": "Jira原票·描述",
+        "url": "http://jira.i-tetris.com/browse/SD-7944"
+      },
+      {
+        "label": "Jira视频·软开关",
+        "url": "http://jira.i-tetris.com/secure/attachment/4453037/G3G5+%E7%9B%B4%E6%B5%81VIN%E6%8E%88%E6%9D%83%E8%BD%AF%E5%BC%80%E5%85%B3%E5%86%92%E5%87%BA.mp4"
+      },
+      {
+        "label": "姜秋月评论",
+        "url": "http://jira.i-tetris.com/browse/SD-7944?focusedCommentId=8525371"
+      },
+      {
+        "label": "C673海外车辆设置功能定义V1.8·4.14.10",
+        "url": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+      },
+      {
+        "label": "直流充电VIN授权功能定义V1.21·4.2.1/5.1.1",
+        "url": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+      },
+      {
+        "label": "SD-4688·同现象",
+        "url": "http://jira.i-tetris.com/browse/SD-4688"
+      }
+    ]
+  }
+]
