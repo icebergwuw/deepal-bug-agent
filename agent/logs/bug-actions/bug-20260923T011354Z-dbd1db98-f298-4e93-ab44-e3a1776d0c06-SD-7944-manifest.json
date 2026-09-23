@@ -1,0 +1,23 @@
+{
+  "schema_version": 5,
+  "run_id": "bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06",
+  "operator_owner_id": "wu-you",
+  "target_owner_id": "wu-you",
+  "jira_read": true,
+  "jira_read_source": "Chrome live issue page; fields, description, attachments/links, comments read 2026-09-23",
+  "write_eligible": false,
+  "write_blockers": [
+    "formal Drive document body reads not completed for every candidate",
+    "referenced-source closure and version-family enumeration incomplete",
+    "Alchemy current/standard/project checks unavailable for voice-related tickets",
+    "schema-v5 evidence gate must remain closed"
+  ],
+  "external_actions": {
+    "jira_comment": false,
+    "jira_assign": false,
+    "jira_transition": false
+  },
+  "jira_key": "SD-7944",
+  "jira_url": "http://jira.i-tetris.com/browse/SD-7944",
+  "needs_alchemy": false
+}

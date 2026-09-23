@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06",
+  "status": "blocked",
+  "started_at": "2026-09-23T01:13:54.891224+00:00",
+  "query": {
+    "jira_result_count": 15,
+    "sheet_unique_keys": 421,
+    "unregistered_keys": [
+      "SD-7944",
+      "HUR-85064",
+      "HUR-85062",
+      "HUR-84883",
+      "ADS-51117",
+      "ADS-51116",
+      "ADS-50563",
+      "ADS-50547",
+      "ADS-49772",
+      "ADS-46438"
+    ]
+  },
+  "platform_reads": {
+    "jira": "chrome live read completed",
+    "google_sheets": "chrome xlsx export completed",
+    "google_drive": "chrome authenticated; formal body/version closure incomplete",
+    "alchemy": "not freshly verified"
+  },
+  "write_gate": "blocked",
+  "writes": {
+    "sheet": false,
+    "index": false,
+    "jira_external_actions": false
+  },
+  "manifests": [
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-SD-7944-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-HUR-85064-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-HUR-85062-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-HUR-84883-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-ADS-51117-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-ADS-51116-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-ADS-50563-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-ADS-50547-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-ADS-49772-manifest.json",
+    "/Users/you.wu/Desktop/Mega Project/Bug/agent/logs/bug-actions/bug-20260923T011354Z-dbd1db98-f298-4e93-ab44-e3a1776d0c06-ADS-46438-manifest.json"
+  ]
+}
