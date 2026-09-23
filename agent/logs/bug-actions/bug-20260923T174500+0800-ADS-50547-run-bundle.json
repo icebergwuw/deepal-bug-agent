@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260923T174500+0800-ADS-50547",
+  "operator_owner_id": "wu-you",
+  "status": "ui_verified",
+  "started_at": "2026-09-23T17:45:00+08:00",
+  "query_summary": "用户要求把 ADS-50547 的完整判断写入吴优 bug 页；API 不是必须路径，用已登录 Chrome 界面写第427行。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-09-23-ADS-50547.md",
+  "initial_jira_count": 1,
+  "final_jira_count": 1,
+  "online_sheet_rows": 426,
+  "final_keys": [
+    "ADS-50547"
+  ],
+  "new_keys": [
+    "ADS-50547"
+  ],
+  "excluded_after_requery": [],
+  "items": [
+    {
+      "jira_key": "ADS-50547",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 427,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260923T-ADS-50547-manifest.json",
+      "ui_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260923T174500+0800-ADS-50547-ui-readback.json",
+      "ui_readback_sha256": "6b9a4c4b9f44ee0ebfccb2b7ed0b8b732e50e06973b93eb41e7646b41d5088bd"
+    }
+  ],
+  "completed_at": "2026-09-23T19:40:00+08:00"
+}
