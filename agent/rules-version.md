@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.20.0-trial.1`
+- 当前版本：`v1.21.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-09-23`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
@@ -8,6 +8,39 @@
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
 
+
+
+## v1.21.0-trial.1 — 2026-09-23
+
+### 试行内容
+
+- 同一线程里追问某一个来源、某一句文案或某一个字段时，走定向补证，不重跑查重、预检、整份版本正文和写表。
+- 版本族仍要列出同系列并读最新适用版本。中间版本默认不读全文，只在冲突、句子出处或版本结论不同时加读。
+- 判断还没稳定时不写表。同一天已经记录的同一张表 API 阻断直接复用，不再重复探测 gapi、gviz 和 export。
+
+### 修改原因
+
+- HUR-85084 的判断被追问文案出处后整条重跑，第一轮也没把功能定义和 PRD/UE 文案拆开。
+- SD-7944 的时间主要耗在重复探测已经失败的 Sheets API，以及逐格界面写入；单票证据本身已经够形成结论。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/workflows/bug.md`
+- `agent/evidence-contract.md`
+- `agent/sheet-contract.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-23-flow-time.md`
+
+### 验证案例
+
+- “这句文案哪里定义的”只补这一句的最早出处和最新版，不重开整票写表。
+- “再看 SD-7944”仍是完整复查。
+- 当天日志已有同一张表的 `batchUpdate` 阻断时，下一票直接走页面 `/save`。
+
+### 回滚口径
+
+- 删除定向补证、版本加读条件和阻断复用这三句，恢复每轮都全量重读并重新探测写表通道。不改已经写入的 Bug 行。
 
 ## v1.20.0-trial.1 — 2026-09-23
 

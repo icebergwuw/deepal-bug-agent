@@ -79,7 +79,7 @@
 6. 对机器配置要求候选审计的 Drive 检索，`read / not_found` 都必须保存实际检索产生的 `search_receipts`，并在必查动作中用 `search_receipt_ids` 绑定；回执记录实际入口 `origin`、查询、时间和每个结果的 id、标题、入口与 MIME 类型。
 7. `candidate_audit` 的数量和候选 id 必须与绑定回执逐项一致；每个结果都标记 `read / excluded / unavailable` 并说明去留。不能人工填写 `results_count=0` 隐藏回执中的命中项；存在已读候选时不得标为 `not_found`。
 8. 每个候选必须用 `references` 数组声明正文中出现的文档全名或原始资料入口；没有引用也显式写空数组。命中功能清单、配置索引、资料目录或其他二级入口时，必须按引用的完整文档名继续检索，并在 `search_completion.referenced_sources` 绑定 `exact_document_name` 回执。引用链未闭环时不得写 `not_found` 或进入写表。
-9. 标题含版本号的候选必须登记 `version_family`，在 `search_completion.version_families` 保存同系列枚举回执、选中的已读候选、选择理由和 `newer_version_checked=true`。只打开搜索排序靠前的旧版本，不等于找到生效版本。
+9. 标题含版本号的候选必须登记 `version_family`，在 `search_completion.version_families` 保存同系列枚举回执、选中的已读候选、选择理由和 `newer_version_checked=true`。只打开搜索排序靠前的旧版本，不等于找到生效版本。枚举要列出同系列可见版本，但默认只读选中的最新适用版本。不要把每个中间版本都打开读完。只有最新版和实车或实现冲突且旧版可能仍在车上、用户追问某一句从哪一版写入、或两个已见版本对争议句结论不同时，才加读。追溯某一句时用这句话检索，读最早命中和最新版，中间版只核对该句。
 10. `search_completion.completed` 必须为 `true`；`referenced_sources` 和 `version_families` 即使没有项目也必须显式为空数组。宽泛关键词检索、精确文档名追查和版本族枚举可以分属不同回执，必查动作绑定的全部回执合并覆盖其声明查询。
 11. manifest 必须用 `run_context` 绑定同一批次的 `run_id`、操作者、目标负责人、页签和 1-based 行号；单票 manifest 不得脱离本次运行上下文复用。
 
