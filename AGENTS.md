@@ -41,6 +41,7 @@
 - 已有行更新模式允许列/保护列：`agent/config/sheet-update-modes.json`
 - 可组合证据画像、必查动作和来源类型：`agent/config/evidence-requirements.json`
 - 写表前决策核验：`agent/scripts/validate_bug_evidence_gate.py`
+- 页面 `/save` 写入：`agent/scripts/sheet_page_save.py`
 - 首次运行、身份绑定和平台权限引导：`agent/onboarding.md`
 - 本机写前预检：`agent/scripts/bug_project_preflight.py`
 - 固定身份、链接和资料入口：`agent/context.md`

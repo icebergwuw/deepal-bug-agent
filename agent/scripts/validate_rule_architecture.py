@@ -82,6 +82,8 @@ OPERATIONAL_SCRIPT_ALLOWLIST = {
     "validate_bug_evidence_gate.py",
     "validate_bug_run.py",
     "validate_rule_architecture.py",
+    "sheet_page_save.py",
+    "test_sheet_page_save.py",
 }
 
 

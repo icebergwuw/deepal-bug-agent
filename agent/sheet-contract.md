@@ -57,9 +57,17 @@
 - 新增行必须复制负责人注册表 `format_anchor_row` 指定的固定格式锚点；吴优 `bug` 页唯一锚点为第 107 行（Sheets API 0-based 索引 106）。不得改用上一行、最近行、空白行、分隔行或表头。复制仅用于格式，A:J 内容和 E 列 BOOLEAN 验证仍须按列契约结构化写入。
 - 禁止用剪贴板 HTML/纯文本作为新增行的最终写入方式。C、D、H、J 的短标签必须通过结构化富文本链接写入，E 必须使用 BOOLEAN 数据验证；写入后必须在实际页面视觉回读一次，确认长文本未被固定行高截断。
 
+## 页面 /save 写入
+
+结构化 Sheets API 仍是默认写表路径。API 写或读被实际阻断，且操作者当前 Chrome 已登录目标表格时，先用 `agent/scripts/sheet_page_save.py` 走页面自己的 `/save`，不要先退回逐格手写。
+
+已证实、可以生成命令的只有三类：纯文本、以 `=` 开头的单个公式（含一个 `HYPERLINK`）、清空。命令在页面内读取当前 `/bind` 或 `/save` 地址和会话，不把 sid、token、ouid 写入仓库、日志或聊天。一次请求只改一个单元格；修订号用本次响应里的新修订号继续，不把旧修订号写死。
+
+页面 `/save` 还不能表达富文本多链接、BOOLEAN 复选框验证和锚点行格式复制。这些格子继续走下面的 Chrome 界面兜底。页面保存成功只说明服务端接受了这次命令，必须重新选中单元格或重新加载后读取公式栏；不能把它叫作 API final，也不能冒充 `--phase ui`。
+
 ## Chrome 界面写入兜底
 
-结构化 Sheets API 仍是默认写表路径。只有 API 写或读被实际阻断，且操作者当前 Chrome 已登录目标表格时，才允许 `chrome_ui` 兜底。阻断必须原文记录，至少包含 `gapi` 无 token、`SAPISIDHASH` 400、`ERR_BLOCKED_BY_CLIENT` 或 `batchUpdate` 未能发送之一。证据门禁、身份预检和决策核验卡不因改走界面而跳过。
+结构化 Sheets API 仍是默认写表路径。只有 API 写或读被实际阻断，且页面 `/save` 不能表达目标单元格时，才允许 `chrome_ui` 兜底。阻断必须原文记录，至少包含 `gapi` 无 token、`SAPISIDHASH` 400、`ERR_BLOCKED_BY_CLIENT` 或 `batchUpdate` 未能发送之一。证据门禁、身份预检和决策核验卡不因改走界面而跳过。
 
 界面写入不是 API final 的替代证明：
 
@@ -83,5 +91,5 @@
 7. 用户反馈链接不可见或不可点时，必须按用户实际界面复核并修复短标签的链接元数据或写入方式；J 仍不得显示完整 URL，不能以标签有颜色或仅存在 API 元数据为由结束处理。
 8. 回读 C 的 `textFormatRuns[].format.link.uri`，逐项确认 C 中每个证据名称原位可点击且目标正确；J 有链接但 C 内证据不可点，不算通过。
 9. 回读 D/H 的 `formattedValue` 与 `textFormatRuns[].format.link.uri`：可见文本必须与 `agent/output-contract.md` 一致；每个依据短标签必须绑定正确原始链接，单元格不得显示长 URL。
-10. API 路径保存本次原始 A:J 回读和校验 JSON，在 run bundle 中登记路径与 `readback_sha256`；只有 `validate_bug_run.py --phase final` 通过后才能报告 API 写表完成。`chrome_ui` 路径改为保存逐列公式栏回读，登记 `ui_readback_sha256`，并通过 `validate_bug_run.py --phase ui`；这条通过不能称作 API final 通过。
+10. API 路径保存本次原始 A:J 回读和校验 JSON，在 run bundle 中登记路径与 `readback_sha256`；只有 `validate_bug_run.py --phase final` 通过后才能报告 API 写表完成。`chrome_ui` 路径改为保存逐列公式栏回读，登记 `ui_readback_sha256`，并通过 `validate_bug_run.py --phase ui`；这条通过不能称作 API final 通过。页面 `/save` 只记录修订号和公式栏回读，同样不能称作 API final 或 ui 通过。
 11. 更新已有行时对比写前、写后 A:J：除当前模式允许且实际声明修改的列外，其余列的值、公式和富文本链接必须一致。
