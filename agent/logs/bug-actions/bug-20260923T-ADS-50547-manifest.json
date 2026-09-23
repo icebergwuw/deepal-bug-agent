@@ -1,0 +1,333 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-50547",
+  "run_context": {
+    "run_id": "20260923T-ADS-50547",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 427
+  },
+  "comment_causality": "客户称庆生过程中唤醒其它卡片没有打断并建议打断。李相建先称之前无此逻辑，看到退出条款第3点后称能否实现待评估，建议转需求。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "LS6C3E1D4TF812043",
+    "test_case": {
+      "checked": true,
+      "status": "incomplete",
+      "source": "ADS-50547 描述只有现象、VIN、时间点和建议打断，缺软件版本、具体卡片和原话；视频未逐段核对。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-46281",
+        "relationship": "同为其它 DEEPAL AI 卡片不能打断庆生，无 Jira 链接字段但标题和现象会改变本票预期",
+        "read": true,
+        "outcome": "已关闭。当时按需求如此反馈客户，不把卡片回复写成语音拉起其他应用。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "memory-prd-v07",
+      "source": "记忆空间-需求文档-v0.7.pdf",
+      "source_location": "第35页，退出庆生应用条款 c.iii",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385-5/C673-7 8295",
+      "trigger": "语音拉起地图、音乐或 Deepal App",
+      "target_behavior": "退出庆生；普通车控如打开车窗不退出；庆生过程中仍支持唤醒语音助手",
+      "match": "exact",
+      "reason": "现行最新版直接定义庆生退出边界，本票卡片唤醒不在该条列举内。"
+    },
+    {
+      "source_id": "jira-50547",
+      "source": "ADS-50547 描述与评论",
+      "source_location": "描述 9/11 18:08；李相建 2026-09-14 06:16 与 10:42 评论",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "庆生过程中唤醒其它卡片",
+      "target_behavior": "实际未打断；研发称此前无此逻辑，第3点实现待评估",
+      "match": "exact",
+      "reason": "证明当前实现和研发判断，不能单独定义产品目标。"
+    },
+    {
+      "source_id": "jira-46281",
+      "source": "ADS-46281",
+      "source_location": "描述测试步骤：庆生过程中唤醒深蓝管家；雷磊02 2026-07-06 评论",
+      "source_type": "jira",
+      "role": "context_only",
+      "project_model": "C673-7",
+      "trigger": "庆生过程中唤醒深蓝管家",
+      "target_behavior": "其它 DEEPAL AI 卡片回复不能打断庆生，当时按需求如此关闭",
+      "match": "partial",
+      "reason": "场景同类，但车型和客户编号不同，只用于区分卡片回复和拉起其他应用。"
+    },
+    {
+      "source_id": "video-gap",
+      "source": "ADS-50547 视频附件",
+      "source_location": "附件 video_1789266727.mp4，未逐段播放",
+      "source_type": "jira_attachment",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "未知具体卡片和原话",
+      "target_behavior": "未能从视频确认是卡片回复还是拉起地图/音乐/Deepal App",
+      "match": "gap",
+      "material": true,
+      "next_action": "补齐客户测试用例中的原话和具体卡片，或逐段核对视频。",
+      "reason": "视频可能改变本票属于执行缺陷还是新增需求，当前不能凭描述定责。"
+    }
+  ],
+  "evidence_profiles": [
+    "general",
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "退出庆生是生效 PRD 的功能边界。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "触发是语音唤醒其它卡片，组件为语音执行。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "本票不是地图路线或导航状态问题。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "退出条件已写在 PRD 正文，不是控件图层缺失。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-23",
+      "search_location": "Chrome 已登录 Google Drive，标题检索记忆空间-需求文档，并打开 v0.7 第35页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-50547"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "庆生过程中唤醒其它卡片没有打断"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间 庆生 退出"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "source_ids": [
+        "memory-prd-v07"
+      ],
+      "search_receipt_ids": [
+        "receipt-memory-prd"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "prd-v07",
+            "title": "记忆空间-需求文档-v0.7.pdf",
+            "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+            "version_family": "记忆空间-需求文档",
+            "disposition": "read",
+            "references": [],
+            "source_ids": [
+              "memory-prd-v07"
+            ]
+          },
+          {
+            "id": "prd-v06",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "今日标题检索可见，但版本低于已打开的 v0.7，不作为本票退出条款依据。"
+          },
+          {
+            "id": "prd-v06-dup",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "今日标题检索可见，但版本低于已打开的 v0.7，不作为本票退出条款依据。"
+          },
+          {
+            "id": "prd-v01",
+            "title": "记忆空间-需求文档-v0.1.pdf",
+            "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "今日标题检索可见，但版本低于已打开的 v0.7，不作为本票退出条款依据。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "记忆空间-需求文档",
+            "status": "enumerated",
+            "receipt_ids": [
+              "receipt-memory-prd"
+            ],
+            "selected_candidate_id": "prd-v07",
+            "selection_reason": "标题检索结果里 v0.7 最高，且已读到第35页退出条款；没有 v0.8 或更新文件。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "material": true,
+      "searched_at": "2026-09-23",
+      "search_location": "未进入 Alchemy；本机回执已过期，且 Jira 没有可测试原话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "ADS-50547 未给出具体唤醒原话"
+        }
+      ],
+      "source_ids": [],
+      "reason": "没有用户原话，不能做当前原话测试。",
+      "next_action": "客户补齐原话后再测 Alchemy。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "material": true,
+      "searched_at": "2026-09-23",
+      "search_location": "未打开 Alchemy 标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "缺少原话，无法取得 meta_id"
+        }
+      ],
+      "source_ids": [],
+      "reason": "没有 meta_id。",
+      "next_action": "拿到原话和 meta_id 后再读标准功能点。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "material": true,
+      "searched_at": "2026-09-23",
+      "search_location": "未打开 Alchemy 深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "缺少 meta_id"
+        },
+        {
+          "kind": "project_scope",
+          "text": "C385-5"
+        }
+      ],
+      "source_ids": [],
+      "reason": "没有项目功能点可核对。",
+      "next_action": "拿到 meta_id 后核对 C385-5 项目功能点。"
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-memory-prd",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-23T17:10:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-50547"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "庆生过程中唤醒其它卡片没有打断"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间 庆生 退出"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "prd-v07",
+          "title": "记忆空间-需求文档-v0.7.pdf",
+          "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "prd-v06",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "prd-v06-dup",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "prd-v01",
+          "title": "记忆空间-需求文档-v0.1.pdf",
+          "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "unavailable",
+    "original_utterance": "",
+    "alchemy_tested": false,
+    "unavailable_reason": "Jira 只写唤醒其它卡片，没有原话；Alchemy 本机回执已过期。",
+    "next_action": "补齐原话后再做 Alchemy 当前、标准和项目功能点核验。",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "没有原话和 meta_id，未读标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "没有 meta_id，未读 C385-5 项目功能点。"
+    }
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "吴优",
+    "text": "结论：庆生过程中唤醒其它卡片，现行定义不要求因此退出庆生。记忆空间PRD v0.7第35页只在语音拉起地图、音乐或Deepal App时退出，普通车控不退出；本票没有写清卡片和原话。\n依据：记忆空间PRD v0.7·第35页；ADS-50547描述。\n处理：先向客户补齐软件版本、庆生前置、实际卡片和原话，形成完整客户测试用例后再复核；吴优处理。"
+  },
+  "conflict_resolution": "研发把第35页第3点说成待评估的新需求；该条已经要求语音拉起地图、音乐或 Deepal App 时退出庆生。客户写的是唤醒其它卡片，和 ADS-46281 的卡片回复同类，不能直接套成第3点执行缺陷。视频未核对，客户用例不完整，所以不关闭也不转需求。"
+}
