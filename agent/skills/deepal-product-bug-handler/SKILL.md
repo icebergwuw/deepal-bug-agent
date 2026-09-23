@@ -28,7 +28,7 @@ Read `agent/workflows/review.md` when the input is customer, leader, 可姐, mee
 3. Resolve the owner only through `agent/bug-owners/registry.yaml` and the ignored local profile; never infer the operator from the OS or browser account.
 4. Apply `agent/evidence-contract.md` before forming a conclusion.
 5. Form and reuse the single current conclusion through `agent/output-contract.md`.
-6. Write and validate Sheets through `agent/sheet-contract.md`. Use `agent/scripts/bug_sheet_contract.py` for the API path. If that API write is blocked, use `agent/scripts/sheet_page_save.py` for plain text, one `=` formula, or a clear. Rich text, checkbox validation, and anchor formatting still use the Chrome UI fallback and close with `validate_bug_run.py --phase ui`. Never report an API final pass for a page save or UI write.
+6. Write and validate Sheets through `agent/sheet-contract.md`. Use `agent/scripts/bug_sheet_contract.py` for the API path. If that API write is blocked, use `agent/scripts/sheet_page_save.py` for plain text, one `=` formula, a clear, or http(s) rich-text labels. Checkbox validation and anchor formatting still use the Chrome UI fallback and close with `validate_bug_run.py --phase ui`. Rich-text page saves must be read back in edit mode. Never report an API final pass for a page save or UI write.
 7. Apply `AGENTS.md` for default intent, external-action permission and sensitive-data boundaries.
 8. Read back every required artifact before reporting completion.
 

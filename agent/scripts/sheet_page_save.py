@@ -3,7 +3,7 @@
 
 The Sheets API batchUpdate path stays the default. When it is blocked, the
 already-open sheet page can post to its own /save endpoint. This module only
-builds the proven command shapes and a page expression that reads the live
+builds the proven plain-text, formula, clear, and rich-text link command shapes and a page expression that reads the live
 session from that page. It must not store or print sid, token, or ouid.
 """
 
@@ -17,8 +17,13 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 
 WRAP_OPCODE = 21299578
+RICH_WRAP_OPCODE = 25813757
 SET_OPCODE = 132274236
 CLEAR_OPCODE = 132274237
+RICH_SET_OPCODE = 125982780
+RICH_SET_FLAG = 6291459
+LINK_COLOR = 1136076
+RICH_PREFIX_CODE = 67108350
 BIND_ONLY_PARAMS = ("VER", "lsq", "u", "gsi", "cimpl", "RID", "CVER", "zx", "t", "MODE")
 SECRET_PARAMS = ("id", "sid", "token", "ouid")
 
@@ -61,14 +66,94 @@ def clear_command(gid: str, row: int, column: str) -> list[Any]:
     return [cell_range(gid, row, column), [CLEAR_OPCODE], []]
 
 
+def link_format() -> list[Any]:
+    return [None, [2, LINK_COLOR], None, None, None, None, None, None, 1]
+
+
+def normalize_links(links: list[Any]) -> list[dict[str, str]]:
+    if not isinstance(links, list):
+        raise ValueError("links must be a list of {text, url}")
+    normalized: list[dict[str, str]] = []
+    for item in links:
+        if not isinstance(item, dict):
+            raise ValueError("each link must be an object with text and url")
+        label = item.get("text")
+        url = item.get("url")
+        if not isinstance(label, str) or label == "":
+            raise ValueError("link text must be a non-empty string")
+        if not isinstance(url, str) or not url.startswith(("http://", "https://")):
+            raise ValueError("link url must start with http:// or https://")
+        normalized.append({"text": label, "url": url})
+    return normalized
+
+
+def locate_link_spans(text: str, links: list[dict[str, str]]) -> list[tuple[int, int, str]]:
+    spans: list[tuple[int, int, str]] = []
+    cursor = 0
+    for link in links:
+        label = link["text"]
+        start = text.find(label, cursor)
+        if start < 0:
+            earlier = text.find(label)
+            if (
+                earlier >= 0
+                and spans
+                and earlier < spans[-1][1]
+                and earlier + len(label) > spans[-1][0]
+            ):
+                raise ValueError("link labels overlap")
+            raise ValueError(f"link label not found: {label}")
+        end = start + len(label)
+        if spans and start < spans[-1][1]:
+            raise ValueError("link labels overlap")
+        spans.append((start, end, link["url"]))
+        cursor = end
+    return spans
+
+
+def rich_text_command(gid: str, row: int, column: str, text: str, links: list[Any]) -> list[Any]:
+    if not isinstance(text, str) or text == "":
+        raise ValueError("text must be a non-empty string")
+    if text.startswith("="):
+        raise PageSaveUnsupported("公式不能带富文本链接；单个 HYPERLINK 继续用纯公式命令")
+    normalized = normalize_links(links)
+    if not normalized:
+        raise ValueError("rich text requires at least one link")
+    spans = locate_link_spans(text, normalized)
+    format_runs: list[Any] = []
+    link_runs: list[Any] = []
+    for start, end, url in spans:
+        format_runs.extend([[start, link_format()], [end]])
+        link_runs.extend([[start, url], [end]])
+    mutation: list[Any] = [None] * 27
+    mutation[0] = RICH_SET_OPCODE
+    mutation[1] = RICH_SET_FLAG
+    mutation[2] = [2, text]
+    mutation[5] = 0
+    mutation[25] = format_runs
+    mutation[26] = link_runs
+    return [
+        cell_range(gid, row, column),
+        mutation,
+        [None, [[RICH_PREFIX_CODE, 513, [0], None, None, None, None, None, None, None, None, 0]]],
+    ]
+
+
 def build_command(gid: str, row: int, column: str, text: str | None, *, links: list[Any] | None = None) -> list[Any]:
     if links:
-        raise PageSaveUnsupported(
-            "页面 /save 还不能写富文本链接；多链接单元格继续走 Chrome 界面兜底"
-        )
+        if text is None:
+            raise ValueError("clear cannot carry links")
+        return rich_text_command(gid, row, column, text, links)
     if text is None:
         return clear_command(gid, row, column)
     return set_string_command(gid, row, column, text)
+
+
+def wrap_opcode_for(command: list[Any]) -> int:
+    mutation = command[1] if len(command) > 1 and isinstance(command[1], list) else None
+    if mutation and mutation[0] == RICH_SET_OPCODE:
+        return RICH_WRAP_OPCODE
+    return WRAP_OPCODE
 
 
 def dump_command(command: list[Any]) -> str:
@@ -76,7 +161,7 @@ def dump_command(command: list[Any]) -> str:
 
 
 def wrap_command(command: list[Any]) -> list[Any]:
-    return [WRAP_OPCODE, dump_command(command)]
+    return [wrap_opcode_for(command), dump_command(command)]
 
 
 def save_url_from_resource(resource_url: str) -> str:
@@ -130,6 +215,7 @@ def page_post_expression(command: list[Any], revision: int, req_id: int) -> str:
     if revision < 0 or req_id < 0:
         raise ValueError("revision and req_id must be non-negative")
     encoded = dump_command(command)
+    wrap_opcode = wrap_opcode_for(command)
     template = r"""(() => new Promise((resolve) => {
   try {
     const command = __COMMAND__;
@@ -173,7 +259,7 @@ def page_post_expression(command: list[Any], revision: int, req_id: int) -> str:
     return (
         template.replace("__REV__", repr(int(revision)))
         .replace("__REQ__", str(int(req_id)))
-        .replace("__WRAP__", str(WRAP_OPCODE))
+        .replace("__WRAP__", str(wrap_opcode))
         .replace("__COMMAND__", encoded)
     )
 
@@ -188,6 +274,7 @@ def main() -> int:
     mode = command.add_mutually_exclusive_group(required=True)
     mode.add_argument("--text")
     mode.add_argument("--clear", action="store_true")
+    command.add_argument("--links-json", help="JSON list of {text, url} short labels")
     expression = sub.add_parser("expression")
     expression.add_argument("--gid", required=True)
     expression.add_argument("--row", type=int, required=True)
@@ -197,10 +284,12 @@ def main() -> int:
     mode = expression.add_mutually_exclusive_group(required=True)
     mode.add_argument("--text")
     mode.add_argument("--clear", action="store_true")
+    expression.add_argument("--links-json", help="JSON list of {text, url} short labels")
     args = parser.parse_args()
     text = None if args.clear else args.text
+    links = json.loads(args.links_json) if args.links_json else None
     try:
-        built = build_command(args.gid, args.row, args.column, text)
+        built = build_command(args.gid, args.row, args.column, text, links=links)
     except (PageSaveUnsupported, ValueError) as error:
         print(str(error), file=sys.stderr)
         return 2

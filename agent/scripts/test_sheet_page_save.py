@@ -39,9 +39,83 @@ class SheetPageSaveTest(unittest.TestCase):
     def test_clear_command_matches_captured_shape(self) -> None:
         self.assertEqual(dump_command(clear_command("2135747181", 426, "K")), CLEAR)
 
-    def test_rich_text_is_rejected(self) -> None:
+    def test_two_link_command_uses_captured_rich_text_shape(self) -> None:
+        command = build_command(
+            "2135747181",
+            426,
+            "K",
+            "docA\ndocB",
+            links=[
+                {"text": "docA", "url": "https://example.com/script-a"},
+                {"text": "docB", "url": "https://example.com/script-b"},
+            ],
+        )
+        mutation = command[1]
+        link_format = [None, [2, 1136076], None, None, None, None, None, None, 1]
+        self.assertEqual(len(mutation), 27)
+        self.assertEqual(mutation[0], 125982780)
+        self.assertEqual(mutation[1], 6291459)
+        self.assertEqual(mutation[2], [2, "docA\ndocB"])
+        self.assertEqual(mutation[5], 0)
+        self.assertIsNone(mutation[3])
+        self.assertIsNone(mutation[24])
+        self.assertEqual(
+            mutation[25],
+            [[0, link_format], [4], [5, link_format], [9]],
+        )
+        self.assertEqual(
+            mutation[26],
+            [
+                [0, "https://example.com/script-a"],
+                [4],
+                [5, "https://example.com/script-b"],
+                [9],
+            ],
+        )
+        self.assertEqual(command[2][1][0][0], 67108350)
+        expression = page_post_expression(command, 2159, 3)
+        self.assertIn("25813757", expression)
+        self.assertNotIn("21299578", expression)
+        self.assertNotIn("sid-1", expression)
+        self.assertNotIn("token=", expression)
+        self.assertNotIn("ouid", expression)
+
+    def test_rich_text_rejects_bad_links(self) -> None:
+        with self.assertRaises(ValueError):
+            build_command(
+                "2135747181",
+                426,
+                "C",
+                "证据",
+                links=[{"text": "证据", "url": "ftp://example.com"}],
+            )
+        with self.assertRaises(ValueError):
+            build_command(
+                "2135747181",
+                426,
+                "C",
+                "abbc",
+                links=[
+                    {"text": "ab", "url": "https://example.com/a"},
+                    {"text": "bb", "url": "https://example.com/b"},
+                ],
+            )
+        with self.assertRaises(ValueError):
+            build_command(
+                "2135747181",
+                426,
+                "C",
+                "证据",
+                links=[{"text": "缺失", "url": "https://example.com"}],
+            )
         with self.assertRaises(PageSaveUnsupported):
-            build_command("2135747181", 426, "C", "证据", links=["https://example.com"])
+            build_command(
+                "2135747181",
+                426,
+                "B",
+                '=HYPERLINK("https://example.com","证据")',
+                links=[{"text": "证据", "url": "https://example.com"}],
+            )
 
     def test_save_url_drops_bind_only_params(self) -> None:
         url = save_url_from_resource(BIND_URL)

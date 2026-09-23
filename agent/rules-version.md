@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.21.0-trial.1`
+- 当前版本：`v1.22.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-09-23`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
@@ -9,6 +9,41 @@
 
 
 
+
+
+
+## v1.22.0-trial.1 — 2026-09-23
+
+### 试行内容
+
+- 页面 `/save` 可以写单元格内的 http(s) 富文本短标签。标签按可见文字的出现顺序定位，重叠、缺失和非 http(s) 地址都拒绝生成命令。
+- 复选框验证和锚点行格式仍走 `chrome_ui`。页面 `/save` 不能冒充 API final，也不能冒充 `--phase ui`。
+- 富文本写后必须进入编辑态读取 `data-sheets-formula-bar-text-link`，读完按 Esc 退出。空闲公式栏不显示链接元数据。
+
+### 修改原因
+
+- K426 已用富文本 opcode `25813757` 写入两个短标签，重新加载后的编辑态能读到对应 URL。C/D/J 因此不必再逐格手写链接。
+
+### 影响文件
+
+- `agent/scripts/sheet_page_save.py`
+- `agent/scripts/test_sheet_page_save.py`
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-23-page-save-rich-text.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_sheet_page_save.py`：两链接命令是 27 字段，外层 opcode 为 `25813757`；重叠、缺失和非 http(s) 地址失败。
+- K426 试写已经清空。A426 仍是 `2026-09-23`，B426 仍是 SD-7944 链接。
+
+### 回滚口径
+
+- `build_command` 重新拒绝 `links`，富文本改回 `chrome_ui`。不改 SD-7944 的 A:J，也不再改 K426。
 
 ## v1.21.0-trial.1 — 2026-09-23
 
