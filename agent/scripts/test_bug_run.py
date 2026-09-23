@@ -94,5 +94,99 @@ class BugRunTest(unittest.TestCase):
             self.assertEqual(validate_run_bundle(bundle, "final"), [])
 
 
+    def _ui_readback(self, directory: Path) -> Path:
+        payload = {
+            "write_surface": "chrome_ui",
+            "jira_key": "HUR-82492",
+            "sheet_row": 2,
+            "update_mode": "append",
+            "api_block_reason": "batchUpdate 未能发送：gapi 没有 token，SAPISIDHASH 400，ERR_BLOCKED_BY_CLIENT",
+            "selection": "A2",
+            "row_height_fit": True,
+            "entered_edit_with_escape": True,
+            "screenshot_not_used_as_cell_proof": True,
+            "filter_action": "no_filter_recorded",
+            "cells": {
+                "A": {"formula_bar": "2026-09-23"},
+                "B": {"formula_bar": '=HYPERLINK("http://jira.i-tetris.com/browse/HUR-82492","HUR-82492｜摘要")'},
+                "C": {
+                    "formula_bar": "现象。[Jira原票]",
+                    "links": [{"text": "Jira原票", "uri": "http://jira.i-tetris.com/browse/HUR-82492"}],
+                },
+                "D": {
+                    "formula_bar": "结论：保留。\n依据：Jira原票·描述。\n处理：关闭。吴优处理。",
+                    "links": [{"text": "Jira原票·描述", "uri": "http://jira.i-tetris.com/browse/HUR-82492"}],
+                },
+                "E": {"formula_bar": "FALSE", "checkbox": True},
+                "F": {"formula_bar": "", "before_formula_bar": ""},
+                "G": {"formula_bar": "可关闭"},
+                "H": {"formula_bar": "", "before_formula_bar": ""},
+                "I": {"formula_bar": "无隐藏需求。"},
+                "J": {
+                    "formula_bar": "Jira原票·描述",
+                    "links": [{"text": "Jira原票·描述", "uri": "http://jira.i-tetris.com/browse/HUR-82492"}],
+                },
+            },
+        }
+        ui_path = directory / "ui-readback.json"
+        ui_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        return ui_path
+
+    def test_ui_phase_accepts_formula_bar_readback(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            bundle = self._bundle(root)
+            ui_path = self._ui_readback(root)
+            log_path = Path(bundle["action_log"])
+            log_path.write_text(
+                LOG_TEXT + "\n- 界面回读已完成。未通过 API final。\n- HUR-82492 行 2\n",
+                encoding="utf-8",
+            )
+            bundle["status"] = "ui_verified"
+            bundle["completed_at"] = "2026-09-23T16:00:00+08:00"
+            bundle["items"][0]["ui_readback_path"] = str(ui_path)
+            bundle["items"][0]["ui_readback_sha256"] = hashlib.sha256(ui_path.read_bytes()).hexdigest()
+            self.assertEqual(validate_run_bundle(bundle, "ui"), [])
+            final_errors = validate_run_bundle(bundle, "final")
+            self.assertTrue(any("不能冒充 API final" in error for error in final_errors), final_errors)
+
+    def test_ui_phase_rejects_contaminated_owner_column(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            bundle = self._bundle(root)
+            ui_path = self._ui_readback(root)
+            payload = json.loads(ui_path.read_text(encoding="utf-8"))
+            payload["cells"]["F"]["formula_bar"] = "PC-37245｜导航播报智能提示不支持"
+            ui_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+            log_path = Path(bundle["action_log"])
+            log_path.write_text(LOG_TEXT + "\n界面回读。未通过 API final。\nHUR-82492 行 2\n", encoding="utf-8")
+            bundle["status"] = "ui_verified"
+            bundle["completed_at"] = "2026-09-23T16:00:00+08:00"
+            bundle["items"][0]["ui_readback_path"] = str(ui_path)
+            bundle["items"][0]["ui_readback_sha256"] = hashlib.sha256(ui_path.read_bytes()).hexdigest()
+            errors = validate_run_bundle(bundle, "ui")
+            self.assertTrue(any("F 新增行写后必须为空" in error for error in errors), errors)
+
+    def test_ui_phase_rejects_screenshot_only_proof(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            bundle = self._bundle(root)
+            ui_path = self._ui_readback(root)
+            payload = json.loads(ui_path.read_text(encoding="utf-8"))
+            payload["screenshot_not_used_as_cell_proof"] = False
+            payload["api_block_reason"] = "api failed"
+            ui_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+            log_path = Path(bundle["action_log"])
+            log_path.write_text(LOG_TEXT + "\n界面回读。未通过 API final。\nHUR-82492 行 2\n", encoding="utf-8")
+            bundle["status"] = "ui_verified"
+            bundle["completed_at"] = "2026-09-23T16:00:00+08:00"
+            bundle["items"][0]["ui_readback_path"] = str(ui_path)
+            bundle["items"][0]["ui_readback_sha256"] = hashlib.sha256(ui_path.read_bytes()).hexdigest()
+            errors = validate_run_bundle(bundle, "ui")
+            self.assertTrue(any("截图不能代替" in error for error in errors), errors)
+            self.assertTrue(any("真实 API 阻断" in error for error in errors), errors)
+
+
+
 if __name__ == "__main__":
     unittest.main()

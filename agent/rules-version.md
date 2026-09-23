@@ -1,11 +1,74 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.17.0-trial.1`
+- 当前版本：`v1.19.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-08-26`
+- 生效日期：`2026-09-23`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
+
+
+## v1.19.0-trial.1 — 2026-09-23
+
+### 试行内容
+
+- 结构化 Sheets API 仍是默认写表路径。API 被实际阻断时，允许当前 Chrome 已登录表格走 `chrome_ui` 兜底，不再把流程停在无法写表。
+- 界面兜底必须逐列读公式栏，编辑态核对链接后按 Esc 退出；截图不能证明单元格为空或链接可点。新增行 F/H 必须为空，串入其他票标题必须清空。
+- 收口命令是 `validate_bug_run.py --phase ui`，status 为 `ui_verified`。该状态不能进入或冒充 `--phase final`。
+
+### 修改原因
+
+- SD-7944 处理中，Sheets API `batchUpdate` 因 gapi 无 token、SAPISIDHASH 400 和 `ERR_BLOCKED_BY_CLIENT` 写不出去；界面可以写，但截图把 F426/H426 的 `PC-37245` 标题误看成空。
+
+### 影响文件
+
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-23-ui-write-gate.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_bug_run.py`：合法界面回读通过 ui；F 列串票、截图冒充和模糊 API 原因失败；`ui_verified` 不能通过 final。
+- SD-7944 第426行界面回读通过 `validate_bug_run.py --phase ui`。
+
+### 回滚口径
+
+- 删除 `ui_verified` 和 `--phase ui`，恢复只有 API final 可以报告写表完成。不删除已经写入的 SD-7944 第426行。
+
+## v1.18.0-trial.1 — 2026-09-17
+
+### 试行内容
+
+- 取消写表门禁对 Drive 检索回执 `origin=connector` 的强制要求。
+- 回执必须记录实际入口：优先当前 Chrome 登录态（`chrome`），仅在 Chrome 不可用时才使用 `connector` 或 `in_app_browser`。
+- 禁止手工编造未实际检索的回执；不再因为入口不是 connector 而阻止写表。
+
+### 修改原因
+
+- 用户明确要求取消 `origin=connector` 写表门禁；当前完整 Bug 流程已改为优先使用操作者 Chrome 登录态检索 Drive。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-17-origin-chrome-write-gate.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_bug_evidence_gate.py`：`origin=chrome` 与 `origin=in_app_browser` 通过；`origin=manual` 失败。
+- PC-40393：使用 Chrome Drive 检索回执生成写表请求。
+
+### 回滚口径
+
+- 恢复 `origin=connector` 硬门禁及对应测试、契约文句；不删除已写入的 Bug 行或本轮证据。
 
 ## v1.17.0-trial.1 — 2026-09-10
 
@@ -40,6 +103,32 @@
 - `PATCH`：不改变职责边界的文字澄清和缺陷修正。
 - `trial.N`：试行次数；用户确认转正后移除 trial 标记。
 - 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.17.0-trial.2 — 2026-09-11
+
+### 试行内容
+
+- 外部平台的读取与写回优先使用操作者当前 Chrome 已登录态，覆盖 Jira、Google Drive/Sheets 及其他外部资料入口。
+- 仅在 Chrome 不可用、未登录或缺少所需能力时，才切换到内置浏览器、连接器或其他受支持入口，并在运行证据中记录实际入口。
+
+### 修改原因
+
+- 用户明确反馈内置登录态容易失效；本次 PC-38414 处理中已验证 Chrome 登录态可读取 Google Sheets。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/onboarding.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-09-11：通过当前 Chrome 登录账号 `you.wu@megatronix.co` 打开并读取 `吴优工作说明` 的 `bug` 工作表。
+
+### 回滚口径
+
+- 删除本条入口优先级规则，恢复仅按平台能力选择浏览器/连接器的旧执行方式；不删除既有访问回执或 Bug 证据。
 
 ## v1.16.0-trial.1 — 2026-08-26
 

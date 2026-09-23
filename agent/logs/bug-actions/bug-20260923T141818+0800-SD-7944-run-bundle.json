@@ -2,7 +2,7 @@
   "schema_version": 1,
   "run_id": "bug-20260923T141818+0800-SD-7944",
   "operator_owner_id": "wu-you",
-  "status": "planned",
+  "status": "ui_verified",
   "started_at": "2026-09-23T14:18:18+08:00",
   "query_summary": "用户发送 SD-7944 要求完整流程；吴优 bug 页无该 Jira，拟新增第426行。",
   "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-09-23-SD-7944.md",
@@ -23,7 +23,10 @@
       "target_owner_id": "wu-you",
       "sheet_name": "bug",
       "sheet_row": 426,
-      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260923T141818+0800-SD-7944-manifest.json"
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260923T141818+0800-SD-7944-manifest.json",
+      "ui_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260923T141818+0800-SD-7944-ui-readback.json",
+      "ui_readback_sha256": "7f54e10f512e3bcc3ee032fbe07a2f7f8bf385c9f835267c8f48086a0e266874"
     }
-  ]
+  ],
+  "completed_at": "2026-09-23T16:40:00+08:00"
 }

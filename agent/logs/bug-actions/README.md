@@ -25,7 +25,7 @@
 - Jira 动作：评论原文、流转动作、目标责任人、执行结果；没有执行则写“未评论 Jira / 未流转 Jira”
 - 回读校验：是否已回读，结果如何
 - run bundle：同批次 JSON 路径；每票包含 manifest、负责人、页签和行号
-- readback_sha256：写后原始回读文件摘要；无写入时写“不适用”
+- readback_sha256：API 写后原始回读文件摘要；无写入时写“不适用”。Chrome 界面兜底改为写 `ui_readback_sha256`，并写明界面回读、未通过 API final
 - 未执行动作：未评论 Jira、未流转 Jira、未更新表等
 - 敏感信息处理：未记录账号、密码、token 或访问口令
 ```

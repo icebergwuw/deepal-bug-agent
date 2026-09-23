@@ -960,7 +960,24 @@ class BugEvidenceGateTest(unittest.TestCase):
         errors = validate_manifest(item)
         self.assertTrue(any("未完成同系列枚举" in error for error in errors), errors)
 
+    def test_chrome_origin_receipt_is_accepted(self) -> None:
+        item = hur_case()
+        item["search_receipts"][0]["origin"] = "chrome"
+        self.assertEqual(validate_manifest(item), [])
+
+    def test_connector_origin_is_not_required(self) -> None:
+        item = hur_case()
+        item["search_receipts"][0]["origin"] = "in_app_browser"
+        self.assertEqual(validate_manifest(item), [])
+
+    def test_unknown_search_origin_is_rejected(self) -> None:
+        item = hur_case()
+        item["search_receipts"][0]["origin"] = "manual"
+        errors = validate_manifest(item)
+        self.assertTrue(any("origin 必须记录实际入口" in error for error in errors), errors)
+
     def test_version_family_requires_series_name_receipt(self) -> None:
+
         item = hur_case()
         receipt = item["search_receipts"][0]
         receipt["queries"] = [

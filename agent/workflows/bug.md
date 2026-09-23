@@ -53,7 +53,8 @@
 - 写入前再次运行预检：通用任务至少要求 Jira、Google Drive和目标负责人范围；语音或MasterGo任务按证据画像增加对应平台。只有结果为 `ok=true + mode=read_write` 才能继续。
 - 严格按 `agent/sheet-contract.md` 写当前负责人页。
 - 调用 `agent/scripts/bug_sheet_contract.py` 生成 `build / patch` 请求时，必须传入当前负责人 `--owner-id`、本票已通过校验且 Jira key 一致的 schema v5 manifest，以及同批次 `--run-bundle`。脚本自动执行本机身份/负责人范围/Jira/Drive门禁，语音画像同时要求Alchemy短期回执；还会核对真实 Drive 检索回执、引用文档追查、版本族枚举、逐 Key 决策卡和行号绑定。任一项缺失或错配即停止生成写表请求。
-- 已有 Jira 更新原行；新 Jira 追加一行。新增时必须读取负责人注册表的 `format_anchor_row`；吴优 `bug` 页固定使用第 107 行，禁止改用上一行或最近行。写入必须使用结构化列请求，禁止以剪贴板 HTML/纯文本作为最终载荷。写后同时回读锚点和新增 A:J，逐列核对固定格式、B 公式、E 复选框、列位、行高、富文本链接和筛选边界，并做一次页面视觉检查。
+- 已有 Jira 更新原行；新 Jira 追加一行。新增时必须读取负责人注册表的 `format_anchor_row`；吴优 `bug` 页固定使用第 107 行，禁止改用上一行或最近行。默认写入使用结构化列请求，禁止以剪贴板 HTML/纯文本作为 API 最终载荷。API 写后同时回读锚点和新增 A:J，逐列核对固定格式、B 公式、E 复选框、列位、行高、富文本链接和筛选边界，并做一次页面视觉检查。
+- 结构化 API 被实际阻断时，按 `agent/sheet-contract.md` 的 Chrome 界面写入兜底继续，不把流程停在“无法写表”。界面路径仍禁止覆盖 E/F，复查不改 H；写后逐列读公式栏，编辑态核对链接后按 Esc 退出，并用 `validate_bug_run.py --phase ui` 收口。
 - 普通二次复查使用 `recheck` 模式；D 写本次重新核验后的当前 `decision_text`，不是把新结论绕写到 H。
 - 同步对应 `agent/bug-owners/<owner>/index.md`。索引以线上页为准，不凭历史静态清单追加。
 - 只改当前流程允许且本 Bug 必需的列，不覆盖 E/F；H 只由会议/复盘流程更新。
@@ -64,7 +65,7 @@
 - 外部动作的文本复用、链接和回读按 `agent/output-contract.md` 执行。
 - 每批操作在 `agent/logs/bug-actions/` 留日志，记录负责人、每一个 Jira key、证据、线上位置、写入摘要、回读校验和未执行动作。
 - 每次执行先生成唯一 `run_id` 和 run bundle；即使本次无新增，也必须保存查询范围、数量、去重结果和“本次无新增”的操作日志。
-- 有写入时，run bundle 在写前绑定每票 manifest 与逐 Key 决策卡，写后再绑定原始回读、校验结果及 `readback_sha256`，并用 `validate_bug_run.py --phase final` 收口。
+- 有 API 写入时，run bundle 在写前绑定每票 manifest 与逐 Key 决策卡，写后再绑定原始回读、校验结果及 `readback_sha256`，并用 `validate_bug_run.py --phase final` 收口。Chrome 界面兜底改为绑定 `ui_readback_sha256`，status 写 `ui_verified`，只用 `validate_bug_run.py --phase ui` 收口，不能把该状态送进 final。
 - 批量任务必须在日志正文逐条列 key，或引用同目录 manifest；manifest 至少包含 Jira key、负责人、表格行号。范围描述不能替代逐条清单。
 - 旧线上数据没有日志时不伪造补录；标为历史未审计，后续触及时再按完整流程核验并留痕。
 - 本次本地文件更新通过全部适用校验和敏感信息检查后，按 `AGENTS.md` 提交并推送当前分支；只有远端确认包含新提交后才报告“已上传 GitHub”。
@@ -75,7 +76,7 @@
 - `agent/evidence-contract.md` 的当前问题必查链路和结论门槛已满足。
 - 决策核验卡七项已通过校验；全部证据画像均有选择/排除理由，必查资料有检索日期、入口、关键词和结果；客户问题编号与测试用例状态已检查，直接关联票已读，来源类型/角色、继承链、资料范围、预期行为卡和冲突均已记录；语音类的 Alchemy 原话、`meta_id`、标准/项目功能点状态完整。
 - `agent/output-contract.md` 的唯一结论、责任方和渠道复用已满足。
-- `agent/sheet-contract.md` 的列位、链接、样式和回读已通过。
+- `agent/sheet-contract.md` 的列位、链接、样式和回读已通过；API 路径通过 final，界面兜底路径通过 ui，二者不能互相冒充。
 - 已查当前负责人页内重复；跨负责人同 Jira 保留。
 - 已回读写入结果并记录日志。
 - 已回读日志，确认本次处理的每一个 Jira key 都可检索到。

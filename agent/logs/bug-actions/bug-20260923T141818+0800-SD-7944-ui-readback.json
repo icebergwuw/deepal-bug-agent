@@ -1,0 +1,115 @@
+{
+  "write_surface": "chrome_ui",
+  "jira_key": "SD-7944",
+  "sheet_row": 426,
+  "update_mode": "append",
+  "api_block_reason": "Sheets API batchUpdate 未能发送：页面内 gapi 没有 OAuth token，SAPISIDHASH 请求返回 400；Chrome 直接打开 sheets.googleapis.com 被 ERR_BLOCKED_BY_CLIENT 拦截。",
+  "selection": "A426",
+  "row_height_fit": true,
+  "entered_edit_with_escape": true,
+  "screenshot_not_used_as_cell_proof": true,
+  "filter_action": "no_filter_recorded",
+  "cells": {
+    "A": {
+      "formula_bar": "2026-09-23"
+    },
+    "B": {
+      "formula_bar": "=HYPERLINK(\"http://jira.i-tetris.com/browse/SD-7944\",\"SD-7944｜C673-G3/G5能量管理出现直流VIN授权软开关\")"
+    },
+    "C": {
+      "formula_bar": "现象：客户ID20260918112432746，C673-G3/G5，VIN LS6CME168SF830395，OS 3.2.0.0.2，电源ON观察充电设置，预期没有直流VIN授权软开关，实际有，5/5。[Jira原票][Jira视频]姜秋月2026-09-21评论要求确认是否有隐藏需求。[姜秋月评论]海外车辆设置V1.8第4.14.10节：电源ON、HU开机时可设置该开关，出厂默认关闭、上下电记忆，无G3/G5隐藏条件。[C673海外车辆设置功能定义V1.8·4.14.10]CIIA1.5专项V1.21第4.2.1/5.1.1：能量管理界面有该软开关，默认关闭；第12页项目差异为空。[直流充电VIN授权功能定义V1.21·4.2.1/5.1.1]同现象历史票已关Invalid，本次以正式定义而不是其截图结案。[SD-4688]",
+      "links": [
+        {
+          "text": "Jira原票",
+          "uri": "http://jira.i-tetris.com/browse/SD-7944"
+        },
+        {
+          "text": "Jira视频",
+          "uri": "http://jira.i-tetris.com/secure/attachment/4453037/G3G5+%E7%9B%B4%E6%B5%81VIN%E6%8E%88%E6%9D%83%E8%BD%AF%E5%BC%80%E5%85%B3%E5%86%92%E5%87%BA.mp4"
+        },
+        {
+          "text": "姜秋月评论",
+          "uri": "http://jira.i-tetris.com/browse/SD-7944?focusedCommentId=8525371"
+        },
+        {
+          "text": "C673海外车辆设置功能定义V1.8·4.14.10",
+          "uri": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+        },
+        {
+          "text": "直流充电VIN授权功能定义V1.21·4.2.1/5.1.1",
+          "uri": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+        },
+        {
+          "text": "SD-4688",
+          "uri": "http://jira.i-tetris.com/browse/SD-4688"
+        }
+      ]
+    },
+    "D": {
+      "formula_bar": "结论：C673-G3/G5能量管理应显示“直流充电VIN授权”软开关，客户预期“不应出现”不成立。海外车辆设置功能定义和CIIA1.5专项定义都要求能量管理界面提供该开关，出厂默认关闭；本车实测出现开关，与定义一致，不是隐藏需求漏放，也不是误显示。\n依据：C673海外车辆设置功能定义V1.8·4.14.10；直流充电VIN授权功能定义V1.21·4.2.1/5.1.1；Jira原票·描述。\n处理：保留开关，不新增屏蔽配置字、不改界面；按非问题关闭。吴优处理。",
+      "links": [
+        {
+          "text": "C673海外车辆设置功能定义V1.8·4.14.10",
+          "uri": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+        },
+        {
+          "text": "直流充电VIN授权功能定义V1.21·4.2.1/5.1.1",
+          "uri": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+        },
+        {
+          "text": "Jira原票·描述",
+          "uri": "http://jira.i-tetris.com/browse/SD-7944"
+        }
+      ]
+    },
+    "E": {
+      "formula_bar": "FALSE",
+      "checkbox": true
+    },
+    "F": {
+      "formula_bar": "",
+      "before_formula_bar": "PC-37245｜导航播报智能提示不支持",
+      "contamination_cleared": true
+    },
+    "G": {
+      "formula_bar": "可关闭"
+    },
+    "H": {
+      "formula_bar": "",
+      "before_formula_bar": "PC-37245｜导航播报智能提示不支持",
+      "contamination_cleared": true
+    },
+    "I": {
+      "formula_bar": "无隐藏需求；出厂默认关闭，但开关应显示。"
+    },
+    "J": {
+      "formula_bar": "Jira原票·描述\nJira视频·软开关\n姜秋月评论\nC673海外车辆设置功能定义V1.8·4.14.10\n直流充电VIN授权功能定义V1.21·4.2.1/5.1.1\nSD-4688·同现象",
+      "links": [
+        {
+          "text": "Jira原票·描述",
+          "uri": "http://jira.i-tetris.com/browse/SD-7944"
+        },
+        {
+          "text": "Jira视频·软开关",
+          "uri": "http://jira.i-tetris.com/secure/attachment/4453037/G3G5+%E7%9B%B4%E6%B5%81VIN%E6%8E%88%E6%9D%83%E8%BD%AF%E5%BC%80%E5%85%B3%E5%86%92%E5%87%BA.mp4"
+        },
+        {
+          "text": "姜秋月评论",
+          "uri": "http://jira.i-tetris.com/browse/SD-7944?focusedCommentId=8525371"
+        },
+        {
+          "text": "C673海外车辆设置功能定义V1.8·4.14.10",
+          "uri": "https://drive.google.com/file/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/view"
+        },
+        {
+          "text": "直流充电VIN授权功能定义V1.21·4.2.1/5.1.1",
+          "uri": "https://drive.google.com/file/d/18bAv5EgIvYSZQDOUDEwoOWJAgni7y0ay/view"
+        },
+        {
+          "text": "SD-4688·同现象",
+          "uri": "http://jira.i-tetris.com/browse/SD-4688"
+        }
+      ]
+    }
+  }
+}

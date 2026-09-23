@@ -34,6 +34,7 @@ EVIDENCE_CHECKS = EVIDENCE_REQUIREMENTS["checks"]
 EVIDENCE_PROFILES = EVIDENCE_REQUIREMENTS["profiles"]
 CHECK_STATUSES = set(EVIDENCE_REQUIREMENTS["check_statuses"])
 QUERY_KINDS = set(EVIDENCE_REQUIREMENTS["query_kinds"])
+ALLOWED_SEARCH_ORIGINS = {"chrome", "connector", "in_app_browser"}
 CANDIDATE_DISPOSITIONS = set(
     EVIDENCE_REQUIREMENTS["candidate_dispositions"]
 )
@@ -155,10 +156,12 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
             receipt_by_id[receipt_id] = receipt
         if receipt.get("provider") != "google_drive":
             errors.append(f"检索回执 {receipt_id or index} provider 必须为 google_drive")
-        if receipt.get("origin") != "connector":
+        origin = receipt.get("origin")
+        if origin not in ALLOWED_SEARCH_ORIGINS:
             errors.append(
-                f"检索回执 {receipt_id or index} 必须标记 origin=connector；"
-                "禁止用手工拼接内容冒充 Drive 回执"
+                f"检索回执 {receipt_id or index} origin 必须记录实际入口："
+                f"{'、'.join(sorted(ALLOWED_SEARCH_ORIGINS))}；"
+                "优先当前 Chrome 登录态，不再要求 origin=connector"
             )
         if not nonempty(receipt.get("check_id")):
             errors.append(f"检索回执 {receipt_id or index} 缺少 check_id")

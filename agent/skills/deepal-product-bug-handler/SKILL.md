@@ -28,14 +28,14 @@ Read `agent/workflows/review.md` when the input is customer, leader, 可姐, mee
 3. Resolve the owner only through `agent/bug-owners/registry.yaml` and the ignored local profile; never infer the operator from the OS or browser account.
 4. Apply `agent/evidence-contract.md` before forming a conclusion.
 5. Form and reuse the single current conclusion through `agent/output-contract.md`.
-6. Write and validate Sheets only through `agent/sheet-contract.md`; use `agent/scripts/bug_sheet_contract.py` for contract-supported append and existing-row patch operations.
+6. Write and validate Sheets through `agent/sheet-contract.md`. Use `agent/scripts/bug_sheet_contract.py` for the API path. If that API write is blocked, use the Chrome UI fallback in the sheet contract and close with `validate_bug_run.py --phase ui`. Never report an API final pass for a UI write.
 7. Apply `AGENTS.md` for default intent, external-action permission and sensitive-data boundaries.
 8. Read back every required artifact before reporting completion.
 
 ## Use The Available Tools
 
 - Use Jira or the signed-in browser to read the complete current issue and timeline.
-- Use Google Drive and Sheets connectors for current documents, work instructions and owner sheets.
+- Use the operator's current Chrome login state first for Jira, Google Drive/Sheets, and other external sources. Fall back to the in-app browser or connectors only when Chrome is unavailable, unauthenticated, or lacks the required capability; record the actual access surface in the run evidence.
 - Use Alchemy and MasterGo only according to the current evidence contract and available authenticated runtime.
 - Keep credentials in secure runtime configuration; never copy them into project artifacts or responses.
 
