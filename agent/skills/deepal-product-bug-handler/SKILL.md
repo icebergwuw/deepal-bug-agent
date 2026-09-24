@@ -1,6 +1,6 @@
 ---
 name: deepal-product-bug-handler
-description: Handle Deepal/Megatronix product-side Jira Bugs for registered team members. Use when the user sends a Jira Bug link or list, asks "怎么回/怎么处理", asks to update an owner Bug sheet, provides customer/leader follow-up, or opens the project on a new computer and needs identity/access onboarding. Verify the local operator and platform access, read live Jira and formal evidence, route by current assignee, update only an authorized owner sheet/index, and leave traceable logs.
+description: Handle Deepal/Megatronix product-side Jira Bugs for registered owners and colleagues using the shared GitHub workflow. Use when the user sends a Jira Bug link or list, asks "怎么回/怎么处理", asks to update an owner Bug sheet, provides customer/leader follow-up, or opens the project on a new computer and needs identity/access onboarding. For anyone who is not a confirmed registered owner, follow 同事独立使用 before investigating: ask who they are, ask where results should be written, create a local Excel when they have no sheet, accept at most one small batch, and say this test version may be inaccurate. Verify the local operator and platform access, read live Jira and formal evidence, route by current assignee, update only an authorized owner sheet or the colleague's own result file, and leave traceable logs.
 ---
 
 # Deepal Product Bug Handler
@@ -23,14 +23,15 @@ Read `agent/workflows/review.md` when the input is customer, leader, 可姐, mee
 
 ## Execute The Project Rules
 
-1. Run `agent/scripts/bug_project_preflight.py`; guide first-time identity selection and real platform login when needed. Stay read-only until the operator, owner scope, and required platforms pass.
-2. Select `agent/workflows/bug.md` or `agent/workflows/review.md` from the user input.
-3. Resolve the owner only through `agent/bug-owners/registry.yaml` and the ignored local profile; never infer the operator from the OS or browser account.
-4. Apply `agent/evidence-contract.md` before forming a conclusion.
-5. Form and reuse the single current conclusion through `agent/output-contract.md`.
-6. Write and validate Sheets through `agent/sheet-contract.md`. Use `agent/scripts/bug_sheet_contract.py` for the API path. If that API write is blocked and this sheet has no recorded page `/save` HTTP 400 without a new revision, use `agent/scripts/sheet_page_save.py` for plain text, one `=` formula, a clear, or http(s) rich-text labels. After that 400 is recorded, write through the Chrome UI instead of retrying `/save`: jump with the name box, paste only while editing, insert short links, and submit only while the links are still present. Do not click the grid while editing. Checkbox validation and anchor formatting still use the Chrome UI fallback and close with `validate_bug_run.py --phase ui`. Rich text counts only when edit mode shows each label URL and the links remain after leaving edit mode. Never report an API final pass for a page save or UI write.
-7. Apply `AGENTS.md` for default intent, external-action permission and sensitive-data boundaries.
-8. Read back every required artifact before reporting completion.
+1. If the local profile is missing, `operator_mode` is `external`, or the person is not a confirmed registered owner and does not use this project's Bug sheet, follow `agent/onboarding.md` 同事独立使用 before any investigation. Ask who is using it, ask where results should be written, and ask for a bug list. When they have no sheet, create a local Excel and do not write a registered owner's sheet. 一批最多 5 条. 说明当前是测试版本，判断可能不准，并请对方反馈。 Only after the person states their name, record it with `--init-external` and `--identity-source explicit_user_confirmation`.
+2. Run `agent/scripts/bug_project_preflight.py`; guide first-time identity selection and real platform login when needed. Stay read-only until the operator, owner scope, and required platforms pass. `external_write` only allows the confirmed result file, not a team sheet.
+3. Select `agent/workflows/bug.md` or `agent/workflows/review.md` from the user input.
+4. Resolve the owner only through `agent/bug-owners/registry.yaml` and the ignored local profile; never infer the operator from the OS or browser account.
+5. Apply `agent/evidence-contract.md` before forming a conclusion.
+6. Form and reuse the single current conclusion through `agent/output-contract.md`.
+7. Write and validate Sheets through `agent/sheet-contract.md`. Use `agent/scripts/bug_sheet_contract.py` for the API path. If that API write is blocked and this sheet has no recorded page `/save` HTTP 400 without a new revision, use `agent/scripts/sheet_page_save.py` for plain text, one `=` formula, a clear, or http(s) rich-text labels. After that 400 is recorded, write through the Chrome UI instead of retrying `/save`: jump with the name box, paste only while editing, insert short links, and submit only while the links are still present. Do not click the grid while editing. Checkbox validation and anchor formatting still use the Chrome UI fallback and close with `validate_bug_run.py --phase ui`. Rich text counts only when edit mode shows each label URL and the links remain after leaving edit mode. Never report an API final pass for a page save or UI write.
+8. Apply `AGENTS.md` for default intent, external-action permission and sensitive-data boundaries.
+9. Read back every required artifact before reporting completion.
 
 ## Use The Available Tools
 

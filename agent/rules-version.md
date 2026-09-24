@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.23.0-trial.1`
+- 当前版本：`v1.24.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-09-24`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
@@ -11,6 +11,48 @@
 
 
 
+
+
+## v1.24.0-trial.1 — 2026-09-24
+
+### 试行内容
+
+- 同事从 GitHub 使用这套 Bug 流程时，先问使用人是谁，不能从电脑用户名、Git 作者、浏览器账号或聊天称呼猜测。
+- 再问结果在哪里更新。对方没有现成表格时，新建本地 Excel，沿用 A:J 列。不得写入已登记负责人的线上清单。
+- 请对方给出 Bug 列表。一批最多 5 条，超出先拆批。
+- 每次都说明当前是测试版本，判断可能不准，并请对方反馈。
+- 未登记同事不写入 `registry.yaml`，只在本机 `local-profile.json` 记为 `operator_mode=external`。Jira 经办人仍匹配不到时，继续按原规则保持 `pending`，也不能写别人的表。
+- 同事结果 Excel 和 `agent/logs/bug-actions/external/` 不进入 Git。
+
+### 修改原因
+
+- 这套流程要给不一定属于本项目、也不使用现有 Bug 表的同事试用。原先的首次引导只允许绑定已登记负责人，同事一上来就会被导向团队表格。
+
+### 影响文件
+
+- `AGENTS.md`
+- `README.md`
+- `agent/onboarding.md`
+- `agent/context.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/sheet-contract.md`
+- `agent/bug-owners/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/bug_project_preflight.py`
+- `agent/scripts/test_bug_project_preflight.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `.gitignore`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-24-external-colleague-intake.md`
+
+### 验证案例
+
+- 预检测试覆盖：明确确认后的同事身份会新建 Excel 并得到 `external_write`；未确认身份、团队表格链接和团队负责人写入范围都会被拒绝。已登记负责人的 `read_write` 路径不变。
+
+### 回滚口径
+
+- 删除同事独立使用引导、`external_write` 预检和对应测试，恢复只绑定已登记负责人。不删除已有团队表格数据。
 
 ## v1.23.0-trial.1 — 2026-09-24
 

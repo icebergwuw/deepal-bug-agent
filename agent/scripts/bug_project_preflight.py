@@ -16,13 +16,28 @@ from pathlib import Path
 import re
 import sys
 from typing import Any
+import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[2]
 REGISTRY_PATH = ROOT / "agent/bug-owners/registry.yaml"
 PROFILE_PATH = ROOT / "agent/config/local-profile.json"
 SKILL_SOURCE = ROOT / "agent/skills/deepal-product-bug-handler/SKILL.md"
+EXTERNAL_RESULTS = ROOT / "agent/external-results"
 PLATFORMS = ("jira", "google_drive", "alchemy", "mastergo")
+EXPLICIT_IDENTITY = "explicit_user_confirmation"
+EXTERNAL_HEADERS = (
+    "日期",
+    "问题jira链接+摘要",
+    "收集到的信息",
+    "产品Agent判断",
+    "准确率标注",
+    "负责人判断",
+    "状态",
+    "复盘后的产品Agent判断",
+    "备注",
+    "相关文档",
+)
 
 
 def parse_scalar(value: str) -> Any:
@@ -161,6 +176,141 @@ def update_allowed_owners(
     return profile
 
 
+
+def registered_spreadsheet_ids(owners: dict[str, dict[str, Any]]) -> set[str]:
+    found: set[str] = set()
+    for owner in owners.values():
+        value = owner.get("spreadsheet_id")
+        if isinstance(value, str) and value and value not in {"null", "None"}:
+            found.add(value)
+    return found
+
+
+def location_uses_team_sheet(location: str, owners: dict[str, dict[str, Any]]) -> bool:
+    return any(sheet_id in location for sheet_id in registered_spreadsheet_ids(owners))
+
+
+def default_excel_path(name: str) -> Path:
+    ascii_part = re.sub(r"[^A-Za-z0-9]+", "-", name).strip("-").lower()
+    if not ascii_part:
+        ascii_part = "colleague"
+    return EXTERNAL_RESULTS / f"{ascii_part}-bug-sheet.xlsx"
+
+
+def xml_text(value: str) -> str:
+    return (
+        value.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+def create_external_workbook(path: Path) -> None:
+    """Create a minimal A:J workbook without adding a spreadsheet dependency."""
+
+    cells = []
+    for index, header in enumerate(EXTERNAL_HEADERS):
+        column = chr(ord("A") + index)
+        cells.append(
+            f'<c r="{column}1" t="inlineStr"><is><t>{xml_text(header)}</t></is></c>'
+        )
+    worksheet = (
+        '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+        '<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
+        f'<sheetData><row r="1">{"".join(cells)}</row></sheetData>'
+        "</worksheet>"
+    )
+    content_types = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+  <Default Extension="xml" ContentType="application/xml"/>
+  <Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/>
+  <Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>
+</Types>
+"""
+    root_rels = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>
+</Relationships>
+"""
+    workbook = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <sheets>
+    <sheet name="bug" sheetId="1" r:id="rId1"/>
+  </sheets>
+</workbook>
+"""
+    workbook_rels = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>
+</Relationships>
+"""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr("[Content_Types].xml", content_types)
+        archive.writestr("_rels/.rels", root_rels)
+        archive.writestr("xl/workbook.xml", workbook)
+        archive.writestr("xl/_rels/workbook.xml.rels", workbook_rels)
+        archive.writestr("xl/worksheets/sheet1.xml", worksheet)
+
+
+def initialize_external(
+    operator_name: str,
+    identity_source: str,
+    result_type: str,
+    result_location: str,
+    *,
+    replace: bool,
+    owners: dict[str, dict[str, Any]],
+    path: Path = PROFILE_PATH,
+) -> dict[str, Any]:
+    current = load_profile(path)
+    if current and not replace:
+        raise ValueError("本机身份已存在；如需更换，明确使用 --replace-profile")
+    name = operator_name.strip()
+    if not name or any(character in name for character in "\n\r") or len(name) > 40:
+        raise ValueError("使用人姓名必须由对方明确提供")
+    if identity_source != EXPLICIT_IDENTITY:
+        raise ValueError(
+            "必须由使用人明确确认身份后才能写入 --identity-source explicit_user_confirmation"
+        )
+    if result_type not in {"excel", "google_sheet"}:
+        raise ValueError("必须确认结果写到 excel 还是 google_sheet")
+    if result_type == "google_sheet":
+        location = result_location.strip()
+        if not location.startswith("https://docs.google.com/spreadsheets/"):
+            raise ValueError("Google 表格需要对方自己的表格链接")
+        if location_uses_team_sheet(location, owners):
+            raise ValueError("不能把结果写入已登记的团队 Bug 表")
+        target_location = location
+    else:
+        if result_location.strip():
+            raw = Path(result_location.strip()).expanduser()
+            workbook_path = raw if raw.is_absolute() else ROOT / raw
+        else:
+            workbook_path = default_excel_path(name)
+        if location_uses_team_sheet(str(workbook_path), owners):
+            raise ValueError("不能把结果写入已登记的团队 Bug 表")
+        if workbook_path.exists() and not workbook_path.is_file():
+            raise ValueError("Excel 路径不是文件")
+        if not workbook_path.exists():
+            create_external_workbook(workbook_path)
+        target_location = str(workbook_path)
+    payload = {
+        "schema_version": 1,
+        "operator_mode": "external",
+        "operator_name": name,
+        "operator_owner_id": None,
+        "allowed_write_owner_ids": [],
+        "identity_source": EXPLICIT_IDENTITY,
+        "identity_confirmed_at": format_time(utc_now()),
+        "result_target": {"type": result_type, "location": target_location},
+        "online_access": {},
+    }
+    save_profile(payload, path)
+    return payload
+
+
 def record_access(profile: dict[str, Any], platforms: list[str]) -> dict[str, Any]:
     access = profile.setdefault("online_access", {})
     now = format_time(utc_now())
@@ -214,19 +364,64 @@ def assess(
     warnings: list[str] = []
     guidance: list[str] = []
 
+    operator_mode = profile.get("operator_mode") if profile else None
+    is_external = operator_mode == "external"
     operator_id = profile.get("operator_owner_id") if profile else None
-    identity_ready = bool(profile and owner_is_writable(owners.get(str(operator_id))))
-    if not identity_ready:
-        blockers.append("本机尚未绑定 active + read_write 负责人身份")
-        guidance.append(
-            "先运行 --list-owners，再运行 --init-owner <owner-id>；不要根据电脑用户名猜身份"
+    operator_name = str(profile.get("operator_name") or "").strip() if profile else ""
+    result_target = profile.get("result_target") if profile else None
+    if not isinstance(result_target, dict):
+        result_target = {}
+    if is_external:
+        identity_ready = (
+            bool(operator_name)
+            and profile.get("identity_source") == EXPLICIT_IDENTITY
         )
-
-    allowed = set(profile.get("allowed_write_owner_ids", [])) if profile else set()
-    owner_scope_ready = not required_owner_id or required_owner_id in allowed
-    if required_owner_id and not owner_scope_ready:
-        blockers.append(f"本机未授权写负责人范围：{required_owner_id}")
-        guidance.append(f"由当前操作者明确运行 --allow-owner {required_owner_id}")
+        if not identity_ready:
+            blockers.append("同事身份尚未由使用人本人明确确认")
+            guidance.append(
+                "先询问使用人是谁；确认后再运行 --init-external --identity-source explicit_user_confirmation"
+            )
+        if profile.get("operator_owner_id"):
+            blockers.append("同事独立使用不能绑定团队负责人 id")
+        if profile.get("allowed_write_owner_ids"):
+            blockers.append("同事独立使用不能授权团队负责人清单")
+        target_type = result_target.get("type")
+        location = str(result_target.get("location") or "")
+        if target_type == "excel" and location and Path(location).is_file():
+            if location_uses_team_sheet(location, owners):
+                blockers.append("不能把同事结果写入已登记的团队 Bug 表")
+        elif (
+            target_type == "google_sheet"
+            and location.startswith("https://docs.google.com/spreadsheets/")
+        ):
+            if location_uses_team_sheet(location, owners):
+                blockers.append("不能把同事结果写入已登记的团队 Bug 表")
+        else:
+            blockers.append("尚未确认结果写入位置")
+            guidance.append(
+                "询问结果在哪里更新；没有现成表格时用 --result-type excel 新建本地 Excel"
+            )
+        owner_scope_ready = False
+        if required_owner_id:
+            blockers.append(f"同事独立使用不能写团队负责人清单：{required_owner_id}")
+            guidance.append("不要运行 --allow-owner；结果只写对方自己的 Excel 或表格")
+        warnings.append("当前是测试版本，判断可能不准确，请使用人反馈")
+        allowed = set()
+    else:
+        identity_ready = bool(profile and owner_is_writable(owners.get(str(operator_id))))
+        if not identity_ready:
+            blockers.append("本机尚未绑定 active + read_write 负责人身份")
+            guidance.append(
+                "先运行 --list-owners，再运行 --init-owner <owner-id>；不要根据电脑用户名猜身份"
+            )
+            guidance.append(
+                "如果不是已登记负责人，先询问使用人是谁和结果在哪里更新，再运行 --init-external"
+            )
+        allowed = set(profile.get("allowed_write_owner_ids", [])) if profile else set()
+        owner_scope_ready = not required_owner_id or required_owner_id in allowed
+        if required_owner_id and not owner_scope_ready:
+            blockers.append(f"本机未授权写负责人范围：{required_owner_id}")
+            guidance.append(f"由当前操作者明确运行 --allow-owner {required_owner_id}")
 
     if not skill.get("matches_template"):
         blockers.append("已安装 Bug Skill 缺失或与 Git 模板不一致")
@@ -257,12 +452,19 @@ def assess(
         elif not fresh:
             warnings.append(f"{platform} 未验证；涉及该平台的 Bug 将按证据门禁降级")
 
+    if is_external:
+        mode = "external_write" if not blockers else "read_only"
+    else:
+        mode = "read_write" if not blockers else "read_only"
     return {
         "ok": not blockers,
-        "mode": "read_write" if not blockers else "read_only",
+        "mode": mode,
         "profile_path": str(PROFILE_PATH),
+        "operator_mode": "external" if is_external else "team",
+        "operator_name": operator_name if is_external else None,
         "operator_owner_id": operator_id,
         "allowed_write_owner_ids": sorted(allowed),
+        "result_target": result_target if is_external else None,
         "identity_ready": identity_ready,
         "owner_scope_ready": owner_scope_ready,
         "skill": skill,
@@ -279,6 +481,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--list-owners", action="store_true")
     parser.add_argument("--init-owner")
+    parser.add_argument("--init-external", action="store_true")
+    parser.add_argument("--operator-name", default="")
+    parser.add_argument("--identity-source", default="")
+    parser.add_argument("--result-type", choices=["excel", "google_sheet"])
+    parser.add_argument("--result-location", default="")
     parser.add_argument("--replace-profile", action="store_true")
     parser.add_argument("--allow-owner", action="append", default=[])
     parser.add_argument("--allow-all-active", action="store_true")
@@ -311,10 +518,23 @@ def main(argv: list[str] | None = None) -> int:
             additions.extend(
                 owner_id for owner_id, owner in owners.items() if owner_is_writable(owner)
             )
+        if args.init_owner and args.init_external:
+            raise ValueError("不能同时绑定团队负责人和同事独立使用")
         if args.init_owner:
             profile = initialize_profile(
                 args.init_owner,
                 additions,
+                replace=args.replace_profile,
+                owners=owners,
+            )
+        elif args.init_external:
+            if additions:
+                raise ValueError("同事独立使用不能授权团队负责人清单")
+            profile = initialize_external(
+                args.operator_name,
+                args.identity_source,
+                args.result_type or "",
+                args.result_location,
                 replace=args.replace_profile,
                 owners=owners,
             )

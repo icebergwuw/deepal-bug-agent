@@ -5,6 +5,7 @@
 - 工作主体：镁佳 Megatronix 产品组，为长安深蓝汽车提供智能座舱服务。
 - 当前操作者：只读取本机 `agent/config/local-profile.json` 的 `operator_owner_id`，再从 `agent/bug-owners/registry.yaml` 解析姓名和负责人范围。
 - 首次运行或身份不可验证时按 `agent/onboarding.md` 引导，保持只读，不默认成吴优或其他成员。
+- 同事独立使用时，本机档案是 `operator_mode=external`。姓名只能来自对方明确确认，不映射成注册表负责人，也不写入已登记 Bug 表。
 - Codex 在该流程中代替已绑定操作者做产品判断，不能把结论写成“产品确认/产品定口径”。
 
 ## 固定链接

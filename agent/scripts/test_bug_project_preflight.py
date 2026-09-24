@@ -9,12 +9,14 @@ import unittest
 from bug_project_preflight import (
     assess,
     format_time,
+    initialize_external,
     initialize_profile,
     load_owners,
     load_profile,
     local_secret_file_status,
     record_access,
 )
+import zipfile
 
 
 class BugProjectPreflightTest(unittest.TestCase):
@@ -127,6 +129,90 @@ class BugProjectPreflightTest(unittest.TestCase):
             self.assertFalse(local_secret_file_status(path)["private_permissions"])
             path.chmod(0o600)
             self.assertTrue(local_secret_file_status(path)["private_permissions"])
+
+    def test_external_operator_gets_excel_without_team_sheet_access(self) -> None:
+        owners = {
+            **self.owners,
+            "wu-you": {**self.owners["wu-you"], "spreadsheet_id": "team-sheet-id"},
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            profile_path = root / "profile.json"
+            workbook = root / "colleague-bug-sheet.xlsx"
+            with self.assertRaisesRegex(ValueError, "明确确认身份"):
+                initialize_external(
+                    "张三",
+                    "guessed",
+                    "excel",
+                    str(workbook),
+                    replace=False,
+                    owners=owners,
+                    path=profile_path,
+                )
+            payload = initialize_external(
+                "张三",
+                "explicit_user_confirmation",
+                "excel",
+                str(workbook),
+                replace=False,
+                owners=owners,
+                path=profile_path,
+            )
+            self.assertEqual(payload["operator_mode"], "external")
+            self.assertEqual(payload["allowed_write_owner_ids"], [])
+            self.assertTrue(workbook.is_file())
+            with zipfile.ZipFile(workbook) as archive:
+                sheet = archive.read("xl/worksheets/sheet1.xml").decode("utf-8")
+            self.assertIn("产品Agent判断", sheet)
+            result = assess(
+                payload,
+                owners,
+                required_owner_id=None,
+                required_platforms=[],
+                max_access_age_hours=24,
+                skill=self.skill,
+            )
+            self.assertTrue(result["ok"])
+            self.assertEqual(result["mode"], "external_write")
+            self.assertIn("测试版本", " ".join(result["warnings"]))
+            blocked = assess(
+                payload,
+                owners,
+                required_owner_id="wu-you",
+                required_platforms=[],
+                max_access_age_hours=24,
+                skill=self.skill,
+            )
+            self.assertFalse(blocked["ok"])
+            self.assertEqual(blocked["mode"], "read_only")
+            with self.assertRaisesRegex(ValueError, "团队 Bug 表"):
+                initialize_external(
+                    "张三",
+                    "explicit_user_confirmation",
+                    "google_sheet",
+                    "https://docs.google.com/spreadsheets/d/team-sheet-id/edit",
+                    replace=True,
+                    owners=owners,
+                    path=profile_path,
+                )
+
+    def test_team_profile_remains_read_write(self) -> None:
+        profile = {
+            "operator_owner_id": "wu-you",
+            "allowed_write_owner_ids": ["wu-you"],
+            "online_access": {},
+        }
+        result = assess(
+            profile,
+            self.owners,
+            required_owner_id="wu-you",
+            required_platforms=[],
+            max_access_age_hours=24,
+            skill=self.skill,
+        )
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["mode"], "read_write")
+        self.assertEqual(result["operator_mode"], "team")
 
 
 if __name__ == "__main__":

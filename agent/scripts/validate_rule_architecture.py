@@ -201,6 +201,9 @@ def validate(root: Path, skill: Path) -> list[str]:
     ):
         if reference not in skill_text:
             errors.append(f"Skill 未加载权威入口：{reference}")
+    for token in ("同事独立使用", "测试版本", "一批最多 5 条"):
+        if token not in skill_text:
+            errors.append(f"Skill 缺少同事入口：{token}")
     if "/Users/you.wu" in canonical_skill_text:
         errors.append("Skill 模板仍包含吴优电脑绝对路径")
     for old_heading in (
@@ -296,6 +299,19 @@ def validate(root: Path, skill: Path) -> list[str]:
     ):
         if token not in onboarding:
             errors.append(f"首次运行引导缺少：{token}")
+    for token in (
+        "同事独立使用",
+        "使用人是谁",
+        "在哪里更新",
+        "新建本地 Excel",
+        "一批最多 5 条",
+        "测试版本",
+        "反馈",
+        "--init-external",
+        "explicit_user_confirmation",
+    ):
+        if token not in onboarding:
+            errors.append(f"同事独立使用引导缺少：{token}")
 
     preflight_script = read(root / "agent/scripts/bug_project_preflight.py")
     for token in (
@@ -306,6 +322,9 @@ def validate(root: Path, skill: Path) -> list[str]:
         "read_only",
         "Path.home()",
         "local_secret_file_status",
+        "external_write",
+        "explicit_user_confirmation",
+        "--init-external",
     ):
         if token not in preflight_script:
             errors.append(f"本机预检脚本缺少：{token}")
@@ -395,8 +414,14 @@ def validate(root: Path, skill: Path) -> list[str]:
     dashboard_token = "Dashboard.jspa?selectPageId=17302"
     if dashboard_token not in read(root / "agent/context.md"):
         errors.append("context.md 缺少 Bug 清单 Dashboard 17302")
-    if "Jira Dashboard 17302" not in read(root / "agent/workflows/bug.md"):
+    if "Jira Dashboard 17302" not in bug_workflow:
         errors.append("Bug 流程未定义 Bug 清单入口")
+    for token in ("operator_mode=external", "external_write", "一批最多 5 条"):
+        if token not in bug_workflow:
+            errors.append(f"Bug 流程缺少同事入口：{token}")
+    for token in ("同事独立使用", "一批最多 5 条", "external_write"):
+        if token not in agents_text:
+            errors.append(f"AGENTS.md 缺少同事入口：{token}")
 
     evidence_contract = read(root / "agent/evidence-contract.md")
     for token in (

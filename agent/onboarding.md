@@ -10,7 +10,38 @@
 - 本机身份配置固定为 `agent/config/local-profile.json`，已由 `.gitignore` 排除。
 - 如本机使用 `.env` 保存运行凭据，必须保持Git忽略并使用仅当前用户可读的权限（macOS/Linux为 `chmod 600 .env`）。
 
+## 同事独立使用
+
+本节给不在本项目、也不使用现有 Bug 表的同事。已登记负责人不要走本节，继续用下一节绑定自己的身份。
+
+开始处理任何 Bug 之前，先问清三件事。没问清之前只提问，不查整批，不写表。
+
+1. 使用人是谁。必须由对方在对话里自己说出姓名。不得根据电脑用户名、Git 作者、浏览器账号或聊天称呼猜测。对方没说出姓名之前，禁止运行 `--init-external`。
+2. 在哪里更新。请对方给出自己的 Google 表格链接或本地 Excel 路径。没有现成表格时，新建本地 Excel，不写入已登记负责人的线上清单。
+3. Bug 列表。请对方发 Jira 链接或 Key。一批最多 5 条。超过 5 条先停下，请对方拆成小批量，不自动全部处理。
+
+当前是测试版本，判断可能不准。开始和结束都要请对方反馈哪里不对。
+
+姓名和写入位置都确认后，才把本机身份写成同事模式。这个身份只留在已忽略的 `local-profile.json`，不写入 `registry.yaml`，也不能因此获得别人的表。
+
+```sh
+python3 agent/scripts/bug_project_preflight.py \
+  --init-external \
+  --operator-name "<对方刚刚说出的姓名>" \
+  --identity-source explicit_user_confirmation \
+  --result-type excel
+```
+
+对方已经有自己的 Google 表格时，把 `--result-type excel` 换成 `--result-type google_sheet --result-location "<对方自己的表格链接>"`。链接如果指向本仓库已登记的团队 Bug 表，命令会拒绝。
+
+新建本地 Excel 默认放在 `agent/external-results/`。同事处理日志放在 `agent/logs/bug-actions/external/`。这两处都不进入 Git。列仍然使用 `agent/sheet-contract.md` 的 A:J。
+
+本机如果已经绑定了团队负责人，不要改成同事模式，除非当前使用人明确说自己是另一个人，并确认使用 `--replace-profile`。
+
 ## 第一次打开项目
+
+已登记负责人使用本节。同事独立使用不要从注册表里挑选别人的身份。
+
 
 1. 列出注册表中可绑定的负责人：
 

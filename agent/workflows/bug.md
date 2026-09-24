@@ -6,9 +6,9 @@
 
 ## 1. 识别意图与负责人
 
-1. 首次运行或本机身份缺失时，先执行 `agent/onboarding.md`。未通过 `agent/scripts/bug_project_preflight.py` 的身份、目标负责人范围和必需平台检查时保持只读，提供具体登录/授权步骤。
+1. 首次运行或本机身份缺失时，先执行 `agent/onboarding.md`。未通过 `agent/scripts/bug_project_preflight.py` 的身份、目标负责人范围和必需平台检查时保持只读，提供具体登录/授权步骤。同事独立使用还没确认使用人是谁、以及结果在哪里更新时，只提问，不开始分析。
 2. 用户说“看 Bug 列表 / Bug 清单 / 待处理 Bug”且没有提供具体 Jira Key 时，先打开 `agent/context.md` 登记的 Jira Dashboard 17302；只读取用户指定范围，不因打开列表自动处理全部条目。
-3. 用户只发具体 Jira Bug 链接时，默认执行完整流程并更新对应负责人清单。
+3. 本机已绑定团队负责人，且用户只发具体 Jira Bug 链接时，默认执行完整流程并更新该负责人自己的清单。`operator_mode=external` 时不写注册表里的线上清单，只写对方确认的表格或新建的本地 Excel；一批最多 5 条，并说明当前是测试版本，判断可能不准，需要反馈。
 4. 用户再次发送同一 Jira 或要求“再看 / 重新确认 / 二次处理”，只要输入不是会议纪要、leader/客户复盘材料，就继续走本流程；重新读取全部当前证据后按 `agent/config/sheet-update-modes.json` 的 `recheck` 模式更新原行。
 5. 用户明确要求只读时，停在证据整理，不写表、不评论或流转 Jira。
 6. 同一线程的定向补证不是第 4 步的二次处理。用户追问某一个来源、某一句文案或某一个字段时，复用本线程已经读过的 Jira、附件和正式文档，只检索这个缺口。不重跑查重、预检和写表。版本族仍须能指出同系列最新版本；不为这一问重读每个中间版全文。只有这一句的最早出处会改变判断时，才沿这句话回溯到最早命中，中间版只核对该句。结论先写在回复里；用户要求落表，或本轮原本就是完整处理且结论因此改变时，才更新线上清单。
@@ -52,7 +52,7 @@
 ## 5. 更新负责人清单
 
 - 判断还没稳定时不写表。用户仍在收窄范围、纠正禁止动作或追问来源时，先完成判断；不要提前生成写表请求、打开表格编辑或试写单元格。
-- 写入前再次运行预检：通用任务至少要求 Jira、Google Drive和目标负责人范围；语音或MasterGo任务按证据画像增加对应平台。只有结果为 `ok=true + mode=read_write` 才能继续。
+- 写入前再次运行预检：通用任务至少要求 Jira、Google Drive和目标负责人范围；语音或MasterGo任务按证据画像增加对应平台。团队负责人只有结果为 `ok=true + mode=read_write` 才能写自己的线上清单。`operator_mode=external` 必须是 `ok=true + mode=external_write`，并且只能写 `result_target`。`external_write` 不能调用团队负责人的 `build / patch`，也不能因为预检通过就写注册表里的表。
 - 严格按 `agent/sheet-contract.md` 写当前负责人页。
 - 调用 `agent/scripts/bug_sheet_contract.py` 生成 `build / patch` 请求时，必须传入当前负责人 `--owner-id`、本票已通过校验且 Jira key 一致的 schema v5 manifest，以及同批次 `--run-bundle`。脚本自动执行本机身份/负责人范围/Jira/Drive门禁，语音画像同时要求Alchemy短期回执；还会核对真实 Drive 检索回执、引用文档追查、版本族枚举、逐 Key 决策卡和行号绑定。任一项缺失或错配即停止生成写表请求。
 - 已有 Jira 更新原行；新 Jira 追加一行。新增时必须读取负责人注册表的 `format_anchor_row`；吴优 `bug` 页固定使用第 107 行，禁止改用上一行或最近行。默认写入使用结构化列请求，禁止以剪贴板 HTML/纯文本作为 API 最终载荷。API 写后同时回读锚点和新增 A:J，逐列核对固定格式、B 公式、E 复选框、列位、行高、富文本链接和筛选边界，并做一次页面视觉检查。
@@ -70,7 +70,8 @@
 - 有 API 写入时，run bundle 在写前绑定每票 manifest 与逐 Key 决策卡，写后再绑定原始回读、校验结果及 `readback_sha256`，并用 `validate_bug_run.py --phase final` 收口。页面 `/save` 和 Chrome 界面兜底都不是 API final：界面路径绑定 `ui_readback_sha256`，status 写 `ui_verified`，只用 `validate_bug_run.py --phase ui` 收口。
 - 批量任务必须在日志正文逐条列 key，或引用同目录 manifest；manifest 至少包含 Jira key、负责人、表格行号。范围描述不能替代逐条清单。
 - 旧线上数据没有日志时不伪造补录；标为历史未审计，后续触及时再按完整流程核验并留痕。
-- 本次本地文件更新通过全部适用校验和敏感信息检查后，按 `AGENTS.md` 提交并推送当前分支；只有远端确认包含新提交后才报告“已上传 GitHub”。
+- 同事独立使用的逐票日志写到 `agent/logs/bug-actions/external/`。该目录和 `agent/external-results/` 不进入 Git；对方没有明确要求时，不把这些 Bug 内容提交到团队仓库。
+- 团队负责人的本地文件更新通过全部适用校验和敏感信息检查后，按 `AGENTS.md` 提交并推送当前分支；只有远端确认包含新提交后才报告“已上传 GitHub”。
 
 ## 交付前检查
 
