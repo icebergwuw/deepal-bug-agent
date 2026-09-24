@@ -103,7 +103,8 @@ class BugRunTest(unittest.TestCase):
             "api_block_reason": "batchUpdate 未能发送：gapi 没有 token，SAPISIDHASH 400，ERR_BLOCKED_BY_CLIENT",
             "selection": "A2",
             "row_height_fit": True,
-            "entered_edit_with_escape": True,
+            "edit_mode_links_verified": True,
+            "links_remain_after_exit": True,
             "screenshot_not_used_as_cell_proof": True,
             "filter_action": "no_filter_recorded",
             "cells": {
@@ -185,6 +186,42 @@ class BugRunTest(unittest.TestCase):
             errors = validate_run_bundle(bundle, "ui")
             self.assertTrue(any("截图不能代替" in error for error in errors), errors)
             self.assertTrue(any("真实 API 阻断" in error for error in errors), errors)
+
+    def test_ui_phase_accepts_legacy_escape_readback(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            bundle = self._bundle(root)
+            ui_path = self._ui_readback(root)
+            payload = json.loads(ui_path.read_text(encoding="utf-8"))
+            del payload["edit_mode_links_verified"]
+            del payload["links_remain_after_exit"]
+            payload["entered_edit_with_escape"] = True
+            ui_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+            log_path = Path(bundle["action_log"])
+            log_path.write_text(LOG_TEXT + "\n界面回读。未通过 API final。\nHUR-82492 行 2\n", encoding="utf-8")
+            bundle["status"] = "ui_verified"
+            bundle["completed_at"] = "2026-09-23T16:00:00+08:00"
+            bundle["items"][0]["ui_readback_path"] = str(ui_path)
+            bundle["items"][0]["ui_readback_sha256"] = hashlib.sha256(ui_path.read_bytes()).hexdigest()
+            self.assertEqual(validate_run_bundle(bundle, "ui"), [])
+
+    def test_ui_phase_rejects_exit_that_drops_links(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            bundle = self._bundle(root)
+            ui_path = self._ui_readback(root)
+            payload = json.loads(ui_path.read_text(encoding="utf-8"))
+            payload["entered_edit_with_escape"] = True
+            payload["links_remain_after_exit"] = False
+            ui_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+            log_path = Path(bundle["action_log"])
+            log_path.write_text(LOG_TEXT + "\n界面回读。未通过 API final。\nHUR-82492 行 2\n", encoding="utf-8")
+            bundle["status"] = "ui_verified"
+            bundle["completed_at"] = "2026-09-23T16:00:00+08:00"
+            bundle["items"][0]["ui_readback_path"] = str(ui_path)
+            bundle["items"][0]["ui_readback_sha256"] = hashlib.sha256(ui_path.read_bytes()).hexdigest()
+            errors = validate_run_bundle(bundle, "ui")
+            self.assertTrue(any("退出编辑后链接仍在" in error for error in errors), errors)
 
 
 

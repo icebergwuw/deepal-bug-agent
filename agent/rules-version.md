@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.22.0-trial.1`
+- 当前版本：`v1.23.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-09-23`
+- 生效日期：`2026-09-24`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -11,6 +11,39 @@
 
 
 
+
+## v1.23.0-trial.1 — 2026-09-24
+
+### 试行内容
+
+- 同一张表的页面 `/save` 已经返回 HTTP 400 且没有新修订号时，下一票直接走 Chrome 界面写入，不再重复尝试 `/save`。API 仍是默认路径；没有这条 400 记录时，API 阻断后仍先试 `/save`。
+- 界面写富文本的顺序固定为：名称框跳格，进入编辑态后再粘贴，选中短标签插入链接，确认链接还在才提交。编辑中途不点击表格空白或其他单元格。
+- 取消“核对链接必须按 Esc 退出”。编辑态要读到每个短标签 URL，退出编辑后链接仍在才算核对完成。Esc 清掉链接标记时重新加载并放弃这次编辑，不得提交纯文本。
+
+### 修改原因
+
+- ADS-50547 第427行上，页面 `/save` 富文本返回 HTTP 400，没有写入。Chrome 公式栏可以写完，但按 Esc 没有退出编辑，还把链接标记从编辑器里清掉。
+
+### 影响文件
+
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-24-ui-write-after-save-400.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_bug_run.py`：编辑态链接仍在可以通过 ui；只声明 Esc、但退出后链接不在，不能通过。旧回读只记录 `entered_edit_with_escape` 时仍可复验。
+- ADS-50547 第427行已用这套界面顺序写入。不改该行，也不改 SD-7944 第426行。
+
+### 回滚口径
+
+- 恢复“API 阻断后一律先走 `/save`”和“核对后必须按 Esc”。不改已经写入的 ADS-50547 第427行和 SD-7944 第426行。
 
 ## v1.22.0-trial.1 — 2026-09-23
 

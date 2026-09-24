@@ -47,8 +47,17 @@ def validate_ui_readback(payload: Any, *, jira_key: str, sheet_row: int) -> list
         errors.append("界面回读 update_mode 必须为 append、recheck 或 review")
     if payload.get("row_height_fit") is not True:
         errors.append("界面回读必须确认行高已按内容撑开")
-    if payload.get("entered_edit_with_escape") is not True:
-        errors.append("富文本链接必须在编辑态读取后按 Esc 退出，不能按 Enter 提交")
+    links_verified = (
+        payload.get("edit_mode_links_verified") is True
+        and payload.get("links_remain_after_exit") is True
+    )
+    legacy_escape_only = (
+        "edit_mode_links_verified" not in payload
+        and "links_remain_after_exit" not in payload
+        and payload.get("entered_edit_with_escape") is True
+    )
+    if not links_verified and not legacy_escape_only:
+        errors.append("富文本必须在编辑态读到每个短标签 URL，并且退出编辑后链接仍在；Esc 清掉链接标记时不得提交")
     if payload.get("screenshot_not_used_as_cell_proof") is not True:
         errors.append("截图不能代替逐列公式栏回读")
     if payload.get("filter_action") not in UI_FILTER_ACTIONS:

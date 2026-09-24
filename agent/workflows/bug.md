@@ -56,7 +56,7 @@
 - 严格按 `agent/sheet-contract.md` 写当前负责人页。
 - 调用 `agent/scripts/bug_sheet_contract.py` 生成 `build / patch` 请求时，必须传入当前负责人 `--owner-id`、本票已通过校验且 Jira key 一致的 schema v5 manifest，以及同批次 `--run-bundle`。脚本自动执行本机身份/负责人范围/Jira/Drive门禁，语音画像同时要求Alchemy短期回执；还会核对真实 Drive 检索回执、引用文档追查、版本族枚举、逐 Key 决策卡和行号绑定。任一项缺失或错配即停止生成写表请求。
 - 已有 Jira 更新原行；新 Jira 追加一行。新增时必须读取负责人注册表的 `format_anchor_row`；吴优 `bug` 页固定使用第 107 行，禁止改用上一行或最近行。默认写入使用结构化列请求，禁止以剪贴板 HTML/纯文本作为 API 最终载荷。API 写后同时回读锚点和新增 A:J，逐列核对固定格式、B 公式、E 复选框、列位、行高、富文本链接和筛选边界，并做一次页面视觉检查。
-- 结构化 API 被实际阻断时，先走 `agent/sheet-contract.md` 的页面 `/save` 通道，再用 Chrome 界面兜底，不把流程停在“无法写表”。页面通道可以写纯文本、以 `=` 开头的单个公式、清空，以及 http(s) 富文本短标签；复选框验证和锚点格式仍走界面。富文本写后必须进编辑态核对链接，再按 Esc 退出。界面路径仍禁止覆盖 E/F，复查不改 H；写后逐列读公式栏，编辑态核对链接后按 Esc 退出，并用 `validate_bug_run.py --phase ui` 收口。
+- 结构化 API 被实际阻断时，按 `agent/sheet-contract.md` 先走页面 `/save`；同一张表已经记录 `/save` HTTP 400 且没有新修订号时，直接走 Chrome 界面，不把流程停在“无法写表”。页面通道可以写纯文本、以 `=` 开头的单个公式、清空，以及 http(s) 富文本短标签；复选框验证和锚点格式仍走界面。界面路径按名称框跳格、编辑态粘贴、插入短标签的顺序写入，禁止编辑中途点击表格空白。富文本要在编辑态读到每个短标签 URL，退出后链接仍在才算核对完成；Esc 清掉链接时重新加载并放弃这次编辑。界面路径仍禁止覆盖 E/F，复查不改 H，并用 `validate_bug_run.py --phase ui` 收口。
 - 普通二次复查使用 `recheck` 模式；D 写本次重新核验后的当前 `decision_text`，不是把新结论绕写到 H。
 - 同步对应 `agent/bug-owners/<owner>/index.md`。索引以线上页为准，不凭历史静态清单追加。
 - 只改当前流程允许且本 Bug 必需的列，不覆盖 E/F；H 只由会议/复盘流程更新。
