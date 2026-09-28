@@ -1,0 +1,104 @@
+{
+  "write_surface": "chrome_ui",
+  "jira_key": "HUR-85489",
+  "sheet_row": 437,
+  "update_mode": "append",
+  "api_block_reason": "Sheets API batchUpdate 未能发送：页面内 gapi 没有 OAuth token，SAPISIDHASH 请求返回 400；Chrome 直接打开 sheets.googleapis.com 被 ERR_BLOCKED_BY_CLIENT 拦截。同一张表已记录页面 /save HTTP 400 且没有新修订号，本轮未重试 /save。",
+  "selection": "A437",
+  "row_height_fit": true,
+  "edit_mode_links_verified": true,
+  "links_remain_after_exit": true,
+  "screenshot_not_used_as_cell_proof": true,
+  "filter_action": "no_filter_recorded",
+  "column_layout_note": "线上 bug 页在 B 后插入了 Vehicle model、Lables、Priority、严重程度。收集到的信息在 G，产品Agent判断在 H，准确率标注在 I，吴优在 J，状态在 K，复盘在 L，备注在 M，相关文档在 N。以下 cells 按真实列记录，不把正文挪回契约列 C/D/E/G/I/J。",
+  "cells": {
+    "A": {
+      "formula_bar": "2026-09-28"
+    },
+    "B": {
+      "formula_bar": "=HYPERLINK(\"http://jira.i-tetris.com/browse/HUR-85489\",\"HUR-85489｜恒温座舱19%退出与10%文言不一致\")"
+    },
+    "C": {
+      "formula_bar": ""
+    },
+    "D": {
+      "formula_bar": ""
+    },
+    "E": {
+      "formula_bar": "",
+      "checkbox": false
+    },
+    "F": {
+      "formula_bar": "",
+      "before_formula_bar": ""
+    },
+    "G": {
+      "formula_bar": "J90A 0526实车、P挡，恒温座舱正常模式已开启。主页正常模式写电量低于10%自动退出，低功耗写低于20%；开门弹窗写低于20%。Jira原票·描述记录发送PCU_SOCDsp=19%后正常模式退出。Jira视频·主页文言约00:04可见10%与20%分写，约00:22 CAN物理值为19；采样帧没有定格退出后的界面。\nJ90A情景模式PRD V2.4·第6页（V2.3）规定正常模式和低功耗都是低于20%自动退出。同文档第7页无版本标记，仍写正常模式SOC低于10%才弹10秒退出，本次不以该页作为19%退出的目标。",
+      "links": [
+        {
+          "text": "Jira原票·描述",
+          "uri": "http://jira.i-tetris.com/browse/HUR-85489"
+        },
+        {
+          "text": "Jira视频·主页文言",
+          "uri": "http://jira.i-tetris.com/secure/attachment/4477295/video_1790237905.mp4"
+        },
+        {
+          "text": "J90A情景模式PRD V2.4·第6页",
+          "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view"
+        }
+      ]
+    },
+    "H": {
+      "formula_bar": "结论：J90A恒温座舱正常模式按现行定义在电量低于20%时自动退出。P挡已开启正常模式后发送PCU_SOCDsp=19%并退出，符合该阈值，不按主页“低于10%”改退出逻辑。\n依据：J90A情景模式PRD V2.4·第6页；Jira视频·主页文言\n处理：正常模式主页文言由“电量低于10%时自动退出”改为“电量低于20%时自动退出”，退出阈值保持低于20%；情景模式研发处理。",
+      "before_formula_bar": "",
+      "links": [
+        {
+          "text": "J90A情景模式PRD V2.4·第6页",
+          "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view"
+        },
+        {
+          "text": "Jira视频·主页文言",
+          "uri": "http://jira.i-tetris.com/secure/attachment/4477295/video_1790237905.mp4"
+        }
+      ]
+    },
+    "I": {
+      "formula_bar": "FALSE",
+      "checkbox": true
+    },
+    "J": {
+      "formula_bar": ""
+    },
+    "K": {
+      "formula_bar": "可转研发"
+    },
+    "L": {
+      "formula_bar": ""
+    },
+    "M": {
+      "formula_bar": "第7页10%倒计时弹窗与第6页冲突，随文言改到低于20%，不另改退出逻辑。"
+    },
+    "N": {
+      "formula_bar": "Jira原票·描述\nJira视频·主页文言\nJ90A情景模式PRD V2.4·第6页\nJ90A情景模式交互V2.6·第6页",
+      "links": [
+        {
+          "text": "Jira原票·描述",
+          "uri": "http://jira.i-tetris.com/browse/HUR-85489"
+        },
+        {
+          "text": "Jira视频·主页文言",
+          "uri": "http://jira.i-tetris.com/secure/attachment/4477295/video_1790237905.mp4"
+        },
+        {
+          "text": "J90A情景模式PRD V2.4·第6页",
+          "uri": "https://drive.google.com/file/d/1uf6I3DPvjm7r0_bABI3TDYTHLsUGzm7y/view"
+        },
+        {
+          "text": "J90A情景模式交互V2.6·第6页",
+          "uri": "https://drive.google.com/file/d/1lyKmnRF58R1L_lbPinzNVeqWT5yUtWeX/view"
+        }
+      ]
+    }
+  }
+}

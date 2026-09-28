@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20260928T104500+0800-HUR-85489",
+  "status": "planned",
+  "started_at": "2026-09-28T02:45:00Z",
+  "query_summary": "吴优名下新增 HUR-85489。bug 页 B436 为 ADS-46438，B437 为空，列 B 下方无其他内容，追加第437行。",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260928T104500+0800-HUR-85489.md",
+  "items": [
+    {
+      "jira_key": "HUR-85489",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "sheet_name": "bug",
+      "sheet_row": 437,
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260928T104500+0800-HUR-85489-manifest.json",
+      "ui_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/bug-20260928T104500+0800-HUR-85489-ui-readback.json",
+      "ui_readback_sha256": "c5f743757a621cb4ce0815118236b0e3757de6af0eee8f92459384dfc286e025"
+    }
+  ],
+  "ui_phase_note": "界面正文已写入并回读。线上列相对契约 A:J 右移，诚实回读不能通过 validate_bug_run.py --phase ui，因此 status 保持 planned，不标 ui_verified，也不标 API final。"
+}
