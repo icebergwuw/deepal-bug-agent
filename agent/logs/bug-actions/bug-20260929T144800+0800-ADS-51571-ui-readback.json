@@ -1,0 +1,24 @@
+{
+  "write_surface": "chrome_ui",
+  "jira_key": "ADS-51571",
+  "sheet_row": 438,
+  "api_block_reason": "同一张 bug 表已记录页面 /save HTTP 400，且没有新修订号。本轮未重试 /save，也未得到 batchUpdate。",
+  "update_mode": "append",
+  "row_height_fit": false,
+  "edit_mode_links_verified": false,
+  "links_remain_after_exit": false,
+  "screenshot_not_used_as_cell_proof": true,
+  "filter_action": "unchanged",
+  "selection": "H438",
+  "link_note": "G438、H438、N438 正文已保存，但短标签没有链接。插入链接时选区被扩成整格，已撤销，没有提交错误链接。",
+  "cells_read_after_reload": {
+    "A": "2026-09-29",
+    "B": "=HYPERLINK(\"http://jira.i-tetris.com/browse/ADS-51571\",\"ADS-51571｜再播报一次回复刚才没有说话\")",
+    "G": "现象、谭威评论、深蓝项目功能、ADS-51523、规则空白",
+    "H": "结论/依据/处理与 decision text 一致",
+    "I": "FALSE",
+    "K": "待复核",
+    "M": "Drive 未找到重播正式定义，Alchemy 不能单独转研发。",
+    "N": "七行文档名，无链接"
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-51571",
+  "run_context": {
+    "run_id": "bug-20260929T144800+0800-ADS-51571",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 438
+  },
+  "comment_causality": "谭威先用日志说明本轮已命中 1663，但上一轮 Claw 的 Tts 为空、文本只在 pureTts，所以 Mars 回了「刚刚没有说话」。随后又说这个需求不合理，Claw 很多场景不支持，要吴优定一个兜底 TTS。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-51418",
+        "relationship": "回归父票，第5条就是本票，日志和视频挂在父票",
+        "read": true,
+        "outcome": "已关闭，解决结果已修复。父票只汇总回归，不改变本票「再播报一次刚才播报的内容」的测试预期。"
+      },
+      {
+        "key": "ADS-51523",
+        "relationship": "客户票，现象同类，解决结果重复提交并指向本票",
+        "read": true,
+        "outcome": "已解决。余洋03称 DC 已下发 1663 但车端没执行；陈歌称「再讲一遍」落域 task 符合预期。不把客户票的 NLU 怀疑覆盖本票执行结论。"
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "alchemy-project-24438",
+      "source": "Alchemy 深蓝项目功能·重新播报",
+      "source_location": "项目功能 ID 24438，META 1663，执行策略第1条",
+      "source_type": "alchemy_project",
+      "role": "formal_target",
+      "project_model": "深蓝",
+      "trigger": "语音助手再播报一次",
+      "target_behavior": "无前置条件，动作是 TTS重复播报一遍，TTS 列为空；已锁定，继承未修改(1253)",
+      "match": "exact",
+      "reason": "这是当前生效的语音执行策略，能证明要重播而不是新兜底，但不能单独充当产品正式定义。"
+    },
+    {
+      "source_id": "alchemy-standard-1253",
+      "source": "Alchemy 标准功能·重新播报",
+      "source_location": "标准功能 ID 1253，META 1663，执行策略第1条",
+      "source_type": "alchemy_standard",
+      "role": "formal_target",
+      "project_model": "标准功能",
+      "trigger": "语音助手再播报一次",
+      "target_behavior": "无前置条件，动作是 TTS重复播报一遍，TTS 列为空，状态已锁定",
+      "match": "exact",
+      "reason": "标准功能与项目功能一致，Query 举例就是本票原话。"
+    },
+    {
+      "source_id": "alchemy-current-1663",
+      "source": "Alchemy C385_5 在线对话",
+      "source_location": "在线对话 2026-09-29 14:27:32",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "C385_5",
+      "trigger": "语音助手再播报一次",
+      "target_behavior": "classification=task，meta_id=1663，type=vehicle:cabin:assistant:announce:repeat，params 为空",
+      "match": "exact",
+      "reason": "当前在线结果证明原话仍落到重新播报，不是闲聊或未支持。"
+    },
+    {
+      "source_id": "jira-51571-log",
+      "source": "ADS-51571 谭威日志评论",
+      "source_location": "谭威 2026-09-28 11:23 评论，request r-01a0cd06-26d7-7f53-99da-538a690325f2",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "上一轮 Claw 闲聊已播出后说语音助手再播报一次",
+      "target_behavior": "上一轮 pureTts 为长颈鹿那句，执行回调 Tts 为空；本轮 1663 没有 last_tts_content，Mars 回刚刚没有说话",
+      "match": "exact",
+      "reason": "证明本票不是没播过，而是重播没读到 pureTts。"
+    },
+    {
+      "source_id": "voice-settings-v27",
+      "source": "AIS_【长安C385】语音助手设置产品需求文档v2.7",
+      "source_location": "mobilebasic 全文，目录 1.1 至 2.2",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "C385",
+      "trigger": "语音助手设置",
+      "target_behavior": "只定义唤醒、免唤醒、方言、连续对话、播报音和自定义应答，没有再播报或重新播报",
+      "match": "mismatch",
+      "reason": "同系列最高版本已读，但不能定义本票重播范围。"
+    },
+    {
+      "source_id": "replay-formal-gap",
+      "source": "C385 重播正式定义",
+      "source_location": "2026-09-29 Drive 标题检索，以及已打开的变更表和两份 TTS 话术表",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385-5",
+      "trigger": "语音助手再播报一次",
+      "target_behavior": "没有找到写明 Claw 或大模型已播出文本必须重播的产品正文",
+      "match": "gap",
+      "material": true,
+      "next_action": "语音产品先把「已播出文本含 pureTts 必须重播，没有播报文本才用刚刚没有说话」写入正式定义，再转语音研发改取文本。",
+      "reason": "这个缺口会改变能否直接转研发。Alchemy 策略不能单独补上。"
+    }
+  ],
+  "evidence_profiles": ["voice"],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "重播边界属于语音执行，正式定义检索已包含在 voice 画像里，不再单列通用画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "原话是语音重播，组件是语音执行，日志命中 meta 1663。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是地图或导航状态问题。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "没有页面可见节点抢占，失败点在重播取文本。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-09-29",
+      "search_location": "当前 Chrome 已登录 Google Drive 标题检索，并打开 C385 设置 PRD、深蓝变更表和两份 TTS 话术表",
+      "queries": [
+        {"kind": "jira_key", "text": "ADS-51571"},
+        {"kind": "problem_concept", "text": "语音助手再播报一次 刚才没有说话"},
+        {"kind": "module_artifact", "text": "重新播报 TTS"},
+        {"kind": "exact_document_name", "text": "AIS_【长安C385】语音助手设置产品需求文档v2.7"},
+        {"kind": "version_family", "text": "AIS_【长安C385】语音助手设置产品需求文档"}
+      ],
+      "source_ids": ["voice-settings-v27"],
+      "search_receipt_ids": ["receipt-replay-docs"],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "prd-c385-settings-v27",
+            "title": "AIS_【长安C385】语音助手设置产品需求文档v2.7",
+            "url": "https://docs.google.com/document/d/1wqUdA7-vvoZ0JJBd47stBnycz_KMJUSfs1GgfWKP3qg/edit",
+            "version_family": "AIS_【长安C385】语音助手设置产品需求文档",
+            "disposition": "read",
+            "references": [],
+            "source_ids": ["voice-settings-v27"]
+          },
+          {
+            "id": "change-2026",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "全部工作表查找「重新播报」和「重复播报」均为 0。"
+          },
+          {
+            "id": "tts-tash",
+            "title": "TTS话术_tash.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1OOrQkQozAAWfZbkeW_4TyiCYCFXu76AR/edit",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "全部工作表查找「没有说话」「重新播报」「再播报」「1663」均为 0。"
+          },
+          {
+            "id": "tts-20250520",
+            "title": "语音系统tts话术_20250520.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1iJy-h9NJjkVfdom_t_YFY2Pyjkthg95z/edit",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "全部工作表查找「重新播报」和「没有说话」均为 0。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "AIS_【长安C385】语音助手设置产品需求文档",
+            "status": "enumerated",
+            "receipt_ids": ["receipt-replay-docs"],
+            "selected_candidate_id": "prd-c385-settings-v27",
+            "selection_reason": "标题检索里长安 C385 只有 v2.7，没有 v2.8 或更高文件；正文没有重播条款。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-09-29",
+      "search_location": "Chrome 已登录 Alchemy 在线对话，车型 C385_5",
+      "queries": [
+        {"kind": "exact_trigger", "text": "语音助手再播报一次"}
+      ],
+      "source_ids": ["alchemy-current-1663"]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-09-29",
+      "search_location": "Chrome Alchemy 标准功能详情 1253",
+      "queries": [
+        {"kind": "meta_or_function", "text": "1663"}
+      ],
+      "source_ids": ["alchemy-standard-1253"]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-09-29",
+      "search_location": "Chrome Alchemy 深蓝项目功能详情 24438",
+      "queries": [
+        {"kind": "meta_or_function", "text": "1663"},
+        {"kind": "project_scope", "text": "深蓝"}
+      ],
+      "source_ids": ["alchemy-project-24438"]
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-replay-docs",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-09-29T14:40:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "ADS-51571"},
+        {"kind": "problem_concept", "text": "语音助手再播报一次 刚才没有说话"},
+        {"kind": "module_artifact", "text": "重新播报 TTS"},
+        {"kind": "exact_document_name", "text": "AIS_【长安C385】语音助手设置产品需求文档v2.7"},
+        {"kind": "version_family", "text": "AIS_【长安C385】语音助手设置产品需求文档"}
+      ],
+      "results": [
+        {
+          "id": "prd-c385-settings-v27",
+          "title": "AIS_【长安C385】语音助手设置产品需求文档v2.7",
+          "url": "https://docs.google.com/document/d/1wqUdA7-vvoZ0JJBd47stBnycz_KMJUSfs1GgfWKP3qg/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "change-2026",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "tts-tash",
+          "title": "TTS话术_tash.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1OOrQkQozAAWfZbkeW_4TyiCYCFXu76AR/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "tts-20250520",
+          "title": "语音系统tts话术_20250520.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1iJy-h9NJjkVfdom_t_YFY2Pyjkthg95z/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "语音助手再播报一次",
+    "alchemy_tested": true,
+    "alchemy_result": "C385_5 2026-09-29 14:27:32 classification=task meta_id=1663 type=vehicle:cabin:assistant:announce:repeat params={}",
+    "meta_id": "1663",
+    "standard_function": {
+      "status": "verified",
+      "name": "重新播报",
+      "assessment": "标准功能 ID 1253，META 1663，已锁定。Query 举例是语音助手再播报一次。执行策略第1条无前置条件，动作 TTS重复播报一遍，TTS 为空。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "重新播报",
+      "assessment": "深蓝项目功能 ID 24438，继承未修改(1253)，已锁定。策略与标准功能相同。车型历史写到 C385-3，没有 C385-5 字样，但本车已经收到 1663。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品",
+    "text": "结论：C385-5 说「语音助手再播报一次」，上一轮已经播出的内容要再播一遍。本票上一轮 Claw 已播出长颈鹿那句，文本在 pureTts，不接受改成新的兜底话术。只有上一轮没有播报文本，才用现有「刚刚没有说话」。\n依据：深蓝项目功能·重新播报；谭威评论·pureTts\n处理：不新增兜底 TTS。正式定义还没写到 Claw 已播出文本，语音产品补上这条后再转语音研发改取文本；语音产品处理。"
+  },
+  "conflict_resolution": "谭威要求因为 Claw 很多场景不支持而改播兜底 TTS。已锁定的重新播报策略是再播一遍，本票上一轮 pureTts 有长颈鹿那句，所以不是没说话。兜底只留给确实没有播报文本的轮次。Drive 没有产品正式定义写到 Claw 文本，不能直接转研发。"
+}
