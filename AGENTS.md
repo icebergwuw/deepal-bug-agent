@@ -7,6 +7,7 @@
 - 本项目供镁佳 Megatronix 产品组成员使用，为长安深蓝汽车提供智能座舱服务。
 - 当前操作者身份只从已忽略的 `agent/config/local-profile.json` 读取；首次运行、身份缺失或身份变更时必须执行 `agent/onboarding.md`，不得根据电脑用户名、浏览器账号或聊天称呼猜身份。
 - 读取单张 Jira 票的字段、评论、附件元数据和关联票时，调用本仓库 `.grok/config.toml` 登记的 `analyze_bug_jira` MCP 工具 `get_jira_issue`。Dashboard、附件正文，以及该工具没有返回的页面，仍用当前 Chrome 已登录态。
+- 语音日志用 `analyze_bug_debug` 检索。Alchemy 配置用 `analyze_bug_ops` 读取。判责顺序参考 `analyze_bug_rules`。这三处只读；Agent 不代替产品写入 Alchemy。
 - Google Drive/Sheets 及其他外部平台优先使用操作者当前 Chrome 的已登录态；只有 Chrome 不可用、未登录或缺少所需能力时，才切换到内置浏览器、连接器或其他受支持入口，并记录实际使用的入口。
 - `analyze_bug_jira` 的 `add_jira_comment` 和 `update_jira_description` 属于 Jira 写操作，只有用户明确授权才调用。
 - Jira bug 输出必须站在已绑定操作者的产品负责人视角，直接判断用户预期、功能边界、处理动作和责任方。

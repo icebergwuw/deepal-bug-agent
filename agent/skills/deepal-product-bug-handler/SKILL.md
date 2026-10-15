@@ -35,7 +35,7 @@ Read `agent/workflows/review.md` when the input is customer, leader, 可姐, mee
 
 ## Use The Available Tools
 
-- Read a single Jira issue with the project MCP `analyze_bug_jira` tool `get_jira_issue`. Use the signed-in Chrome session for the Jira dashboard, attachment bodies, and any field the MCP does not return.
+- Read a single Jira issue with the project MCP `analyze_bug_jira` tool `get_jira_issue`. Use `analyze_bug_debug` for voice logs, `analyze_bug_ops` for Alchemy configuration, and `analyze_bug_rules` for fault priority. Those three are read-only. Use the signed-in Chrome session for the Jira dashboard, attachment bodies, and any field the MCP does not return.
 - Call `add_jira_comment` or `update_jira_description` only after the user explicitly authorizes that Jira write.
 - Use the operator's current Chrome login state first for Google Drive/Sheets and other non-Jira external sources. Fall back to the in-app browser or connectors only when Chrome is unavailable, unauthenticated, or lacks the required capability; record the actual access surface in the run evidence.
 - Use Alchemy and MasterGo only according to the current evidence contract and available authenticated runtime.

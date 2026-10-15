@@ -11,7 +11,7 @@
 ## 固定链接
 
 - Jira：`http://jira.i-tetris.com`
-- Jira 单票读取：项目 MCP `analyze_bug_jira` 的 `get_jira_issue`。启动脚本是 `agent/scripts/analyze-bug-jira-mcp.sh`，运行时在 `agent/vendor/analyze-bug`。账号密码只放在本机 `.env` 的 `JIRA_USERNAME` / `JIRA_PASSWORD`，脚本写到 gitignore 的 `.analyze-bug/`，不进入仓库。
+- Jira 单票读取：项目 MCP `analyze_bug_jira` 的 `get_jira_issue`。语音日志是 `analyze_bug_debug`，Alchemy 配置是 `analyze_bug_ops`，判责规则是 `analyze_bug_rules`。启动脚本是 `agent/scripts/analyze-bug-mcp.sh`，运行时在 `agent/vendor/analyze-bug`。Jira 账号放在本机 `.env`；Debug / Alchemy Cookie 由脚本从已登录 Chrome 提取。凭证写到 gitignore 的 `.analyze-bug/`，不进入仓库。
 - Bug 清单总入口（Jira Dashboard 17302）：
   `http://jira.i-tetris.com/secure/Dashboard.jspa?selectPageId=17302`
 - 工作说明表：

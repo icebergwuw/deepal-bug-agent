@@ -390,7 +390,7 @@ def test_ops_connection() -> tuple[bool, str]:
     base_url = (config.get("ALCHEMY_BASE_URL") or DEFAULT_ALCHEMY_BASE_URL).rstrip("/")
     req = request.Request(
         f"{base_url}/fi/function/list?pageNum=1&pageSize=1",
-        headers={"Cookie": cookie},
+        headers={"Cookie": cookie, "Referer": "https://alchemy.i-tetris.com/"},
     )
     try:
         with request.urlopen(req, timeout=10) as response:

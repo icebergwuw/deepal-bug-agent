@@ -33,6 +33,10 @@ def text_result(data) -> str:
 @asynccontextmanager
 async def app_lifespan(_: FastMCP):
     settings = Settings.from_env()
+    if not settings.cookie:
+        logger.warning("ALCHEMY_COOKIE is not configured; ops tools will return credential errors.")
+        yield AppRuntime(service=None)
+        return
     async with AlchemyClient(settings.base_url, settings.cookie) as client:
         yield AppRuntime(service=AlchemyService(client))
 
@@ -44,6 +48,8 @@ def get_service(ctx: Context) -> AlchemyService:
     runtime = ctx.request_context.lifespan_context
     if not isinstance(runtime, AppRuntime):
         raise RuntimeError("Alchemy service is not initialized.")
+    if runtime.service is None:
+        raise RuntimeError("Missing ALCHEMY_COOKIE. Run `analyze-bug-admin configure-ops` first.")
     return runtime.service
 
 

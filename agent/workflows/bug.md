@@ -23,6 +23,7 @@
 
 - 附件文件正文、Dashboard 17302，以及 MCP 结果里缺少的字段，再用当前 Chrome 已登录态补读，并在日志记录实际入口。
 - `add_jira_comment` 和 `update_jira_description` 只有用户明确授权才调用。
+- 语音或车控日志用 `analyze_bug_debug` 检索，Alchemy 功能点、意图和 slot 用 `analyze_bug_ops` 读取，模块判责顺序参考 `analyze_bug_rules`。这三处只读。Cookie 缺失或接口失败时记录限制，再用 Chrome 已登录态补读。
 
 - 标题或描述开头出现非 Jira Key 的长客户问题编号时，先标记为客户提报 Bug，并提取该编号；不得把它当作普通内部测试 Bug。
 - 评论按时间顺序提炼，不能只看最后一条。

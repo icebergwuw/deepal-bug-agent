@@ -120,8 +120,6 @@ class Settings:
             or _load_persisted_setting("ALCHEMY_COOKIE")
             or ""
         ).strip()
-        if not raw_cookie:
-            raise RuntimeError("Missing ALCHEMY_COOKIE. Run `analyze-bug-admin configure-ops` first.")
         return cls(base_url=raw_base_url, cookie=raw_cookie)
 
 
@@ -134,7 +132,7 @@ class DownloadedFile:
 
 @dataclass(frozen=True)
 class AppRuntime:
-    service: "AlchemyService"
+    service: AlchemyService | None
 
 
 class AlchemyApiError(RuntimeError):
@@ -257,12 +255,14 @@ class AlchemyClient:
         if self._client is None:
             self._client = httpx.AsyncClient(
                 headers={
-                    "Accept": "application/json",
+                    "Accept": "application/json, text/plain, */*",
                     "Cookie": self.cookie_header,
+                    "Referer": "https://alchemy.i-tetris.com/",
                 },
                 follow_redirects=True,
                 timeout=httpx.Timeout(60.0, connect=10.0),
                 transport=self._transport,
+                trust_env=False,
             )
         return self._client
 
