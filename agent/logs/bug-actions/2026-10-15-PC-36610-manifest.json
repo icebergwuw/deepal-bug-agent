@@ -1,0 +1,285 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-36610",
+  "comment_causality": "熊东森报 C673-5 自动巡航行驶到红绿灯下时倒计时气泡消失。程云 2026-09-02 评论：车速降到 15 触发 stopCruise，随后清 CruiseLayer；建议区分红灯等待和真正退出，并说明不要只改 HomePresenter，也不建议直接关闭全部低速退出。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-36610 原票",
+      "source_location": "描述：操作步骤打开自动巡航并行驶到红绿灯下；预期气泡一直展示；实际气泡消失；复现 3/3",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-5",
+      "trigger": "打开自动巡航，等待红绿灯倒计时气泡，行驶到红绿灯下",
+      "target_behavior": "测试主张气泡一直展示",
+      "match": "exact",
+      "reason": "证明当前现象和测试主张，不单独定义产品目标。"
+    },
+    {
+      "source_id": "chengyun-20260902",
+      "source": "程云 2026-09-02 评论",
+      "source_location": "Jira 评论 2026-09-02 id 8375772：15:12:17 车速 15 后 stopCruise，再清 CruiseLayer",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-5",
+      "trigger": "自动巡航中车速降到 15",
+      "target_behavior": "当前实现把低速停止当成退出巡航并清掉红绿灯气泡",
+      "match": "exact",
+      "reason": "证明气泡消失的实现链路。"
+    },
+    {
+      "source_id": "prd-cruise-exit",
+      "source": "地图导航PRD V6.1·第五章",
+      "source_location": "Megatronix_地图导航产品需求文档_C385&C673_V6.1 第五章：退出巡航模式为点击图面",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385&C673",
+      "trigger": "巡航中",
+      "target_behavior": "点击图面才退出巡航；低速只改变 POI 精简，不定义为退出",
+      "match": "exact",
+      "reason": "正式定义退出巡航的条件。"
+    },
+    {
+      "source_id": "prd-traffic-light",
+      "source": "地图导航PRD V6.1·4.6.2",
+      "source_location": "同一文档 4.6.2 红绿灯动态信息：巡航场景展示等灯轮数和实时倒计时；临时中断仅覆盖绿闪/黄灯过渡",
+      "source_type": "special_prd",
+      "role": "formal_target",
+      "project_model": "C385&C673",
+      "trigger": "导航或巡航接近红绿灯且 SDK 下发灯态",
+      "target_behavior": "按 SDK 数据展示红绿灯气泡；灯态过渡可临时隐藏，倒计时结束后恢复",
+      "match": "exact",
+      "reason": "正式定义巡航中红绿灯气泡的展示和隐藏条件。"
+    }
+  ],
+  "evidence_profiles": ["map_navigation"],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票是地图巡航中的红绿灯气泡，不走通用产品定义画像。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "没有语音原话、NLU 或 Alchemy 执行链。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "自动巡航行驶到红绿灯下，倒计时气泡被清掉。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "气泡规则写在地图导航 PRD 的巡航和红绿灯章节，不是独立可见即可说或页面控件画像。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "read",
+      "searched_at": "2026-10-15",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-36610"},
+        {"kind": "problem_concept", "text": "自动巡航红绿灯倒计时气泡消失"},
+        {"kind": "module_artifact", "text": "Megatronix_地图导航产品需求文档_C385&C673"},
+        {"kind": "version_family", "text": "Megatronix_地图导航产品需求文档_C385&C673"}
+      ],
+      "source_ids": ["prd-cruise-exit"],
+      "reason": "已打开 C385&C673 地图导航 PRD V6.1 第五章。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-36610-main-prd-20261015",
+        "PC-36610-main-prd-version-20261015"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+            "disposition": "read",
+            "source_ids": ["prd-cruise-exit"],
+            "references": [],
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": ["PC-36610-main-prd-version-20261015"],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "同一 Chrome 搜索中 V6.1 是 C385&C673 主文档的最高版本，V4.6 为更早 PDF。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-15",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索，并打开 V6.1 的 4.6.2",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-36610"},
+        {"kind": "problem_concept", "text": "巡航红绿灯倒计时气泡"},
+        {"kind": "module_artifact", "text": "4.6.2 红绿灯动态信息"}
+      ],
+      "source_ids": ["prd-traffic-light"],
+      "reason": "已读 4.6.2 对巡航场景红绿灯气泡的展示和临时中断。",
+      "material": false,
+      "next_action": "",
+      "search_receipt_ids": [
+        "PC-36610-special-20261015",
+        "PC-36610-special-version-20261015"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+            "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+            "disposition": "read",
+            "source_ids": ["prd-traffic-light"],
+            "references": [],
+            "version_family": "Megatronix_地图导航产品需求文档_C385&C673"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Megatronix_地图导航产品需求文档_C385&C673",
+            "status": "enumerated",
+            "receipt_ids": ["PC-36610-special-version-20261015"],
+            "selected_candidate_id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+            "selection_reason": "同一 Chrome 搜索中 V6.1 高于 V4.6，没有更高的 C385&C673 版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期要求气泡一直展示。PRD 允许绿闪/黄灯过渡时临时隐藏并在倒计时结束后恢复，不允许把车速降到 15 的红灯等待当成点击图面退出巡航。因此不采用关闭全部低速退出巡航，只要求红灯等待期间保留气泡。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "地图研发",
+    "text": "结论：C673-5 自动巡航在红灯等待、车速降到 15 时，红绿灯倒计时气泡应继续按 SDK 数据展示；只有点击图面退出巡航，或灯态过渡临时中断，才隐藏气泡。依据：地图导航PRD V6.1·4.6.2与第五章、程云2026-09-02评论。处理：红灯等待期间不调用 stopCruise、不清 CruiseLayer；地图研发处理。",
+    "formal_source_ids": ["prd-cruise-exit", "prd-traffic-light"],
+    "implementation_source_ids": ["jira-actual", "chengyun-20260902"]
+  },
+  "run_context": {
+    "run_id": "bug-20261015T171500Z-pc36610",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "sheet_name": "bug",
+    "sheet_row": 11
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-36610-main-prd-20261015",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-10-15T17:10:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-36610"},
+        {"kind": "problem_concept", "text": "自动巡航红绿灯倒计时气泡消失"},
+        {"kind": "module_artifact", "text": "Megatronix_地图导航产品需求文档_C385&C673"}
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-36610-main-prd-version-20261015",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-10-15T17:12:00+08:00",
+      "queries": [
+        {"kind": "version_family", "text": "Megatronix_地图导航产品需求文档_C385&C673"}
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-36610-special-version-20261015",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-10-15T17:12:00+08:00",
+      "queries": [
+        {"kind": "version_family", "text": "Megatronix_地图导航产品需求文档_C385&C673"}
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-36610-special-20261015",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-10-15T17:14:00+08:00",
+      "queries": [
+        {"kind": "jira_key", "text": "PC-36610"},
+        {"kind": "problem_concept", "text": "巡航红绿灯倒计时气泡"},
+        {"kind": "module_artifact", "text": "4.6.2 红绿灯动态信息"}
+      ],
+      "results": [
+        {
+          "id": "1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y",
+          "title": "Megatronix_地图导航产品需求文档_C385&C673_V6.1",
+          "url": "https://docs.google.com/document/d/1y6I7BEvG_UHUmsTlFLDX-VyTPrkqPSMyniGb0qpPV3Y/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "C673-5 打开自动巡航，接近红绿灯并减速等待",
+    "target_state": "仍处于自动巡航，红绿灯倒计时气泡按 SDK 数据继续展示",
+    "intent_function_signal": "SDK 仍下发等灯轮数或倒计时",
+    "ui_tts_vehicle_behavior": "不因车速降到 15 调用 stopCruise 或清理 CruiseLayer",
+    "boundary": "点击图面退出巡航，或绿闪/黄灯过渡的临时中断，可以隐藏气泡；倒计时结束后恢复",
+    "source_ids": ["prd-cruise-exit", "prd-traffic-light"]
+  }
+}
