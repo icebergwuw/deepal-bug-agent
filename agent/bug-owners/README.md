@@ -9,7 +9,7 @@
 - `pending`：人员已知，但 Jira 账号、当前清单或写回规则未确认。
 - `inactive`：不接收新 Bug，历史资料保留。
 
-`write_mode` 再控制具体权限：只有 `status: active` 且 `write_mode: read_write` 才允许按默认 Bug 流程写负责人清单。Jira 评论、转派和状态修改仍需用户明确授权。
+`write_mode` 再控制具体权限：只有 `status: active` 且 `write_mode: read_write` 才允许按默认 Bug 流程写负责人清单。Jira 评论按 2026-10-15 授权执行；转派和状态修改仍需另一次明确授权。
 
 ## 新增人员
 

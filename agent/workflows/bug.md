@@ -22,7 +22,7 @@
 单票字段通过 `analyze_bug_jira` 的 `get_jira_issue` 读取。必须读到标题、状态、优先级、经办人、模块、车型、描述、复现概率、附件信息、已有定责、问题链接和全部评论。
 
 - 附件文件正文、Dashboard 17302，以及 MCP 结果里缺少的字段，再用当前 Chrome 已登录态补读，并在日志记录实际入口。
-- `add_jira_comment` 和 `update_jira_description` 只有用户明确授权才调用。
+- 结论确定并完成清单回读后，按 `agent/output-contract.md` 用 `add_jira_comment` 把当前 D 原文发到该票。用户说「只看 / 不更新」时不发。bugfree 或汇总表需要回填时才用 `update_jira_description`。
 - 语音或车控日志用 `analyze_bug_debug` 检索，Alchemy 功能点、意图和 slot 用 `analyze_bug_ops` 读取，模块判责顺序参考 `analyze_bug_rules`。这三处只读。Cookie 缺失或接口失败时记录限制，再用 Chrome 已登录态补读。
 
 - 标题或描述开头出现非 Jira Key 的长客户问题编号时，先标记为客户提报 Bug，并提取该编号；不得把它当作普通内部测试 Bug。
@@ -67,7 +67,7 @@
 
 ## 6. 外部动作与日志
 
-- 遵守 `AGENTS.md` 的全局外部动作权限；Jira 评论、转派和状态修改均需用户明确授权。
+- 遵守 `AGENTS.md` 的全局外部动作权限。Jira 评论按 2026-10-15 授权执行并回读；转派和状态修改仍需另一次明确授权。
 - 外部动作的文本复用、链接和回读按 `agent/output-contract.md` 执行。
 - 每批操作在 `agent/logs/bug-actions/` 留日志，记录负责人、每一个 Jira key、证据、线上位置、写入摘要、回读校验和未执行动作。
 - 每次执行先生成唯一 `run_id` 和 run bundle；即使本次无新增，也必须保存查询范围、数量、去重结果和“本次无新增”的操作日志。

@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.26.0-trial.1`
+- 当前版本：`v1.27.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-15`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -12,6 +12,39 @@
 
 
 
+
+## v1.27.0-trial.1 — 2026-10-15
+
+### 试行内容
+
+- 操作者于 2026-10-15 授权：本流程正在处理的 Jira 票，清单回读后用 `add_jira_comment` 发送当前 D 原文；复盘完成后发送当前 H 原文。
+- `update_jira_description` 只回填 bugfree 或描述里的汇总表，并保持原表结构。
+- 这次授权不包含转派、关闭、改状态、改经办人和写入 Alchemy。用户说「只看 / 不更新」时不写 Jira。
+- 评论必须回读。MCP 自动追加的 `（AI Generated）` 保留。
+
+### 修改原因
+
+- 操作者针对 Jira 写接口回复「授权」。此前评论和改描述被规则拦住。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/bug-owners/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-15-jira-write-authorization.md`
+
+### 验证案例
+
+- 规则文本限定评论正文为当前 D/H，描述回填只覆盖汇总表。
+- `agent/scripts/validate_rule_architecture.py` 通过。
+- 本次没有对任何 Jira 票调用写接口。
+
+### 回滚口径
+
+- 恢复为评论、改描述、转派和状态变更都要另一次明确授权。不删除已经发出的 Jira 评论。
 
 ## v1.26.0-trial.1 — 2026-10-15
 

@@ -36,7 +36,7 @@ Read `agent/workflows/review.md` when the input is customer, leader, 可姐, mee
 ## Use The Available Tools
 
 - Read a single Jira issue with the project MCP `analyze_bug_jira` tool `get_jira_issue`. Use `analyze_bug_debug` for voice logs, `analyze_bug_ops` for Alchemy configuration, and `analyze_bug_rules` for fault priority. Those three are read-only. Use the signed-in Chrome session for the Jira dashboard, attachment bodies, and any field the MCP does not return.
-- Call `add_jira_comment` or `update_jira_description` only after the user explicitly authorizes that Jira write.
+- After the sheet conclusion is read back, post it with `add_jira_comment`: D for a normal run, H after a review. Use `update_jira_description` only to fill a bugfree or summary-table description. The 2026-10-15 authorization covers those two writes. Do not transition, reassign, close, or edit Alchemy under that authorization. Skip Jira writes when the user asked for a read-only pass.
 - Use the operator's current Chrome login state first for Google Drive/Sheets and other non-Jira external sources. Fall back to the in-app browser or connectors only when Chrome is unavailable, unauthenticated, or lacks the required capability; record the actual access surface in the run evidence.
 - Use Alchemy and MasterGo only according to the current evidence contract and available authenticated runtime.
 - Keep credentials in secure runtime configuration; never copy them into project artifacts or responses.
