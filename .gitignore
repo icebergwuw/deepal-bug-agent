@@ -1,6 +1,8 @@
 .env
 .env.*
 !.env.example
+.analyze-bug/
+agent/vendor/analyze-bug/.venv/
 .DS_Store
 outputs/
 .mastergo/

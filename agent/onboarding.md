@@ -77,11 +77,11 @@ python3 agent/scripts/bug_project_preflight.py \
 
 权限不随 Git 迁移。每名成员使用自己的公司账号完成以下登录，并由 Agent真实读取对应内容后才能记录通过：
 
-外部平台的真实读取和写回默认优先使用操作者当前 Chrome 的已登录态。Chrome 会话可用时，不得因为内置连接器更方便而绕过该会话；仅在 Chrome 不可用、未登录或无法完成所需操作时，才使用内置浏览器、连接器或其他受支持入口。
+Jira 单票读取使用本仓库的 `analyze_bug_jira` MCP。Google Drive/Sheets 及其他外部平台的真实读取和写回默认优先使用操作者当前 Chrome 的已登录态。Chrome 会话可用时，不得因为内置连接器更方便而绕过该会话；仅在 Chrome 不可用、未登录或无法完成所需操作时，才使用内置浏览器、连接器或其他受支持入口。Jira 附件正文和 Dashboard 仍走 Chrome。
 
 | 平台 | 验证动作 | 失败时引导 |
 | --- | --- | --- |
-| Jira | 打开本人有权访问的 Bug，读取标题和评论时间线 | 在受支持浏览器中登录 Jira；仍无权时联系 Jira 管理员 |
+| Jira | 用 `analyze_bug_jira` 的 `get_jira_issue` 读取本人有权访问的 Bug，核对标题和评论 | 检查项目 `.env` 的 `JIRA_USERNAME` / `JIRA_PASSWORD`。凭证失效时先在 Chrome 登录一次 Jira，再重试 MCP；仍无权时联系 Jira 管理员 |
 | Google Drive/Sheets | 读取本人负责人页的 A:J 样例和表格元数据 | 连接 Google Drive并确认该工作表已共享给本人 |
 | Alchemy | 读取标准功能点或完成一次在线原话测试 | 登录 Alchemy；语音 Bug 在未验证前按证据门禁降级 |
 | MasterGo | 打开对应项目/页面/图层 | 登录并申请项目权限；可见交互证据缺失时不得硬判 |

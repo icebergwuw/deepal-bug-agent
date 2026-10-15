@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "analyze-bug"
+version = "0.4.1"
+description = "Cross-platform Jira bug analysis skills with Jira, Debug, Rules, and Alchemy Ops MCP runtime."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "httpx>=0.28.1,<1.0.0",
+  "mcp[cli]>=1.13.0,<2.0.0",
+  "pydantic>=2.11.0,<3.0.0",
+  "python-dotenv>=1.1.0,<2.0.0",
+]
+
+[project.scripts]
+analyze-bug-admin = "analyze_bug.runtime.admin:main"
+analyze-bug-jira-mcp = "analyze_bug.mcp_server.jira.jira_mcp:main"
+analyze-bug-debug-mcp = "analyze_bug.mcp_server.debug.debug_mcp:main"
+analyze-bug-rules-mcp = "analyze_bug.mcp_server.rules.rules_mcp:main"
+analyze-bug-ops-mcp = "analyze_bug.mcp_server.ops.ops_mcp:main"
+gemini-workqueue = "analyze_bug.workqueue.cli:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.5,<9.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/analyze_bug"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

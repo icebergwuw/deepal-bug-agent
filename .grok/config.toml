@@ -1,0 +1,4 @@
+[mcp_servers.analyze_bug_jira]
+command = "agent/scripts/analyze-bug-jira-mcp.sh"
+startup_timeout_sec = 60
+enabled = true

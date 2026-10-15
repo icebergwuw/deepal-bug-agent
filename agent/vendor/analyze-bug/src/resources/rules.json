@@ -1,0 +1,291 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2024-02-06",
+  "fault_priority": [
+    "Acoustics",
+    "ASR",
+    "NLU",
+    "Cloud",
+    "Vehicle",
+    "TTS"
+  ],
+  "acoustics": {
+    "name": "Acoustics",
+    "description": "声学定位问题",
+    "conditions": [
+      {
+        "id": "sound_location_error",
+        "description": "用户描述'定位错误/唤醒位置不对'且日志 sound_location 错误",
+        "evidence_fields": ["sound_location"],
+        "responsibility": "Acoustics"
+      }
+    ]
+  },
+  "asr": {
+    "name": "ASR",
+    "description": "语音识别问题",
+    "conditions": [
+      {
+        "id": "recognition_mismatch",
+        "description": "Online/Offline 结果与音频/Query 不符",
+        "evidence_fields": ["online_asr_result", "offline_asr_result", "query"],
+        "responsibility": "ASR"
+      },
+      {
+        "id": "garbled_text",
+        "description": "ASR 结果包含乱码或非法字符",
+        "evidence_fields": ["asr_result"],
+        "responsibility": "ASR"
+      }
+    ]
+  },
+  "nlu": {
+    "name": "NLU",
+    "description": "自然语言理解问题",
+    "subcategories": {
+      "chat_reject_model": {
+        "name": "NLU (Chat Reject Model)",
+        "description": "上下文拒识模型或敏感词模型过度拒识",
+        "conditions": [
+          {
+            "id": "chat_context_reject",
+            "description": "reject_type 为 CHAT_CONTEXT_REJECT",
+            "match_field": "reject_type",
+            "match_value": "CHAT_CONTEXT_REJECT"
+          },
+          {
+            "id": "nlu_model_reject",
+            "description": "reject_type 为 NLU_MODEL_REJECT",
+            "match_field": "reject_type",
+            "match_value": "NLU_MODEL_REJECT"
+          },
+          {
+            "id": "rejected_by_model",
+            "description": "日志显示 is_rejected_by_model=true",
+            "match_field": "is_rejected_by_model",
+            "match_value": true
+          }
+        ]
+      },
+      "dialogue_logic": {
+        "name": "NLU (Dialogue Logic)",
+        "description": "NLU 未能提取有效意图/Slot，导致逻辑层无路可走",
+        "conditions": [
+          {
+            "id": "dialogue_logic_reject",
+            "description": "reject_type 为 DIALOGUE_LOGIC_REJECT",
+            "match_field": "reject_type",
+            "match_value": "DIALOGUE_LOGIC_REJECT"
+          },
+          {
+            "id": "not_complete_reject",
+            "description": "reject_type 为 NOT_COMPLETE_REJECT",
+            "match_field": "reject_type",
+            "match_value": "NOT_COMPLETE_REJECT"
+          }
+        ]
+      },
+      "classifier": {
+        "name": "NLU (Classifier)",
+        "description": "分类模型分发错误",
+        "conditions": [
+          {
+            "id": "wrong_classification",
+            "description": "用户意图明显（如'天气'），但 classification 识别为 chat",
+            "evidence_fields": ["classification", "query"]
+          },
+          {
+            "id": "deepseek_routing_error",
+            "description": "本应进入 DeepSeek (深度思考)，却进入普通 Chat (或反之)",
+            "evidence_fields": ["classification", "expected_domain"]
+          }
+        ]
+      },
+      "intent_consistency": {
+        "name": "NLU (Intent Matching)",
+        "description": "query、intent、slot 不一致，或命中更低优先级/错误 intent",
+        "conditions": [
+          {
+            "id": "intent_query_conflict",
+            "description": "Query 中关键目标对象与命中 intent 语义冲突，例如 query/slot 指向远光灯，但 intent 命中 low beam",
+            "evidence_fields": ["query", "intent", "slotMap.control_target"]
+          },
+          {
+            "id": "intent_slot_conflict",
+            "description": "intent 与已抽取 slot/property 自相矛盾，导致后续 operation/TTS 全部偏离",
+            "evidence_fields": ["intent", "slotMap", "operations"]
+          },
+          {
+            "id": "expected_intent_not_selected",
+            "description": "本地 intentDomainMapping 或 dialogScenario 已存在更匹配的标准 intent/path，但日志命中了另一条旧 intent 或降级 intent",
+            "evidence_fields": ["intent", "query", "local_config_match"]
+          }
+        ]
+      }
+    }
+  },
+  "cloud": {
+    "name": "Cloud",
+    "description": "云端服务问题",
+    "note": "仅在排除 NLU 模型/生成问题后，归类为 Cloud",
+    "subcategories": {
+      "chat": {
+        "name": "Cloud (Chat)",
+        "description": "大模型内容生成问题",
+        "conditions": [
+          {
+            "id": "brand_sensitive_reject",
+            "description": "回复 TTS 包含'非品牌相关'、'无法回答该问题'等",
+            "evidence_fields": ["tts_content"]
+          },
+          {
+            "id": "chat_subtype_reject",
+            "description": "Chat LLM 返回的 subtype 为 brand 或 sensitive",
+            "match_field": "subtype",
+            "match_values": ["brand", "sensitive"]
+          },
+          {
+            "id": "content_hallucination",
+            "description": "大模型生成的内容错误（如金价错误、百科知识错误、新闻内容过时）",
+            "evidence_fields": ["llm_response", "expected_answer"]
+          }
+        ]
+      },
+      "lbs": {
+        "name": "Cloud (LBS)",
+        "description": "地理位置服务问题",
+        "conditions": [
+          {
+            "id": "location_error",
+            "description": "涉及地理位置（定位错误、城市不符）",
+            "evidence_fields": ["location", "expected_location"]
+          }
+        ]
+      },
+      "infra": {
+        "name": "Cloud (Infra)",
+        "description": "基础设施问题",
+        "conditions": [
+          {
+            "id": "timeout",
+            "description": "接口超时",
+            "evidence_fields": ["response_time", "error_code"]
+          },
+          {
+            "id": "server_busy",
+            "description": "服务器繁忙",
+            "evidence_fields": ["error_code", "error_message"]
+          },
+          {
+            "id": "5xx_error",
+            "description": "5xx 错误",
+            "match_field": "http_status",
+            "match_pattern": "5\\d{2}"
+          },
+          {
+            "id": "link_exception",
+            "description": "系统链路异常",
+            "evidence_fields": ["trace_id", "error_log"]
+          }
+        ]
+      },
+      "policy": {
+        "name": "Cloud (Policy)",
+        "description": "交互策略问题",
+        "conditions": [
+          {
+            "id": "tts_interrupt",
+            "description": "车控指令打断 TTS",
+            "evidence_fields": ["tts_status", "interrupt_reason"]
+          },
+          {
+            "id": "focus_preemption",
+            "description": "抢占焦点逻辑问题",
+            "evidence_fields": ["focus_state", "expected_focus"]
+          },
+          {
+            "id": "multi_turn_switch",
+            "description": "多轮对话切换策略问题",
+            "evidence_fields": ["dialogue_state", "turn_count"]
+          }
+        ]
+      }
+    }
+  },
+  "vehicle": {
+    "name": "Vehicle",
+    "description": "车端问题",
+    "subcategories": {
+      "search": {
+        "name": "Vehicle (Search)",
+        "description": "车端搜索问题（前提是云端下发的搜索关键字正确）",
+        "conditions": [
+          {
+            "id": "nav_search_error",
+            "description": "导航搜索结果不符、列表为空",
+            "evidence_fields": ["search_keyword", "search_result"]
+          },
+          {
+            "id": "music_search_error",
+            "description": "音乐搜索结果不符、列表为空",
+            "evidence_fields": ["search_keyword", "search_result"]
+          }
+        ]
+      },
+      "ui_logic": {
+        "name": "Vehicle (UI/Logic)",
+        "description": "车端 UI 或逻辑问题",
+        "conditions": [
+          {
+            "id": "no_response",
+            "description": "云端下发指令正确，车端无响应",
+            "evidence_fields": ["cloud_command", "vehicle_response"]
+          },
+          {
+            "id": "ui_blocked",
+            "description": "UI 遮挡",
+            "evidence_fields": ["ui_state"]
+          },
+          {
+            "id": "button_missing",
+            "description": "按钮缺失",
+            "evidence_fields": ["ui_elements"]
+          },
+          {
+            "id": "home_not_interrupt",
+            "description": "Home 键不打断",
+            "evidence_fields": ["key_event", "expected_behavior"]
+          }
+        ]
+      }
+    }
+  },
+  "tts": {
+    "name": "TTS",
+    "description": "语音合成问题",
+    "conditions": [
+      {
+        "id": "pronunciation_error",
+        "description": "文本正确但播报读音错误（数字、多音字）",
+        "evidence_fields": ["tts_text", "expected_pronunciation", "actual_pronunciation"]
+      }
+    ]
+  },
+  "rejection_detection": {
+    "description": "拒识检测条件",
+    "conditions": [
+      {
+        "id": "empty_operations",
+        "description": "operations 为空",
+        "match_field": "operations",
+        "match_value": []
+      },
+      {
+        "id": "dialogue_reject",
+        "description": "dialogue:method:reject",
+        "match_field": "dialogue_method",
+        "match_value": "reject"
+      }
+    ]
+  }
+}

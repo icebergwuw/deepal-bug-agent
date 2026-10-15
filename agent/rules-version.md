@@ -1,9 +1,9 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.24.0-trial.1`
+- 当前版本：`v1.25.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-09-24`
-- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/archive/scripts/README.md`
+- 生效日期：`2026-10-15`
+- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
@@ -12,6 +12,43 @@
 
 
 
+
+## v1.25.0-trial.1 — 2026-10-15
+
+### 试行内容
+
+- 单张 Jira 票的字段、评论、附件元数据和关联票改由项目 MCP `analyze_bug_jira` 的 `get_jira_issue` 读取。
+- Dashboard、附件正文，以及 MCP 没有返回的字段，继续用当前 Chrome 已登录态补读。
+- `add_jira_comment` 和 `update_jira_description` 仍要用户明确授权，不因接入 MCP 而自动回写 Jira。
+- 凭证留在本机 `.env`，启动脚本写到 gitignore 的 `.analyze-bug/`。
+
+### 修改原因
+
+- 后续 Jira 分析要走 analyze-bug 0.4.1 的 Jira MCP，而不是每次用浏览器打开整张票。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/onboarding.md`
+- `agent/workflows/bug.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `.grok/config.toml`
+- `.gitignore`
+- `agent/scripts/analyze-bug-jira-mcp.sh`
+- `agent/vendor/analyze-bug/`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-15-analyze-bug-jira-mcp.md`
+
+### 验证案例
+
+- 用项目 `.env` 启动 MCP，对一张现有 Jira 调用 `get_jira_issue`，能返回标题、状态和经办人。
+- `agent/scripts/validate_rule_architecture.py` 通过。
+
+### 回滚口径
+
+- 删除 `.grok/config.toml` 里的 `analyze_bug_jira`、启动脚本和 `agent/vendor/analyze-bug/`。
+- Jira 单票读取改回当前 Chrome 已登录态。不改已有表格数据。
 
 ## v1.24.0-trial.1 — 2026-09-24
 
