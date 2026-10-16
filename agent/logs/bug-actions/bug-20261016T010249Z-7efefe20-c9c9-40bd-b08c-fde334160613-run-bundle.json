@@ -1,0 +1,16 @@
+{
+  "run_id": "bug-20261016T010249Z-7efefe20-c9c9-40bd-b08c-fde334160613",
+  "status": "blocked",
+  "operator_owner_id": "wu-you",
+  "query": "assignee = you.wu AND project in (SD,HUR,ADS,BGS,BEO,PC,SM,SLV) AND issuetype = Bug AND status in (\"To Do\",Reopened,\"In Progress\",Pending)",
+  "jira_read": false,
+  "google_drive_read": false,
+  "google_sheets_read": false,
+  "online_deduplication": null,
+  "writes": [],
+  "blockers": [
+    "Jira Chrome session is anonymous",
+    "Google Sheets Chrome session requires identity verification"
+  ],
+  "recovery_action": "Reauthenticate Jira and Google in the existing Chrome session, then rerun"
+}
