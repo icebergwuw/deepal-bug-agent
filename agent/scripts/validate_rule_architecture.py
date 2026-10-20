@@ -30,6 +30,8 @@ REQUIRED_FILES = (
     "agent/scripts/bug_sheet_contract.py",
     "agent/scripts/bug_project_preflight.py",
     "agent/scripts/validate_bug_evidence_gate.py",
+    "agent/scripts/authorize_jira_comment.py",
+    "agent/scripts/test_authorize_jira_comment.py",
     "agent/scripts/validate_bug_run.py",
     "agent/scripts/sync_bug_skill.py",
     "agent/scripts/test_bug_evidence_gate.py",
@@ -80,6 +82,8 @@ OPERATIONAL_SCRIPT_ALLOWLIST = {
     "test_bug_sheet_contract.py",
     "test_bug_project_preflight.py",
     "validate_bug_evidence_gate.py",
+    "authorize_jira_comment.py",
+    "test_authorize_jira_comment.py",
     "validate_bug_run.py",
     "validate_rule_architecture.py",
     "sheet_page_save.py",
@@ -457,6 +461,23 @@ def validate(root: Path, skill: Path) -> list[str]:
     for token in ("evidence-requirements.json", "validate_bug_evidence_gate.py"):
         if token not in review_workflow:
             errors.append(f"复盘流程缺少统一证据门槛：{token}")
+
+    for relative in (
+        "AGENTS.md",
+        "agent/evidence-contract.md",
+        "agent/output-contract.md",
+        "agent/workflows/bug.md",
+        "agent/workflows/review.md",
+        "agent/skills/deepal-product-bug-handler/SKILL.md",
+    ):
+        if "authorize_jira_comment.py" not in read(root / relative):
+            errors.append(f"{relative} 缺少评论证据门禁")
+    if "跳过本节不等于跳过第 3 节证据门禁" not in bug_workflow:
+        errors.append("Bug 流程未声明跳过写表仍须过证据门禁")
+    comment_script = read(root / "agent/scripts/authorize_jira_comment.py")
+    for token in ("validate_manifest", "decision.text", "（AI Generated）"):
+        if token not in comment_script:
+            errors.append(f"评论授权脚本缺少门禁约束：{token}")
 
     gate_script = read(root / "agent/scripts/validate_bug_evidence_gate.py")
     for token in (

@@ -1,9 +1,9 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.28.0-trial.1`
+- 当前版本：`v1.29.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-20`
-- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
+- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
@@ -13,6 +13,45 @@
 
 
 
+
+## v1.29.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- Jira 评论前必须通过 `agent/scripts/authorize_jira_comment.py`。脚本复用证据门禁，只在 manifest 通过且正文等于 `decision.text` 时写回执。
+- `jira_comment_only` 只跳过吴优清单和本地索引，不跳过 Drive 正式定义、客户用例、版本族和证据门禁。
+- 门禁失败时不调用 `add_jira_comment`。缺正式定义、客户用例或版本族时，只能评论已降级的 `待复核 / 待确认 / 待会诊`。
+- 不删除、不修改 2026-10-20 已发出的评论。
+
+### 修改原因
+
+- 2026-10-20 的评论优先试跑没有生成证据 manifest，也没有运行 `validate_bug_evidence_gate.py`。写表脚本里的 Drive 门禁因此没有被调用，`add_jira_comment` 自己也不校验证据。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/evidence-contract.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/bug-owners/registry.yaml`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/authorize_jira_comment.py`
+- `agent/scripts/test_authorize_jira_comment.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-jira-comment-evidence-gate.md`
+
+### 验证案例
+
+- 匹配 `decision.text` 的评论得到 `gate=passed` 回执。
+- 自带 `（AI Generated）` 或正文不一致时不给回执。
+- 确定性结论缺少有效 `formal_target` 时脚本失败，不写回执。
+
+### 回滚口径
+
+- 恢复评论不经 `authorize_jira_comment.py` 的口径。不删除已经发出的 Jira 评论，也不把已有回执当成新的授权。
 
 ## v1.28.0-trial.1 — 2026-10-20
 

@@ -6,7 +6,7 @@
 
 - 首先按 `agent/onboarding.md` 和 `agent/scripts/bug_project_preflight.py` 核验本机身份、目标负责人写入范围及 Jira/Google Drive 权限；未通过时只整理复盘事实和权限引导，不写表。
 - 先提炼结论更新、当前操作者待办、Agent 准确率和可沉淀规则。
-- 用户给出会议纪要、可姐/leader 教学、客户复盘或明确复盘材料时，可按 `agent/config/sheet-update-modes.json` 的 `review` 模式更新对应负责人原行，并同步会议文件、待办和必要知识库。吴优 `result_output=jira_comment_only` 时不回填吴优 bug 表；复盘结论改以当前 H 原文评论到该票。
+- 用户给出会议纪要、可姐/leader 教学、客户复盘或明确复盘材料时，可按 `agent/config/sheet-update-modes.json` 的 `review` 模式更新对应负责人原行，并同步会议文件、待办和必要知识库。吴优 `result_output=jira_comment_only` 时不回填吴优 bug 表；复盘结论在 `agent/scripts/authorize_jira_comment.py` 通过后，以当前 H 原文评论到该票。
 - Jira 外部动作遵守 `AGENTS.md` 的全局权限边界；写 H 列不代表已执行 Jira 动作。
 
 ## 标准输出
@@ -17,7 +17,7 @@
 4. `规则沉淀`：只沉淀可复用、证据明确的方法。
 5. `待补信息`：列出仍会改变判断的未知项。
 
-每个 Bug 的证据复核按 `agent/evidence-contract.md`；复盘同样形成当前要求的 `schema_version=5` manifest，使用 `agent/config/evidence-requirements.json` 完成全部画像和必查资料，并在写 H 前通过 `agent/scripts/validate_bug_evidence_gate.py`。标准结论、Jira 草稿和聊天复用按 `agent/output-contract.md`。
+每个 Bug 的证据复核按 `agent/evidence-contract.md`；复盘同样形成当前要求的 `schema_version=5` manifest，使用 `agent/config/evidence-requirements.json` 完成全部画像和必查资料，并在写 H 或评论 H 前通过 `agent/scripts/validate_bug_evidence_gate.py`。评论 H 前还要通过 `agent/scripts/authorize_jira_comment.py`。标准结论、Jira 草稿和聊天复用按 `agent/output-contract.md`。
 
 ## Bug 表更新
 

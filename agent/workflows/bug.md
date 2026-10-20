@@ -22,7 +22,7 @@
 单票字段通过 `analyze_bug_jira` 的 `get_jira_issue` 读取。必须读到标题、状态、优先级、经办人、模块、车型、描述、复现概率、附件信息、已有定责、问题链接和全部评论。
 
 - 附件文件正文、Dashboard 17302，以及 MCP 结果里缺少的字段，再用当前 Chrome 已登录态补读，并在日志记录实际入口。
-- 其他负责人在结论确定并完成清单回读后，按 `agent/output-contract.md` 用 `add_jira_comment` 把当前 D 原文发到该票。吴优 `result_output=jira_comment_only` 时，结论确定后直接评论，不回填吴优 bug 表，也不等待表回读。用户说「只看 / 不更新」时不发。bugfree 或汇总表需要回填时才用 `update_jira_description`。评论不代替转派、关闭或改状态。
+- 其他负责人在结论确定并完成清单回读后，按 `agent/output-contract.md` 用 `add_jira_comment` 把当前 D 原文发到该票。吴优 `result_output=jira_comment_only` 时，证据门禁通过后直接评论，不回填吴优 bug 表，也不等待表回读。用户说「只看 / 不更新」时不发。两条路径调用 `add_jira_comment` 前都必须通过 `agent/scripts/authorize_jira_comment.py`。bugfree 或汇总表需要回填时才用 `update_jira_description`。评论不代替转派、关闭或改状态。
 - 语音或车控日志用 `analyze_bug_debug` 检索，Alchemy 功能点、意图和 slot 用 `analyze_bug_ops` 读取，模块判责顺序参考 `analyze_bug_rules`。这三处只读。Cookie 缺失或接口失败时记录限制，再用 Chrome 已登录态补读。
 
 - 标题或描述开头出现非 Jira Key 的长客户问题编号时，先标记为客户提报 Bug，并提取该编号；不得把它当作普通内部测试 Bug。
@@ -41,7 +41,7 @@
 5. 用 `agent/product-kb/` 发现资料入口、责任边界和相似案例，但只复用检索方法；最终判断必须回到当前 Jira、生效正式资料和当前平台结果。
 6. 在判断、写表前完成 `schema_version=5` 决策核验清单：备注因果链、客户问题识别、关联票、证据画像与必查资料、资料适用范围、引用文档追查、版本族枚举、冲突处理和唯一结论。每条来源必须登记 `source_id`、`source_type`、`source_location`、角色和范围；项目继承必须登记已核验的继承链。
 7. 填写预期行为卡并让唯一结论分别引用有效产品目标来源和实现来源；语音类同时记录 Alchemy 原话、当前结果、`meta_id`、标准功能点和项目功能点的可用状态。
-8. 无论最终是确定性还是待定状态，都用 `agent/scripts/validate_bug_evidence_gate.py` 校验结构化清单；缺少必查动作时停止写表，已检索但命中关键缺口、未核验继承链或不完整语音证据时降级为 `待复核 / 待确认 / 待会诊`。
+8. 无论最终是确定性还是待定状态，都用 `agent/scripts/validate_bug_evidence_gate.py` 校验结构化清单；缺少必查动作时停止写表和 Jira 评论，已检索但命中关键缺口、未核验继承链或不完整语音证据时降级为 `待复核 / 待确认 / 待会诊`。
 9. 将同一画像、必查资料和结论字段回写本票日志；批量任务每个 Jira 使用独立决策核验卡。
 
 ## 4. 做产品判断
@@ -55,7 +55,7 @@
 
 ## 5. 更新负责人清单
 
-- 吴优注册表 `result_output=jira_comment_only` 时跳过本节：不写吴优线上清单，不同步 `agent/bug-owners/wu-you/index.md`。结论只按第 6 节评论到当前 Jira。其他负责人仍按本节写自己的清单。
+- 吴优注册表 `result_output=jira_comment_only` 时跳过本节：不写吴优线上清单，不同步 `agent/bug-owners/wu-you/index.md`。跳过本节不等于跳过第 3 节证据门禁。结论只按第 6 节评论到当前 Jira。其他负责人仍按本节写自己的清单。
 - 判断还没稳定时不写表。用户仍在收窄范围、纠正禁止动作或追问来源时，先完成判断；不要提前生成写表请求、打开表格编辑或试写单元格。
 - 写入前再次运行预检：通用任务至少要求 Jira、Google Drive和目标负责人范围；语音或MasterGo任务按证据画像增加对应平台。团队负责人只有结果为 `ok=true + mode=read_write` 才能写自己的线上清单。`operator_mode=external` 必须是 `ok=true + mode=external_write`，并且只能写 `result_target`。`external_write` 不能调用团队负责人的 `build / patch`，也不能因为预检通过就写注册表里的表。
 - 严格按 `agent/sheet-contract.md` 写当前负责人页。
@@ -69,6 +69,7 @@
 ## 6. 外部动作与日志
 
 - 遵守 `AGENTS.md` 的全局外部动作权限。Jira 评论按 2026-10-15 授权执行并回读；转派和状态修改仍需另一次明确授权。
+- 调用 `add_jira_comment` 前，用 `agent/scripts/authorize_jira_comment.py` 校验本票 schema v5 manifest 和将要发送的 D/H 原文。脚本失败、没有本轮回执，或回执正文与评论不一致时，不得评论。缺 Drive 正式定义、客户用例或版本族时，门禁只允许已降级的 `待复核 / 待确认 / 待会诊` 评论。回执写入本批操作日志，不代替评论回读。
 - 外部动作的文本复用、链接和回读按 `agent/output-contract.md` 执行。
 - 每批操作在 `agent/logs/bug-actions/` 留日志，记录负责人、每一个 Jira key、证据、线上位置、写入摘要、回读校验和未执行动作。
 - 每次执行先生成唯一 `run_id` 和 run bundle；即使本次无新增，也必须保存查询范围、数量、去重结果和“本次无新增”的操作日志。

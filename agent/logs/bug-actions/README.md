@@ -5,7 +5,7 @@
 ## 什么时候写
 
 - 新增或更新 `bug` 表。
-- 评论 Jira 或流转 Jira。
+- 评论 Jira 或流转 Jira。评论前保存 `authorize_jira_comment.py` 的通过回执；脚本失败时不评论。
 - 修正 `AGENTS.md`、证据/输出/表格契约、`agent/workflows/`、Skill、机械脚本或产品知识库。
 - 沉淀可复用案例、会议复盘、准确率标注。
 - 批量整理表格结构或样式。
