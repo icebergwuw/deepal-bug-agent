@@ -30,6 +30,8 @@ owners:
     format_anchor_row: 107
     local_index: "agent/bug-owners/wu-you/index.md"
     profile: "agent/bug-owners/wu-you/README.md"
+    result_output: "jira_comment_only"
+    note: "2026-10-20 起不回填本页线上清单，不同步本地索引；结论直接评论到当前 Jira。不转派、不关闭、不改状态、不改经办人。"
 
   - id: "li-xin"
     name: "李欣"

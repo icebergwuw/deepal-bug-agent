@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.27.0-trial.1`
+- 当前版本：`v1.28.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-10-15`
+- 生效日期：`2026-10-20`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -12,6 +12,38 @@
 
 
 
+
+
+## v1.28.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- 吴优明确要求以后不回填自己的 bug 表。注册表 `wu-you.result_output` 设为 `jira_comment_only`。
+- 吴优的 Bug 和复盘结论直接用 `add_jira_comment` 发当前 D/H 原文，不再等待吴优清单回读，也不同步吴优本地索引。
+- 评论不代替转派、关闭、改状态或改经办人。其他负责人仍写自己的清单。
+
+### 修改原因
+
+- 2026-10-20 用 SLV-45401、ADS-51837、ADS-51723、ADS-51607、ADS-51604 试跑评论优先。评论已回读，未写表、未转派。原流程仍要求先回填吴优表，和这个口径冲突。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/bug-owners/registry.yaml`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-wu-you-jira-comment-only.md`
+
+### 验证案例
+
+- 上述 5 张票的最新评论由吴优账号发出，正文为当次 D，末尾保留 `（AI Generated）`。
+- 未调用转派、关闭或改状态接口，也未写吴优线上清单。
+
+### 回滚口径
+
+- 恢复吴优默认写表，评论重新等到清单回读后发送。不删除已经发出的 Jira 评论。
 
 ## v1.27.0-trial.1 — 2026-10-15
 
