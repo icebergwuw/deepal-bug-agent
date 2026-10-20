@@ -2,7 +2,28 @@
 
 当前版本与变更记录统一见 `agent/rules-version.md`。
 
-这是 Jira Bug 调查、产品判断、清单更新和留痕的唯一流程文件。
+这是 Jira Bug 调查、产品判断、结果发布和留痕的唯一流程文件。
+
+## 来源与结果渠道
+
+MCP 只替换它实际覆盖的读取和评论。MCP 不代替 Google Drive，也不代替附件正文、UE 或客户测试用例。
+
+| 事项 | 入口 | 不做什么 |
+| --- | --- | --- |
+| 单票字段、评论、关联票元数据 | `analyze_bug_jira` 的 `get_jira_issue` | 不为此打开浏览器 |
+| 评论结论 | `add_jira_comment` | 不转派、不关闭、不改状态、不改经办人 |
+| 描述里的汇总表 | `update_jira_description` | 不改普通描述 |
+| 语音日志 | `analyze_bug_debug` | 只读 |
+| Alchemy 功能点、意图、slot | `analyze_bug_ops` | 不代替产品写入，也不能充当 PRD |
+| 判责顺序 | `analyze_bug_rules` | 只读 |
+| 待处理列表 | 同一 Jira 凭证的 JQL 搜索；搜索失败才打开 Dashboard 17302 | 不因打开列表就全量处理 |
+| 正式定义、版本族、引用文档 | 当前 Chrome 的 Google Drive | 不能用 Alchemy 或 Jira 评论替代 |
+| 附件正文、UE 图层 | Chrome；UE 可再用已登录的 MasterGo | MCP 没返回正文时不猜 |
+| 吴优结果 | Jira 评论 | 不写吴优 bug 表，不同步吴优本地索引 |
+| 其他负责人结果 | 各自线上清单，回读后再评论 | 不写到吴优页 |
+
+`result_output=jira_comment_only` 的一轮顺序是：预检，JQL 或指定 Key，MCP 读票和实现证据，Drive 查正式定义，证据门禁，授权回执，评论并回读，`validate_bug_run.py --phase comment`。中间不打开表格，不生成写表请求。
+
 
 ## 1. 识别意图与负责人
 
@@ -75,7 +96,7 @@
 - 每批操作在 `agent/logs/bug-actions/` 留日志，记录负责人、每一个 Jira key、证据、线上位置、写入摘要、回读校验和未执行动作。
 - 每次执行先生成唯一 `run_id` 和 run bundle；即使本次无新增，也必须保存查询范围、数量、去重结果和“本次无新增”的操作日志。
 - 有 API 写入时，run bundle 在写前绑定每票 manifest 与逐 Key 决策卡，写后再绑定原始回读、校验结果及 `readback_sha256`，并用 `validate_bug_run.py --phase final` 收口。页面 `/save` 和 Chrome 界面兜底都不是 API final：界面路径绑定 `ui_readback_sha256`，status 写 `ui_verified`，只用 `validate_bug_run.py --phase ui` 收口。
-- 批量任务必须在日志正文逐条列 key，或引用同目录 manifest；manifest 至少包含 Jira key、负责人、表格行号。范围描述不能替代逐条清单。
+- 批量任务必须在日志正文逐条列 key，或引用同目录 manifest。写表渠道的 manifest 包含 Jira key、负责人和表格行号。评论渠道不得填表格行号。范围描述不能替代逐条清单。
 - 旧线上数据没有日志时不伪造补录；标为历史未审计，后续触及时再按完整流程核验并留痕。
 - 同事独立使用的逐票日志写到 `agent/logs/bug-actions/external/`。该目录和 `agent/external-results/` 不进入 Git；对方没有明确要求时，不把这些 Bug 内容提交到团队仓库。
 - 团队负责人的本地文件更新通过全部适用校验和敏感信息检查后，按 `AGENTS.md` 提交并推送当前分支；只有远端确认包含新提交后才报告“已上传 GitHub”。
@@ -88,7 +109,7 @@
 - `agent/output-contract.md` 的唯一结论、责任方和渠道复用已满足。
 - 写表渠道：`agent/sheet-contract.md` 的列位、链接、样式和回读已通过；API 路径通过 final，界面兜底路径通过 ui。页面 `/save` 不能冒充 final 或 ui。`jira_comment_only` 不使用本项。
 - 评论渠道：`validate_bug_run.py --phase comment` 已通过。回读评论包含授权正文和 `（AI Generated）`。未转派、未关闭、未改状态、未写表。
-- 已查当前负责人页内重复；跨负责人同 Jira 保留。
+- 写表渠道已查当前负责人页内重复；评论渠道已查该票已有评论和操作日志。跨负责人同 Jira 保留。
 - 已回读写入结果并记录日志。
 - 已回读日志，确认本次处理的每一个 Jira key 都可检索到。
 - 经授权执行的 Jira 外部动作已按 `agent/output-contract.md` 回读；未经授权未执行。

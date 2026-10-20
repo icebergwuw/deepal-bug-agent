@@ -104,7 +104,7 @@ python3 agent/scripts/bug_project_preflight.py --allow-owner <owner-id>
 
 协调人需要覆盖全部当前 `active + read_write` 负责人时，可明确执行 `--allow-all-active`。该设置只是本机防误写边界，不代替 Jira、Drive或组织权限。
 
-每次写表前按实际 Jira 当前负责人执行：
+写表前，以及吴优评论渠道评论前，按实际 Jira 当前负责人执行：
 
 ```sh
 python3 agent/scripts/bug_project_preflight.py \

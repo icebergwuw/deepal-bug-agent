@@ -474,6 +474,10 @@ def validate(root: Path, skill: Path) -> list[str]:
             errors.append(f"{relative} 缺少评论证据门禁")
     if "跳过本节不等于跳过第 3 节证据门禁" not in bug_workflow:
         errors.append("Bug 流程未声明跳过写表仍须过证据门禁")
+    if "MCP 不代替 Google Drive" not in bug_workflow or "MCP 不代替 Google Drive" not in agents_text:
+        errors.append("流程未声明 MCP 不代替 Google Drive")
+    if "来源与结果渠道" not in bug_workflow:
+        errors.append("Bug 流程缺少 MCP 与结果渠道对照")
     for token in (
         "--phase comment",
         "comment_verified",

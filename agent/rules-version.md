@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.30.0-trial.1`
+- 当前版本：`v1.31.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-20`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -13,6 +13,36 @@
 
 
 
+
+## v1.31.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- 流程按来源和结果渠道重排。MCP 负责单票读取、评论、语音日志、Alchemy 配置和判责规则。
+- MCP 不代替 Google Drive、附件正文、UE 或客户测试用例。待处理列表先用 Jira JQL，搜索失败才打开 Dashboard。
+- 吴优的一轮不再经过写表步骤：预检、读票、Drive 正式定义、证据门禁、评论回读、comment 收口。其他负责人仍写自己的清单。
+
+### 修改原因
+
+- 有 Jira MCP 且吴优不再回填 bug 表后，旧流程仍把写表当成主路径，只在旁边注明跳过。实际执行会要么打开表格，要么把 MCP 读票当成证据已经齐了。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/workflows/bug.md`
+- `agent/onboarding.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-mcp-comment-flow.md`
+
+### 验证案例
+
+- 规则架构校验确认流程保留“MCP 不代替 Google Drive”和来源对照。
+- 未改已发出的 Jira 评论，未写吴优 bug 表。
+
+### 回滚口径
+
+- 恢复以写表为主路径、评论为附带动作的口径。不删除已经发出的 Jira 评论。
 
 ## v1.30.0-trial.1 — 2026-10-20
 
