@@ -227,3 +227,83 @@ class BugRunTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_comment_channel_closes_without_sheet_row(self) -> None:
+        from authorize_jira_comment import authorize
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest = hur_case()
+            manifest["run_context"] = {
+                "run_id": "test-run-001",
+                "operator_owner_id": "wu-you",
+                "target_owner_id": "wu-you",
+                "result_output": "jira_comment_only",
+            }
+            comment = manifest["decision"]["text"]
+            receipt, errors = authorize(manifest, comment, "d")
+            self.assertEqual(errors, [])
+            manifest_path = root / "manifest.json"
+            log_path = root / "run.md"
+            receipt_path = root / "receipt.json"
+            readback_path = root / "readback.json"
+            preflight_path = root / "preflight.json"
+            manifest_path.write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
+            log_path.write_text(
+                LOG_TEXT + "\n- 未写表。Google Drive 预检已通过。评论回读已完成，未转派。\n",
+                encoding="utf-8",
+            )
+            receipt_path.write_text(json.dumps(receipt, ensure_ascii=False), encoding="utf-8")
+            readback_path.write_text(
+                json.dumps(
+                    {
+                        "jira_key": "HUR-82492",
+                        "comment_id": "1",
+                        "body": comment + "\n（AI Generated）",
+                        "transitioned": False,
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            preflight = {
+                "ok": True,
+                "mode": "read_write",
+                "online_access": {
+                    "jira": {"required": True, "fresh": True},
+                    "google_drive": {"required": True, "fresh": True},
+                },
+            }
+            preflight_path.write_text(json.dumps(preflight), encoding="utf-8")
+            bundle = {
+                "schema_version": 1,
+                "run_id": "test-run-001",
+                "status": "comment_verified",
+                "started_at": "2026-08-12T09:00:00+08:00",
+                "completed_at": "2026-08-12T09:10:00+08:00",
+                "query_summary": "Jira 1 条，评论 1 条，未写表",
+                "action_log": str(log_path),
+                "preflight_path": str(preflight_path),
+                "preflight_sha256": hashlib.sha256(preflight_path.read_bytes()).hexdigest(),
+                "items": [
+                    {
+                        "jira_key": "HUR-82492",
+                        "operator_owner_id": "wu-you",
+                        "target_owner_id": "wu-you",
+                        "result_output": "jira_comment_only",
+                        "manifest_path": str(manifest_path),
+                        "comment_receipt_path": str(receipt_path),
+                        "comment_receipt_sha256": hashlib.sha256(receipt_path.read_bytes()).hexdigest(),
+                        "comment_readback_path": str(readback_path),
+                        "comment_readback_sha256": hashlib.sha256(readback_path.read_bytes()).hexdigest(),
+                    }
+                ],
+            }
+            self.assertEqual(validate_run_bundle(bundle, "comment"), [])
+            preflight["online_access"]["google_drive"]["required"] = False
+            preflight_path.write_text(json.dumps(preflight), encoding="utf-8")
+            bundle["preflight_sha256"] = hashlib.sha256(preflight_path.read_bytes()).hexdigest()
+            self.assertIn(
+                "评论前预检必须要求并验证 google_drive",
+                validate_run_bundle(bundle, "comment"),
+            )

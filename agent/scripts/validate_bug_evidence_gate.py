@@ -132,10 +132,20 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
     if not isinstance(run_context, dict):
         errors.append("缺少 run_context")
         run_context = {}
-    for field in ("run_id", "operator_owner_id", "target_owner_id", "sheet_name"):
+    result_output = run_context.get("result_output", "sheet")
+    if result_output not in {"sheet", "jira_comment_only"}:
+        errors.append("run_context.result_output 必须为 sheet 或 jira_comment_only")
+    comment_only = result_output == "jira_comment_only"
+    required_fields = ["run_id", "operator_owner_id", "target_owner_id"]
+    if not comment_only:
+        required_fields.append("sheet_name")
+    for field in required_fields:
         if not nonempty(run_context.get(field)):
             errors.append(f"run_context 缺少 {field}")
-    if not isinstance(run_context.get("sheet_row"), int) or run_context.get("sheet_row", 0) < 1:
+    if comment_only:
+        if nonempty(run_context.get("sheet_name")) or run_context.get("sheet_row") not in (None, ""):
+            errors.append("jira_comment_only 不得填写 sheet_name 或 sheet_row")
+    elif not isinstance(run_context.get("sheet_row"), int) or run_context.get("sheet_row", 0) < 1:
         errors.append("run_context.sheet_row 必须是正整数")
 
     receipt_by_id: dict[str, dict[str, Any]] = {}

@@ -474,6 +474,20 @@ def validate(root: Path, skill: Path) -> list[str]:
             errors.append(f"{relative} 缺少评论证据门禁")
     if "跳过本节不等于跳过第 3 节证据门禁" not in bug_workflow:
         errors.append("Bug 流程未声明跳过写表仍须过证据门禁")
+    for token in (
+        "--phase comment",
+        "comment_verified",
+        "--require-platform google_drive",
+        "不得填 `sheet_row`",
+    ):
+        if token not in bug_workflow:
+            errors.append(f"Bug 流程缺少评论渠道收口：{token}")
+    if "--phase comment" not in read(root / "agent/output-contract.md"):
+        errors.append("输出契约未把 comment 阶段定为评论完成标准")
+    run_script = read(root / "agent/scripts/validate_bug_run.py")
+    for token in ("comment_verified", "google_drive", "jira_comment_only"):
+        if token not in run_script:
+            errors.append(f"run 收口脚本缺少评论渠道：{token}")
     comment_script = read(root / "agent/scripts/authorize_jira_comment.py")
     for token in ("validate_manifest", "decision.text", "（AI Generated）"):
         if token not in comment_script:

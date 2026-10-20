@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.29.0-trial.1`
+- 当前版本：`v1.30.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-20`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -13,6 +13,44 @@
 
 
 
+
+## v1.30.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- `jira_comment_only` 成为独立结果渠道，不再只是跳过写表。查重改看 Jira 评论和操作日志，不查、不改吴优线上清单和本地索引。
+- 评论前预检至少要求 Jira 和 Google Drive。语音画像加 Alchemy，可见交互画像加 MasterGo。
+- 评论批次用 `validate_bug_run.py --phase comment` 收口。`status` 为 `comment_verified`。不得用表格行号冒充 `sheet_row`，也不得把 comment 收口说成 API final。
+- 未通过 comment 阶段，不得声称这批 Bug 已处理完成。已发出的评论不改。
+
+### 修改原因
+
+- v1.29 只拦住了没有 manifest 的评论授权。写表收口仍要求表格行，评论渠道没有自己的完成标准，所以流程上仍可能绕过 Drive 预检后直接评论。
+
+### 影响文件
+
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/output-contract.md`
+- `agent/evidence-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-comment-channel-close.md`
+
+### 验证案例
+
+- 无表格行的评论 bundle 在预检要求 Google Drive、授权回执和评论回读一致时通过 `--phase comment`。
+- 预检未要求 Google Drive 时 comment 阶段失败。
+- 原写表 prewrite、final 和证据门禁测试仍通过。
+
+### 回滚口径
+
+- 恢复评论渠道不经 `--phase comment` 的口径。不删除已经发出的 Jira 评论。
 
 ## v1.29.0-trial.1 — 2026-10-20
 

@@ -8,13 +8,13 @@
 
 1. 首次运行或本机身份缺失时，先执行 `agent/onboarding.md`。未通过 `agent/scripts/bug_project_preflight.py` 的身份、目标负责人范围和必需平台检查时保持只读，提供具体登录/授权步骤。同事独立使用还没确认使用人是谁、以及结果在哪里更新时，只提问，不开始分析。
 2. 用户说“看 Bug 列表 / Bug 清单 / 待处理 Bug”且没有提供具体 Jira Key 时，先打开 `agent/context.md` 登记的 Jira Dashboard 17302；只读取用户指定范围，不因打开列表自动处理全部条目。
-3. 本机已绑定团队负责人，且用户只发具体 Jira Bug 链接时，默认执行完整流程并更新该负责人自己的清单。`operator_mode=external` 时不写注册表里的线上清单，只写对方确认的表格或新建的本地 Excel；一批最多 5 条，并说明当前是测试版本，判断可能不准，需要反馈。
-4. 用户再次发送同一 Jira 或要求“再看 / 重新确认 / 二次处理”，只要输入不是会议纪要、leader/客户复盘材料，就继续走本流程；重新读取全部当前证据后按 `agent/config/sheet-update-modes.json` 的 `recheck` 模式更新原行。
+3. 本机已绑定团队负责人，且用户只发具体 Jira Bug 链接时，默认执行完整流程。结果渠道看注册表 `result_output`：默认更新该负责人自己的清单；`jira_comment_only` 改为评论当前 Jira。评论渠道仍走查重、读取、证据和判断，不因不写表跳过预检或证据门禁。`operator_mode=external` 时不写注册表里的线上清单，只写对方确认的表格或新建的本地 Excel；一批最多 5 条，并说明当前是测试版本，判断可能不准，需要反馈。
+4. 用户再次发送同一 Jira 或要求“再看 / 重新确认 / 二次处理”，只要输入不是会议纪要、leader/客户复盘材料，就继续走本流程；重新读取全部当前证据后按 `agent/config/sheet-update-modes.json` 的 `recheck` 模式更新原行。`jira_comment_only` 不改表，按同一结论口径另发一条当前 D 评论。
 5. 用户明确要求只读时，停在证据整理，不写表、不评论或流转 Jira。
 6. 同一线程的定向补证不是第 4 步的二次处理。用户追问某一个来源、某一句文案或某一个字段时，复用本线程已经读过的 Jira、附件和正式文档，只检索这个缺口。不重跑查重、预检和写表。版本族仍须能指出同系列最新版本；不为这一问重读每个中间版全文。只有这一句的最早出处会改变判断时，才沿这句话回溯到最早命中，中间版只核对该句。结论先写在回复里；用户要求落表，或本轮原本就是完整处理且结论因此改变时，才更新线上清单。
 7. 当前负责人优先按用户指定；未指定时读取 Jira 当前经办人的显示姓名，用 `agent/bug-owners/registry.yaml` 的 `jira_display_names` 匹配；账号只作可选兜底。只有 `active + read_write` 且位于本机 `allowed_write_owner_ids` 才可进入默认写表流程。
 8. 未匹配到人员时新增 `pending` 配置并停止写表，不得临时写入其他负责人页；`reference` 人员只参与资料检索。
-9. 先查当前负责人线上页和本地索引。同页已有 Jira 就更新原行，没有才新增。
+9. 写表渠道先查当前负责人线上页和本地索引。同页已有 Jira 就更新原行，没有才新增。`result_output=jira_comment_only` 不查、不改该负责人线上页和本地索引；查重改为读取该票已有评论和 `agent/logs/bug-actions/`。
 10. 跨负责人重复是正常流转历史：不删除其他负责人页记录，不把它作为异常；仅处理当前负责人页内重复。
 
 ## 2. 完整读取 Jira
@@ -55,7 +55,7 @@
 
 ## 5. 更新负责人清单
 
-- 吴优注册表 `result_output=jira_comment_only` 时跳过本节：不写吴优线上清单，不同步 `agent/bug-owners/wu-you/index.md`。跳过本节不等于跳过第 3 节证据门禁。结论只按第 6 节评论到当前 Jira。其他负责人仍按本节写自己的清单。
+- 结果渠道由注册表 `result_output` 决定。`jira_comment_only` 跳过本节其余写表步骤：不写该负责人线上清单，不同步本地索引，不生成写表请求，也不用表格行号冒充 `run_context.sheet_row`。跳过本节不等于跳过第 3 节证据门禁。结论只按第 6 节评论到当前 Jira。其他负责人仍按本节写自己的清单。
 - 判断还没稳定时不写表。用户仍在收窄范围、纠正禁止动作或追问来源时，先完成判断；不要提前生成写表请求、打开表格编辑或试写单元格。
 - 写入前再次运行预检：通用任务至少要求 Jira、Google Drive和目标负责人范围；语音或MasterGo任务按证据画像增加对应平台。团队负责人只有结果为 `ok=true + mode=read_write` 才能写自己的线上清单。`operator_mode=external` 必须是 `ok=true + mode=external_write`，并且只能写 `result_target`。`external_write` 不能调用团队负责人的 `build / patch`，也不能因为预检通过就写注册表里的表。
 - 严格按 `agent/sheet-contract.md` 写当前负责人页。
@@ -70,6 +70,7 @@
 
 - 遵守 `AGENTS.md` 的全局外部动作权限。Jira 评论按 2026-10-15 授权执行并回读；转派和状态修改仍需另一次明确授权。
 - 调用 `add_jira_comment` 前，用 `agent/scripts/authorize_jira_comment.py` 校验本票 schema v5 manifest 和将要发送的 D/H 原文。脚本失败、没有本轮回执，或回执正文与评论不一致时，不得评论。缺 Drive 正式定义、客户用例或版本族时，门禁只允许已降级的 `待复核 / 待确认 / 待会诊` 评论。回执写入本批操作日志，不代替评论回读。
+- `jira_comment_only` 在评论前运行 `agent/scripts/bug_project_preflight.py`，至少 `--require-platform jira --require-platform google_drive`。语音画像再加 `alchemy`，可见交互画像再加 `mastergo`。评论并回读后用 `agent/scripts/validate_bug_run.py --phase comment` 收口，`status` 必须为 `comment_verified`。每票 `result_output=jira_comment_only`，不得填 `sheet_row`。bundle 绑定预检快照、评论授权回执和评论回读。未通过 comment 阶段，不得把这批说成处理完成。
 - 外部动作的文本复用、链接和回读按 `agent/output-contract.md` 执行。
 - 每批操作在 `agent/logs/bug-actions/` 留日志，记录负责人、每一个 Jira key、证据、线上位置、写入摘要、回读校验和未执行动作。
 - 每次执行先生成唯一 `run_id` 和 run bundle；即使本次无新增，也必须保存查询范围、数量、去重结果和“本次无新增”的操作日志。
@@ -85,7 +86,8 @@
 - `agent/evidence-contract.md` 的当前问题必查链路和结论门槛已满足。
 - 决策核验卡七项已通过校验；全部证据画像均有选择/排除理由，必查资料有检索日期、入口、关键词和结果；客户问题编号与测试用例状态已检查，直接关联票已读，来源类型/角色、继承链、资料范围、预期行为卡和冲突均已记录；语音类的 Alchemy 原话、`meta_id`、标准/项目功能点状态完整。
 - `agent/output-contract.md` 的唯一结论、责任方和渠道复用已满足。
-- `agent/sheet-contract.md` 的列位、链接、样式和回读已通过；API 路径通过 final，界面兜底路径通过 ui。页面 `/save` 不能冒充 final 或 ui。
+- 写表渠道：`agent/sheet-contract.md` 的列位、链接、样式和回读已通过；API 路径通过 final，界面兜底路径通过 ui。页面 `/save` 不能冒充 final 或 ui。`jira_comment_only` 不使用本项。
+- 评论渠道：`validate_bug_run.py --phase comment` 已通过。回读评论包含授权正文和 `（AI Generated）`。未转派、未关闭、未改状态、未写表。
 - 已查当前负责人页内重复；跨负责人同 Jira 保留。
 - 已回读写入结果并记录日志。
 - 已回读日志，确认本次处理的每一个 Jira key 都可检索到。

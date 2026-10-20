@@ -21,6 +21,7 @@
 
 ## Bug 表更新
 
+- `result_output=jira_comment_only` 跳过本节表格写入。复盘仍形成当前 H 原文，经 `authorize_jira_comment.py` 和 `validate_bug_run.py --phase comment` 后评论到该票。不改 G/H 单元格。
 - 先按 Jira 和负责人定位原行，不新增重复行。
 - 后续反馈会改变原判断时，按证据契约重新读取当前 Jira 和决定性正式资料，重新判断全部证据画像并完成必查资料；不能仅凭一句研发或客户转述覆盖原结论。
 - 复盘 manifest 的 `decision.text` 使用本轮 `final_decision_text`，确定性和待定状态均须通过同一证据门禁后才能写 G/H；客户或 leader 的明确最终结论可作为 `customer_final_decision`，但不能替代与结论有关的当前实现事实。
