@@ -465,6 +465,10 @@ def validate(root: Path, skill: Path) -> list[str]:
         errors.append("复盘流程未限制东风转需求样例")
     if "2026-10-23 吴优已授权这四步" not in review_workflow:
         errors.append("复盘流程未记录转需求建票授权")
+    if "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4" not in read(root / "agent/context.md"):
+        errors.append("context.md 缺少深蓝项目变更管理表")
+    if "深蓝项目变更管理表-2026年" not in review_workflow:
+        errors.append("复盘流程未要求转需求登记变更管理表")
     if "2026-10-23 的转需求授权" not in agents_text:
         errors.append("AGENTS.md 未记录转需求建票授权")
 

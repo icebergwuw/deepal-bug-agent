@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.33.0-trial.1`
+- 当前版本：`v1.34.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-20`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -13,6 +13,35 @@
 
 
 
+
+## v1.34.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 登记深蓝项目变更管理表-2026年。新建需求按原 Bug 项目选择页签，不固定写用户给出的 `gid=1443256155`。
+- 该 gid 当前对应 `深蓝8295平台（国内）OTA 项目`。表头在第 3 行。产品只填 `功能模块` 和 `JIRA-Story`，不代填 PJM 列，不写旧版冻结页签。
+
+### 修改原因
+
+- 2026-10-23 吴优指定这张表作为新建需求票的处理入口。
+
+### 影响文件
+
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/workflows/bug.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-change-management-sheet.md`
+
+### 验证案例
+
+- 用已登录 Chrome 打开链接，表名是深蓝项目变更管理表-2026年，指定页签是深蓝8295平台（国内）OTA 项目。
+- 本次没有新增变更行，也没有新建 Jira。
+
+### 回滚口径
+
+- 删除变更管理表入口，恢复转需求不经过该表。不删除表上已有行。
 
 ## v1.33.0-trial.1 — 2026-10-23
 
