@@ -1,0 +1,606 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52226",
+  "comment_causality": "测试主张开启后有大中小音量，实车没有入口。2026-10-20 评论方向与需求一致，但只引用票内截图。本次改以 Drive 现行 V0.3 第 3.3.3 节为准。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-52226",
+      "source": "ADS-52226 原票",
+      "source_location": "描述：隔窗对话开启状态无音量调节；期望大中小；必现；SWC.3.116",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-7",
+      "trigger": "隔窗对话已开启",
+      "target_behavior": "证明当前没有音量入口，不定义产品目标",
+      "match": "exact",
+      "reason": "当前票描述直接证明实现缺口。"
+    },
+    {
+      "source_id": "prd-volume",
+      "source": "车外喊话与隔窗对话PRD V0.3",
+      "source_location": "8295平台——车外喊话与隔窗对话产品需求文档V0.3 第3.3.3节：三个音量梯度，初始默认小，上下电记忆",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "8295 / C673-7",
+      "trigger": "隔窗对话处于开启状态",
+      "target_behavior": "提供大、中、小三档音量，默认小并记忆",
+      "match": "exact",
+      "reason": "现行最高版本直接定义音量能力。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "隔窗对话的目标行为由现行产品需求或交互文档直接定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票是设置浮窗或音量入口，不是语音原话、NLU 或 Alchemy 执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航路径、地图卡片或地图 PRD。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标写在车外语音功能定义和交互文档，不是可见即可说节点或独立配置表仲裁。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-23",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52226"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "隔窗对话音量"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车外喊话与隔窗对话"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "8295平台——车外喊话与隔窗对话产品需求文档"
+        },
+        {
+          "kind": "version_family",
+          "text": "8295平台——车外喊话与隔窗对话产品需求文档"
+        }
+      ],
+      "source_ids": [
+        "prd-volume"
+      ],
+      "search_receipt_ids": [
+        "ADS-52226-key",
+        "ADS-52226-concept",
+        "ADS-52226-doc"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 22,
+        "candidates": [
+          {
+            "id": "11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+            "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+            "url": "https://drive.google.com/open?id=11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+            "references": [],
+            "version_family": "8295平台——车外喊话与隔窗对话产品需求文档",
+            "disposition": "read",
+            "source_ids": [
+              "prd-volume"
+            ]
+          },
+          {
+            "id": "1RmFhhOQ3yRpla9V8qY-izkiUJf_1FWfV",
+            "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2.pdf",
+            "url": "https://drive.google.com/open?id=1RmFhhOQ3yRpla9V8qY-izkiUJf_1FWfV",
+            "references": [],
+            "version_family": "8295平台——车外喊话与隔窗对话产品需求文档",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1MuG3TLQCFwKDzrWXP212-RXwvDsLRkXas96LYAY15YY",
+            "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2",
+            "url": "https://drive.google.com/open?id=1MuG3TLQCFwKDzrWXP212-RXwvDsLRkXas96LYAY15YY",
+            "references": [],
+            "version_family": "8295平台——车外喊话与隔窗对话产品需求文档",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1h2D5qD7ZcvQCBDUk1sUbXLDtxsEhp8ZcaFzrs3r2HZI",
+            "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2",
+            "url": "https://drive.google.com/open?id=1h2D5qD7ZcvQCBDUk1sUbXLDtxsEhp8ZcaFzrs3r2HZI",
+            "references": [],
+            "version_family": "8295平台——车外喊话与隔窗对话产品需求文档",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1_nvE18MEM6vsxVaKkm8Oyz9Zcj-58nwg",
+            "title": "8295平台——车外喊话与隔窗对话产品需求文档.pdf",
+            "url": "https://drive.google.com/open?id=1_nvE18MEM6vsxVaKkm8Oyz9Zcj-58nwg",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+            "title": "8295平台C673-7开发计划V1.2",
+            "url": "https://drive.google.com/open?id=1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+            "references": [],
+            "version_family": "8295平台C673-7开发计",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1MuwV6Z_MEOYqZwce89OZ-lF9Y_UAmrJy",
+            "title": "【已评审】NEV车型_车辆设置_声音设置_PRD_V1.0.pdf",
+            "url": "https://drive.google.com/open?id=1MuwV6Z_MEOYqZwce89OZ-lF9Y_UAmrJy",
+            "references": [],
+            "version_family": "【已评审】NEV车型_车辆设置_声音设置_PRD.pdf",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "16GjvD89YqDn_u147Zz6fT-d7IShx8Qkk",
+            "title": "C518-1项目(含C2L版C518-1项目(含C2L版（密码：C518666）.xlsx",
+            "url": "https://drive.google.com/open?id=16GjvD89YqDn_u147Zz6fT-d7IShx8Qkk",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1NWdmKT_chSMhuEnjvU_GXkY_UkS81duZ",
+            "title": "【未评审】NEV车型_车辆设置_声音设置_PRD_V1.0.docx",
+            "url": "https://drive.google.com/open?id=1NWdmKT_chSMhuEnjvU_GXkY_UkS81duZ",
+            "references": [],
+            "version_family": "【未评审】NEV车型_车辆设置_声音设置_PRD.docx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://drive.google.com/open?id=1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF",
+            "title": "WT_J90A_埋点数据汇总表_V1.2_20240819--最新修改(梧桐更新).xlsx",
+            "url": "https://drive.google.com/open?id=1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF",
+            "references": [],
+            "version_family": "WT_J90A_埋点数据汇总表_20240819--最新修改(梧桐更新).xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10",
+            "title": "座舱全功清单_C385-5全功能清单20260126导出.xlsx",
+            "url": "https://drive.google.com/open?id=1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+            "url": "https://drive.google.com/open?id=1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "references": [],
+            "version_family": "J90A_海外LanguageList_261014.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+            "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+            "url": "https://drive.google.com/open?id=1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+            "references": [],
+            "version_family": "J90A_海外LanguageList_260902_260916.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+            "title": "J90A_All_Key_预览版_按新表更新",
+            "url": "https://drive.google.com/open?id=1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1J2OkHngVCTA12_sygGYDAfsdNg1UwC2_",
+            "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.5_260418-B0904-260422.xlsx",
+            "url": "https://drive.google.com/open?id=1J2OkHngVCTA12_sygGYDAfsdNg1UwC2_",
+            "references": [],
+            "version_family": "J90A-(EU+ER)车机文言_(4+23种语言)_260418-B0904-260422.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+            "url": "https://drive.google.com/open?id=1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+            "references": [],
+            "version_family": "J90A_海外LanguageList内部_0803A",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1hUC488Uhh_OC-acjP37p1Twbg1diy9V2",
+            "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.1_260313 - B0904 - 260316.xlsx",
+            "url": "https://drive.google.com/open?id=1hUC488Uhh_OC-acjP37p1Twbg1diy9V2",
+            "references": [],
+            "version_family": "J90A-(EU+ER)车机文言_(4+23种语言)_260313 - B0904 - 260316.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1Kq9f4p0Xus-hgEFdpiMjmJj2on5EzGCp",
+            "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.4_260407-B0408-260408.xlsx",
+            "url": "https://drive.google.com/open?id=1Kq9f4p0Xus-hgEFdpiMjmJj2on5EzGCp",
+            "references": [],
+            "version_family": "J90A-(EU+ER)车机文言_(4+23种语言)_260407-B0408-260408.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1vxwyUkcwuexy70Q4w0184u_fTBGs0WBMBQLWmX8bL7U",
+            "title": "AIS_马自达J90A_车外语音交互产品需求文档v1.1",
+            "url": "https://drive.google.com/open?id=1vxwyUkcwuexy70Q4w0184u_fTBGs0WBMBQLWmX8bL7U",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1iwe6M8gPuteU22EgZxkLtu56bftz1WEz",
+            "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.6_260428.xlsx",
+            "url": "https://drive.google.com/open?id=1iwe6M8gPuteU22EgZxkLtu56bftz1WEz",
+            "references": [],
+            "version_family": "J90A-(EU+ER)车机文言_(4+23种语言)_260428.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1giTEEjV3W8hpTVbJ4eHodbc9H9vG7nKL",
+            "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.5_260418-B0109-260422.xlsx",
+            "url": "https://drive.google.com/open?id=1giTEEjV3W8hpTVbJ4eHodbc9H9vG7nKL",
+            "references": [],
+            "version_family": "J90A-(EU+ER)车机文言_(4+23种语言)_260418-B0109-260422.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "8295平台——车外喊话与隔窗对话产品需求文档",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-52226-doc"
+            ],
+            "selected_candidate_id": "11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+            "selection_reason": "同一 Chrome 检索中这是该系列最新且未标废弃的已读版本。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "8295平台C673-7开发计",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "【已评审】NEV车型_车辆设置_声音设置_PRD.pdf",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "【未评审】NEV车型_车辆设置_声音设置_PRD.docx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "WT_J90A_埋点数据汇总表_20240819--最新修改(梧桐更新).xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A_海外LanguageList_261014.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A_海外LanguageList_260902_260916.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A-(EU+ER)车机文言_(4+23种语言)_260418-B0904-260422.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A_海外LanguageList内部_0803A",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A-(EU+ER)车机文言_(4+23种语言)_260313 - B0904 - 260316.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A-(EU+ER)车机文言_(4+23种语言)_260407-B0408-260408.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "长安深蓝8295平台交互设计文档_车外语音",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A-(EU+ER)车机文言_(4+23种语言)_260428.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A-(EU+ER)车机文言_(4+23种语言)_260418-B0109-260422.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "交互文档浮窗内容没有画音量控件。PRD V0.3 第 3.3.3 节明确三档音量、默认小并上下电记忆。采用 PRD，控件放在设置开启态，不要求画进浮窗。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "设置",
+    "text": "结论：C673-7 隔窗对话开启后要提供大、中、小三档音量，默认小，上下电记忆。当前没有调节入口。\n依据：[车外喊话与隔窗对话PRD V0.3·3.3.3|https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view]。\n处理：补三档音量入口和对应外放音量，默认小并记忆；设置处理。",
+    "implementation_source_ids": [
+      "jira-52226"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261023T135500+0800-window-talk-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-52226-key",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23T13:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52226"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "ADS-52226-concept",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23T13:50:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "隔窗对话音量"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+          "url": "https://drive.google.com/open?id=1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+          "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+          "url": "https://drive.google.com/open?id=1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1MuG3TLQCFwKDzrWXP212-RXwvDsLRkXas96LYAY15YY",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2",
+          "url": "https://drive.google.com/open?id=1MuG3TLQCFwKDzrWXP212-RXwvDsLRkXas96LYAY15YY",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1h2D5qD7ZcvQCBDUk1sUbXLDtxsEhp8ZcaFzrs3r2HZI",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2",
+          "url": "https://drive.google.com/open?id=1h2D5qD7ZcvQCBDUk1sUbXLDtxsEhp8ZcaFzrs3r2HZI",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+          "title": "J90A_All_Key_预览版_按新表更新",
+          "url": "https://drive.google.com/open?id=1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1J2OkHngVCTA12_sygGYDAfsdNg1UwC2_",
+          "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.5_260418-B0904-260422.xlsx",
+          "url": "https://drive.google.com/open?id=1J2OkHngVCTA12_sygGYDAfsdNg1UwC2_",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+          "url": "https://drive.google.com/open?id=1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1hUC488Uhh_OC-acjP37p1Twbg1diy9V2",
+          "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.1_260313 - B0904 - 260316.xlsx",
+          "url": "https://drive.google.com/open?id=1hUC488Uhh_OC-acjP37p1Twbg1diy9V2",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Kq9f4p0Xus-hgEFdpiMjmJj2on5EzGCp",
+          "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.4_260407-B0408-260408.xlsx",
+          "url": "https://drive.google.com/open?id=1Kq9f4p0Xus-hgEFdpiMjmJj2on5EzGCp",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1vxwyUkcwuexy70Q4w0184u_fTBGs0WBMBQLWmX8bL7U",
+          "title": "AIS_马自达J90A_车外语音交互产品需求文档v1.1",
+          "url": "https://drive.google.com/open?id=1vxwyUkcwuexy70Q4w0184u_fTBGs0WBMBQLWmX8bL7U",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1iwe6M8gPuteU22EgZxkLtu56bftz1WEz",
+          "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.6_260428.xlsx",
+          "url": "https://drive.google.com/open?id=1iwe6M8gPuteU22EgZxkLtu56bftz1WEz",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1giTEEjV3W8hpTVbJ4eHodbc9H9vG7nKL",
+          "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.5.5_260418-B0109-260422.xlsx",
+          "url": "https://drive.google.com/open?id=1giTEEjV3W8hpTVbJ4eHodbc9H9vG7nKL",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-52226-doc",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23T13:50:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "车外喊话与隔窗对话"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "8295平台——车外喊话与隔窗对话产品需求文档"
+        },
+        {
+          "kind": "version_family",
+          "text": "8295平台——车外喊话与隔窗对话产品需求文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+          "url": "https://drive.google.com/open?id=11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1RmFhhOQ3yRpla9V8qY-izkiUJf_1FWfV",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2.pdf",
+          "url": "https://drive.google.com/open?id=1RmFhhOQ3yRpla9V8qY-izkiUJf_1FWfV",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1MuG3TLQCFwKDzrWXP212-RXwvDsLRkXas96LYAY15YY",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2",
+          "url": "https://drive.google.com/open?id=1MuG3TLQCFwKDzrWXP212-RXwvDsLRkXas96LYAY15YY",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1h2D5qD7ZcvQCBDUk1sUbXLDtxsEhp8ZcaFzrs3r2HZI",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.2",
+          "url": "https://drive.google.com/open?id=1h2D5qD7ZcvQCBDUk1sUbXLDtxsEhp8ZcaFzrs3r2HZI",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1_nvE18MEM6vsxVaKkm8Oyz9Zcj-58nwg",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档.pdf",
+          "url": "https://drive.google.com/open?id=1_nvE18MEM6vsxVaKkm8Oyz9Zcj-58nwg",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+          "title": "8295平台C673-7开发计划V1.2",
+          "url": "https://drive.google.com/open?id=1yU2M9i6BEvWTq--GV_Q-M98_UqI0FUJX3RVcg5qrEAo",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1MuwV6Z_MEOYqZwce89OZ-lF9Y_UAmrJy",
+          "title": "【已评审】NEV车型_车辆设置_声音设置_PRD_V1.0.pdf",
+          "url": "https://drive.google.com/open?id=1MuwV6Z_MEOYqZwce89OZ-lF9Y_UAmrJy",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "16GjvD89YqDn_u147Zz6fT-d7IShx8Qkk",
+          "title": "C518-1项目(含C2L版C518-1项目(含C2L版（密码：C518666）.xlsx",
+          "url": "https://drive.google.com/open?id=16GjvD89YqDn_u147Zz6fT-d7IShx8Qkk",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1NWdmKT_chSMhuEnjvU_GXkY_UkS81duZ",
+          "title": "【未评审】NEV车型_车辆设置_声音设置_PRD_V1.0.docx",
+          "url": "https://drive.google.com/open?id=1NWdmKT_chSMhuEnjvU_GXkY_UkS81duZ",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://drive.google.com/open?id=1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF",
+          "title": "WT_J90A_埋点数据汇总表_V1.2_20240819--最新修改(梧桐更新).xlsx",
+          "url": "https://drive.google.com/open?id=1VOqnJ_UI1QFVqKCmfjInqoHeNSJA7foF",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10",
+          "title": "座舱全功清单_C385-5全功能清单20260126导出.xlsx",
+          "url": "https://drive.google.com/open?id=1N9-RVJD-r9rvMsOM35CE8oChxOiyJQ10",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "C673-7 隔窗对话开关已开启",
+    "target_state": "提供大、中、小三档音量，默认小，上下电记忆",
+    "intent_function_signal": "音量梯度选择",
+    "ui_tts_vehicle_behavior": "设置页可切换三档，并改变隔窗对话外放音量",
+    "boundary": "不要求把音量控件画进隔窗对话浮窗",
+    "source_ids": [
+      "prd-volume"
+    ]
+  }
+}

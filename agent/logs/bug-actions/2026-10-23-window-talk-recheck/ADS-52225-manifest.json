@@ -1,0 +1,531 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52225",
+  "comment_causality": "测试期望 360 覆盖浮窗，实车未覆盖。2026-10-20 评论把票内 PRD 截图里的 AI 形象不显示误读成浮窗必须留在 360 之上。本次读到交互 V0.8 第4条后改判。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-52225",
+      "source": "ADS-52225 原票",
+      "source_location": "描述：隔窗对话打开后打开 360，全景未覆盖浮窗；期望覆盖；必现；SWC.3.116",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-7",
+      "trigger": "隔窗对话开启后打开 360",
+      "target_behavior": "证明当前浮窗仍在 360 之上，不定义产品目标",
+      "match": "exact",
+      "reason": "当前票描述直接证明层级实现。"
+    },
+    {
+      "source_id": "ue-360",
+      "source": "车外语音交互V0.8",
+      "source_location": "长安深蓝8295平台交互设计文档_车外语音_V0.8 隔窗对话浮窗第4条：360全局影像可以覆盖隔窗对话悬浮框，支持同时使用",
+      "source_type": "interaction",
+      "role": "formal_target",
+      "project_model": "8295 / C673-7",
+      "trigger": "隔窗对话浮窗展示时打开 360",
+      "target_behavior": "360 覆盖浮窗，隔窗对话继续可用",
+      "match": "exact",
+      "reason": "现行未废弃交互稿直接定义层级。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "隔窗对话的目标行为由现行产品需求或交互文档直接定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票是设置浮窗或音量入口，不是语音原话、NLU 或 Alchemy 执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航路径、地图卡片或地图 PRD。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标写在车外语音功能定义和交互文档，不是可见即可说节点或独立配置表仲裁。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-23",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索，并打开 V0.8 隔窗对话浮窗页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52225"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "360全景 隔窗对话浮窗"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车外语音交互"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝8295平台交互设计文档_车外语音"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295平台交互设计文档_车外语音"
+        }
+      ],
+      "source_ids": [
+        "ue-360"
+      ],
+      "search_receipt_ids": [
+        "ADS-52225-key",
+        "ADS-52225-concept",
+        "ADS-52225-doc"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 20,
+        "candidates": [
+          {
+            "id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+            "url": "https://drive.google.com/open?id=1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.6.pdf",
+            "url": "https://drive.google.com/open?id=1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8 (1).pdf",
+            "url": "https://drive.google.com/open?id=1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "read",
+            "source_ids": [
+              "ue-360"
+            ]
+          },
+          {
+            "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8-废弃.pdf",
+            "url": "https://drive.google.com/open?id=1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+            "title": "长安深蓝8295平台交互设计文档_车外语音_V0.7.pdf",
+            "url": "https://drive.google.com/open?id=1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4",
+            "url": "https://drive.google.com/open?id=1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4.pdf",
+            "url": "https://drive.google.com/open?id=1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "14LsOqY6i7-CRbXeL7vwnIkNopNkS8RIw",
+            "title": "8295平台化功能定义_车辆设置功能定义V4.0.docx",
+            "url": "https://drive.google.com/open?id=14LsOqY6i7-CRbXeL7vwnIkNopNkS8RIw",
+            "references": [],
+            "version_family": "8295平台化功能定义_车辆设置功能定.docx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.1 _20251226.pdf",
+            "url": "https://drive.google.com/open?id=1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A",
+            "title": "8295平台化功能定义_车辆设置功能定义V4.5.docx",
+            "url": "https://drive.google.com/open?id=19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A",
+            "references": [],
+            "version_family": "8295平台化功能定义_车辆设置功能定.docx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu",
+            "title": "8295平台化功能定义_车辆设置功能定义V4.4.docx",
+            "url": "https://drive.google.com/open?id=177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu",
+            "references": [],
+            "version_family": "8295平台化功能定义_车辆设置功能定.docx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+            "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.3_20250211.pdf",
+            "url": "https://drive.google.com/open?id=1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+            "references": [],
+            "version_family": "长安深蓝8295平台交互设计文档_车外语音",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本、重复副本或废弃稿，不作为当前目标。"
+          },
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://drive.google.com/open?id=1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+            "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+            "url": "https://drive.google.com/open?id=11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+            "references": [],
+            "version_family": "8295平台——车外喊话与隔窗对话产品需求文档",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+            "title": "J90A_All_Key_预览版_按新表更新",
+            "url": "https://drive.google.com/open?id=1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj",
+            "title": "江铃福特JMC-CX835埋点功能清单_v2.4.xlsx",
+            "url": "https://drive.google.com/open?id=1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj",
+            "references": [],
+            "version_family": "江铃福特JMC-CX835埋点功能清单.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1Kn_hvdaQaEM0XBp2F7jxPs3LDsiPHCblOPAhDbDgutc",
+            "title": "长安深蓝_8155平台_交互设计文档_语音大模型_V0.1",
+            "url": "https://drive.google.com/open?id=1Kn_hvdaQaEM0XBp2F7jxPs3LDsiPHCblOPAhDbDgutc",
+            "references": [],
+            "version_family": "长安深蓝_8155平台_交互设计文档_语音大模型",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1el16sQ5PNeMftB86momc0gust44iftri",
+            "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.31.7_1216.xlsx",
+            "url": "https://drive.google.com/open?id=1el16sQ5PNeMftB86momc0gust44iftri",
+            "references": [],
+            "version_family": "J90A-(EU+ER)车机文言_(4+23种语言)_1216.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1WaTy_VezxZAqDvKi3psByWEZfpsm2q9p",
+            "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.31.8_1219.xlsx",
+            "url": "https://drive.google.com/open?id=1WaTy_VezxZAqDvKi3psByWEZfpsm2q9p",
+            "references": [],
+            "version_family": "J90A-(EU+ER)车机文言_(4+23种语言)_1219.xlsx",
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          },
+          {
+            "id": "1u7DVXYjJBC8PtI0Dq9cgAShiEPKATVGKTkV5xJWIUR4",
+            "title": "长安项目窗口层级定义",
+            "url": "https://drive.google.com/open?id=1u7DVXYjJBC8PtI0Dq9cgAShiEPKATVGKTkV5xJWIUR4",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题与本票隔窗对话目标行为无关，排除。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "长安深蓝8295平台交互设计文档_车外语音",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-52225-doc"
+            ],
+            "selected_candidate_id": "1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f",
+            "selection_reason": "同一 Chrome 检索中这是该系列最新且未标废弃的已读版本。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "8295平台化功能定义_车辆设置功能定.docx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "8295平台——车外喊话与隔窗对话产品需求文档",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "江铃福特JMC-CX835埋点功能清单.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "长安深蓝_8155平台_交互设计文档_语音大模型",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A-(EU+ER)车机文言_(4+23种语言)_1216.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          },
+          {
+            "family": "J90A-(EU+ER)车机文言_(4+23种语言)_1219.xlsx",
+            "status": "not_applicable",
+            "reason": "该系列不是本票隔窗对话目标定义，不选用。"
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "PRD 3.2 只说 360 和倒车界面可不显示 AI 形象，没有定义浮窗层级。交互 V0.8 写明 360 全局影像可以覆盖隔窗对话悬浮框，且两者同时可用。采用交互文档，不关闭为非问题。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "设置",
+    "text": "结论：C673-7 隔窗对话开启后打开 360，360 全景应盖住隔窗对话浮窗，对话不结束。\n依据：[车外语音交互V0.8·隔窗对话浮窗第4条|https://drive.google.com/file/d/1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f/view]。\n处理：把隔窗对话浮窗降到 360 之下，并保持对话可用；设置处理。",
+    "implementation_source_ids": [
+      "jira-52225"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261023T135500+0800-window-talk-recheck",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-52225-key",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23T13:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52225"
+        }
+      ],
+      "results": []
+    },
+    {
+      "receipt_id": "ADS-52225-concept",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23T13:50:00+08:00",
+      "queries": [
+        {
+          "kind": "problem_concept",
+          "text": "360全景 隔窗对话浮窗"
+        }
+      ],
+      "results": [
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://drive.google.com/open?id=1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+          "title": "8295平台——车外喊话与隔窗对话产品需求文档V0.3.pdf",
+          "url": "https://drive.google.com/open?id=11BVE5LWuc16yfMct6i9epUMeYJjnGqvx",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+          "title": "J90A_All_Key_预览版_按新表更新",
+          "url": "https://drive.google.com/open?id=1cn2vOW6x9BXBXfpZ8_nL-K8_Ksc7nHIiG0uqQkfxdVw",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj",
+          "title": "江铃福特JMC-CX835埋点功能清单_v2.4.xlsx",
+          "url": "https://drive.google.com/open?id=1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Kn_hvdaQaEM0XBp2F7jxPs3LDsiPHCblOPAhDbDgutc",
+          "title": "长安深蓝_8155平台_交互设计文档_语音大模型_V0.1",
+          "url": "https://drive.google.com/open?id=1Kn_hvdaQaEM0XBp2F7jxPs3LDsiPHCblOPAhDbDgutc",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1el16sQ5PNeMftB86momc0gust44iftri",
+          "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.31.7_1216.xlsx",
+          "url": "https://drive.google.com/open?id=1el16sQ5PNeMftB86momc0gust44iftri",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1WaTy_VezxZAqDvKi3psByWEZfpsm2q9p",
+          "title": "J90A-(EU+ER)车机文言_(4+23种语言)_V0.31.8_1219.xlsx",
+          "url": "https://drive.google.com/open?id=1WaTy_VezxZAqDvKi3psByWEZfpsm2q9p",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1u7DVXYjJBC8PtI0Dq9cgAShiEPKATVGKTkV5xJWIUR4",
+          "title": "长安项目窗口层级定义",
+          "url": "https://drive.google.com/open?id=1u7DVXYjJBC8PtI0Dq9cgAShiEPKATVGKTkV5xJWIUR4",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "ADS-52225-doc",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23T13:50:00+08:00",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "车外语音交互"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝8295平台交互设计文档_车外语音"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安深蓝8295平台交互设计文档_车外语音"
+        }
+      ],
+      "results": [
+        {
+          "id": "1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8.pdf",
+          "url": "https://drive.google.com/open?id=1w15NIgfzeESutCZKW8QLcUWaeDwHwLlL",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.6.pdf",
+          "url": "https://drive.google.com/open?id=1NWt_w0F-vmf48qXN_O8t9bL6FePpnqQH",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8 (1).pdf",
+          "url": "https://drive.google.com/open?id=1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.8-废弃.pdf",
+          "url": "https://drive.google.com/open?id=1S8aJ7-Y1gIKji8UfbrI_-VMRa3MifoKI",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+          "title": "长安深蓝8295平台交互设计文档_车外语音_V0.7.pdf",
+          "url": "https://drive.google.com/open?id=1gC8OMhjBt4opQZ7DFL4B1LagvjSeRYEE",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4",
+          "url": "https://drive.google.com/open?id=1rjtHfidXuHjpPuqQ0ZGANtRXbbybe3ZqlqqkAd6Pl60",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.4.pdf",
+          "url": "https://drive.google.com/open?id=1aStiZ_1U4u4fmYcYkmObzG1Fitgbcp7D",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "14LsOqY6i7-CRbXeL7vwnIkNopNkS8RIw",
+          "title": "8295平台化功能定义_车辆设置功能定义V4.0.docx",
+          "url": "https://drive.google.com/open?id=14LsOqY6i7-CRbXeL7vwnIkNopNkS8RIw",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.1 _20251226.pdf",
+          "url": "https://drive.google.com/open?id=1niYXzhgcXkzYn9AlQtEvvLXbTcrFJIc0",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A",
+          "title": "8295平台化功能定义_车辆设置功能定义V4.5.docx",
+          "url": "https://drive.google.com/open?id=19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu",
+          "title": "8295平台化功能定义_车辆设置功能定义V4.4.docx",
+          "url": "https://drive.google.com/open?id=177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+          "title": "长安深蓝_8295平台_交互设计文档_车外语音_V0.3_20250211.pdf",
+          "url": "https://drive.google.com/open?id=1lh40kdG2kQx8XE0CvZO-QWKleh241eu8",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "C673-7 隔窗对话已开启，再打开 360 全景",
+    "target_state": "360 盖住隔窗对话浮窗，隔窗对话保持可用",
+    "intent_function_signal": "360 前台与隔窗对话浮窗同时存在",
+    "ui_tts_vehicle_behavior": "浮窗被 360 覆盖，不结束对话",
+    "boundary": "不要求 360 中显示 AI 形象；车速仍须满足隔窗对话前置条件",
+    "source_ids": [
+      "ue-360"
+    ]
+  }
+}

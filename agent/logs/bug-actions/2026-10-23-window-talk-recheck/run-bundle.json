@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261023T135500+0800-window-talk-recheck",
+  "status": "comment_verified",
+  "started_at": "2026-10-23T13:55:00+08:00",
+  "completed_at": "2026-10-23T13:53:53+08:00",
+  "query_summary": "吴优当前待处理中的 ADS-52226 和 ADS-52225，删除旧 AI 评论后按 Drive 现行定义重评",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/action-log.md",
+  "preflight_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/preflight.json",
+  "preflight_sha256": "784604c53c677d4cc51ee90319b6cf0b2b81207eb8041adb5ad0094e81606a9f",
+  "items": [
+    {
+      "jira_key": "ADS-52226",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/ADS-52226-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/ADS-52226-receipt.json",
+      "comment_receipt_sha256": "9b62288af8b5472b467e09a02ef02a560d5a8ce5db1a25deee296bdf1ebc3c3e",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/ADS-52226-readback.json",
+      "comment_readback_sha256": "a1d74659605eaf783d15763c6e74292a785843b224bf02092260cd54a4de6ec6"
+    },
+    {
+      "jira_key": "ADS-52225",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/ADS-52225-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/ADS-52225-receipt.json",
+      "comment_receipt_sha256": "b552e6f97bf6c1c63cb05cc0c5b4a4526a13d98428ac268a8aa3c2c30e092c53",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-window-talk-recheck/ADS-52225-readback.json",
+      "comment_readback_sha256": "3890bee3a785928e95ce99aa5da3544bdee8fad367a9c8f424d9a716ae37dfd2"
+    }
+  ]
+}

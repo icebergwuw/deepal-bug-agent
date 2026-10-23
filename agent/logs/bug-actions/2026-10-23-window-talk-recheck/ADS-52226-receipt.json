@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52226",
+  "phase": "d",
+  "status": "可转研发",
+  "decision_text_sha256": "5d4acb3a41037321574dd568c78e5ff37ddfd1717b27ceacb4bf3ceddfde1ae4",
+  "manifest_sha256": "73a86dd20bb726a1918ca93e503360d0b7f310858933ba70e0a318f813924647",
+  "authorized_comment": "结论：C673-7 隔窗对话开启后要提供大、中、小三档音量，默认小，上下电记忆。当前没有调节入口。\n依据：[车外喊话与隔窗对话PRD V0.3·3.3.3|https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view]。\n处理：补三档音量入口和对应外放音量，默认小并记忆；设置处理。"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52225",
+  "phase": "d",
+  "status": "可转研发",
+  "decision_text_sha256": "b47173f9abfca7ddf610d59c6778c4f37a5c338649022df5a69cd1410e3e8a5c",
+  "manifest_sha256": "863a492e0b140f0155c775f2198d8501ecb1f0c4bc7a0b4e8d1d2929b2d4a7aa",
+  "authorized_comment": "结论：C673-7 隔窗对话开启后打开 360，360 全景应盖住隔窗对话浮窗，对话不结束。\n依据：[车外语音交互V0.8·隔窗对话浮窗第4条|https://drive.google.com/file/d/1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f/view]。\n处理：把隔窗对话浮窗降到 360 之下，并保持对话可用；设置处理。"
+}
