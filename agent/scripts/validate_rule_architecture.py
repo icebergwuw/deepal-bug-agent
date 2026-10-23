@@ -88,6 +88,7 @@ OPERATIONAL_SCRIPT_ALLOWLIST = {
     "validate_rule_architecture.py",
     "sheet_page_save.py",
     "test_sheet_page_save.py",
+    "notify_feishu_ticket.py",
 }
 
 
@@ -112,6 +113,7 @@ def validate(root: Path, skill: Path) -> list[str]:
             ".DS_Store",
             "__pycache__/",
             "agent/config/local-profile.json",
+            "agent/config/feishu-bot.local.json",
         ):
             if pattern not in gitignore:
                 errors.append(f".gitignore 缺少安全模式：{pattern}")
@@ -473,6 +475,11 @@ def validate(root: Path, skill: Path) -> list[str]:
         errors.append("复盘流程未限制变更表只处理最近一个月")
     if "you.wu" not in review_workflow:
         errors.append("复盘流程未指定变更表新建需求默认经办人")
+    if "notify_feishu_ticket.py" not in review_workflow or "oc_c3692001480b0aac7825bafab90989b3" not in read(root / "agent/context.md"):
+        errors.append("变更表建票后未要求通知指定飞书群")
+    notify = root / "agent/config/feishu-notify.json"
+    if not notify.is_file() or "app_secret" in read(notify):
+        errors.append("飞书通知配置缺失或写入了密钥")
     if "2026-10-23 的转需求授权" not in agents_text:
         errors.append("AGENTS.md 未记录转需求建票授权")
 
