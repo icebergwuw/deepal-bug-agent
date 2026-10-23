@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52226",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "f2af640cca930b61f96a0754c40a5f8bf3b1a89857032b0618893c9182c1287f",
+  "manifest_sha256": "50e4966bc373b1d4bb6810652986766a5a397b7696a966aab29a8aa163b215c3",
+  "authorized_comment": "结论：C673-7 隔窗对话开启后要提供大、中、小三档音量，默认小，上下电记忆。现有 UE/UI 没有该入口，按 bug转需求处理。\n依据：[车外喊话与隔窗对话PRD V0.3·3.3.3|https://drive.google.com/file/d/11BVE5LWuc16yfMct6i9epUMeYJjnGqvx/view]；[车外语音交互V0.8·隔窗对话浮窗|https://drive.google.com/file/d/1DJXi_aNYeeJ7kytId7itj6XBct6Nbg4f/view]。\n处理：已建 [ADS-52390|http://jira.i-tetris.com/browse/ADS-52390]，重画音量 UE 后补三档入口和对应外放音量，原 Bug 按 workaround / bug转需求关闭；需求处理。"
+}

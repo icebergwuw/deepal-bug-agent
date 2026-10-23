@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261023T160000+0800-ADS-52226-requirement",
+  "status": "comment_verified",
+  "started_at": "2026-10-23T16:00:00+08:00",
+  "completed_at": "2026-10-23T14:25:00+08:00",
+  "query_summary": "ADS-52226 因 UE 没有音量入口，bug转需求并评论",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52226-requirement/action-log.md",
+  "preflight_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52226-requirement/preflight.json",
+  "preflight_sha256": "784604c53c677d4cc51ee90319b6cf0b2b81207eb8041adb5ad0094e81606a9f",
+  "items": [
+    {
+      "jira_key": "ADS-52226",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52226-requirement/ADS-52226-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52226-requirement/ADS-52226-receipt.json",
+      "comment_receipt_sha256": "f1021da7ae549b17236075692338ccdccefcb1ee7b1ee1d745646cf71b8d97b7",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52226-requirement/ADS-52226-readback.json",
+      "comment_readback_sha256": "abc9790d943f365d58fc2903fc3f901d2c5401c1632c16a378b7288eeddba267"
+    }
+  ]
+}
