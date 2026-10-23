@@ -463,6 +463,10 @@ def validate(root: Path, skill: Path) -> list[str]:
             errors.append(f"复盘流程缺少统一证据门槛：{token}")
     if "不沿用东风样例" not in review_workflow:
         errors.append("复盘流程未限制东风转需求样例")
+    if "2026-10-23 吴优已授权这四步" not in review_workflow:
+        errors.append("复盘流程未记录转需求建票授权")
+    if "2026-10-23 的转需求授权" not in agents_text:
+        errors.append("AGENTS.md 未记录转需求建票授权")
 
     for relative in (
         "AGENTS.md",

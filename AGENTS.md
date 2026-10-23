@@ -9,7 +9,7 @@
 - 读取单张 Jira 票的字段、评论、附件元数据和关联票时，调用本仓库 `.grok/config.toml` 登记的 `analyze_bug_jira` MCP 工具 `get_jira_issue`。Dashboard、附件正文，以及该工具没有返回的页面，仍用当前 Chrome 已登录态。
 - 语音日志用 `analyze_bug_debug` 检索。Alchemy 配置用 `analyze_bug_ops` 读取。判责顺序参考 `analyze_bug_rules`。这三处只读；Agent 不代替产品写入 Alchemy。
 - Google Drive/Sheets 及其他外部平台优先使用操作者当前 Chrome 的已登录态；只有 Chrome 不可用、未登录或缺少所需能力时，才切换到内置浏览器、连接器或其他受支持入口，并记录实际使用的入口。
-- 2026-10-15 操作者已授权：本流程正在处理的 Jira 票，结论确定后用 `analyze_bug_jira` 的 `add_jira_comment` 把当前 D 原文发到该票；复盘完成后改发当前 H 原文。2026-10-20 起，吴优处理自己的票时，评论不再等待吴优 bug 表回读。评论前必须通过 `agent/scripts/authorize_jira_comment.py`；跳过写表不等于跳过证据门禁。缺正式定义、客户用例或版本族时，只能评论降级后的 `待复核 / 待确认 / 待会诊`。`update_jira_description` 只用于 bugfree 或描述中带汇总表、且需要回填分析列的票。用户说「只看 / 不更新」时不写 Jira。转派、关闭、改状态、改经办人和写入 Alchemy 不在这次授权内。
+- 2026-10-15 操作者已授权：本流程正在处理的 Jira 票，结论确定后用 `analyze_bug_jira` 的 `add_jira_comment` 把当前 D 原文发到该票；复盘完成后改发当前 H 原文。2026-10-20 起，吴优处理自己的票时，评论不再等待吴优 bug 表回读。评论前必须通过 `agent/scripts/authorize_jira_comment.py`；跳过写表不等于跳过证据门禁。缺正式定义、客户用例或版本族时，只能评论降级后的 `待复核 / 待确认 / 待会诊`。`update_jira_description` 只用于 bugfree 或描述中带汇总表、且需要回填分析列的票。用户说「只看 / 不更新」时不写 Jira。2026-10-23 吴优授权：证据门禁已通过且结论是 `转需求` 时，可以新建需求、关联原 Bug，并把原 Bug 按 workaround / bug转需求关闭。除此之外，转派、关闭、改状态、改经办人和写入 Alchemy 仍不在授权内。
 - Jira bug 输出必须站在已绑定操作者的产品负责人视角，直接判断用户预期、功能边界、处理动作和责任方。
 - 不写“请产品确认 / 产品定口径 / 建议产品判断”；应写“定义为 / 关闭 / 转需求 / 转某责任方处理”。
 - `产品Agent判断` 必须包含一个明确动作和一个明确责任方。
@@ -62,7 +62,7 @@
 
 ## 全局权限与安全边界
 
-- 更新当前负责人线上清单、本地索引和日志属于默认完整 Bug 流程。Jira 评论按上面的 2026-10-15 授权执行，且必须先通过 `agent/scripts/authorize_jira_comment.py`；转派、关闭和状态变更仍要另一次明确授权。
+- 更新当前负责人线上清单、本地索引和日志属于默认完整 Bug 流程。Jira 评论按上面的 2026-10-15 授权执行，且必须先通过 `agent/scripts/authorize_jira_comment.py`。2026-10-23 的转需求授权只覆盖新建需求、关联和按 workaround / bug转需求关闭；其他转派、关闭和状态变更仍要另一次明确授权。
 - 复盘时更新 H 列不等于授权 Jira 外部动作。
 - 每次更新表格、规则、知识库、会议沉淀或执行 Jira 动作都要留痕并回读；重建历史记录必须标记 `reconstructed`。
 - 不在回复、表格、知识库、日志或 Skill 中记录密码、token、测试账号明文或平台访问口令。

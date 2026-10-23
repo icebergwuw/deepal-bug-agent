@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.32.0-trial.1`
+- 当前版本：`v1.33.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-20`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -13,6 +13,40 @@
 
 
 
+
+## v1.33.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 吴优授权：证据门禁通过且结论为转需求时，可以新建需求、关联原 Bug，并把原 Bug 按 workaround / bug转需求关闭。
+- 该授权不扩展到其他转派、关闭、改经办人或写入 Alchemy。
+- Jira MCP 仍不能建票或流转。执行时用同一 Jira 凭证走 REST，并回读需求票、关联和原 Bug 状态。
+- 项目必填项没有当前规则时停止建票，不沿用东风或历史样例猜测。
+
+### 修改原因
+
+- 2026-10-23 吴优对「建票、关联和关闭需要另一次明确授权」回复授权。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-bug-to-requirement-authorization.md`
+
+### 验证案例
+
+- 规则架构校验确认授权范围写在 `AGENTS.md` 和复盘流程。
+- 本次没有新建需求，也没有关闭任何 Jira。
+- 账号 `you.wu` 具备创建、关联、解决和关闭权限；这只说明接口能力，不扩大授权范围。
+
+### 回滚口径
+
+- 恢复建票、关联和关闭都要另一次明确授权。不删除已经建出的需求票，也不重开已经按该授权关闭的 Bug。
 
 ## v1.32.0-trial.1 — 2026-10-23
 
