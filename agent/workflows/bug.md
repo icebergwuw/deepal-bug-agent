@@ -43,7 +43,7 @@ MCP 只替换它实际覆盖的读取和评论。MCP 不代替 Google Drive，�
 单票字段通过 `analyze_bug_jira` 的 `get_jira_issue` 读取。必须读到标题、状态、优先级、经办人、模块、车型、描述、复现概率、附件信息、已有定责、问题链接和全部评论。
 
 - 附件文件正文、Dashboard 17302，以及 MCP 结果里缺少的字段，再用当前 Chrome 已登录态补读，并在日志记录实际入口。
-- 其他负责人在结论确定并完成清单回读后，按 `agent/output-contract.md` 用 `add_jira_comment` 把当前 D 原文发到该票。吴优 `result_output=jira_comment_only` 时，证据门禁通过后直接评论，不回填吴优 bug 表，也不等待表回读。用户说「只看 / 不更新」时不发。两条路径调用 `add_jira_comment` 前都必须通过 `agent/scripts/authorize_jira_comment.py`。bugfree 或汇总表需要回填时才用 `update_jira_description`。评论不代替转派、关闭或改状态。
+- 其他负责人在结论确定并完成清单回读后，按 `agent/output-contract.md` 用 `add_jira_comment` 把当前 D 原文发到该票。吴优 `result_output=jira_comment_only` 时，证据门禁通过后直接评论，不回填吴优 bug 表，也不等待表回读。用户说「只看 / 不更新」时不发。两条路径调用 `add_jira_comment` 前都必须通过 `agent/scripts/authorize_jira_comment.py`。评论发出后按输出契约把依据截图挂到同一条评论。bugfree 或汇总表需要回填时才用 `update_jira_description`。评论不代替转派、关闭或改状态。
 - 语音或车控日志用 `analyze_bug_debug` 检索，Alchemy 功能点、意图和 slot 用 `analyze_bug_ops` 读取，模块判责顺序参考 `analyze_bug_rules`。这三处只读。Cookie 缺失或接口失败时记录限制，再用 Chrome 已登录态补读。
 
 - 标题或描述开头出现非 Jira Key 的长客户问题编号时，先标记为客户提报 Bug，并提取该编号；不得把它当作普通内部测试 Bug。
