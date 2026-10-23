@@ -1,0 +1,245 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52227",
+  "comment_causality": "谭威定位车内语音总开关关闭后没有 StartRecord，环境检测没有回调，页面一直停在正在检查车内环境。记忆空间 PRD V0.7 要求噪声检测通过或提示过噪，没有无结果悬挂。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-52227",
+      "source": "ADS-52227 原票及 2026-10-23 谭威日志",
+      "source_location": "评论 8717288：Assistant Disabled，没有 StartRecord，没有 noise detection completed",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "车内语音总开关关闭时创建记忆 ID",
+      "target_behavior": "证明页面停在正在检查车内环境，不定义产品目标",
+      "match": "exact",
+      "reason": "当前票日志直接证明实现停住。"
+    },
+    {
+      "source_id": "prd-memory",
+      "source": "记忆空间-需求文档-v0.7",
+      "source_location": "第11页噪声检测：噪声不大于55分贝通过，大于55分贝提示当前环境噪音过大并提供重新检测",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "8295 / C385-5",
+      "trigger": "创建记忆 ID 进入声纹环境检测",
+      "target_behavior": "检测必须通过或提示过噪，不能无结果悬挂",
+      "match": "exact",
+      "reason": "现行最高版本直接定义噪声检测终态。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "记忆 ID 创建和环境检测由记忆空间产品需求定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "本票是声纹录入前置检测，不是语音原话、NLU 或 Alchemy 执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标由记忆空间 PRD 定义，不是可见即可说节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-23",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52227"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "创建记忆ID 正在检查车内环境"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "source_ids": [
+        "prd-memory"
+      ],
+      "search_receipt_ids": [
+        "ADS-52227-prd"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+            "title": "记忆空间-需求文档-v0.7.pdf",
+            "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "read",
+            "source_ids": [
+              "prd-memory"
+            ]
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本，不作为当前目标。"
+          },
+          {
+            "id": "1Wp33prApQchr1PTt18dEOgghva__B2Wd",
+            "title": "记忆空间-需求文档-v0.1.pdf",
+            "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "reason": "同一系列的更早版本，不作为当前目标。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "reason": "标题标明误加需删除，不作为当前目标。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "记忆空间-需求文档",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-52227-prd"
+            ],
+            "selected_source_ids": [
+              "prd-memory"
+            ],
+            "selected_candidate_id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+            "selection_reason": "标题检索只见到 v0.1、v0.6、v0.7 和误加稿，v0.7 最新。",
+            "newer_version_checked": true,
+            "reason": "标题检索只见到 v0.1、v0.6、v0.7 和误加稿，v0.7 为最新。"
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "PRD 只定义噪声通过或过噪提示。总开关关闭导致没有录音时，不能套用过噪文案，也不能强制开录音。进入检测前拦截并提示打开语音助手。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "记忆空间",
+    "text": "结论：C385-5 创建记忆 ID 时，车内语音总开关关闭后环境检测没有结果，页面停在「正在检查车内环境」。噪声检测必须通过或提示过噪，不能无结果悬挂，也不能强制打开录音。\n依据：[记忆空间PRD V0.7·噪声检测|https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view]。\n处理：进入检测前提示「请先打开语音助手」，并留在入口；记忆空间处理。",
+    "implementation_source_ids": [
+      "jira-52227"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261023T165500+0800-ADS-52227",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-52227-prd",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52227"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "创建记忆ID 正在检查车内环境"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+          "title": "记忆空间-需求文档-v0.7.pdf",
+          "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Wp33prApQchr1PTt18dEOgghva__B2Wd",
+          "title": "记忆空间-需求文档-v0.1.pdf",
+          "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "C385-5 车内语音总开关关闭时创建记忆 ID",
+    "target_state": "不进入正在检查车内环境，提示先打开语音助手",
+    "intent_function_signal": "记忆 ID 创建入口拦截",
+    "ui_tts_vehicle_behavior": "提示「请先打开语音助手」，留在入口，不强制打开录音",
+    "boundary": "不把总开关关闭误提示成环境噪音过大",
+    "source_ids": [
+      "prd-memory"
+    ]
+  }
+}

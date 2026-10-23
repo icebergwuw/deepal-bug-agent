@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261023T165500+0800-ADS-52227",
+  "status": "comment_verified",
+  "started_at": "2026-10-23T15:05:00+08:00",
+  "completed_at": "2026-10-23T15:11:15+08:00",
+  "query_summary": "吴优当前票 ADS-52227，按记忆空间 PRD V0.7 评论环境检测无结果",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52227/action-log.md",
+  "preflight_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52227/preflight.json",
+  "preflight_sha256": "784604c53c677d4cc51ee90319b6cf0b2b81207eb8041adb5ad0094e81606a9f",
+  "items": [
+    {
+      "jira_key": "ADS-52227",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52227/ADS-52227-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52227/ADS-52227-receipt.json",
+      "comment_receipt_sha256": "ed2c8bff51467d7d43de2594d4180da490b5e136e720cf4c9980bad08ac2af53",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-ADS-52227/ADS-52227-readback.json",
+      "comment_readback_sha256": "8c00834038747140b3686c5ec62c26e433e9a8085f143f86b74381c83ac8af59"
+    }
+  ]
+}

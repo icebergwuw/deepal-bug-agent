@@ -1,0 +1,9 @@
+{
+  "issue_key": "ADS-52227",
+  "comment_id": "8719577",
+  "author": "you.wu",
+  "body": "结论：C385-5 创建记忆 ID 时，车内语音总开关关闭后环境检测没有结果，页面停在「正在检查车内环境」。噪声检测必须通过或提示过噪，不能无结果悬挂，也不能强制打开录音。\n依据：[记忆空间PRD V0.7·噪声检测|https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view]。\n处理：进入检测前提示「请先打开语音助手」，并留在入口；记忆空间处理。\n\n（AI Generated）",
+  "status": "待办",
+  "assignee": "you.wu",
+  "transitioned": false
+}
