@@ -1,0 +1,371 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-8119",
+  "comment_causality": "驾评提出燃油补电 SOC 上限滑条滑动时没有具体数值，并询问能否优化。功能定义 V2.1 和交互 v7.4 只要求松手后按反馈值显示 30%–80%，没有拖动中的数值条款。按 bug转需求补体验，不按设置缺陷修。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "SD-8172",
+        "relationship": "bug转需求新建故事",
+        "outcome": "已建并 Relates 关联 SD-8119，经办人吴优，原票已解决 Workaround",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira-8119",
+      "source": "SD-8119 原票",
+      "source_location": "描述：燃油补电SOC上限滑条滑动时没有具体数值显示；必现；SWD.0.48；视频附件 video(69).mp4",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "C673-G5",
+      "trigger": "滑动燃油补电SOC上限滑条",
+      "target_behavior": "证明当前滑动时没有具体数值，不定义产品目标",
+      "match": "exact",
+      "reason": "原票描述直接证明当前实现。"
+    },
+    {
+      "source_id": "prd-v21",
+      "source": "C673海外平台化XEV车辆设置功能定义V2.1",
+      "source_location": "4.15.8 场景三：操作 30%–80% 滑动条后发送 CdcFuelrechargeSocSet，收到 VcuFuelrechargeSocSetFb 后按目标值显示",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673-G5",
+      "trigger": "燃油补电开关开启后操作目标 SOC 滑动条",
+      "target_behavior": "松手后按反馈信号显示 30%–80% 目标值，未定义拖动过程中的实时数值",
+      "match": "exact",
+      "reason": "同系列最新未归档版本，直接覆盖 G3/G5/G6 燃油补电目标 SOC。"
+    },
+    {
+      "source_id": "ue-v74",
+      "source": "长安C673交互设计文档_车辆设置_EV&EVE_v7.4",
+      "source_location": "能量管理燃油补电：静止显示 80% 和 SOC 上限，范围 30%–80%，按信号显示目标值",
+      "source_type": "ue",
+      "role": "formal_target",
+      "project_model": "C673-G5",
+      "trigger": "燃油补电开启后展示 SOC 上限",
+      "target_behavior": "按反馈值显示目标百分比，没有拖动中的数值气泡",
+      "match": "exact",
+      "reason": "同系列最新交互，v7.4 更新于 2026-10-19，未新增拖动数值。"
+    },
+    {
+      "source_id": "config-v17",
+      "source": "C673-G3、G5座舱全功清单V1.7",
+      "source_location": "座舱全功清单第638行，032001 燃油补电SOC设置，C673-G5 欧洲左舵/右舵为搭载",
+      "source_type": "formal_config",
+      "role": "context_only",
+      "project_model": "C673-G5",
+      "trigger": "C673-G5 欧洲车型配置",
+      "target_behavior": "证明功能搭载，不定义滑条拖动显示",
+      "match": "exact",
+      "reason": "只证明 SOC 设置搭载，不能替代交互条款。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "目标行为由现行车辆设置功能定义和交互文档直接界定。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音原话、NLU 或 Alchemy 执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航或地图。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "滑条显示由车辆设置功能定义和 PDF 交互文档界定，不是可见即可说节点，也没有需要 MasterGo 图层仲裁的入口。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-23",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8119"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "燃油补电SOC上限滑条数值"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车辆设置 燃油补电"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.1.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安C673 交互设计文档_车辆设置_EV&EVE"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G3、G5座舱全功清单"
+        }
+      ],
+      "source_ids": [
+        "prd-v21",
+        "ue-v74"
+      ],
+      "search_receipt_ids": [
+        "SD-8119-drive"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 7,
+        "candidates": [
+          {
+            "id": "1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.1.docx",
+            "url": "https://drive.google.com/open?id=1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "disposition": "read",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "source_ids": [
+              "prd-v21"
+            ]
+          },
+          {
+            "id": "1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.8.docx",
+            "url": "https://drive.google.com/open?id=1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "disposition": "excluded",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "reason": "同一系列旧版，归档在00_旧版本归档，不作为当前目标。"
+          },
+          {
+            "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+            "url": "https://drive.google.com/open?id=1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "disposition": "excluded",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "reason": "同一系列更早版本，不作为当前目标。"
+          },
+          {
+            "id": "1V7BXYyPnfkcLOCwYeH7-mC37Lf9b533U",
+            "title": "长安C673 交互设计文档_车辆设置_EV&EVE_v7.4.pdf",
+            "url": "https://drive.google.com/open?id=1V7BXYyPnfkcLOCwYeH7-mC37Lf9b533U",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "read",
+            "version_family": "长安C673 交互设计文档_车辆设置_EV&EVE",
+            "source_ids": [
+              "ue-v74"
+            ]
+          },
+          {
+            "id": "1wTkBrng6dAq49ExCTLu00LULPbSFyAee",
+            "title": "长安C673 交互设计文档_车辆设置_EV&EVE_v7.3 .pdf",
+            "url": "https://drive.google.com/open?id=1wTkBrng6dAq49ExCTLu00LULPbSFyAee",
+            "mime_type": "application/pdf",
+            "references": [],
+            "disposition": "excluded",
+            "version_family": "长安C673 交互设计文档_车辆设置_EV&EVE",
+            "reason": "同一系列更早版本，v7.4 已覆盖。"
+          },
+          {
+            "id": "126WHwFaENBQyQLQVHkpvq6ZXELRHcm-I",
+            "title": "EPA1_功能定义_车辆设置（海外）功能定义V1.4 (1).docx",
+            "url": "https://drive.google.com/open?id=126WHwFaENBQyQLQVHkpvq6ZXELRHcm-I",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "disposition": "excluded",
+            "version_family": "EPA1_功能定义_车辆设置（海外）功能定义",
+            "reason": "EPA1 平台定义，不是 C673-G5 海外平台化现行定义。"
+          },
+          {
+            "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+            "url": "https://drive.google.com/open?id=11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "references": [],
+            "disposition": "read",
+            "version_family": "C673-G3、G5座舱全功清单",
+            "source_ids": [
+              "config-v17"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-8119-drive"
+            ],
+            "selected_candidate_id": "1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D",
+            "selection_reason": "功能定义文档目录中的最新未归档版本，旧版在 00_旧版本归档。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "长安C673 交互设计文档_车辆设置_EV&EVE",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-8119-drive"
+            ],
+            "selected_candidate_id": "1V7BXYyPnfkcLOCwYeH7-mC37Lf9b533U",
+            "selection_reason": "能量目录中的最新交互，v7.4 晚于 v7.3。",
+            "newer_version_checked": true
+          },
+          {
+            "family": "EPA1_功能定义_车辆设置（海外）功能定义",
+            "status": "not_applicable",
+            "reason": "不是 C673-G5 现行车辆设置定义。"
+          },
+          {
+            "family": "C673-G3、G5座舱全功清单",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-8119-drive"
+            ],
+            "selected_candidate_id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+            "selection_reason": "检索到的 C673-G5 座舱全功清单，用于确认功能搭载。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "search_receipts": [
+    {
+      "receipt_id": "SD-8119-drive",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-23",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8119"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "燃油补电SOC上限滑条数值"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车辆设置 燃油补电"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.1.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "长安C673 交互设计文档_车辆设置_EV&EVE"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G3、G5座舱全功清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.1.docx",
+          "url": "https://drive.google.com/open?id=1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.8.docx",
+          "url": "https://drive.google.com/open?id=1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+          "url": "https://drive.google.com/open?id=1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1V7BXYyPnfkcLOCwYeH7-mC37Lf9b533U",
+          "title": "长安C673 交互设计文档_车辆设置_EV&EVE_v7.4.pdf",
+          "url": "https://drive.google.com/open?id=1V7BXYyPnfkcLOCwYeH7-mC37Lf9b533U",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1wTkBrng6dAq49ExCTLu00LULPbSFyAee",
+          "title": "长安C673 交互设计文档_车辆设置_EV&EVE_v7.3 .pdf",
+          "url": "https://drive.google.com/open?id=1wTkBrng6dAq49ExCTLu00LULPbSFyAee",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "126WHwFaENBQyQLQVHkpvq6ZXELRHcm-I",
+          "title": "EPA1_功能定义_车辆设置（海外）功能定义V1.4 (1).docx",
+          "url": "https://drive.google.com/open?id=126WHwFaENBQyQLQVHkpvq6ZXELRHcm-I",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "title": "C673-G3、G5座舱全功清单_V1.7_20260730.xlsx",
+          "url": "https://drive.google.com/open?id=11TarpolrgEF0IzoksMzXFNcy9LiEkZQM",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "expected_behavior": {
+    "trigger": "C673-G5 燃油补电开启后拖动 SOC 上限滑条",
+    "target_state": "拖动过程中显示当前目标百分比，松手后按反馈值回显",
+    "intent_function_signal": "CdcFuelrechargeSocSet 仍为松手后的设置请求，拖动数值由车机本地预览",
+    "ui_tts_vehicle_behavior": "滑条拖动时显示 30%–80%、精度 1% 的百分比",
+    "boundary": "现行定义只要求收到 VcuFuelrechargeSocSetFb 后显示目标值，不要求拖动中数值。",
+    "source_ids": [
+      "prd-v21",
+      "ue-v74"
+    ]
+  },
+  "conflict_resolution": "功能定义场景三和交互 v7.4 都只要求松手后按反馈值显示。驾评要求的拖动中数值不在现行定义内，按新增体验处理，不要求设置直接改实现。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "需求",
+    "text": "结论：定义为转需求。C673-G5 燃油补电 SOC 上限滑动时没有实时百分比。现行功能定义和 UE 只要求松手后按反馈值显示 30%–80%，没有定义拖动过程中的数值，不按设置实现缺陷修。\n依据：[SD-8119 Jira原票·描述/必现|http://jira.i-tetris.com/browse/SD-8119]；[C673海外平台化XEV车辆设置功能定义V2.1·4.15.8场景三|https://drive.google.com/file/d/1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D/view]；[长安C673交互设计文档_车辆设置_EV&EVE_v7.4·能量管理燃油补电|https://drive.google.com/file/d/1V7BXYyPnfkcLOCwYeH7-mC37Lf9b533U/view]。\n处理：已建 [SD-8172|http://jira.i-tetris.com/browse/SD-8172]，补拖动中实时显示当前目标百分比，松手后仍按 VcuFuelrechargeSocSetFb 回显；原 Bug 按 workaround / bug转需求关闭；需求处理。",
+    "implementation_source_ids": [
+      "jira-8119"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261023T151000+0800-SD-8119-requirement",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SD-8119",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "c55a068234d16e4c0a812b8f5699d6b280ccced6cf01fc6eff0a523657d4609b",
+  "manifest_sha256": "6df3ba14f4fe29d4d939cab14b26b59542af2d401ce51f46ac92b844cec7e7d2",
+  "authorized_comment": "结论：定义为转需求。C673-G5 燃油补电 SOC 上限滑动时没有实时百分比。现行功能定义和 UE 只要求松手后按反馈值显示 30%–80%，没有定义拖动过程中的数值，不按设置实现缺陷修。\n依据：[SD-8119 Jira原票·描述/必现|http://jira.i-tetris.com/browse/SD-8119]；[C673海外平台化XEV车辆设置功能定义V2.1·4.15.8场景三|https://drive.google.com/file/d/1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D/view]；[长安C673交互设计文档_车辆设置_EV&EVE_v7.4·能量管理燃油补电|https://drive.google.com/file/d/1V7BXYyPnfkcLOCwYeH7-mC37Lf9b533U/view]。\n处理：已建 [SD-8172|http://jira.i-tetris.com/browse/SD-8172]，补拖动中实时显示当前目标百分比，松手后仍按 VcuFuelrechargeSocSetFb 回显；原 Bug 按 workaround / bug转需求关闭；需求处理。"
+}

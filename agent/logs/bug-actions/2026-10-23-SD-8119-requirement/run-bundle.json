@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261023T151000+0800-SD-8119-requirement",
+  "status": "comment_verified",
+  "started_at": "2026-10-23T15:10:00+08:00",
+  "completed_at": "2026-10-23T15:20:00+08:00",
+  "query_summary": "SD-8119 燃油补电 SOC 滑条拖动无数值，bug转需求并评论",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-SD-8119-requirement/action-log.md",
+  "preflight_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-SD-8119-requirement/preflight.json",
+  "preflight_sha256": "784604c53c677d4cc51ee90319b6cf0b2b81207eb8041adb5ad0094e81606a9f",
+  "items": [
+    {
+      "jira_key": "SD-8119",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-SD-8119-requirement/SD-8119-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-SD-8119-requirement/SD-8119-receipt.json",
+      "comment_receipt_sha256": "b471ad7584f350915f3b9cf9b87d8279089de651ae3cbd5dfe1b9094d79af5e3",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-23-SD-8119-requirement/SD-8119-readback.json",
+      "comment_readback_sha256": "a3b926b23b54e20aa2623871e18053912c43de9709ed63b52c0e39c2ecdecc48"
+    }
+  ]
+}
