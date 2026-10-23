@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.36.0-trial.1`
+- 当前版本：`v1.37.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-10-20`
+- 生效日期：`2026-10-23`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`；UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -15,6 +15,36 @@
 
 
 
+
+## v1.37.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 变更表新建需求的经办人按 U 列产品负责人设置。吴优是 `you.wu`，李欣是 `xin.li03`，冯智秀是 `zhixiu.feng`。
+- U 列无法对应已登记负责人时，才用当前操作者。不改无关旧票经办人。
+- 飞书通知继续使用应用 `cli_aa506e13fcf8dcf5` 和群 `oc_c3692001480b0aac7825bafab90989b3`。群内称呼只作识别：李欣是塞林格，冯智秀是芝芝。没有成员 open_id 时不得声称已艾特。
+
+### 修改原因
+
+- 2026-10-23 吴优要求同事的变更需求经办人是对应产品，并用已登记的飞书机器人在群里通知。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-colleague-change-sheet-notify.md`
+
+### 验证案例
+
+- ADS-52387 回读经办人为李欣03。ADS-52388 回读经办人为冯智秀。
+- 两张票已由飞书机器人发到指定群，返回 message_id。罗稚钦近一个月最后一行是取消需求，未建票。
+
+### 回滚口径
+
+- 恢复新建需求经办人一律为当前操作者。不改回已经指定的经办人，不撤回已发群消息。
 
 ## v1.36.0-trial.1 — 2026-10-23
 
