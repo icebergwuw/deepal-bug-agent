@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.34.0-trial.1`
+- 当前版本：`v1.35.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-20`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -13,6 +13,37 @@
 
 
 
+
+
+## v1.35.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 从变更管理表新建需求时，只处理 B 列变更提出时间在当前日期往前一个自然月内的行。未写年份按工作簿年份解析；晚于今天则减一年。
+- 无法解析日期、已有 Jira key、已完成、废弃、重复、待报价或内部 bug 的行不新建。
+- 新建需求经办人默认是当前已绑定操作者。吴优对应 `you.wu`，创建时显式指定。不改已有票经办人。
+
+### 修改原因
+
+- 2026-10-23 吴优要求只看最近一个月新增，并把默认经办人定为自己。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-change-sheet-recent-window.md`
+
+### 验证案例
+
+- 8295 国内 OTA 表按 B 列筛出第 338 行，序号 335，变更时间 10/21，模块 3D桌面，D 列为空。
+- 新建需求后回读经办人为吴优，并把 key 写入 D338。
+
+### 回滚口径
+
+- 删除一个月窗口和默认经办人规则。不删除已经建出的需求票，也不改回已经指定的经办人。
 
 ## v1.34.0-trial.1 — 2026-10-23
 
@@ -1551,3 +1582,20 @@
 ### 回滚口径
 
 - 若 D 的 Jira-ready 结构导致表格过长或不便使用，只回滚 D 为“一条动作 + 一个责任方”的短结论；C 内联链接和 J 汇总链接规则继续保留。
+
+## v1.17.0-trial.3 — 2026-09-11
+
+### 试行内容
+
+- 增加 MasterGo Vibe MCP 接入方法和本次连接记录。
+- 记录本地 `@mastergo/vibe-mcp@latest`、默认 30678 端口、选中图层后读取代码的验证流程。
+
+### 影响文件
+
+- `agent/product-kb/rules/mastergo-vibe-mcp.md`
+- `agent/logs/bug-actions/2026-09-11-mastergo-vibe-mcp.md`
+- `agent/rules-version.md`
+
+### 回滚口径
+
+- 删除新增方法文档和操作日志，恢复本节之前的规则记录；不修改 MasterGo 文件。
