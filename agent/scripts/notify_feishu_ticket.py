@@ -25,6 +25,11 @@ def build_text(args: argparse.Namespace) -> str:
         f"经办人：{args.assignee}",
         f"来源：{args.source}",
     ]
+    dependencies = [item.strip() for item in args.dependency if item and item.strip()]
+    if dependencies:
+        lines.append("")
+        lines.append("依赖：")
+        lines.extend(f"- {item}" for item in dependencies)
     return "\n".join(lines)
 
 
@@ -52,6 +57,7 @@ def main() -> int:
     parser.add_argument("--summary", required=True)
     parser.add_argument("--assignee", required=True)
     parser.add_argument("--source", required=True)
+    parser.add_argument("--dependency", action="append", default=[])
     args = parser.parse_args()
 
     root = repo_root()

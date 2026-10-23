@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.37.0-trial.1`
+- 当前版本：`v1.38.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-23`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -15,6 +15,37 @@
 
 
 
+
+## v1.38.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 变更表建票后的飞书通知必须带依赖项：缺的 PRD/UE、跨模块依赖、变更表上已经写明的对接人。
+- 表上没有对接人时不写死名字，只写待指定。
+- 没有 open_id 时不得声称已艾特。
+
+### 修改原因
+
+- 2026-10-23 吴优确认通知要带上缺资料和该找谁沟通。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/notify_feishu_ticket.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-feishu-dependency-notify.md`
+
+### 验证案例
+
+- 吴优确认 ADS-52387、ADS-52388 的依赖文案后发到指定群。
+
+### 回滚口径
+
+- 飞书通知恢复为只含票号、标题、链接、经办人和变更表序号。不撤回已经发出的群消息。
 
 ## v1.37.0-trial.1 — 2026-10-23
 

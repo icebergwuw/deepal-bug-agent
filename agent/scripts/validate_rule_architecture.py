@@ -477,6 +477,8 @@ def validate(root: Path, skill: Path) -> list[str]:
         errors.append("复盘流程未指定变更表新建需求默认经办人")
     if "notify_feishu_ticket.py" not in review_workflow or "oc_c3692001480b0aac7825bafab90989b3" not in read(root / "agent/context.md"):
         errors.append("变更表建票后未要求通知指定飞书群")
+    if "依赖项" not in review_workflow or "不写死名字" not in review_workflow:
+        errors.append("飞书通知未要求带上依赖项，或允许编造未写明的对接人")
     notify = root / "agent/config/feishu-notify.json"
     if not notify.is_file() or "app_secret" in read(notify):
         errors.append("飞书通知配置缺失或写入了密钥")
