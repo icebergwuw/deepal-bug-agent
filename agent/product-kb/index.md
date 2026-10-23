@@ -10,6 +10,7 @@
 - 多语言 / All Key / 页面文本：`modules/multilingual-key.md`
 - Jira 评论产品定义信号：`rules/jira-comment-signals.md`
 - bug 转需求规则：`rules/bug-to-requirement.md`
+- 吴优 HUR 翻译总票：`rules/hur-translation-parent.md`
 - 外部来源登记：`sources.md`
 - 资料时效与证据边界：`rules/source-freshness.md`
 - 罗稚钦处理风格：`bug-methods/luo-zhiqin-style.md`

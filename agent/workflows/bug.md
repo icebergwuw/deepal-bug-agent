@@ -71,7 +71,7 @@ MCP 只替换它实际覆盖的读取和评论。MCP 不代替 Google Drive，�
 - Jira 测试预期只作为待核对主张；没有有效 `formal_target` 时不得直接定义“应该怎样”。
 - 按 `agent/output-contract.md` 形成一次结构化结果和唯一 `decision_text`。
 - UI 已有能力但语音未覆盖时，只有完整 Alchemy 证据链和正式目标共同证明“现有项目功能点未覆盖”后才转语音需求；若现有功能点应支持但当前映射错误，则按语音缺陷处理。缺平台证据时保持待复核。
-- 转需求按 `agent/workflows/review.md` 的转需求记录执行。先搜已有需求，再登记到深蓝项目变更管理表-2026年并决定是否新建。2026-10-23 授权覆盖建票、关联和按 workaround / bug转需求关闭；普通评论仍不代替其他转派或关闭。
+- 转需求按 `agent/workflows/review.md` 的转需求记录执行。先搜已有需求，再登记到深蓝项目变更管理表-2026年并决定是否新建。2026-10-23 授权覆盖建票、关联和按 workaround / bug转需求关闭；普通评论仍不代替其他转派或关闭。吴优名下未关闭的 HUR 翻译故障除外：不新建单票，按 `agent/product-kb/rules/hur-translation-parent.md` 关联 `agent/context.md` 的当前总票后 workaround 关闭。总票号会更新，不得写死历史票号。
 - `typeCode/类别语义/关键词映射` 卡点，按当前 bug 的 query、槽位、canonical 给本单可执行范围，不扩成无依据的全量类别表。
 - 具体 Jira 的既有词表、责任人和案例口径只从 `agent/product-kb/` 当前条目读取，不在通用流程中写死。
 

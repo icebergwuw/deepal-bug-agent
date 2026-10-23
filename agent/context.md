@@ -21,6 +21,8 @@
   `https://docs.google.com/spreadsheets/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/edit?gid=1443256155#gid=1443256155`
 - 该链接打开的页签是 `深蓝8295平台（国内）OTA 项目`，`gid=1443256155`。新建需求按原 Bug 的项目选择对应页签，不固定写这一页。表头在第 3 行。产品填写 `功能模块` 和 `JIRA-Story`；序号、提出时间、变更内容、变更阶段、费用申报和涉及车型由 PJM 填写。旧版冻结页签不写。从该表新建需求时，只处理 B 列变更提出时间在当前日期往前一个自然月内的行。经办人按 U 列产品负责人设置：吴优 `you.wu`，李欣 `xin.li03`，冯智秀 `zhixiu.feng`。U 列无法对应已登记负责人时才用当前操作者。不改无关旧票经办人。建票回读成功后用飞书应用 `cli_aa506e13fcf8dcf5` 通知群 `oc_c3692001480b0aac7825bafab90989b3`，配置在 `agent/config/feishu-notify.json`。通知必须带依赖项：缺的 PRD/UE、跨模块依赖、表上已写明的对接人。表上没有对接人时不写死名字。群内称呼：李欣是塞林格，冯智秀是芝芝。机器人目前没有成员读取权限，不能把称呼当成已艾特。
 
+- 当前 HUR 翻译总票：`HUR-85390`。这只是 2026-10-23 回读时仍在收翻译问题的故事，标题是 `[翻译][BUG转需求]Text ID V1.3将提交翻译问题0923`。执行前必须回读它仍未完成。用户给出新总票，或这张已关闭、已解决、不再收翻译问题时，先改这一行再关联，不得沿用旧票号。处理规则见 `agent/product-kb/rules/hur-translation-parent.md`。
+
 - 语音平台功能分类：
   `https://alchemy.i-tetris.com/#/functional/classify`
 - 语音平台在线对话测试：

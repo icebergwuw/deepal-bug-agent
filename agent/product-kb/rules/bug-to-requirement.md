@@ -8,6 +8,10 @@
 - 多系统协同需要新增统一规则，如页面层级、可见节点优先级、隐私授权覆盖入口。
 - 语音平台标准功能不覆盖目标能力，且不能只靠项目配置修复。
 
+## HUR 翻译总票
+
+吴优名下未关闭的 HUR 翻译故障不逐张新建需求。关联 `agent/context.md` 记录的当前总票，再按 workaround 关闭。总票号会更新。细则见 `agent/product-kb/rules/hur-translation-parent.md`。
+
 ## 不转需求的情况
 
 - 当前 PRD / UE / 配置表已有定义，研发未实现：转研发修 bug。

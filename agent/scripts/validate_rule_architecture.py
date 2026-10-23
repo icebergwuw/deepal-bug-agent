@@ -484,6 +484,19 @@ def validate(root: Path, skill: Path) -> list[str]:
         errors.append("飞书通知配置缺失或写入了密钥")
     if "2026-10-23 的转需求授权" not in agents_text:
         errors.append("AGENTS.md 未记录转需求建票授权")
+    if "当前翻译总票" not in agents_text or "不得写死历史票号" not in agents_text:
+        errors.append("AGENTS.md 未记录可更新的 HUR 翻译总票")
+    if "不得把历史总票号写死" not in review_workflow:
+        errors.append("复盘流程未禁止写死 HUR 翻译总票")
+    parent_rule = read(root / "agent/product-kb/rules/hur-translation-parent.md")
+    context_text = read(root / "agent/context.md")
+    if "当前 HUR 翻译总票" not in context_text or "先改这一行再关联" not in context_text:
+        errors.append("context.md 未把 HUR 翻译总票做成可更新入口")
+    if "HUR-85390" in review_workflow:
+        errors.append("复盘流程写死了 HUR 翻译总票号")
+    for token in ("you.wu", "Workaround", "不新建单张需求", "agent/context.md"):
+        if token not in parent_rule:
+            errors.append(f"HUR 翻译总票规则缺少：{token}")
 
     for relative in (
         "AGENTS.md",
