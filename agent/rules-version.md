@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.31.0-trial.1`
+- 当前版本：`v1.32.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-10-20`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -13,6 +13,36 @@
 
 
 
+
+## v1.32.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 吸收 Hermes 套件里可复用的 Bug 转需求顺序：先搜已有需求，再新建、关联、按 workaround / bug转需求关闭，并在原 Bug 评论说明。
+- 不引入东风样例中的经办人、流转号、车型表和模块挂载票。
+- 建票、关联和关闭不在当前评论授权内，仍需另一次明确授权。
+
+### 修改原因
+
+- 2026-10-23 对照 `analyze-bug-hermes-kit` 的「BUG 转需求流程」。其中四步闭环可用，项目人员、流转号和关票权限不能直接套到深蓝。
+
+### 影响文件
+
+- `agent/workflows/review.md`
+- `agent/workflows/bug.md`
+- `agent/evidence-contract.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-bug-to-requirement.md`
+
+### 验证案例
+
+- 规则架构校验确认复盘流程写明不沿用东风样例。
+- 未建需求票，未关闭或转派任何 Jira。
+
+### 回滚口径
+
+- 恢复转需求记录只保留标题、背景、关联和项目字段的短口径。不删除已经发出的 Jira 评论。
 
 ## v1.31.0-trial.1 — 2026-10-20
 

@@ -461,6 +461,8 @@ def validate(root: Path, skill: Path) -> list[str]:
     for token in ("evidence-requirements.json", "validate_bug_evidence_gate.py"):
         if token not in review_workflow:
             errors.append(f"复盘流程缺少统一证据门槛：{token}")
+    if "不沿用东风样例" not in review_workflow:
+        errors.append("复盘流程未限制东风转需求样例")
 
     for relative in (
         "AGENTS.md",
