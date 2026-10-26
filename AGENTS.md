@@ -17,6 +17,7 @@
 ## 默认意图
 
 - 已绑定团队负责人后，用户单独发送 Jira bug 链接，默认执行完整 Bug 流程：查重、MCP 读票、补充 Drive 正式定义、产品判断、按注册表 `result_output` 发布结果，并写日志。吴优是 `jira_comment_only`：不回填吴优线上 bug 表，不同步吴优本地索引；证据门禁通过后把当前 D 原文评论到该票，复盘后改发当前 H 原文。其他负责人仍更新自己的清单。MCP 不代替 Google Drive。仍不转派、不关闭、不改状态、不改经办人、不写 Alchemy。吴优名下未关闭的 HUR 翻译故障除外，按 `agent/product-kb/rules/hur-translation-parent.md` 关联当前总票并 workaround 关闭。
+- 新会话里用户说「建票」，默认就是变更表建需求流程，使用 `deepal-change-sheet-story`。不要另起一套建票方式。单独的 Jira Bug 链接仍走上面的 Bug 流程，不因为出现「建票」两个字就忽略 Bug 链接。
 - 使用人未确认、不是已登记负责人，或不使用本项目 Bug 表时，先走 `agent/onboarding.md` 的同事独立使用。必须询问使用人是谁、结果在哪里更新；没有现成表格就新建本地 Excel。不得写入已登记负责人的线上清单。请对方给出 Bug 列表，一批最多 5 条。当前是测试版本，判断可能不准，要请对方反馈。
 - 用户再次发送同一 Jira、要求“再看 / 重新确认 / 二次处理”且没有提供会议纪要、leader/客户复盘材料时，仍走普通 Bug 流程。写表渠道按 `agent/config/sheet-update-modes.json` 的 `recheck` 模式更新原行，不因已有历史判断而只写 H。吴优评论渠道不改表，重新取证后另发当前 D。
 - 同一线程里只追问已读 Bug 的某一个来源、某一句文案或某一个字段时，按 `agent/workflows/bug.md` 做定向补证：复用已读材料，只补这一问。不重跑查重、预检、整份版本正文和写表。用户没要求落表时，先给判断。

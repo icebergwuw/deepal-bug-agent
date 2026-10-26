@@ -1,11 +1,11 @@
 ---
 name: deepal-change-sheet-story
-description: Create Deepal change-management-sheet requirement stories, assign the sheet owner, write the Jira key back, and notify the recorded Feishu group with missing PRD/UE and named contacts. Use when the user asks to create tickets from the Deepal change sheet, process recent owner rows such as 吴优、李欣、冯智秀 or 罗稚钦, or send the post-create Feishu notice. Do not use for ordinary Bug analysis, HUR translation parent tickets, Jira comments, or read-only review.
+description: Create Deepal change-management-sheet requirement stories, assign the sheet owner, write the Jira key back, and notify the recorded Feishu group with missing PRD/UE and named contacts. Use when a new session says 建票, asks to create tickets, process recent owner rows such as 吴优、李欣、冯智秀 or 罗稚钦, or send the post-create Feishu notice. Do not use for a standalone Jira Bug link, ordinary Bug analysis, HUR translation parent tickets, Jira comments, or read-only review.
 ---
 
 # Deepal Change Sheet Story
 
-Use this skill only for creating requirement stories from the Deepal change-management sheet and sending the matching Feishu notice. Ordinary Bug handling stays in `deepal-product-bug-handler`. If this skill conflicts with `AGENTS.md` or `agent/workflows/review.md`, those files win.
+A new session that says 建票 uses this workflow. Do not invent another ticket-creation path. A standalone Jira Bug link still uses `deepal-product-bug-handler`. If this skill conflicts with `AGENTS.md` or `agent/workflows/review.md`, those files win.
 
 ## Boundaries
 
