@@ -8,7 +8,7 @@
 - 表格位置：不适用
 - 写入摘要：默认意图增加「建票」走 `deepal-change-sheet-story`。单独 Jira Bug 链接仍走 Bug 流程。
 - Jira 动作：未评论 Jira / 未流转 Jira / 未建票
-- 回读校验：待规则架构校验。
+- 回读校验：规则架构校验通过。两个 skill 的安装副本与仓库模板一致。
 - run bundle：不适用
 - readback_sha256：不适用
 - 未执行动作：未建票，未发飞书，未改已有票，未写 Alchemy
