@@ -198,6 +198,12 @@ def validate(root: Path, skill: Path) -> list[str]:
         skill_text = read(skill)
     if skill_text != canonical_skill_text:
         errors.append("已安装 Skill 与 Git 内唯一模板不一致")
+    change_sheet_source = root / "agent/skills/deepal-change-sheet-story/SKILL.md"
+    change_sheet_installed = skill.parent.parent / "deepal-change-sheet-story/SKILL.md"
+    if not change_sheet_source.is_file():
+        errors.append("缺少变更表建票 Skill 模板")
+    elif not change_sheet_installed.is_file() or change_sheet_installed.read_text(encoding="utf-8") != change_sheet_source.read_text(encoding="utf-8"):
+        errors.append("已安装变更表建票 Skill 与仓库模板不一致")
     for reference in (
         "agent/onboarding.md",
         "agent/evidence-contract.md",

@@ -1,0 +1,4 @@
+interface:
+  display_name: "变更表建票"
+  short_description: "Create change-sheet stories and notify Feishu."
+  default_prompt: "Use $deepal-change-sheet-story to create the latest eligible change-sheet stories and notify the Feishu group."

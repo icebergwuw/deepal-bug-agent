@@ -55,6 +55,7 @@
 - 操作日志：`agent/logs/bug-actions/`
 - 规则版本与变更记录：`agent/rules-version.md`
 - Skill 安装模板：`agent/skills/deepal-product-bug-handler/SKILL.md`
+- 变更表建票 Skill：`agent/skills/deepal-change-sheet-story/SKILL.md`。安装副本在 `$CODEX_HOME/skills/deepal-change-sheet-story`，必须与仓库模板一致。
 - 外部 Skill 依赖：`agent/config/external-skills.json`；UE 语音覆盖审核 Skill 从其独立私有仓库安装，不在本仓库复制源码。
 - 历史资料：`agent/archive/`，仅作证据，不覆盖现行规则。
 
