@@ -1,0 +1,1816 @@
+# Bug 处理规则版本
+
+- 当前版本：`v1.42.0-trial.1`
+- 状态：`trial`
+- 生效日期：`2026-10-26`
+- 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
+- Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`。变更表建票使用 `agent/skills/deepal-change-sheet-story/SKILL.md`。UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
+- 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
+
+## v1.42.0-trial.1 — 2026-10-26
+
+### 试行内容
+
+- 变更表建需求并通知飞书的流程沉淀为 `deepal-change-sheet-story`。
+- 仓库模板在 `agent/skills/deepal-change-sheet-story/SKILL.md`。本机安装副本必须与模板一致。
+- 普通 Bug 流程不临时改写这套建票规则。
+
+### 修改原因
+
+- 2026-10-26 吴优要求把变更表建票、经办人、回写和带依赖项的飞书通知沉淀成 skill。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/rules-version.md`
+- `agent/skills/deepal-change-sheet-story/SKILL.md`
+- `agent/skills/deepal-change-sheet-story/agents/openai.yaml`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/logs/bug-actions/2026-10-26-change-sheet-story-skill.md`
+
+### 验证案例
+
+- Skill 结构校验通过。安装副本与仓库模板一致。本次没有新建 Jira，也没有另发飞书消息。
+
+### 回滚口径
+
+- 删除该 skill 的仓库模板、安装副本和入口。不删除已经建出的需求票，不撤回已经发出的群消息。
+
+## v1.41.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- Jira 评论发出后，把改变结论的依据截图挂到同一条评论。
+- 截图要能看清资料标题、页码或位置，以及决定性原文。截不到就写明限制，不另写一版结论。
+
+### 修改原因
+
+- 2026-10-23 吴优要求以后评论票时带上依据截图。
+
+### 影响文件
+
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- `ADS-52227` 评论 `8719577` 已补挂记忆空间 PRD V0.7 第 11 页噪声检测截图。状态仍为待办，经办人仍为吴优。
+
+### 回滚口径
+
+- 删除评论后挂截图的要求。不删除已经挂上的截图。
+
+
+
+
+
+
+
+
+
+
+## v1.40.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 长马标准语料只认 `OTA节点_J90A-标准语料_V1.0` 这一张在线表。
+- 小憩调时长必须已进入编辑态，否则静默。露营调时长英语不能沿用表里写成 rest mode 的句子。
+
+### 修改原因
+
+- 2026-10-23 吴优确认长马语料只有这一张在线表，并要求用它处理小憩和露营语料票。
+
+### 影响文件
+
+- `agent/context.md`
+- `agent/product-kb/modules/scenario-mode.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-hur-rest-camp-corpus.md`
+
+### 验证案例
+
+- `HUR-86102`、`HUR-86228` 已按 `1_英语` mode_05_06 和 mode_08 评论。两张仍是待办，未改语料表。
+
+### 回滚口径
+
+- 删除这张语料表入口。不删除已经发出的 Jira 评论。
+
+## v1.39.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 吴优名下未关闭的 HUR 翻译故障，不逐张新建需求。关联当前翻译总票，评论后按 Workaround 关闭。
+- 当前总票只记录在 `agent/context.md`。总票会更新；执行前必须回读仍未完成，不得把历史票号写死。
+- 语音执行、TTS 截断、故事票和其他负责人的票不走这条。
+
+### 修改原因
+
+- 2026-10-23 吴优确认自己名下未关闭的 HUR 翻译票都按总票提交中科并 workaround 关闭，且总票号会更换。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/output-contract.md`
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/product-kb/rules/bug-to-requirement.md`
+- `agent/product-kb/modules/multilingual-key.md`
+- `agent/product-kb/index.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-hur-translation-parent-rule.md`
+
+### 验证案例
+
+- 同日已按当时总票 `HUR-85390` 关闭 `HUR-86206`、`HUR-85819`、`HUR-85781`、`HUR-85832`，回读为已解决 / Workaround。
+- 规则架构校验确认流程正文不写死该票号，当前值只在 context。
+
+### 回滚口径
+
+- 删除 HUR 翻译总票特例，恢复逐张按普通转需求处理。不重开已经按该口径关闭的 Bug，也不改回 context 里已经更换的总票。
+
+## v1.38.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 变更表建票后的飞书通知必须带依赖项：缺的 PRD/UE、跨模块依赖、变更表上已经写明的对接人。
+- 表上没有对接人时不写死名字，只写待指定。
+- 没有 open_id 时不得声称已艾特。
+
+### 修改原因
+
+- 2026-10-23 吴优确认通知要带上缺资料和该找谁沟通。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/notify_feishu_ticket.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-feishu-dependency-notify.md`
+
+### 验证案例
+
+- 吴优确认 ADS-52387、ADS-52388 的依赖文案后发到指定群。
+
+### 回滚口径
+
+- 飞书通知恢复为只含票号、标题、链接、经办人和变更表序号。不撤回已经发出的群消息。
+
+## v1.37.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 变更表新建需求的经办人按 U 列产品负责人设置。吴优是 `you.wu`，李欣是 `xin.li03`，冯智秀是 `zhixiu.feng`。
+- U 列无法对应已登记负责人时，才用当前操作者。不改无关旧票经办人。
+- 飞书通知继续使用应用 `cli_aa506e13fcf8dcf5` 和群 `oc_c3692001480b0aac7825bafab90989b3`。群内称呼只作识别：李欣是塞林格，冯智秀是芝芝。没有成员 open_id 时不得声称已艾特。
+
+### 修改原因
+
+- 2026-10-23 吴优要求同事的变更需求经办人是对应产品，并用已登记的飞书机器人在群里通知。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-colleague-change-sheet-notify.md`
+
+### 验证案例
+
+- ADS-52387 回读经办人为李欣03。ADS-52388 回读经办人为冯智秀。
+- 两张票已由飞书机器人发到指定群，返回 message_id。罗稚钦近一个月最后一行是取消需求，未建票。
+
+### 回滚口径
+
+- 恢复新建需求经办人一律为当前操作者。不改回已经指定的经办人，不撤回已发群消息。
+
+## v1.36.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 变更表新建需求回读成功后，向飞书群 `oc_c3692001480b0aac7825bafab90989b3` 发一条。
+- 飞书应用 ID 是 `cli_aa506e13fcf8dcf5`，写在 `agent/config/feishu-notify.json`。
+- App Secret 只放 gitignore 的 `agent/config/feishu-bot.local.json`，不进入规则、日志或仓库。
+- 发送失败不得声称已通知。
+
+### 修改原因
+
+- 2026-10-23 吴优要求记住该群和飞书应用，以后建完票都在群里发一声。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/config/feishu-notify.json`
+- `agent/config/feishu-bot.local.example.json`
+- `.gitignore`
+- `agent/scripts/notify_feishu_ticket.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-feishu-ticket-notify.md`
+
+### 验证案例
+
+- 规则架构校验确认群 ID、应用 ID 和本地密钥边界。
+- 本次没有另发飞书消息。上一张 `ADS-52385` 已在该群通知。
+
+### 回滚口径
+
+- 删除建票后飞书通知规则。不撤回已经发出的群消息。
+
+## v1.35.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 从变更管理表新建需求时，只处理 B 列变更提出时间在当前日期往前一个自然月内的行。未写年份按工作簿年份解析；晚于今天则减一年。
+- 无法解析日期、已有 Jira key、已完成、废弃、重复、待报价或内部 bug 的行不新建。
+- 新建需求经办人默认是当前已绑定操作者。吴优对应 `you.wu`，创建时显式指定。不改已有票经办人。
+
+### 修改原因
+
+- 2026-10-23 吴优要求只看最近一个月新增，并把默认经办人定为自己。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-change-sheet-recent-window.md`
+
+### 验证案例
+
+- 8295 国内 OTA 表按 B 列筛出第 338 行，序号 335，变更时间 10/21，模块 3D桌面，D 列为空。
+- 新建需求后回读经办人为吴优，并把 key 写入 D338。
+
+### 回滚口径
+
+- 删除一个月窗口和默认经办人规则。不删除已经建出的需求票，也不改回已经指定的经办人。
+
+## v1.34.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 登记深蓝项目变更管理表-2026年。新建需求按原 Bug 项目选择页签，不固定写用户给出的 `gid=1443256155`。
+- 该 gid 当前对应 `深蓝8295平台（国内）OTA 项目`。表头在第 3 行。产品只填 `功能模块` 和 `JIRA-Story`，不代填 PJM 列，不写旧版冻结页签。
+
+### 修改原因
+
+- 2026-10-23 吴优指定这张表作为新建需求票的处理入口。
+
+### 影响文件
+
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/workflows/bug.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-change-management-sheet.md`
+
+### 验证案例
+
+- 用已登录 Chrome 打开链接，表名是深蓝项目变更管理表-2026年，指定页签是深蓝8295平台（国内）OTA 项目。
+- 本次没有新增变更行，也没有新建 Jira。
+
+### 回滚口径
+
+- 删除变更管理表入口，恢复转需求不经过该表。不删除表上已有行。
+
+## v1.33.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 吴优授权：证据门禁通过且结论为转需求时，可以新建需求、关联原 Bug，并把原 Bug 按 workaround / bug转需求关闭。
+- 该授权不扩展到其他转派、关闭、改经办人或写入 Alchemy。
+- Jira MCP 仍不能建票或流转。执行时用同一 Jira 凭证走 REST，并回读需求票、关联和原 Bug 状态。
+- 项目必填项没有当前规则时停止建票，不沿用东风或历史样例猜测。
+
+### 修改原因
+
+- 2026-10-23 吴优对「建票、关联和关闭需要另一次明确授权」回复授权。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-bug-to-requirement-authorization.md`
+
+### 验证案例
+
+- 规则架构校验确认授权范围写在 `AGENTS.md` 和复盘流程。
+- 本次没有新建需求，也没有关闭任何 Jira。
+- 账号 `you.wu` 具备创建、关联、解决和关闭权限；这只说明接口能力，不扩大授权范围。
+
+### 回滚口径
+
+- 恢复建票、关联和关闭都要另一次明确授权。不删除已经建出的需求票，也不重开已经按该授权关闭的 Bug。
+
+## v1.32.0-trial.1 — 2026-10-23
+
+### 试行内容
+
+- 吸收 Hermes 套件里可复用的 Bug 转需求顺序：先搜已有需求，再新建、关联、按 workaround / bug转需求关闭，并在原 Bug 评论说明。
+- 不引入东风样例中的经办人、流转号、车型表和模块挂载票。
+- 建票、关联和关闭不在当前评论授权内，仍需另一次明确授权。
+
+### 修改原因
+
+- 2026-10-23 对照 `analyze-bug-hermes-kit` 的「BUG 转需求流程」。其中四步闭环可用，项目人员、流转号和关票权限不能直接套到深蓝。
+
+### 影响文件
+
+- `agent/workflows/review.md`
+- `agent/workflows/bug.md`
+- `agent/evidence-contract.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-23-bug-to-requirement.md`
+
+### 验证案例
+
+- 规则架构校验确认复盘流程写明不沿用东风样例。
+- 未建需求票，未关闭或转派任何 Jira。
+
+### 回滚口径
+
+- 恢复转需求记录只保留标题、背景、关联和项目字段的短口径。不删除已经发出的 Jira 评论。
+
+## v1.31.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- 流程按来源和结果渠道重排。MCP 负责单票读取、评论、语音日志、Alchemy 配置和判责规则。
+- MCP 不代替 Google Drive、附件正文、UE 或客户测试用例。待处理列表先用 Jira JQL，搜索失败才打开 Dashboard。
+- 吴优的一轮不再经过写表步骤：预检、读票、Drive 正式定义、证据门禁、评论回读、comment 收口。其他负责人仍写自己的清单。
+
+### 修改原因
+
+- 有 Jira MCP 且吴优不再回填 bug 表后，旧流程仍把写表当成主路径，只在旁边注明跳过。实际执行会要么打开表格，要么把 MCP 读票当成证据已经齐了。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/workflows/bug.md`
+- `agent/onboarding.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-mcp-comment-flow.md`
+
+### 验证案例
+
+- 规则架构校验确认流程保留“MCP 不代替 Google Drive”和来源对照。
+- 未改已发出的 Jira 评论，未写吴优 bug 表。
+
+### 回滚口径
+
+- 恢复以写表为主路径、评论为附带动作的口径。不删除已经发出的 Jira 评论。
+
+## v1.30.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- `jira_comment_only` 成为独立结果渠道，不再只是跳过写表。查重改看 Jira 评论和操作日志，不查、不改吴优线上清单和本地索引。
+- 评论前预检至少要求 Jira 和 Google Drive。语音画像加 Alchemy，可见交互画像加 MasterGo。
+- 评论批次用 `validate_bug_run.py --phase comment` 收口。`status` 为 `comment_verified`。不得用表格行号冒充 `sheet_row`，也不得把 comment 收口说成 API final。
+- 未通过 comment 阶段，不得声称这批 Bug 已处理完成。已发出的评论不改。
+
+### 修改原因
+
+- v1.29 只拦住了没有 manifest 的评论授权。写表收口仍要求表格行，评论渠道没有自己的完成标准，所以流程上仍可能绕过 Drive 预检后直接评论。
+
+### 影响文件
+
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/output-contract.md`
+- `agent/evidence-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-comment-channel-close.md`
+
+### 验证案例
+
+- 无表格行的评论 bundle 在预检要求 Google Drive、授权回执和评论回读一致时通过 `--phase comment`。
+- 预检未要求 Google Drive 时 comment 阶段失败。
+- 原写表 prewrite、final 和证据门禁测试仍通过。
+
+### 回滚口径
+
+- 恢复评论渠道不经 `--phase comment` 的口径。不删除已经发出的 Jira 评论。
+
+## v1.29.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- Jira 评论前必须通过 `agent/scripts/authorize_jira_comment.py`。脚本复用证据门禁，只在 manifest 通过且正文等于 `decision.text` 时写回执。
+- `jira_comment_only` 只跳过吴优清单和本地索引，不跳过 Drive 正式定义、客户用例、版本族和证据门禁。
+- 门禁失败时不调用 `add_jira_comment`。缺正式定义、客户用例或版本族时，只能评论已降级的 `待复核 / 待确认 / 待会诊`。
+- 不删除、不修改 2026-10-20 已发出的评论。
+
+### 修改原因
+
+- 2026-10-20 的评论优先试跑没有生成证据 manifest，也没有运行 `validate_bug_evidence_gate.py`。写表脚本里的 Drive 门禁因此没有被调用，`add_jira_comment` 自己也不校验证据。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/evidence-contract.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/bug-owners/registry.yaml`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/authorize_jira_comment.py`
+- `agent/scripts/test_authorize_jira_comment.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-jira-comment-evidence-gate.md`
+
+### 验证案例
+
+- 匹配 `decision.text` 的评论得到 `gate=passed` 回执。
+- 自带 `（AI Generated）` 或正文不一致时不给回执。
+- 确定性结论缺少有效 `formal_target` 时脚本失败，不写回执。
+
+### 回滚口径
+
+- 恢复评论不经 `authorize_jira_comment.py` 的口径。不删除已经发出的 Jira 评论，也不把已有回执当成新的授权。
+
+## v1.28.0-trial.1 — 2026-10-20
+
+### 试行内容
+
+- 吴优明确要求以后不回填自己的 bug 表。注册表 `wu-you.result_output` 设为 `jira_comment_only`。
+- 吴优的 Bug 和复盘结论直接用 `add_jira_comment` 发当前 D/H 原文，不再等待吴优清单回读，也不同步吴优本地索引。
+- 评论不代替转派、关闭、改状态或改经办人。其他负责人仍写自己的清单。
+
+### 修改原因
+
+- 2026-10-20 用 SLV-45401、ADS-51837、ADS-51723、ADS-51607、ADS-51604 试跑评论优先。评论已回读，未写表、未转派。原流程仍要求先回填吴优表，和这个口径冲突。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/bug-owners/registry.yaml`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-20-wu-you-jira-comment-only.md`
+
+### 验证案例
+
+- 上述 5 张票的最新评论由吴优账号发出，正文为当次 D，末尾保留 `（AI Generated）`。
+- 未调用转派、关闭或改状态接口，也未写吴优线上清单。
+
+### 回滚口径
+
+- 恢复吴优默认写表，评论重新等到清单回读后发送。不删除已经发出的 Jira 评论。
+
+## v1.27.0-trial.1 — 2026-10-15
+
+### 试行内容
+
+- 操作者于 2026-10-15 授权：本流程正在处理的 Jira 票，清单回读后用 `add_jira_comment` 发送当前 D 原文；复盘完成后发送当前 H 原文。
+- `update_jira_description` 只回填 bugfree 或描述里的汇总表，并保持原表结构。
+- 这次授权不包含转派、关闭、改状态、改经办人和写入 Alchemy。用户说「只看 / 不更新」时不写 Jira。
+- 评论必须回读。MCP 自动追加的 `（AI Generated）` 保留。
+
+### 修改原因
+
+- 操作者针对 Jira 写接口回复「授权」。此前评论和改描述被规则拦住。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/bug-owners/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-15-jira-write-authorization.md`
+
+### 验证案例
+
+- 规则文本限定评论正文为当前 D/H，描述回填只覆盖汇总表。
+- `agent/scripts/validate_rule_architecture.py` 通过。
+- 本次没有对任何 Jira 票调用写接口。
+
+### 回滚口径
+
+- 恢复为评论、改描述、转派和状态变更都要另一次明确授权。不删除已经发出的 Jira 评论。
+
+## v1.26.0-trial.1 — 2026-10-15
+
+### 试行内容
+
+- 同一套 analyze-bug 运行时再登记 `analyze_bug_debug`、`analyze_bug_rules`、`analyze_bug_ops`。
+- Debug 读 vos-debug 日志，Ops 读 Alchemy 配置，Rules 提供本地判责顺序。三处只读。
+- Jira 账号仍来自项目 `.env`。Debug / Alchemy Cookie 从已登录 Chrome 提取到 gitignore 的 `.analyze-bug/`；提取超过 20 秒就跳过，服务仍可启动。
+- Ops 无 Cookie 时允许启动，调用工具再报凭证缺失。请求带 Alchemy Referer，并且不走系统代理。
+
+### 修改原因
+
+- 只登记 Jira MCP 时，日志、运营配置和判责规则仍然没有项目入口。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/bug.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `.grok/config.toml`
+- `agent/scripts/analyze-bug-mcp.sh`
+- `agent/scripts/analyze-bug-jira-mcp.sh`
+- `agent/vendor/analyze-bug/`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-15-analyze-bug-mcp-suite.md`
+
+### 验证案例
+
+- `grok mcp doctor` 四个服务都能握手。
+- Rules 能返回规则版本。Ops 在有 Cookie 时能读到项目列表；没有 Cookie 时服务仍能启动。
+
+### 回滚口径
+
+- `.grok/config.toml` 只保留 `analyze_bug_jira`。Debug、Rules、Ops 改回 Chrome 已登录态读取。不改已有表格数据。
+
+## v1.25.0-trial.1 — 2026-10-15
+
+### 试行内容
+
+- 单张 Jira 票的字段、评论、附件元数据和关联票改由项目 MCP `analyze_bug_jira` 的 `get_jira_issue` 读取。
+- Dashboard、附件正文，以及 MCP 没有返回的字段，继续用当前 Chrome 已登录态补读。
+- `add_jira_comment` 和 `update_jira_description` 仍要用户明确授权，不因接入 MCP 而自动回写 Jira。
+- 凭证留在本机 `.env`，启动脚本写到 gitignore 的 `.analyze-bug/`。
+
+### 修改原因
+
+- 后续 Jira 分析要走 analyze-bug 0.4.1 的 Jira MCP，而不是每次用浏览器打开整张票。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/onboarding.md`
+- `agent/workflows/bug.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `.grok/config.toml`
+- `.gitignore`
+- `agent/scripts/analyze-bug-jira-mcp.sh`
+- `agent/vendor/analyze-bug/`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-10-15-analyze-bug-jira-mcp.md`
+
+### 验证案例
+
+- 用项目 `.env` 启动 MCP，对一张现有 Jira 调用 `get_jira_issue`，能返回标题、状态和经办人。
+- `agent/scripts/validate_rule_architecture.py` 通过。
+
+### 回滚口径
+
+- 删除 `.grok/config.toml` 里的 `analyze_bug_jira`、启动脚本和 `agent/vendor/analyze-bug/`。
+- Jira 单票读取改回当前 Chrome 已登录态。不改已有表格数据。
+
+## v1.24.0-trial.1 — 2026-09-24
+
+### 试行内容
+
+- 同事从 GitHub 使用这套 Bug 流程时，先问使用人是谁，不能从电脑用户名、Git 作者、浏览器账号或聊天称呼猜测。
+- 再问结果在哪里更新。对方没有现成表格时，新建本地 Excel，沿用 A:J 列。不得写入已登记负责人的线上清单。
+- 请对方给出 Bug 列表。一批最多 5 条，超出先拆批。
+- 每次都说明当前是测试版本，判断可能不准，并请对方反馈。
+- 未登记同事不写入 `registry.yaml`，只在本机 `local-profile.json` 记为 `operator_mode=external`。Jira 经办人仍匹配不到时，继续按原规则保持 `pending`，也不能写别人的表。
+- 同事结果 Excel 和 `agent/logs/bug-actions/external/` 不进入 Git。
+
+### 修改原因
+
+- 这套流程要给不一定属于本项目、也不使用现有 Bug 表的同事试用。原先的首次引导只允许绑定已登记负责人，同事一上来就会被导向团队表格。
+
+### 影响文件
+
+- `AGENTS.md`
+- `README.md`
+- `agent/onboarding.md`
+- `agent/context.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/sheet-contract.md`
+- `agent/bug-owners/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/bug_project_preflight.py`
+- `agent/scripts/test_bug_project_preflight.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `.gitignore`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-24-external-colleague-intake.md`
+
+### 验证案例
+
+- 预检测试覆盖：明确确认后的同事身份会新建 Excel 并得到 `external_write`；未确认身份、团队表格链接和团队负责人写入范围都会被拒绝。已登记负责人的 `read_write` 路径不变。
+
+### 回滚口径
+
+- 删除同事独立使用引导、`external_write` 预检和对应测试，恢复只绑定已登记负责人。不删除已有团队表格数据。
+
+## v1.23.0-trial.1 — 2026-09-24
+
+### 试行内容
+
+- 同一张表的页面 `/save` 已经返回 HTTP 400 且没有新修订号时，下一票直接走 Chrome 界面写入，不再重复尝试 `/save`。API 仍是默认路径；没有这条 400 记录时，API 阻断后仍先试 `/save`。
+- 界面写富文本的顺序固定为：名称框跳格，进入编辑态后再粘贴，选中短标签插入链接，确认链接还在才提交。编辑中途不点击表格空白或其他单元格。
+- 取消“核对链接必须按 Esc 退出”。编辑态要读到每个短标签 URL，退出编辑后链接仍在才算核对完成。Esc 清掉链接标记时重新加载并放弃这次编辑，不得提交纯文本。
+
+### 修改原因
+
+- ADS-50547 第427行上，页面 `/save` 富文本返回 HTTP 400，没有写入。Chrome 公式栏可以写完，但按 Esc 没有退出编辑，还把链接标记从编辑器里清掉。
+
+### 影响文件
+
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-24-ui-write-after-save-400.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_bug_run.py`：编辑态链接仍在可以通过 ui；只声明 Esc、但退出后链接不在，不能通过。旧回读只记录 `entered_edit_with_escape` 时仍可复验。
+- ADS-50547 第427行已用这套界面顺序写入。不改该行，也不改 SD-7944 第426行。
+
+### 回滚口径
+
+- 恢复“API 阻断后一律先走 `/save`”和“核对后必须按 Esc”。不改已经写入的 ADS-50547 第427行和 SD-7944 第426行。
+
+## v1.22.0-trial.1 — 2026-09-23
+
+### 试行内容
+
+- 页面 `/save` 可以写单元格内的 http(s) 富文本短标签。标签按可见文字的出现顺序定位，重叠、缺失和非 http(s) 地址都拒绝生成命令。
+- 复选框验证和锚点行格式仍走 `chrome_ui`。页面 `/save` 不能冒充 API final，也不能冒充 `--phase ui`。
+- 富文本写后必须进入编辑态读取 `data-sheets-formula-bar-text-link`，读完按 Esc 退出。空闲公式栏不显示链接元数据。
+
+### 修改原因
+
+- K426 已用富文本 opcode `25813757` 写入两个短标签，重新加载后的编辑态能读到对应 URL。C/D/J 因此不必再逐格手写链接。
+
+### 影响文件
+
+- `agent/scripts/sheet_page_save.py`
+- `agent/scripts/test_sheet_page_save.py`
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-23-page-save-rich-text.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_sheet_page_save.py`：两链接命令是 27 字段，外层 opcode 为 `25813757`；重叠、缺失和非 http(s) 地址失败。
+- K426 试写已经清空。A426 仍是 `2026-09-23`，B426 仍是 SD-7944 链接。
+
+### 回滚口径
+
+- `build_command` 重新拒绝 `links`，富文本改回 `chrome_ui`。不改 SD-7944 的 A:J，也不再改 K426。
+
+## v1.21.0-trial.1 — 2026-09-23
+
+### 试行内容
+
+- 同一线程里追问某一个来源、某一句文案或某一个字段时，走定向补证，不重跑查重、预检、整份版本正文和写表。
+- 版本族仍要列出同系列并读最新适用版本。中间版本默认不读全文，只在冲突、句子出处或版本结论不同时加读。
+- 判断还没稳定时不写表。同一天已经记录的同一张表 API 阻断直接复用，不再重复探测 gapi、gviz 和 export。
+
+### 修改原因
+
+- HUR-85084 的判断被追问文案出处后整条重跑，第一轮也没把功能定义和 PRD/UE 文案拆开。
+- SD-7944 的时间主要耗在重复探测已经失败的 Sheets API，以及逐格界面写入；单票证据本身已经够形成结论。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/workflows/bug.md`
+- `agent/evidence-contract.md`
+- `agent/sheet-contract.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-23-flow-time.md`
+
+### 验证案例
+
+- “这句文案哪里定义的”只补这一句的最早出处和最新版，不重开整票写表。
+- “再看 SD-7944”仍是完整复查。
+- 当天日志已有同一张表的 `batchUpdate` 阻断时，下一票直接走页面 `/save`。
+
+### 回滚口径
+
+- 删除定向补证、版本加读条件和阻断复用这三句，恢复每轮都全量重读并重新探测写表通道。不改已经写入的 Bug 行。
+
+## v1.20.0-trial.1 — 2026-09-23
+
+### 试行内容
+
+- API `batchUpdate` 仍是默认写表路径。API 被实际阻断时，先用已登录表格页的 `/save` 写纯文本、单个 `=` 公式和清空。
+- 富文本多链接、复选框验证和锚点格式仍走 `chrome_ui`。页面 `/save` 不能冒充 API final，也不能冒充 `--phase ui`。
+- 会话参数只在页面内使用。日志、仓库和聊天不记录 sid、token、ouid。
+
+### 修改原因
+
+- SD-7944 已证明页面 `/save` 可以写入并回读；逐格界面写入能用，但太慢，不该在 API 阻断后成为第一步。
+
+### 影响文件
+
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/sheet_page_save.py`
+- `agent/scripts/test_sheet_page_save.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `AGENTS.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-23-page-save-write-path.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_sheet_page_save.py`：纯文本和清空命令与已抓到的页面命令一致；富文本被拒绝；响应只保留修订号。
+- K426 曾用该通道写入并回读 `pipeprobe` 和公式 `=2+2`。清空并重新加载后 K426 为空；A426 仍为 `2026-09-23`，B426 仍为 SD-7944 链接。
+
+### 回滚口径
+
+- 删除页面 `/save` 脚本和规则入口，恢复 API 阻断后直接走 `chrome_ui`。不删除已经写入的 SD-7944 第426行，也不再改 K426。
+
+## v1.19.0-trial.1 — 2026-09-23
+
+### 试行内容
+
+- 结构化 Sheets API 仍是默认写表路径。API 被实际阻断时，允许当前 Chrome 已登录表格走 `chrome_ui` 兜底，不再把流程停在无法写表。
+- 界面兜底必须逐列读公式栏，编辑态核对链接后按 Esc 退出；截图不能证明单元格为空或链接可点。新增行 F/H 必须为空，串入其他票标题必须清空。
+- 收口命令是 `validate_bug_run.py --phase ui`，status 为 `ui_verified`。该状态不能进入或冒充 `--phase final`。
+
+### 修改原因
+
+- SD-7944 处理中，Sheets API `batchUpdate` 因 gapi 无 token、SAPISIDHASH 400 和 `ERR_BLOCKED_BY_CLIENT` 写不出去；界面可以写，但截图把 F426/H426 的 `PC-37245` 标题误看成空。
+
+### 影响文件
+
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/output-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-23-ui-write-gate.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_bug_run.py`：合法界面回读通过 ui；F 列串票、截图冒充和模糊 API 原因失败；`ui_verified` 不能通过 final。
+- SD-7944 第426行界面回读通过 `validate_bug_run.py --phase ui`。
+
+### 回滚口径
+
+- 删除 `ui_verified` 和 `--phase ui`，恢复只有 API final 可以报告写表完成。不删除已经写入的 SD-7944 第426行。
+
+## v1.18.0-trial.1 — 2026-09-17
+
+### 试行内容
+
+- 取消写表门禁对 Drive 检索回执 `origin=connector` 的强制要求。
+- 回执必须记录实际入口：优先当前 Chrome 登录态（`chrome`），仅在 Chrome 不可用时才使用 `connector` 或 `in_app_browser`。
+- 禁止手工编造未实际检索的回执；不再因为入口不是 connector 而阻止写表。
+
+### 修改原因
+
+- 用户明确要求取消 `origin=connector` 写表门禁；当前完整 Bug 流程已改为优先使用操作者 Chrome 登录态检索 Drive。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-09-17-origin-chrome-write-gate.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_bug_evidence_gate.py`：`origin=chrome` 与 `origin=in_app_browser` 通过；`origin=manual` 失败。
+- PC-40393：使用 Chrome Drive 检索回执生成写表请求。
+
+### 回滚口径
+
+- 恢复 `origin=connector` 硬门禁及对应测试、契约文句；不删除已写入的 Bug 行或本轮证据。
+
+## v1.17.0-trial.1 — 2026-09-10
+
+### 试行内容
+
+- 新增 `agent/skills/bug-chain-recheck-trigger/SKILL.md`：用户发送仅由 `!`、`！`、`?`、`？` 组成的纯标点消息时，重新审查当前 Bug 的完整证据与处理链路。
+- 触发器沿用普通 `recheck` 模式，不新增 Jira 外部动作授权，也不绕过身份、证据、写表、日志和回读门禁。
+
+### 修改原因
+
+- 为当前 Bug 上下文提供低摩擦的完整链路复查入口，避免快捷指令只复用旧结论或只更新单一字段。
+
+### 影响文件
+
+- `agent/skills/bug-chain-recheck-trigger/SKILL.md`
+- `agent/logs/bug-actions/2026-09-10-bug-chain-recheck-trigger-skill.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- `!`、`？？`、`!？！` 触发。
+- `! 看一下`、`HUR-12345!`、Jira 链接不触发。
+
+### 回滚口径
+
+- 删除新增 Skill 与对应日志，并恢复 `v1.16.0-trial.1` 版本记录；不删除 Bug 证据或历史判断。
+
+## 版本规则
+
+- `MAJOR`：列职责、默认授权边界或完整流程发生不兼容变化。
+- `MINOR`：新增证据门槛、写表契约或核验步骤。
+- `PATCH`：不改变职责边界的文字澄清和缺陷修正。
+- `trial.N`：试行次数；用户确认转正后移除 trial 标记。
+- 每次修改必须记录日期、原因、影响文件、验证案例和回滚口径，并在 `agent/logs/bug-actions/` 留痕。
+
+## v1.17.0-trial.2 — 2026-09-11
+
+### 试行内容
+
+- 外部平台的读取与写回优先使用操作者当前 Chrome 已登录态，覆盖 Jira、Google Drive/Sheets 及其他外部资料入口。
+- 仅在 Chrome 不可用、未登录或缺少所需能力时，才切换到内置浏览器、连接器或其他受支持入口，并在运行证据中记录实际入口。
+
+### 修改原因
+
+- 用户明确反馈内置登录态容易失效；本次 PC-38414 处理中已验证 Chrome 登录态可读取 Google Sheets。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/onboarding.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-09-11：通过当前 Chrome 登录账号 `you.wu@megatronix.co` 打开并读取 `吴优工作说明` 的 `bug` 工作表。
+
+### 回滚口径
+
+- 删除本条入口优先级规则，恢复仅按平台能力选择浏览器/连接器的旧执行方式；不删除既有访问回执或 Bug 证据。
+
+## v1.16.0-trial.1 — 2026-08-26
+
+### 试行内容
+
+- 明确 Alchemy 是语音产品专属配置平台，只有语音产品负责人可以修改。
+- 将意图、query/泛化语料、slot、literal/canonical、标准/项目功能点继承、项目执行策略、TTS 话术和下发发布列为产品专属动作。
+- Agent 只负责读取、测试、定位、提出修改项、验收和回读；只有产品完成配置且 canonical 正确后仍执行失败，才转研发。
+
+### 修改原因
+
+- PC-38902 处理中发现现有规则要求读取 Alchemy，但未把 Alchemy 修改权限和研发执行边界写成硬规则，容易将平台配置动作错误归给研发。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/product-kb/modules/voice-vui.md`
+- `agent/product-kb/org/component-owner-map.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-26-alchemy-product-only-boundary.md`
+
+### 验证案例
+
+- PC-38902：`mode_type=女` 已识别但 canonical 为空，先由语音产品在 Alchemy 补配置和下发；不能直接转研发改平台。
+- 已有 canonical 且车端仍执行失败时，才按车端/语音服务执行链路分流。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.15.0-trial.1`，不使用 `git reset --hard`。
+- 回滚只撤销 Alchemy 产品专属权限规则，不删除已形成的证据、日志或历史判断。
+
+## v1.15.0-trial.1 — 2026-08-18
+
+### 试行内容
+
+- 新增“可见交互优先级”规则：当前最上层可见页面、弹窗、卡片或控件命中时，优先于脱离当前页面的通用语义、后台上下文或不可见目标。
+- 多个可见节点同时命中时，必须继续核验层级、互斥关系、序号范围和正式优先级/消歧定义；缺少定义时不得直接确定性定责。
+- 预期行为卡必须记录可见节点、任务上下文及二者优先级关系，违反顺序时继续定位可见交互执行链责任，不直接归因于通用 NLU。
+
+### 修改原因
+
+- ADS-43148、ADS-47165 及近期可见交互 Bug 中，现象反复涉及可见节点与通用语义或既有任务上下文抢占；原规则要求核对可见资料，但没有明确目标选择优先级，容易把实现冲突误判为通用 NLU 问题或直接关闭。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-18-visible-interaction-priority-rule-v1.15.0-trial.1.md`
+
+### 验证案例
+
+- 当前页面存在唯一可见目标、通用语义命中其他目标时，按可见目标作为预期行为继续定位。
+- 同一页面存在多个可见命中节点但没有正式优先级定义时，结论降为 `待复核 / 待确认 / 待会诊`。
+- 已建立特定任务上下文与可见节点冲突且无更具体正式定义时，默认当前最上层可见交互优先，并记录上下文仲裁规则缺口。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.14.0-trial.1`，不使用 `git reset --hard`。
+- 回滚只撤销本条判定规则，不删除已形成的 Bug 日志、表格结论或历史证据。
+
+## v1.14.0-trial.1 — 2026-08-17
+
+### 试行内容
+
+- manifest 升级为 `schema_version=5`。每个 Drive 候选必须显式登记正文引用；引用文档必须按完整名称追搜并绑定 `exact_document_name` 回执。
+- 标题含版本号的候选必须登记版本族，绑定 `version_family` 枚举回执，选择一个已读候选并确认已检查更新版本。
+- 新增 `search_completion` 闭环门禁；引用链未追完、版本族未枚举、精确名称回执缺失或选中版本未读时，禁止生成写表请求。
+- 多份检索回执改为合并覆盖必查动作的声明查询，支持宽泛检索、精确文档名追查和版本族枚举分别留痕。
+
+### 修改原因
+
+- HUR-81975 的首次复查虽然通过 v4 候选审计，但只停留在功能清单和宽泛 Drive 搜索，没有按清单中的系统设置定义全名继续追查，也没有枚举同系列 V2.1、V2.2、V2.3，导致“未找到定义”的错误结论通过门禁。
+- 原规则已有“命中索引后追原文”的文字要求，但脚本无法识别引用链和版本选择是否完成，需要把要求变成结构化、可失败的机器校验。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/config/evidence-requirements.json`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-17-drive-search-completion-gate-v1.14.0-trial.1.md`
+
+### 验证案例
+
+- 候选正文声明系统设置功能定义，但未登记引用追查时，门禁必须拒绝。
+- 引用追查只绑定宽泛查询、没有 `exact_document_name` 回执时，门禁必须拒绝。
+- 版本化候选未登记版本族，或没有 `version_family` 回执、已读选中版本和更新版本确认时，门禁必须拒绝。
+- 精确文档名回执与版本族回执齐全、最新适用候选审计为 `read` 时，门禁通过。
+- 全套 Bug 证据、run bundle、表格契约、预检与规则架构测试必须通过。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.13.1-trial.1` 的 schema v4 门禁，不使用 `git reset --hard`。
+- 回滚不改写已有 v5 manifest 或本次规则维护日志；它们保留为历史证据，后续重新处理时明确选择当前生效 schema。
+
+## v1.13.1-trial.1 — 2026-08-14
+
+### 试行内容
+
+- 将 `audit-ue-voice-coverage` 从 Bug 规则仓库拆分到独立私有 GitHub 仓库，以 `v1.0.0` 和精确提交号独立管理。
+- Bug 仓库只保留外部 Skill 依赖声明、审核 manifest 和操作日志，不再保留第二份 Skill 源码。
+- 架构校验新增外部 Skill 的私有性、语义版本和精确提交锁定检查。
+
+### 修改原因
+
+- UE 语音覆盖审核流程与 Bug 处理规则是两个不同产品；共用 `v1.13` 会让同事误以为 Skill 版本等于 Bug 处理规则版本。
+- 单一源仓库可以让同事直接安装和升级 Skill，避免 Bug 仓库中的复制源码漂移。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/config/external-skills.json`
+- `agent/rules-version.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/logs/bug-actions/2026-08-14-audit-skill-repository-split.md`
+- 删除当前源码中的 `agent/skills/audit-ue-voice-coverage/`，历史记录中的原路径保留不变。
+
+### 验证案例
+
+- 独立 Skill 结构校验、团队来源校验和三份已有语音覆盖 manifest 校验全部通过。
+- Bug 项目架构校验必须识别外部 Skill 的私有仓库、`v1.0.0` 和 40 位提交号。
+- 删除 Bug 仓库中的 Skill 副本后，现有 Bug 单元测试和审核 manifest 校验仍必须通过。
+
+### 回滚口径
+
+- 通过新提交恢复 `v1.13.0-trial.1`，不使用 `git reset --hard`。
+- 回滚 Bug 仓库引用不删除已创建的独立私有 Skill 仓库、标签或历史审核记录。
+
+## v1.13.0-trial.1 — 2026-08-14
+
+### 试行内容
+
+- UE 语音覆盖 Skill 增加独立操作者绑定门槛：首次使用必须询问姓名，不得从系统用户名、浏览器账号、Git 作者或聊天称呼推断身份；确认前只允许只读发现。
+- 预载吴优、冯智秀、罗稚钦、李欣四人的工作模块来源，按各自真实页签与 module/UE 列映射读取，不再假设同一工作簿结构。
+- 非预载人员必须在授权 Drive 检索其工作说明或工作模块表，打开候选并让操作者确认精确文件与页签后才能本地绑定。
+- 新增 `validate_team_sources.py`，阻止负责人、显示名、页签映射、列名或模块列表重复/缺失。
+
+### 修改原因
+
+- 团队成员使用不同工作簿、不同页签和不同列保存负责模块；只预载 URL 的默认 gid 会落到问题或 Bug 页，无法稳定找到模块和 UE。
+- 用户要求 Skill 首次使用确认操作者，名单外人员必须通过 Drive 查找并引导确认，且需要把流程上传 GitHub 供同事使用。
+
+### 影响文件
+
+- `.gitignore`
+- `agent/rules-version.md`
+- `agent/skills/audit-ue-voice-coverage/SKILL.md`
+- `agent/skills/audit-ue-voice-coverage/references/team-module-sources.json`
+- `agent/skills/audit-ue-voice-coverage/scripts/validate_team_sources.py`
+- `agent/logs/bug-actions/2026-08-14-charge-discharge-voice-coverage.md`
+- `agent/logs/bug-actions/2026-08-14-charge-discharge-voice-coverage-audit.json`
+
+### 验证案例
+
+- 四位预载负责人均有唯一 owner id、显示名、工作簿与至少一个模块页签；冯智秀使用 A/D 列、罗稚钦使用 B/F 列、李欣使用 A/G 列、吴优使用 B/F 列。
+- 充放电审核记录 35 组控件、72 条精确 Alchemy 指令；21 组通过，14 组失败写入线上表格 `A57:I70` 并逐字回读一致。
+- 将负责人显示名、页签映射或模块名改为重复值时，团队来源校验器必须拒绝。
+- 本地审核身份文件保持 Git 忽略，Skill 来源文件不包含密码、Cookie、Token 或浏览器会话。
+
+### 回滚口径
+
+- 通过新提交恢复 v1.12.0-trial.1，不使用 `git reset --hard`。
+- 回滚不得删除本次线上充放电审核结果、审核日志或 manifest；团队来源映射作为历史证据保留。
+
+## v1.12.0-trial.1 — 2026-08-14
+
+### 试行内容
+
+- UE 语音覆盖审核新增操作语境门槛：配置触发条件、前置条件、执行动作、自动化或内容对象时，必须核对 operation 是否修改指定父对象；立即执行底层车控不算配置成功。
+- manifest 新增 `expected_effect`、`operation_check.context_match` 和可选 `tested_queries`。`configure` 与 `content_operation` 必须提供布尔型 `context_match`，通过项必须为 `true`。
+- 大型 UE 允许按独立可实现能力点聚合写表；相同控件的席位、模式和数值可合并，但触发条件、前置条件和执行动作等不同语义上下文必须分开，并在 `tested_queries` 保留全部精确实测。
+
+### 修改原因
+
+- 场景积木 V1.0 真实审核中，多条指令返回了目标、动作和值均正确的即时车控，但没有把该动作写入场景积木配置。原三项 operation check 无法机器区分该类假通过。
+- 执行动作页包含大量重复位置与数值，逐口令写表会产生不可实现的重复行，需要固定可追溯的聚合粒度。
+
+### 影响文件
+
+- `agent/rules-version.md`
+- `agent/skills/audit-ue-voice-coverage/SKILL.md`
+- `agent/skills/audit-ue-voice-coverage/references/audit-contract.md`
+- `agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`
+- `agent/logs/bug-actions/2026-08-14-scene-block-voice-coverage.md`
+- `agent/logs/bug-actions/2026-08-14-scene-block-voice-coverage-audit.json`
+
+### 验证案例
+
+- 场景积木 manifest 包含 11 个页面状态、42 个汇总控件、121 条精确查询；41 个失败项写入线上表格，1 个通过项不申报。
+- `把场景积木的执行动作设置为四门车窗开度50%` 返回即时开窗 operation，`context_match=false`，按 `misrouted` 申报。
+- 负向用例将 `expected_effect=configure`、`verdict=pass` 与 `context_match=false` 组合时，校验器必须拒绝。
+- 线上表格 `A16:I56` 写后逐字回读一致，原有 `A1:I15` 未修改。
+
+### 回滚口径
+
+- 通过新提交恢复 v1.11.0-trial.1，不使用 `git reset --hard`。
+- 回滚规则不得删除本次线上场景积木审核结果；审核日志和 manifest 作为历史证据保留。
+
+## v1.11.0-trial.1 — 2026-08-14
+
+### 试行内容
+
+- 新增 `audit-ue-voice-coverage` Skill，用于从负责模块和 UE 链接出发，逐项核验 MasterGo/Drive 当前有效控件与 Alchemy 实际语音执行结果，并更新语音覆盖走查表。
+- 增加页面状态硬门槛：MasterGo MCP 能读取到节点不代表需求仍有效；标记为删除、搁置、废弃、草稿、备份或历史版本的页面禁止测试和申报，结构读取必须结合当前画布视觉状态。
+- 增加 Alchemy 正确性门槛：`classification=task` 不代表通过；必须核对目标、动作及必要值。误映射、空 canonical、仅聊天文本、场景阻断和 GUI-only 均按失败分类。
+- 新增 `validate_audit.py` 和审核 manifest，机器阻止非 active 页面控件进入申报，并要求通过项的目标、动作和值全部匹配。
+
+### 修改原因
+
+- 首次情景模式走查只按可抽取控件判断，未识别 V1.9 第 3、4 页恒温座舱的删除区域和“离车不下电模式（搁置）”状态，导致搁置功能被误写入申报表。
+- 用户明确要求只保留“UE 中存在且未删除、语音平台无法正确执行”的能力，并要求把审核流程固化为 Skill。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/rules-version.md`
+- `agent/skills/audit-ue-voice-coverage/SKILL.md`
+- `agent/skills/audit-ue-voice-coverage/agents/openai.yaml`
+- `agent/skills/audit-ue-voice-coverage/references/audit-contract.md`
+- `agent/skills/audit-ue-voice-coverage/scripts/validate_audit.py`
+- `agent/logs/bug-actions/2026-08-14-scenario-voice-coverage.md`
+- `agent/logs/bug-actions/2026-08-14-scenario-voice-coverage-audit.json`
+
+### 验证案例
+
+- 情景模式审核 manifest 校验通过；将控件绑定到 `deleted` 页面时校验器拒绝通过。
+- Skill `quick_validate.py` 结构校验通过。
+- 线上表格将“离车不下电模式大灯设置”替换为“睡眠空间座椅设置入口”，回读 `A2:I15` 与最终 13 项一致。
+
+### 回滚口径
+
+- 通过新提交恢复 v1.10.1-trial.1，不使用 `git reset --hard`。
+- 回滚不得恢复已确认属于搁置页面的“离车不下电模式大灯设置”申报项；本次审核日志和 manifest 作为历史证据保留。
+
+## v1.10.1-trial.1 — 2026-08-12
+
+### 试行内容
+
+- 固化用户授权：项目规则、脚本、索引、操作日志、知识库或会议沉淀更新通过校验和敏感信息检查后，必须提交并推送当前分支的受控私有GitHub远端。
+- 只有远端确认包含新提交后才能报告“已上传”；无变化不创建空提交，远端不可达、权限失败或私有性无法确认时停止并报告具体状态。
+- 修正Bug与复盘流程中遗留的`schema_version=3`文字为当前schema v4，并修正表格写后校验序号。
+
+### 修改原因
+
+- 用户明确要求本次上传且以后所有项目更新均上传GitHub；此前v1.10修复仅在本地，未提交和推送。
+- 当前Bug与复盘流程残留schema v3文字，可能误导后续执行生成旧manifest。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/onboarding.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-12-github-delivery-policy-v1.10.1-trial.1.md`
+
+### 验证案例
+
+- 架构、证据门禁、run bundle、表格契约和preflight测试全部通过；全仓敏感信息检查和`git diff --check`通过。
+- 本次提交推送后，用`git ls-remote origin refs/heads/main`核对远端main指向新提交。
+
+### 回滚口径
+
+- 通过新提交恢复v1.10.0-trial.1，不使用`git reset --hard`；用户持续上传授权如需撤销，必须由用户明确提出。
+
+## v1.10.0-trial.1 — 2026-08-12
+
+### 试行内容
+
+- manifest 升级为 `schema_version=4`：Drive 类必查动作在 `read / not_found` 时都必须绑定真实检索回执，候选数量和 id 必须与回执逐项一致，禁止用人工 `results_count=0` 隐藏命中项。
+- 新增 `run_context`、唯一 `run_id` 和 run bundle；每票 manifest、操作者、目标负责人、页签、行号及逐 Key 决策卡必须在写前一致。
+- 新增 `validate_bug_run.py`：写后必须保存原始 A:J 回读、校验 JSON 和 `readback_sha256`，最终校验通过后才可报告完成。
+- 自动化无新增时也必须保存查询范围、计数、去重结果、明确“本次无新增”的日志及 `status=no_changes` run bundle。
+
+### 修改原因
+
+- 2026-08-12 首次每日新增批次虽完成 11 行写入和在线回读，但 manifest 将实际命中的 Drive 强候选统一记为 `results_count=0`，现有门禁仍通过；批量日志也缺逐 Key 七项卡、run_id 和落盘回读证据。
+- 现行文字规则已经要求打开候选和完整留痕，问题位于执行层缺少可校验的来源回执与运行闭环，因此本次只加硬门禁，不改变产品判断口径。
+
+### 影响文件
+
+- `agent/config/evidence-requirements.json`
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/sheet-contract.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/validate_bug_run.py`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/test_bug_run.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/archive/scripts/README.md`
+- `agent/archive/scripts/rebuild_2026_08_12_run_closure.py`
+- `agent/archive/scripts/build_2026_08_12_recheck_patches.py`
+- `agent/archive/scripts/validate_2026_08_12_recheck.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-12-run-evidence-log-closure-v1.10.0-trial.1.md`
+
+### 验证案例
+
+- Drive 回执存在结果而候选审计写 0、回执缺失或候选 id 不匹配时，证据门禁拒绝通过。
+- 写表前 run bundle 缺任一 manifest、逐 Key 决策卡、负责人、页签或行号时拒绝；写后缺回读、校验文件或 sha256 不一致时拒绝完成。
+- 无新增运行仍需有操作日志和 no_changes bundle；缺“本次无新增”时拒绝完成。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.9.0-trial.1 对应规则，不执行 `git reset --hard`。
+- 回滚不得删除本次操作日志、检索回执、run bundle 或回读证据；schema v4 作为历史证据保留，不改写为旧版本。
+
+## v1.9.0-trial.1 — 2026-08-11
+
+### 试行内容
+
+- 将固定“吴优”身份改为本机显式绑定身份：首次克隆必须从 `registry.yaml` 选择负责人并生成已忽略的 `agent/config/local-profile.json`；不得根据电脑用户名、Git作者或浏览器账号猜身份。
+- 新增 `agent/onboarding.md` 与 `bug_project_preflight.py`：默认只允许写绑定操作者自己的负责人页；代处理其他负责人时必须显式扩展本机范围。
+- Jira、Google Drive/Sheets为完整流程基础权限；Alchemy和MasterGo按证据画像要求。平台必须先完成真实读取，再记录24小时短期回执；预检失败时强制只读并输出逐项登录/授权引导。
+- Skill模板和安装脚本去除吴优电脑绝对路径，改为从仓库根目录、`$CODEX_HOME` 或当前用户目录动态定位。
+- 明确Git只传递规则和脚本，不传递身份、Token、Cookie、连接器授权、浏览器会话或定时任务；仓库只能使用访问受控的私有远端。
+- 本地 `.env` 除必须保持 Git 忽略外，还必须使用仅当前用户可读写的权限；权限过宽时预检拒绝写入并给出修复指引。
+
+### 修改原因
+
+- 当前仓库克隆到组员电脑后仍默认“用户是吴优”，存在错误产品视角和误写负责人页风险。
+- `sync_bug_skill.py` 写死 `/Users/you.wu`，在其他电脑无法安装；Jira、Drive、Alchemy、MasterGo缺少首次登录与权限核验入口。
+- 仅依靠“访问失败后降级”不足以完成团队交接，需要在任何写入前机器化校验本机身份、负责人范围和必需平台。
+
+### 影响文件
+
+- `.gitignore`
+- `AGENTS.md`
+- `README.md`
+- `agent/onboarding.md`
+- `agent/context.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/config/local-profile.example.json`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/bug_project_preflight.py`
+- `agent/scripts/test_bug_project_preflight.py`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/sync_bug_skill.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-11-team-onboarding-gate-v1.9.0-trial.1.md`
+
+### 验证案例
+
+- 新电脑无本机身份时预检返回 `mode=read_only` 并引导列出/绑定负责人；`pending + read_only` 人员不能初始化为可写身份。
+- 本机默认仅允许绑定操作者负责人页；目标负责人不在 `allowed_write_owner_ids` 时拒绝写入。
+- Jira/Drive短期回执缺失或超过24小时，要求真实读取后重新标记；任何本机配置均不包含凭据。
+- `.env` 不进入Git且权限为 `0600`；权限过宽时预检自动降级为只读。
+- Skill安装路径随当前用户或 `$CODEX_HOME` 变化，Git模板和安装副本保持一致。
+- onboarding单测、证据门禁测试、表格契约测试、规则架构校验、Skill同步校验、敏感信息扫描和 `git diff --check` 全部通过。
+
+### 回滚口径
+
+- 通过新的Git提交恢复v1.8.0-trial.1对应规则，不使用`git reset --hard`。
+- 回滚不得把本机身份、Token、Cookie或连接器授权纳入Git，也不得恢复任何用户专属绝对路径。
+
+## v1.8.0-trial.1 — 2026-08-11
+
+### 试行内容
+
+- manifest 升级为 `schema_version=3`；检索词改为带 `kind` 的结构化 query，并由机器配置按必查动作要求 Jira key、问题概念、模块资料、原话、功能点或项目范围等检索维度。
+- Drive、PRD、UE、交互和正式配置检索在写 `not_found` 时必须提交 `candidate_audit`；检索命中的强候选逐项记录 `read / excluded / unavailable`。已读候选必须登记为来源，并以 `gap` 表示资料缺少目标条款，不能隐藏为“未找到资料”。
+- `bug_sheet_contract.py` 的 `build / patch` 请求必须绑定每票已通过校验且 Jira key 一致的 schema v3 manifest；缺失、无效、重复或错配时不生成写表请求。
+- `agent/scripts/` 改为显式允许清单；四个历史一次性批量构建脚本移入 `agent/archive/scripts/`，架构校验会拒绝新的未登记脚本进入操作目录。
+
+### 修改原因
+
+- HUR-82937、HUR-82934、HUR-82949 和 HUR-82655 的处理暴露出执行层可只用 Jira key 与标题片段登记“未找到资料”，未打开实际命中的 PRD/UE 候选，之后仍能通过 schema v2 门禁并生成写表请求。
+- 复核证明旧门禁只验证 `queries` 非空；即使替换为无语义的单字符字符串也能通过。问题不是原规则完全没有要求，而是检索质量、候选审计和写表入口之间缺少机器闭环。
+
+### 影响文件
+
+- `README.md`
+- `agent/config/evidence-requirements.json`
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/sheet-contract.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/archive/scripts/README.md`
+- `agent/archive/scripts/build_2026_08_07_batch_recheck.py`
+- `agent/archive/scripts/build_2026_08_07_recheck_artifacts.py`
+- `agent/archive/scripts/build_2026_08_07_rows_159_176.py`
+- `agent/archive/scripts/build_2026_08_11_non_wenyan_batch.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-11-evidence-search-gate-v1.8.0-trial.1.md`
+
+### 验证案例
+
+- 普通字符串 query、缺必要语义维度、Drive `not_found` 缺候选审计、已读候选仍写 `not_found` 均被门禁拒绝。
+- 写表请求缺 manifest、manifest 的 Jira key 错配或同票重复 manifest 均被拒绝；schema v3 且 key 一致时通过。
+- 架构校验确认 schema v3 配置完整、门禁和写表工具消费新字段，并阻止一次性脚本返回操作目录。
+- `python3 agent/scripts/test_bug_evidence_gate.py` 通过 26 项；`python3 agent/scripts/test_bug_sheet_contract.py` 通过 15 项；`python3 agent/scripts/validate_rule_architecture.py` 返回 `ok: true`。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.7.0-trial.1 对应规则，不执行 `git reset --hard`。
+- 回滚不得删除本次审计日志或 `agent/archive/scripts/` 中的历史脚本；schema v3 manifest 作为历史证据保留，不改写成旧格式。
+
+## v1.7.0-trial.1 — 2026-08-06
+
+### 试行内容
+
+- 新增 `agent/config/evidence-requirements.json`，把通用、语音、地图导航、可见交互四类证据画像及其必查动作设为唯一机器可读配置；一个 Bug 可同时命中多个画像，且必须逐项说明选择或排除理由。
+- manifest 升级为 `schema_version=2`；每条资料必须登记 `source_type`，每个必查动作必须留存检索日期、入口、关键词、状态、来源引用或精确不可用限制。
+- 地图导航强制检索 Drive 主 PRD 和专项定义；可见交互强制检索生效配置和交互文档/UE；语音在正式定义之外继续强制核验 Alchemy 当前结果、标准功能点和项目功能点。
+- Alchemy 当前结果、Jira、日志不能充当 `formal_target`；Alchemy 标准/项目定义也不能单独替代产品交互目标。资料缺失时只能在完整记录检索轨迹和限制后降级为待定结论。
+- 普通 D 写入和复盘 H 写入共用同一证据门禁；批量日志必须按 Jira key 分别提供完整七项决策核验卡。
+
+### 修改原因
+
+- PC-38036 与 PC-37808 的旧 manifest 能在未证明已检索 Drive 正式定义、专项 PRD 或 UE 的情况下通过门禁。文字规则已有查资料要求，但机器校验只检查“已提供资料”，没有检查“应查资料是否实际执行”，因此本次遗漏不是单纯文案不清，而是规则与门禁没有闭环。
+
+### 影响文件
+
+- `AGENTS.md`
+- `README.md`
+- `agent/config/evidence-requirements.json`
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-06-evidence-profile-gate-v1.7.0-trial.1.md`
+
+### 验证案例
+
+- PC-38036 型通用 Bug 未执行 Drive 正式定义检索时失败；记录完整未找到/不可用轨迹并降为待定后才允许通过。
+- PC-37808 型地图导航 Bug 缺主 PRD 或专项定义任一检索时失败；可见交互 Bug 缺生效配置或 UE/交互检索任一项时失败。
+- Alchemy 项目功能点作为唯一产品正式目标、Alchemy 当前结果被标成 `formal_target` 时均失败。
+- 批量日志缺任一 Jira 的独立决策核验卡时失败。
+- `python3 agent/scripts/test_bug_evidence_gate.py`、`python3 agent/scripts/test_bug_sheet_contract.py`、`python3 agent/scripts/validate_rule_architecture.py`、`python3 agent/scripts/sync_bug_skill.py`、`jq empty agent/config/evidence-requirements.json` 与 `git diff --check`。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.6.0-trial.1 对应规则，不执行 `git reset --hard`。
+- 回滚不得删除现有日志和证据；旧 `schema_version=1` manifest 仅作为历史记录保留，不能伪装成已完成 v1.7 必查动作。
+
+## v1.6.0-trial.1 — 2026-08-06
+
+### 试行内容
+
+- 决策核验卡的每条资料新增必填 `source_location`；只写文档名、链接或检索关键词不能通过写表前门禁。
+- PDF/PRD/交互必须写页码与章节/区域，表格必须写 Sheet 与行号/序号及 Key，UE 必须写页面/画板与图层，Jira 附件必须写附件名与时间码，Alchemy 必须写功能点名称与 `meta_id`。
+- C、D/H 的依据短标签和 J 列文档标签同步显示精确证据位置，保证线上清单可以直接复查原文。
+
+### 修改原因
+
+- HUR-81074 第 84 行虽然引用了 J90A 功能清单、PRD 和交互文档，但没有写出证据所在 Sheet、序号和页码，无法从线上结论直接复查原文；这是执行未满足现行证据深度要求。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/output-contract.md`
+- `agent/sheet-contract.md`
+- `agent/workflows/bug.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-08-06-HUR-81074-evidence-location-correction.md`
+
+### 验证案例
+
+- HUR-81074：功能清单定位到 Sheet「J90A EU座舱功能清单」序号 938/939，PRD V2.4 与交互 V2.6 均定位到第 13 页，Jira 视频定位到 `00:02-00:06`。
+- `test_missing_source_location_fails` 验证任一资料缺少 `source_location` 时门禁失败。
+- `python3 agent/scripts/test_bug_evidence_gate.py`、`python3 agent/scripts/test_bug_sheet_contract.py`、`python3 agent/scripts/validate_rule_architecture.py` 与 `git diff --check`。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.5.0-trial.1 对应规则，不执行 `git reset --hard`。
+- 回滚不得把 HUR-81074 已补充的证据位置从线上表和操作日志中删除。
+
+## v1.5.0-trial.1 — 2026-07-30
+
+### 试行内容
+
+- 决策来源增加机器可校验角色：`formal_target`、`implementation_actual`、`context_only`；确定性结论必须分别引用有效目标来源和实现来源。
+- `mismatch` 不再可能支撑目标行为；`partial` 正式定义只有经同项目继承声明连接并标记 `verified=true` 后才生效。
+- 新增预期行为卡，覆盖触发、目标状态、意图/功能点/信号、UI/TTS/车端表现、边界和正式来源。
+- `material=true` 的关键资料缺口强制把状态降为 `待复核 / 待确认 / 待会诊`；客户测试用例缺失仍固定降为 `待确认`。
+- 语音门禁要求 Jira 用户原话、Alchemy 当前结果、`meta_id`、标准功能点和项目功能点；不可访问或未完成时必须记录原因和下一步，并禁止确定性语音定责。
+
+### 修改原因
+
+- PC-37681 首轮把 Jira 测试预期和 J90A 异车型资料当成 C385MCA 的目标定义；旧脚本只检查字段是否存在，无法拒绝这条证据链。
+- 需要把“同范围正式定义优先”从人工提醒改成状态写入前的证据充分性硬门禁。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/rules-version.md`
+- `agent/logs/bug-actions/2026-07-30-evidence-sufficiency-gate-v1.5.0-trial.1.md`
+
+### 验证案例
+
+- PC-37681：仅有 Jira 测试预期、VOS 实现日志和 J90A `mismatch` 定义时，`可转语音` 必须失败；C385MCA 继承声明连接 C385 定义且 Alchemy 标准/项目功能点完整时才允许通过。
+- PC-37681：未核验继承链、关键 UE 缺口或 Alchemy 不可用时，确定性状态失败；记录原因和下一步并降为 `待复核` 后通过。
+- HUR-82492：同车型正式定义、精确实现事实和异范围补充资料的既有判断继续通过。
+- ADS-47560：客户测试用例缺失时继续拒绝关闭，并只允许 `待确认`。
+- `python3 agent/scripts/test_bug_evidence_gate.py`、`python3 agent/scripts/test_bug_sheet_contract.py`、`python3 agent/scripts/validate_rule_architecture.py` 与 `git diff --check`。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.4.0-trial.1 对应规则，不执行 `git reset --hard`。
+- 回滚不得重新允许 Jira 测试预期、异车型资料或不完整 Alchemy 证据链单独支撑确定性结论。
+
+## v1.4.0-trial.1 — 2026-07-29
+
+### 试行内容
+
+- 新增客户提报 Bug 识别：Jira 标题或描述开头带非 Jira Key 的长客户问题编号时，记录为客户提报。
+- 客户提报 Bug 必查完整客户测试用例；用例缺失或不完整时，正式定义和研发日志不能单独支撑 `可关闭 / 非 Bug / 设计如此`，状态保持 `待确认`。
+- 决策核验卡从五项扩为六项，新增 `客户问题识别`；机器校验要求记录客户问题编号、用例检查状态及缺失时的收集动作。
+- ADS-47560 按用户复盘从 `可关闭` 更新为 `待确认`，H 写向客户收集完整测试用例后复核，保留原 D/F。
+
+### 修改原因
+
+- ADS-47560 虽有正式 18% 退出定义和一致的实现日志，但它是带客户问题编号的客户提报票；缺少客户实际测试用例时，无法确认 7% 预期的车型、版本、充电状态和操作前提，不能直接关票。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/bug-owners/wu-you/index.md`
+- `agent/meetings/2026-07-29-ADS-47560-客户问题测试用例复盘.md`
+- `agent/meetings/action-items.md`
+- `agent/logs/bug-actions/2026-07-29-ADS-47560.md`
+- `agent/logs/bug-actions/2026-07-29-customer-issue-test-case-gate-v1.4.0-trial.1.md`
+
+### 验证案例
+
+- ADS-47560：`bug!G150:H150:I150:J150` 按 `review` 更新并回读；A-F 保持不变，H/J 富文本链接目标正确。
+- `test_customer_issue_without_test_case_cannot_close` 验证客户测试用例缺失时拒绝 `可关闭`。
+- `test_customer_issue_missing_case_can_stay_pending` 验证缺失用例时可写 `待确认 + 收集动作 + 吴优责任方`。
+- `python3 agent/scripts/test_bug_evidence_gate.py`、`python3 agent/scripts/test_bug_sheet_contract.py`、`python3 agent/scripts/validate_rule_architecture.py` 与 `git diff --check`。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.3.0-trial.1 对应规则，不执行 `git reset --hard`。
+- 回滚不得把 ADS-47560 的客户测试用例缺口改写成已完成核验，也不得在缺少客户用例时自动关票。
+
+## v1.3.0-trial.1 — 2026-07-29
+
+### 试行内容
+
+- 在证据契约新增写表前决策核验卡：备注因果链、关联票、资料适用范围、冲突处理和唯一结论五项缺一不可。
+- 明确读取 Jira 问题链接和直接关联票的门槛；共享日志或同根因只用于排查分组，不能自动推导产品目标、重复票或非问题。
+- 把研发评论的实现事实/产品目标双线判断与范围冲突取舍统一收敛至 `agent/evidence-contract.md`；`jira-comment-signals.md` 仅保留检索和标注信号。
+- 新增 `validate_bug_evidence_gate.py` 和对应单元测试；操作日志新增可读决策核验卡，并由架构校验确认关键字段和引用存在。
+
+### 修改原因
+
+- HUR-82492 首轮虽读取了 Jira 备注，但未把备注因果链、关联票和资料适用范围作为同一决策关口，错误放大了 BTPhone 创建/销毁现象及非 J90A 通用资料，未先完成同日志关联票和触发差异的闭环。
+- 既有评论信号库重复维护评论权重和判断顺序，违反“证据规则只在证据契约维护”的架构边界，容易产生漂移。
+
+### 影响文件
+
+- `AGENTS.md`
+- `README.md`
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/product-kb/rules/jira-comment-signals.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/logs/bug-actions/2026-07-29-HUR-82492.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/scripts/validate_rule_architecture.py`
+
+### 验证案例
+
+- HUR-82492：HUR-82490、HUR-82491、J90A 专项定义和共通资料的范围差异均写入核验卡。
+- `python3 agent/scripts/test_bug_evidence_gate.py` 覆盖关联票未读、资料范围缺失和 Jira key 漂移拦截。
+- `python3 agent/scripts/validate_bug_evidence_gate.py --log agent/logs/bug-actions/2026-07-29-HUR-82492.md --key HUR-82492`、`python3 agent/scripts/test_bug_sheet_contract.py`、`python3 agent/scripts/validate_rule_architecture.py` 与 `git diff --check`。
+
+### 回滚口径
+
+- 通过新的 Git 提交恢复 v1.2.0-trial.3 对应规则，不执行 `git reset --hard`。
+- 回滚不得再次允许未读关联票、未标资料适用范围或未处理证据冲突时写入确定性结论。
+
+## v1.2.0-trial.3 — 2026-07-28
+
+### 试行内容
+
+- 修正富文本首标签从单元格第 0 位开始时的重叠运行段；J 列首标签回读不再出现重复链接目标。
+
+### 修改原因
+
+- Google Sheets 会将第 0 位的默认运行段与链接运行段扩展为两个相同链接，导致已有行补丁的链接校验失败。
+
+### 影响文件
+
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+
+### 验证案例
+
+- `test_first_link_at_zero_has_one_run` 覆盖首标签位于第 0 位的多链接单元格。
+- `python3 agent/scripts/test_bug_sheet_contract.py` 与 `python3 agent/scripts/validate_rule_architecture.py`。
+
+### 回滚口径
+
+- 通过新提交恢复旧生成逻辑；回滚前须确认不会重新引入首标签重复链接。
+
+## v1.2.0-trial.2 — 2026-07-28
+
+### 试行内容
+
+- 新增 `agent/config/sheet-update-modes.json`，作为 `recheck` 与 `review` 允许列/保护列的唯一机器可读来源；活动规则与脚本改为消费模式名。
+- 新增 Git 内 Skill 唯一模板和安装副本同步校验，修复 Skill 位于仓库外、无法随规则提交回滚的问题。
+- 新增行先复制格式、再设置 E 列校验、最后写入值与 `textFormatRuns`，避免后续格式复制影响富文本链接。
+- C、D、H、J 可见文本在生成请求前禁止显示长 URL；链接目标只接受完整 `http(s)` 原始入口。
+- 新增 `validate-append`，按输入逐格核对新增 A:J，并逐项比较 C、D、H、J 的可见文本和全部链接目标。
+- 已有行 `patch` 对外只接受表格可见的 1-based `row-number`，内部转换为 API `rowIndex`；manifest 同时记录两者。
+- 明确预览后、batchUpdate 前必须新鲜回读完整 A:J 并与预览 fingerprint 比较；不一致即停止，写后继续回读。
+
+### 修改原因
+
+- 原校验只要求 J 至少存在一个链接，多来源单元格缺少部分链接仍可能通过。
+- 原生成阶段允许长 URL，只有写后才能发现，可能先把错误内容写入线上表。
+- 原新增顺序为“写链接后复制格式”，与稳定的原生行写入顺序相反。
+- 零基行号容易与用户看到的表格行号混淆；外置 Skill 和多处列白名单也存在回滚、漂移风险。
+
+### 影响文件
+
+- `README.md`
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/config/sheet-update-modes.json`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/sync_bug_skill.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+
+### 验证案例
+
+- J 显示两个来源但只保留一个链接时，`validate-append` 必须失败。
+- C、D、H 或 J 可见文本含 `http://` / `https://` 时，生成请求前必须失败。
+- 新增请求前三步固定为 `copyPaste`、`setDataValidation`、`updateCells`。
+- 表格第 145 行输出 `sheetRow=145` 和 `rowIndex=144`。
+- Git 内 Skill 模板与安装副本逐字一致；任一副本漂移时架构校验失败。
+- 单元测试、架构校验、Skill 同步校验和 `git diff --check` 均通过。
+
+### 回滚口径
+
+- 通过 Git 新提交恢复 `v1.2.0-trial.1`，再执行 `python3 agent/scripts/sync_bug_skill.py --install` 同步对应 Skill；不执行 `git reset --hard`。
+- 回滚不得移除逐链接回读、写前长 URL 拦截或 1-based 行号保护。
+
+## v1.2.0-trial.1 — 2026-07-28
+
+### 试行内容
+
+- 将普通二次复查与会议/复盘拆成两种已有行更新模式。
+- 用户再次发送同一 Jira 或要求重新查看时，仍走普通 Bug 流程；重新核验后可按需更新原行 C、D、G、I、J，保留 A、B、E、F、H。
+- 用户提供会议纪要、可姐/leader 教学、客户复盘或明确复盘材料时，按复盘流程更新 G、H、I、J，保留 A、B、C、D、E、F。
+- 写表脚本新增已有行列级 `patch`、写前 A:J fingerprint、目标列白名单、变更 manifest 和写后保护列校验。
+- 新增和已有行写入均明确提交 `textFormatRuns`，避免只写入短标签文字而丢失富文本链接。
+
+### 修改原因
+
+- 普通二次查看仍应修正初次处理阶段的原列，不能因为是第二次处理就把结论绕写到 H。
+- 只有会议纪要、leader/客户复盘等复盘材料才形成 H 的最终判断。
+- 原追加请求只声明 `userEnteredValue`，未明确提交已生成的 `textFormatRuns`，存在短标签不可点击风险。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `/Users/you.wu/.codex/skills/deepal-product-bug-handler/SKILL.md`
+
+### 验证案例
+
+- 普通二次复查允许 C、D、G、I、J，拒绝 H、E、F。
+- 会议/复盘允许 G、H、I、J，拒绝 C、D、E、F。
+- fingerprint 不一致时停止生成请求；写后未声明列发生变化时校验失败。
+- C、D、H、J 更新请求字段包含 `userEnteredValue,textFormatRuns`。
+- `python3 agent/scripts/test_bug_sheet_contract.py` 与 `python3 agent/scripts/validate_rule_architecture.py` 均通过。
+
+### 回滚口径
+
+- 通过 Git 新提交恢复 `v1.1.0-trial.3` 的规则和脚本，不执行 `git reset --hard`。
+- 回滚不得恢复整行覆盖已有 Bug，也不得移除 C/D/H/J 可点击短标签的回读要求。
+
+## v1.1.0-trial.3 — 2026-07-28
+
+### 试行内容
+
+- 在 Bug 工作区初始化本地 Git 仓库，默认分支为 `main`。
+- 将当前规则、索引、知识库、历史证据和操作日志建立为第一份可回滚基线。
+- `.env`、`.mastergo/`、`.DS_Store`、`__pycache__/` 和 Python 字节码不纳入版本库；保留无凭据的 `.env.example`。
+- 架构校验增加 Git 仓库存在性与敏感/缓存忽略规则检查。
+
+### 修改原因
+
+- 原有版本文件只能描述回滚口径，不能恢复具体文件状态；建立 Git 基线后可以查看差异、提交变更和按提交回退。
+
+### 影响文件
+
+- `.gitignore`
+- `.git/`
+- `agent/rules-version.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/logs/bug-actions/2026-07-28-git-baseline.md`
+
+### 验证案例
+
+- `git branch --show-current` 返回 `main`。
+- `git status --short --ignored` 显示 `.env`、`.mastergo/` 和 `.DS_Store` 为 ignored。
+- `python3 agent/scripts/validate_rule_architecture.py` 返回 `ok: true`。
+- 基线提交后 `git status --short` 为空。
+
+### 回滚口径
+
+- 规则回滚使用明确提交，不执行 `git reset --hard`；默认通过新提交恢复所需文件。
+- `.env` 和 `.mastergo/` 始终保持未跟踪，不能因回滚进入版本库。
+
+## v1.1.0-trial.2 — 2026-07-28
+
+### 试行内容
+
+- 将 `http://jira.i-tetris.com/secure/Dashboard.jspa?selectPageId=17302` 登记为 Bug 清单总入口。
+- 用户说“看 Bug 列表 / Bug 清单 / 待处理 Bug”且未给具体 Key 时，先从 Dashboard 17302 读取当前列表。
+- 打开列表不等于授权批量处理；只读取或处理用户指定范围。
+- 冯智秀、李欣、罗稚钦的清单扩充本轮暂不执行，后续按用户指令分别增加。
+- 架构校验增加 Dashboard 入口与流程引用检查。
+
+### 修改原因
+
+- 需要为后续“去看 Bug 列表”建立唯一、稳定的 Jira 总入口，避免重新猜测过滤器或从历史链接进入。
+
+### 影响文件
+
+- `agent/context.md`
+- `agent/workflows/bug.md`
+- `agent/scripts/validate_rule_architecture.py`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 检索 `Dashboard.jspa?selectPageId=17302`，确认只登记在固定入口和对应流程中。
+- `python3 agent/scripts/validate_rule_architecture.py` 返回 `ok: true`。
+
+### 回滚口径
+
+- 若 Dashboard 17302 失效，只替换 `agent/context.md` 中的总入口并同步本段验证；不改负责人注册表和既有 Bug 行。
+
+## v1.1.0-trial.1 — 2026-07-28
+
+### 试行内容
+
+- 新增 `agent/evidence-contract.md`，统一正式定义、实现事实、规则空白、来源优先级、专项资料、Alchemy、MasterGo 和结论门槛。
+- 新增 `agent/output-contract.md`，统一 `decision_text`、`final_decision_text`、D/H、Jira、日志和聊天的可见文本与追加边界。
+- `AGENTS.md` 只保留身份、默认意图、权威导航和全局权限；工作流只保留执行顺序；表格契约只保留 A:J 写入和回读。
+- `context.md` 只保留稳定身份和公共入口；日期模块基线迁移到 `agent/product-kb/sources.md`。
+- Skill 精简为规则加载和工具适配器，不再复制证据、输出、路由和表格业务规则。
+- `agent/scripts/bug_sheet_contract.py` 停止生成多 `HYPERLINK` 拼接，改为 C/D/H/J 富文本独立链接，并明确只用于追加新行。
+- 当前版本号只在本文件维护，其他权威文件统一引用。
+
+### 修改原因
+
+- 回复、证据、表格和 Skill 中存在重复规则，已经形成版本漂移。
+- 旧写表脚本生成方式与当前 J 列富文本多链接契约冲突，也不能生成 C/D/H 的内联证据链接。
+- `context.md` 混合稳定身份、可变表格配置和日期检索快照，容易把历史结果当成当前事实。
+
+### 影响文件
+
+- `AGENTS.md`
+- `README.md`
+- `agent/evidence-contract.md`
+- `agent/output-contract.md`
+- `agent/workflows/bug.md`
+- `agent/workflows/review.md`
+- `agent/sheet-contract.md`
+- `agent/context.md`
+- `agent/product-kb/README.md`
+- `agent/product-kb/sources.md`
+- `agent/product-kb/rules/source-freshness.md`
+- `agent/bug-owners/wu-you/index.md`
+- `agent/bug-owners/li-xin/index.md`
+- `agent/bug-owners/feng-zhi-xiu/index.md`
+- `agent/bug-owners/luo-zhiqin/index.md`
+- `agent/logs/bug-actions/README.md`
+- `agent/meetings/README.md`
+- `agent/scripts/bug_sheet_contract.py`
+- `agent/scripts/test_bug_sheet_contract.py`
+- `agent/scripts/validate_rule_architecture.py`
+- `/Users/you.wu/.codex/skills/deepal-product-bug-handler/SKILL.md`
+
+### 验证案例
+
+- `ADS-47367 / bug!C138:D138 / J138`：验证两个落域定义、正式 PRD、D 原文和多富文本链接契约。
+- `python3 agent/scripts/test_bug_sheet_contract.py`：验证 C/D/J 独立链接、缺失标签失败和旧多 HYPERLINK 拼接拒绝。
+- `python3 agent/scripts/validate_rule_architecture.py`：验证权威文件引用、兼容入口、Skill 加载、版本号唯一性和写表实现。
+
+### 回滚口径
+
+- 若新契约边界造成执行遗漏，回滚到 `v1.0.0-trial.3` 的工作流和表格规则内容；保留本版本日志作为变更证据。
+- 写表脚本即使回滚，也不得恢复多个 `HYPERLINK` 拼接；暂时停用 build，改用经过回读的定向富文本写入。
+
+## v1.0.0-trial.3 — 2026-07-23
+
+### 试行内容
+
+- D 列中的决定性依据改为可点击的短说明文字，不再显示原始长 URL。
+- H 列在复盘后承担最终流转说明，因此同步遵守 D 的短文字链接规则。
+- 执行 Jira 评论时保持短标签与原始链接的关联；若 Jira 编辑器未保留表格富文本链接，执行评论时重新绑定，不把长 URL 写回 Bug 表。
+
+### 修改原因
+
+- D/H 中铺开完整 URL 占用较多空间，影响 Bug 表阅读。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/workflows/bug.md`
+- `agent/sheet-contract.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- `ADS-46239 / bug!D38`
+
+### 回滚口径
+
+- 若 Jira 编辑器无法稳定保留短文字链接，只在实际 Jira 评论动作中展开或重新绑定 URL；Bug 表 D/H 仍保持短文字链接展示。
+
+## v1.0.0-trial.2 — 2026-07-23
+
+### 试行内容
+
+- J 列只显示能说明来源的短文字标签，标签文字本身可点击，不再显示原始长 URL。
+- 多个来源在同一单元格内每行一个短标签，每个标签分别绑定对应原始入口。
+- 若短标签不可点击，修复富文本链接元数据或写入方式，不再用“标签 + 完整 URL”回退。
+- D/H 作为可复制到 Jira 的流转说明，仍保留决定性依据的完整 URL。
+
+### 修改原因
+
+- 完整 URL 在 J 列占用空间过大，影响 Bug 表扫描和阅读。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/workflows/bug.md`
+- `agent/sheet-contract.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- `ADS-46239 / bug!J38`
+
+### 回滚口径
+
+- 若 Google Sheets 富文本多链接出现兼容性问题，优先减少 J 的来源数量或拆分短标签，不恢复显示原始长 URL；D/H 的 Jira-ready 完整 URL 规则不变。
+
+## v1.0.0-trial.1 — 2026-07-23
+
+### 试行内容
+
+- D 列同时作为 Jira 流转评论原文，采用“结论 -> 决定性依据完整 URL -> 处理动作与责任方”的自包含结构。
+- C 列中出现的 Jira、评论、PRD/UE、Alchemy、工作说明等证据名称原位可点击；J 只作全部入口汇总。
+- 链接验收以用户实际界面可见、可点为准，不以标签颜色或仅存在 API 元数据代替。
+
+### 验证案例
+
+- `ADS-47039 / bug!C145:D145 / J145`
+
+### 回滚口径
+
+- 若 D 的 Jira-ready 结构导致表格过长或不便使用，只回滚 D 为“一条动作 + 一个责任方”的短结论；C 内联链接和 J 汇总链接规则继续保留。
+
+## v1.17.0-trial.3 — 2026-09-11
+
+### 试行内容
+
+- 增加 MasterGo Vibe MCP 接入方法和本次连接记录。
+- 记录本地 `@mastergo/vibe-mcp@latest`、默认 30678 端口、选中图层后读取代码的验证流程。
+
+### 影响文件
+
+- `agent/product-kb/rules/mastergo-vibe-mcp.md`
+- `agent/logs/bug-actions/2026-09-11-mastergo-vibe-mcp.md`
+- `agent/rules-version.md`
+
+### 回滚口径
+
+- 删除新增方法文档和操作日志，恢复本节之前的规则记录；不修改 MasterGo 文件。
