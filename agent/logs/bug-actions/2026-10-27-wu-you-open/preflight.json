@@ -1,0 +1,54 @@
+{
+  "ok": true,
+  "mode": "read_write",
+  "profile_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/config/local-profile.json",
+  "operator_mode": "team",
+  "operator_name": null,
+  "operator_owner_id": "wu-you",
+  "allowed_write_owner_ids": [
+    "wu-you"
+  ],
+  "result_target": null,
+  "identity_ready": true,
+  "owner_scope_ready": true,
+  "skill": {
+    "installed": true,
+    "matches_template": true,
+    "target": "/Users/ice/.codex/skills/deepal-product-bug-handler/SKILL.md"
+  },
+  "local_secret_file": {
+    "exists": true,
+    "private_permissions": true,
+    "mode": "0o600",
+    "path": "/Users/ice/Desktop/Project/Mega/Bug/.env"
+  },
+  "online_access": {
+    "jira": {
+      "fresh": true,
+      "verified_at": "2026-10-27T06:10:16Z",
+      "required": true
+    },
+    "google_drive": {
+      "fresh": true,
+      "verified_at": "2026-10-27T06:11:11Z",
+      "required": true
+    },
+    "alchemy": {
+      "fresh": false,
+      "verified_at": "2026-09-29T06:33:51Z",
+      "required": false
+    },
+    "mastergo": {
+      "fresh": false,
+      "verified_at": "2026-09-14T09:26:25Z",
+      "required": false
+    }
+  },
+  "blockers": [],
+  "warnings": [
+    "alchemy 未验证；涉及该平台的 Bug 将按证据门禁降级",
+    "mastergo 未验证；涉及该平台的 Bug 将按证据门禁降级"
+  ],
+  "guidance": [],
+  "security": "本文件不保存密码、Cookie、Token或平台访问口令"
+}

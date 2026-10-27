@@ -1,0 +1,218 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-86294",
+  "comment_causality": "李翔核对车端波兰语显示 Sek，并指出文言表生效行就是 Sek。现行 V1.3 的 AE539 仍是 Sek。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-85390",
+        "relationship": "当前翻译总票",
+        "outcome": "译文修正随总票提交，不新建单票",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira",
+      "source": "HUR-86294",
+      "source_location": "原票描述和李翔评论",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A EU 0507",
+      "trigger": "J90A EU 0507 波兰语查看左侧下车碰撞提示",
+      "target_behavior": "证明车端按当前译文显示",
+      "match": "exact",
+      "reason": "评论和实车现象一致。"
+    },
+    {
+      "source_id": "sheet",
+      "source": "J90A_海外LanguageList_V1.3_261014",
+      "source_location": "10_Instrument Panel F539/N539/AE539：C385/LCDAText__19，左侧下车有碰撞危险，Sek",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "J90A EU",
+      "trigger": "J90A EU 0507 波兰语查看左侧下车碰撞提示",
+      "target_behavior": "波兰语显示完整碰撞提示，不显示 Sek",
+      "match": "exact",
+      "reason": "现行最高文言表直接给出该 Key 译文。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "文言译文由文言表定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标由文言表定义，不是可见即可说。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86294"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385/LCDAText__19"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "文言表"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.3_261014.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "source_ids": [
+        "sheet"
+      ],
+      "search_receipt_ids": [
+        "HUR-86294-sheet"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=280187529#gid=280187529",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "read",
+            "source_ids": [
+              "sheet"
+            ]
+          },
+          {
+            "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+            "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+            "url": "https://drive.google.com/file/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早版本，不作为当前目标。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_海外LanguageList",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-86294-sheet"
+            ],
+            "selected_candidate_id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "selection_reason": "标题检索中 V1.3_261014 是该系列最新未废弃版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "车端与现行文言表一致。测试期望的完整句或空格不在生效单元格，按表修正译文，不判车端缺陷。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "文言翻译",
+    "text": "结论：J90A EU 0507 波兰语「左侧下车有碰撞危险」显示 Sek，和现行文言表 V1.3 的 C385/LCDAText__19 一致，译文本身要改成完整句。\n依据：[文言表V1.3·10_Instrument Panel·AE539|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=280187529#gid=280187529]。\n处理：把波兰语从 Sek 改为完整碰撞提示，并随 http://jira.i-tetris.com/browse/HUR-85390 提交后按 workaround 关闭；文言翻译处理。",
+    "implementation_source_ids": [
+      "jira"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261027T141500+0800-wu-you-open",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-86294-sheet",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-27",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86294"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385/LCDAText__19"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "文言表"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.3_261014.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=280187529#gid=280187529",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+          "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+          "url": "https://drive.google.com/file/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "J90A EU 0507 波兰语查看左侧下车碰撞提示",
+    "target_state": "波兰语显示完整碰撞提示，不显示 Sek",
+    "intent_function_signal": "C385/LCDAText__19",
+    "ui_tts_vehicle_behavior": "AE539 从 Sek 改为完整波兰语句",
+    "boundary": "不改车端显示逻辑，车端已按表显示",
+    "source_ids": [
+      "sheet"
+    ]
+  }
+}

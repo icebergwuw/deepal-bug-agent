@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86294",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "67fd06a05e5857df632ea2af615e88c4511a07936cfaaa45fccb2c73a59088dd",
+  "manifest_sha256": "f43596181b9a03d10ba7ef960741a148ef2ab3ceaf155b6a476a9d3cde39819b",
+  "authorized_comment": "结论：J90A EU 0507 波兰语「左侧下车有碰撞危险」显示 Sek，和现行文言表 V1.3 的 C385/LCDAText__19 一致，译文本身要改成完整句。\n依据：[文言表V1.3·10_Instrument Panel·AE539|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=280187529#gid=280187529]。\n处理：把波兰语从 Sek 改为完整碰撞提示，并随 http://jira.i-tetris.com/browse/HUR-85390 提交后按 workaround 关闭；文言翻译处理。"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86293",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "9056619da1a1b28075823b3cb311479703fe5a91cf987e6560c7f68c2c26a0c5",
+  "manifest_sha256": "6b9bc1e4fccd5df7542c14e4013297fa3b754335d62bb803583b009f23a30a4f",
+  "authorized_comment": "结论：J90A EU 0507 意大利语「车辆将在2分钟内自动下电」显示 in2，和现行文言表 V1.3 的 TipInfo/BCM_LowPowerWarning__1 一致，in 和 2 之间要加空格。\n依据：[文言表V1.3·10_Instrument Panel·AB376|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?gid=280187529#gid=280187529]。\n处理：把 AB376 改为 in 2，并随 http://jira.i-tetris.com/browse/HUR-85390 提交后按 workaround 关闭；文言翻译处理。"
+}
