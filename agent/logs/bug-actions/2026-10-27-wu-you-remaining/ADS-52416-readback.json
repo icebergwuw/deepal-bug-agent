@@ -1,0 +1,11 @@
+{
+  "issue_key": "ADS-52416",
+  "comment_id": "8744143",
+  "author": "you.wu",
+  "body": "结论：C673-7「我要编辑通讯录」不应打开通讯录。2026-10-27 stg 在线对话落到 1919 无匹配功能，10 月 23 日实车却下发 1305 打开通讯录。作废功能点写暂不支持，电话定义 V0.8 没有这句的语音预期。\n依据：[电话定义V0.8|https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit] [在线对话·1919|https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=]。\n处理：先核对实车是否仍下发 1305；若仍打开页面，按不支持处理，不新增编辑通讯录。语音执行处理。\n\n\n依据截图：2026-10-27 stg「我要编辑通讯录」落到 1919\n!ADS-52416-1919.png|width=900!\n（AI Generated）",
+  "status": "待办",
+  "assignee": "you.wu",
+  "transitioned": false,
+  "attachment_id": "4596659",
+  "attachment_filename": "ADS-52416-1919.png"
+}

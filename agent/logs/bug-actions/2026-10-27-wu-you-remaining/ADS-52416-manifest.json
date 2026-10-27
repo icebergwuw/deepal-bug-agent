@@ -1,0 +1,294 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52416",
+  "comment_causality": "汪雯菁给出 2026-10-23 云端链路，走 1305 打开通讯录，请产品确认。测试期望 TTS 暂不支持这样的说法。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "phone-v08",
+      "source": "C673_功能定义_蓝牙电话功能定义V0.8",
+      "source_location": "全文检索编辑、通讯录和语音，只定义同步、拨打和手机端增删改后重连更新，没有「我要编辑通讯录」的语音预期。",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673",
+      "trigger": "语音说我要编辑通讯录",
+      "target_behavior": "没有定义打开页面或指定 TTS",
+      "match": "gap",
+      "material": true,
+      "next_action": "在电话定义补一句：编辑通讯录不支持，不打开通讯录页面。",
+      "reason": "正式定义没有覆盖这句。"
+    },
+    {
+      "source_id": "alchemy-now",
+      "source": "2026-10-27 stg C673_7 在线对话",
+      "source_location": "我要编辑通讯录，classification task，meta_id 1919，code no_matched_function",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "stg C673_7",
+      "trigger": "我要编辑通讯录",
+      "target_behavior": "当前平台无匹配功能，不打开通讯录",
+      "match": "exact",
+      "reason": "今天的在线对话直接证明当前落域。"
+    },
+    {
+      "source_id": "std-1415",
+      "source": "标准功能【作废】编辑通讯录 meta 1415",
+      "source_location": "功能 1346，TTS 暂时不支持这样的说法，示例含我要修改通讯录",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "编辑通讯录",
+      "target_behavior": "作废后不应再作为生效功能",
+      "match": "partial",
+      "reason": "说明历史预期是不支持，但不能代替现行 1919。"
+    },
+    {
+      "source_id": "proj-1415",
+      "source": "深蓝项目【作废】编辑通讯录 24494",
+      "source_location": "INHERIT，车型列表不含 C673_7",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝",
+      "trigger": "编辑通讯录",
+      "target_behavior": "项目仍继承作废点，不是 C673-7 的现行落域",
+      "match": "mismatch",
+      "reason": "车型范围和当前 1919 不一致。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "电话定义已查，通用画像不另选。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "原话是否打开通讯录由语音执行链决定。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标不是可见即可说节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52416"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "我要编辑通讯录"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "蓝牙电话"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_蓝牙电话功能定义V0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_蓝牙电话功能定义"
+        }
+      ],
+      "source_ids": [
+        "phone-v08"
+      ],
+      "search_receipt_ids": [
+        "ADS-52416-phone"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE",
+            "title": "C673_功能定义_蓝牙电话功能定义V0.8",
+            "url": "https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "references": [],
+            "version_family": "C673_功能定义_蓝牙电话功能定义",
+            "disposition": "read",
+            "source_ids": [
+              "phone-v08"
+            ]
+          },
+          {
+            "id": "1fQcX7as9v0MfC9YpZjjDeVijDk3jC6J_",
+            "title": "C673_功能定义_蓝牙电话功能定义V0.7.pdf",
+            "url": "https://drive.google.com/file/d/1fQcX7as9v0MfC9YpZjjDeVijDk3jC6J_/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "C673_功能定义_蓝牙电话功能定义",
+            "disposition": "excluded",
+            "reason": "同系列更早版本。标题检索没有高于 V0.8 的版本。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673_功能定义_蓝牙电话功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-52416-phone"
+            ],
+            "selected_source_ids": [
+              "phone-v08"
+            ],
+            "selected_candidate_id": "1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE",
+            "selection_reason": "标题检索最高为 V0.8。",
+            "newer_version_checked": true,
+            "reason": "标题检索最高为 V0.8。"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 在线对话 stg C673_7",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "我要编辑通讯录"
+        }
+      ],
+      "source_ids": [
+        "alchemy-now"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 标准功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1415"
+        }
+      ],
+      "source_ids": [
+        "std-1415"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 深蓝项目功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1415"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝 projectId 11"
+        }
+      ],
+      "source_ids": [
+        "proj-1415"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试期望暂不支持，作废点也是这个口径。当前在线对话是 1919，TTS 为学习中兜底，和暂不支持文案不同。10 月 23 日实车 1305 与当前平台冲突，所以先不转研发。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "我要编辑通讯录",
+    "alchemy_result": "stg C673_7 classification task，meta_id 1919，no_matched_function",
+    "meta_id": "1919",
+    "standard_function": {
+      "status": "verified",
+      "name": "【作废】编辑通讯录",
+      "assessment": "历史口径是暂不支持，已经作废，不是现行落域。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "【作废】编辑通讯录",
+      "assessment": "深蓝继承了作废点，车型列表不含 C673_7。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音执行",
+    "text": "结论：C673-7「我要编辑通讯录」不应打开通讯录。2026-10-27 stg 在线对话落到 1919 无匹配功能，10 月 23 日实车却下发 1305 打开通讯录。作废功能点写暂不支持，电话定义 V0.8 没有这句的语音预期。\n依据：[电话定义V0.8|https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit] [在线对话·1919|https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=]。\n处理：先核对实车是否仍下发 1305；若仍打开页面，按不支持处理，不新增编辑通讯录。语音执行处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20261027T160000+0800-wu-you-remaining",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-52416-phone",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-27",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52416"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "我要编辑通讯录"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "蓝牙电话"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_蓝牙电话功能定义V0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_蓝牙电话功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE",
+          "title": "C673_功能定义_蓝牙电话功能定义V0.8",
+          "url": "https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1fQcX7as9v0MfC9YpZjjDeVijDk3jC6J_",
+          "title": "C673_功能定义_蓝牙电话功能定义V0.7.pdf",
+          "url": "https://drive.google.com/file/d/1fQcX7as9v0MfC9YpZjjDeVijDk3jC6J_/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ]
+}

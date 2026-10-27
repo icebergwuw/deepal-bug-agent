@@ -1,0 +1,375 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-40490",
+  "comment_causality": "明逸智找不到恒温座舱禁用方控的需求。冯智秀引用方向盘定义，电源 OFF 不可用方控。张烜说方案未确认，若改车机需下需求。陈中兴说无此需求，待客户确认。关联票丁黎称非低功耗时方控可用是设计如此。",
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260922170432369",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "BGS-84198 描述：C673、CDC SWD.7.88、ON 档、打开恒温座舱后锁车下电，逐步测试上一曲/下一曲/音量/播放暂停/仪表卡片/360，预期方控禁用，实际仍可控制，并有视频。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "BGS-84198",
+        "relationship": "Relates，客户原票",
+        "outcome": "用例完整，预期方控禁用；丁黎称非低功耗时方控可用。该票已按重复关闭，结论以本票和正式定义为准。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "steer-v2",
+      "source": "C673_功能定义_方向盘操作功能定义V2.0",
+      "source_location": "修订记录 V1.2 写入并被正文按键规则沿用：电源档位 OFF 和 FBL 时全部方向盘按键无效；音量加等按键写明 OFF/FBL 长按短按都不响应。",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673",
+      "trigger": "电源档位 OFF 或 FBL 时按方向盘按键",
+      "target_behavior": "全部方控按键无效，不响应上一曲、下一曲、音量、播放暂停、仪表卡片和 360",
+      "match": "exact",
+      "reason": "现行最高版本直接定义 OFF/FBL 方控无效。"
+    },
+    {
+      "source_id": "scene-v5",
+      "source": "C385_C673_功能描述_智能情景模式功能定义V5.0",
+      "source_location": "恒温座舱模式：模式1闭锁下电后保持空调、影音娱乐、座椅调节可用；模式2为低功耗保持温度。方向盘章节指向方向盘定义。",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385/C673",
+      "trigger": "恒温座舱开启后闭锁下电",
+      "target_behavior": "只明确保留空调、影音娱乐和座椅调节，没有方控例外",
+      "match": "partial",
+      "reason": "说明闭锁下电后的可用范围，不改写方向盘 OFF 规则。"
+    },
+    {
+      "source_id": "bgs-case",
+      "source": "BGS-84198 客户用例和视频",
+      "source_location": "描述步骤 2 与附件 video(24).mp4",
+      "source_type": "test_result",
+      "role": "implementation_actual",
+      "project_model": "C673 / LS6C3E2R5PF810740 / CDC SWD.7.88",
+      "trigger": "打开恒温座舱，锁车下电后按方控",
+      "target_behavior": "证明方控仍能控制，不定义产品目标",
+      "match": "exact",
+      "reason": "客户用例实际结果直接证明方控未屏蔽。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "本票由座舱功能定义约束，不是语音原话。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不涉及用户原话、NLU 或 Alchemy 执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标由功能定义约束，不是可见即可说节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-40490"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恒温座舱 下电 方控"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "方向盘操作功能定义"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_方向盘操作功能定义V2.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_方向盘操作功能定义"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "智能情景模式功能定义"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        }
+      ],
+      "source_ids": [
+        "steer-v2",
+        "scene-v5"
+      ],
+      "search_receipt_ids": [
+        "PC-40490-steer",
+        "PC-40490-scene"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 7,
+        "candidates": [
+          {
+            "id": "1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc",
+            "title": "C673_功能定义_方向盘操作功能定义V2.0.docx",
+            "url": "https://docs.google.com/document/d/1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "references": [],
+            "version_family": "C673_功能定义_方向盘操作功能定义",
+            "disposition": "read",
+            "source_ids": [
+              "steer-v2"
+            ]
+          },
+          {
+            "id": "1LA43CCKpqMtdZxgTUTsJ4FRJs9-fiPXm",
+            "title": "C673_功能定义_方向盘操作功能定义V2.0.pdf",
+            "url": "https://drive.google.com/file/d/1LA43CCKpqMtdZxgTUTsJ4FRJs9-fiPXm/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "C673_功能定义_方向盘操作功能定义",
+            "disposition": "excluded",
+            "reason": "同一 V2.0 的 PDF 副本，正文以已打开的文档为准。"
+          },
+          {
+            "id": "1XLa1ILqAFIxQSoTaUw2qn1LSRcrPn3mZ",
+            "title": "C673_功能定义_方向盘操作功能定义V1.9.pdf",
+            "url": "https://drive.google.com/file/d/1XLa1ILqAFIxQSoTaUw2qn1LSRcrPn3mZ/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "C673_功能定义_方向盘操作功能定义",
+            "disposition": "excluded",
+            "reason": "同系列更早版本。"
+          },
+          {
+            "id": "18-NbiJj0wTH7iacOZJaIIFine5ZH8XqT",
+            "title": "C673_功能定义_方向盘操作功能定义V1.7.pdf",
+            "url": "https://drive.google.com/file/d/18-NbiJj0wTH7iacOZJaIIFine5ZH8XqT/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "C673_功能定义_方向盘操作功能定义",
+            "disposition": "excluded",
+            "reason": "同系列更早版本。标题检索还见到 V1.8 至 V0.1，没有高于 V2.0 的版本。"
+          },
+          {
+            "id": "1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx",
+            "url": "https://drive.google.com/file/d/1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义",
+            "disposition": "read",
+            "source_ids": [
+              "scene-v5"
+            ]
+          },
+          {
+            "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+            "url": "https://drive.google.com/file/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义",
+            "disposition": "excluded",
+            "reason": "同系列更早版本。"
+          },
+          {
+            "id": "1H6MlHrCH_Pz4i4ZiH3kgK80CJb_x6rO9",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.7（紧急下电）.docx",
+            "url": "https://drive.google.com/file/d/1H6MlHrCH_Pz4i4ZiH3kgK80CJb_x6rO9/view",
+            "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "references": [],
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义",
+            "disposition": "excluded",
+            "reason": "同系列更早版本。标题检索没有高于 V5.0 的版本。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673_功能定义_方向盘操作功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-40490-steer"
+            ],
+            "selected_source_ids": [
+              "steer-v2"
+            ],
+            "selected_candidate_id": "1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc",
+            "selection_reason": "标题检索最高为 V2.0，已打开该文档。",
+            "newer_version_checked": true,
+            "reason": "标题检索最高为 V2.0。"
+          },
+          {
+            "family": "C385_C673_功能描述_智能情景模式功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "PC-40490-scene"
+            ],
+            "selected_source_ids": [
+              "scene-v5"
+            ],
+            "selected_candidate_id": "1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL",
+            "selection_reason": "标题检索最高为 V5.0，已打开恒温座舱章节。",
+            "newer_version_checked": true,
+            "reason": "标题检索最高为 V5.0。"
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "客户预期方控禁用，与方向盘定义一致。丁黎用非低功耗时应用可用推断方控可用。情景模式只保留空调、影音娱乐和座椅调节，没有方控例外，不能覆盖 OFF 档方控无效。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "方控",
+    "text": "结论：C673 恒温座舱开启后锁车下电，电源为 OFF 档，方控不应再控制上一曲、下一曲、音量、播放暂停、仪表卡片和 360。方向盘定义要求 OFF/FBL 全部按键无效；情景模式闭锁下电后只写明保留空调、影音娱乐和座椅调节，没有方控例外。\n依据：[方向盘定义V2.0·OFF/FBL按键无效|https://docs.google.com/document/d/1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc/edit] [情景模式V5.0·恒温座舱闭锁下电|https://docs.google.com/document/d/1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL/edit]。\n处理：OFF 档屏蔽方控事件，不按影音可用推断方控可用；方控处理。",
+    "implementation_source_ids": [
+      "bgs-case"
+    ]
+  },
+  "expected_behavior": {
+    "trigger": "C673 恒温座舱开启后锁车下电，再按方控",
+    "target_state": "电源 OFF 档方控全部无效",
+    "intent_function_signal": "方控事件在 OFF/FBL 不上报或不响应",
+    "ui_tts_vehicle_behavior": "上一曲、下一曲、音量、播放暂停、仪表卡片和 360 都不响应",
+    "boundary": "不取消恒温座舱对空调、影音娱乐和座椅调节的保留",
+    "source_ids": [
+      "steer-v2"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261027T160000+0800-wu-you-remaining",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "PC-40490-steer",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-27",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-40490"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恒温座舱 下电 方控"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "方向盘操作功能定义"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_方向盘操作功能定义V2.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_方向盘操作功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc",
+          "title": "C673_功能定义_方向盘操作功能定义V2.0.docx",
+          "url": "https://docs.google.com/document/d/1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1LA43CCKpqMtdZxgTUTsJ4FRJs9-fiPXm",
+          "title": "C673_功能定义_方向盘操作功能定义V2.0.pdf",
+          "url": "https://drive.google.com/file/d/1LA43CCKpqMtdZxgTUTsJ4FRJs9-fiPXm/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1XLa1ILqAFIxQSoTaUw2qn1LSRcrPn3mZ",
+          "title": "C673_功能定义_方向盘操作功能定义V1.9.pdf",
+          "url": "https://drive.google.com/file/d/1XLa1ILqAFIxQSoTaUw2qn1LSRcrPn3mZ/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "18-NbiJj0wTH7iacOZJaIIFine5ZH8XqT",
+          "title": "C673_功能定义_方向盘操作功能定义V1.7.pdf",
+          "url": "https://drive.google.com/file/d/18-NbiJj0wTH7iacOZJaIIFine5ZH8XqT/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    },
+    {
+      "receipt_id": "PC-40490-scene",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-27",
+      "queries": [
+        {
+          "kind": "module_artifact",
+          "text": "智能情景模式功能定义"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx",
+          "url": "https://drive.google.com/file/d/1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://drive.google.com/file/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1H6MlHrCH_Pz4i4ZiH3kgK80CJb_x6rO9",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.7（紧急下电）.docx",
+          "url": "https://drive.google.com/file/d/1H6MlHrCH_Pz4i4ZiH3kgK80CJb_x6rO9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ]
+}

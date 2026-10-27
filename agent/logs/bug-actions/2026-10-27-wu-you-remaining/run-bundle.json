@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261027T160000+0800-wu-you-remaining",
+  "status": "comment_verified",
+  "started_at": "2026-10-27T15:08:00+08:00",
+  "completed_at": "2026-10-27T15:20:00+08:00",
+  "query_summary": "吴优未评故障 PC-40490、ADS-52394、ADS-52416、ADS-52440、ADS-52280；留着 HUR-86212",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/action-log.md",
+  "preflight_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/preflight.json",
+  "preflight_sha256": "de51fafb388b7ff69b744f2ac09175d35e1fb7e0565b1837c4187ec4df563486",
+  "items": [
+    {
+      "jira_key": "PC-40490",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/PC-40490-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/PC-40490-receipt.json",
+      "comment_receipt_sha256": "e7b81c0e8d1e2cb4b92a5acd34f0c336a0cfd8c50b6a34e1f7b9d1134567353d",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/PC-40490-readback.json",
+      "comment_readback_sha256": "bf71f86e56e5c3d39c90f006de559f2ba1827ad4322e1e28a84443813640096d"
+    },
+    {
+      "jira_key": "ADS-52394",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52394-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52394-receipt.json",
+      "comment_receipt_sha256": "c8068650e6047755ae1307e334f8963c89d059525263bb8914da9e5040fd8c32",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52394-readback.json",
+      "comment_readback_sha256": "e5da5b67c2289697e7bf7ea8a217b2ec3b975daa361c1bf37007fbcca4adc23c"
+    },
+    {
+      "jira_key": "ADS-52416",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52416-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52416-receipt.json",
+      "comment_receipt_sha256": "1d6cc43f67a41c026c6fc14ae46af695fe46d3f5f955fac7dd3f98bbbf5e6c55",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52416-readback.json",
+      "comment_readback_sha256": "a726afb25f785e2200de4e0fd3c7852fe4a74ca92e7bdd1ef634dc4b5260b2c3"
+    },
+    {
+      "jira_key": "ADS-52440",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52440-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52440-receipt.json",
+      "comment_receipt_sha256": "4cee178bbab8eb8092845db254061c562cc4c5c5db280944ddba8c5ad96d41ee",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52440-readback.json",
+      "comment_readback_sha256": "12cbfb1c46ea724079a27b702ff2f78b6aa1c6edfe09a344395efa866f813dea"
+    },
+    {
+      "jira_key": "ADS-52280",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52280-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52280-receipt.json",
+      "comment_receipt_sha256": "a9b4f095967f55ce85c012c40bde541bda6ef56afd938750e9f78ffffb4475f4",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-27-wu-you-remaining/ADS-52280-readback.json",
+      "comment_readback_sha256": "291677667b80aee26feb3c3f05f84eb171b77b7a7fa004aef5ccdef8aa0d34ef"
+    }
+  ]
+}

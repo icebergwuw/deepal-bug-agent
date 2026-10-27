@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "PC-40490",
+  "phase": "d",
+  "status": "可转研发",
+  "decision_text_sha256": "50ba65e79e9d4fa9a6c21abf7523a37d64474794d174f2df7e41b90e78ef96e1",
+  "manifest_sha256": "88d8415d041a15aae2e6d13312f655ae3ca7f7b67d83e2ab7c2c9c0aae691210",
+  "authorized_comment": "结论：C673 恒温座舱开启后锁车下电，电源为 OFF 档，方控不应再控制上一曲、下一曲、音量、播放暂停、仪表卡片和 360。方向盘定义要求 OFF/FBL 全部按键无效；情景模式闭锁下电后只写明保留空调、影音娱乐和座椅调节，没有方控例外。\n依据：[方向盘定义V2.0·OFF/FBL按键无效|https://docs.google.com/document/d/1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc/edit] [情景模式V5.0·恒温座舱闭锁下电|https://docs.google.com/document/d/1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL/edit]。\n处理：OFF 档屏蔽方控事件，不按影音可用推断方控可用；方控处理。"
+}

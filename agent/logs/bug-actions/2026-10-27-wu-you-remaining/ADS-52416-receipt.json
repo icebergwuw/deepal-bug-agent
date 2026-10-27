@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52416",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "4c7991e6e380a3b9d78e4bf9d828ab58e43b5bd0d6a8865b5d3766052051d344",
+  "manifest_sha256": "0ee0dc03e03c2992eb26905e015461b2cd9b20062cd946bef9dbc2abf3bb7881",
+  "authorized_comment": "结论：C673-7「我要编辑通讯录」不应打开通讯录。2026-10-27 stg 在线对话落到 1919 无匹配功能，10 月 23 日实车却下发 1305 打开通讯录。作废功能点写暂不支持，电话定义 V0.8 没有这句的语音预期。\n依据：[电话定义V0.8|https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit] [在线对话·1919|https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=]。\n处理：先核对实车是否仍下发 1305；若仍打开页面，按不支持处理，不新增编辑通讯录。语音执行处理。"
+}

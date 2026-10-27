@@ -1,0 +1,272 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52394",
+  "comment_causality": "谭威说 Deepal AI 没有关联大模型增强开关，判非问题。罗理一请产品确认。父票期望首次回复建议打开开关，或已落域则拒识；实际在深小闻界面生成新闻并播报。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-52386",
+        "relationship": "Blocks，专项父票",
+        "outcome": "第 2 条就是本票，期望首次 TTS 引导或拒识，实际生成新闻列表。同批第 1 条是 Deepal AI，不能直接套到深小闻前台。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "llm-v03",
+      "source": "大模型开关 PRD V0.3",
+      "source_location": "三、功能详述 1：桌面卡片含深小闻，首次落域 TTS「建议您打开大模型增强开关」且不打开卡片；创意画舫前台和 Deepal AI 应用内仍可用。",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝 8155/8295，覆盖 C385-5",
+      "trigger": "大模型增强开关关闭后的语音 query",
+      "target_behavior": "桌面卡片首次引导且不打开卡片；前台豁免只写创意画舫和 Deepal AI",
+      "match": "partial",
+      "reason": "没有单独写深小闻应用已在前台时是否继续生成新闻。"
+    },
+    {
+      "source_id": "std-news",
+      "source": "标准功能 AI新闻 meta 1357",
+      "source_location": "功能 1407，query 示例是热点新闻，不是「长颈鹿吃草吗」",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "新闻类 query",
+      "target_behavior": "只证明新闻功能存在，不能证明本句落域",
+      "match": "mismatch",
+      "reason": "本句没有当前在线对话，不能绑定这个 meta。"
+    },
+    {
+      "source_id": "proj-news",
+      "source": "深蓝项目 AI新闻 26064",
+      "source_location": "projectId 11，INHERIT，meta 1357",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝",
+      "trigger": "新闻类 query",
+      "target_behavior": "项目继承了 AI新闻，没有本句开关关闭策略",
+      "match": "partial",
+      "reason": "已读项目功能点，但不能代替本句当前结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "开关目标已由大模型开关 PRD 定义，通用画像不另选。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "原话落域和开关拦截由语音链路决定。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标不是可见即可说节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52394"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "大模型开关关闭 深小闻"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "大模型增强开关"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8155&8295平台_大模型产品需求文档_大模型开关_V0.3_20250911"
+        },
+        {
+          "kind": "version_family",
+          "text": "大模型产品需求文档_大模型开关"
+        }
+      ],
+      "source_ids": [
+        "llm-v03"
+      ],
+      "search_receipt_ids": [
+        "ADS-52394-llm"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "192MlIu-jI2UZJMftytwLWV6knbmPYTDpeQ2WNbUAowQ",
+            "title": "长安深蓝_8155&8295平台_大模型产品需求文档_大模型开关_V0.3_20250911",
+            "url": "https://docs.google.com/document/d/192MlIu-jI2UZJMftytwLWV6knbmPYTDpeQ2WNbUAowQ/edit",
+            "mime_type": "application/vnd.google-apps.document",
+            "references": [],
+            "version_family": "大模型产品需求文档_大模型开关",
+            "disposition": "read",
+            "source_ids": [
+              "llm-v03"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "大模型产品需求文档_大模型开关",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-52394-llm"
+            ],
+            "selected_source_ids": [
+              "llm-v03"
+            ],
+            "selected_candidate_id": "192MlIu-jI2UZJMftytwLWV6knbmPYTDpeQ2WNbUAowQ",
+            "selection_reason": "标题检索只见到 V0.3。",
+            "newer_version_checked": true,
+            "reason": "标题检索只见到 V0.3。"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "长颈鹿吃草吗"
+        }
+      ],
+      "source_ids": [],
+      "material": true,
+      "reason": "今天没有在 C385-5 在线对话重放这句，不能确认当前落域。",
+      "next_action": "用 C385_5、开关关闭条件重放「长颈鹿吃草吗」，记下 meta_id。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 标准功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "AI新闻 1357"
+        }
+      ],
+      "source_ids": [
+        "std-news"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 深蓝项目功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1357"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝 projectId 11"
+        }
+      ],
+      "source_ids": [
+        "proj-news"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试把桌面卡片首次引导套到深小闻前台。PRD 的前台豁免只写创意画舫和 Deepal AI，不能据此关闭，也不能直接转研发。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "alchemy_tested": false,
+    "original_utterance": "长颈鹿吃草吗",
+    "unavailable_reason": "缺少当前在线对话和 meta_id。",
+    "next_action": "在 C385_5 重放这句。",
+    "standard_function": {
+      "status": "verified",
+      "name": "AI新闻",
+      "assessment": "新闻功能存在，但 query 示例不包含这句，不能当作本票落域。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "AI新闻",
+      "assessment": "深蓝项目已继承，没有开关关闭后的前台策略。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品",
+    "text": "结论：C385-5 大模型增强开关关闭后，在深小闻应用界面说「长颈鹿吃草吗」并生成新闻，不能直接套桌面卡片的首次引导。开关定义 V0.3 把深小闻写在桌面卡片里，前台豁免只写了创意画舫和 Deepal AI 应用，深小闻前台没有单独写。\n依据：[大模型开关PRD V0.3·前台豁免|https://docs.google.com/document/d/192MlIu-jI2UZJMftytwLWV6knbmPYTDpeQ2WNbUAowQ/edit]。\n处理：补当前在线对话，确认落的是深小闻应用还是桌面卡片；补写前台规则前不转研发。语音产品处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20261027T160000+0800-wu-you-remaining",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-52394-llm",
+      "provider": "google_drive",
+      "origin": "chrome",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-27",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52394"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "大模型开关关闭 深小闻"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "大模型增强开关"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "长安深蓝_8155&8295平台_大模型产品需求文档_大模型开关_V0.3_20250911"
+        },
+        {
+          "kind": "version_family",
+          "text": "大模型产品需求文档_大模型开关"
+        }
+      ],
+      "results": [
+        {
+          "id": "192MlIu-jI2UZJMftytwLWV6knbmPYTDpeQ2WNbUAowQ",
+          "title": "长安深蓝_8155&8295平台_大模型产品需求文档_大模型开关_V0.3_20250911",
+          "url": "https://docs.google.com/document/d/192MlIu-jI2UZJMftytwLWV6knbmPYTDpeQ2WNbUAowQ/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        }
+      ]
+    }
+  ]
+}

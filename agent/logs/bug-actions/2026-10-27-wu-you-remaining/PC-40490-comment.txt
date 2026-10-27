@@ -1,0 +1,3 @@
+结论：C673 恒温座舱开启后锁车下电，电源为 OFF 档，方控不应再控制上一曲、下一曲、音量、播放暂停、仪表卡片和 360。方向盘定义要求 OFF/FBL 全部按键无效；情景模式闭锁下电后只写明保留空调、影音娱乐和座椅调节，没有方控例外。
+依据：[方向盘定义V2.0·OFF/FBL按键无效|https://docs.google.com/document/d/1cVNI_By-XWOB-4xIr4hcBbW3-FnF9rPc/edit] [情景模式V5.0·恒温座舱闭锁下电|https://docs.google.com/document/d/1EZWTdWTm1DAUtwpz--VqzFzXi_zMBKhL/edit]。
+处理：OFF 档屏蔽方控事件，不按影音可用推断方控可用；方控处理。

@@ -1,0 +1,193 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52440",
+  "comment_causality": "子票写拒识。父票 ADS-52431 备注没有拒识，走 1664，请产品确认预期。测试期望只写识别正确。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-52431",
+        "relationship": "Blocks，专项父票",
+        "outcome": "第 1 条备注走 1664 暂停播报，和子票标题拒识冲突。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "alchemy-now",
+      "source": "2026-10-27 stg C673_7 在线对话",
+      "source_location": "别用这个调调跟我说话，classification task，meta_id 2820，reject_type REJECTION",
+      "source_type": "alchemy_current",
+      "role": "implementation_actual",
+      "project_model": "stg C673_7",
+      "trigger": "别用这个调调跟我说话",
+      "target_behavior": "当前平台拒识",
+      "match": "exact",
+      "reason": "今天的在线对话直接证明当前落域。"
+    },
+    {
+      "source_id": "std-1402",
+      "source": "标准功能切换播报音音色 meta 1402",
+      "source_location": "功能 1252，泛化是切换音色和指定音色，没有这句",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "切换播报音",
+      "target_behavior": "不覆盖这句",
+      "match": "mismatch",
+      "reason": "功能存在，但这句不在泛化里。"
+    },
+    {
+      "source_id": "proj-1402",
+      "source": "深蓝项目切换播报音音色 24437",
+      "source_location": "INHERIT，深蓝音色为温暖治愈、阳光晴朗、欢快活泼",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝",
+      "trigger": "切换播报音",
+      "target_behavior": "没有这句泛化",
+      "match": "mismatch",
+      "reason": "项目功能点已读，不包含这句。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "没有读到覆盖这句的产品正式定义。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "这句是拒识、暂停播报还是切音色，由语音链路决定。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标不是可见即可说节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-10-27",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52440"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "别用这个调调跟我说话"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "播报音 音色"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "切换播报音音色"
+        },
+        {
+          "kind": "version_family",
+          "text": "语音播报音色"
+        }
+      ],
+      "source_ids": [],
+      "material": true,
+      "reason": "检索「播报音 音色 功能定义」首屏是智能提示和功放文档，没有打开到要求这句切音色的正式定义。",
+      "next_action": "打开语音播报专项定义，核对这句应切音色、暂停播报还是拒识。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 在线对话 stg C673_7",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "别用这个调调跟我说话"
+        }
+      ],
+      "source_ids": [
+        "alchemy-now"
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 标准功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1402"
+        }
+      ],
+      "source_ids": [
+        "std-1402"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-10-27",
+      "search_location": "Alchemy 深蓝项目功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1402"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝 projectId 11"
+        }
+      ],
+      "source_ids": [
+        "proj-1402"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "父票说 1664，子票和当前在线对话是 2820。没有正式定义能选择切音色，所以不转研发。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "alchemy_tested": true,
+    "original_utterance": "别用这个调调跟我说话",
+    "alchemy_result": "stg C673_7 classification task，meta_id 2820，REJECTION",
+    "meta_id": "2820",
+    "standard_function": {
+      "status": "verified",
+      "name": "切换播报音音色",
+      "assessment": "没有这句泛化。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "切换播报音音色",
+      "assessment": "深蓝继承后仍没有这句。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音NLU",
+    "text": "结论：C673-7「别用这个调调跟我说话」2026-10-27 stg 在线对话落到 2820 拒识。父票备注当时走 1664 暂停播报，和子票「拒识」不一致。切音色 1402 和暂停播报 1664 都没有这句泛化，也没有读到要求这句切音色的正式定义。\n依据：[在线对话·2820|https://alchemy.i-tetris.com/#/conversation/testing?id=27475f07-6fc5-47dc-bd3a-af07750b1683&env=]。\n处理：用同一请求回读实车是拒识还是 1664，再决定补切音色泛化还是维持拒识。语音 NLU 处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20261027T160000+0800-wu-you-remaining",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": []
+}

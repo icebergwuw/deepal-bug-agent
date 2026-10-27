@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52394",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "b33b72a7f7b1b14d551f5ca53b86a3adea385e46f93503485f2bf34b88cb4f07",
+  "manifest_sha256": "4ab675e9014c5fa27d6b79a4d3fefe375c6a8edf24b6d6064cd1aae333e70ff5",
+  "authorized_comment": "结论：C385-5 大模型增强开关关闭后，在深小闻应用界面说「长颈鹿吃草吗」并生成新闻，不能直接套桌面卡片的首次引导。开关定义 V0.3 把深小闻写在桌面卡片里，前台豁免只写了创意画舫和 Deepal AI 应用，深小闻前台没有单独写。\n依据：[大模型开关PRD V0.3·前台豁免|https://docs.google.com/document/d/192MlIu-jI2UZJMftytwLWV6knbmPYTDpeQ2WNbUAowQ/edit]。\n处理：补当前在线对话，确认落的是深小闻应用还是桌面卡片；补写前台规则前不转研发。语音产品处理。"
+}

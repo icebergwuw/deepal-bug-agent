@@ -1,0 +1,98 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52280",
+  "comment_causality": "李欣说仪表板块产品处理，并提到冯智秀。组件仍是 Android - HVAC。票上只有一张仪表照片和日志包，没有平均值口径。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "photo",
+      "source": "ADS-52280 实车照片",
+      "source_location": "附件 37aea312f37b856babe608522632067a_origin(3).jpg：行驶能耗顶部 11.8 kWh/100km，曲线标签平均 11.9",
+      "source_type": "jira_attachment",
+      "role": "implementation_actual",
+      "project_model": "C385-5 / LS6A2E1D4TA600041",
+      "trigger": "打开仪表行驶能耗",
+      "target_behavior": "证明同屏两个数不一致，不定义应显示哪一个",
+      "match": "exact",
+      "reason": "照片直接显示 11.8 和平均 11.9。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "能耗显示由仪表功能定义约束。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不涉及语音原话。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标不是可见即可说节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "unavailable",
+      "searched_at": "2026-10-27",
+      "search_location": "当前 Chrome 登录态的 Google Drive 搜索",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52280"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "行驶能耗 平均"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "仪表"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385C673_平台化功能定义_仪表V2.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385C673_平台化功能定义_仪表"
+        }
+      ],
+      "source_ids": [],
+      "material": true,
+      "reason": "找到 C385C673_平台化功能定义_仪表V2.0.docx，Google 文档打开失败，没有读出顶部值和曲线平均的口径。",
+      "next_action": "打开仪表 V2.0 的行驶能耗章节，核对 11.8 和平均 11.9 是否允许不同口径。"
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "李欣指向仪表产品，组件却是 HVAC。没有口径前不改经办人，也不把两个数直接判成缺陷。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "仪表",
+    "text": "结论：C385-5 仪表「行驶能耗」顶部是 11.8 kWh/100km，曲线常显「平均 11.9」。仪表定义 V2.0 文件在，这次没有读出平均值口径，不能把两个数判成同一口径或缺陷。\n依据：[实车照片·行驶能耗|http://jira.i-tetris.com/secure/attachment/4567660/37aea312f37b856babe608522632067a_origin%283%29.jpg]。\n处理：读出顶部值和曲线「平均」的计算口径后再定责，不改经办人。仪表处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20261027T160000+0800-wu-you-remaining",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": []
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52280",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "833f44517662fd94fb5c4b167ccb05cab7afc7ef70906ad0ff5b6b187cb6bd0f",
+  "manifest_sha256": "136c2cd7fff4eeee9b475ff31e1ab417ed627cbb6c7cfd7a754344446b39ac10",
+  "authorized_comment": "结论：C385-5 仪表「行驶能耗」顶部是 11.8 kWh/100km，曲线常显「平均 11.9」。仪表定义 V2.0 文件在，这次没有读出平均值口径，不能把两个数判成同一口径或缺陷。\n依据：[实车照片·行驶能耗|http://jira.i-tetris.com/secure/attachment/4567660/37aea312f37b856babe608522632067a_origin%283%29.jpg]。\n处理：读出顶部值和曲线「平均」的计算口径后再定责，不改经办人。仪表处理。"
+}
