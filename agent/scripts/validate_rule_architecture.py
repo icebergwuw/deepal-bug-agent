@@ -500,9 +500,23 @@ def validate(root: Path, skill: Path) -> list[str]:
         errors.append("context.md 未把 HUR 翻译总票做成可更新入口")
     if "HUR-85390" in review_workflow:
         errors.append("复盘流程写死了 HUR 翻译总票号")
-    for token in ("you.wu", "Workaround", "不新建单张需求", "agent/context.md"):
+    for token in (
+        "you.wu",
+        "Workaround",
+        "不新建单张需求",
+        "agent/context.md",
+        "关票是一定的",
+        "转需求 story",
+        "未传递给开发",
+        "已传递给开发",
+        "不因为经办人是吴优",
+    ):
         if token not in parent_rule:
             errors.append(f"HUR 翻译总票规则缺少：{token}")
+    if "关票是一定的" not in review_workflow or "转需求 story" not in review_workflow:
+        errors.append("复盘流程未把关票和转需求 story 分开")
+    if "未传递给开发" not in agents_text or "已传递给开发" not in agents_text:
+        errors.append("AGENTS.md 未记录 HUR story 是否已传递给开发")
 
     for relative in (
         "AGENTS.md",

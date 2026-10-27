@@ -21,4 +21,4 @@
 - 如果中文和需求定义一致，只是测试期望不同，优先按非问题 / 修改用例。
 - 如果已有 key 但外语文案错误，转多语言 / 文案修复。
 - 如果页面使用了错误 key，转对应应用研发修映射。
-- 吴优名下未关闭的 HUR 翻译故障，不逐张新建需求。关联 `agent/context.md` 的当前翻译总票后 workaround 关闭。总票号会更新，规则见 `rules/hur-translation-parent.md`。
+- 已判定的长马文言原 Bug 一定 workaround 关闭。转需求 story 未传递给开发则复用 `agent/context.md` 的当前总票，已传递给开发才新建。总票号会更新，规则见 `rules/hur-translation-parent.md`。

@@ -23,7 +23,8 @@
 
 - 长马标准语料只有一张在线表：`OTA节点_J90A-标准语料_V1.0`，`https://docs.google.com/spreadsheets/d/1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--/edit?gid=1437153171#gid=1437153171`。HUR 语料问题先查这张表的对应语种页，不另找第二份语料。2026-10-23 用 Chrome 已登录态导出核对，小憩和露营时长在 `1_英语`。
 
-- 当前 HUR 翻译总票：`HUR-85390`。这只是 2026-10-23 回读时仍在收翻译问题的故事，标题是 `[翻译][BUG转需求]Text ID V1.3将提交翻译问题0923`。执行前必须回读它仍未完成。用户给出新总票，或这张已关闭、已解决、不再收翻译问题时，先改这一行再关联，不得沿用旧票号。处理规则见 `agent/product-kb/rules/hur-translation-parent.md`。
+- 当前 HUR 翻译总票：`HUR-85390`。2026-10-27 回读仍是待办，经办人 `you.wu`，标题是 `[翻译][BUG转需求]Text ID V1.3将提交翻译问题0923`，尚未传递给开发。执行前必须再回读它仍未完成且经办人仍是 `you.wu`。用户给出新总票，或这张已关闭、已解决、不再收翻译问题，或经办人不再是 `you.wu`，都视为已传递给开发，先改这一行再关联，不得沿用旧票号。处理规则见 `agent/product-kb/rules/hur-translation-parent.md`。
+- 长马语料没有永久总票。2026-10-27 回读时，`HUR-84627` 和 `HUR-86245` 仍由 `you.wu` 持有，只覆盖小憩和露营，不是所有语料的承接票。同一问题先复用经办人仍是 `you.wu` 的 story；已传递给开发才新建，新建后改这里的当次票号。
 
 - 语音平台功能分类：
   `https://alchemy.i-tetris.com/#/functional/classify`

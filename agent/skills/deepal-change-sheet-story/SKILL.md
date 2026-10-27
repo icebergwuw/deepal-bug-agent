@@ -13,7 +13,7 @@ A new session that says 建票 uses this workflow. Do not invent another ticket-
 - Jira MCP cannot create or transition issues. Create and assign through Jira REST with the local `.env` credentials, then read the new issue back with `get_jira_issue`.
 - Do not print or commit the Jira password or Feishu App Secret. The secret stays in gitignored `agent/config/feishu-bot.local.json`.
 - Do not fill PJM columns, write a frozen sheet tab, reassign unrelated existing issues, close issues, or write Alchemy.
-- HUR translation bugs use `agent/product-kb/rules/hur-translation-parent.md`. Do not create a change-sheet story or send this Feishu notice for them.
+- HUR wording and corpus stories follow `agent/product-kb/rules/hur-translation-parent.md`. Closing the original Bug is mandatory. Create a story only after the previous story has been passed to development. Do not create a change-sheet story or send this Feishu notice for them.
 - A user saying "只看" means read only.
 
 ## Select Rows

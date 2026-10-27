@@ -66,8 +66,10 @@
 这类新建需求的经办人按变更表 U 列产品负责人设置，创建时显式指定，不留空让组件默认经办人接管。吴优对应 `you.wu`，李欣对应 `xin.li03`，冯智秀对应 `zhixiu.feng`。U 列无法对应已登记负责人时才用当前操作者。这不授权修改无关旧票经办人；用户明确纠正刚建出的票时，可以改那张票的经办人。
 修复版本、合同或 AP Link、评审计划没有当前项目规则时停止建 Jira，不沿用东风样例。2026-10-23 吴优已授权这四步；Jira MCP 没有建票和流转接口，用同一 Jira 凭证走 REST，完成后回读需求票、关联、原 Bug 状态和变更表对应行。回读成功后用 `agent/scripts/notify_feishu_ticket.py` 向 `agent/config/feishu-notify.json` 记录的飞书群发一条，内容含票号、标题、链接、经办人、变更表序号和依赖项。依赖项写缺的 PRD/UE、跨模块依赖，以及变更表上已经写明的对接人。表上没有对接人时不写死名字，只写待指定。没有 open_id 时不得声称已艾特。应用 ID 是 `cli_aa506e13fcf8dcf5`，群 ID 是 `oc_c3692001480b0aac7825bafab90989b3`。App Secret 只放 gitignore 的 `agent/config/feishu-bot.local.json`，不写入规则、日志或仓库。发送失败不得声称已通知。
 
-## HUR 翻译总票
+## HUR 文言与语料
 
-吴优名下未关闭的 HUR 翻译故障不走上面的新建单票。当前总票只从 `agent/context.md` 读取，规则见 `agent/product-kb/rules/hur-translation-parent.md`。执行前回读总票仍未完成；总票更换时先改 context，不得把历史总票号写死。
+已判定的长马文言和语料分开处理关票和转需求 story，规则见 `agent/product-kb/rules/hur-translation-parent.md`。关票是一定的：原 Bug 评论后按 Workaround / bug转需求关闭，不改经办人。转需求 story 未传递给开发、经办人仍是 `you.wu` 时复用，不新建；已传递给开发才新建。长马文言和语料都这样判断。不因为经办人是吴优就关闭或新建全部票。
 
-这类票 Relates 到当前总票，原票评论写明原因、当次总票链接和 workaround / bug转需求关闭口径，再按 Workaround 解决。不改经办人，不写变更管理表，不发飞书建票通知，不回填吴优 bug 表。语音执行、TTS 截断和故事票不走这条。分类不确定时不关闭。
+文言当前总票只从 `agent/context.md` 读取。执行前回读它仍未完成且经办人仍是 `you.wu`。总票已交给开发或不再收翻译问题时，先新建并改 context，不得把历史总票号写死。语料复用仍在 `you.wu` 名下、覆盖同一问题的 story，不把历史语料票写成永久总票。
+
+不写变更管理表，不发飞书建票通知，不回填吴优 bug 表。语音执行、TTS 截断和故事票不走这条。分类不确定时不关闭。
