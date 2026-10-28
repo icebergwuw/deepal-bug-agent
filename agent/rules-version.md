@@ -1,11 +1,40 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.44.0-trial.1`
+- 当前版本：`v1.45.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-10-27`
+- 生效日期：`2026-10-28`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`。变更表建票使用 `agent/skills/deepal-change-sheet-story/SKILL.md`。UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
+
+
+## v1.45.0-trial.1 — 2026-10-28
+
+### 试行内容
+
+- 操作者明确要求用本机 Google API 读 Drive 时，检索回执记录 `google_api`。
+- 默认入口仍是当前 Chrome。不得把 API 检索写成 `chrome`。
+
+### 修改原因
+
+- 2026-10-28 吴优要求处理 Bug 时直接查看 Drive，不走浏览器。
+
+### 影响文件
+
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/scripts/validate_bug_evidence_gate.py`
+- `agent/scripts/test_bug_evidence_gate.py`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- `python3 agent/scripts/test_bug_evidence_gate.py` 中 `google_api` 回执通过，未知入口仍拒绝。
+- `ADS-52425` 用 Google API 读取记忆空间需求 V0.7，不把入口写成 Chrome。
+
+### 回滚口径
+
+- 删除 `google_api` 入口。已用该入口完成的评论不撤回。
 
 ## v1.44.0-trial.1 — 2026-10-27
 

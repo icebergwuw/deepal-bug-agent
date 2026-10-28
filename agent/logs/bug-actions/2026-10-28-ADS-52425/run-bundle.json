@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261028T101800+0800-ADS-52425",
+  "status": "comment_verified",
+  "started_at": "2026-10-28T10:18:00+08:00",
+  "completed_at": "2026-10-28T10:35:00+08:00",
+  "query_summary": "用 Google API 读取 Drive 后评论 ADS-52425",
+  "action_log": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-28-ADS-52425/action-log.md",
+  "preflight_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-28-ADS-52425/preflight.json",
+  "preflight_sha256": "de51fafb388b7ff69b744f2ac09175d35e1fb7e0565b1837c4187ec4df563486",
+  "items": [
+    {
+      "jira_key": "ADS-52425",
+      "result_output": "jira_comment_only",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "manifest_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-28-ADS-52425/ADS-52425-manifest.json",
+      "comment_receipt_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-28-ADS-52425/ADS-52425-receipt.json",
+      "comment_receipt_sha256": "e07da9d68fdbe9dc05ffd3c9ee5c5e3b11b3dfdd48d873be6f90d60b6314d774",
+      "comment_readback_path": "/Users/ice/Desktop/Project/Mega/Bug/agent/logs/bug-actions/2026-10-28-ADS-52425/ADS-52425-readback.json",
+      "comment_readback_sha256": "e0da8b7b97abc8b7f9cb9e809057393f89e37413578b3d4178c929871fc98baf"
+    }
+  ]
+}

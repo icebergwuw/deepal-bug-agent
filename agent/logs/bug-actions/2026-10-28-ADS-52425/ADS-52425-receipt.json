@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52425",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "aa4c4b692f9a9ad08ac31b8150c64cee48f7bbb37fe4d5d1ec161b1a1319d77b",
+  "manifest_sha256": "2663a847dceaac117facf065e117454326694578c06e2d0bdfff240bc0a7ec93",
+  "authorized_comment": "结论：C673-7「记住我的声音」不能按测试预期直接判成车端声纹录入缺陷。记忆空间需求 V0.7 第 9 页的语音入口是「记住我是谁 / 创建记忆ID」，没有这句。标准功能 1329 注册声纹仍是草稿，示例是「我要注册声纹」，深蓝项目没有继承。\n依据：[记忆空间需求V0.7·第9页语音入口|https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view]。\n处理：今天没有重放在线对话，先不转研发。要支持这句，先由语音产品把注册声纹纳入深蓝并补进定义。语音产品处理。"
+}

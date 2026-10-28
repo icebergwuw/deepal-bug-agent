@@ -34,7 +34,7 @@ EVIDENCE_CHECKS = EVIDENCE_REQUIREMENTS["checks"]
 EVIDENCE_PROFILES = EVIDENCE_REQUIREMENTS["profiles"]
 CHECK_STATUSES = set(EVIDENCE_REQUIREMENTS["check_statuses"])
 QUERY_KINDS = set(EVIDENCE_REQUIREMENTS["query_kinds"])
-ALLOWED_SEARCH_ORIGINS = {"chrome", "connector", "in_app_browser"}
+ALLOWED_SEARCH_ORIGINS = {"chrome", "connector", "in_app_browser", "google_api"}
 CANDIDATE_DISPOSITIONS = set(
     EVIDENCE_REQUIREMENTS["candidate_dispositions"]
 )

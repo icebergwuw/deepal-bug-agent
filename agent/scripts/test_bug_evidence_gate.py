@@ -970,6 +970,11 @@ class BugEvidenceGateTest(unittest.TestCase):
         item["search_receipts"][0]["origin"] = "in_app_browser"
         self.assertEqual(validate_manifest(item), [])
 
+    def test_google_api_origin_receipt_is_accepted(self) -> None:
+        item = hur_case()
+        item["search_receipts"][0]["origin"] = "google_api"
+        self.assertEqual(validate_manifest(item), [])
+
     def test_unknown_search_origin_is_rejected(self) -> None:
         item = hur_case()
         item["search_receipts"][0]["origin"] = "manual"

@@ -17,7 +17,7 @@ MCP 只替换它实际覆盖的读取和评论。MCP 不代替 Google Drive，�
 | Alchemy 功能点、意图、slot | `analyze_bug_ops` | 不代替产品写入，也不能充当 PRD |
 | 判责顺序 | `analyze_bug_rules` | 只读 |
 | 待处理列表 | 同一 Jira 凭证的 JQL 搜索；搜索失败才打开 Dashboard 17302 | 不因打开列表就全量处理 |
-| 正式定义、版本族、引用文档 | 当前 Chrome 的 Google Drive | 不能用 Alchemy 或 Jira 评论替代 |
+| 正式定义、版本族、引用文档 | 当前 Chrome 的 Google Drive；操作者明确要求时用本机 Google API，回执写 `google_api` | 不能用 Alchemy 或 Jira 评论替代 |
 | 附件正文、UE 图层 | Chrome；UE 可再用已登录的 MasterGo | MCP 没返回正文时不猜 |
 | 吴优结果 | Jira 评论 | 不写吴优 bug 表，不同步吴优本地索引 |
 | 其他负责人结果 | 各自线上清单，回读后再评论 | 不写到吴优页 |

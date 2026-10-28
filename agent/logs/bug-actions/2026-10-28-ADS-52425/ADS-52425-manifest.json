@@ -1,0 +1,321 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52425",
+  "comment_causality": "汪雯菁根据 2026-10-23 日志说云端已下发 1329 注册声纹，车端回了暂不支持，并请产品确认预期功能点。测试期望引导声纹录制。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "memory-v07",
+      "source": "记忆空间-需求文档-v0.7",
+      "source_location": "第 9 页语音创建记忆 ID：query 示例是认识一下吧、记住我是谁、创建记忆账号，没有记住我的声音。第 10-11 页声纹录入从创建记忆 ID 或点击新增声纹进入。",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "深蓝记忆空间，覆盖 C673-7 所在平台",
+      "trigger": "语音说记住我的声音",
+      "target_behavior": "没有定义这句直接引导声纹录制",
+      "match": "gap",
+      "material": true,
+      "next_action": "若要支持这句，补进记忆空间定义并纳入深蓝项目功能点。",
+      "reason": "现行最高版本没有这句。"
+    },
+    {
+      "source_id": "std-1329",
+      "source": "标准功能注册声纹 meta 1329",
+      "source_location": "功能 1247，状态 DRAFT，备注 query 是我要注册声纹，江铃泛化是添加/注册声纹或注册声音。",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "记住我的声音",
+      "target_behavior": "不覆盖这句，也不能替代正式定义",
+      "match": "mismatch",
+      "reason": "功能存在但是草稿，query 不包含这句。"
+    },
+    {
+      "source_id": "proj-1329",
+      "source": "深蓝项目功能检索 meta 1329",
+      "source_location": "projectId 11，按名称声纹和 metaId 1329 检索均为 0。",
+      "source_type": "alchemy_project",
+      "role": "implementation_actual",
+      "project_model": "深蓝",
+      "trigger": "记住我的声音",
+      "target_behavior": "项目未继承注册声纹",
+      "match": "mismatch",
+      "reason": "深蓝没有这个项目功能点。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "声纹入口已由记忆空间需求定义，通用画像不另选。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "这句是否引导声纹录制由语音链路和功能点决定。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标不是可见即可说节点。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-28",
+      "search_location": "本机 Google Drive API，未打开浏览器",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52425"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "记住我的声音 声纹录制"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间 声纹"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "source_ids": [
+        "memory-v07"
+      ],
+      "search_receipt_ids": [
+        "ADS-52425-memory"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+            "title": "记忆空间-需求文档-v0.7.pdf",
+            "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "read",
+            "source_ids": [
+              "memory-v07"
+            ]
+          },
+          {
+            "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+            "title": "记忆空间-需求文档-v0.6.pdf",
+            "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "source_ids": [],
+            "reason": "V0.6 低于现行 V0.7，不作为目标。"
+          },
+          {
+            "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+            "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+            "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "source_ids": [],
+            "reason": "文件名标明误加需删除，排除。"
+          },
+          {
+            "id": "1Wp33prApQchr1PTt18dEOgghva__B2Wd",
+            "title": "记忆空间-需求文档-v0.1.pdf",
+            "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+            "mime_type": "application/pdf",
+            "references": [],
+            "version_family": "记忆空间-需求文档",
+            "disposition": "excluded",
+            "source_ids": [],
+            "reason": "V0.1 低于现行 V0.7，不作为目标。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "记忆空间-需求文档",
+            "status": "enumerated",
+            "receipt_ids": [
+              "ADS-52425-memory"
+            ],
+            "selected_source_ids": [
+              "memory-v07"
+            ],
+            "selected_candidate_id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+            "selection_reason": "同名系列最新是 V0.7，V0.6 和 V0.1 更旧，误加稿排除。",
+            "newer_version_checked": true,
+            "reason": "2026-10-28 按文件名检索，没有高于 V0.7 的记忆空间需求文档。"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "searched_at": "2026-10-28",
+      "search_location": "Alchemy 在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "记住我的声音"
+        }
+      ],
+      "source_ids": [],
+      "material": true,
+      "reason": "今天没有在 C673_7 在线对话重放这句。10 月 23 日评论里的 1329 不能代替当前落域。",
+      "next_action": "用 C673_7 重放「记住我的声音」，记下 meta_id。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-10-28",
+      "search_location": "Alchemy 标准功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "注册声纹 1329"
+        }
+      ],
+      "source_ids": [
+        "std-1329"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-10-28",
+      "search_location": "Alchemy 深蓝项目功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1329"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝 projectId 11"
+        }
+      ],
+      "source_ids": [
+        "proj-1329"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试要这句引导声纹录制。V0.7 没有这句，深蓝也没有继承 1329。不能用 10 月 23 日云端下发直接转车端。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "alchemy_tested": false,
+    "original_utterance": "记住我的声音",
+    "unavailable_reason": "缺少 2026-10-28 的在线对话和当前 meta_id。",
+    "next_action": "在 C673_7 重放这句。",
+    "standard_function": {
+      "status": "verified",
+      "name": "注册声纹",
+      "assessment": "标准功能 1247、meta 1329 仍是草稿，示例是我要注册声纹，不包含记住我的声音。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "注册声纹",
+      "assessment": "深蓝 projectId 11 按名称和 meta 1329 检索均为 0，没有继承。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品",
+    "text": "结论：C673-7「记住我的声音」不能按测试预期直接判成车端声纹录入缺陷。记忆空间需求 V0.7 第 9 页的语音入口是「记住我是谁 / 创建记忆ID」，没有这句。标准功能 1329 注册声纹仍是草稿，示例是「我要注册声纹」，深蓝项目没有继承。\n依据：[记忆空间需求V0.7·第9页语音入口|https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view]。\n处理：今天没有重放在线对话，先不转研发。要支持这句，先由语音产品把注册声纹纳入深蓝并补进定义。语音产品处理。",
+    "implementation_source_ids": [
+      "proj-1329"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261028T101800+0800-ADS-52425",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-52425-memory",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-28",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52425"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "记住我的声音 声纹录制"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "记忆空间 声纹"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "记忆空间-需求文档-v0.7.pdf"
+        },
+        {
+          "kind": "version_family",
+          "text": "记忆空间-需求文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "1N6E1AnGl_4MZoQxnANNDrfY850sTX03V",
+          "title": "记忆空间-需求文档-v0.7.pdf",
+          "url": "https://drive.google.com/file/d/1N6E1AnGl_4MZoQxnANNDrfY850sTX03V/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG",
+          "title": "记忆空间-需求文档-v0.6.pdf",
+          "url": "https://drive.google.com/file/d/1NrN0MoBPddT9PdMc8dUgRjHUh5TE01xG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG",
+          "title": "记忆空间-需求文档-v0.6.pdf（误加需删除）",
+          "url": "https://drive.google.com/file/d/1j15RexOZPpsrjKpkPPDCxuTBHSfjSElG/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1Wp33prApQchr1PTt18dEOgghva__B2Wd",
+          "title": "记忆空间-需求文档-v0.1.pdf",
+          "url": "https://drive.google.com/file/d/1Wp33prApQchr1PTt18dEOgghva__B2Wd/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ]
+}
