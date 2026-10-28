@@ -358,6 +358,7 @@ def assess(
     skill: dict[str, Any],
     secret_file: dict[str, Any] | None = None,
     now: datetime | None = None,
+    google_api_probe: Any | None = None,
 ) -> dict[str, Any]:
     now = now or utc_now()
     blockers: list[str] = []
@@ -439,11 +440,34 @@ def assess(
         receipt = access.get(platform, {}) if isinstance(access, dict) else {}
         verified_at = parse_time(receipt.get("verified_at")) if isinstance(receipt, dict) else None
         fresh = bool(verified_at and now - verified_at <= max_age)
+        entry = receipt.get("method") if isinstance(receipt, dict) else None
+        api_ok = None
+        api_error = None
+        if platform == "google_drive" and google_api_probe is not None:
+            probe_result = google_api_probe()
+            api_ok = bool(isinstance(probe_result, dict) and probe_result.get("ok") is True)
+            api_error = None if api_ok else str((probe_result or {}).get("error") or "probe_failed")
+            if api_ok:
+                fresh = True
+                entry = "google_api"
+                verified_at = now
+            elif fresh:
+                entry = "chrome"
+                warnings.append("Google API 不可用，Drive 读取退回当前 Chrome 登录态")
+            else:
+                warnings.append("Google API 不可用，且没有有效的 Chrome Drive 验证")
         access_results[platform] = {
             "fresh": fresh,
-            "verified_at": receipt.get("verified_at") if isinstance(receipt, dict) else None,
+            "verified_at": format_time(verified_at) if isinstance(verified_at, datetime) else (
+                receipt.get("verified_at") if isinstance(receipt, dict) else None
+            ),
             "required": platform in required_platforms,
+            "entry": entry,
         }
+        if api_ok is not None:
+            access_results[platform]["api_ok"] = api_ok
+        if api_error:
+            access_results[platform]["api_error"] = api_error
         if platform in required_platforms and not fresh:
             blockers.append(f"{platform} 尚未完成本次有效期内的真实读取验证")
             guidance.append(
@@ -475,6 +499,10 @@ def assess(
         "guidance": list(dict.fromkeys(guidance)),
         "security": "本文件不保存密码、Cookie、Token或平台访问口令",
     }
+    serialized = json.dumps(result)
+    for forbidden in ("refresh_token", "client_secret", "access_token"):
+        if forbidden in serialized:
+            raise ValueError("预检结果包含凭据字段")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -552,6 +580,8 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps({"ok": False, "error": str(error)}, ensure_ascii=False, indent=2))
         return 2
 
+    from google_drive_api import probe as probe_google_api
+
     result = assess(
         profile,
         owners,
@@ -560,6 +590,7 @@ def main(argv: list[str] | None = None) -> int:
         max_access_age_hours=args.max_access_age_hours,
         skill=skill_status(),
         secret_file=local_secret_file_status(),
+        google_api_probe=probe_google_api,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result["ok"] else 2

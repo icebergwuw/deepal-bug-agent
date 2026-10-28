@@ -8,7 +8,7 @@
 - 当前操作者身份只从已忽略的 `agent/config/local-profile.json` 读取；首次运行、身份缺失或身份变更时必须执行 `agent/onboarding.md`，不得根据电脑用户名、浏览器账号或聊天称呼猜身份。
 - 读取单张 Jira 票的字段、评论、附件元数据和关联票时，调用本仓库 `.grok/config.toml` 登记的 `analyze_bug_jira` MCP 工具 `get_jira_issue`。Dashboard、附件正文，以及该工具没有返回的页面，仍用当前 Chrome 已登录态。
 - 语音日志用 `analyze_bug_debug` 检索。Alchemy 配置用 `analyze_bug_ops` 读取。判责顺序参考 `analyze_bug_rules`。这三处只读；Agent 不代替产品写入 Alchemy。
-- Google Drive/Sheets 及其他外部平台优先使用操作者当前 Chrome 的已登录态；只有 Chrome 不可用、未登录或缺少所需能力时，才切换到内置浏览器、连接器或其他受支持入口，并记录实际使用的入口。
+- Google Drive/Sheets 的读取在本机 Google API 预检通过时默认走 API，回执写 `google_api`。API 缺失、刷新失败或读不到目标文件时，才退回当前 Chrome 已登录态；Chrome 仍不可用时才用内置浏览器或连接器。Jira 附件正文、Dashboard、UE 和 MasterGo 不走 Google API。token 只留在本机，不进仓库。写表仍按 `agent/sheet-contract.md`，不因能读 Drive 就改写表通道。
 - 2026-10-15 操作者已授权：本流程正在处理的 Jira 票，结论确定后用 `analyze_bug_jira` 的 `add_jira_comment` 把当前 D 原文发到该票；复盘完成后改发当前 H 原文。2026-10-20 起，吴优处理自己的票时，评论不再等待吴优 bug 表回读。评论前必须通过 `agent/scripts/authorize_jira_comment.py`；跳过写表不等于跳过证据门禁。缺正式定义、客户用例或版本族时，只能评论降级后的 `待复核 / 待确认 / 待会诊`。`update_jira_description` 只用于 bugfree 或描述中带汇总表、且需要回填分析列的票。用户说「只看 / 不更新」时不写 Jira。2026-10-23 吴优授权：证据门禁已通过且结论是 `转需求` 时，可以新建需求、关联原 Bug，并把原 Bug 按 workaround / bug转需求关闭。除此之外，转派、关闭、改状态、改无关旧票经办人和写入 Alchemy 仍不在授权内。2026-10-27 补充：长马文言和语料的原 Bug 关票是一定的。是否新建只判断转需求 story：未传递给开发时经办人是 `you.wu`，复用当前翻译总票或不新建；已传递给开发才新建。不因为经办人是吴优就关闭或新建全部票。总票只记录在 `agent/context.md`，会更新，不得写死历史票号。2026-10-23 补充：从变更管理表新建需求时，只处理 B 列变更提出时间在当前日期往前一个自然月内的行。经办人按 U 列产品负责人设置：吴优 `you.wu`，李欣 `xin.li03`，冯智秀 `zhixiu.feng`。U 列无法对应已登记负责人时才用当前操作者。建票回读成功后用飞书应用 `cli_aa506e13fcf8dcf5` 向群 `oc_c3692001480b0aac7825bafab90989b3` 发一条，并带上依赖项：缺的 PRD/UE、跨模块依赖、表上已写明的对接人。表上没有对接人时不写死名字。App Secret 不进入仓库。
 - Jira bug 输出必须站在已绑定操作者的产品负责人视角，直接判断用户预期、功能边界、处理动作和责任方。
 - 不写“请产品确认 / 产品定口径 / 建议产品判断”；应写“定义为 / 关闭 / 转需求 / 转某责任方处理”。

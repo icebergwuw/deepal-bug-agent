@@ -171,7 +171,7 @@ def validate_manifest(payload: Any, expected_key: str | None = None) -> list[str
             errors.append(
                 f"检索回执 {receipt_id or index} origin 必须记录实际入口："
                 f"{'、'.join(sorted(ALLOWED_SEARCH_ORIGINS))}；"
-                "优先当前 Chrome 登录态，不再要求 origin=connector"
+                "预检通过时优先 google_api，不再要求 origin=connector"
             )
         if not nonempty(receipt.get("check_id")):
             errors.append(f"检索回执 {receipt_id or index} 缺少 check_id")

@@ -113,6 +113,59 @@ class BugProjectPreflightTest(unittest.TestCase):
         )
         self.assertTrue(fresh["ok"])
 
+
+    def test_google_api_probe_makes_drive_fresh_without_storing_secrets(self) -> None:
+        now = datetime(2026, 10, 28, 2, 0, tzinfo=timezone.utc)
+        profile = {
+            "operator_owner_id": "wu-you",
+            "allowed_write_owner_ids": ["wu-you"],
+            "online_access": {},
+        }
+        result = assess(
+            profile,
+            self.owners,
+            required_owner_id="wu-you",
+            required_platforms=["google_drive"],
+            max_access_age_hours=24,
+            skill=self.skill,
+            now=now,
+            google_api_probe=lambda: {"ok": True, "entry": "google_api"},
+        )
+        drive = result["online_access"]["google_drive"]
+        self.assertTrue(result["ok"])
+        self.assertTrue(drive["fresh"])
+        self.assertEqual(drive["entry"], "google_api")
+        self.assertTrue(drive["api_ok"])
+        serialized = json.dumps(result)
+        self.assertNotIn("access_token", serialized)
+        self.assertNotIn("client_secret", serialized)
+        self.assertNotIn("refresh_token", serialized)
+
+    def test_google_api_failure_falls_back_to_fresh_chrome_receipt(self) -> None:
+        now = datetime(2026, 10, 28, 2, 0, tzinfo=timezone.utc)
+        profile = {
+            "operator_owner_id": "wu-you",
+            "allowed_write_owner_ids": ["wu-you"],
+            "online_access": {
+                "google_drive": {"verified_at": format_time(now - timedelta(hours=1))}
+            },
+        }
+        result = assess(
+            profile,
+            self.owners,
+            required_owner_id="wu-you",
+            required_platforms=["google_drive"],
+            max_access_age_hours=24,
+            skill=self.skill,
+            now=now,
+            google_api_probe=lambda: {"ok": False, "error": "probe_failed"},
+        )
+        drive = result["online_access"]["google_drive"]
+        self.assertTrue(result["ok"])
+        self.assertEqual(drive["entry"], "chrome")
+        self.assertFalse(drive["api_ok"])
+        self.assertTrue(any("退回当前 Chrome" in warning for warning in result["warnings"]))
+
     def test_record_access_only_records_receipt_metadata(self) -> None:
         profile = {"online_access": {}}
         record_access(profile, ["jira", "google_drive"])

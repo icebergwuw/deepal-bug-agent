@@ -76,6 +76,7 @@ DECISION_GATE_LABELS = (
 OPERATIONAL_SCRIPT_ALLOWLIST = {
     "bug_sheet_contract.py",
     "bug_project_preflight.py",
+    "google_drive_api.py",
     "sync_bug_skill.py",
     "test_bug_evidence_gate.py",
     "test_bug_run.py",

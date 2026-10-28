@@ -77,7 +77,7 @@ python3 agent/scripts/bug_project_preflight.py \
 
 权限不随 Git 迁移。每名成员使用自己的公司账号完成以下登录，并由 Agent真实读取对应内容后才能记录通过：
 
-Jira 单票读取使用本仓库的 `analyze_bug_jira` MCP。Google Drive/Sheets 及其他外部平台的真实读取和写回默认优先使用操作者当前 Chrome 的已登录态。Chrome 会话可用时，不得因为内置连接器更方便而绕过该会话；仅在 Chrome 不可用、未登录或无法完成所需操作时，才使用内置浏览器、连接器或其他受支持入口。Jira 附件正文和 Dashboard 仍走 Chrome。
+Jira 单票读取使用本仓库的 `analyze_bug_jira` MCP。Google Drive/Sheets 读取在 `bug_project_preflight.py` 的 Google API 探测通过时默认走本机 API。API 不可用或读不到目标文件时，才退回当前 Chrome 已登录态；不得因为内置连接器更方便而绕过已可用的 API 或 Chrome。Jira 附件正文和 Dashboard 仍走 Chrome。
 
 | 平台 | 验证动作 | 失败时引导 |
 | --- | --- | --- |
