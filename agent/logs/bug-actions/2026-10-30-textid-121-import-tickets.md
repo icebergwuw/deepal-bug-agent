@@ -30,3 +30,11 @@
 - 已删除行 10_Instrument Panel 第261行未改
 - 变更履历-MJ 第30行已写入
 - 6 张导入票附件已替换为补改后的无图文件，旧附件已删除
+
+## 2026-10-30 经办人调整
+
+- SIC HUR-86506、HUR-86507、HUR-86508 改派祝成雄 `chengxiong.zhu`，已回读
+- IFS HUR-86509、HUR-86510、HUR-86511 改派袁威 `wei.yuan`，已回读
+- 无图导入文件 MD5：`1a58212fcb490c52b712dc1e67a43339`
+- 最终带图文件 MD5：`80b7681eb4df322b7ceb93ceb274f44e`
+- 下票流程记入 `agent/skills/textid-import-tickets`
