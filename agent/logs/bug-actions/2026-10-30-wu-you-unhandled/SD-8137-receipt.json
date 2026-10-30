@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SD-8137",
+  "phase": "d",
+  "status": "可转研发",
+  "decision_text_sha256": "2afc535e6998b0ec9d45ad63ecf917f5ab05cf4059676d9c3ac617371c5fe763",
+  "manifest_sha256": "da51fc4d8d3a134349ab7ad08579abebddb1ed38d9f2050fb01425d0cfb34182",
+  "authorized_comment": "结论：C673-G 来电设置为播报时，方控挂断后语音应立即结束，不按连续对话超时退出。电话定义 V0.8 写明选择播报时唤起「来电，接听还是挂断」，播报直到接听或挂断后消失。\n依据：[电话定义V0.8·来电设置|https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit]。\n处理：电话在挂断成功后发送 ACTION_ENTER_IDLE，不改语音框架用场景 none 推断退出；蓝牙电话处理。"
+}

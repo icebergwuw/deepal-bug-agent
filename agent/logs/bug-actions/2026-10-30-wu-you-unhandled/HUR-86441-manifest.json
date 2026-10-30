@@ -1,0 +1,308 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-86441",
+  "comment_causality": "易昕指出 mode_wash_float_tip 仍需更新。表上两句都还保留锁充电口。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-85390",
+        "relationship": "当前翻译总票",
+        "outcome": "2026-10-30 回读仍是待办，经办人 you.wu，未传递给开发，复用，不新建。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira",
+      "source": "HUR-86441",
+      "source_location": "原票描述和现有评论",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A",
+      "trigger": "J90A EL 0904 查看洗车模式和即将进入洗车模式注释",
+      "target_behavior": "证明车端当前显示",
+      "match": "exact",
+      "reason": "描述和评论直接给出车端文言。"
+    },
+    {
+      "source_id": "sheet",
+      "source": "J90A_海外LanguageList_V1.3_261014",
+      "source_location": "14_Vehicle Mode 第 47 行和第 56 行",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "J90A EL 0904 查看洗车模式和即将进入洗车模式注释",
+      "target_behavior": "两句都不出现锁定充电接口或锁闭充电舱盖",
+      "match": "exact",
+      "reason": "现行最高版本单元格直接定义目标文言。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "目标由现行文言表定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是用户原话识别或 Alchemy 执行链。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖可见即可说或 UE 图层。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-30",
+      "search_location": "本机 Google API 检索 Google Drive，并下载 V1.3 xlsx 核对单元格",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86441"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "mode_wash_float_tip"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "文言表"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.3_261014.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "source_ids": [
+        "sheet"
+      ],
+      "search_receipt_ids": [
+        "HUR-86441-sheet"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 8,
+        "candidates": [
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "read",
+            "source_ids": [
+              "sheet"
+            ]
+          },
+          {
+            "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+            "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+            "url": "https://drive.google.com/file/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY",
+            "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+            "url": "https://drive.google.com/file/d/154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S",
+            "title": "J90A_海外LanguageList_V1.2_260921_260930镁佳修改.xlsx",
+            "url": "https://drive.google.com/file/d/1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf",
+            "title": "J90A_海外LanguageList_V1.2_260921.xlsx留底.xlsx",
+            "url": "https://drive.google.com/file/d/1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+            "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+            "url": "https://drive.google.com/file/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+            "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+            "url": "https://drive.google.com/file/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+            "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+            "url": "https://drive.google.com/file/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_海外LanguageList",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-86441-sheet"
+            ],
+            "selected_candidate_id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "selection_reason": "标题检索中 V1.3_261014 是该系列最新未废弃版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "车端显示和现行文言表一致，表本身与无锁闭充电口功能冲突，改表后导入。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "文言翻译",
+    "text": "结论：J90A EL 0904 洗车模式没有锁闭充电口。文言表 V1.3 的 14_Vehicle Mode 第 47 行 mode_wash_float_tip 和第 56 行 wash_into_msg 仍写锁定充电接口或锁闭充电舱盖，车端按这句显示。\n依据：[文言表V1.3·14_Vehicle Mode·47|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit]。\n处理：删掉这两句里的锁充电口描述并同步各语言，再随 http://jira.i-tetris.com/browse/HUR-85390 导入。总票仍是待办且经办人是 you.wu，未传递给开发，所以复用，不新建。原 Bug 按 workaround 关闭；文言翻译处理。",
+    "implementation_source_ids": [
+      "jira"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261030T121500+0800-wu-you-unhandled",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-86441-sheet",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-30",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86441"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "mode_wash_float_tip"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "文言表"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.3_261014.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+          "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+          "url": "https://drive.google.com/file/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY",
+          "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+          "url": "https://drive.google.com/file/d/154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S",
+          "title": "J90A_海外LanguageList_V1.2_260921_260930镁佳修改.xlsx",
+          "url": "https://drive.google.com/file/d/1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf",
+          "title": "J90A_海外LanguageList_V1.2_260921.xlsx留底.xlsx",
+          "url": "https://drive.google.com/file/d/1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+          "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+          "url": "https://drive.google.com/file/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+          "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+          "url": "https://drive.google.com/file/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+          "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+          "url": "https://drive.google.com/file/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "J90A EL 0904 查看洗车模式和即将进入洗车模式注释",
+    "target_state": "两句都不出现锁定充电接口或锁闭充电舱盖",
+    "intent_function_signal": "mode_wash_float_tip / wash_into_msg",
+    "ui_tts_vehicle_behavior": "删锁充电口描述后导入",
+    "boundary": "不新增锁闭充电口功能",
+    "source_ids": [
+      "sheet"
+    ]
+  }
+}

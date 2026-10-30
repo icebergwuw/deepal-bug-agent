@@ -1,0 +1,255 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-8137",
+  "comment_causality": "甄洪奎要求改语音框架。谭威不同意，指出电话只上报 none，没有发 ACTION_ENTER_IDLE，并请李欣确认。票现在在吴优名下。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira",
+      "source": "SD-8137",
+      "source_location": "描述、甄洪奎和谭威评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G",
+      "trigger": "来电播报后再方控挂断",
+      "target_behavior": "证明挂断后仍按连续对话超时退出",
+      "match": "exact",
+      "reason": "两段日志给出挂断到退出的间隔。"
+    },
+    {
+      "source_id": "phone",
+      "source": "C673_功能定义_蓝牙电话功能定义V0.8",
+      "source_location": "来电音频策略第 682 行；来电设置第 990-992 行",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673",
+      "trigger": "来电设置为播报后挂断",
+      "target_behavior": "来电播报和由此唤起的语音交互在挂断后结束",
+      "match": "exact",
+      "reason": "定义写明播报直到接听或挂断后消失，并唤起接听或挂断交互。"
+    },
+    {
+      "source_id": "ix",
+      "source": "长安C673交互设计文档_蓝牙电话_v0.8",
+      "source_location": "第 8 页：来电语音播报时浮窗增加方控提示",
+      "source_type": "interaction",
+      "role": "context_only",
+      "project_model": "C673",
+      "trigger": "来电语音播报",
+      "target_behavior": "证明播报是来电界面状态，不另写退出接口",
+      "match": "partial",
+      "reason": "交互只画方控提示，不改写功能定义的结束条件。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "退出时机由电话功能定义决定。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是用户原话命中错误，不依赖 Alchemy 功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "目标不是 UE 图层缺失，交互稿只作旁证。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-30",
+      "search_location": "本机 Google API 检索并导出电话定义 V0.8，另读交互 PDF 第 8 页",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8137"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "来电播报挂断后语音退出"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "蓝牙电话"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_蓝牙电话功能定义V0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_蓝牙电话功能定义"
+        }
+      ],
+      "source_ids": [
+        "phone"
+      ],
+      "search_receipt_ids": [
+        "SD-8137-phone"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE",
+            "title": "C673_功能定义_蓝牙电话功能定义V0.8",
+            "url": "https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit",
+            "references": [],
+            "version_family": "C673_功能定义_蓝牙电话功能定义",
+            "disposition": "read",
+            "source_ids": [
+              "phone"
+            ]
+          },
+          {
+            "id": "1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH",
+            "title": "C673_功能定义_蓝牙电话功能定义V0.8.pdf",
+            "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH/view",
+            "references": [],
+            "version_family": "C673_功能定义_蓝牙电话功能定义",
+            "disposition": "excluded",
+            "reason": "同系列更早版本或非 C673-G 当前定义。"
+          },
+          {
+            "id": "1ShXXOouez2h1_SjWK-CAhFmRgLIowVAY",
+            "title": "长安C673交互设计文档_蓝牙电话_v0.8.pdf",
+            "url": "https://drive.google.com/file/d/1ShXXOouez2h1_SjWK-CAhFmRgLIowVAY/view",
+            "references": [],
+            "version_family": "C673_功能定义_蓝牙电话功能定义",
+            "disposition": "read",
+            "source_ids": [
+              "ix"
+            ]
+          },
+          {
+            "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+            "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+            "url": "https://drive.google.com/file/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/view",
+            "references": [],
+            "version_family": "C673_功能定义_蓝牙电话功能定义",
+            "disposition": "excluded",
+            "reason": "同系列更早版本或非 C673-G 当前定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673_功能定义_蓝牙电话功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "SD-8137-phone"
+            ],
+            "selected_candidate_id": "1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE",
+            "selection_reason": "标题检索最高为 V0.8。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试预期和功能定义都要求挂断后结束。谭威指出不能由语音框架用 none 推断退出，所以责任在电话发退出消息。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "蓝牙电话",
+    "text": "结论：C673-G 来电设置为播报时，方控挂断后语音应立即结束，不按连续对话超时退出。电话定义 V0.8 写明选择播报时唤起「来电，接听还是挂断」，播报直到接听或挂断后消失。\n依据：[电话定义V0.8·来电设置|https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit]。\n处理：电话在挂断成功后发送 ACTION_ENTER_IDLE，不改语音框架用场景 none 推断退出；蓝牙电话处理。",
+    "implementation_source_ids": [
+      "jira"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261030T121500+0800-wu-you-unhandled",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "SD-8137-phone",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-30",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8137"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "来电播报挂断后语音退出"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "蓝牙电话"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673_功能定义_蓝牙电话功能定义V0.8"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673_功能定义_蓝牙电话功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE",
+          "title": "C673_功能定义_蓝牙电话功能定义V0.8",
+          "url": "https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH",
+          "title": "C673_功能定义_蓝牙电话功能定义V0.8.pdf",
+          "url": "https://drive.google.com/file/d/1Vp1mgYkS8NtZMKty_pyfZpoeAD6RRUcH/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1ShXXOouez2h1_SjWK-CAhFmRgLIowVAY",
+          "title": "长安C673交互设计文档_蓝牙电话_v0.8.pdf",
+          "url": "https://drive.google.com/file/d/1ShXXOouez2h1_SjWK-CAhFmRgLIowVAY/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "11ilShJR8144BmvyXs_tx5R1nDvwiTGq2",
+          "title": "J90A_功能定义_蓝牙电话功能定义V0.5.docx",
+          "url": "https://drive.google.com/file/d/11ilShJR8144BmvyXs_tx5R1nDvwiTGq2/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "expected_behavior": {
+    "trigger": "来电设置为播报，方控挂断",
+    "target_state": "语音立即结束，不等连续对话超时",
+    "intent_function_signal": "ACTION_ENTER_IDLE",
+    "ui_tts_vehicle_behavior": "挂断后不再停留 Recognition",
+    "boundary": "不改语音框架对场景 none 的通用处理",
+    "source_ids": [
+      "phone"
+    ]
+  }
+}

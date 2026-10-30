@@ -1,0 +1,292 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-51571",
+  "comment_causality": "谭威定位 Claw pureTts 没有写入 last_tts_content，并认为需求不合理。吴优 2026-10-22 已写当前无法解决，看是否接受兜底。状态仍是 Pending。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "ADS-51418",
+        "relationship": "Blocks 父票",
+        "outcome": "已关闭，日志和视频在父票。",
+        "read": true
+      },
+      {
+        "key": "ADS-51523",
+        "relationship": "Duplicates 客户票",
+        "outcome": "已关闭，同样是再讲一遍回复刚刚没有说话。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira",
+      "source": "ADS-51571",
+      "source_location": "谭威 2026-09-28 评论和实车日志",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "语音助手再播报一次",
+      "target_behavior": "证明命中 1663 后播兜底",
+      "match": "exact",
+      "reason": "日志给出 metaId 和兜底资源。"
+    },
+    {
+      "source_id": "std",
+      "source": "Alchemy 标准功能 重新播报",
+      "source_location": "功能 ID 1253，meta_id 1663，备注 Query 语音助手再播报一次",
+      "source_type": "alchemy_standard",
+      "role": "formal_target",
+      "project_model": "标准",
+      "trigger": "语音助手再播报一次",
+      "target_behavior": "命中重新播报，协议 params 为空，没有要求重复 Claw 原文",
+      "match": "exact",
+      "reason": "标准功能已锁定，协议没有 last_tts_content 要求。"
+    },
+    {
+      "source_id": "proj",
+      "source": "Alchemy 深蓝项目功能 重新播报",
+      "source_location": "项目功能 ID 24438，继承标准 1253，未改协议",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝 C385_5",
+      "trigger": "语音助手再播报一次",
+      "target_behavior": "项目未改写标准协议",
+      "match": "exact",
+      "reason": "继承未修改，不能单独证明 UI 或闲聊重播目标。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票由重新播报功能点约束。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "用户原话命中重新播报。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖页面控件。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "searched_at": "2026-10-30",
+      "search_location": "本机 Google API 全文检索再播报一次",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-51571"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "再播报一次"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "语音助手"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6"
+        },
+        {
+          "kind": "version_family",
+          "text": "Deepal AI"
+        }
+      ],
+      "source_ids": [],
+      "reason": "命中的是语控清单和大模型文档标题，没有打开到要求 Claw 闲聊后必须重播上一句的条款。",
+      "material": true,
+      "next_action": "若要改成重播 Claw 原文，先补正式定义。",
+      "search_receipt_ids": [
+        "ADS-51571-drive"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
+            "title": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
+            "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "标题命中，不是重新播报条款。",
+            "version_family": "Deepal AI"
+          },
+          {
+            "id": "1w8Y9Fiixuw3ZrnRJPY5q_ngMD7Kjr-OJ",
+            "title": "518-1语控清单 - v1.0.xlsx",
+            "url": "https://drive.google.com/file/d/1w8Y9Fiixuw3ZrnRJPY5q_ngMD7Kjr-OJ/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "语控清单不是本票目标定义。",
+            "version_family": "语控清单"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "Deepal AI",
+            "status": "not_applicable",
+            "reason": "标题命中但不是重新播报定义，不作为版本族目标。"
+          },
+          {
+            "family": "语控清单",
+            "status": "not_applicable",
+            "reason": "语控清单不是本票正式定义。"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "searched_at": "2026-10-30",
+      "search_location": "Alchemy 在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "语音助手再播报一次"
+        }
+      ],
+      "source_ids": [],
+      "reason": "本轮没有在线对话回放。",
+      "material": true,
+      "next_action": "补当前在线对话后再决定是否改兜底。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "searched_at": "2026-10-30",
+      "search_location": "Alchemy 标准功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1663"
+        }
+      ],
+      "source_ids": [
+        "std"
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "searched_at": "2026-10-30",
+      "search_location": "Alchemy 深蓝项目功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1663"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝 projectId 11"
+        }
+      ],
+      "source_ids": [
+        "proj"
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "测试期望重播上一句。标准协议没有这个要求，正式定义也没读到。维持兜底，不转研发。",
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "alchemy_tested": false,
+    "unavailable_reason": "没有当前在线对话",
+    "next_action": "补在线对话",
+    "meta_id": "1663",
+    "standard_function": {
+      "status": "verified",
+      "id": 1253,
+      "name": "重新播报",
+      "assessment": "协议 params 为空，Query 举例是语音助手再播报一次，没有要求重复 Claw 原文。"
+    },
+    "project_function": {
+      "status": "verified",
+      "id": 24438,
+      "name": "重新播报",
+      "assessment": "深蓝项目继承标准功能，未改协议。"
+    }
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "测试",
+    "text": "结论：C385-5「语音助手再播报一次」已命中重新播报 1663，Claw 闲聊后实车播兜底「刚才没有说话」。标准功能和深蓝项目功能都已锁定，协议没有要求重复 Claw 上一句。这次没有读到要求必须重播闲聊原文的正式定义，也没有当前在线对话。\n依据：[Alchemy重新播报·1663|https://alchemy.i-tetris.com/#/functional/classify]。\n处理：维持兜底 TTS，不转语音研发改码。补当前在线对话，并由测试确认接受兜底后再关；测试处理。",
+    "implementation_source_ids": [
+      "jira"
+    ]
+  },
+  "run_context": {
+    "run_id": "bug-20261030T121500+0800-wu-you-unhandled",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "ADS-51571-drive",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-30",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-51571"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "再播报一次"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "语音助手"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6"
+        },
+        {
+          "kind": "version_family",
+          "text": "Deepal AI"
+        }
+      ],
+      "results": [
+        {
+          "id": "1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc",
+          "title": "Megatronix_大模型产品需求文档_Deepal AI APP_深蓝8295_v0.6_20260113",
+          "url": "https://docs.google.com/document/d/1ULHlPAMjKNMhY4TEImFF_g9MsbSSHzg_6O67y1isAOc/edit",
+          "mime_type": "application/vnd.google-apps.document"
+        },
+        {
+          "id": "1w8Y9Fiixuw3ZrnRJPY5q_ngMD7Kjr-OJ",
+          "title": "518-1语控清单 - v1.0.xlsx",
+          "url": "https://drive.google.com/file/d/1w8Y9Fiixuw3ZrnRJPY5q_ngMD7Kjr-OJ/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}

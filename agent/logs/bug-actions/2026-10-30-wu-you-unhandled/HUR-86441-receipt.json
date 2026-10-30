@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86441",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "992075704242d6493037df1af6f90e7e1b6a20c33cf180f2cf04e688a26a03e8",
+  "manifest_sha256": "a2393d657a20296f6b1a112e9ec4d3a617dbd85b6363a190f2fba34f29eb73e6",
+  "authorized_comment": "结论：J90A EL 0904 洗车模式没有锁闭充电口。文言表 V1.3 的 14_Vehicle Mode 第 47 行 mode_wash_float_tip 和第 56 行 wash_into_msg 仍写锁定充电接口或锁闭充电舱盖，车端按这句显示。\n依据：[文言表V1.3·14_Vehicle Mode·47|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit]。\n处理：删掉这两句里的锁充电口描述并同步各语言，再随 http://jira.i-tetris.com/browse/HUR-85390 导入。总票仍是待办且经办人是 you.wu，未传递给开发，所以复用，不新建。原 Bug 按 workaround 关闭；文言翻译处理。"
+}

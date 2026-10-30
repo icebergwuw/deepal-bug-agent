@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86402",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "7ed35d2840334f343652f554ee286ca1aa790dbac889084af928b8e6ad2d8d36",
+  "manifest_sha256": "10a1bdf64a2332bf2e2340da5ef50a9cde18a83b2b7ebf936b7ff982a2ae7214",
+  "authorized_comment": "结论：J90A PI 0109 法语充电上限数值是不可翻译的 60%，下方注释 settings_charge_soc_tip 第 18 行是 80 %-90 %。两处百分号格式要一致，注释去掉百分号前空格。\n依据：[文言表V1.3·13_Energy Management·18|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit]。\n处理：把法语 80 %、90 % 改成 80%、90%，再随 http://jira.i-tetris.com/browse/HUR-85390 导入。总票仍是待办且经办人是 you.wu，未传递给开发，所以复用，不新建。原 Bug 按 workaround 关闭；文言翻译处理。"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86414",
+  "phase": "d",
+  "status": "待确认",
+  "decision_text_sha256": "de8a17f71d65ae4d380c58ef9dde7515b417933395502b43c71807ab0d51b43d",
+  "manifest_sha256": "2d956036107e43b56b56a3e5ca6e43448fd5f9a623ff0161c546d53ea5b76094",
+  "authorized_comment": "结论：J90A EL 0904 英语仪表 C385/IACCText_11 显示中文。现行文言表 V1.3 的 All Key 和 19_Toast 都没有 C385/IACCText__11。关联已关闭票 HUR-78661 写海外无该功能、无需翻译，但这次没有读到独立仪表功能定义确认海外是否保留该提示。\n依据：[文言表V1.3·无此Key|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit] [HUR-78661|http://jira.i-tetris.com/browse/HUR-78661]。\n处理：先不补英语，也不改仪表代码。补读仪表功能定义确认海外不触发后再关；仪表处理。"
+}

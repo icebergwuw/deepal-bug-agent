@@ -1,0 +1,11 @@
+{
+  "issue_key": "SD-8137",
+  "comment_id": "8773658",
+  "author": "you.wu",
+  "body": "结论：C673-G 来电设置为播报时，方控挂断后语音应立即结束，不按连续对话超时退出。电话定义 V0.8 写明选择播报时唤起「来电，接听还是挂断」，播报直到接听或挂断后消失。\n依据：[电话定义V0.8·来电设置|https://docs.google.com/document/d/1LlABWDA6IaEzruKhM7pdXt4ygw8NNFb2dRIs1Q9PraE/edit]。\n处理：电话在挂断成功后发送 ACTION_ENTER_IDLE，不改语音框架用场景 none 推断退出；蓝牙电话处理。\n\n\n\n依据截图：SD-8137\n!SD-8137.jpg|width=900!\n\n（AI Generated）",
+  "status": "待办",
+  "assignee": "you.wu",
+  "transitioned": false,
+  "attachment_id": "4614663",
+  "attachment_filename": "SD-8137.jpg"
+}

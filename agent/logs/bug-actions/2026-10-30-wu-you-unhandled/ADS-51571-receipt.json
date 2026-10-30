@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-51571",
+  "phase": "d",
+  "status": "待确认",
+  "decision_text_sha256": "ce1d8ed3bb36bfdc951a48ca63860027b9ba3c3927b6d29a6a76d177b69b9b25",
+  "manifest_sha256": "6aeb9c5abad5756e7478b8b12386bfad9aa2687a0850fe233dd63d337aeb8629",
+  "authorized_comment": "结论：C385-5「语音助手再播报一次」已命中重新播报 1663，Claw 闲聊后实车播兜底「刚才没有说话」。标准功能和深蓝项目功能都已锁定，协议没有要求重复 Claw 上一句。这次没有读到要求必须重播闲聊原文的正式定义，也没有当前在线对话。\n依据：[Alchemy重新播报·1663|https://alchemy.i-tetris.com/#/functional/classify]。\n处理：维持兜底 TTS，不转语音研发改码。补当前在线对话，并由测试确认接受兜底后再关；测试处理。"
+}

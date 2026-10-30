@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86422",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "fd95ac24b14aaddcdbaf488959ebcbfe2cb95db0123090fb54237c619474f9cb",
+  "manifest_sha256": "8b7e5d97fd4433c408b8d9729cf469dd96f079f7e2a6d9168c359b26077697c9",
+  "authorized_comment": "结论：J90A EL 0904 阿拉伯语熄屏提示车端是 Centre Display 句，和文言表 V1.3 的 19_Toast 第 369 行一致，但和 All Key 第 692 行、测试预期不一致。以 All Key 的完整阿拉伯语为准，不保留 Centre Display。\n依据：[文言表V1.3·All Key·692|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit]。\n处理：把 19_Toast 第 369 行阿拉伯语改成 All Key 第 692 行，再随 http://jira.i-tetris.com/browse/HUR-85390 导入。总票仍是待办且经办人是 you.wu，未传递给开发，所以复用，不新建。原 Bug 按 workaround 关闭；文言翻译处理。"
+}

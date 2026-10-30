@@ -1,0 +1,315 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-86414",
+  "comment_causality": "李翔说正式清单没有该 source，请产品确认海外是否保留。随后说按 HUR-78661 处理。杨沁茹请确认。",
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-78661",
+        "relationship": "Relates",
+        "outcome": "已关闭。评论写国内需求，海外无该功能无需翻译。",
+        "read": true
+      },
+      {
+        "key": "HUR-85390",
+        "relationship": "当前翻译总票",
+        "outcome": "本票未判定为要提交的译文，不关联。",
+        "read": true
+      }
+    ]
+  },
+  "scope_checks": [
+    {
+      "source_id": "jira",
+      "source": "HUR-86414",
+      "source_location": "描述和李翔评论",
+      "source_type": "jira",
+      "role": "implementation_actual",
+      "project_model": "J90A EL",
+      "trigger": "英语触发 C385/IACCText_11",
+      "target_behavior": "证明车端回退中文",
+      "match": "exact",
+      "reason": "评论和截图说明英语界面显示中文。"
+    },
+    {
+      "source_id": "sheet",
+      "source": "J90A_海外LanguageList_V1.3_261014",
+      "source_location": "All Key 和 19_Toast 均无 C385/IACCText__11",
+      "source_type": "prd",
+      "role": "context_only",
+      "project_model": "J90A",
+      "trigger": "英语触发 C385/IACCText_11",
+      "target_behavior": "只能证明现行表没有该 Key，不能证明海外功能是否保留",
+      "match": "gap",
+      "material": true,
+      "next_action": "补读仪表功能定义，确认海外是否触发该提示",
+      "reason": "缺 Key 不能单独定义不显示。"
+    },
+    {
+      "source_id": "old",
+      "source": "HUR-78661",
+      "source_location": "廖礼凯 2026-05-08 评论",
+      "source_type": "historical",
+      "role": "context_only",
+      "project_model": "J90A ER",
+      "trigger": "马来语同一 topic",
+      "target_behavior": "历史关闭口径是海外无该功能",
+      "match": "partial",
+      "reason": "不是本车型独立功能定义。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "先确认海外是否保留该仪表提示。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音原话。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不涉及导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "不依赖 UE。"
+    }
+  },
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "searched_at": "2026-10-30",
+      "search_location": "本机 Google API 检索 Google Drive，并下载 V1.3 xlsx 核对单元格",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86414"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385/IACCText__11"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "文言表"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.3_261014.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "source_ids": [
+        "sheet"
+      ],
+      "search_receipt_ids": [
+        "HUR-86414-sheet"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 8,
+        "candidates": [
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "read",
+            "source_ids": [
+              "sheet"
+            ]
+          },
+          {
+            "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+            "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+            "url": "https://drive.google.com/file/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY",
+            "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+            "url": "https://drive.google.com/file/d/154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S",
+            "title": "J90A_海外LanguageList_V1.2_260921_260930镁佳修改.xlsx",
+            "url": "https://drive.google.com/file/d/1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf",
+            "title": "J90A_海外LanguageList_V1.2_260921.xlsx留底.xlsx",
+            "url": "https://drive.google.com/file/d/1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+            "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+            "url": "https://drive.google.com/file/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+            "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+            "url": "https://drive.google.com/file/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          },
+          {
+            "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+            "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+            "url": "https://drive.google.com/file/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/view",
+            "references": [],
+            "version_family": "J90A_海外LanguageList",
+            "disposition": "excluded",
+            "reason": "同一系列更早或废弃版本，不作为当前目标。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_海外LanguageList",
+            "status": "enumerated",
+            "receipt_ids": [
+              "HUR-86414-sheet"
+            ],
+            "selected_candidate_id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "selection_reason": "标题检索中 V1.3_261014 是该系列最新未废弃版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "inheritance_chains": [],
+  "conflict_resolution": "表内无 Key，历史票说无需翻译，但没有本轮功能定义。不补译文，也不关票。",
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "仪表",
+    "text": "结论：J90A EL 0904 英语仪表 C385/IACCText_11 显示中文。现行文言表 V1.3 的 All Key 和 19_Toast 都没有 C385/IACCText__11。关联已关闭票 HUR-78661 写海外无该功能、无需翻译，但这次没有读到独立仪表功能定义确认海外是否保留该提示。\n依据：[文言表V1.3·无此Key|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit] [HUR-78661|http://jira.i-tetris.com/browse/HUR-78661]。\n处理：先不补英语，也不改仪表代码。补读仪表功能定义确认海外不触发后再关；仪表处理。"
+  },
+  "run_context": {
+    "run_id": "bug-20261030T121500+0800-wu-you-unhandled",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "HUR-86414-sheet",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-10-30",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86414"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C385/IACCText__11"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "文言表"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.3_261014.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.3_261014.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+          "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+          "url": "https://drive.google.com/file/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY",
+          "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+          "url": "https://drive.google.com/file/d/154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S",
+          "title": "J90A_海外LanguageList_V1.2_260921_260930镁佳修改.xlsx",
+          "url": "https://drive.google.com/file/d/1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf",
+          "title": "J90A_海外LanguageList_V1.2_260921.xlsx留底.xlsx",
+          "url": "https://drive.google.com/file/d/1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+          "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+          "url": "https://drive.google.com/file/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+          "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+          "url": "https://drive.google.com/file/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+          "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+          "url": "https://drive.google.com/file/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ]
+}

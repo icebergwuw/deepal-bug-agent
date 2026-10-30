@@ -1,0 +1,3 @@
+结论：J90A EL 0904 阿拉伯语 slope_tts 车端是 360° View Monitor 句，和文言表 V1.3 的 09_AVM 第 47 行一致，但和 All Key 第 3176 行的 شاشة العرض 360° 不一致。以 All Key 为准。
+依据：[文言表V1.3·All Key·3176|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit]。
+处理：把 09_AVM 第 47 行阿拉伯语改成 All Key 第 3176 行，再随 http://jira.i-tetris.com/browse/HUR-85390 导入。总票仍是待办且经办人是 you.wu，未传递给开发，所以复用，不新建。原 Bug 按 workaround 关闭；文言翻译处理。

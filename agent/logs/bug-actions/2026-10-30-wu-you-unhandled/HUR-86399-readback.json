@@ -1,0 +1,11 @@
+{
+  "issue_key": "HUR-86399",
+  "comment_id": "8773654",
+  "author": "you.wu",
+  "body": "结论：J90A PI 0109 法语「退出洗车模式」显示 Quitter le mode lavage，和文言表 V1.3 的 14_Vehicle Mode 第 72 行一致，按钮内没有边距。\n依据：[文言表V1.3·14_Vehicle Mode·72|https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit]。\n处理：法语缩短为 Quitter lavage，再随 http://jira.i-tetris.com/browse/HUR-85390 导入。总票仍是待办且经办人是 you.wu，未传递给开发，所以复用，不新建。原 Bug 按 workaround 关闭；文言翻译处理。\n\n\n\n依据截图：HUR-86399\n!HUR-86399.jpg|width=900!\n\n（AI Generated）",
+  "status": "已解决",
+  "assignee": "you.wu",
+  "transitioned": false,
+  "attachment_id": "4614659",
+  "attachment_filename": "HUR-86399.jpg"
+}
