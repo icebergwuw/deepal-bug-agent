@@ -22,3 +22,11 @@
 - 0507 票只写 J90A-EU 的 OTA4 交付分支 release/huron_hqx.1.2.1_20250507
 - 用户原文写《变更履历-TJ》。工作簿实际 sheet 是《变更履历-TS》，票内已改为 TS
 - 敏感信息处理：未记录账号、密码、token 或访问口令
+
+## 2026-10-30 尾翼阿语补改
+
+- 10_Instrument Panel AQ316 `TipInfo/PTS_SpoilerFailStatus__1` 阿语改为与 19_Toast 第276行一致
+- All Key 第2708行同步；All Key 第2653行 Toast 原与模块页不一致，一并改为同一句
+- 已删除行 10_Instrument Panel 第261行未改
+- 变更履历-MJ 第30行已写入
+- 6 张导入票附件已替换为补改后的无图文件，旧附件已删除
