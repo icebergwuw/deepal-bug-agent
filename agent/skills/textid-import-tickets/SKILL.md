@@ -1,9 +1,19 @@
 ---
 name: textid-import-tickets
-description: Create or refresh J90A overseas HMI TextID import stories for IFS and SIC, including no-image branch files, Jira attachments, assignees, and MD5. Use when 吴优 says 下票导入, 文言导入, TextID导入, or asks to update those import tickets. Do not use for 变更表建票, ordinary Bug analysis, or HUR translation parent tickets.
+description: 仅用于长马 HUR 海外 TextID 的 IFS/SIC 文言导入下票。用户说「长马TextID下票」「长马文言下票导入」「走长马textid下票流程」或明确要求按这个流程给长马 IFS 和 SIC 下导入票时使用。不要用于变更表建票、普通 Bug、长马文言总票，也不要用于国内项目或其他车型的 TextID/文言导入。
 ---
 
-# TextID 导入下票
+# 长马 TextID 导入下票
+
+只处理长马项目的海外 TextID 导入票。国内项目、其他车型、变更表建票、普通 Bug、长马文言总票都不走这里。
+
+用户要触发时，说其中一句即可：
+
+- 长马TextID下票
+- 长马文言下票导入
+- 走长马textid下票流程
+
+单说「下票」仍走变更表建票。单说「文言导入」或「TextID导入」不够，不要启动本流程。
 
 Create six HUR stories from the latest no-image LanguageList, attach the branch file, and report MD5. Jira MCP cannot create or assign issues. Use the Bug project `.env` with Jira REST, then read the issues back. Do not print the password.
 
@@ -62,7 +72,7 @@ Description:
 - End with `详细变更点见《变更履历-MJ》、《变更履历-TS》`. The sheet is `变更履历-TS`, not TJ.
 - Do not copy one-off notes from old tickets, such as 新增 `20_OFF`, unless the user says that note still applies.
 
-Attach the matching branch file. If the workbook changes after the tickets exist, patch the final file, the no-image file, and all three import copies, then upload the new attachment and delete the old attachment with the same filename. Read back summary, assignee, vehicle, attachment name, and size.
+Attach the matching branch file. If the workbook changes after the tickets exist, patch the final file, the no-image file, and all three import copies, then upload the new attachment and delete the old attachment with the same name. Read back summary, assignee, vehicle, attachment name, and size.
 
 Report the MD5 of the final workbook and the MD5 of the no-image import file. The three branch files must share one MD5.
 
