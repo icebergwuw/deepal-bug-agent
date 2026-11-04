@@ -478,8 +478,8 @@ def validate(root: Path, skill: Path) -> list[str]:
         errors.append("context.md 缺少深蓝项目变更管理表")
     if "深蓝项目变更管理表-2026年" not in review_workflow:
         errors.append("复盘流程未要求转需求登记变更管理表")
-    if "变更提出时间" not in review_workflow or "一个自然月" not in review_workflow:
-        errors.append("复盘流程未限制变更表只处理最近一个月")
+    if "变更提出时间" not in review_workflow or "三个自然月" not in review_workflow:
+        errors.append("复盘流程未限制变更表只处理最近三个月")
     if "you.wu" not in review_workflow:
         errors.append("复盘流程未指定变更表新建需求默认经办人")
     if "notify_feishu_ticket.py" not in review_workflow or "oc_c3692001480b0aac7825bafab90989b3" not in read(root / "agent/context.md"):
