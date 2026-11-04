@@ -1,0 +1,598 @@
+{
+  "schema_version": 5,
+  "jira_key": "SM-18475",
+  "comment_causality": "聂汉维要求确认语料。测试记功能可执行，只报意大利语和界面不一致。",
+  "run_context": {
+    "run_id": "bug-20261104T105200+0800-SM-18475",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "播放句和现行语料一致。后雾灯、拖车模式以翻译清单和 V2.3 功能名称为准改语料。后追尾预警不采用车上 Collisione postesteriore，因为现行翻译清单没有这个词。",
+  "scope_checks": [
+    {
+      "source_id": "deepal-corpus-it",
+      "source": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.17",
+      "source_location": "深蓝-删减版第205-206、263-264、283-284行；意大利语列",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673 / Saguaro",
+      "trigger": "打开后雾灯、打开/关闭拖车模式、打开/关闭后追尾预警",
+      "target_behavior": "现行意大利语分别是 luce posteriore per nebbia、modalità rimorchio、avviso di tamponamento posteriore；C673-G 支持",
+      "match": "exact",
+      "reason": "吴优指定的深蓝语料表。版本记录到 V0.3.2.19，这三句没有后续改写。"
+    },
+    {
+      "source_id": "c673-vehicle-v23",
+      "source": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.3",
+      "source_location": "后雾灯设置；拖车模式使用场景；拖挂模式使用场景",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C673",
+      "trigger": "语音开启/关闭后雾灯、开启/关闭拖车模式",
+      "target_behavior": "后雾灯界面名称是后雾灯。拖车模式是驻车维护的平板拖车功能，语音指令为开启/关闭拖车模式。拖挂模式是另一项，触发写的是开关。",
+      "match": "exact",
+      "reason": "同系列已枚举，V2.3 最新。后追尾预警不在这份车辆设置定义里。"
+    },
+    {
+      "source_id": "c673-trans-261015",
+      "source": "C673-G/D587G翻译清单261015.xlsx",
+      "source_location": "BigsurCarSettings 第481、659、727、756行",
+      "source_type": "formal_config",
+      "role": "formal_target",
+      "project_model": "C673-G / D587-G",
+      "trigger": "后雾灯、后追尾预警、拖车模式、拖挂模式界面标题",
+      "target_behavior": "意大利语分别是 Fari Fendinebbia Posteriori、Avviso di collisione posteriore、Modalita traino d'emergenza、Modalità traino",
+      "match": "exact",
+      "reason": "2026-11-03 最新翻译清单。车上 Collisione postesteriore 未收录。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "SM-18475 测试记录",
+      "source_location": "描述表格，2026-11-02 五条意大利语结果",
+      "source_type": "test_result",
+      "role": "implementation_actual",
+      "project_model": "C673 Saguaro",
+      "trigger": "播放五条意大利语语料",
+      "target_behavior": "功能可执行。拖车模式界面为 Modalità Traino di Emergenza，后追尾预警界面为 Collisione postesteriore。",
+      "match": "exact",
+      "reason": "内测记录写明功能 OK，只报文案差异。"
+    },
+    {
+      "source_id": "alchemy-standard-1047",
+      "source": "Alchemy 标准功能 1153",
+      "source_location": "打开后雾灯 meta_id 1047",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "标准功能",
+      "trigger": "打开后雾灯",
+      "target_behavior": "下发 vehicle:ctrl:rear_fog_light open",
+      "match": "partial",
+      "reason": "只证明中文功能点存在，不包含意大利语语料。"
+    },
+    {
+      "source_id": "alchemy-project-24363",
+      "source": "Alchemy 深蓝项目功能 24363",
+      "source_location": "打开后雾灯 meta_id 1047，继承标准 1153",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "深蓝 C673",
+      "trigger": "打开后雾灯",
+      "target_behavior": "项目功能 LOCKED 继承，车型含 C673",
+      "match": "partial",
+      "reason": "未重跑意大利语在线对话。拖车模式在项目功能里没有同名功能点。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "本票是语音语料和界面词，不按通用画像。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "组件是语音识别，评论要求确认语料。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "界面词用来核对语料，不按可见交互画像取证。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-c673-vehicle",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-04T10:52:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18475"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "意大利语界面文案与语料不一致 后雾灯 拖车模式 后追尾预警"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 车辆设置 后雾灯 拖车模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.3"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1WwGNLStCOD3MPX00VOzWLkDGQseSHxt9",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.3.docx",
+          "url": "https://docs.google.com/document/d/1WwGNLStCOD3MPX00VOzWLkDGQseSHxt9/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.1.docx",
+          "url": "https://docs.google.com/document/d/1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.8.docx",
+          "url": "https://docs.google.com/document/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+          "url": "https://docs.google.com/document/d/1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "16eOjSTJ6B0wHgdYq52Doj21mrjBemeS4",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.8.docx",
+          "url": "https://docs.google.com/document/d/16eOjSTJ6B0wHgdYq52Doj21mrjBemeS4/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1lSYg8FMwG_2ZbUG7CGSXh2ml7fPAbSOr",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.5.docx",
+          "url": "https://docs.google.com/document/d/1lSYg8FMwG_2ZbUG7CGSXh2ml7fPAbSOr/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1rag1yFIx2MuKwGQh_Y9pE4QdjH8bFsZH",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.8.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1rag1yFIx2MuKwGQh_Y9pE4QdjH8bFsZH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1cm6-JXo24REYpZeC8XQLWR661ZYzLkJA",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.7.docx",
+          "url": "https://docs.google.com/document/d/1cm6-JXo24REYpZeC8XQLWR661ZYzLkJA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1bsyF2p4KRwtNjQLnxM-ehfI448-Nv_WM",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.6.docx",
+          "url": "https://docs.google.com/document/d/1bsyF2p4KRwtNjQLnxM-ehfI448-Nv_WM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1N0QEvNyRsodi2CjUxGHUU-J3XaZUlMwV",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.5.docx",
+          "url": "https://docs.google.com/document/d/1N0QEvNyRsodi2CjUxGHUU-J3XaZUlMwV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1ZPRTCjNe7xfOZ8uXxuKSsEsAJKpTnRgD",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.1.docx",
+          "url": "https://docs.google.com/document/d/1ZPRTCjNe7xfOZ8uXxuKSsEsAJKpTnRgD/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1ktpCCEEpGHoNZu61ZsVhR3X1p2Mgbrim",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.3.docx",
+          "url": "https://docs.google.com/document/d/1ktpCCEEpGHoNZu61ZsVhR3X1p2Mgbrim/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1HkckvRGfwvYR53QP3K5H0IYCpIVcJUSl",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.0.docx",
+          "url": "https://docs.google.com/document/d/1HkckvRGfwvYR53QP3K5H0IYCpIVcJUSl/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1b0vvmkQFshPvh4zwVKBNkUMfmhu-_1S3",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.2 (1).docx",
+          "url": "https://docs.google.com/document/d/1b0vvmkQFshPvh4zwVKBNkUMfmhu-_1S3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "19frNYUu1FqYn4DGtshNJ-h6niHrCZTHl",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.2.docx",
+          "url": "https://docs.google.com/document/d/19frNYUu1FqYn4DGtshNJ-h6niHrCZTHl/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "12zcEF_1xT9uIiiXM7oyDYsE10I9Wig3_",
+          "title": "【重复上传】C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.7.docx",
+          "url": "https://docs.google.com/document/d/12zcEF_1xT9uIiiXM7oyDYsE10I9Wig3_/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1m9kvVLW3CoQLhsiKu6Kv-7nmLuzIHOta",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.7.docx",
+          "url": "https://docs.google.com/document/d/1m9kvVLW3CoQLhsiKu6Kv-7nmLuzIHOta/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1pp5IuJoozd5m4YtTPzeTjvyRWEz1AbmS",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.4.docx",
+          "url": "https://docs.google.com/document/d/1pp5IuJoozd5m4YtTPzeTjvyRWEz1AbmS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1YyLxQQZVEwr0CmBXfKbK7RGp6gz0516F",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.4.docx",
+          "url": "https://docs.google.com/document/d/1YyLxQQZVEwr0CmBXfKbK7RGp6gz0516F/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1XfiXy0GXe2Xb3epZWeXGyCVlX18kBd1j",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.3.docx",
+          "url": "https://docs.google.com/document/d/1XfiXy0GXe2Xb3epZWeXGyCVlX18kBd1j/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1yOO7O69f5q34bRgmVog91Lkn9kyFCkRE",
+          "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.2.docx",
+          "url": "https://docs.google.com/document/d/1yOO7O69f5q34bRgmVog91Lkn9kyFCkRE/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "c673-vehicle-v23"
+      ],
+      "searched_at": "2026-11-04",
+      "search_location": "Google Drive API / C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18475"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "意大利语界面文案与语料不一致 后雾灯 拖车模式 后追尾预警"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673 车辆设置 后雾灯 拖车模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.3"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-c673-vehicle"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 21,
+        "candidates": [
+          {
+            "id": "1WwGNLStCOD3MPX00VOzWLkDGQseSHxt9",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.3.docx",
+            "url": "https://docs.google.com/document/d/1WwGNLStCOD3MPX00VOzWLkDGQseSHxt9/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "read",
+            "source_ids": [
+              "c673-vehicle-v23"
+            ]
+          },
+          {
+            "id": "1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V2.1.docx",
+            "url": "https://docs.google.com/document/d/1-EO93mfxrEW7YccgtBXHO6ci0Cdhkp8D/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.8.docx",
+            "url": "https://docs.google.com/document/d/1P4GyZ_m4UcmHNcGsgaJmRp76T1oiTzYj/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.1.docx",
+            "url": "https://docs.google.com/document/d/1k3GY7UwwqnOj9Jz2BsLyjEkGl9J-nJRK/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "16eOjSTJ6B0wHgdYq52Doj21mrjBemeS4",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.8.docx",
+            "url": "https://docs.google.com/document/d/16eOjSTJ6B0wHgdYq52Doj21mrjBemeS4/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1lSYg8FMwG_2ZbUG7CGSXh2ml7fPAbSOr",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.5.docx",
+            "url": "https://docs.google.com/document/d/1lSYg8FMwG_2ZbUG7CGSXh2ml7fPAbSOr/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1rag1yFIx2MuKwGQh_Y9pE4QdjH8bFsZH",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.8.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1rag1yFIx2MuKwGQh_Y9pE4QdjH8bFsZH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1cm6-JXo24REYpZeC8XQLWR661ZYzLkJA",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.7.docx",
+            "url": "https://docs.google.com/document/d/1cm6-JXo24REYpZeC8XQLWR661ZYzLkJA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1bsyF2p4KRwtNjQLnxM-ehfI448-Nv_WM",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.6.docx",
+            "url": "https://docs.google.com/document/d/1bsyF2p4KRwtNjQLnxM-ehfI448-Nv_WM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1N0QEvNyRsodi2CjUxGHUU-J3XaZUlMwV",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.5.docx",
+            "url": "https://docs.google.com/document/d/1N0QEvNyRsodi2CjUxGHUU-J3XaZUlMwV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1ZPRTCjNe7xfOZ8uXxuKSsEsAJKpTnRgD",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.1.docx",
+            "url": "https://docs.google.com/document/d/1ZPRTCjNe7xfOZ8uXxuKSsEsAJKpTnRgD/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1ktpCCEEpGHoNZu61ZsVhR3X1p2Mgbrim",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.3.docx",
+            "url": "https://docs.google.com/document/d/1ktpCCEEpGHoNZu61ZsVhR3X1p2Mgbrim/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1HkckvRGfwvYR53QP3K5H0IYCpIVcJUSl",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.0.docx",
+            "url": "https://docs.google.com/document/d/1HkckvRGfwvYR53QP3K5H0IYCpIVcJUSl/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1b0vvmkQFshPvh4zwVKBNkUMfmhu-_1S3",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.2 (1).docx",
+            "url": "https://docs.google.com/document/d/1b0vvmkQFshPvh4zwVKBNkUMfmhu-_1S3/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "19frNYUu1FqYn4DGtshNJ-h6niHrCZTHl",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V1.2.docx",
+            "url": "https://docs.google.com/document/d/19frNYUu1FqYn4DGtshNJ-h6niHrCZTHl/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "12zcEF_1xT9uIiiXM7oyDYsE10I9Wig3_",
+            "title": "【重复上传】C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.7.docx",
+            "url": "https://docs.google.com/document/d/12zcEF_1xT9uIiiXM7oyDYsE10I9Wig3_/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1m9kvVLW3CoQLhsiKu6Kv-7nmLuzIHOta",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.7.docx",
+            "url": "https://docs.google.com/document/d/1m9kvVLW3CoQLhsiKu6Kv-7nmLuzIHOta/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1pp5IuJoozd5m4YtTPzeTjvyRWEz1AbmS",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.4.docx",
+            "url": "https://docs.google.com/document/d/1pp5IuJoozd5m4YtTPzeTjvyRWEz1AbmS/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1YyLxQQZVEwr0CmBXfKbK7RGp6gz0516F",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.4.docx",
+            "url": "https://docs.google.com/document/d/1YyLxQQZVEwr0CmBXfKbK7RGp6gz0516F/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1XfiXy0GXe2Xb3epZWeXGyCVlX18kBd1j",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.3.docx",
+            "url": "https://docs.google.com/document/d/1XfiXy0GXe2Xb3epZWeXGyCVlX18kBd1j/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          },
+          {
+            "id": "1yOO7O69f5q34bRgmVog91Lkn9kyFCkRE",
+            "title": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义V0.2.docx",
+            "url": "https://docs.google.com/document/d/1yOO7O69f5q34bRgmVog91Lkn9kyFCkRE/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "version_family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "同系列旧版或重复上传，不覆盖已读的 V2.3。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C673海外平台化XEV（新架构）功能定义_车辆设置功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "receipt-c673-vehicle"
+            ],
+            "selected_candidate_id": "1WwGNLStCOD3MPX00VOzWLkDGQseSHxt9",
+            "selection_reason": "同系列 21 份里 V2.3 版本号最高，正文已读到后雾灯、拖车模式和拖挂模式。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "source_ids": [],
+      "material": true,
+      "reason": "本轮没有重跑 Alchemy 在线对话。",
+      "next_action": "若要确认意大利语是否直译到对应中文功能，再用这五句在深蓝 C673 在线对话重跑。",
+      "searched_at": "2026-11-04",
+      "search_location": "Alchemy 在线对话未调用",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "Accendi la luce posteriore per nebbia"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard-1047"
+      ],
+      "searched_at": "2026-11-04",
+      "search_location": "Alchemy 标准功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "打开后雾灯 meta_id=1047 标准功能 1153；打开后追尾预警 meta_id=1549 标准功能 1038"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project-24363"
+      ],
+      "searched_at": "2026-11-04",
+      "search_location": "Alchemy 深蓝项目功能",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "打开后雾灯 24363；打开后追尾预警 24308；拖车模式未检索到"
+        },
+        {
+          "kind": "project_scope",
+          "text": "深蓝 projectId=11 C673"
+        }
+      ]
+    }
+  ],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "Accendi la luce posteriore per nebbia",
+    "alchemy_tested": false,
+    "standard_function": {
+      "status": "verified",
+      "name": "打开后雾灯",
+      "assessment": "标准功能 1153，meta_id 1047。后追尾预警标准功能 1038，meta_id 1549。拖车模式没有同名标准功能。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "打开后雾灯",
+      "assessment": "深蓝项目功能 24363 继承未改，车型含 C673。后追尾预警项目功能 24308。拖车、拖挂按名称检索没有项目功能点。"
+    },
+    "unavailable_reason": "未重跑 Alchemy 在线对话，不能用车端执行结果代替意大利语在线测试。",
+    "next_action": "语料按翻译清单先改后雾灯和拖车模式；后追尾预警等界面旧词核对后再决定要不要改。"
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "语音语料维护",
+    "text": "结论：Saguaro 意大利语这五条功能都能执行，不是车端没按语料执行。后雾灯打开句和拖车模式的意大利语要改；后追尾预警不要按车上现在的词改语料。\n现行深蓝语料表标题仍是 V0.3.2.17，版本记录已到 V0.3.2.19，这三句没有后续改写。打开后雾灯是 Accendi la luce posteriore per nebbia，关闭句是 Spegni il fendinebbia posteriore。C673 翻译清单 BigsurCarSettings 第481行 settings_light_fog 意大利语是 Fari Fendinebbia Posteriori。打开句应改成 Accendi i fari fendinebbia posteriori。\n打开/关闭拖车模式现在写成 modalità rimorchio。C673 车辆设置 V2.3 把拖车模式定义成驻车维护里的平板拖车功能，语音指令就是开启/关闭拖车模式；拖挂模式是另一项，触发写的是开关，不是这句语料。翻译清单第727行 preference_trail_mode 是 Modalita traino d'emergenza，第756行拖挂模式才是 Modalità traino。车上显示 Modalità Traino di Emergenza，和拖车模式一致。语料里的 rimorchio 会和拖挂模式混，应改成 traino di emergenza。\n后追尾预警语料是 avviso di tamponamento posteriore。翻译清单第659行是 Avviso di collisione posteriore。车上的 Collisione postesteriore 不在这份清单里，不能当成目标词。这句语料先不改。\n依据：[深蓝语料表 深蓝-删减版 第205-206、263-264、283-284行|https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit?gid=1845215852#gid=1845215852]、[C673车辆设置功能定义V2.3 拖车模式/后雾灯|https://drive.google.com/file/d/1WwGNLStCOD3MPX00VOzWLkDGQseSHxt9/view]、[C673-G/D587G翻译清单261015 BigsurCarSettings 第481、659、727、756行|https://drive.google.com/file/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/view]。\n处理：后雾灯打开句改为 Accendi i fari fendinebbia posteriori；拖车模式改为 Modalità traino di emergenza，不要写成 rimorchio。后追尾预警先不改语料，车上 Collisione postesteriore 先按翻译清单核对是不是旧词。语音语料维护处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  }
+}

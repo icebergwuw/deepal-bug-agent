@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261104T105200+0800-SM-18475",
+  "status": "comment_verified",
+  "started_at": "2026-11-04T10:52:00+08:00",
+  "completed_at": "2026-11-04T11:05:00+08:00",
+  "query_summary": "处理 SM-18475，确认意大利语语料和界面词。",
+  "action_log": "agent/logs/bug-actions/2026-11-04-SM-18475/action-log.md",
+  "preflight_path": "agent/logs/bug-actions/2026-11-04-SM-18475/preflight.json",
+  "preflight_sha256": "53782c0d961603926a40ec2055111fca72f88dc09f7f4025a30affa115bf6a88",
+  "items": [
+    {
+      "jira_key": "SM-18475",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-04-SM-18475/SM-18475-manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-04-SM-18475/SM-18475-receipt.json",
+      "comment_receipt_sha256": "bbd66ec9ae563d836721466db392d14dbb82dbcda6eb7810f99313db9171a3e3",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-04-SM-18475/SM-18475-readback.json",
+      "comment_readback_sha256": "04ef9e1a0a3958b817e02f51df7d4f9adc5a81f16fa22d1be962fe1db17c5bc7"
+    }
+  ]
+}

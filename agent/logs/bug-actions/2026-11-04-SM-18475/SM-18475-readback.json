@@ -1,0 +1,8 @@
+{
+  "comment_id": "8805827",
+  "body": "结论：Saguaro 意大利语这五条功能都能执行，不是车端没按语料执行。后雾灯打开句和拖车模式的意大利语要改；后追尾预警不要按车上现在的词改语料。\n现行深蓝语料表标题仍是 V0.3.2.17，版本记录已到 V0.3.2.19，这三句没有后续改写。打开后雾灯是 Accendi la luce posteriore per nebbia，关闭句是 Spegni il fendinebbia posteriore。C673 翻译清单 BigsurCarSettings 第481行 settings_light_fog 意大利语是 Fari Fendinebbia Posteriori。打开句应改成 Accendi i fari fendinebbia posteriori。\n打开/关闭拖车模式现在写成 modalità rimorchio。C673 车辆设置 V2.3 把拖车模式定义成驻车维护里的平板拖车功能，语音指令就是开启/关闭拖车模式；拖挂模式是另一项，触发写的是开关，不是这句语料。翻译清单第727行 preference_trail_mode 是 Modalita traino d'emergenza，第756行拖挂模式才是 Modalità traino。车上显示 Modalità Traino di Emergenza，和拖车模式一致。语料里的 rimorchio 会和拖挂模式混，应改成 traino di emergenza。\n后追尾预警语料是 avviso di tamponamento posteriore。翻译清单第659行是 Avviso di collisione posteriore。车上的 Collisione postesteriore 不在这份清单里，不能当成目标词。这句语料先不改。\n依据：[深蓝语料表 深蓝-删减版 第205-206、263-264、283-284行|https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit?gid=1845215852#gid=1845215852]、[C673车辆设置功能定义V2.3 拖车模式/后雾灯|https://drive.google.com/file/d/1WwGNLStCOD3MPX00VOzWLkDGQseSHxt9/view]、[C673-G/D587G翻译清单261015 BigsurCarSettings 第481、659、727、756行|https://drive.google.com/file/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/view]。\n处理：后雾灯打开句改为 Accendi i fari fendinebbia posteriori；拖车模式改为 Modalità traino di emergenza，不要写成 rimorchio。后追尾预警先不改语料，车上 Collisione postesteriore 先按翻译清单核对是不是旧词。语音语料维护处理。\n\n（AI Generated）\n\n!SM-18475-corpus-ui.png|width=800!",
+  "transitioned": false,
+  "status": "待办",
+  "assignee": "吴优",
+  "attachment_id": "4636070"
+}
