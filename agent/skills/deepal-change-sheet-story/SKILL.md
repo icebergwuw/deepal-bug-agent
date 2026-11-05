@@ -43,6 +43,7 @@ UE：<latest formal UE for this module, or state that none was found>
 - Search the signed-in Drive for the current module's latest PRD and UE. Record the search limit instead of guessing a document.
 - Read back the key, summary, assignee, Epic, and description. Only then write the key into the tab's story column. On the 8295 domestic OTA tab that column is D. On `深蓝8155平台（海外）G3/G5/G6 项目` it is G, `StoryID/TaskID`. Write a hyperlink, not plain text: visible text is the key, target is `http://jira.i-tetris.com/browse/<KEY>`. Read the cell back as a hyperlink before notifying. Do not click the grid while editing.
 - Log the action under `agent/logs/bug-actions/` without secrets. After the rule and log checks pass, commit and push the project changes. Do not claim a push succeeded if it failed.
+- If the story's UE is a real document rather than 暂未提供, remind the user to create a UI Task. Do not create it unless asked. When asked, follow the AGENTS.md UI Task rule: copy the story, append `-UI`, change the type to 任务, keep the copied fields, and relate it to the story.
 
 ## Feishu Notice
 
