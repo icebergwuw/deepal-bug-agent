@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.50.0-trial.1`
+- 当前版本：`v1.51.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-11-06`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -9,6 +9,31 @@
 
 
 
+
+
+## v1.51.0-trial.1 — 2026-11-06
+
+### 试行内容
+
+- 用户说新增语料或补语料时，不走变更表建票，也不走 Bug 判责。
+- 追加深蓝语料表「深蓝-删减版」末行，并在「版本记录」按一句一行追加。版本号接版本记录最后一版，不看表格标题。
+- 中文先用语音专业语料。专业文档没有的关闭句或页面，按当次票面补，并在备注写明缺口。
+- 车型点只打当次项目对应列。没有已审校译文的其他语种，按表内同类句式补齐并标明未经另审。不改表格标题，不评论、不转派、不改 Jira，不发飞书。
+
+### 修改原因
+
+- 2026-11-06 吴优要求记住 SD-8240 的新增语料流程。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/product-kb/sources.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- SD-8240 已写入「深蓝-删减版」第 1344-1351 行，「版本记录」第 177-184 行，版本号 `V0.3.2.20`。
 
 
 ## v1.50.0-trial.1 — 2026-11-06
