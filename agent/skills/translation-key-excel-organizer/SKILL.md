@@ -21,16 +21,18 @@ description: Read Jira translation parent issues and all relates-to tickets, fol
    - If Jira explicitly states a Chinese source itself is the missing key (for example `key 就是“辅助驾驶系统过热，降温后恢复”`), use that exact source in `KEY` and `中文`, and record that it is a source-key rather than inventing an identifier.
    - Treat Jira language signals explicitly: `EL` means 阿拉伯语; `英语` or `英文模式` as a language/mode label means 英语; `阿拉伯` means 阿拉伯语. Do not treat result text such as “显示英文/英文 toast” as the test language. When an `EL` title also names English mode, record both `阿拉伯语、英语` rather than leaving the language unknown.
 6. Query the system date at the start of each run. Set every row's `时间` to that run date (`YYYY/M/D`) and every row's `提出人` to `吴优`; do not use Jira reporter/comment author for these two output fields.
-7. Build one row per Jira issue/key pair with exactly these columns: `时间`, `提出人`, `模块(表单)`, `KEY`, `中文`, `文言状态`, `备注`, `涉及语种`, `对应语种当前文言`, `票号`, `是否更新`. If one Jira ticket contains multiple keys, split them into separate rows with the same ticket number and shared evidence fields.
-8. Look up `对应语种当前文言` from the confirmed TextID workbook using KEY and the language column; for multiple languages, label each value with its language. Put the Jira key (`HUR-XXXXX`) in `票号`. Put the requested action in `文言状态` (for example `缩减翻译`, `确认翻译`, `补充翻译`, `删除多余换行`, `先确认`, `不用改`, `未提供`).
+7. Build rows only for the sentence named in the ticket title. Columns are exactly: `时间`, `提出人`, `模块(表单)`, `KEY`, `中文`, `文言状态`, `备注`, `涉及语种`, `对应语种当前文言`, `票号`, `是否更新`.
+   - If comments, the same screen, or analysis mention other keys, those are clutter. Do not add them. Do not keep a `不用改` row to say they should not be changed.
+   - Keep more than one row only when the title itself names more than one sentence, such as 疲劳和分神, 按键1和2, 界面和即将进入页面, or two places that must match. Like `HUR-86678` and `HUR-86679`, the title sentence is the only row.
+8. Look up `对应语种当前文言` from the confirmed TextID workbook using KEY and the language column; for multiple languages, label each value with its language. Put the Jira key (`HUR-XXXXX`) in `票号`. Put the requested action in `文言状态` (for example `缩减翻译`, `确认翻译`, `补充翻译`, `删除多余换行`, `先确认`, `未提供`).
    - `备注` must answer what 中科 should do, in plain Chinese a translator can act on. Lead with the Chinese sentence, then the language, the current wording, and the action: shorten so it fits, use the table wording, add a missing word, fix a line break, or fix punctuation. Put the Key after the Chinese sentence, not first.
-   - If this row is not the sentence to change, set `文言状态` to `不用改`. The note must still say the real task: which Chinese sentence to change, its current translation, and what to do. Never write `本行`, `同票带出`, `请中科不要改本行`, or `未确认前不要改`.
+   - Never write `本行`, `同票带出`, `请中科不要改本行`, `同票另一句不用改`, or `未确认前不要改`.
    - Do not leave `备注` as only link type, ticket status, or lookup source. If the Key is missing or absent from sheets `01`–`21`, write that 中科 must match the screenshot to the Chinese sentence first and must not guess a translation.
 9. Never infer a missing key, language, or translation from a similar issue. Keep Jira hyperlinks in the workbook, freeze the header row, enable filters, wrap text, and verify row counts and hyperlinks after saving. Configure `是否更新` as a BOOLEAN/list validation field with default `FALSE` so the operator can manually check it.
 
 ## Output Contract
 
 - Preserve all previously collected sheets when updating a workbook; append or replace only the requested parent sheet.
-- Keep one row per related Jira ticket, including tickets with incomplete evidence.
+- Keep one row per title-named sentence. A ticket with no identifiable title sentence still gets one incomplete row.
 - Date values are always the queried run date in `YYYY/M/D`; relative Jira dates may remain in `备注` as evidence context.
 - Do not write passwords, tokens, cookies, or private credentials to the workbook or skill.
