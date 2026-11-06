@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.53.0-trial.1`
+- 当前版本：`v1.54.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-11-06`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -10,6 +10,31 @@
 
 
 
+
+## v1.54.0-trial.1 — 2026-11-06
+
+### 试行内容
+
+- 0408 版本文言不走长马翻译总票，不关联总票，不按 workaround 关闭后交给中科，不进海外 TextID 清单。
+- 标题含 `【0408】`、`[0408]` 或 `0408分支` 即排除。不因修复版本同为 `J90A-ER_VAVE_20261110` 就把没有 0408 标记的票一起排除。
+
+### 修改原因
+
+- 2026-11-06 吴优确认 0408 文言要从翻译总票和清单撤回，重新打开并转给吴优。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/product-kb/rules/bug-to-requirement.md`
+- `agent/product-kb/modules/multilingual-key.md`
+- `agent/skills/translation-key-excel-organizer/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 标题含 0408 的 29 张已从 HUR-85390 撤回，重新打开，经办人 `you.wu`，解决结果为空。
 
 ## v1.53.0-trial.1 — 2026-11-06
 
