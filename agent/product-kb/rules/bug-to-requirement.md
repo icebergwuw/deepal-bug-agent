@@ -10,6 +10,8 @@
 
 ## HUR 文言与语料
 
+长马文言吴优无权直接修改。不改文言表、Key 译文或车机文言，最多提出建议译文和理由，交中科修改。已判定要改的文言走翻译总票 bug 转需求。
+
 原 Bug 关票是一定的。转需求 story 不按 Bug 张数新建：未传递给开发、经办人仍是 `you.wu` 时复用；已传递给开发才新建。长马文言和语料都这样判断。文言当前总票在 `agent/context.md`，会更新。细则见 `agent/product-kb/rules/hur-translation-parent.md`。
 
 ## 不转需求的情况

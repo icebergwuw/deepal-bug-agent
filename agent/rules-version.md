@@ -1,14 +1,39 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.48.0-trial.1`
+- 当前版本：`v1.49.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-11-05`
+- 生效日期：`2026-11-06`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`。变更表建票使用 `agent/skills/deepal-change-sheet-story/SKILL.md`。UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
 
 
 
+
+
+## v1.49.0-trial.1 — 2026-11-06
+
+### 试行内容
+
+- 长马 HUR 文言吴优无权直接修改。不改文言表、Key 译文或车机文言，最多提建议译文和理由，交中科修改。
+- 已判定要改的文言仍走翻译总票 bug 转需求：未传递给开发复用当前总票，已传递给开发才新建；原 Bug 关联后按 workaround / bug转需求关闭。
+- 这条只约束长马文言，不改变长马语料的 story 判断。
+
+### 修改原因
+
+- 2026-11-06 吴优确认长马文言没有修改权，最多建议，交中科，并要求记住翻译票流程。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/product-kb/rules/bug-to-requirement.md`
+- `agent/product-kb/modules/multilingual-key.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 规则口径与 `agent/product-kb/rules/hur-translation-parent.md` 一致；当前总票仍只记录在 `agent/context.md`，不写死票号。
 
 
 ## v1.48.0-trial.1 — 2026-11-05
