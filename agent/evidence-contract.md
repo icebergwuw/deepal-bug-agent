@@ -158,10 +158,12 @@
 
 ## MasterGo UE
 
-1. 优先从当前工作说明或 Drive 资料取得 MasterGo 短链或 `fileId + layerId`。
-2. 只有 `page_id` 不能证明目标图层已读；MCP 返回空结构、文件在草稿箱、账号无团队项目权限或链接信息不足时，记录“未读到 UE”并补要图层链接或短链。
-3. `.mastergo/` 本地缓存不是正式资料。
-4. token 只通过安全运行时配置注入，不写入表格、日志、知识库、项目文件或回复。
+1. 读取、修改、截图或同步当前 MasterGo 画布时，优先使用 MasterGo MCP。工具是 `get_selection_node`、`get_screenshot`、`agent_update_node`、`agent_replace_node`、`agent_remove_node`、`submit_page_to_canvas`。
+2. 当前会话没有挂出这些工具时，用官方 `@mastergo/vibe-mcp` 连接本机 MasterGo 正在监听的端口，再调用上述工具。直连本地 `/api`、打开浏览器登录页或用 Computer Use 点画布，都不能写成已经使用 MasterGo MCP。
+3. 优先从当前工作说明或 Drive 资料取得 MasterGo 短链或 `fileId + layerId`。只有 `page_id` 不能证明目标图层已读；MCP 返回空结构、文件在草稿箱、账号无团队项目权限或链接信息不足时，记录“未读到 UE”并补要图层链接或短链。
+4. 修改前必须先 `get_selection_node`。禁止把空内容、整页根节点或未读过的父帧交给 `agent_update_node`。新增控件沿用同页已有组件、字号和字体，改完用 `get_screenshot` 回读。
+5. `.mastergo/` 本地缓存不是正式资料。
+6. token 只通过安全运行时配置注入，不写入表格、日志、知识库、项目文件或回复。
 
 ## 结论门槛
 

@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.58.0-trial.1`
+- 当前版本：`v1.59.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-11-10`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -11,6 +11,32 @@
 
 
 
+
+## v1.59.0-trial.1 — 2026-11-10
+
+### 试行内容
+
+- MasterGo 画布的读取、修改、截图和同步优先使用 MasterGo MCP。
+- 当前会话没有挂出该 MCP 时，用官方 `@mastergo/vibe-mcp` 连接本机 MasterGo 正在监听的端口后再调用工具。
+- 直连本地 `/api`、浏览器登录页和 Computer Use 不算已经使用 MasterGo MCP。
+- 改图层前先读取目标节点。禁止把空内容或页面根节点交给 `agent_update_node`。新增控件沿用同页已有样式，改完截图回读。
+
+### 修改原因
+
+- 2026-11-10 吴优要求把 MasterGo 任务优先使用 MasterGo MCP 写进规则。撤销恢复第 4 页后，不再用直连接口代替 MCP。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/evidence-contract.md`
+- `agent/workflows/bug.md`
+- `agent/product-kb/rules/mastergo-vibe-mcp.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-11-10 用官方 vibe-mcp 客户端调用 `get_selection_node`，读到 `长安C673交互设计文档_场景积木_EV&EVE_v3.3` 的 `1326:002442`。
 
 ## v1.58.0-trial.1 — 2026-11-10
 
