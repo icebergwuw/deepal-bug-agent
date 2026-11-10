@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.55.0-trial.1`
+- 当前版本：`v1.58.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-11-06`
+- 生效日期：`2026-11-10`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`。变更表建票使用 `agent/skills/deepal-change-sheet-story/SKILL.md`。长马文言清单使用 `agent/skills/translation-key-excel-organizer/SKILL.md`。UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -10,6 +10,81 @@
 
 
 
+
+
+## v1.58.0-trial.1 — 2026-11-10
+
+### 试行内容
+
+- 新建 Jira 票时，Epic Link 写该项目未关闭、标题正好是 `ECR_待签署` 的 Epic。
+- 覆盖变更表建票、临时建票、bug 转需求和 UI Task。不沿用原票 Epic，不跨项目套用，不改已有票 Epic。
+- 2026-11-10 回读：未关闭精确标题是 ADS-7、MV-7、TB-3。PC-39 已关闭。SD、HUR、SM、SLV 没有精确标题；SD-11 不能代替。没有这张 Epic 时先停下，不建票。
+
+### 修改原因
+
+- 2026-11-10 吴优要求以后只要建票，Epic Link 都写 ECR_待签署。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/product-kb/rules/bug-to-requirement.md`
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/skills/deepal-change-sheet-story/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-11-10 Jira 回读 ADS-7、MV-7、TB-3 标题为 ECR_待签署且未关闭；SD-11 标题不是该精确标题。
+
+## v1.57.0-trial.1 — 2026-11-06
+
+### 试行内容
+
+- 交给中科的清单备注第一行写测试标题。格式是 `测试标题：` 加 Jira 标题，换行后再写要中科做什么。
+- 重写备注时不得删掉这一行。
+
+### 修改原因
+
+- 2026-11-06 吴优要求每一条备注前面都加上测试说的标题。
+
+### 影响文件
+
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/skills/translation-key-excel-organizer/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- HUR-85390 清单 156 行备注均以对应票的测试标题开头。
+
+## v1.56.0-trial.1 — 2026-11-06
+
+### 试行内容
+
+- 标题说两处翻译不一致，但现行 `01`–`21` 两句已经相同的，不进长马翻译总票，不交给中科。
+- 评论已写明「非问题」「不是问题」「符合标准」或「保持现状」的，同样不进。已关联的取消关联并评论原因。不因这条改经办人，也不按翻译总票关闭。
+- 两句仍不同，或只是同一句被裁切，仍要交。
+
+### 修改原因
+
+- 2026-11-06 吴优确认 HUR-85282 两处俄语已统一、HUR-86189 已被评成非问题，这类不要再提给中科，并排查同类。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/product-kb/rules/bug-to-requirement.md`
+- `agent/product-kb/modules/multilingual-key.md`
+- `agent/skills/translation-key-excel-organizer/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 从 HUR-85390 取消关联并移出清单：HUR-85282、HUR-86859、HUR-86726、HUR-86728、HUR-86731。HUR-86189 原本已无关联，只移出清单并评论。
+- 转向助力左右仍不一致、阿拉伯语两句仍不同、同一 Key 被裁切的票仍留在清单。
 
 ## v1.55.0-trial.1 — 2026-11-06
 
