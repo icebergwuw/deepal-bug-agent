@@ -57,3 +57,23 @@ startup_timeout_sec = 120
 - `agent_update_node` 传入完整子树会替换子节点。空内容或更新已不存在的帧会删掉图层。不要更新页面根节点，以免带走同页其他帧。
 - 选项文字必须放进按钮或选项组件内部。作为矩形的兄弟节点时会被盖住。
 - 新增控件沿用同页已有标题、选项组件、字体和说明，不另画红框标注条。
+
+
+## 2026-11-10 Vibe MCP 与 Magic MCP
+
+- 来源：[MasterGo Vibe MCP 帮助](https://mastergo.com/help/ai-features/vibe-mcp.html)，2026-11-10 读取。
+- 画布读写只用 Vibe MCP：`@mastergo/vibe-mcp`。2026-11-10 实际调用的是 `@mastergo/vibe-mcp@1.0.32`，`--url=http://127.0.0.1:30678`。
+- Magic MCP（`@mastergo/magic-mcp` v0.2.4）是 2026-07-17 验证过的旧读取通道。它不能代替 Vibe 修改当前画布。不要再启动 Magic MCP 做图层修改。
+- Vibe 不需要个人 token，能读取、生成、局部修改、替换、删除、同步和截图，并直接作用到当前打开的画布。Magic 做不到这次这种局部改图层。
+
+### 操作约束
+
+- 操作期间不要切换 MasterGo 文件或页面。焦点跳走会返回 `TargetNodePageMismatch`。要同时看别的稿，用浏览器另开，不切客户端当前页。
+- 改之前先 `get_selection_node`。改文案、颜色、尺寸和布局用 `agent_update_node`。换图标或图片用 `agent_replace_node`。
+- 只改父容器自身时，传带 `data-node-id` 的空根节点，系统保留子节点。要改子结构必须传完整子树。禁止空内容更新页面根节点。
+- 删除样式必须写 `property: initial`，不能靠省略属性。
+- 不要把已有绝对定位的父容器改成 `display: flex` 或纵向自动布局。控件会失去坐标并堆到左上角。
+- `agent_update_node` 返回 `accepted` 后，画布仍在后台处理。不要立刻再读或再截图。返回「任务队列过长」时等待后重试，不要连发。
+- `agent_sync_design` 只在用户明确要求同步到画布时使用，目标应是页面根节点。不要把 `.vue`、`.tsx` 当同步文件。
+- 删除变量用 `agent_remove_variable`，不要用 `agent_update_variables` 删除。
+- `30678` 被占用时，以 MasterGo status 的 `httpPort` 为准改 `--url`。查看 status 只用于确认文件和端口，不算已经用 MCP 改了画布。

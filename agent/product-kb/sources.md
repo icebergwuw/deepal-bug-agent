@@ -13,7 +13,7 @@
 | Google Drive 项目资料 | Drive / Docs / Sheets / Office 文件 | PRD、UE、需求说明、组织架构、项目资料 | 每个问题按模块和版本检索；Office 文件按可用方式读取 |
 | [深蓝语料表](https://docs.google.com/spreadsheets/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/edit?gid=1845215852#gid=1845215852) | Google Sheet / 正式语料 | 深蓝海外语料、中文功能与各语种说法 | 2026-11-02 吴优指定。当时标题为【正式版】长安系_海外各国语料清单汇总_V0.3.2.17，页签深蓝-删减版。版本会更新，先打开这一链接再核对当前标题。2026-11-06 起新增语料只追加这一页末行，并写同一工作簿的版本记录；做法见 `agent/context.md`。 |
 | [深蓝8295可见新表—给3D_V4.9](https://docs.google.com/spreadsheets/d/1fNaZbHwavd_azYbOvfrU35bSkZx94GiDYDjp4CDCbMc/edit?gid=63592135#gid=63592135) | Google Sheet / 正式可见配置 | 3D车辆设置及语音设置页可见节点、subject、operation | 当前版本V4.9，2026-08-06更新；2026-08-14已读取。语音设置自定义唤醒词/应答语节点位于“车辆设置（座椅、充放电）”第763-771行 |
-| MasterGo 设计链接 | 设计平台 | UE/UI 证据和页面行为核对 | MasterGo Magic MCP v0.2.4 的启动、鉴权和工具发现已于 2026-07-17 验证；设计读取需 `fileId + layerId` 或 MasterGo 短链。只有 `page_id` 的工作说明链接不能算已读 UE；账号还需具备团队版及团队项目访问条件。`.mastergo/` 缓存不是正式来源 |
+| MasterGo 设计链接 | 设计平台 | UE/UI 证据和页面行为核对 | 当前画布读写用 Vibe MCP `@mastergo/vibe-mcp`，不用旧 Magic MCP 改图层。Magic MCP v0.2.4 只保留为 2026-07-17 的历史读取记录。设计读取需 `fileId + layerId` 或 MasterGo 短链。只有 `page_id` 的工作说明链接不能算已读 UE；账号还需具备团队版及团队项目访问条件。`.mastergo/` 缓存不是正式来源 |
 
 ## 项目 / 产品资料
 

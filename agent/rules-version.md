@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.59.0-trial.1`
+- 当前版本：`v1.60.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-11-10`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -11,6 +11,31 @@
 
 
 
+
+## v1.60.0-trial.1 — 2026-11-10
+
+### 试行内容
+
+- MasterGo 画布只使用 Vibe MCP `@mastergo/vibe-mcp`。旧 Magic MCP 不能代替 Vibe 改画布。
+- 操作期间不切换 MasterGo 文件或页面。只改父容器自身可传空根节点；改子结构必须传完整子树。
+- 不把已有绝对定位的父容器改成自动布局。`accepted` 后等待画布处理，队列过长就等待重试。
+
+### 修改原因
+
+- 2026-11-10 吴优要求把 [Vibe MCP 帮助](https://mastergo.com/help/ai-features/vibe-mcp.html) 沉淀进规则，并确认用的是 Vibe 还是 Magic。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/evidence-contract.md`
+- `agent/product-kb/rules/mastergo-vibe-mcp.md`
+- `agent/product-kb/sources.md`
+- `agent/skills/deepal-product-bug-handler/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-11-10 用 `@mastergo/vibe-mcp@1.0.32` 连接 `127.0.0.1:30678`，对 `长安C673交互设计文档_场景积木_EV&EVE_v3.3` 调用 `get_selection_node` 和 `agent_update_node`。Magic MCP 未用于这次改画布。
 
 ## v1.59.0-trial.1 — 2026-11-10
 

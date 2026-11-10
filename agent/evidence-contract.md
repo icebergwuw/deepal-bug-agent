@@ -158,12 +158,12 @@
 
 ## MasterGo UE
 
-1. 读取、修改、截图或同步当前 MasterGo 画布时，优先使用 MasterGo MCP。工具是 `get_selection_node`、`get_screenshot`、`agent_update_node`、`agent_replace_node`、`agent_remove_node`、`submit_page_to_canvas`。
-2. 当前会话没有挂出这些工具时，用官方 `@mastergo/vibe-mcp` 连接本机 MasterGo 正在监听的端口，再调用上述工具。直连本地 `/api`、打开浏览器登录页或用 Computer Use 点画布，都不能写成已经使用 MasterGo MCP。
+1. 读取、修改、截图或同步当前 MasterGo 画布时，只使用 Vibe MCP。工具是 `get_selection_node`、`get_screenshot`、`agent_update_node`、`agent_replace_node`、`agent_remove_node`、`submit_page_to_canvas`。旧 Magic MCP 只作为历史读取记录，不能代替 Vibe 改画布。
+2. 当前会话没有挂出这些工具时，用官方 `@mastergo/vibe-mcp` 连接本机 MasterGo 正在监听的端口，再调用上述工具。直连本地 `/api`、打开浏览器登录页或用 Computer Use 点画布，都不能写成已经使用 Vibe MCP。
 3. 优先从当前工作说明或 Drive 资料取得 MasterGo 短链或 `fileId + layerId`。只有 `page_id` 不能证明目标图层已读；MCP 返回空结构、文件在草稿箱、账号无团队项目权限或链接信息不足时，记录“未读到 UE”并补要图层链接或短链。
-4. 修改前必须先 `get_selection_node`。禁止把空内容、整页根节点或未读过的父帧交给 `agent_update_node`。新增控件沿用同页已有组件、字号和字体，改完用 `get_screenshot` 回读。
+4. 修改前必须先 `get_selection_node`。操作期间不要切换 MasterGo 文件或页面；焦点不一致时先回到目标页再读，不在错误页上改。禁止把空内容、整页根节点或未读过的父帧交给 `agent_update_node`。只改父容器自身时传空根节点保留子节点；改子结构必须传完整子树。不要把已有绝对定位的父容器改成自动布局。`accepted` 后等待画布处理完再回读；队列过长就等待重试。新增控件沿用同页已有组件、字号和字体，改完用 `get_screenshot` 回读。
 5. `.mastergo/` 本地缓存不是正式资料。
-6. token 只通过安全运行时配置注入，不写入表格、日志、知识库、项目文件或回复。
+6. token 只通过安全运行时配置注入，不写入表格、日志、知识库、项目文件或回复。Vibe MCP 不使用个人 token。
 
 ## 结论门槛
 
