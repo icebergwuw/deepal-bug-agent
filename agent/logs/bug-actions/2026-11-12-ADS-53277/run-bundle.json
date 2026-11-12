@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261112T183500+0800-ADS-53277",
+  "status": "comment_verified",
+  "started_at": "2026-11-12T18:35:00+08:00",
+  "completed_at": "2026-11-12T18:43:00+08:00",
+  "query_summary": "确认 ADS-53277 电池保温恢复出厂定义",
+  "action_log": "agent/logs/bug-actions/2026-11-12-ADS-53277/action-log.md",
+  "preflight_path": "agent/logs/bug-actions/2026-11-12-ADS-53277/preflight.json",
+  "preflight_sha256": "2fe41d8a7ceafced86e58356191c30857c63ac4463ec4ed65dc3c7453d83ee98",
+  "items": [
+    {
+      "jira_key": "ADS-53277",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-12-ADS-53277/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-12-ADS-53277/receipt.json",
+      "comment_receipt_sha256": "d6bbe089bf1a8c68a983e1d9cfade16c18dec2f813f6fe5acadbbe5b45631db1",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-12-ADS-53277/readback.json",
+      "comment_readback_sha256": "0763e0b69e9e46c87024c2bcc5302ab87c67e38d15220c26fbfc8ba5cf60a698"
+    }
+  ]
+}

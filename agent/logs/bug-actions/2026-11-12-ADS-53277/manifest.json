@@ -1,0 +1,217 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-53277",
+  "comment_causality": "客户预期恢复出厂后电池保温关闭，实车仍开启。定义只写了出厂默认关闭，没有写恢复出厂下发关闭。",
+  "run_context": {
+    "run_id": "bug-20261112T183500+0800-ADS-53277",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20261106201830835",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "ADS-53277 描述：P挡、保温开启、恢复出厂后查看，预期关闭，实际开启。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "V4.4 与 V4.5 电池保温和恢复出厂总则一致。C385 车辆设置 UE v7.7 只有 15 页，没有电池保温章节，不覆盖功能定义。",
+  "scope_checks": [
+    {
+      "source_id": "vs-v45",
+      "source": "8295平台化功能定义_车辆设置功能定义V4.5.docx",
+      "source_location": "4.14.18 电池保温功能设置；恢复车辆设置总则",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "C385-5 / 8295",
+      "trigger": "恢复出厂设置后查看电池保温",
+      "target_behavior": "出厂默认关闭；未操作发无请求并保持当前反馈；恢复出厂不改变对手件状态",
+      "match": "exact",
+      "reason": "2026-11-12 Google API 下载 V4.5 阅读。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-53277",
+      "source_location": "描述实际结果",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C385-5",
+      "trigger": "保温开启后恢复出厂",
+      "target_behavior": "电池保温仍开启",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照车辆设置功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改 UE，C385 UE v7.7 无此章节。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads53277",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-12T18:35:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53277"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复出厂后电池保温是否关闭"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "8295 车辆设置 电池保温"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "8295平台化功能定义_车辆设置功能定义V4.5.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "8295平台化功能定义_车辆设置功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A",
+          "title": "8295平台化功能定义_车辆设置功能定义V4.5.docx",
+          "url": "https://docs.google.com/document/d/19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu",
+          "title": "8295平台化功能定义_车辆设置功能定义V4.4.docx",
+          "url": "https://docs.google.com/document/d/177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "vs-v45"
+      ],
+      "searched_at": "2026-11-12",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53277"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恢复出厂后电池保温是否关闭"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "8295 车辆设置 电池保温"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "8295平台化功能定义_车辆设置功能定义V4.5.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "8295平台化功能定义_车辆设置功能定义"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads53277"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A",
+            "title": "8295平台化功能定义_车辆设置功能定义V4.5.docx",
+            "url": "https://docs.google.com/document/d/19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "version_family": "8295平台化功能定义_车辆设置功能定义",
+            "references": [],
+            "reason": "文档版本 V4.5，编写日期 2026-09-24，高于 V4.4。已读电池保温和恢复出厂总则。",
+            "source_ids": [
+              "vs-v45"
+            ]
+          },
+          {
+            "id": "177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu",
+            "title": "8295平台化功能定义_车辆设置功能定义V4.4.docx",
+            "url": "https://docs.google.com/document/d/177ZoyG8fj-fCVq-0NAmaeojhBNgld6Mu/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "version_family": "8295平台化功能定义_车辆设置功能定义",
+            "references": [],
+            "reason": "V4.4 编写日期 2026-09-10，版本号低于 V4.5。同段已核对，结论一致，不另选。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "8295平台化功能定义_车辆设置功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "receipt-ads53277"
+            ],
+            "selected_candidate_id": "19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A",
+            "selection_reason": "同系列只有 V4.4 和 V4.5。V4.5 编写日期更新，选它。两版同段一致。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "电池保温开启后执行恢复出厂",
+    "target_state": "保温状态保持恢复前的反馈，不因恢复出厂被关掉",
+    "intent_function_signal": "CdcBattInsulSwitchReq / TboxBattInsulSwitchStatus",
+    "ui_tts_vehicle_behavior": "开关继续按 Tbox 反馈显示开启",
+    "boundary": "只覆盖恢复出厂，不改变出厂默认关闭",
+    "source_ids": [
+      "vs-v45"
+    ]
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "测试",
+    "text": "结论：C385-5 电池保温开启后恢复出厂仍保持开启，符合当前定义，不按缺陷改。8295平台化车辆设置功能定义 V4.5 4.14.18 只写电池保温出厂默认为关闭；未操作时周期发送 CdcBattInsulSwitchReq=0x0 无请求，并保持当前显示。关闭只在用户设置关闭时发 3 帧 0x1，再按 TboxBattInsulSwitchStatus 显示。总则第 5 条写恢复车辆设置等同恢复出厂，不应引起控制器其他功能状态变化。本章没有把恢复出厂写成关闭触发。V4.4 同段一致。\n依据：[8295车辆设置功能定义V4.5 4.14.18|https://drive.google.com/file/d/19DOKnZKW2CPnodRWiy_S_zLfcK3SCt3A/view]。\n处理：按符合定义关闭，测试把预期从“恢复出厂后保温关闭”改成“恢复出厂不改变已开启的保温状态”。测试处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  }
+}
