@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.62.0-trial.1`
+- 当前版本：`v1.63.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-11-12`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -10,6 +10,33 @@
 
 
 
+
+
+## v1.63.0-trial.1 — 2026-11-12
+
+### 试行内容
+
+- 长马国内文言直接给建议交研发，不绑翻译总票，不关闭。
+- 海外 0507、0109、0904 只提建议交中科，绑定 `agent/context.md` 的当前总票后 workaround 关闭。
+- 当前总票改为 `HUR-87144`。执行前仍要回读，不写成永久票号。
+- 0408 文言回复当前暂停导入，转给张泓洋 `hongyang.zhang`。不绑总票，不关闭。
+
+### 修改原因
+
+- 2026-11-12 吴优确认长马文言按国内、海外三个分支和 0408 分开处理。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/product-kb/rules/bug-to-requirement.md`
+- `agent/product-kb/modules/multilingual-key.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-11-12 回读 `HUR-87144` 仍是待办，经办人 `you.wu`。张泓洋的 Jira 用户是 `hongyang.zhang`。
 
 
 ## v1.62.0-trial.1 — 2026-11-12
