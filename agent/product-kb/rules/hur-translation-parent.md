@@ -20,9 +20,10 @@
 
 ## Text ID 查表范围
 
-- 海外 LanguageList，也就是 Text ID 表，查当前 Key、中文、模块和译文时只看 `01`–`21`。
-- 不看 `All Key`。`All Key` 不能用来判断 Key 是否存在、译文是否正确，也不能用来定模块。
-- `All Key` 有而行号页 `01`–`21` 没有，按当前 Text ID 未收录。
+- 海外 LanguageList，也就是 Text ID 表，查当前 Key、中文、模块和译文时只看 `01`–`21`。一定不看 `All Key`。
+- 也不看 `UE_list`、`问题确认`、`变更履历`、Key 修改方案或其他记录页来判断当前译文。这些页不能证明 Key 存在、译文正确或模块归属。
+- `All Key` 有而 `01`–`21` 没有，按当前 Text ID 未收录。
+- 当前表只记录在 `agent/context.md`。2026-11-12 吴优指定最新表是 `J90A_海外LanguageList_V1.2.2_261106_无图.xlsx`。用户给出新文件后先改 `agent/context.md`，不得沿用旧文件。
 - 不把这条套到另一本 `J90A_AllKey_静态补齐多语言` 工作簿。那本表不是这张海外 LanguageList。
 
 ## 两件事分开
