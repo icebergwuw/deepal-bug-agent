@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.60.0-trial.1`
+- 当前版本：`v1.61.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-11-10`
+- 生效日期：`2026-11-12`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`。变更表建票使用 `agent/skills/deepal-change-sheet-story/SKILL.md`。长马文言清单使用 `agent/skills/translation-key-excel-organizer/SKILL.md`。UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -11,6 +11,33 @@
 
 
 
+
+## v1.61.0-trial.1 — 2026-11-12
+
+### 试行内容
+
+- 取消「不沿用原票 Epic」。
+- 目标项目有未关闭、标题正好是 `ECR_待签署` 的 Epic 时，仍优先写这张 Epic。
+- 用户指定了同项目参考票，或目标项目没有这张 Epic 时，沿用参考票 Epic，不再因此停下。
+- 仍不跨项目套用，不把 `SD-11` 当成 `ECR_待签署`，不改已有票 Epic。
+
+### 修改原因
+
+- 2026-11-12 吴优指出不能沿用原票 Epic 这条不应拦住建票，要求取消这一条。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/workflows/review.md`
+- `agent/product-kb/rules/bug-to-requirement.md`
+- `agent/product-kb/rules/hur-translation-parent.md`
+- `agent/skills/deepal-change-sheet-story/SKILL.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-11-12 回读 HUR-87169：故事，经办人朱雪豪，Epic 为同项目 HUR-2，车型 J90A/EL。HUR 仍没有 ECR_待签署。
 
 ## v1.60.0-trial.1 — 2026-11-10
 

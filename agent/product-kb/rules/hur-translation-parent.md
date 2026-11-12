@@ -32,7 +32,7 @@
 
 - 关票是一定的。本次已判定的原 Bug 都要评论、关联当次 story，再按 Workaround / bug转需求关闭。不改原 Bug 经办人。
 - 转需求 story 不按 Bug 张数新建。未传递给开发的 story 经办人是 `you.wu`，复用，不新建。已传递给开发，经办人不再是 `you.wu`，才新建，新建后的经办人仍是 `you.wu`。
-- 新建 story 的 Epic Link 按 `AGENTS.md` 写该项目未关闭的 `ECR_待签署`。2026-11-10 回读 HUR 没有这张 Epic。需要新建 HUR story 时先停下说明，不套其他项目的 Epic，也不改已复用 story 的 Epic。
+- 新建 story 的 Epic Link 按 `AGENTS.md`。2026-11-10 回读 HUR 没有 `ECR_待签署`。2026-11-12 起，用户指定了同项目参考票时沿用该票 Epic，不再因此停下。不套其他项目的 Epic，也不改已复用 story 的 Epic。
 - 长马文言和长马语料都用这个 story 判断。
 - 不因为经办人是吴优，就关闭或新建吴优名下全部票。关的是本次已判定的原 Bug，不关 story。
 

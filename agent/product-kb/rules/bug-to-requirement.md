@@ -23,9 +23,9 @@
 
 ## Epic
 
-- 新建的转需求 story 按 `AGENTS.md` 写 Epic Link：只用该项目未关闭、标题正好是 `ECR_待签署` 的 Epic。
-- 不沿用原 Bug 的 Epic，不套其他项目的票号。复用已有 story 时不改它的 Epic。
-- 目标项目没有这张未关闭 Epic 时，先停下说明，不新建。
+- 新建的转需求 story 按 `AGENTS.md` 写 Epic Link。目标项目有未关闭、标题正好是 `ECR_待签署` 的 Epic 时用它。
+- 2026-11-12 吴优取消「不沿用原票 Epic」。同项目原票或参考票的 Epic 可以沿用。不套其他项目的票号。复用已有 story 时不改它的 Epic。
+- 既没有这张 Epic，也没有同项目参考 Epic 时，先停下说明，不新建。
 
 ## 需求描述必须包含
 
