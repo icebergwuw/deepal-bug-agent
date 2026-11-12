@@ -1,6 +1,6 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.61.0-trial.1`
+- 当前版本：`v1.62.0-trial.1`
 - 状态：`trial`
 - 生效日期：`2026-11-12`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
@@ -11,6 +11,28 @@
 
 
 
+
+## v1.62.0-trial.1 — 2026-11-12
+
+### 试行内容
+
+- 长马标准语料只改 Drive 上的在线 xlsx。
+- 用 Drive API 下载、修改、上传回原文件并回读。不改本地下载件代替。
+- 这是 Office 文件，Sheets API 不能直接改单元格。
+
+### 修改原因
+
+- 2026-11-12 吴优指出已有 Google API，却只改了本地下载件，线上变更履历看不到。
+
+### 影响文件
+
+- `AGENTS.md`
+- `agent/context.md`
+- `agent/rules-version.md`
+
+### 验证案例
+
+- 2026-11-12 Drive API 回读 `1ny5OwV4Jrnjl1xFKxV-O16YiAWuv8L--`，变更履历第 2 行是 V1.3，英语第 380 行是 Open the electric spoiler。
 
 ## v1.61.0-trial.1 — 2026-11-12
 
