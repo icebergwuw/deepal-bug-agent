@@ -11,3 +11,5 @@
   - 一代 `CarPlay` 9-10：`siri_voice_channel_used_localvr_tip`、`voice_disable_tip_by_cp_call`。
 - 收集表变更记录 E13、E15 已标「已导入」，E15 橙色已清。
 - 未导入：收集表里模块名对不上、Key 写成中文、标了待校验，或早于正式表后续修订的历史行。不整表覆盖。
+
+- 2026-11-13 补充：按吴优确认，写入在研 `AndesCarModel-D587` 第149-150行 `settings_system_reset_charging_tip`、`settings_system_reset_discharging_tip`。只写该页已有的 10 个语种。收集表变更记录第6行已标已导入。3D 缺的 `,CA24A68C...` 和 `,D59C03DB...` 收集表没有译文行，未写。
