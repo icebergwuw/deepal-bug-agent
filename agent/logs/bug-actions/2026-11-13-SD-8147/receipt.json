@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SD-8147",
+  "phase": "d",
+  "status": "待确认",
+  "decision_text_sha256": "1f8c6f3ee89659557bea518cb053fcc5eb06bb997be332714be72158ee6818e8",
+  "manifest_sha256": "382cd6ea0d632d90eea75b87e6b88cef7be4b296445e0e839ab5b83c370a7036",
+  "authorized_comment": "结论：C673-G 欧洲增程翻译清单里没有「手机遗忘提醒」。现行 C673-G/D587G翻译清单261015 全文没有「遗忘」。Drive 同名文档是 MobileEquipWirelsChrgForHmiCen 信号说明，没有 C673-G 界面文言，不能当作这句的正式定义。\n依据：[C673-G/D587G翻译清单261015|https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit]。\n处理：车辆设置研发先回 C673-G 欧洲增程配置字是否搭载手机遗忘提醒。搭载再补翻译，不搭载就按不是缺翻译关闭。车辆设置研发处理。"
+}

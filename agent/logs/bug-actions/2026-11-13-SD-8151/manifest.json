@@ -1,0 +1,173 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-8151",
+  "comment_causality": "翻译表没有油电混合。还没读到欧洲增程必须显示这句的功能定义。",
+  "run_context": {
+    "run_id": "bug-20261113T163500+0800-SD-8151",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "翻译表没有油电混合。还没读到欧洲增程必须显示这句的功能定义。",
+  "scope_checks": [
+    {
+      "source_id": "trans-list",
+      "source": "C673-G/D587G翻译清单261015.xlsx",
+      "source_location": "全文检索，无油电混合",
+      "source_type": "special_prd",
+      "role": "formal_target",
+      "project_model": "C673-G",
+      "trigger": "翻译表没有油电混合。还没读到欧洲增程必须显示这句的功能定义。",
+      "target_behavior": "现行翻译清单没有这句",
+      "match": "gap",
+      "material": true,
+      "next_action": "确认欧洲增程是否搭载油电混合后再补翻译。",
+      "reason": "2026-11-13 全文检索 shared strings，没有命中。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "SD-8151",
+      "source_location": "描述",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G",
+      "trigger": "翻译表没有油电混合。还没读到欧洲增程必须显示这句的功能定义。",
+      "target_behavior": "测试认为翻译表缺失",
+      "match": "exact",
+      "reason": "票面现象。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照现行翻译清单。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改 UE。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-sd-8151",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8151"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "翻译表没有油电混合。还没读到欧洲增程必须显示这句的功能定义。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G/D587G翻译清单261015.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+          "title": "C673-G/D587G翻译清单261015.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "trans-list"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8151"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "翻译表没有油电混合。还没读到欧洲增程必须显示这句的功能定义。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G/D587G翻译清单261015.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-sd-8151"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+            "title": "C673-G/D587G翻译清单261015.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit",
+            "disposition": "read",
+            "references": [],
+            "reason": "现行翻译清单已全文检索。",
+            "source_ids": [
+              "trans-list"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "车辆设置研发",
+    "text": "结论：C673-G 欧洲增程翻译清单里没有「油电混合」，也没有同名功能定义。现行 C673-G/D587G翻译清单261015 全文没有「油电混合」「油电」「混动」。同表有「纯电优先」「智能模式」，不能据此补出油电混合的整组翻译。Drive 按文件名也没有油电混合功能定义。\n依据：[C673-G/D587G翻译清单261015|https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit]。\n处理：车辆设置研发先回欧洲增程配置字是否搭载油电混合。搭载再补翻译，不搭载就按不是缺翻译关闭。车辆设置研发处理。"
+  }
+}
