@@ -1,0 +1,8 @@
+{
+  "comment_id": "8881732",
+  "body": "结论：D587-G 欧亚快捷界面的车窗、全开、全关应按复数改俄语。现行 C673-G/D587G翻译清单261015 的 BigsurCarSettings 里，car_window「车窗」是「Окно」，car_settings_window_open「全开」是「Полностью открыто」，car_settings_window_close「全关」是「Полностью закрыто」。这三个控件作用的是多个车窗，单数和客户预期不一致。表里另有复数「Окна」，不能用单数句覆盖这里。\n依据：[C673-G/D587G翻译清单261015 车窗俄语|https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit]。\n处理：这三个 Key 的俄语改成「Окна」「Полностью открыты」「Полностью закрыты」。不要改描述单个车窗状态的句子。翻译处理。\n\n（AI Generated）\n\n!BEO-10339-source.png|thumbnail!",
+  "transitioned": false,
+  "status": "待办",
+  "assignee": "you.wu",
+  "attachment_id": "4683360"
+}

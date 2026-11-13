@@ -1,0 +1,198 @@
+{
+  "schema_version": 5,
+  "jira_key": "BEO-10339",
+  "comment_causality": "俄语快捷车窗、全开、全关用了单数，客户预期是复数。",
+  "run_context": {
+    "run_id": "bug-20261113T162500+0800-BEO-10339",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "俄语快捷车窗、全开、全关用了单数，客户预期是复数。",
+  "scope_checks": [
+    {
+      "source_id": "trans-list",
+      "source": "C673-G/D587G翻译清单261015.xlsx",
+      "source_location": "BigsurCarSettings car_window、car_settings_window_open、car_settings_window_close",
+      "source_type": "special_prd",
+      "role": "formal_target",
+      "project_model": "C673-G/D587-G",
+      "trigger": "俄语快捷车窗、全开、全关用了单数，客户预期是复数。",
+      "target_behavior": "快捷车窗控制多个车窗，俄语用复数",
+      "match": "exact",
+      "reason": "2026-11-13 Google API 下载现行翻译清单并读取对应 sheet。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "BEO-10339",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G/D587-G",
+      "trigger": "俄语快捷车窗、全开、全关用了单数，客户预期是复数。",
+      "target_behavior": "俄语快捷界面显示单数。",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照现行翻译清单。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音执行。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改 UE。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-beo-10339",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "BEO-10339"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "俄语快捷车窗、全开、全关用了单数，客户预期是复数。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G/D587G翻译清单261015.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+          "title": "C673-G/D587G翻译清单261015.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e",
+          "title": "C673-G/D587G翻译清单261015_新版.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "trans-list"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "BEO-10339"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "俄语快捷车窗、全开、全关用了单数，客户预期是复数。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G/D587G翻译清单261015.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-beo-10339"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+            "title": "C673-G/D587G翻译清单261015.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit",
+            "disposition": "read",
+            "references": [],
+            "reason": "2026-11-12 修改时间最新，已读决定性单元格。",
+            "source_ids": [
+              "trans-list"
+            ]
+          },
+          {
+            "id": "1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e",
+            "title": "C673-G/D587G翻译清单261015_新版.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e/edit",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "2026-11-04 文件，修改时间早于现行表，不作为本轮依据。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "俄语快捷车窗、全开、全关用了单数，客户预期是复数。",
+    "target_state": "快捷车窗控制多个车窗，俄语用复数",
+    "intent_function_signal": "不适用，不是语音功能点。",
+    "ui_tts_vehicle_behavior": "快捷车窗控制多个车窗，俄语用复数",
+    "boundary": "只覆盖本票这句文言。",
+    "source_ids": [
+      "trans-list"
+    ]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "翻译",
+    "text": "结论：D587-G 欧亚快捷界面的车窗、全开、全关应按复数改俄语。现行 C673-G/D587G翻译清单261015 的 BigsurCarSettings 里，car_window「车窗」是「Окно」，car_settings_window_open「全开」是「Полностью открыто」，car_settings_window_close「全关」是「Полностью закрыто」。这三个控件作用的是多个车窗，单数和客户预期不一致。表里另有复数「Окна」，不能用单数句覆盖这里。\n依据：[C673-G/D587G翻译清单261015 车窗俄语|https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit]。\n处理：这三个 Key 的俄语改成「Окна」「Полностью открыты」「Полностью закрыты」。不要改描述单个车窗状态的句子。翻译处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  }
+}

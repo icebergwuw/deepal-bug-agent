@@ -1,0 +1,217 @@
+{
+  "schema_version": 5,
+  "jira_key": "SM-18615",
+  "comment_causality": "恒温座舱开启后点击活体检测，界面先开再关。定义要求活体检测打开后关闭恒温座舱，不是禁止打开活体检测。",
+  "run_context": {
+    "run_id": "bug-20261113T100000+0800-SM-18615",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20261107181359253",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "SM-18615 描述含车型、版本、前置、步骤、预期、实际和视频。"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "恒温座舱开启后点击活体检测，界面先开再关。定义要求活体检测打开后关闭恒温座舱，不是禁止打开活体检测。",
+  "scope_checks": [
+    {
+      "source_id": "scene-v50",
+      "source": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx",
+      "source_location": "恒温座舱与活体检测互斥",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "SM-18615",
+      "trigger": "恒温座舱开启后点击活体检测，界面先开再关。定义要求活体检测打开后关闭恒温座舱，不是禁止打开活体检测。",
+      "target_behavior": "恒温座舱开启时活体检测从关跳到开，应关闭恒温座舱",
+      "match": "exact",
+      "reason": "2026-11-13 Google API 阅读。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "SM-18615",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "SM-18615",
+      "trigger": "恒温座舱开启后点击活体检测，界面先开再关。定义要求活体检测打开后关闭恒温座舱，不是禁止打开活体检测。",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点配置。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改 UE，C385 UE v7.7 无此章节。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-sm-18615",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T10:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18615"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恒温座舱开启后点击活体检测，界面先开再关。定义要求活体检测打开后关闭恒温座舱，不是禁止打开活体检测。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        }
+      ],
+      "results": [
+        {
+          "id": "1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx",
+          "url": "https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+          "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+          "url": "https://drive.google.com/file/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "scene-v50"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18615"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "恒温座舱开启后点击活体检测，界面先开再关。定义要求活体检测打开后关闭恒温座舱，不是禁止打开活体检测。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-sm-18615"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx",
+            "url": "https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view",
+            "disposition": "read",
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义",
+            "references": [],
+            "reason": "同系列最新适用版本，已读决定性段落。",
+            "source_ids": [
+              "scene-v50"
+            ]
+          },
+          {
+            "id": "1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk",
+            "title": "C385_C673_功能描述_智能情景模式功能定义V4.9.docx",
+            "url": "https://drive.google.com/file/d/1u0COEWf2R_Vlk-uuPrGw4lqELEWxszSk/view",
+            "disposition": "excluded",
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义",
+            "references": [],
+            "reason": "V4.9 低于当前文件修订记录 V5.0。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385_C673_功能描述_智能情景模式功能定义",
+            "status": "enumerated",
+            "receipt_ids": [
+              "receipt-sm-18615"
+            ],
+            "selected_candidate_id": "1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9",
+            "selection_reason": "同系列选最新适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "恒温座舱开启后点击活体检测，界面先开再关。定义要求活体检测打开后关闭恒温座舱，不是禁止打开活体检测。",
+    "target_state": "恒温座舱开启时活体检测从关跳到开，应关闭恒温座舱",
+    "intent_function_signal": "恒温座舱与活体检测互斥",
+    "ui_tts_vehicle_behavior": "恒温座舱开启时活体检测从关跳到开，应关闭恒温座舱",
+    "boundary": "只覆盖本票触发",
+    "source_ids": [
+      "scene-v50"
+    ]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "情景模式研发",
+    "text": "结论：C673 EU 恒温座舱开启后点击活体检测，不应先显示开启再跳回关闭。测试预期“无法开启活体检测”不成立。V5.0 写活体检测已开启时开恒温座舱才要确认；恒温座舱已开启时，活体检测状态从关跳到开，应关闭恒温座舱。实车在恒温座舱期间没有回传开启，界面本地先写成开启再跳回关闭，恒温座舱仍开着。\n依据：[智能情景模式功能定义V5.0 恒温座舱互斥|https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view]。\n处理：恒温座舱开启时用户打开活体检测，应关闭恒温座舱并让活体检测开启，界面不要先假开。情景模式研发处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  }
+}

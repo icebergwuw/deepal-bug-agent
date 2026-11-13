@@ -1,0 +1,211 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-86738",
+  "comment_causality": "测试预期进 360 再按 Home 洗车退出。定义只写用户点击退出。",
+  "run_context": {
+    "run_id": "bug-20261113T100000+0800-HUR-86738",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "测试预期进 360 再按 Home 洗车退出。定义只写用户点击退出。",
+  "scope_checks": [
+    {
+      "source_id": "j90a-wash",
+      "source": "J90A_洗车模式_功能定义文档_V1.0.docx",
+      "source_location": "3.1.1 退出情况",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "HUR-86738",
+      "trigger": "测试预期进 360 再按 Home 洗车退出。定义只写用户点击退出。",
+      "target_behavior": "只有用户点击退出才退出洗车模式",
+      "match": "exact",
+      "reason": "2026-11-13 Google API 阅读。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-86738",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "HUR-86738",
+      "trigger": "测试预期进 360 再按 Home 洗车退出。定义只写用户点击退出。",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点配置。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改 UE，C385 UE v7.7 无此章节。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-hur-86738",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T10:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86738"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "测试预期进 360 再按 Home 洗车退出。定义只写用户点击退出。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A_洗车模式_功能定义文档_V1.0.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_洗车模式_功能定义文档_V1.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_洗车模式_功能定义文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "1-WvMiM6iyj-B7fhKvKXnEnHSHS6odbiE",
+          "title": "J90A_洗车模式_功能定义文档_V1.0.docx",
+          "url": "https://drive.google.com/file/d/1-WvMiM6iyj-B7fhKvKXnEnHSHS6odbiE/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "id": "1_ubJIggwHp2CRGTtxMYIW9MxZYX9PzoC",
+          "title": "J90A_洗车模式PRD_V01_20230524.docx",
+          "url": "https://drive.google.com/file/d/1_ubJIggwHp2CRGTtxMYIW9MxZYX9PzoC/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "j90a-wash"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86738"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "测试预期进 360 再按 Home 洗车退出。定义只写用户点击退出。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A_洗车模式_功能定义文档_V1.0.docx"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_洗车模式_功能定义文档_V1.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_洗车模式_功能定义文档"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-hur-86738"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1-WvMiM6iyj-B7fhKvKXnEnHSHS6odbiE",
+            "title": "J90A_洗车模式_功能定义文档_V1.0.docx",
+            "url": "https://drive.google.com/file/d/1-WvMiM6iyj-B7fhKvKXnEnHSHS6odbiE/view",
+            "disposition": "read",
+            "version_family": "J90A_洗车模式_功能定义文档",
+            "references": [],
+            "reason": "同系列最新适用版本，已读决定性段落。",
+            "source_ids": [
+              "j90a-wash"
+            ]
+          },
+          {
+            "id": "1_ubJIggwHp2CRGTtxMYIW9MxZYX9PzoC",
+            "title": "J90A_洗车模式PRD_V01_20230524.docx",
+            "url": "https://drive.google.com/file/d/1_ubJIggwHp2CRGTtxMYIW9MxZYX9PzoC/view",
+            "disposition": "excluded",
+            "version_family": "J90A_洗车模式_功能定义文档",
+            "references": [],
+            "reason": "2023 年旧稿，版本低于 V1.0。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_洗车模式_功能定义文档",
+            "status": "enumerated",
+            "receipt_ids": [
+              "receipt-hur-86738"
+            ],
+            "selected_candidate_id": "1-WvMiM6iyj-B7fhKvKXnEnHSHS6odbiE",
+            "selection_reason": "同系列选最新适用版本。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "测试预期进 360 再按 Home 洗车退出。定义只写用户点击退出。",
+    "target_state": "只有用户点击退出才退出洗车模式",
+    "intent_function_signal": "3.1.1 退出情况",
+    "ui_tts_vehicle_behavior": "只有用户点击退出才退出洗车模式",
+    "boundary": "只覆盖本票触发",
+    "source_ids": [
+      "j90a-wash"
+    ]
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "测试",
+    "text": "结论：J90A EL 洗车模式开着时，方控进 360 再按 Home，洗车模式不退出，符合当前定义，不按缺陷改。J90A 洗车模式功能定义 V1.0 退出情况只写用户点击退出。进 360 或其他页面不是退出条件。同系列还有 2023 年 PRD V01，V1.0 更新。\n依据：[J90A洗车模式功能定义V1.0 退出|https://drive.google.com/file/d/1-WvMiM6iyj-B7fhKvKXnEnHSHS6odbiE/view]。\n处理：按符合定义关闭，测试把预期从“进 360 再按 Home 就退出洗车”改成“只有点击退出才退出”。测试处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  }
+}

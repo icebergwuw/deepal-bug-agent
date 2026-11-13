@@ -1,0 +1,198 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-8203",
+  "comment_causality": "瑞典语回收模式换行。现行表有瑞典语，换行写在单元格里。",
+  "run_context": {
+    "run_id": "bug-20261113T162500+0800-SD-8203",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "瑞典语回收模式换行。现行表有瑞典语，换行写在单元格里。",
+  "scope_checks": [
+    {
+      "source_id": "trans-list",
+      "source": "C673-G/D587G翻译清单261015.xlsx",
+      "source_location": "BigsurEnergy recycle_mode 瑞典语列",
+      "source_type": "special_prd",
+      "role": "formal_target",
+      "project_model": "C673-G/D587-G",
+      "trigger": "瑞典语回收模式换行。现行表有瑞典语，换行写在单元格里。",
+      "target_behavior": "瑞典语应是单行，不应在单元格内把 läge 拆到下一行",
+      "match": "exact",
+      "reason": "2026-11-13 Google API 下载现行翻译清单并读取对应 sheet。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "SD-8203",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "C673-G/D587-G",
+      "trigger": "瑞典语回收模式换行。现行表有瑞典语，换行写在单元格里。",
+      "target_behavior": "实车瑞典语回收模式换行。",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照现行翻译清单。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音执行。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改 UE。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-sd-8203",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:20:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8203"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "瑞典语回收模式换行。现行表有瑞典语，换行写在单元格里。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G/D587G翻译清单261015.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+          "title": "C673-G/D587G翻译清单261015.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e",
+          "title": "C673-G/D587G翻译清单261015_新版.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e/edit",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "trans-list"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8203"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "瑞典语回收模式换行。现行表有瑞典语，换行写在单元格里。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "C673-G/D587G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673-G/D587G翻译清单261015.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C673-G/D587G翻译清单"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-sd-8203"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y",
+            "title": "C673-G/D587G翻译清单261015.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit",
+            "disposition": "read",
+            "references": [],
+            "reason": "2026-11-12 修改时间最新，已读决定性单元格。",
+            "source_ids": [
+              "trans-list"
+            ]
+          },
+          {
+            "id": "1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e",
+            "title": "C673-G/D587G翻译清单261015_新版.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1fSVjH_BN5AyO75o95NMUgQ8qJaoPz29e/edit",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "2026-11-04 文件，修改时间早于现行表，不作为本轮依据。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "瑞典语回收模式换行。现行表有瑞典语，换行写在单元格里。",
+    "target_state": "瑞典语应是单行，不应在单元格内把 läge 拆到下一行",
+    "intent_function_signal": "不适用，不是语音功能点。",
+    "ui_tts_vehicle_behavior": "瑞典语应是单行，不应在单元格内把 läge 拆到下一行",
+    "boundary": "只覆盖本票这句文言。",
+    "source_ids": [
+      "trans-list"
+    ]
+  },
+  "decision": {
+    "status": "可转研发",
+    "owner": "翻译",
+    "text": "结论：C673-G3/G5 瑞典语「回收模式」换行，是现行翻译表把瑞典语拆成两行，不是缺瑞典语。C673-G/D587G翻译清单261015 的 BigsurEnergy，key recycle_mode，中文是「回收模式」，瑞典语单元格是「Återvinning」换行「läge」。同表瑞典语列存在。\n依据：[C673-G/D587G翻译清单261015 recycle_mode|https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit]。\n处理：瑞典语改成不拆词的单行，建议用 Regenerering，导入后再看快捷界面。翻译处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  }
+}

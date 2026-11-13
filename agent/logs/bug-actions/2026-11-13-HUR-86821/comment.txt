@@ -1,0 +1,3 @@
+结论：J90A ER 27cy 收到 BMS_BattPlsHeagStsFb=0x2 时没有“中止加热”按钮，不按 EU PI 缺陷改。动力电池脉冲加热架构写加热中应有中止加热，同时写是否搭载由配置表或项目组输入确认。已导入的是 EU PI 需求 HUR-69468，实现说明只覆盖 EU_PI、EL 及其 27cy。没有看到 ER 的导入需求。
+依据：[动力电池脉冲加热架构 加热中|https://drive.google.com/file/d/1I6JHfawbu-qngrVB63kLn7ZxdmtWv4lH/view]。
+处理：按当前没有 ER 导入需求关闭，测试不要用 EU PI 的中止加热按钮验收 ER。测试处理。

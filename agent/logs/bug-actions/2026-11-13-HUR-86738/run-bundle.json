@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261113T100000+0800-HUR-86738",
+  "status": "comment_verified",
+  "started_at": "2026-11-13T18:00:00+08:00",
+  "completed_at": "2026-11-13T16:16:35+08:00",
+  "query_summary": "评论未处理故障 HUR-86738",
+  "action_log": "agent/logs/bug-actions/2026-11-13-HUR-86738/action-log.md",
+  "preflight_path": "agent/logs/bug-actions/2026-11-13-uncommented-batch/preflight.json",
+  "preflight_sha256": "883f28468fee6971884456fd53e38d197d323aa5df6b6c49d54cae4ce3154898",
+  "items": [
+    {
+      "jira_key": "HUR-86738",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-13-HUR-86738/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-13-HUR-86738/receipt.json",
+      "comment_receipt_sha256": "623aeff44cbb8d9981656031a9872c6082bf8db28f5b1fc9b44cc425548f1155",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-13-HUR-86738/readback.json",
+      "comment_readback_sha256": "d2b41401ce829db43342b8b791d18af12144203ce6015a6028b4b696d45d82ff"
+    }
+  ]
+}

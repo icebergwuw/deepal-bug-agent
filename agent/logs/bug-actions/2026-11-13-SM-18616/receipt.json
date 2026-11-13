@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SM-18616",
+  "phase": "d",
+  "status": "可转研发",
+  "decision_text_sha256": "2b55df7a1e58e3847b3c1594cba98ec40e264e9a8aaf62f7c8e940244b3f7ccc",
+  "manifest_sha256": "13964d0cbd23fc17249b4bda07b4f2362c37e8c86479a5104a860fcd09de5dcb",
+  "authorized_comment": "结论：C673 EU 洗车中手动展开后视镜后，遥控闭锁退出时后视镜应折叠，现在不折叠是缺陷。智能情景模式功能定义 V5.0 写洗车开启后后视镜自动折叠，用户可再切换；退出只要求发送 CdcAutoWashMod=0x0 并恢复雷达，没有写退出时下发展开。电源非 ON 会退出洗车模式。后视镜自动折叠已打开时，闭锁折叠不由洗车退出覆盖。日志显示退出时情景模式又下发 RearViewMirrorFold/Set=0。\n依据：[智能情景模式功能定义V5.0 洗车退出|https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view]。\n处理：洗车退出时不要下发后视镜展开，闭锁折叠交给后视镜自动折叠。情景模式研发处理。"
+}

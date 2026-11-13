@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SM-18465",
+  "phase": "d",
+  "status": "可转研发",
+  "decision_text_sha256": "7e89dad5581f45db8ef33aa413a2f516effae94717445d4adcd05e04cb7b878f",
+  "manifest_sha256": "e2b586600ae2c39d3b59c92bcc6f59d1285e3e992564a515d4ecc5e3a65b2b95",
+  "authorized_comment": "结论：C673-G3 语音打开恒温座舱时，活体检测开启应只确认一次，确认后直接打开。V5.0 只要求一次确认：“恒温座舱功能开启时，活体检测功能将不可用，是否确认开启”。确认后应开启恒温座舱。现在语音先播一次，应用又弹窗重播，语音确认点不到后出现的弹窗。\n依据：[智能情景模式功能定义V5.0 恒温座舱确认|https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view]。\n处理：保留一次确认。语音确认后直接打开，应用不要再弹第二次。情景模式研发处理。"
+}

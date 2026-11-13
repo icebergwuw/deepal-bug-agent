@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SD-8203",
+  "phase": "d",
+  "status": "可转研发",
+  "decision_text_sha256": "b04cae3e437b038384a81d7ca26a3cfc8d39991de2e8fa5fd251053e37117b9f",
+  "manifest_sha256": "7252915e6d6d53d401f97bfae35bd4308733da4762869322e12e4ef58ff85482",
+  "authorized_comment": "结论：C673-G3/G5 瑞典语「回收模式」换行，是现行翻译表把瑞典语拆成两行，不是缺瑞典语。C673-G/D587G翻译清单261015 的 BigsurEnergy，key recycle_mode，中文是「回收模式」，瑞典语单元格是「Återvinning」换行「läge」。同表瑞典语列存在。\n依据：[C673-G/D587G翻译清单261015 recycle_mode|https://docs.google.com/spreadsheets/d/1Hv2_mKeL0JqcSr8AaMXKnSDhjHTcDN3Y/edit]。\n处理：瑞典语改成不拆词的单行，建议用 Regenerering，导入后再看快捷界面。翻译处理。"
+}

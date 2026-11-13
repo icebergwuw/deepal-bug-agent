@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86738",
+  "phase": "d",
+  "status": "可关闭",
+  "decision_text_sha256": "69b48714c86ab276c6bbc707a08db556a55709b15f4b6c91f8493dd2eecdc251",
+  "manifest_sha256": "cdfa6cc571927f0add85da3fa551d35f7e6533e673047ada8cd6343a5566d712",
+  "authorized_comment": "结论：J90A EL 洗车模式开着时，方控进 360 再按 Home，洗车模式不退出，符合当前定义，不按缺陷改。J90A 洗车模式功能定义 V1.0 退出情况只写用户点击退出。进 360 或其他页面不是退出条件。同系列还有 2023 年 PRD V01，V1.0 更新。\n依据：[J90A洗车模式功能定义V1.0 退出|https://drive.google.com/file/d/1-WvMiM6iyj-B7fhKvKXnEnHSHS6odbiE/view]。\n处理：按符合定义关闭，测试把预期从“进 360 再按 Home 就退出洗车”改成“只有点击退出才退出”。测试处理。"
+}

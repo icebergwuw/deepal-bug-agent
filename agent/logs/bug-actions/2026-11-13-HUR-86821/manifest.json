@@ -1,0 +1,191 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-86821",
+  "comment_causality": "ER 27cy 发加热中信号没有中止加热按钮。已导入需求是 EU PI，不是 ER。",
+  "run_context": {
+    "run_id": "bug-20261113T100000+0800-HUR-86821",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-69468",
+        "relationship": "EU PI 导入需求",
+        "outcome": "只覆盖 EU PI，不覆盖 ER",
+        "read": true
+      }
+    ]
+  },
+  "conflict_resolution": "ER 27cy 发加热中信号没有中止加热按钮。已导入需求是 EU PI，不是 ER。",
+  "scope_checks": [
+    {
+      "source_id": "pulse-arch",
+      "source": "动力电池脉冲加热功能系统架构设计文档",
+      "source_location": "1.1 适用范围；加热中界面",
+      "source_type": "prd",
+      "role": "formal_target",
+      "project_model": "HUR-86821",
+      "trigger": "ER 27cy 发加热中信号没有中止加热按钮。已导入需求是 EU PI，不是 ER。",
+      "target_behavior": "功能按项目输入搭载；ER 未导入则不显示中止加热",
+      "match": "exact",
+      "reason": "2026-11-13 Google API 阅读。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-86821",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "HUR-86821",
+      "trigger": "ER 27cy 发加热中信号没有中止加热按钮。已导入需求是 EU PI，不是 ER。",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点配置。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改 UE，C385 UE v7.7 无此章节。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-hur-86821",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T10:00:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86821"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "ER 27cy 发加热中信号没有中止加热按钮。已导入需求是 EU PI，不是 ER。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "动力电池脉冲加热功能系统架构设计文档"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "动力电池脉冲加热功能系统架构设计文档"
+        },
+        {
+          "kind": "version_family",
+          "text": "动力电池脉冲加热功能系统架构设计文档"
+        }
+      ],
+      "results": [
+        {
+          "id": "1I6JHfawbu-qngrVB63kLn7ZxdmtWv4lH",
+          "title": "动力电池脉冲加热功能系统架构设计文档",
+          "url": "https://drive.google.com/file/d/1I6JHfawbu-qngrVB63kLn7ZxdmtWv4lH/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "pulse-arch"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86821"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "ER 27cy 发加热中信号没有中止加热按钮。已导入需求是 EU PI，不是 ER。"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "动力电池脉冲加热功能系统架构设计文档"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "动力电池脉冲加热功能系统架构设计文档"
+        },
+        {
+          "kind": "version_family",
+          "text": "动力电池脉冲加热功能系统架构设计文档"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-hur-86821"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 1,
+        "candidates": [
+          {
+            "id": "1I6JHfawbu-qngrVB63kLn7ZxdmtWv4lH",
+            "title": "动力电池脉冲加热功能系统架构设计文档",
+            "url": "https://drive.google.com/file/d/1I6JHfawbu-qngrVB63kLn7ZxdmtWv4lH/view",
+            "disposition": "read",
+            "references": [],
+            "reason": "同系列最新适用版本，已读决定性段落。",
+            "source_ids": [
+              "pulse-arch"
+            ]
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "expected_behavior": {
+    "trigger": "ER 27cy 发加热中信号没有中止加热按钮。已导入需求是 EU PI，不是 ER。",
+    "target_state": "功能按项目输入搭载；ER 未导入则不显示中止加热",
+    "intent_function_signal": "1.1 适用范围；加热中界面",
+    "ui_tts_vehicle_behavior": "功能按项目输入搭载；ER 未导入则不显示中止加热",
+    "boundary": "只覆盖本票触发",
+    "source_ids": [
+      "pulse-arch"
+    ]
+  },
+  "decision": {
+    "status": "可关闭",
+    "owner": "测试",
+    "text": "结论：J90A ER 27cy 收到 BMS_BattPlsHeagStsFb=0x2 时没有“中止加热”按钮，不按 EU PI 缺陷改。动力电池脉冲加热架构写加热中应有中止加热，同时写是否搭载由配置表或项目组输入确认。已导入的是 EU PI 需求 HUR-69468，实现说明只覆盖 EU_PI、EL 及其 27cy。没有看到 ER 的导入需求。\n依据：[动力电池脉冲加热架构 加热中|https://drive.google.com/file/d/1I6JHfawbu-qngrVB63kLn7ZxdmtWv4lH/view]。\n处理：按当前没有 ER 导入需求关闭，测试不要用 EU PI 的中止加热按钮验收 ER。测试处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  }
+}
