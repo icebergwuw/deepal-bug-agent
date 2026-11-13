@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-86973",
+  "phase": "d",
+  "status": "待确认",
+  "decision_text_sha256": "03025690d277efd9d7faa87e6c20af28e971c99ca455d61bed0eeaf49a09c91a",
+  "manifest_sha256": "c7fc42e1ddca571a78966f623077dc86c7ce9e224cea2f277417f19ed90f4988",
+  "authorized_comment": "结论：待确认。通风或净化开启后空调仍保持内循环。客户测试用例没有写定期望切到哪种循环。本轮也没有读到 J90A 通风或净化必须切外循环的正式定义，不能认定是缺陷。\n依据：[HUR-86973|http://jira.i-tetris.com/browse/HUR-86973]。\n处理：先回有没有这条需求。没有就按不是缺陷。空调产品处理。"
+}

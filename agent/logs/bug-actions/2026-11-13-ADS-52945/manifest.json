@@ -1,0 +1,283 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52945",
+  "comment_causality": "自定义应答语黑名单",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52945",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "评论说被黑名单 204 拦截。本轮没有重测，也没有读到黑名单规则。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52945",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52945",
+      "trigger": "添加来啦来啦为自定义应答语",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52945",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52945"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "自定义应答语黑名单"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "自定义应答语"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "自定义应答语黑名单"
+        },
+        {
+          "kind": "version_family",
+          "text": "自定义应答语"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "添加来啦来啦为自定义应答语"
+        }
+      ],
+      "results": [
+        {
+          "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+          "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+          "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk",
+          "title": "东风项目周会纪要（内部）",
+          "url": "https://drive.google.com/file/d/161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1OesT8B_q2SIB41HhMlWOPck6gK_qd38k",
+          "title": "B60VS-E04座舱软件功能列表V2.0-20261012.xlsx",
+          "url": "https://drive.google.com/file/d/1OesT8B_q2SIB41HhMlWOPck6gK_qd38k/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "16spZ_jOAavbpxkO5ELUb7rEoPbWTRe8G",
+          "title": "（新）HMI3.0整车功能对IVI全量需求清单V1.0（HMI-3.0-IVI-INFO）_0817_V1.xlsx",
+          "url": "https://drive.google.com/file/d/16spZ_jOAavbpxkO5ELUb7rEoPbWTRe8G/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52945"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "自定义应答语黑名单"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "自定义应答语"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "自定义应答语黑名单"
+        },
+        {
+          "kind": "version_family",
+          "text": "自定义应答语"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "添加来啦来啦为自定义应答语"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52945"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+            "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+            "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk",
+            "title": "东风项目周会纪要（内部）",
+            "url": "https://drive.google.com/file/d/161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1OesT8B_q2SIB41HhMlWOPck6gK_qd38k",
+            "title": "B60VS-E04座舱软件功能列表V2.0-20261012.xlsx",
+            "url": "https://drive.google.com/file/d/1OesT8B_q2SIB41HhMlWOPck6gK_qd38k/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "自定义应答语"
+          },
+          {
+            "id": "16spZ_jOAavbpxkO5ELUb7rEoPbWTRe8G",
+            "title": "（新）HMI3.0整车功能对IVI全量需求清单V1.0（HMI-3.0-IVI-INFO）_0817_V1.xlsx",
+            "url": "https://drive.google.com/file/d/16spZ_jOAavbpxkO5ELUb7rEoPbWTRe8G/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "自定义应答语"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "自定义应答语",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "评论说被黑名单 204 拦截。本轮没有重测，也没有读到黑名单规则。",
+      "material": true,
+      "next_action": "语音产品核对「来啦来啦」是否应拦截。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "添加来啦来啦为自定义应答语"
+        }
+      ],
+      "reason": "评论说被黑名单 204 拦截。本轮没有重测，也没有读到黑名单规则。",
+      "material": true,
+      "next_action": "语音产品核对「来啦来啦」是否应拦截。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "204"
+        }
+      ],
+      "reason": "本轮没有重开黑名单功能点。",
+      "material": true,
+      "next_action": "语音产品核对「来啦来啦」是否应拦截。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "204"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52945"
+        }
+      ],
+      "reason": "本轮没有重开项目黑名单。",
+      "material": true,
+      "next_action": "语音产品核对「来啦来啦」是否应拦截。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "添加来啦来啦为自定义应答语",
+    "alchemy_tested": false,
+    "alchemy_result": "本轮没有完成同上下文在线对话。",
+    "meta_id": "204",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有重开黑名单功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有重开项目黑名单。"
+    },
+    "unavailable_reason": "评论说被黑名单 204 拦截。本轮没有重测，也没有读到黑名单规则。",
+    "next_action": "语音产品核对「来啦来啦」是否应拦截。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品",
+    "text": "结论：待复核。自定义应答语「来啦来啦」被黑名单拦截，评论里的拦截号是 204。本轮没有重测这句，也没有读到自定义应答语黑名单规则，不能认定该拦或不该拦。\n依据：[ADS-52945|http://jira.i-tetris.com/browse/ADS-52945]。\n处理：核对这句是否在黑名单。不在就放行，在就说明规则。语音产品处理。"
+  }
+}

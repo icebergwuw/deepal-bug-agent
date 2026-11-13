@@ -1,0 +1,8 @@
+{
+  "comment_id": "8882122",
+  "body": "结论：待确认。客户说「前排座椅调节至最前」时，主驾和副驾都动了。0309 项目副驾是手动座椅，单独说副驾会回复不支持，前排这个组合位置没有套用同一限制。客户另外要求屏蔽 C673-G 前排座椅语料。本轮没有改语料，也没有建需求。\n依据：[SD-6837|http://jira.i-tetris.com/browse/SD-6837]。\n处理：先修组合位置，不要带动不支持的副驾。屏蔽整句前排语料另走需求，本轮不关票。座椅语音研发处理。\n\n（AI Generated）\n\n!SD-6837-source.png|thumbnail!",
+  "transitioned": false,
+  "status": "重新打开",
+  "assignee": "you.wu",
+  "attachment_id": "4683659"
+}

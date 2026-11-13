@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-53214",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "2b00af36dbfe5f077e271b7bfa1e567d5718e6ac3cb408263f9f592a7cc9a135",
+  "manifest_sha256": "d2e44bc0ea32ae1b50d79579a8355ce13f82cef07f6eca6a5062e721fd386e82",
+  "authorized_comment": "结论：待复核。「开启恒温模式」现在进了空调。2026-11-13 在线对话下发 meta 1072、ac:ctrl:mode。智能情景模式功能定义 V5.0 写的是「打开/退出恒温座舱模式」，不是这句。还不能认定它必须进恒温座舱。\n依据：[智能情景模式功能定义V5.0|https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view]。\n处理：先不要把「恒温模式」泛化成空调模式。说法补齐后再改映射。语音产品处理。"
+}

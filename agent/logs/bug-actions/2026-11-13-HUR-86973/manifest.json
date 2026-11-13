@@ -1,0 +1,213 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-86973",
+  "comment_causality": "通风净化是否切外循环",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-HUR-86973",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": true,
+    "external_id": "BG20261109000077",
+    "test_case": {
+      "checked": true,
+      "status": "incomplete",
+      "source": "HUR-86973 描述"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "客户用例没有写定期望的循环模式。Drive 本轮没有读到 J90A 通风或净化必须切外循环的定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-86973",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "HUR-86973",
+      "trigger": "开启通风或净化",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-hur-86973",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86973"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "通风净化是否切外循环"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A空调内外循环"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A空调内外循环"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A空调"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+          "title": "北汽项目变更管理表.xlsx",
+          "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+          "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+          "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1fiEkV1PlZF2G4cVBWLHJ0PVzsF-c4N1W",
+          "title": "东风_各车型_语音功能打点.xlsx",
+          "url": "https://drive.google.com/file/d/1fiEkV1PlZF2G4cVBWLHJ0PVzsF-c4N1W/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86973"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "通风净化是否切外循环"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A空调内外循环"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A空调内外循环"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A空调"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-hur-86973"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+            "title": "北汽项目变更管理表.xlsx",
+            "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+            "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+            "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "J90A空调"
+          },
+          {
+            "id": "1fiEkV1PlZF2G4cVBWLHJ0PVzsF-c4N1W",
+            "title": "东风_各车型_语音功能打点.xlsx",
+            "url": "https://drive.google.com/file/d/1fiEkV1PlZF2G4cVBWLHJ0PVzsF-c4N1W/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A空调",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "客户用例没有写定期望的循环模式。Drive 本轮没有读到 J90A 通风或净化必须切外循环的定义。",
+      "material": true,
+      "next_action": "空调产品回有没有这条需求。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "空调产品",
+    "text": "结论：待确认。通风或净化开启后空调仍保持内循环。客户测试用例没有写定期望切到哪种循环。本轮也没有读到 J90A 通风或净化必须切外循环的正式定义，不能认定是缺陷。\n依据：[HUR-86973|http://jira.i-tetris.com/browse/HUR-86973]。\n处理：先回有没有这条需求。没有就按不是缺陷。空调产品处理。"
+  }
+}

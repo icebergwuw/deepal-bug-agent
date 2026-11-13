@@ -1,0 +1,200 @@
+{
+  "schema_version": 5,
+  "jira_key": "BEO-10320",
+  "comment_causality": "文件管理安装和应用翻译",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-BEO-10320",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "本轮没有在文件管理页签定位到「安装」和「应用」这两个 Key。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "BEO-10320",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "BEO-10320",
+      "trigger": "安装",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-beo-10320",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "BEO-10320"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "文件管理安装和应用翻译"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "D587-G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "D587-G翻译清单"
+        },
+        {
+          "kind": "version_family",
+          "text": "翻译清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+          "title": "海外项目翻译需求收集表（一代+在研）",
+          "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk",
+          "title": "东风项目周会纪要（内部）",
+          "url": "https://drive.google.com/file/d/161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "BEO-10320"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "文件管理安装和应用翻译"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "D587-G翻译清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "D587-G翻译清单"
+        },
+        {
+          "kind": "version_family",
+          "text": "翻译清单"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-beo-10320"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+            "title": "海外项目翻译需求收集表（一代+在研）",
+            "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk",
+            "title": "东风项目周会纪要（内部）",
+            "url": "https://drive.google.com/file/d/161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "本轮没有在文件管理页签定位到「安装」和「应用」这两个 Key。",
+      "material": true,
+      "next_action": "翻译研发给出文件管理页签和 Key。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "翻译研发",
+    "text": "结论：待确认。文件管理里的「安装」和「应用」还没在翻译表定位到。表里其他模块有这两句，不能当成文件管理已经收录。本轮没有打开 D587-G 文件管理页签核对。\n依据：[BEO-10320|http://jira.i-tetris.com/browse/BEO-10320]。\n处理：先给出文件管理页签和 Key。没有 Key 就按未收录补，不要猜译文。翻译研发处理。"
+  }
+}

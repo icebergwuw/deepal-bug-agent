@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52953",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "305ad29956ceb913e440c2e89694eb75b34dd79a7514a8bec98c898b90e2c723",
+  "manifest_sha256": "3bfe92e27b96686f98b1b4f41769734390af47c50bd5f1a035b4c6634cdd953b",
+  "authorized_comment": "结论：待复核。上一轮在字节时，「刚刚说的再播一遍」落到了 claw。2026-11-13 无上文的在线对话下发 meta 1663，只表示重播播报，不能代表跨大模型场景。关联 ADS-52539 本轮没有全文重读。\n依据：[ADS-52953|http://jira.i-tetris.com/browse/ADS-52953]。\n处理：先核对 ADS-52539，再定要不要支持跨大模型重播。语音产品处理。"
+}

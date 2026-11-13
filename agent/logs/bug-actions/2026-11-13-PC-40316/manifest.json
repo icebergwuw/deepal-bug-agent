@@ -1,0 +1,294 @@
+{
+  "schema_version": 5,
+  "jira_key": "PC-40316",
+  "comment_causality": "小憩已打开后再休息一会儿",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-PC-40316",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "定义列出的小憩语音没有这句。调节时长只有标题，没有示例句。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "PC-40316",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "PC-40316",
+      "trigger": "再休息一会儿",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "PC-40316",
+      "trigger": "再休息一会儿",
+      "target_behavior": "无小憩上下文时下发 1664，停止播报。不能代表小憩已打开。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-pc-40316",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-40316"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "小憩已打开后再休息一会儿"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "小憩模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "再休息一会儿"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "19hhjTu9ebeKzle1H5v3IKJKZHD9oS23C",
+          "title": "CX835车型售后问题跟踪表20261105.xlsx",
+          "url": "https://drive.google.com/file/d/19hhjTu9ebeKzle1H5v3IKJKZHD9oS23C/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1n3ml4Itkr9bu3LsaV6zHv_AhCQxCyLT1",
+          "title": "518-1、857-3语控清单_V1.1.xlsx",
+          "url": "https://drive.google.com/file/d/1n3ml4Itkr9bu3LsaV6zHv_AhCQxCyLT1/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "11hQl1i4Fv5aUaMax8cZSZzCv8tNVMruj",
+          "title": "B31CS&B50CS&B20CS项目-语音大模型功能清单-V8.1.xlsx",
+          "url": "https://drive.google.com/file/d/11hQl1i4Fv5aUaMax8cZSZzCv8tNVMruj/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "PC-40316"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "小憩已打开后再休息一会儿"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "小憩模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "再休息一会儿"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-pc-40316"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "19hhjTu9ebeKzle1H5v3IKJKZHD9oS23C",
+            "title": "CX835车型售后问题跟踪表20261105.xlsx",
+            "url": "https://drive.google.com/file/d/19hhjTu9ebeKzle1H5v3IKJKZHD9oS23C/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1n3ml4Itkr9bu3LsaV6zHv_AhCQxCyLT1",
+            "title": "518-1、857-3语控清单_V1.1.xlsx",
+            "url": "https://drive.google.com/file/d/1n3ml4Itkr9bu3LsaV6zHv_AhCQxCyLT1/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义"
+          },
+          {
+            "id": "11hQl1i4Fv5aUaMax8cZSZzCv8tNVMruj",
+            "title": "B31CS&B50CS&B20CS项目-语音大模型功能清单-V8.1.xlsx",
+            "url": "https://drive.google.com/file/d/11hQl1i4Fv5aUaMax8cZSZzCv8tNVMruj/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385_C673_功能描述_智能情景模式功能定义",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "定义列出的小憩语音没有这句。调节时长只有标题，没有示例句。",
+      "material": true,
+      "next_action": "若要延长小憩，情景模式产品补说法后再改语音。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "再休息一会儿"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1664"
+        }
+      ],
+      "reason": "本轮没有打开小憩调节时长的标准功能点。",
+      "material": true,
+      "next_action": "若要延长小憩，情景模式产品补说法后再改语音。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1664"
+        },
+        {
+          "kind": "project_scope",
+          "text": "PC-40316"
+        }
+      ],
+      "reason": "本轮没有打开小憩项目功能点。",
+      "material": true,
+      "next_action": "若要延长小憩，情景模式产品补说法后再改语音。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "再休息一会儿",
+    "alchemy_tested": true,
+    "alchemy_result": "无小憩上下文时下发 1664，停止播报。不能代表小憩已打开。",
+    "meta_id": "1664",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开小憩调节时长的标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开小憩项目功能点。"
+    },
+    "unavailable_reason": "定义列出的小憩语音没有这句。调节时长只有标题，没有示例句。",
+    "next_action": "若要延长小憩，情景模式产品补说法后再改语音。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "情景模式产品",
+    "text": "结论：待复核。小憩已经打开时说「再休息一会儿」，实车回复不支持。智能情景模式功能定义 V5.0 列出的小憩语音是开启、关闭、换歌和音量。调节时长只有标题，没有这句。无小憩上下文的在线对话落到 meta 1664 停止播报，不能当成小憩中的结果。\n依据：[智能情景模式功能定义V5.0|https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view]。\n处理：这句不要按停止播报。若要延长小憩，先补说法再改语音。情景模式产品处理。"
+  }
+}

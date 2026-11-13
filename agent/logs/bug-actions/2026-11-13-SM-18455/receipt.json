@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SM-18455",
+  "phase": "d",
+  "status": "待会诊",
+  "decision_text_sha256": "cb8c05a7d960194524c52dceb29ec22bbe070db9767a7fb501ac4ab747473d63",
+  "manifest_sha256": "4a566079c1c5f5caa4aa95cb474671f32bf26e6a3cae4d473742d2d2c15d6523",
+  "authorized_comment": "结论：待会诊。港澳地图说「导航去机场」后没有导航，也没有播报。日志里智能语音定位未授权，地图搜索入口只返回无权限，没有弹授权窗。语音收到空结果后没有播报。云端授权校验目前只支持东风，深蓝没有下过这张需求。还没读到正式地图定义里的提示句。\n依据：[SM-18455|http://jira.i-tetris.com/browse/SM-18455]。\n处理：未授权时地图弹授权，并把失败原因交给语音播「请开启智能定位权限，再使用语音导航相关功能」。地图研发处理。"
+}

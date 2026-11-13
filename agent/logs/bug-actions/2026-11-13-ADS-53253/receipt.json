@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-53253",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "91b31e42d96136f23c6d79c7bdd0faf1a81987ab8003e18277c8f532522d99fa",
+  "manifest_sha256": "1ba8d7beda1fa38114b707e5ebdf55059b67a89d1465f1f42f32869e28571389",
+  "authorized_comment": "结论：待复核。票面旧日志在非大模型版本把「出一个脑筋急转弯」下发成 meta 1614 开始游戏。标准功能 1410 属于大模型对话游戏。2026-11-13 C673_7 在线对话已下发 1919 不支持。还没读到非大模型禁止游戏的正式定义，不能直接关闭。\n依据：[开始游戏|https://alchemy.i-tetris.com/#/functional/standardPoints/detail/1410]。\n处理：测试按当前平台复测。实车仍下发 1614，再转语音。语音产品处理。"
+}

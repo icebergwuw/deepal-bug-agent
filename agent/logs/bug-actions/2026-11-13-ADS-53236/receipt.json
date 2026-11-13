@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-53236",
+  "phase": "d",
+  "status": "待会诊",
+  "decision_text_sha256": "b720492d5f9c6ae1f0fa40e2e53f5446de1843649dafeb49f10cb9aec9067951",
+  "manifest_sha256": "5ad6963a9851a3e47fd2a37f89c1e58ac157f10e063dc8c566a1fc9582c2bb1d",
+  "authorized_comment": "结论：待会诊。「避开收费站」在平台走 meta 3044 切换路线，实车走 meta 1023，设置成不走高速。这两条不是同一个动作。本轮没有读到这句的正式路线偏好定义，也没有重测。\n依据：[ADS-53236|http://jira.i-tetris.com/browse/ADS-53236]。\n处理：先定这句是切换路线，还是避开高速。未定前不改协议。导航产品处理。"
+}

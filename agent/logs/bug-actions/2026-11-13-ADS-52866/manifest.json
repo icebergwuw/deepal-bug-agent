@@ -1,0 +1,298 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52866",
+  "comment_causality": "地图视角切换为深色",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52866",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "项目设置项不能单独代替地图正式定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52866",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52866",
+      "trigger": "视角切换为深色",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "地图背景视图视角切换 24566",
+      "source_location": "Alchemy深蓝项目功能点",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "ADS-52866",
+      "trigger": "视角切换为深色",
+      "target_behavior": "长安设置项只写 2D/3D 视角。昼夜模式写在江铃，不在长安。",
+      "match": "partial",
+      "reason": "已读项目功能点。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-52866",
+      "trigger": "视角切换为深色",
+      "target_behavior": "2026-11-13 C673_7 在线对话拒识，meta 2820。实车旧日志是 1919。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52866",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52866"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "地图视角切换为深色"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "地图视角"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "地图视角定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "地图视角"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "视角切换为深色"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+          "title": "北汽项目变更管理表.xlsx",
+          "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+          "title": "B31CS 车机埋点规范_20260923.xlsx",
+          "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+          "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+          "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52866"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "地图视角切换为深色"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "地图视角"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "地图视角定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "地图视角"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "视角切换为深色"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52866"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+            "title": "北汽项目变更管理表.xlsx",
+            "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+            "title": "B31CS 车机埋点规范_20260923.xlsx",
+            "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+            "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+            "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "项目设置项不能单独代替地图正式定义。",
+      "material": true,
+      "next_action": "地图语音产品确认长安不收这句后再让测试改预期。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "视角切换为深色"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "2820"
+        }
+      ],
+      "reason": "本轮没有打开地图视角标准功能点。",
+      "material": true,
+      "next_action": "地图语音产品确认长安不收这句后再让测试改预期。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "2820"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52866"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "视角切换为深色",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 C673_7 在线对话拒识，meta 2820。实车旧日志是 1919。",
+    "meta_id": "2820",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开地图视角标准功能点。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "地图背景视图视角切换 24566",
+      "assessment": "长安设置项只写 2D/3D 视角。昼夜模式写在江铃，不在长安。"
+    },
+    "unavailable_reason": "项目设置项不能单独代替地图正式定义。",
+    "next_action": "地图语音产品确认长安不收这句后再让测试改预期。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "地图语音产品",
+    "text": "结论：待复核。「视角切换为深色」不是长安地图的现有说法。实车旧日志下发 1919。2026-11-13 在线对话改为拒识，meta 2820。深蓝项目功能 24566 的长安设置项只写 2D/3D 视角，昼夜模式写在江铃，不在长安。项目设置项还不能单独代替地图正式定义。\n依据：[地图背景视图视角切换|https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24566]。\n处理：长安先不要收这句。正式地图定义补上后，测试再改预期。地图语音产品处理。"
+  }
+}

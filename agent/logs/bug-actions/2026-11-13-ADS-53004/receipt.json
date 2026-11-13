@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-53004",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "40665c3abb265b63e91a3dc9c3b74d56f922f49074b5601aec041a8e6e1c65f1",
+  "manifest_sha256": "c542e25957ef5ad7817e33314ccf25eaa4acb1c2dda802147f62c3155ce3295b",
+  "authorized_comment": "结论：待复核。「把我拍摄的视频上传到移动云盘」实车落到 edeepal ai。测试预期是不支持。本轮没有重测，也没有读到移动云盘上传的正式定义，不能直接定成不支持或转执行。\n依据：[ADS-53004|http://jira.i-tetris.com/browse/ADS-53004]。\n处理：先确认有没有这个功能。没有就回复不支持，不要进 edeepal ai。语音产品处理。"
+}

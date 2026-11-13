@@ -1,0 +1,291 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52803",
+  "comment_causality": "打开车外语音是否等于打开车外喊话",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52803",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "车外喊话是另一句。还没读完车外语音定义里有没有「打开车外语音」。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52803",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52803",
+      "trigger": "打开车外语音",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-52803",
+      "trigger": "打开车外语音",
+      "target_behavior": "2026-11-13 C673_7 在线对话下发 1919。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52803",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52803"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "打开车外语音是否等于打开车外喊话"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车外语音"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "深蓝车外语音交互产品需求文档"
+        },
+        {
+          "kind": "version_family",
+          "text": "车外语音"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "打开车外语音"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+          "title": "B31CS 车机埋点规范_20260923.xlsx",
+          "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1bmvUwN_YsI_RbJ37NwGErQ463Sq4UEdJ46iuJa433g0",
+          "title": "立昇V20专用：处理器间通信协议定义 3.0",
+          "url": "https://drive.google.com/file/d/1bmvUwN_YsI_RbJ37NwGErQ463Sq4UEdJ46iuJa433g0/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11uwTKGxE79p8Jayd8MwsonmfZAbxfPyA",
+          "title": "Chery_8295 Convergence_T22FL_ FRS_系统设置_V2.7.pdf",
+          "url": "https://drive.google.com/file/d/11uwTKGxE79p8Jayd8MwsonmfZAbxfPyA/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52803"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "打开车外语音是否等于打开车外喊话"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "车外语音"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "深蓝车外语音交互产品需求文档"
+        },
+        {
+          "kind": "version_family",
+          "text": "车外语音"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "打开车外语音"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52803"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+            "title": "B31CS 车机埋点规范_20260923.xlsx",
+            "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1bmvUwN_YsI_RbJ37NwGErQ463Sq4UEdJ46iuJa433g0",
+            "title": "立昇V20专用：处理器间通信协议定义 3.0",
+            "url": "https://drive.google.com/file/d/1bmvUwN_YsI_RbJ37NwGErQ463Sq4UEdJ46iuJa433g0/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "11uwTKGxE79p8Jayd8MwsonmfZAbxfPyA",
+            "title": "Chery_8295 Convergence_T22FL_ FRS_系统设置_V2.7.pdf",
+            "url": "https://drive.google.com/file/d/11uwTKGxE79p8Jayd8MwsonmfZAbxfPyA/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "车外语音"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "车外语音",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "车外喊话是另一句。还没读完车外语音定义里有没有「打开车外语音」。",
+      "material": true,
+      "next_action": "车外语音产品确认这句是否等于打开车外喊话。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "打开车外语音"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1919"
+        }
+      ],
+      "reason": "本轮没有把打开车外语音打开成独立标准功能点。",
+      "material": true,
+      "next_action": "车外语音产品确认这句是否等于打开车外喊话。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "not_applicable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1919"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52803"
+        }
+      ],
+      "reason": "评论说深蓝可见没有这条语义，项目功能列表也没有同名功能。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "打开车外语音",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 C673_7 在线对话下发 1919。",
+    "meta_id": "1919",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有把打开车外语音打开成独立标准功能点。"
+    },
+    "project_function": {
+      "status": "not_applicable",
+      "reason": "评论说深蓝可见没有这条语义，项目功能列表也没有同名功能。"
+    },
+    "unavailable_reason": "车外喊话是另一句。还没读完车外语音定义里有没有「打开车外语音」。",
+    "next_action": "车外语音产品确认这句是否等于打开车外喊话。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "车外语音产品",
+    "text": "结论：待复核。「打开车外语音」实车回复不支持。2026-11-13 在线对话下发 meta 1919。评论说深蓝可见没有这条语义。车外喊话走的是 1657，「打开车外喊话」才命中。还没读完车外语音定义，不能把这两句收成同一个功能。\n依据：[ADS-52803|http://jira.i-tetris.com/browse/ADS-52803]。\n处理：先确认「打开车外语音」是否等于打开车外喊话。未确认前保持不支持。车外语音产品处理。"
+  }
+}

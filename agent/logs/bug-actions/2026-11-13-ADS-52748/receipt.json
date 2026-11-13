@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52748",
+  "phase": "d",
+  "status": "待会诊",
+  "decision_text_sha256": "4ca9488a493ed67ea0c67bb77fb527a04ec17b87b648196f30e0c614dc7f5232",
+  "manifest_sha256": "d61dc50bc5f28fee9958d051a07a259971e2537c082b5fb40d75dc6841f9f2ac",
+  "authorized_comment": "结论：待会诊。给李德打电话时，确认窗是「李德 / 10086」，呼出后弹窗变成「波」。同一个 10086 在手机通讯录里有多个联系人。研发说这是通讯录问题，不做处理。还没读到同一号码多个姓名时该显示哪一个的正式定义。\n依据：[ADS-52748|http://jira.i-tetris.com/browse/ADS-52748]。\n处理：通话弹窗沿用语音已确认的姓名，不要按号码再覆盖成另一个联系人。蓝牙电话研发处理。"
+}

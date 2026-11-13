@@ -1,0 +1,8 @@
+{
+  "comment_id": "8882116",
+  "body": "结论：待会诊。给李德打电话时，确认窗是「李德 / 10086」，呼出后弹窗变成「波」。同一个 10086 在手机通讯录里有多个联系人。研发说这是通讯录问题，不做处理。还没读到同一号码多个姓名时该显示哪一个的正式定义。\n依据：[ADS-52748|http://jira.i-tetris.com/browse/ADS-52748]。\n处理：通话弹窗沿用语音已确认的姓名，不要按号码再覆盖成另一个联系人。蓝牙电话研发处理。\n\n（AI Generated）\n\n!ADS-52748-source.png|thumbnail!",
+  "transitioned": false,
+  "status": "重新打开",
+  "assignee": "you.wu",
+  "attachment_id": "4683655"
+}

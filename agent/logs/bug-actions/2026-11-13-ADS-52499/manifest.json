@@ -1,0 +1,270 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52499",
+  "comment_causality": "电站模式是否泛化成露营模式",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52499",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "票面说电站模式、露营电站、营地电站被收成露营泛化。本轮没有读到这个泛化表，也没有重测原话。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52499",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52499",
+      "trigger": "打开电站模式",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "打开特定情景模式",
+      "source_location": "Alchemy标准功能点",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "ADS-52499",
+      "trigger": "打开电站模式",
+      "target_behavior": "标准功能 1364、meta 1127 是打开情景模式，不是电站模式专用功能。",
+      "match": "partial",
+      "reason": "已读标准功能点。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-52499",
+      "trigger": "打开电站模式",
+      "target_behavior": "2026-11-13 C673_7 在线对话「打开电站模式」下发 1127 vehicle:scenario:ctrl。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52499",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52499"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "电站模式是否泛化成露营模式"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "露营模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "露营电站定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "露营模式"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "打开电站模式"
+        }
+      ],
+      "results": [
+        {
+          "id": "1ZcQNLHT6UkNM-SqaeOzaH4N_IUAtpMQ-",
+          "title": "各阶段问题管理表.xlsx（副本）",
+          "url": "https://drive.google.com/file/d/1ZcQNLHT6UkNM-SqaeOzaH4N_IUAtpMQ-/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1XbVjBvpMfFJj8z8NWV20jII3msVV2WOl",
+          "title": "各阶段问题管理表.xlsx",
+          "url": "https://drive.google.com/file/d/1XbVjBvpMfFJj8z8NWV20jII3msVV2WOl/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52499"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "电站模式是否泛化成露营模式"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "露营模式"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "露营电站定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "露营模式"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "打开电站模式"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52499"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 2,
+        "candidates": [
+          {
+            "id": "1ZcQNLHT6UkNM-SqaeOzaH4N_IUAtpMQ-",
+            "title": "各阶段问题管理表.xlsx（副本）",
+            "url": "https://drive.google.com/file/d/1ZcQNLHT6UkNM-SqaeOzaH4N_IUAtpMQ-/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1XbVjBvpMfFJj8z8NWV20jII3msVV2WOl",
+            "title": "各阶段问题管理表.xlsx",
+            "url": "https://drive.google.com/file/d/1XbVjBvpMfFJj8z8NWV20jII3msVV2WOl/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "票面说电站模式、露营电站、营地电站被收成露营泛化。本轮没有读到这个泛化表，也没有重测原话。",
+      "material": true,
+      "next_action": "语音产品核对泛化值，电站模式不要收成露营。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "打开电站模式"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1127"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1127"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52499"
+        }
+      ],
+      "reason": "本轮没有打开露营模式的项目泛化配置。",
+      "material": true,
+      "next_action": "语音产品核对泛化值，电站模式不要收成露营。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "打开电站模式",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 C673_7 在线对话「打开电站模式」下发 1127 vehicle:scenario:ctrl。",
+    "meta_id": "1127",
+    "standard_function": {
+      "status": "verified",
+      "name": "打开特定情景模式",
+      "assessment": "标准功能 1364、meta 1127 是打开情景模式，不是电站模式专用功能。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开露营模式的项目泛化配置。"
+    },
+    "unavailable_reason": "票面说电站模式、露营电站、营地电站被收成露营泛化。本轮没有读到这个泛化表，也没有重测原话。",
+    "next_action": "语音产品核对泛化值，电站模式不要收成露营。"
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "语音产品",
+    "text": "结论：待会诊。票面说电站模式、露营电站、营地电站被收成露营模式泛化。2026-11-13 在线对话「打开电站模式」下发 meta 1127，打开情景模式。标准功能 1364 是打开特定情景模式，不是电站模式专用功能。本轮没有读到那张泛化表。\n依据：[打开特定情景模式|https://alchemy.i-tetris.com/#/functional/standardPoints/detail/1364]。\n处理：核对泛化值，不要把电站模式收成露营。语音产品处理。"
+  }
+}

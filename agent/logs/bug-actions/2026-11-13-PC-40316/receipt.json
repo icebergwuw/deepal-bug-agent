@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "PC-40316",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "3695c6c6671dc89303e8e1f903ce675b332106a8919ac83fccc9e52c02d802c1",
+  "manifest_sha256": "35acc98e73b8ac59bf7ec91365fbeee73aa6b31a0a333c46d148267a32878bdd",
+  "authorized_comment": "结论：待复核。小憩已经打开时说「再休息一会儿」，实车回复不支持。智能情景模式功能定义 V5.0 列出的小憩语音是开启、关闭、换歌和音量。调节时长只有标题，没有这句。无小憩上下文的在线对话落到 meta 1664 停止播报，不能当成小憩中的结果。\n依据：[智能情景模式功能定义V5.0|https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view]。\n处理：这句不要按停止播报。若要延长小憩，先补说法再改语音。情景模式产品处理。"
+}

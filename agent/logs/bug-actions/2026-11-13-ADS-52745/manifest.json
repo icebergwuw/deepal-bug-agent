@@ -1,0 +1,308 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52745",
+  "comment_causality": "充电剩余时间查询",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52745",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "应用说代码未实现 3128。还没读到剩余时间的正式播报定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52745",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52745",
+      "trigger": "还有多久会把电充满",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "查询车辆功能状态",
+      "source_location": "Alchemy标准功能点",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "ADS-52745",
+      "trigger": "还有多久会把电充满",
+      "target_behavior": "标准功能 1801 的 domain 含 charge_remain_time。",
+      "match": "partial",
+      "reason": "已读标准功能点。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "查询车辆功能状态 27124",
+      "source_location": "Alchemy深蓝项目功能点",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "ADS-52745",
+      "trigger": "还有多久会把电充满",
+      "target_behavior": "深蓝项目已继承，车型含 C673_7。",
+      "match": "partial",
+      "reason": "已读项目功能点。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-52745",
+      "trigger": "还有多久会把电充满",
+      "target_behavior": "2026-11-13 C673_7 在线对话下发 3128 vehicle:query:info。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52745",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52745"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "充电剩余时间查询"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "充电剩余时间"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "充电剩余时间定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "充电剩余时间"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "还有多久会把电充满"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E",
+          "title": "C518&C857项目8155平台项目管理计划",
+          "url": "https://drive.google.com/file/d/1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+          "title": "B31CS 车机埋点规范_20260923.xlsx",
+          "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+          "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+          "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52745"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "充电剩余时间查询"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "充电剩余时间"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "充电剩余时间定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "充电剩余时间"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "还有多久会把电充满"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52745"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E",
+            "title": "C518&C857项目8155平台项目管理计划",
+            "url": "https://drive.google.com/file/d/1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+            "title": "B31CS 车机埋点规范_20260923.xlsx",
+            "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+            "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+            "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "应用说代码未实现 3128。还没读到剩余时间的正式播报定义。",
+      "material": true,
+      "next_action": "能量应用回 3128 的实现范围。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "还有多久会把电充满"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3128"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3128"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52745"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "还有多久会把电充满",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 C673_7 在线对话下发 3128 vehicle:query:info。",
+    "meta_id": "3128",
+    "standard_function": {
+      "status": "verified",
+      "name": "查询车辆功能状态",
+      "assessment": "标准功能 1801 的 domain 含 charge_remain_time。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "查询车辆功能状态 27124",
+      "assessment": "深蓝项目已继承，车型含 C673_7。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "能量应用研发",
+    "text": "结论：待复核。「还有多久会把电充满」应对查询剩余充电时间。2026-11-13 在线对话下发 meta 3128。标准功能 1801 和深蓝项目功能 27124 都有 charge_remain_time，项目车型含 C673_7。应用说当前代码没有实现 3128。还没读到剩余时间怎么播的正式定义。\n依据：[查询车辆功能状态|https://alchemy.i-tetris.com/#/functional/projectPoints/detail/27124]。\n处理：按 3128 回剩余充电时间有没有实现。能量应用研发处理。"
+  }
+}

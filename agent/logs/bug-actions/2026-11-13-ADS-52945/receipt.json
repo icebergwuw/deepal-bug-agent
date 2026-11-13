@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52945",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "0e121fe923b04bc38eba0de65fa2c4aadf7f0d19237de6fabac4f3e4b1f038aa",
+  "manifest_sha256": "d28918addf8fd44405b1011705609b25b74f19615f52d4393248a462676ef6b4",
+  "authorized_comment": "结论：待复核。自定义应答语「来啦来啦」被黑名单拦截，评论里的拦截号是 204。本轮没有重测这句，也没有读到自定义应答语黑名单规则，不能认定该拦或不该拦。\n依据：[ADS-52945|http://jira.i-tetris.com/browse/ADS-52945]。\n处理：核对这句是否在黑名单。不在就放行，在就说明规则。语音产品处理。"
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-8331",
+  "comment_causality": "全功能清单没有电池健康度但实车有",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-SD-8331",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "评论说刚下过需求，问是不是 G3/G5 全系。本轮没有定位到那张需求票，也没有在全功能清单读到这一行。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-8331",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "SD-8331",
+      "trigger": "电池健康度",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-sd-8331",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8331"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "全功能清单没有电池健康度但实车有"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "全功能清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "全功能清单"
+        },
+        {
+          "kind": "version_family",
+          "text": "全功能清单"
+        }
+      ],
+      "results": [
+        {
+          "id": "1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E",
+          "title": "C518&C857项目8155平台项目管理计划",
+          "url": "https://drive.google.com/file/d/1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+          "title": "北汽项目变更管理表.xlsx",
+          "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+          "title": "B31CS 车机埋点规范_20260923.xlsx",
+          "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-8331"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "全功能清单没有电池健康度但实车有"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "全功能清单"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "全功能清单"
+        },
+        {
+          "kind": "version_family",
+          "text": "全功能清单"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-sd-8331"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E",
+            "title": "C518&C857项目8155平台项目管理计划",
+            "url": "https://drive.google.com/file/d/1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+            "title": "北汽项目变更管理表.xlsx",
+            "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6",
+            "title": "B31CS 车机埋点规范_20260923.xlsx",
+            "url": "https://drive.google.com/file/d/13Wp7pR0Z5uRknTh17XWclBXV9ZS7rOG6/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "评论说刚下过需求，问是不是 G3/G5 全系。本轮没有定位到那张需求票，也没有在全功能清单读到这一行。",
+      "material": true,
+      "next_action": "车辆设置研发回需求票号和配置范围。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "车辆设置研发",
+    "text": "结论：待确认。C673-G5 实车有电池健康度，全功能清单里没看到。评论说刚下过需求，并问是不是 G3/G5 全系。本轮没有定位到那张需求票，也没有在全功能清单读到这一行，不能确认是清单漏写还是配置多显示。\n依据：[SD-8331|http://jira.i-tetris.com/browse/SD-8331]。\n处理：回需求票号，以及 G3/G5 是不是全系配置。车辆设置研发处理。"
+  }
+}

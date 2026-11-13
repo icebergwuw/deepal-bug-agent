@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-53244",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "576516391c93c6641a818696d9eb4737fc8c75dc85cef8d999ca8deae45f2b06",
+  "manifest_sha256": "69864296c37d3b1f44aff651ac1b868fac64696d4655aada3aac32990cd6ddbd",
+  "authorized_comment": "结论：待复核。「打开喊话功能」和「打开车外喊话」不是同一句。2026-11-13 C673_7 在线对话里，前者下发 1919 不支持，后者下发 1657 打开车外扬声器。深蓝项目功能 24530 的示例有「打开车外喊话」，泛化只写了东风和江铃，没有「喊话功能」。\n依据：[打开车外扬声器|https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24530]。\n处理：先确认「打开喊话功能」要不要并入 1657。未确认前不要当执行缺陷。车外语音产品处理。"
+}

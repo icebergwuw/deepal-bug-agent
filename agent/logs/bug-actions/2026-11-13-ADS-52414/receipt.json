@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52414",
+  "phase": "d",
+  "status": "待会诊",
+  "decision_text_sha256": "ee124da3682a1f8707de0589e67618fde4112b2de5fb8f430992860d2fa53596",
+  "manifest_sha256": "073103164c0fab5ff0920e31bb753755d932fa6005b3c86aad3dc55865c0c103",
+  "authorized_comment": "结论：待会诊。「冷暖箱下电持续工作到明天早上6点」旧日志走 meta 3189 场景积木。2026-11-13 在线对话改下发 meta 2999，类型是冷暖箱持续工作时间。研发说按定义走场景大师。本轮没有读到冷暖箱预约下电的正式定义，不能认定场景积木符合预期。\n依据：[ADS-52414|http://jira.i-tetris.com/browse/ADS-52414]。\n处理：先定这句走冷暖箱还是场景积木。能量产品处理。"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-53041",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "c0262fae23d15cfad7569201d14cf34690d6c618305b89fee8a733a2c8b1820f",
+  "manifest_sha256": "0505ea5afe4337d063b14efc938f64ec5f86d0d706fffda317a0d6a67e096fdc",
+  "authorized_comment": "结论：待复核。「打开超级省电设置」现在打开的是功能，不是页面。2026-11-13 在线对话和车端都下发 meta 2367。标准功能 1762、深蓝项目功能 12049 的示例只有「打开超级省电」，没有打开设置页。还没读到必须打开页面的能量定义，不能按测试预期改协议。\n依据：[打开超级省电|https://alchemy.i-tetris.com/#/functional/projectPoints/detail/12049]。\n处理：要打开页面就另补定义。当前保持打开功能。能量产品处理。"
+}

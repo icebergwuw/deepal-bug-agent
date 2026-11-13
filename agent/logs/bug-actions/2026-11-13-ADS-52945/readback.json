@@ -1,0 +1,8 @@
+{
+  "comment_id": "8882110",
+  "body": "结论：待复核。自定义应答语「来啦来啦」被黑名单拦截，评论里的拦截号是 204。本轮没有重测这句，也没有读到自定义应答语黑名单规则，不能认定该拦或不该拦。\n依据：[ADS-52945|http://jira.i-tetris.com/browse/ADS-52945]。\n处理：核对这句是否在黑名单。不在就放行，在就说明规则。语音产品处理。\n\n（AI Generated）\n\n!ADS-52945-source.png|thumbnail!",
+  "transitioned": false,
+  "status": "待办",
+  "assignee": "you.wu",
+  "attachment_id": "4683649"
+}

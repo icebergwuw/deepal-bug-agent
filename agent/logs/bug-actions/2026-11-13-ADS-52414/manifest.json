@@ -1,0 +1,293 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52414",
+  "comment_causality": "冷暖箱预约下电是冷暖箱还是场景积木",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52414",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "旧日志走 3189 场景积木。研发说按定义走场景大师。本轮没有读到冷暖箱预约下电定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52414",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52414",
+      "trigger": "冷暖箱下电持续工作到明天早上6点",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-52414",
+      "trigger": "冷暖箱下电持续工作到明天早上6点",
+      "target_behavior": "2026-11-13 在线对话下发 2999，类型是冷暖箱持续工作时间。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52414",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52414"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "冷暖箱预约下电是冷暖箱还是场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "冷暖箱"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "冷暖箱预约定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "冷暖箱"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "冷暖箱下电持续工作到明天早上6点"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+          "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+          "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+          "title": "海外项目翻译需求收集表（一代+在研）",
+          "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+          "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+          "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52414"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "冷暖箱预约下电是冷暖箱还是场景积木"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "冷暖箱"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "冷暖箱预约定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "冷暖箱"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "冷暖箱下电持续工作到明天早上6点"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52414"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+            "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+            "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+            "title": "海外项目翻译需求收集表（一代+在研）",
+            "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+            "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+            "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "冷暖箱"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "冷暖箱",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "旧日志走 3189 场景积木。研发说按定义走场景大师。本轮没有读到冷暖箱预约下电定义。",
+      "material": true,
+      "next_action": "能量产品定这句走冷暖箱还是场景积木。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "冷暖箱下电持续工作到明天早上6点"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "2999"
+        }
+      ],
+      "reason": "本轮没有打开 2999 标准功能点。",
+      "material": true,
+      "next_action": "能量产品定这句走冷暖箱还是场景积木。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "2999"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52414"
+        }
+      ],
+      "reason": "本轮没有打开冷暖箱项目功能点。",
+      "material": true,
+      "next_action": "能量产品定这句走冷暖箱还是场景积木。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "冷暖箱下电持续工作到明天早上6点",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 在线对话下发 2999，类型是冷暖箱持续工作时间。",
+    "meta_id": "2999",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开 2999 标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开冷暖箱项目功能点。"
+    },
+    "unavailable_reason": "旧日志走 3189 场景积木。研发说按定义走场景大师。本轮没有读到冷暖箱预约下电定义。",
+    "next_action": "能量产品定这句走冷暖箱还是场景积木。"
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "能量产品",
+    "text": "结论：待会诊。「冷暖箱下电持续工作到明天早上6点」旧日志走 meta 3189 场景积木。2026-11-13 在线对话改下发 meta 2999，类型是冷暖箱持续工作时间。研发说按定义走场景大师。本轮没有读到冷暖箱预约下电的正式定义，不能认定场景积木符合预期。\n依据：[ADS-52414|http://jira.i-tetris.com/browse/ADS-52414]。\n处理：先定这句走冷暖箱还是场景积木。能量产品处理。"
+  }
+}

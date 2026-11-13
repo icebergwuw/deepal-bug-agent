@@ -1,0 +1,288 @@
+{
+  "schema_version": 5,
+  "jira_key": "SD-6837",
+  "comment_causality": "C673-G 前排座椅语料带动副驾",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-SD-6837",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": true,
+    "external_id": "ID20260807105523055",
+    "test_case": {
+      "checked": true,
+      "status": "complete",
+      "source": "SD-6837 描述"
+    }
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "客户要求屏蔽前排语料。研发说单独副驾已不支持，组合位置仍带动副驾。本轮没有改语料，也没有建需求。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SD-6837",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "SD-6837",
+      "trigger": "前排座椅调节至最前",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-sd-6837",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6837"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673-G 前排座椅语料带动副驾"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "座椅语音"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673座椅功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "座椅功能"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "前排座椅调节至最前"
+        }
+      ],
+      "results": [
+        {
+          "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+          "title": "海外项目翻译需求收集表（一代+在研）",
+          "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+          "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+          "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1v8rs8OTEG3lUPaLUuxBYAW3qJqsDQaS-y9xGYWoeczc",
+          "title": "DP4.0迭代计划",
+          "url": "https://drive.google.com/file/d/1v8rs8OTEG3lUPaLUuxBYAW3qJqsDQaS-y9xGYWoeczc/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1spuMw5wQopc4PHAuiTHLgmHg_qjlZR0t-iIGyrIQjGE",
+          "title": "【8155平台】长安电检配置字汇总",
+          "url": "https://drive.google.com/file/d/1spuMw5wQopc4PHAuiTHLgmHg_qjlZR0t-iIGyrIQjGE/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SD-6837"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "C673-G 前排座椅语料带动副驾"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "座椅语音"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C673座椅功能定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "座椅功能"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "前排座椅调节至最前"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-sd-6837"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+            "title": "海外项目翻译需求收集表（一代+在研）",
+            "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+            "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+            "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "座椅功能"
+          },
+          {
+            "id": "1v8rs8OTEG3lUPaLUuxBYAW3qJqsDQaS-y9xGYWoeczc",
+            "title": "DP4.0迭代计划",
+            "url": "https://drive.google.com/file/d/1v8rs8OTEG3lUPaLUuxBYAW3qJqsDQaS-y9xGYWoeczc/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1spuMw5wQopc4PHAuiTHLgmHg_qjlZR0t-iIGyrIQjGE",
+            "title": "【8155平台】长安电检配置字汇总",
+            "url": "https://drive.google.com/file/d/1spuMw5wQopc4PHAuiTHLgmHg_qjlZR0t-iIGyrIQjGE/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "座椅功能",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "客户要求屏蔽前排语料。研发说单独副驾已不支持，组合位置仍带动副驾。本轮没有改语料，也没有建需求。",
+      "material": true,
+      "next_action": "先修组合位置，不要带动不支持的副驾。屏蔽整句另走需求。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "前排座椅调节至最前"
+        }
+      ],
+      "reason": "客户要求屏蔽前排语料。研发说单独副驾已不支持，组合位置仍带动副驾。本轮没有改语料，也没有建需求。",
+      "material": true,
+      "next_action": "先修组合位置，不要带动不支持的副驾。屏蔽整句另走需求。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1404"
+        }
+      ],
+      "reason": "本轮没有重开座椅调节标准功能点。",
+      "material": true,
+      "next_action": "先修组合位置，不要带动不支持的副驾。屏蔽整句另走需求。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1404"
+        },
+        {
+          "kind": "project_scope",
+          "text": "SD-6837"
+        }
+      ],
+      "reason": "本轮没有重开 C673-G 座椅项目功能点。",
+      "material": true,
+      "next_action": "先修组合位置，不要带动不支持的副驾。屏蔽整句另走需求。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "前排座椅调节至最前",
+    "alchemy_tested": false,
+    "alchemy_result": "本轮没有完成同上下文在线对话。",
+    "meta_id": "1404",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有重开座椅调节标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有重开 C673-G 座椅项目功能点。"
+    },
+    "unavailable_reason": "客户要求屏蔽前排语料。研发说单独副驾已不支持，组合位置仍带动副驾。本轮没有改语料，也没有建需求。",
+    "next_action": "先修组合位置，不要带动不支持的副驾。屏蔽整句另走需求。"
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "座椅语音研发",
+    "text": "结论：待确认。客户说「前排座椅调节至最前」时，主驾和副驾都动了。0309 项目副驾是手动座椅，单独说副驾会回复不支持，前排这个组合位置没有套用同一限制。客户另外要求屏蔽 C673-G 前排座椅语料。本轮没有改语料，也没有建需求。\n依据：[SD-6837|http://jira.i-tetris.com/browse/SD-6837]。\n处理：先修组合位置，不要带动不支持的副驾。屏蔽整句前排语料另走需求，本轮不关票。座椅语音研发处理。"
+  }
+}

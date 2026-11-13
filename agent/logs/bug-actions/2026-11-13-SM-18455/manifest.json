@@ -1,0 +1,317 @@
+{
+  "schema_version": 5,
+  "jira_key": "SM-18455",
+  "comment_causality": "港澳地图未授权时导航无执行无播报",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-SM-18455",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "云端授权校验没有深蓝需求。地图搜索入口未授权时不弹窗。还没读到正式地图定义里的提示句。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "SM-18455",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "SM-18455",
+      "trigger": "导航去机场",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "map_navigation"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点。"
+    },
+    "map_navigation": {
+      "applicable": true,
+      "reason": "导航执行。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-sm-18455",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "main_prd_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18455"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "港澳地图未授权时导航无执行无播报"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "地图语音定位授权"
+        }
+      ],
+      "results": [
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://drive.google.com/file/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F",
+          "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(2).xlsx",
+          "url": "https://drive.google.com/file/d/1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp",
+          "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(1).xlsx",
+          "url": "https://drive.google.com/file/d/1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    },
+    {
+      "receipt_id": "receipt-sm-18455-special",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "special_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18455"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "港澳地图未授权时导航无执行无播报"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "地图语音定位授权"
+        }
+      ],
+      "results": [
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://drive.google.com/file/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F",
+          "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(2).xlsx",
+          "url": "https://drive.google.com/file/d/1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp",
+          "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(1).xlsx",
+          "url": "https://drive.google.com/file/d/1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "main_prd_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18455"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "港澳地图未授权时导航无执行无播报"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "地图语音定位授权"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-sm-18455"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://drive.google.com/file/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F",
+            "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(2).xlsx",
+            "url": "https://drive.google.com/file/d/1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "地图语音定位授权"
+          },
+          {
+            "id": "1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp",
+            "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(1).xlsx",
+            "url": "https://drive.google.com/file/d/1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "地图语音定位授权"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "地图语音定位授权",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "云端授权校验没有深蓝需求。地图搜索入口未授权时不弹窗。还没读到正式地图定义里的提示句。",
+      "material": true,
+      "next_action": "地图未授权时弹授权，并把失败原因交给语音播报。"
+    },
+    {
+      "check_id": "special_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "SM-18455"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "港澳地图未授权时导航无执行无播报"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "地图语音定位授权"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-sm-18455-special"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://drive.google.com/file/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F",
+            "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(2).xlsx",
+            "url": "https://drive.google.com/file/d/1hcLeGaDqbZaA9cnaWwPUgvcq0wIg_G4F/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "地图语音定位授权"
+          },
+          {
+            "id": "1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp",
+            "title": "WT_J90A项目_SWD.05.0 版本 软件发布说明书_V1.4(1).xlsx",
+            "url": "https://drive.google.com/file/d/1rOKpLDeDHf3DpfXjiUp-1sbXVvMyriVp/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "地图语音定位授权"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "地图语音定位授权",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "云端授权校验没有深蓝需求。地图搜索入口未授权时不弹窗。还没读到正式地图定义里的提示句。",
+      "material": true,
+      "next_action": "地图未授权时弹授权，并把失败原因交给语音播报。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "地图研发",
+    "text": "结论：待会诊。港澳地图说「导航去机场」后没有导航，也没有播报。日志里智能语音定位未授权，地图搜索入口只返回无权限，没有弹授权窗。语音收到空结果后没有播报。云端授权校验目前只支持东风，深蓝没有下过这张需求。还没读到正式地图定义里的提示句。\n依据：[SM-18455|http://jira.i-tetris.com/browse/SM-18455]。\n处理：未授权时地图弹授权，并把失败原因交给语音播「请开启智能定位权限，再使用语音导航相关功能」。地图研发处理。"
+  }
+}

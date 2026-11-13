@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "SD-8331",
+  "phase": "d",
+  "status": "待确认",
+  "decision_text_sha256": "f9608f8212771a1bad1af6410976cef4bfb6384a08cd0a4ee7fe2367a24f14dc",
+  "manifest_sha256": "3e23bf859d7a7ad72299e6697b038351d493e99e2cb6d0abdac3d7665f7873db",
+  "authorized_comment": "结论：待确认。C673-G5 实车有电池健康度，全功能清单里没看到。评论说刚下过需求，并问是不是 G3/G5 全系。本轮没有定位到那张需求票，也没有在全功能清单读到这一行，不能确认是清单漏写还是配置多显示。\n依据：[SD-8331|http://jira.i-tetris.com/browse/SD-8331]。\n处理：回需求票号，以及 G3/G5 是不是全系配置。车辆设置研发处理。"
+}

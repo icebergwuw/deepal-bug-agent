@@ -1,0 +1,209 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52748",
+  "comment_causality": "同一号码多个联系人弹窗姓名",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52748",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "没有读到同一号码多个联系人时弹窗显示哪一个姓名的正式定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52748",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52748",
+      "trigger": "给李德打电话",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52748",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52748"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "同一号码多个联系人弹窗姓名"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "蓝牙电话呼出弹窗"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "蓝牙电话重名号码显示"
+        },
+        {
+          "kind": "version_family",
+          "text": "蓝牙电话"
+        }
+      ],
+      "results": [
+        {
+          "id": "132z_PmXrx96Rac0fR4PG7jtS857rb4bK",
+          "title": "（待评审后下发）B31CS_10-蓝牙电话_V1.0-20261015.pdf",
+          "url": "https://drive.google.com/file/d/132z_PmXrx96Rac0fR4PG7jtS857rb4bK/view",
+          "mime_type": "application/pdf"
+        },
+        {
+          "id": "1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj",
+          "title": "江铃福特JMC-CX835埋点功能清单_v2.4.xlsx",
+          "url": "https://drive.google.com/file/d/1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "100IrIYUObJ8A5n7nGii8-s7f5N2x0421mz1eBpKq-j0",
+          "title": "CX835-语音&大模型_功能清单_v5.4",
+          "url": "https://drive.google.com/file/d/100IrIYUObJ8A5n7nGii8-s7f5N2x0421mz1eBpKq-j0/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11ZnhaCx247nZ0Fd_xmSargITPtQSzOmY",
+          "title": "S01 -CKD问题一元管理表.pdf",
+          "url": "https://drive.google.com/file/d/11ZnhaCx247nZ0Fd_xmSargITPtQSzOmY/view",
+          "mime_type": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52748"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "同一号码多个联系人弹窗姓名"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "蓝牙电话呼出弹窗"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "蓝牙电话重名号码显示"
+        },
+        {
+          "kind": "version_family",
+          "text": "蓝牙电话"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52748"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "132z_PmXrx96Rac0fR4PG7jtS857rb4bK",
+            "title": "（待评审后下发）B31CS_10-蓝牙电话_V1.0-20261015.pdf",
+            "url": "https://drive.google.com/file/d/132z_PmXrx96Rac0fR4PG7jtS857rb4bK/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "蓝牙电话"
+          },
+          {
+            "id": "1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj",
+            "title": "江铃福特JMC-CX835埋点功能清单_v2.4.xlsx",
+            "url": "https://drive.google.com/file/d/1bZcxiwmbnpd6vqCeWoS4_dyo1D0fVyxj/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "蓝牙电话"
+          },
+          {
+            "id": "100IrIYUObJ8A5n7nGii8-s7f5N2x0421mz1eBpKq-j0",
+            "title": "CX835-语音&大模型_功能清单_v5.4",
+            "url": "https://drive.google.com/file/d/100IrIYUObJ8A5n7nGii8-s7f5N2x0421mz1eBpKq-j0/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "蓝牙电话"
+          },
+          {
+            "id": "11ZnhaCx247nZ0Fd_xmSargITPtQSzOmY",
+            "title": "S01 -CKD问题一元管理表.pdf",
+            "url": "https://drive.google.com/file/d/11ZnhaCx247nZ0Fd_xmSargITPtQSzOmY/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "蓝牙电话",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "没有读到同一号码多个联系人时弹窗显示哪一个姓名的正式定义。",
+      "material": true,
+      "next_action": "蓝牙电话按语音已确认的姓名显示，不要通话后覆盖。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待会诊",
+    "owner": "蓝牙电话研发",
+    "text": "结论：待会诊。给李德打电话时，确认窗是「李德 / 10086」，呼出后弹窗变成「波」。同一个 10086 在手机通讯录里有多个联系人。研发说这是通讯录问题，不做处理。还没读到同一号码多个姓名时该显示哪一个的正式定义。\n依据：[ADS-52748|http://jira.i-tetris.com/browse/ADS-52748]。\n处理：通话弹窗沿用语音已确认的姓名，不要按号码再覆盖成另一个联系人。蓝牙电话研发处理。"
+  }
+}

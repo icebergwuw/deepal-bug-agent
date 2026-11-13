@@ -1,0 +1,293 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52953",
+  "comment_causality": "跨大模型重播上一轮",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52953",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "票面上轮在字节，这句落到 claw。关联 ADS-52539 本轮没有全文重读。无上文的在线结果不能代表那个场景。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52953",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52953",
+      "trigger": "刚刚说的再播一遍",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-52953",
+      "trigger": "刚刚说的再播一遍",
+      "target_behavior": "2026-11-13 无上文时下发 1663 vehicle:cabin:assistant:announce:repeat。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52953",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52953"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "跨大模型重播上一轮"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "重播播报"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "重播播报定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "重播播报"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "刚刚说的再播一遍"
+        }
+      ],
+      "results": [
+        {
+          "id": "1TqlD1pDtOGuZVYA0wFkpPJpFnELMAx3C",
+          "title": "T28 0614&0517交付分支合入管控清单.xlsx",
+          "url": "https://drive.google.com/file/d/1TqlD1pDtOGuZVYA0wFkpPJpFnELMAx3C/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "17k63-APC9hQNu3eMuNkdgoCSWRfXN90u",
+          "title": "M18再发防止.xlsx",
+          "url": "https://drive.google.com/file/d/17k63-APC9hQNu3eMuNkdgoCSWRfXN90u/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1tTl8zFnHxaMuDr4e2rsj9dlFp50GuXJD",
+          "title": "M18再发防止.xlsx",
+          "url": "https://drive.google.com/file/d/1tTl8zFnHxaMuDr4e2rsj9dlFp50GuXJD/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1jssnVY0hvExFvpGwmeAda6vSnZWiWaQ4CUtG1olHDWE",
+          "title": "P789 ICA 语音&大模型 功能清单_v0.9",
+          "url": "https://drive.google.com/file/d/1jssnVY0hvExFvpGwmeAda6vSnZWiWaQ4CUtG1olHDWE/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52953"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "跨大模型重播上一轮"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "重播播报"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "重播播报定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "重播播报"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "刚刚说的再播一遍"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52953"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1TqlD1pDtOGuZVYA0wFkpPJpFnELMAx3C",
+            "title": "T28 0614&0517交付分支合入管控清单.xlsx",
+            "url": "https://drive.google.com/file/d/1TqlD1pDtOGuZVYA0wFkpPJpFnELMAx3C/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "17k63-APC9hQNu3eMuNkdgoCSWRfXN90u",
+            "title": "M18再发防止.xlsx",
+            "url": "https://drive.google.com/file/d/17k63-APC9hQNu3eMuNkdgoCSWRfXN90u/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1tTl8zFnHxaMuDr4e2rsj9dlFp50GuXJD",
+            "title": "M18再发防止.xlsx",
+            "url": "https://drive.google.com/file/d/1tTl8zFnHxaMuDr4e2rsj9dlFp50GuXJD/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1jssnVY0hvExFvpGwmeAda6vSnZWiWaQ4CUtG1olHDWE",
+            "title": "P789 ICA 语音&大模型 功能清单_v0.9",
+            "url": "https://drive.google.com/file/d/1jssnVY0hvExFvpGwmeAda6vSnZWiWaQ4CUtG1olHDWE/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "重播播报"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "重播播报",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "票面上轮在字节，这句落到 claw。关联 ADS-52539 本轮没有全文重读。无上文的在线结果不能代表那个场景。",
+      "material": true,
+      "next_action": "先读 ADS-52539，再定要不要支持跨大模型重播。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "刚刚说的再播一遍"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1663"
+        }
+      ],
+      "reason": "本轮没有打开 1663 标准功能点。",
+      "material": true,
+      "next_action": "先读 ADS-52539，再定要不要支持跨大模型重播。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1663"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52953"
+        }
+      ],
+      "reason": "本轮没有打开重播的项目功能点。",
+      "material": true,
+      "next_action": "先读 ADS-52539，再定要不要支持跨大模型重播。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "刚刚说的再播一遍",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 无上文时下发 1663 vehicle:cabin:assistant:announce:repeat。",
+    "meta_id": "1663",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开 1663 标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开重播的项目功能点。"
+    },
+    "unavailable_reason": "票面上轮在字节，这句落到 claw。关联 ADS-52539 本轮没有全文重读。无上文的在线结果不能代表那个场景。",
+    "next_action": "先读 ADS-52539，再定要不要支持跨大模型重播。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品",
+    "text": "结论：待复核。上一轮在字节时，「刚刚说的再播一遍」落到了 claw。2026-11-13 无上文的在线对话下发 meta 1663，只表示重播播报，不能代表跨大模型场景。关联 ADS-52539 本轮没有全文重读。\n依据：[ADS-52953|http://jira.i-tetris.com/browse/ADS-52953]。\n处理：先核对 ADS-52539，再定要不要支持跨大模型重播。语音产品处理。"
+  }
+}

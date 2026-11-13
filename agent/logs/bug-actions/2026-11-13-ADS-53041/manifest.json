@@ -1,0 +1,308 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-53041",
+  "comment_causality": "打开超级省电设置是打开功能还是打开页面",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-53041",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "还没读到要求打开超级省电设置页的正式定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-53041",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-53041",
+      "trigger": "打开超级省电设置",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-standard",
+      "source": "打开超级省电",
+      "source_location": "Alchemy标准功能点",
+      "source_type": "alchemy_standard",
+      "role": "context_only",
+      "project_model": "ADS-53041",
+      "trigger": "打开超级省电设置",
+      "target_behavior": "标准功能 1762 的示例只有「打开超级省电」，没有打开设置页。",
+      "match": "partial",
+      "reason": "已读标准功能点。"
+    },
+    {
+      "source_id": "alchemy-project",
+      "source": "打开超级省电 12049",
+      "source_location": "Alchemy深蓝项目功能点",
+      "source_type": "alchemy_project",
+      "role": "context_only",
+      "project_model": "ADS-53041",
+      "trigger": "打开超级省电设置",
+      "target_behavior": "深蓝项目已继承，同样是打开功能。",
+      "match": "partial",
+      "reason": "已读项目功能点。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-53041",
+      "trigger": "打开超级省电设置",
+      "target_behavior": "2026-11-13 C673_7 在线对话下发 2367 energy:charging:ctrl。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-53041",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53041"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "打开超级省电设置是打开功能还是打开页面"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "超级省电"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "超级省电定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "超级省电"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "打开超级省电设置"
+        }
+      ],
+      "results": [
+        {
+          "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+          "title": "深蓝项目变更管理表-2026年",
+          "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk",
+          "title": "东风项目周会纪要（内部）",
+          "url": "https://drive.google.com/file/d/161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1d7ZX5m_k2KAN41G3U1NXgNzlB5lmxRfrJht4T58C9DA",
+          "title": "M1FA项目管理一览表",
+          "url": "https://drive.google.com/file/d/1d7ZX5m_k2KAN41G3U1NXgNzlB5lmxRfrJht4T58C9DA/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1BFjz0gYuPNBEQqBTpsZBZ-9N4fkNJAnD",
+          "title": "【0828】S59b海外欧洲、澳新英和东盟整车功能清单-含PRD差异项对比20260930.xlsx",
+          "url": "https://drive.google.com/file/d/1BFjz0gYuPNBEQqBTpsZBZ-9N4fkNJAnD/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53041"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "打开超级省电设置是打开功能还是打开页面"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "超级省电"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "超级省电定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "超级省电"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "打开超级省电设置"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-53041"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4",
+            "title": "深蓝项目变更管理表-2026年",
+            "url": "https://drive.google.com/file/d/1q_h3iEm4t8RAv9EEjbadm6yMFxoEFGkP9ZYqPlHdPv4/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk",
+            "title": "东风项目周会纪要（内部）",
+            "url": "https://drive.google.com/file/d/161F1HzbcI3VLPI7HESS2NCd7RHAIi_QZfaG6QTS5JIk/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1d7ZX5m_k2KAN41G3U1NXgNzlB5lmxRfrJht4T58C9DA",
+            "title": "M1FA项目管理一览表",
+            "url": "https://drive.google.com/file/d/1d7ZX5m_k2KAN41G3U1NXgNzlB5lmxRfrJht4T58C9DA/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1BFjz0gYuPNBEQqBTpsZBZ-9N4fkNJAnD",
+            "title": "【0828】S59b海外欧洲、澳新英和东盟整车功能清单-含PRD差异项对比20260930.xlsx",
+            "url": "https://drive.google.com/file/d/1BFjz0gYuPNBEQqBTpsZBZ-9N4fkNJAnD/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "还没读到要求打开超级省电设置页的正式定义。",
+      "material": true,
+      "next_action": "能量产品确认要不要新增打开页面。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "打开超级省电设置"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "read",
+      "source_ids": [
+        "alchemy-standard"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "2367"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "read",
+      "source_ids": [
+        "alchemy-project"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "2367"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-53041"
+        }
+      ]
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "complete",
+    "original_utterance": "打开超级省电设置",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 C673_7 在线对话下发 2367 energy:charging:ctrl。",
+    "meta_id": "2367",
+    "standard_function": {
+      "status": "verified",
+      "name": "打开超级省电",
+      "assessment": "标准功能 1762 的示例只有「打开超级省电」，没有打开设置页。"
+    },
+    "project_function": {
+      "status": "verified",
+      "name": "打开超级省电 12049",
+      "assessment": "深蓝项目已继承，同样是打开功能。"
+    }
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "能量产品",
+    "text": "结论：待复核。「打开超级省电设置」现在打开的是功能，不是页面。2026-11-13 在线对话和车端都下发 meta 2367。标准功能 1762、深蓝项目功能 12049 的示例只有「打开超级省电」，没有打开设置页。还没读到必须打开页面的能量定义，不能按测试预期改协议。\n依据：[打开超级省电|https://alchemy.i-tetris.com/#/functional/projectPoints/detail/12049]。\n处理：要打开页面就另补定义。当前保持打开功能。能量产品处理。"
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-53004",
+  "comment_causality": "移动云盘上传视频",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-53004",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "实车落到 edeepal ai。测试预期是不支持。本轮没有重测，也没有读到移动云盘上传定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-53004",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-53004",
+      "trigger": "把我拍摄的视频上传到移动云盘",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-53004",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53004"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "移动云盘上传视频"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "移动云盘"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "移动云盘定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "移动云盘"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "把我拍摄的视频上传到移动云盘"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E",
+          "title": "C518&C857项目8155平台项目管理计划",
+          "url": "https://drive.google.com/file/d/1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Idq7JOl4theEgKpXcwjGYMKMVW3Kp7eDtxL_LRj6paM",
+          "title": "EC1C系统需求跟踪",
+          "url": "https://drive.google.com/file/d/1Idq7JOl4theEgKpXcwjGYMKMVW3Kp7eDtxL_LRj6paM/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+          "title": "北汽项目变更管理表.xlsx",
+          "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53004"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "移动云盘上传视频"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "移动云盘"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "移动云盘定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "移动云盘"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "把我拍摄的视频上传到移动云盘"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-53004"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E",
+            "title": "C518&C857项目8155平台项目管理计划",
+            "url": "https://drive.google.com/file/d/1oPnxu3Jsgd6d7g0kUFsykPxmLcrMJ_18yFFjNlLQi2E/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1Idq7JOl4theEgKpXcwjGYMKMVW3Kp7eDtxL_LRj6paM",
+            "title": "EC1C系统需求跟踪",
+            "url": "https://drive.google.com/file/d/1Idq7JOl4theEgKpXcwjGYMKMVW3Kp7eDtxL_LRj6paM/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo",
+            "title": "北汽项目变更管理表.xlsx",
+            "url": "https://drive.google.com/file/d/1j5uRd0AszUPT_Se60D3qd9yUdHFaL6jo/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "实车落到 edeepal ai。测试预期是不支持。本轮没有重测，也没有读到移动云盘上传定义。",
+      "material": true,
+      "next_action": "语音产品确认有没有移动云盘上传功能。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "把我拍摄的视频上传到移动云盘"
+        }
+      ],
+      "reason": "实车落到 edeepal ai。测试预期是不支持。本轮没有重测，也没有读到移动云盘上传定义。",
+      "material": true,
+      "next_action": "语音产品确认有没有移动云盘上传功能。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "把我拍摄的视频上传到移动云盘"
+        }
+      ],
+      "reason": "本轮没有按移动云盘重开功能点。",
+      "material": true,
+      "next_action": "语音产品确认有没有移动云盘上传功能。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "把我拍摄的视频上传到移动云盘"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-53004"
+        }
+      ],
+      "reason": "本轮没有打开移动云盘项目功能点。",
+      "material": true,
+      "next_action": "语音产品确认有没有移动云盘上传功能。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "把我拍摄的视频上传到移动云盘",
+    "alchemy_tested": false,
+    "alchemy_result": "本轮没有完成同上下文在线对话。",
+    "meta_id": "未取得",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有按移动云盘重开功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开移动云盘项目功能点。"
+    },
+    "unavailable_reason": "实车落到 edeepal ai。测试预期是不支持。本轮没有重测，也没有读到移动云盘上传定义。",
+    "next_action": "语音产品确认有没有移动云盘上传功能。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品",
+    "text": "结论：待复核。「把我拍摄的视频上传到移动云盘」实车落到 edeepal ai。测试预期是不支持。本轮没有重测，也没有读到移动云盘上传的正式定义，不能直接定成不支持或转执行。\n依据：[ADS-53004|http://jira.i-tetris.com/browse/ADS-53004]。\n处理：先确认有没有这个功能。没有就回复不支持，不要进 edeepal ai。语音产品处理。"
+  }
+}

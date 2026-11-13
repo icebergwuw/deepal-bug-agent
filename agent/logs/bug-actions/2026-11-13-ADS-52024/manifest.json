@@ -1,0 +1,282 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-52024",
+  "comment_causality": "音乐上下文换一个落到deepal ai",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-52024",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "没有在同一音乐播放上下文重测「换一个」，也没有读到覆盖这句的正式切歌定义。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-52024",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-52024",
+      "trigger": "换一个",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-52024",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52024"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "音乐上下文换一个落到deepal ai"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "音乐切歌多轮"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "音乐多轮切歌定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "音乐多轮切歌"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "换一个"
+        }
+      ],
+      "results": [
+        {
+          "id": "13G90Zg6N-MmEk2IGM72Ke8Y0PBkMyv7v",
+          "title": "Mega奇瑞项目0KM问题跟踪表.xlsx",
+          "url": "https://drive.google.com/file/d/13G90Zg6N-MmEk2IGM72Ke8Y0PBkMyv7v/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+          "title": "吴优工作说明",
+          "url": "https://drive.google.com/file/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ErywGVsN1eWEHMZeiwk_DVKQ9Th0gCfY",
+          "title": "20241126_command list_A19.2 (2).xlsx",
+          "url": "https://drive.google.com/file/d/1ErywGVsN1eWEHMZeiwk_DVKQ9Th0gCfY/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Nq_iqaqX-n_v4A8lvZHr-5RYLmtbMFXv",
+          "title": "【V-5】Featurelist_8797 V1.5 Mega_合并版.xlsx",
+          "url": "https://drive.google.com/file/d/1Nq_iqaqX-n_v4A8lvZHr-5RYLmtbMFXv/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-52024"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "音乐上下文换一个落到deepal ai"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "音乐切歌多轮"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "音乐多轮切歌定义"
+        },
+        {
+          "kind": "version_family",
+          "text": "音乐多轮切歌"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "换一个"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-52024"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "13G90Zg6N-MmEk2IGM72Ke8Y0PBkMyv7v",
+            "title": "Mega奇瑞项目0KM问题跟踪表.xlsx",
+            "url": "https://drive.google.com/file/d/13G90Zg6N-MmEk2IGM72Ke8Y0PBkMyv7v/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs",
+            "title": "吴优工作说明",
+            "url": "https://drive.google.com/file/d/1niNVFbugK2443IFe06H8nvZRC-e_r2b83YRBqXKGkqs/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1ErywGVsN1eWEHMZeiwk_DVKQ9Th0gCfY",
+            "title": "20241126_command list_A19.2 (2).xlsx",
+            "url": "https://drive.google.com/file/d/1ErywGVsN1eWEHMZeiwk_DVKQ9Th0gCfY/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1Nq_iqaqX-n_v4A8lvZHr-5RYLmtbMFXv",
+            "title": "【V-5】Featurelist_8797 V1.5 Mega_合并版.xlsx",
+            "url": "https://drive.google.com/file/d/1Nq_iqaqX-n_v4A8lvZHr-5RYLmtbMFXv/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "音乐多轮切歌"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "音乐多轮切歌",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "没有在同一音乐播放上下文重测「换一个」，也没有读到覆盖这句的正式切歌定义。",
+      "material": true,
+      "next_action": "语音研发按 TT-14914 核对动态技能是否只承接切歌，并用同一上下文复测。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "换一个"
+        }
+      ],
+      "reason": "没有在同一音乐播放上下文重测「换一个」，也没有读到覆盖这句的正式切歌定义。",
+      "material": true,
+      "next_action": "语音研发按 TT-14914 核对动态技能是否只承接切歌，并用同一上下文复测。"
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3201"
+        }
+      ],
+      "reason": "本轮没有按 3201 重开标准功能点。",
+      "material": true,
+      "next_action": "语音研发按 TT-14914 核对动态技能是否只承接切歌，并用同一上下文复测。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "3201"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-52024"
+        }
+      ],
+      "reason": "本轮没有按音乐上下文重测项目功能点。",
+      "material": true,
+      "next_action": "语音研发按 TT-14914 核对动态技能是否只承接切歌，并用同一上下文复测。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "换一个",
+    "alchemy_tested": false,
+    "alchemy_result": "本轮没有完成同上下文在线对话。",
+    "meta_id": "3201",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有按 3201 重开标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有按音乐上下文重测项目功能点。"
+    },
+    "unavailable_reason": "没有在同一音乐播放上下文重测「换一个」，也没有读到覆盖这句的正式切歌定义。",
+    "next_action": "语音研发按 TT-14914 核对动态技能是否只承接切歌，并用同一上下文复测。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音研发",
+    "text": "结论：音乐播放后说「换一个」应切同歌手其他歌，不应落到 deepal ai。11月2日实车复测仍失败，日志把「换一个」匹配动态技能 dynamic_id_137_5 并下发 meta 3201。最新评论写多轮已修复，但这条仍是重新打开，没有新的通过记录。本轮没有在同一音乐上下文重测。\n依据：[ADS-52024 11月2日复测|http://jira.i-tetris.com/browse/ADS-52024]。\n处理：动态技能只承接切歌，不要再下发 3201。语音研发处理。"
+  }
+}

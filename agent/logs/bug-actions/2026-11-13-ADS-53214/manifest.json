@@ -1,0 +1,293 @@
+{
+  "schema_version": 5,
+  "jira_key": "ADS-53214",
+  "comment_causality": "开启恒温模式是否进入恒温座舱",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-ADS-53214",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "情景模式定义写的是打开或退出恒温座舱模式，没有「开启恒温模式」这句，也没有读到它必须进座舱而不是空调。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "ADS-53214",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "ADS-53214",
+      "trigger": "开启恒温模式",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    },
+    {
+      "source_id": "alchemy-current",
+      "source": "Alchemy在线对话",
+      "source_location": "2026-11-13 C673 在线对话",
+      "source_type": "alchemy_current",
+      "role": "context_only",
+      "project_model": "ADS-53214",
+      "trigger": "开启恒温模式",
+      "target_behavior": "2026-11-13 C673_7 在线对话下发 1072 ac:ctrl:mode。",
+      "match": "partial",
+      "reason": "已做在线对话。"
+    }
+  ],
+  "evidence_profiles": [
+    "voice"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": false,
+      "reason": "不是通用定义问题。"
+    },
+    "voice": {
+      "applicable": true,
+      "reason": "语音执行或语义。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-ads-53214",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53214"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "开启恒温模式是否进入恒温座舱"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "恒温座舱"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "开启恒温模式"
+        }
+      ],
+      "results": [
+        {
+          "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+          "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+          "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+          "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+          "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+          "title": "海外项目翻译需求收集表（一代+在研）",
+          "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+          "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+          "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "ADS-53214"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "开启恒温模式是否进入恒温座舱"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "恒温座舱"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "C385_C673_功能描述_智能情景模式功能定义V5.0.docx"
+        },
+        {
+          "kind": "version_family",
+          "text": "C385_C673_功能描述_智能情景模式功能定义"
+        },
+        {
+          "kind": "exact_trigger",
+          "text": "开启恒温模式"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-ads-53214"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 4,
+        "candidates": [
+          {
+            "id": "1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9",
+            "title": "S59B-EN 海外HMI清单-20261110.xlsx",
+            "url": "https://drive.google.com/file/d/1Yq-hhQ1-izRGAkA6-eqUDmC2cNHD6QB9/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU",
+            "title": " 镁佳功能筛选-D600华为智驾-功能裁剪.xlsx",
+            "url": "https://drive.google.com/file/d/1UxYYcQrCpLWh4Ek_kF4vwNcBGoScrEXU/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc",
+            "title": "海外项目翻译需求收集表（一代+在研）",
+            "url": "https://drive.google.com/file/d/1v06-QX9nwIgSn1FmAXd4nFuvNMhETOr2dRABzCYAewc/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。"
+          },
+          {
+            "id": "159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI",
+            "title": "【正式版】长安系_海外各国语料清单汇总_V0.3.2.20",
+            "url": "https://drive.google.com/file/d/159bd_jBCou9dmXZNEH8y_cQQiMKmUj7rJoVHMl2d1SI/view",
+            "references": [],
+            "disposition": "excluded",
+            "reason": "检索命中，但不是本票可直接引用的生效定义。",
+            "version_family": "C385_C673_功能描述_智能情景模式功能定义"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "C385_C673_功能描述_智能情景模式功能定义",
+            "status": "not_applicable",
+            "reason": "版本化文件不是本票已读的生效定义。"
+          }
+        ]
+      },
+      "reason": "情景模式定义写的是打开或退出恒温座舱模式，没有「开启恒温模式」这句，也没有读到它必须进座舱而不是空调。",
+      "material": true,
+      "next_action": "情景模式产品补说法后，语音再改映射。"
+    },
+    {
+      "check_id": "alchemy_current",
+      "status": "read",
+      "source_ids": [
+        "alchemy-current"
+      ],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy在线对话",
+      "queries": [
+        {
+          "kind": "exact_trigger",
+          "text": "开启恒温模式"
+        }
+      ]
+    },
+    {
+      "check_id": "alchemy_standard",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy标准功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1072"
+        }
+      ],
+      "reason": "本轮没有打开空调模式 1072 的标准功能点。",
+      "material": true,
+      "next_action": "情景模式产品补说法后，语音再改映射。"
+    },
+    {
+      "check_id": "alchemy_project",
+      "status": "unavailable",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Alchemy深蓝项目功能点",
+      "queries": [
+        {
+          "kind": "meta_or_function",
+          "text": "1072"
+        },
+        {
+          "kind": "project_scope",
+          "text": "ADS-53214"
+        }
+      ],
+      "reason": "本轮没有打开恒温座舱项目功能点。",
+      "material": true,
+      "next_action": "情景模式产品补说法后，语音再改映射。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": true,
+    "availability": "partial",
+    "original_utterance": "开启恒温模式",
+    "alchemy_tested": true,
+    "alchemy_result": "2026-11-13 C673_7 在线对话下发 1072 ac:ctrl:mode。",
+    "meta_id": "1072",
+    "standard_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开空调模式 1072 的标准功能点。"
+    },
+    "project_function": {
+      "status": "unavailable",
+      "reason": "本轮没有打开恒温座舱项目功能点。"
+    },
+    "unavailable_reason": "情景模式定义写的是打开或退出恒温座舱模式，没有「开启恒温模式」这句，也没有读到它必须进座舱而不是空调。",
+    "next_action": "情景模式产品补说法后，语音再改映射。"
+  },
+  "decision": {
+    "status": "待复核",
+    "owner": "语音产品",
+    "text": "结论：待复核。「开启恒温模式」现在进了空调。2026-11-13 在线对话下发 meta 1072、ac:ctrl:mode。智能情景模式功能定义 V5.0 写的是「打开/退出恒温座舱模式」，不是这句。还不能认定它必须进恒温座舱。\n依据：[智能情景模式功能定义V5.0|https://drive.google.com/file/d/1TUCtGaZg0O_C0fQR-nn_5NeXKaDFglJ9/view]。\n处理：先不要把「恒温模式」泛化成空调模式。说法补齐后再改映射。语音产品处理。"
+  }
+}

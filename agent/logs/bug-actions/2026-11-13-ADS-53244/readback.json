@@ -1,0 +1,8 @@
+{
+  "comment_id": "8882100",
+  "body": "结论：待复核。「打开喊话功能」和「打开车外喊话」不是同一句。2026-11-13 C673_7 在线对话里，前者下发 1919 不支持，后者下发 1657 打开车外扬声器。深蓝项目功能 24530 的示例有「打开车外喊话」，泛化只写了东风和江铃，没有「喊话功能」。\n依据：[打开车外扬声器|https://alchemy.i-tetris.com/#/functional/projectPoints/detail/24530]。\n处理：先确认「打开喊话功能」要不要并入 1657。未确认前不要当执行缺陷。车外语音产品处理。\n\n（AI Generated）\n\n!ADS-53244-source.png|thumbnail!",
+  "transitioned": false,
+  "status": "待办",
+  "assignee": "you.wu",
+  "attachment_id": "4683641"
+}

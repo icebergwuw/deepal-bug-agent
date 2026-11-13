@@ -1,0 +1,142 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-86567",
+  "comment_causality": "输入π后输入方向变化",
+  "run_context": {
+    "run_id": "bug-20261113T165000+0800-HUR-86567",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": []
+  },
+  "conflict_resolution": "这不是文言票。标题没有 0408 标记，不转张泓洋。还没看视频确认是光标方向还是文本方向。",
+  "scope_checks": [
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-86567",
+      "source_location": "描述和评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "HUR-86567",
+      "trigger": "π",
+      "target_behavior": "票面实际结果",
+      "match": "exact",
+      "reason": "票面实际结果。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照正式功能定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "结论不依赖语音功能点。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮没有改界面，也不把可见交互当必查。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "receipt-hur-86567",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-13T16:50:00+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86567"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "输入π后输入方向变化"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "输入法方向"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "阿拉伯语输入方向"
+        },
+        {
+          "kind": "version_family",
+          "text": "输入法"
+        }
+      ],
+      "results": []
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "not_found",
+      "source_ids": [],
+      "searched_at": "2026-11-13",
+      "search_location": "Google Drive API",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-86567"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "输入π后输入方向变化"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "输入法方向"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "阿拉伯语输入方向"
+        },
+        {
+          "kind": "version_family",
+          "text": "输入法"
+        }
+      ],
+      "search_receipt_ids": [
+        "receipt-hur-86567"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 0,
+        "candidates": []
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": []
+      },
+      "reason": "这不是文言票。标题没有 0408 标记，不转张泓洋。还没看视频确认是光标方向还是文本方向。",
+      "material": true,
+      "next_action": "输入法研发对照视频说明 π 是否应按双向规则改方向。"
+    }
+  ],
+  "inheritance_chains": [],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "待确认",
+    "owner": "输入法研发",
+    "text": "结论：待确认。输入 π 后输入方向变化。这不是文言票，标题也没有【0408】、[0408] 或 0408分支，不转张泓洋，也不进翻译总票。研发说搜索框是 Android 原生，不控制排序和显示。还没看视频确认变的是光标方向还是文本方向。\n依据：[HUR-86567|http://jira.i-tetris.com/browse/HUR-86567]。\n处理：对照视频说明 π 是否应按阿拉伯语双向规则改方向。输入法研发处理。"
+  }
+}

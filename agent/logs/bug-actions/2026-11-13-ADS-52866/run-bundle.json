@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261113T165000+0800-ADS-52866",
+  "status": "comment_verified",
+  "started_at": "2026-11-13T16:50:00+08:00",
+  "completed_at": "2026-11-13T17:05:00+08:00",
+  "query_summary": "评论未处理故障 ADS-52866",
+  "action_log": "agent/logs/bug-actions/2026-11-13-ADS-52866/action-log.md",
+  "preflight_path": "agent/logs/bug-actions/2026-11-13-uncommented-batch/preflight-voice.json",
+  "preflight_sha256": "45c9d052b28e9a0611c894b8229ba8afca7e27736d50103b3f3f292d5fae975f",
+  "items": [
+    {
+      "jira_key": "ADS-52866",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-13-ADS-52866/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-13-ADS-52866/receipt.json",
+      "comment_receipt_sha256": "7ce649acb886fd23466faab6d7aa9c24502ca26b9f300eb87736b8fa1bc1cb1d",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-13-ADS-52866/readback.json",
+      "comment_readback_sha256": "59acd9ab1ee9d2cfc8e82634de20039e150708b61645a726d34626b1acfa61f8"
+    }
+  ]
+}

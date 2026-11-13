@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52024",
+  "phase": "d",
+  "status": "待复核",
+  "decision_text_sha256": "2da62acfa55a2b799b0276e50f3638e65aae3a0c11ac2842d228370fba891116",
+  "manifest_sha256": "b25e3b23f19e32d5ea6d89f19cd9adb4a257b3634dab7a679324a6f37013b09a",
+  "authorized_comment": "结论：音乐播放后说「换一个」应切同歌手其他歌，不应落到 deepal ai。11月2日实车复测仍失败，日志把「换一个」匹配动态技能 dynamic_id_137_5 并下发 meta 3201。最新评论写多轮已修复，但这条仍是重新打开，没有新的通过记录。本轮没有在同一音乐上下文重测。\n依据：[ADS-52024 11月2日复测|http://jira.i-tetris.com/browse/ADS-52024]。\n处理：动态技能只承接切歌，不要再下发 3201。语音研发处理。"
+}

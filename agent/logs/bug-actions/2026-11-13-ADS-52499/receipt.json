@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "ADS-52499",
+  "phase": "d",
+  "status": "待会诊",
+  "decision_text_sha256": "835ba0382fb54bdf58013b9936b1f88e391a15249c337cb56a8f3ea4bce42946",
+  "manifest_sha256": "36d386b84f1f47bf7453a4f0ec8323208c295b0e3d9f1cee14ed8f7655f8e57a",
+  "authorized_comment": "结论：待会诊。票面说电站模式、露营电站、营地电站被收成露营模式泛化。2026-11-13 在线对话「打开电站模式」下发 meta 1127，打开情景模式。标准功能 1364 是打开特定情景模式，不是电站模式专用功能。本轮没有读到那张泛化表。\n依据：[打开特定情景模式|https://alchemy.i-tetris.com/#/functional/standardPoints/detail/1364]。\n处理：核对泛化值，不要把电站模式收成露营。语音产品处理。"
+}

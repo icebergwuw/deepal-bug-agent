@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "BEO-10320",
+  "phase": "d",
+  "status": "待确认",
+  "decision_text_sha256": "eec825067f8c4f6670175ed643a303dbb90a7101a847cb9f23523e71491802d1",
+  "manifest_sha256": "683101f9a22cea6e0c75b7505526ff7c6ae66b755fcce02a8ae22e9f4bcf3432",
+  "authorized_comment": "结论：待确认。文件管理里的「安装」和「应用」还没在翻译表定位到。表里其他模块有这两句，不能当成文件管理已经收录。本轮没有打开 D587-G 文件管理页签核对。\n依据：[BEO-10320|http://jira.i-tetris.com/browse/BEO-10320]。\n处理：先给出文件管理页签和 Key。没有 Key 就按未收录补，不要猜译文。翻译研发处理。"
+}
