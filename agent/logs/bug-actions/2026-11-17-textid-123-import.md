@@ -1,0 +1,9 @@
+# 2026-11-17 长马海外 TextID V1.2.3 导入票
+
+- 操作者：吴优。用户提供中科返回文件，确认沿用上次 0904、0109、0507 分支，并要求票内分别列出 TS 和 MJ 变更履历。
+- Jira 查重：HUR 的 TextID / 261117 搜索无结果；未找到未关闭且精确标题为 ECR_待签署 的 Epic；参考 HUR-85980 的 Epic HUR-2。
+- 新建并逐票 MCP 回读：HUR-87448、HUR-87449（0904）；HUR-87450、HUR-87451（0109）；HUR-87452、HUR-87453（0507）。SIC 经办人祝成雄，IFS 经办人袁威。车型、Epic、描述和附件文件名及 6311993 字节大小均已回读。
+- V1.2.3 TS 履历 385 条，MJ 履历 1 条。完整 TS 前后文本超过 Jira 描述 32767 字符限制，首次创建被拒、未产生票；最终描述按 Sheet、Text ID、Key、中文归并列出及受影响语种，完整明细保留在附件。
+- 源文件：`/Users/ice/Desktop/Project/Mega/TextID/V1.2.3/J90A_海外LanguageList_V1.2.3_261117中科返回.xlsx`；MD5 `dcd17082ff0981166875594cfed5c5a3`。
+- 无图版：`/Users/ice/Desktop/Project/Mega/TextID/V1.2.3/J90A_海外LanguageList_V1.2.3_261117_无图.xlsx`；MD5 `18dff73c95dc84534c8003a94328fc6b`。三份分支导入副本 MD5 一致。去除图片后验证全部 43 张表的 XML 除 drawing 标签外字节一致，注释和 VML 保留。
+- 未评论、流转 Jira 或发送飞书消息。
