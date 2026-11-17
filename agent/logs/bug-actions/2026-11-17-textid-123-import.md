@@ -7,3 +7,8 @@
 - 源文件：`/Users/ice/Desktop/Project/Mega/TextID/V1.2.3/J90A_海外LanguageList_V1.2.3_261117中科返回.xlsx`；MD5 `dcd17082ff0981166875594cfed5c5a3`。
 - 无图版：`/Users/ice/Desktop/Project/Mega/TextID/V1.2.3/J90A_海外LanguageList_V1.2.3_261117_无图.xlsx`；MD5 `18dff73c95dc84534c8003a94328fc6b`。三份分支导入副本 MD5 一致。去除图片后验证全部 43 张表的 XML 除 drawing 标签外字节一致，注释和 VML 保留。
 - 未评论、流转 Jira 或发送飞书消息。
+
+## 描述格式调整
+
+- 用户提供按工作表和版本列出变更范围的示例，六张票的描述均调整为该格式：变更履历-MJ 的 V1.2.3 全部（第 34 行）；变更履历-TS 的 V1.2.3 全部（第 10914–11298 行，共 385 条）。
+- 保留各票原有分支及文档名称；逐票 MCP 回读新描述和原附件文件名、大小，均通过。未修改附件或其他字段。
