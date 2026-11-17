@@ -51,10 +51,12 @@ Copy the field shape of HUR-85980 through HUR-85985:
 - Epic `HUR-2`
 - Vehicle Model: `0904` and `0507` are J90A/EU (`11726` / `11728`). `0109` is J90A/EU PI (`11726` / `13315`).
 
-Titles:
+Titles follow HUR-86921 (仪表) and HUR-86918 (中控), replacing the branch and version for this import:
 
-- SIC: `[HMI文言导入]{branch}分支导入TextID{version}_{导入日期}-SIC`
-- IFS: `[HMI文言导入]{branch}分支导入TextID_{导入日期}`
+- SIC / 仪表: `【{branch}分支文言更新】Text ID V{version}-HMI文言更新-仪表`
+- IFS / 中控: `【{branch}分支文言更新】Text ID V{version}-HMI文言更新-中控`
+
+Use the version number without a leading `V` in `{version}`. Do not add the import date to these titles.
 
 Assignees, unless the user names someone else for this run:
 

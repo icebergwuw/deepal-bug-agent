@@ -1,8 +1,8 @@
 # Bug 处理规则版本
 
-- 当前版本：`v1.64.0-trial.1`
+- 当前版本：`v1.65.0-trial.1`
 - 状态：`trial`
-- 生效日期：`2026-11-12`
+- 生效日期：`2026-11-17`
 - 适用范围：`.gitignore`、`AGENTS.md`、`README.md`、`agent/onboarding.md`、`agent/evidence-contract.md`、`agent/output-contract.md`、`agent/workflows/bug.md`、`agent/workflows/review.md`、`agent/sheet-contract.md`、`agent/config/evidence-requirements.json`、`agent/config/external-skills.json`、`agent/config/sheet-update-modes.json`、`agent/config/local-profile.example.json`、`agent/context.md`、`agent/bug-owners/registry.yaml`、`agent/product-kb/rules/jira-comment-signals.md`、`agent/product-kb/rules/hur-translation-parent.md`、`agent/product-kb/rules/bug-to-requirement.md`、`agent/product-kb/modules/multilingual-key.md`、`agent/product-kb/index.md`、`agent/logs/bug-actions/README.md`、`agent/skills/deepal-product-bug-handler/SKILL.md`、`agent/skills/deepal-change-sheet-story/SKILL.md`、`agent/scripts/bug_project_preflight.py`、`agent/scripts/google_drive_api.py`、`agent/scripts/bug_sheet_contract.py`、`agent/scripts/validate_bug_evidence_gate.py`、`agent/scripts/authorize_jira_comment.py`、`agent/scripts/test_authorize_jira_comment.py`、`agent/scripts/validate_bug_run.py`、`agent/scripts/sync_bug_skill.py`、`agent/scripts/test_bug_project_preflight.py`、`agent/scripts/test_bug_evidence_gate.py`、`agent/scripts/test_bug_run.py`、`agent/scripts/sheet_page_save.py`、`agent/scripts/test_sheet_page_save.py`、`agent/scripts/test_bug_sheet_contract.py`、`agent/scripts/validate_rule_architecture.py`、`agent/scripts/notify_feishu_ticket.py`、`agent/config/feishu-notify.json`、`agent/scripts/analyze-bug-jira-mcp.sh`、`agent/scripts/analyze-bug-mcp.sh`、`.grok/config.toml`、`agent/vendor/analyze-bug/`、`agent/archive/scripts/README.md`
 - Skill 管理：Bug 流程使用本仓库 `agent/skills/deepal-product-bug-handler/SKILL.md`。变更表建票使用 `agent/skills/deepal-change-sheet-story/SKILL.md`。长马文言清单使用 `agent/skills/translation-key-excel-organizer/SKILL.md`。UE 语音覆盖审核是 `agent/config/external-skills.json` 登记的独立私有 Skill。外部 Skill 从自己的 `VERSION` 读取版本，不使用本文件的 Bug 规则版本。
 - 说明：当前目录从 `v1.1.0-trial.3` 起使用本地 Git `main` 分支管理；本文件继续记录业务规则版本、试行状态、验证案例和回滚口径。更早版本没有 Git 提交，不追溯伪造。
@@ -11,6 +11,18 @@
 
 
 
+
+## v1.65.0-trial.1 — 2026-11-17
+
+### 试行内容
+
+- 长马海外 TextID 导入票标题参考 HUR-86921（仪表）与 HUR-86918（中控），按本次分支和版本生成，不在标题追加导入日期。
+- 同步仓库 `agent/skills/textid-import-tickets/SKILL.md` 和本机安装副本。
+
+### 修改原因及验证
+
+- 吴优指出此前沿用了旧标题模板。HUR-87448 至 HUR-87453 已按参考格式修正并逐票 MCP 回读。
+- 模板保留分支、版本与仪表 / 中控区分；其他建票字段和授权不变。
 
 ## v1.64.0-trial.1 — 2026-11-12
 
