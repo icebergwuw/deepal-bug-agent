@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87460",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "36cdf37c4c4c30adaaafd39c35459bcd3d0b29c94c01c40d66b62a08cb430143",
+  "manifest_sha256": "05aabe2548c2428dcb115ed8538297cfd0ae37b9b751ab741f89d98b38c9b108",
+  "authorized_comment": "结论：0109 生命体征雷达故障提示的仪表中文匹配列丢了换行，导致波兰语沿用旧资源。\n依据：[Text ID V1.2.3 · 10_Instrument Panel F565、N565、AE565|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87460]。\n处理：请中科恢复 N565 在逗号后的原始换行，保留 AE565 的波兰语译文，使其能按实际中文重新匹配导入。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}

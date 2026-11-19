@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87355",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "e282b5d3436805997d74db554fbe369126ec9d7fe2c338d3f5ca2e258392a5c2",
+  "manifest_sha256": "8f328edadd35824690049dad9779c4b1c45d23bc5c61be012b6210b7c96cc551",
+  "authorized_comment": "结论：0904 充电电流限值介绍的英语源文把 16A 连写。\n依据：[Text ID V1.2.3 · 13_Energy Management O56|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87355]。\n处理：请中科将 limit_summy_13 英语的 16A 改为 16 A，与 0109 共用同一文言修改项。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}

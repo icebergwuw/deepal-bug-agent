@@ -1,0 +1,8 @@
+{
+  "comment_id": "8930956",
+  "body": "结论：0109 荷兰语低电下电提示仍带强制换行，第一段超出弹窗宽度后导致额外折行。\n依据：[Text ID V1.2.3 · 19_Toast W213|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87481]。\n处理：请中科去掉 19_Toast 荷兰语译文中的强制换行，由弹窗按宽度自动换行。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。\n\n（AI Generated）\n\n!HUR-87481-TextID-V123.png|thumbnail!",
+  "transitioned": false,
+  "status": "待办",
+  "assignee": "you.wu",
+  "attachment_id": "4713382"
+}

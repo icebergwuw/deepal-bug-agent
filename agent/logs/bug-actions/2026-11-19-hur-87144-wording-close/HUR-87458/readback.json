@@ -1,0 +1,8 @@
+{
+  "comment_id": "8930960",
+  "body": "结论：0109 生命体征雷达故障提示的仪表中文匹配列丢了换行，导致西班牙语沿用旧资源。\n依据：[Text ID V1.2.3 · 10_Instrument Panel F565、N565、W565|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87458]。\n处理：请中科恢复 N565 在逗号后的原始换行，保留 W565 的西班牙语译文。该中文源文与同 Key 的其他语种票合并处理。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。\n\n（AI Generated）\n\n!HUR-87458-TextID-V123.png|thumbnail!",
+  "transitioned": false,
+  "status": "待办",
+  "assignee": "you.wu",
+  "attachment_id": "4713389"
+}

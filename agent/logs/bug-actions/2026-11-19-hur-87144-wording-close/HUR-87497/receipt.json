@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87497",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "931d1d102b7ba402c77fa8b1e42bc96382e2ba9659b3b34ed44b9de0fd0f7e19",
+  "manifest_sha256": "7883ab82111a9927bfe911da6e088091a708c8a01a9bb4ce5e71665b3968fd8b",
+  "authorized_comment": "结论：0109 匈牙利语「氛围灯」出现单字母换行。研发回读的 Hangulatvilágítás 与文言表一致，需缩短译文。\n依据：[Text ID V1.2.3 · 02_Launcher AA45|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87497]。\n处理：请中科给 ambient_light_title 提供能在一行完整显示的匈牙利语短译。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}

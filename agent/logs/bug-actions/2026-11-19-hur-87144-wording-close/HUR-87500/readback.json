@@ -1,0 +1,8 @@
+{
+  "comment_id": "8930951",
+  "body": "结论：0507 小憩设置页英语提示的 20% 在源文里也缺少半角空格。\n依据：[Text ID V1.2.3 · 14_Vehicle Mode O10、O138|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87500]。\n处理：请中科将小憩设置提示中的 20% 改为 20 %，与 0109 已收录的小憩话术共用文言修改项。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。\n\n（AI Generated）\n\n!HUR-87500-TextID-V123.png|thumbnail!",
+  "transitioned": false,
+  "status": "待办",
+  "assignee": "you.wu",
+  "attachment_id": "4713378"
+}

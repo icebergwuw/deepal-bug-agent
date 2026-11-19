@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "run_id": "bug-20261119T182253+0800-hur-87144-wording-close",
+  "status": "comment_verified",
+  "started_at": "2026-11-19T18:22:53+08:00",
+  "completed_at": "2026-11-19T18:26:25+08:00",
+  "query_summary": "长马文言转需求并复用 HUR-87144",
+  "action_log": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/action-log.md",
+  "preflight_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/preflight.json",
+  "preflight_sha256": "63e91dc8611fa6c5fcb61f8b8550a11b2d1554d462158e2e171b530f14e17b5c",
+  "items": [
+    {
+      "jira_key": "HUR-87579",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87579/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87579/receipt.json",
+      "comment_receipt_sha256": "4c714d8bf4ede903e26a14ca527fe590abe0414e9d4141723613ecee32b4c658",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87579/readback.json",
+      "comment_readback_sha256": "1ae94844f6c97ae08e90eb9504f996ade6491c274490592ea0288bd2090e6f79"
+    },
+    {
+      "jira_key": "HUR-87500",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87500/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87500/receipt.json",
+      "comment_receipt_sha256": "8f64f991d14420fe0176b7335881dc6b59290c0a29b784241c7c4db32cf8128f",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87500/readback.json",
+      "comment_readback_sha256": "fbfc2b5c61229c6fd46fedadbdc1b69e7749d3e69ab6ee926cb9a642c883cd86"
+    },
+    {
+      "jira_key": "HUR-87496",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87496/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87496/receipt.json",
+      "comment_receipt_sha256": "191ccba8c055325ce9bb38e9b6f3d9ec40f35f91fed1d6743a2e4b5acbb671e7",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87496/readback.json",
+      "comment_readback_sha256": "12a54fb89717bafad243efe4392714da17374d7af38a62ffe8c4d411ac0629ab"
+    },
+    {
+      "jira_key": "HUR-87497",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87497/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87497/receipt.json",
+      "comment_receipt_sha256": "a9d116036314e9a7676d2a5c99cd9a85623117ad4c1bad8c99aaac80d6706d31",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87497/readback.json",
+      "comment_readback_sha256": "30659a179b3b661716da389e435384ce76b9626420ad4a78f1295aabcdea7c10"
+    },
+    {
+      "jira_key": "HUR-87486",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87486/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87486/receipt.json",
+      "comment_receipt_sha256": "d98388269f6e1153a3bacc70a07279357d7b4668a9b48c438947a111642273b6",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87486/readback.json",
+      "comment_readback_sha256": "807e1ea657f3f107fed9b684ec9042cd05297f43b520adb6529b3eba6e61e320"
+    },
+    {
+      "jira_key": "HUR-87481",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87481/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87481/receipt.json",
+      "comment_receipt_sha256": "97625427eafe83a2899a94ee4a5fcbf68dc9fcbff66ce1cc598f92b5814dbe4a",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87481/readback.json",
+      "comment_readback_sha256": "63f7a1ed875633ed507844462d77df9486904f34a372b0494933827a2b380cd5"
+    },
+    {
+      "jira_key": "HUR-87472",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87472/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87472/receipt.json",
+      "comment_receipt_sha256": "46f2f5cc0e84b3cf411a59596f2889f9f723c732f132daa2034edd7957237c01",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87472/readback.json",
+      "comment_readback_sha256": "0c6d4ad2a22ed18a2ffa81b3120a60a4179a110d2a19a5beaae67613a2de7a6d"
+    },
+    {
+      "jira_key": "HUR-87460",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87460/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87460/receipt.json",
+      "comment_receipt_sha256": "c2664c2e59b053d020c822981dfbe9735fbd6061403aeadd89ba39a2f57521c3",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87460/readback.json",
+      "comment_readback_sha256": "96edc7053b7a96987ae015d8e783f9d71ed17b15396a6e28edc0c0eb834a17b1"
+    },
+    {
+      "jira_key": "HUR-87459",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87459/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87459/receipt.json",
+      "comment_receipt_sha256": "2bb955cc4509c9d5f524d4c141921108381d50c951464e2420ffd8640f8adf95",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87459/readback.json",
+      "comment_readback_sha256": "4fbb83a2df66a04800ed81891d8ec92586ac06a3de98eac2e39a99b530537135"
+    },
+    {
+      "jira_key": "HUR-87458",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87458/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87458/receipt.json",
+      "comment_receipt_sha256": "636836940fa16d3f9252873cd914be0f7ed8a5518b2006aa243bee1caaa00608",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87458/readback.json",
+      "comment_readback_sha256": "3719d39f799466c84d757f8b7d29d6aea705dce6a1d0b1a0442dee858ca2cd61"
+    },
+    {
+      "jira_key": "HUR-87306",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87306/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87306/receipt.json",
+      "comment_receipt_sha256": "aacb3413333fb9af96b550cdda621091df105e8d43b6c3cf7334842d369901bf",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87306/readback.json",
+      "comment_readback_sha256": "95dc7f006beb31d827a057de21f85a67e81af5297c7ab652058fc30f664993ea"
+    },
+    {
+      "jira_key": "HUR-87356",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87356/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87356/receipt.json",
+      "comment_receipt_sha256": "5f69b77fa708fc55e6280e5edfb281970f113e1c214be31ac541f912843d7f93",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87356/readback.json",
+      "comment_readback_sha256": "97177e852392845c8b9cd8e8c37f0c793633e419a04bce4fe464732873fcebe8"
+    },
+    {
+      "jira_key": "HUR-87355",
+      "operator_owner_id": "wu-you",
+      "target_owner_id": "wu-you",
+      "result_output": "jira_comment_only",
+      "manifest_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87355/manifest.json",
+      "comment_receipt_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87355/receipt.json",
+      "comment_receipt_sha256": "d2516969ad3a36d827265da701de7fcfb56c9b4a6274ba18ed58cbe94bcf582b",
+      "comment_readback_path": "agent/logs/bug-actions/2026-11-19-hur-87144-wording-close/HUR-87355/readback.json",
+      "comment_readback_sha256": "570796fb219e2cb945786435e64fcdd96eb4ac87f05a978615f056b73ede8311"
+    }
+  ]
+}

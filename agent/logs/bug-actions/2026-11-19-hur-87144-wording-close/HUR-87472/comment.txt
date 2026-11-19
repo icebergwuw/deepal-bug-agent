@@ -1,0 +1,3 @@
+结论：0109 波兰语智驾辅助重新认证提示在源表保留强制换行，导致仪表显示额外折行。
+依据：[Text ID V1.2.3 · 19_Toast X131、10_Instrument Panel AE461|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87472]。
+处理：请中科同步移除这两处波兰语译文中的强制换行，由弹窗按宽度自动换行。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。

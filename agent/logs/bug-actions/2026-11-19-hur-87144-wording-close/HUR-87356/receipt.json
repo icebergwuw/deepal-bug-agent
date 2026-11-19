@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87356",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "9eab5513dd577e02ce0f79a2de3c2b2fc03fc86c031a6c5977c7551c57febf70",
+  "manifest_sha256": "1061e1a879b78673dc046477a402d98699060bebb775380b3481eb599b826785",
+  "authorized_comment": "结论：0904 充电电流限值介绍的英语源文把 10A 连写，且不定冠词写成 an。\n依据：[Text ID V1.2.3 · 13_Energy Management O55|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87356]。\n处理：请中科将 limit_summy_8 英语的 an 10A power socket 改为 a 10 A power socket，与 0109 共用同一文言修改项。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87481",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "40c07d0e385a985cc3cd7446de2d4a03ca3d7d9748778921cc396593785c6a1f",
+  "manifest_sha256": "d6e54b78950712c0e81960f62f834080c244260c03e7e8165bcf622c76cd9741",
+  "authorized_comment": "结论：0109 荷兰语低电下电提示仍带强制换行，第一段超出弹窗宽度后导致额外折行。\n依据：[Text ID V1.2.3 · 19_Toast W213|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87481]。\n处理：请中科去掉 19_Toast 荷兰语译文中的强制换行，由弹窗按宽度自动换行。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}

@@ -1,0 +1,3 @@
+结论：0109 充电电流限值介绍的英语源文将数字和 A 连写，且 10A 前的不定冠词有误。
+依据：[Text ID V1.2.3 · 13_Energy Management O55–O56|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87306]。
+处理：请中科将 limit_summy_8 和 limit_summy_13 英语里的 10A、16A 分别改为 10 A、16 A，同步把 an 10A 改为 a 10 A。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。

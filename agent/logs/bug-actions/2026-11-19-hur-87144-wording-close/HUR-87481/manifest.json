@@ -1,0 +1,843 @@
+{
+  "schema_version": 5,
+  "jira_key": "HUR-87481",
+  "comment_causality": "0109 荷兰语低电下电提示仍带强制换行，第一段超出弹窗宽度后导致额外折行。",
+  "run_context": {
+    "run_id": "bug-20261119T182253+0800-hur-87144-wording-close",
+    "operator_owner_id": "wu-you",
+    "target_owner_id": "wu-you",
+    "result_output": "jira_comment_only"
+  },
+  "customer_issue": {
+    "identified": false
+  },
+  "related_issues": {
+    "checked": true,
+    "items": [
+      {
+        "key": "HUR-87144",
+        "relationship": "当前翻译总票",
+        "outcome": "待办，经办人 you.wu，未传递给开发",
+        "read": true
+      }
+    ]
+  },
+  "conflict_resolution": "agent/context.md 指定 2026-11-17 中科返回 V1.2.3 用于 0507、0109、0904 三分支导入。Drive 源文件校验值与已下载文件一致。V1.3_261014 是另一文件，当前口径按指定导入版。",
+  "scope_checks": [
+    {
+      "source_id": "textid-v123",
+      "source": "J90A_海外LanguageList_V1.2.3_261117中科返回.xlsx",
+      "source_location": "19_Toast W213",
+      "source_type": "special_prd",
+      "role": "formal_target",
+      "project_model": "J90A",
+      "trigger": "【PI】【0109】【Stg】荷兰语，文言“车辆将在2分钟内自动下电 请启动车辆或检查蓄电池充电系统”，KEY:TipInfo/BCM_LowPowerWarning_1.换行与文言翻译表不一致",
+      "target_behavior": "按本票指定 Key 处理文言格式或匹配源文",
+      "match": "exact",
+      "reason": "agent/context.md 指定 2026-11-17 中科返回 V1.2.3 用于 0507、0109、0904 三分支导入。Drive 源文件校验值与已下载文件一致。V1.3_261014 是另一文件，当前口径按指定导入版。"
+    },
+    {
+      "source_id": "jira-actual",
+      "source": "HUR-87481",
+      "source_location": "票面实际结果和研发评论",
+      "source_type": "implementation_log",
+      "role": "implementation_actual",
+      "project_model": "J90A",
+      "trigger": "【PI】【0109】【Stg】荷兰语，文言“车辆将在2分钟内自动下电 请启动车辆或检查蓄电池充电系统”，KEY:TipInfo/BCM_LowPowerWarning_1.换行与文言翻译表不一致",
+      "target_behavior": "0109 荷兰语低电下电提示仍带强制换行，第一段超出弹窗宽度后导致额外折行。",
+      "match": "exact",
+      "reason": "使用 Jira 原票现象和研发定位核对实车表现。"
+    }
+  ],
+  "evidence_profiles": [
+    "general"
+  ],
+  "evidence_profile_assessment": {
+    "general": {
+      "applicable": true,
+      "reason": "对照现行文言定义。"
+    },
+    "voice": {
+      "applicable": false,
+      "reason": "不是语音执行。"
+    },
+    "map_navigation": {
+      "applicable": false,
+      "reason": "不是地图导航。"
+    },
+    "visible_interaction": {
+      "applicable": false,
+      "reason": "本轮对照的是文言表，不是 UE 画布。"
+    }
+  },
+  "search_receipts": [
+    {
+      "receipt_id": "drive-language-list-87481",
+      "provider": "google_drive",
+      "origin": "google_api",
+      "check_id": "formal_definition_search",
+      "searched_at": "2026-11-19T18:22:53+08:00",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-87481"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "海外文言 换行 空格 仪表提示"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 海外 LanguageList"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.2.3_261117中科返回.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "results": [
+        {
+          "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+          "title": "J90A_海外LanguageList_V1.2.4_261119.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC",
+          "title": "J90A_海外LanguageList_V1.2.3_261117中科返回.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ScFyrUcNCXxxJuFpYfcS_mtbHkCUTTnp",
+          "title": "J90A_海外LanguageList_V1.2.3_261106_1109确认.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ScFyrUcNCXxxJuFpYfcS_mtbHkCUTTnp/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+          "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY",
+          "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S",
+          "title": "J90A_海外LanguageList_V1.2_260921_260930镁佳修改.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf",
+          "title": "J90A_海外LanguageList_V1.2_260921.xlsx留底.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+          "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+          "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+          "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后_历史漏追踪译文合入_0.5.8语义恢复_260901.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+          "url": "https://docs.google.com/spreadsheets/d/1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN",
+          "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "16nBIw-ja--wc6v7DBjcYC1aiSJc3lX94",
+          "title": "J90A_海外LanguageList_V1.1_260819_合入后.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/16nBIw-ja--wc6v7DBjcYC1aiSJc3lX94/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1q6cdO5e3kPdmr6L8SIk7gf6U4vL9qhAk",
+          "title": "J90A_海外LanguageList_V1.1_260819_合入后.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1q6cdO5e3kPdmr6L8SIk7gf6U4vL9qhAk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+          "title": "J90A_海外LanguageList内部版V1.0_260806",
+          "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1hqG9eetDKhMwXCcjl2pxe8pJb2yWsZE2",
+          "title": "J90A_海外LanguageList_V1.2_260813.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1hqG9eetDKhMwXCcjl2pxe8pJb2yWsZE2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA",
+          "title": "J90A_海外LanguageList_V1.2_260810.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+          "title": "J90A_海外LanguageList_V1.1_260807",
+          "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1vgjICSB5ikiep_aHH6NTGgPM15feV3QV",
+          "title": "J90A_海外LanguageList_V1.1_260807.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1vgjICSB5ikiep_aHH6NTGgPM15feV3QV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+          "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+          "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+          "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+          "url": "https://docs.google.com/spreadsheets/d/1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+          "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+          "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+          "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+          "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+          "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+          "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+          "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+          "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+          "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+          "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+          "title": "J90A_海外LanguageList_V0.5.8_0722",
+          "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI",
+          "title": "J90A_海外LanguageList外发版V0.5.8_0715",
+          "url": "https://docs.google.com/spreadsheets/d/1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1nOtLN6Kzo9biD-T0sLJnjAy76ZGy5dzXG8s-Zn-osf8",
+          "title": "J90A_EU-PI_LanguageList外发版V0.5.8_0712",
+          "url": "https://docs.google.com/spreadsheets/d/1nOtLN6Kzo9biD-T0sLJnjAy76ZGy5dzXG8s-Zn-osf8/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1W1osJKntV5WngY-xKpdrc-jgpdRNV_7cqfrsGMYpVFg",
+          "title": "J90A_EU-PI_LanguageList外发版",
+          "url": "https://docs.google.com/spreadsheets/d/1W1osJKntV5WngY-xKpdrc-jgpdRNV_7cqfrsGMYpVFg/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y",
+          "title": "J90A_EU-PI_LanguageList",
+          "url": "https://docs.google.com/spreadsheets/d/1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1n1wPeWFk9Xlh1UUYtBTmKWYvMUYYdniS6LJmzMAZ1DA",
+          "title": "J90A_EU-PI_LanguageList外发版（副本）",
+          "url": "https://docs.google.com/spreadsheets/d/1n1wPeWFk9Xlh1UUYtBTmKWYvMUYYdniS6LJmzMAZ1DA/edit?usp=drivesdk",
+          "mime_type": "application/vnd.google-apps.spreadsheet"
+        },
+        {
+          "id": "1Sqqto3x4slB-IZYmDSxooM8nqxmaoQAJ",
+          "title": "【阿语译文】J90A_EU-PI_LanguageList外发版-260224_阿拉伯语属地化确认用.xlsx",
+          "url": "https://docs.google.com/spreadsheets/d/1Sqqto3x4slB-IZYmDSxooM8nqxmaoQAJ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+          "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        }
+      ]
+    }
+  ],
+  "required_evidence_checks": [
+    {
+      "check_id": "formal_definition_search",
+      "status": "read",
+      "source_ids": [
+        "textid-v123"
+      ],
+      "searched_at": "2026-11-19",
+      "search_location": "Google Drive API，J90A_海外LanguageList",
+      "queries": [
+        {
+          "kind": "jira_key",
+          "text": "HUR-87481"
+        },
+        {
+          "kind": "problem_concept",
+          "text": "海外文言 换行 空格 仪表提示"
+        },
+        {
+          "kind": "module_artifact",
+          "text": "J90A 海外 LanguageList"
+        },
+        {
+          "kind": "exact_document_name",
+          "text": "J90A_海外LanguageList_V1.2.3_261117中科返回.xlsx"
+        },
+        {
+          "kind": "version_family",
+          "text": "J90A_海外LanguageList"
+        }
+      ],
+      "search_receipt_ids": [
+        "drive-language-list-87481"
+      ],
+      "candidate_audit": {
+        "completed": true,
+        "results_count": 44,
+        "candidates": [
+          {
+            "id": "1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH",
+            "title": "J90A_海外LanguageList_V1.2.4_261119.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1gbe0Y-8BS1MlMWZrns_PNKXEcRIpSBPH/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC",
+            "title": "J90A_海外LanguageList_V1.2.3_261117中科返回.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "read",
+            "references": [],
+            "reason": "agent/context.md 指定 2026-11-17 中科返回 V1.2.3 用于 0507、0109、0904 三分支导入。Drive 源文件校验值与已下载文件一致。V1.3_261014 是另一文件，当前口径按指定导入版。",
+            "version_family": "J90A_海外LanguageList",
+            "source_ids": [
+              "textid-v123"
+            ]
+          },
+          {
+            "id": "1ScFyrUcNCXxxJuFpYfcS_mtbHkCUTTnp",
+            "title": "J90A_海外LanguageList_V1.2.3_261106_1109确认.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1ScFyrUcNCXxxJuFpYfcS_mtbHkCUTTnp/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC",
+            "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1tiRMH-Guw_8nPQxLeKPOpcqi92Qx3_zC/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY",
+            "title": "J90A_海外LanguageList_V1.2_260921_261014阿语合入.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/154Cdl-AW5PH2SbIYMFFUkOOVBfnqxgfY/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S",
+            "title": "J90A_海外LanguageList_V1.2_260921_260930镁佳修改.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1fXkqoyDc4czEKnShP-mYnoqPv1PiM74S/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf",
+            "title": "J90A_海外LanguageList_V1.2_260921.xlsx留底.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1NfjexhwapwPmVIzUTlTVjrdwSv0ytkLf/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO",
+            "title": "J90A_海外LanguageList_V1.1_260902_260916.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Z7GmqGn8UXMpNLzUGAevB5zs_DiIx0XO/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM",
+            "title": "J90A_海外LanguageList_V1.1_260902.xlsx留底.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1lMkdKlJz9C3AXwQ24k7Mp3xJwaJoUnZM/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw",
+            "title": "J90A_海外LanguageList_V1.2_废弃.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1qKUQZ3iw8mTnWi50_n7gBLINlfXGrNYw/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后_历史漏追踪译文合入_0.5.8语义恢复_260901.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/14kJpdLU0VHz92oR058Wlm6Zot2q3ET-k/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+            "url": "https://docs.google.com/spreadsheets/d/148UehVUqpECtNfxIRk9rdKRISXPmrK2m5VVp35iyK4Y/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后",
+            "url": "https://docs.google.com/spreadsheets/d/1ab4g7xCWtb0Ubljv_SD0A0cNJuGxktzCsxg6M2lv6Zs/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1J0bJeCDY4Vz7zMJ8e-ne1LDHXX6NZziR/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN",
+            "title": "J90A_海外LanguageList_V1.1_260819_HMI阿拉伯语合入后.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1ttH-oOTdMK9Mtl8ps_Z5OxgiDIww-JrN/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "16nBIw-ja--wc6v7DBjcYC1aiSJc3lX94",
+            "title": "J90A_海外LanguageList_V1.1_260819_合入后.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/16nBIw-ja--wc6v7DBjcYC1aiSJc3lX94/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1q6cdO5e3kPdmr6L8SIk7gf6U4vL9qhAk",
+            "title": "J90A_海外LanguageList_V1.1_260819_合入后.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1q6cdO5e3kPdmr6L8SIk7gf6U4vL9qhAk/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4",
+            "title": "J90A_海外LanguageList内部版V1.0_260806",
+            "url": "https://docs.google.com/spreadsheets/d/1ASnEMB3HSNClw2MRbsA1tGDaB9Y5Vi_dXL9hZzz7gC4/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1hqG9eetDKhMwXCcjl2pxe8pJb2yWsZE2",
+            "title": "J90A_海外LanguageList_V1.2_260813.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1hqG9eetDKhMwXCcjl2pxe8pJb2yWsZE2/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA",
+            "title": "J90A_海外LanguageList_V1.2_260810.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Igq1OBB0UnvDwF4RuMG-v9H7-59eNvcA/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803最终拆除重复Key",
+            "url": "https://docs.google.com/spreadsheets/d/1IBKk0OOYGzLwPeAPoO9cUWMXm_fjZAk8NQGjeNE5F2g/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0",
+            "title": "J90A_海外LanguageList_V1.1_260807",
+            "url": "https://docs.google.com/spreadsheets/d/1AAL-II3PGv6jEwLpayNy-NWwJFnM9ILcIr13uVjU3P0/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1vgjICSB5ikiep_aHH6NTGgPM15feV3QV",
+            "title": "J90A_海外LanguageList_V1.1_260807.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1vgjICSB5ikiep_aHH6NTGgPM15feV3QV/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0806清理重复key",
+            "url": "https://docs.google.com/spreadsheets/d/15TfET0ZE_PGlGHQrlEoZrSg6g6JghyFdAP8DwUCamQ8/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0804合入After",
+            "url": "https://docs.google.com/spreadsheets/d/1oG53DK1UWUy206D5Uqb9iJ_Mo1qIMbztz-etQXo-Jrk/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803",
+            "url": "https://docs.google.com/spreadsheets/d/1Xa3x0lL7B3A1IAsfK-_Qo8Bn-hBRq4Jcd55i_MRLdk4/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0803A",
+            "url": "https://docs.google.com/spreadsheets/d/1ahMQr4P2XqySCPhd0hw_oDWuUYhJvf9YoeTq9I0kNeY/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730已拆除重复Key",
+            "url": "https://docs.google.com/spreadsheets/d/1BOIzP3z4IV_4J68FlVJLvgRl38C69-DbgNgsMnRW65Q/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0802拆除完同中文不同Key",
+            "url": "https://docs.google.com/spreadsheets/d/1WiD_s9mOKPW7zYEIrhaXhnz5bYoh2xD8U4dvYDDXS1o/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0802",
+            "url": "https://docs.google.com/spreadsheets/d/1QzhGpYUmpiaaLz0JdTbsn5vKzie03Ty41BJyQhmP8OE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730_权威同步前备份_20260801",
+            "url": "https://docs.google.com/spreadsheets/d/1DvH8NdopQmiSes-nuO2c9BWp-AVfIU-Wr7QZU_SWAUE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0730_重复Key执行前备份_20260801_154735",
+            "url": "https://docs.google.com/spreadsheets/d/1GKSarUCRLyEI6FdpTdU5ZrMKJqfqYa-xM1NRZaPbeOE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0722拆重复Key前备份",
+            "url": "https://docs.google.com/spreadsheets/d/10cQFMzujH3qPm80VdjpUhcM7iwWAwZ6hqF0bBE5Woc0/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0729",
+            "url": "https://docs.google.com/spreadsheets/d/15Aq69UMkn8GUaQSnsVYU8s9GtKwvYPUsMUKAY49yKX0/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk",
+            "title": "J90A_海外LanguageListV0.5.8_0720拆All key前备份",
+            "url": "https://docs.google.com/spreadsheets/d/1A56SLf_qBe4fhXLHPXZE9rHDGXSJ-CgCRd4AM8CNMrk/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。"
+          },
+          {
+            "id": "1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE",
+            "title": "J90A_海外LanguageList内部版V0.5.8_0724",
+            "url": "https://docs.google.com/spreadsheets/d/1tPqNVtONd1Cpo2Ir18kZN_TWEA_7ruPOWED9cgvvGjE/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls",
+            "title": "J90A_海外LanguageList外发版V0.5.8_0722",
+            "url": "https://docs.google.com/spreadsheets/d/13tnoSE2RhD4q1oUTpQ-OWHGD5E-1-8JaESH9bSEQyls/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI",
+            "title": "J90A_海外LanguageList_V0.5.8_0722",
+            "url": "https://docs.google.com/spreadsheets/d/11Rr3Mildvq4q2fVXik4pCQCLXciM2xXMi8Yp4CzORGI/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI",
+            "title": "J90A_海外LanguageList外发版V0.5.8_0715",
+            "url": "https://docs.google.com/spreadsheets/d/1-hZIBquOkbhtjVxnaua0hSuBQN9_hlqjOuninbGs8lI/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1nOtLN6Kzo9biD-T0sLJnjAy76ZGy5dzXG8s-Zn-osf8",
+            "title": "J90A_EU-PI_LanguageList外发版V0.5.8_0712",
+            "url": "https://docs.google.com/spreadsheets/d/1nOtLN6Kzo9biD-T0sLJnjAy76ZGy5dzXG8s-Zn-osf8/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。",
+            "version_family": "J90A_海外LanguageList"
+          },
+          {
+            "id": "1W1osJKntV5WngY-xKpdrc-jgpdRNV_7cqfrsGMYpVFg",
+            "title": "J90A_EU-PI_LanguageList外发版",
+            "url": "https://docs.google.com/spreadsheets/d/1W1osJKntV5WngY-xKpdrc-jgpdRNV_7cqfrsGMYpVFg/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。"
+          },
+          {
+            "id": "1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y",
+            "title": "J90A_EU-PI_LanguageList",
+            "url": "https://docs.google.com/spreadsheets/d/1xy8HKs9tghWtxXTlp5IGcIE8VhyEul0tQgzxA8WGQ9Y/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。"
+          },
+          {
+            "id": "1n1wPeWFk9Xlh1UUYtBTmKWYvMUYYdniS6LJmzMAZ1DA",
+            "title": "J90A_EU-PI_LanguageList外发版（副本）",
+            "url": "https://docs.google.com/spreadsheets/d/1n1wPeWFk9Xlh1UUYtBTmKWYvMUYYdniS6LJmzMAZ1DA/edit?usp=drivesdk",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。"
+          },
+          {
+            "id": "1Sqqto3x4slB-IZYmDSxooM8nqxmaoQAJ",
+            "title": "【阿语译文】J90A_EU-PI_LanguageList外发版-260224_阿拉伯语属地化确认用.xlsx",
+            "url": "https://docs.google.com/spreadsheets/d/1Sqqto3x4slB-IZYmDSxooM8nqxmaoQAJ/edit?usp=drivesdk&ouid=109136590267032001782&rtpof=true&sd=true",
+            "disposition": "excluded",
+            "references": [],
+            "reason": "当前分支采用项目指定的 2026-11-17 V1.2.3 导入版。"
+          }
+        ]
+      },
+      "search_completion": {
+        "completed": true,
+        "referenced_sources": [],
+        "version_families": [
+          {
+            "family": "J90A_海外LanguageList",
+            "status": "enumerated",
+            "receipt_ids": [
+              "drive-language-list-87481"
+            ],
+            "selected_candidate_id": "1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC",
+            "selection_reason": "agent/context.md 指定 2026-11-17 中科返回 V1.2.3 用于 0507、0109、0904 三分支导入。Drive 源文件校验值与已下载文件一致。V1.3_261014 是另一文件，当前口径按指定导入版。",
+            "newer_version_checked": true
+          }
+        ]
+      }
+    }
+  ],
+  "voice_evidence": {
+    "applicable": false
+  },
+  "decision": {
+    "status": "转需求",
+    "owner": "中科",
+    "text": "结论：0109 荷兰语低电下电提示仍带强制换行，第一段超出弹窗宽度后导致额外折行。\n依据：[Text ID V1.2.3 · 19_Toast W213|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87481]。\n处理：请中科去掉 19_Toast 荷兰语译文中的强制换行，由弹窗按宽度自动换行。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。",
+    "implementation_source_ids": [
+      "jira-actual"
+    ]
+  },
+  "expected_behavior": {
+    "trigger": "【PI】【0109】【Stg】荷兰语，文言“车辆将在2分钟内自动下电 请启动车辆或检查蓄电池充电系统”，KEY:TipInfo/BCM_LowPowerWarning_1.换行与文言翻译表不一致",
+    "target_state": "请中科去掉 19_Toast 荷兰语译文中的强制换行，由弹窗按宽度自动换行。",
+    "intent_function_signal": "E213 / W213 / F376",
+    "ui_tts_vehicle_behavior": "请中科去掉 19_Toast 荷兰语译文中的强制换行，由弹窗按宽度自动换行。",
+    "boundary": "范围为标题中的语种、页面和文言。",
+    "source_ids": [
+      "textid-v123"
+    ]
+  }
+}

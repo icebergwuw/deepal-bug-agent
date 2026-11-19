@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87486",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "e5e7052812a02ac583c8a6703888e4c03c75468958136aa83ef46c4255d5e2c1",
+  "manifest_sha256": "3c6fd6e0dfe18fe47f2fec5d535ddf986f7efc098c230a91fb0306f77dd76490",
+  "authorized_comment": "结论：0109 波兰语热管理系统通讯异常提示保留强制换行，第一段超出仪表宽度后再次折行。V1.2.3 仪表页已去掉该译文换行，但后导入的 Toast 页仍有换行。\n依据：[Text ID V1.2.3 · 19_Toast X253、10_Instrument Panel AE338|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87486]。\n处理：请中科将 19_Toast 的波兰语译文改为单行，由弹窗按宽度自动换行。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}

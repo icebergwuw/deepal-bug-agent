@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87500",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "2e7bf75056041455caaf2b66a428f8e1fc081eb441b83f93c9bc6a01d76150ba",
+  "manifest_sha256": "38aa9ce234bc05e52a777e8c7779230bb2930a12ec6d4d37f12258f109d2badb",
+  "authorized_comment": "结论：0507 小憩设置页英语提示的 20% 在源文里也缺少半角空格。\n依据：[Text ID V1.2.3 · 14_Vehicle Mode O10、O138|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87500]。\n处理：请中科将小憩设置提示中的 20% 改为 20 %，与 0109 已收录的小憩话术共用文言修改项。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}

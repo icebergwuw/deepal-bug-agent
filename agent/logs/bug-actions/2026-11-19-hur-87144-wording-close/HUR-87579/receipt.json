@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "gate": "passed",
+  "jira_key": "HUR-87579",
+  "phase": "d",
+  "status": "转需求",
+  "decision_text_sha256": "0bcd316bb7fc3c485be324ecdaee90e5a678b50d72649aad3ef548a003261b67",
+  "manifest_sha256": "96bf1fd0c9c3139b7526a7806ec10964a470792978339f9ac8bf5fd0c967b246",
+  "authorized_comment": "结论：0507 匈牙利语后排安全带报警在快捷栏出现单字母换行，研发已定位到 rear_seat_belt_alarm。\n依据：[Text ID V1.2.3 · 02_Launcher AA21|https://docs.google.com/spreadsheets/d/1e6OJUwu2YOYxAOFb16exX4rjpbYyv6GC/edit]、[现场现象和研发定位|http://jira.i-tetris.com/browse/HUR-87579]。\n处理：请中科提供可在快捷栏完整显示的短译，与 0109 的 HUR-87027 共用同一 Key 的匈牙利语修改项。 当前翻译需求尚未交付开发，复用 [HUR-87144|http://jira.i-tetris.com/browse/HUR-87144] 追踪，原 Bug 按 Workaround / bug转需求关闭。中科处理。"
+}
